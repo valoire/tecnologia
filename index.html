@@ -21,11 +21,41 @@
     .lab{display:grid;grid-template-columns:1fr 1fr;gap:20px}.lab .panel{padding:24px}.lab h3{font-size:22px;margin:0 0 5px;letter-spacing:-.03em}.lab p{color:var(--muted);margin:0 0 17px}.controls{display:grid;gap:14px}.control-row{display:flex;justify-content:space-between;gap:15px;font-size:14px;font-weight:700}input[type=range]{width:100%;accent-color:var(--primary)}.result{margin-top:16px;background:var(--pale);border-radius:10px;padding:16px}.result strong{font-size:30px;letter-spacing:-.04em;color:var(--dark)}
     .question{font-weight:800;margin:12px 0}.answers{display:grid;gap:8px}.choice{border:1px solid var(--line);border-radius:9px;text-align:left;background:#fff;padding:10px 13px;color:var(--ink)}.choice:hover{background:var(--pale)}.choice:disabled{opacity:.85;cursor:default}.choice.good{border-color:#39855d;background:#e7f5eb}.choice.bad{border-color:#b76c5b;background:#f9edeb}.feedback{min-height:25px;font-weight:700;margin:11px 0;color:var(--primary)}.secondary{background:var(--dark);color:white;border:0;border-radius:9px;padding:10px 16px;font-weight:700}.secondary:disabled{opacity:.55;cursor:not-allowed}
     .note{background:#fff8e9;border:1px solid #f2ddae;border-radius:11px;padding:12px 16px;color:#6b562f;font-size:14px}.footer{background:#fff;border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:13px}.footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+    /* Pantalla senzilla d'accés a classe: no és una barrera de seguretat. */
+    html:not(.unlocked) body > :not(#access-gate){display:none!important}
+    html.unlocked #access-gate{display:none!important}
+    #access-gate{min-height:100dvh;display:grid;place-items:center;padding:24px;background:var(--bg)}
+    .gate-card{width:min(100%,430px);background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 12px 36px #19434c15;padding:clamp(26px,5vw,42px)}
+    .gate-kicker{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--primary);font-weight:800}
+    .gate-card h1{margin:13px 0 9px;font-size:clamp(27px,4vw,36px);line-height:1.16;letter-spacing:-.04em}
+    .gate-card p{margin:0 0 24px;color:var(--muted)}
+    .gate-card label{display:block;font-weight:750;margin-bottom:8px}
+    .gate-card input{width:100%;border:1px solid #afc5c8;border-radius:9px;padding:13px 14px;font-size:20px;letter-spacing:.2em}
+    .gate-card button{width:100%;margin-top:14px;border:0;border-radius:9px;padding:13px;background:var(--dark);color:#fff;font-weight:800}
+    .gate-card button:hover{background:var(--primary)}
+    .gate-error{min-height:1.4em;font-size:14px;color:#a23f36;margin:12px 0 0!important}
     @media(max-width:720px){.bar{display:block;padding:13px 0}.brand{display:inline-block;margin-bottom:9px}nav a{padding:7px 9px}.hero{padding:45px 0 49px}.hero p{font-size:16px}.topics,.lab{grid-template-columns:1fr}.unit summary{padding:15px 13px;gap:9px;font-size:14px}.unit .number{min-width:42px;height:31px}.unit .inside{padding:0 16px 16px}.section-card,.lab .panel{padding:18px}.intro{align-items:start}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
   </style>
+  <script>
+    try { if (sessionStorage.getItem('tecnologia-entrada')==='ok') document.documentElement.classList.add('unlocked'); } catch(e) {}
+  </script>
 </head>
 <body>
+  <div id="access-gate">
+    <div class="gate-card" role="dialog" aria-modal="true" aria-labelledby="gate-title">
+      <div class="gate-kicker">Institut Rovira-Forns</div>
+      <h1 id="gate-title">Benvingut/da a Tecnologia Rovira</h1>
+      <p>Introdueix el codi que t'ha facilitat la professora per entrar a la web.</p>
+      <form id="gate-form" novalidate>
+        <label for="gate-code">Codi d'accés</label>
+        <input id="gate-code" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off" required autofocus>
+        <button type="submit">Entrar</button>
+        <p class="gate-error" id="gate-error" role="alert" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
   <header class="top"><div class="wrap bar"><a class="brand" href="#inici">TECNOLOGIA ROVIRA<small>Institut Rovira-Forns</small></a><nav aria-label="Navegació principal"><a href="#quart">4t ESO</a><a href="#batxillerat">Batxillerat</a><a href="#laboratori">Experimenta</a></nav></div></header>
   <div class="hero" id="inici"><div class="wrap"><div class="eyebrow">Tecnologia · Aprenentatge interactiu</div><h1>Menys mirar. Més fer.</h1><p>Teoria clara, recursos per temes i petits reptes per aprendre tecnologia al teu ritme.</p><div class="actions"><a class="pill" href="#quart">Entrar a 4t ESO</a><a class="pill alt" href="#batxillerat">Entrar a Batxillerat</a></div></div></div>
   <main class="wrap">
@@ -53,6 +83,24 @@
   <footer class="footer"><div class="wrap"><span><strong>Tecnologia Rovira</strong> · Institut Rovira-Forns</span><span>Materials didàctics per aprendre i experimentar</span></div></footer>
   <script>
   'use strict';
+
+  const gateForm=document.getElementById('gate-form');
+  gateForm.addEventListener('submit',e=>{
+    e.preventDefault();
+    const field=document.getElementById('gate-code');
+    const error=document.getElementById('gate-error');
+    if(field.value.trim()==='1111'){
+      try{sessionStorage.setItem('tecnologia-entrada','ok')}catch(err){}
+      document.documentElement.classList.add('unlocked');
+      gateForm.reset();
+      error.textContent='';
+      document.querySelector('.brand').focus();
+    }else{
+      error.textContent='Codi incorrecte. Torna-ho a provar.';
+      field.select();
+      field.focus();
+    }
+  });
   const base='https://examenselectivitat.cat/selectivitat/Tecnologia%20industrial/per-temes/';
   const topics=[['Energia','dinamica-maquines'],['Materials i assaigs','propietats-assaigs'],['Metrologia i normalització','metrologia-normalitzacio'],['Sistemes pneumàtics i oleohidràulics','oleohidraulica'],['Motors reductors','motors-reductors'],['Principis de les màquines','maquines-i-sistemes'],['Màquines i sistemes elèctrics i electrotècnics','electromagnetisme-i-corrent-altern'],['Control lògic i funcions lògiques','sistemes-digitals'],['Organització industrial','organitzacio-industrial']];
   const topicHost=document.getElementById('temes');
