@@ -1,0 +1,63 @@
+/* Tecnologia Rovira · desplegables amb tot el material a dins */
+.rv-ud{border:2px solid #f0cae6;border-radius:18px;overflow:hidden;background:#fff;margin:12px 0;box-shadow:0 7px 21px #aa35b218}
+.rv-ud:nth-child(3n+1){border-left:7px solid #ff8600}
+.rv-ud:nth-child(3n+2){border-left:7px solid #ed46ad}
+.rv-ud:nth-child(3n+3){border-left:7px solid #963ce8}
+.rv-ud>summary.rv-ud-summary{display:flex;align-items:center;gap:16px;list-style:none;cursor:pointer;padding:19px;background:linear-gradient(110deg,#fffaf4,#fff0fc)}
+.rv-ud>summary::-webkit-details-marker,.rv-category>summary::-webkit-details-marker,.rv-topic>summary::-webkit-details-marker{display:none}
+.rv-ud>summary.rv-ud-summary::after{content:"＋";margin-left:auto;color:#ef7200;font-size:25px}
+.rv-ud[open]>summary.rv-ud-summary::after{content:"−"}
+.rv-ud-summary strong{color:#6c2b85;font-size:17px}
+.rv-ud-inner{padding:16px;background:linear-gradient(#fffaff,#fffdf5);display:grid;gap:12px}
+.rv-category{border:2px solid #efc4e6;background:#fff;border-radius:18px;overflow:hidden;margin:13px 0;box-shadow:0 5px 20px #b34eb013}
+.rv-category>summary{display:flex;align-items:center;list-style:none;cursor:pointer;background:linear-gradient(105deg,#fff4d6,#ffebfa);color:#8e3197;font-size:17px;font-weight:900;padding:16px 19px}
+.rv-category>summary::after{content:"⌄";font-size:25px;margin-left:auto;color:#fb7c0b;transition:transform .2s}
+.rv-category[open]>summary::after{transform:rotate(180deg)}
+.rv-category-contents{padding:13px;display:grid;gap:10px}
+.rv-topic{display:block;overflow:hidden;border:2px solid #f2d8ee;border-radius:16px;background:#fff}
+.rv-topic:nth-child(3n+1){border-left:5px solid #ff8d00}
+.rv-topic:nth-child(3n+2){border-left:5px solid #ec52a5}
+.rv-topic:nth-child(3n+3){border-left:5px solid #9f51e4}
+.rv-topic>summary.rv-topic-summary{display:flex;align-items:center;gap:13px;cursor:pointer;list-style:none;padding:14px 16px;background:linear-gradient(90deg,#fffefa,#fff6ff);color:#772f8b}
+.rv-topic[open]>summary.rv-topic-summary{background:linear-gradient(90deg,#fff0c6,#ffe5f7);border-bottom:1px solid #f2c7db}
+.rv-topic-icon{flex:0 0 45px;height:45px;border-radius:13px;background:#fff0d6;display:grid;place-items:center;font-size:23px}
+.rv-topic-words{display:grid;flex:1;min-width:0;gap:2px}
+.rv-topic-words strong{font-weight:850;font-size:15px;line-height:1.35;color:#7e2a87}
+.rv-topic-words small{font-size:12px;color:#88647a}
+.rv-topic-arrow{font-size:25px;color:#ff7b12;transition:transform .2s}
+.rv-topic[open] .rv-topic-arrow{transform:rotate(180deg)}
+.rv-topic-content{padding:22px 24px;background:#fffefa;color:#44344d}
+.rv-topic-content p{margin:13px 0;line-height:1.66}
+.rv-topic-content h3{color:#96309f;font-size:23px;line-height:1.27;margin:8px 0 15px}
+.rv-topic-content h4{color:#b4479e;font-size:17px;margin:24px 0 10px}
+.rv-topic-content ul,.rv-topic-content ol{padding-left:23px;line-height:1.63}
+.rv-topic-content li{margin:7px 0}.rv-topic-content li::marker{color:#fd7a0b}
+.rv-topic-content .topic-visual{margin:12px 0 20px}
+.rv-topic-content .exercise{margin:12px 0 18px}
+.rv-topic-content .micro-quiz p{margin-bottom:12px}
+.rv-topic-content .lesson-illustration{max-width:760px}
+.rv-topic-content .lesson-illustration svg{display:block;width:100%;height:auto}
+.rv-topic-content .placeholder{background:#fff8f1;border-color:#eab5ce}
+.rv-unit-index .rv-category{margin:13px 0 0}
+.rv-unit-index .rv-category-contents{padding:13px}
+.rv-course .rv-category{margin:0}
+.rv-course .rv-ud-inner>.subtle{margin:3px 5px}
+.rv-course details>summary.rv-topic-summary{background:linear-gradient(90deg,#fffefa,#fff6ff);padding:14px 16px}
+.rv-course .rv-topic[open]>summary.rv-topic-summary{background:linear-gradient(90deg,#fff0c6,#ffe5f7)}
+.rv-course details>summary.rv-topic-summary::after{content:none}
+.rv-course details>summary.rv-ud-summary::after{content:"＋"}
+.rv-course details[open]>summary.rv-ud-summary::after{content:"−"}
+.rv-course details>summary.rv-category-contents::after{content:none}
+.rv-course .rv-category>summary{padding:16px 19px}
+.rv-course .rv-category>summary::after{content:"⌄";color:#fd7a0b;margin-left:auto}
+.rv-course .rv-category[open]>summary::after{transform:rotate(180deg)}
+@media(max-width:760px){
+ .rv-ud-inner{padding:11px}.rv-ud>summary.rv-ud-summary{padding:14px}
+ .rv-category>summary{font-size:15px;padding:13px}
+ .rv-category-contents{padding:9px}
+ .rv-topic>summary.rv-topic-summary{padding:12px;gap:8px}
+ .rv-topic-icon{height:39px;flex-basis:39px;font-size:20px}
+ .rv-topic-content{padding:15px}
+ .rv-topic-words strong{font-size:14px}
+}
+@media(prefers-reduced-motion:reduce){.rv-topic-arrow,.rv-category>summary::after{transition:none}}
