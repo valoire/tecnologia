@@ -54,3 +54,46 @@
  .lesson21-definition{font-size:18px;padding:13px}
  .lesson21-photo-frame{aspect-ratio:16/9}
 }
+
+/* UD2.1 · Fotografies de tecnologia real i pistes de lectura */
+.lesson21 .ud2-photo-tech{border:2px solid #e5bde2;border-radius:16px;box-shadow:0 12px 24px #90418e20;overflow:hidden}
+.lesson21 .ud2-photo-tech .lesson21-photo-frame{aspect-ratio:4/3;min-height:205px;background:linear-gradient(135deg,#ffe1ba,#f2daff)}
+.lesson21 .ud2-photo-tech .lesson21-photo-img{object-fit:cover;object-position:center;filter:contrast(1.13) saturate(1.12) brightness(1.03);transform:scale(1.02)}
+.lesson21 .ud2-photo-tech .lesson21-photo-label{background:#fffbf8e8;color:#a24488;border:1px solid #f3cfeb;top:12px;bottom:auto;font-size:10px}
+.lesson21 .ud2-photo-tech .lesson21-credit{padding:16px;background:linear-gradient(118deg,#fffaf3,#fdf4ff);font-size:12px;line-height:1.56;color:#4f4358}
+.lesson21 .ud2-photo-tech .lesson21-credit strong{display:block;color:#90339d;font-size:14px;margin-bottom:8px}
+.lesson21 .ud2-photo-notes{padding-left:20px;margin:7px 0 11px;display:grid;gap:6px}
+.lesson21 .ud2-photo-notes li{font-size:12px;margin:0;line-height:1.5}
+.lesson21 .ud2-photo-notes li::marker{color:#ee8412}
+.lesson21 .ud2-photo-tech .lesson21-credit a{font-size:11px;line-height:1.8}
+.lesson21 .ud2-tech-h{color:#b4571a!important;margin-top:20px!important}
+.lesson21 .ud2-reflection{margin:19px 0 4px;padding:15px 18px;border:1px solid #eed0e6;border-radius:13px;background:#fff8ee}
+.lesson21 .ud2-reflection>summary{font-weight:830;cursor:pointer;color:#9f329e}
+.lesson21 .ud2-reflection p{line-height:1.6;margin:10px 0 0;color:#574353}
+.lesson21 .ud2-next{margin-top:14px;border:0;border-radius:11px;padding:11px 16px;font-weight:850;color:#fff;background:linear-gradient(115deg,#ff8c1d,#e34aae)}
+.lesson21 .ud2-next:hover{filter:brightness(.97)}
+/* Una sola sessió, sis preguntes i un marcador acumulat */
+.lesson21 .ud2-score{margin:17px 0 22px;padding:19px 21px;border-radius:17px;background:linear-gradient(120deg,#fff6dc,#f9eaff);border:2px solid #eeb5df;box-shadow:0 10px 24px #bd6aac20}
+.lesson21 .ud2-score-top{display:flex;align-items:baseline;flex-wrap:wrap;gap:12px;justify-content:space-between}
+.lesson21 .ud2-score-top strong{font-size:13px;letter-spacing:.05em;color:#a63a94}
+.lesson21 .ud2-score-result{font-weight:920;font-size:clamp(24px,3.4vw,35px);color:#d86d06;line-height:1.1}
+.lesson21 .ud2-score-track{height:14px;overflow:hidden;border:1px solid #f1cfe3;border-radius:999px;background:#fff;margin-top:15px}
+.lesson21 .ud2-score-fill{height:100%;width:0;transition:width .3s ease;background:linear-gradient(90deg,#fa860e,#f15aaa,#8f51e6);border-radius:999px}
+.lesson21 .ud2-score-text{font-size:13px;line-height:1.4;color:#715474;margin:10px 0!important;font-weight:800}
+.lesson21 .ud2-score-dots{display:flex;gap:7px;flex-wrap:wrap;margin-top:11px}
+.lesson21 .ud2-score-dot{border:1px solid #e3c9e0;border-radius:999px;background:#fff;padding:5px 10px;font-size:11px;font-weight:800;color:#966e8b}
+.lesson21 .ud2-score-dot.answered{border-color:#edb666;background:#fff0cf;color:#93571a}
+.lesson21 .ud2-score-dot.right{border-color:#4cb98d;background:#e6f8eb;color:#22683d}
+.lesson21 .ud2-final-challenge{margin:22px 0 8px;padding:23px 25px;border-radius:20px;border:2px solid #ecc1dd;background:linear-gradient(125deg,#fff1d9,#ffe8f6 55%,#f0e6ff);box-shadow:0 10px 25px #bd66a11c}
+.lesson21 .ud2-final-challenge h3{color:#8c289a;font-size:clamp(22px,3vw,28px);margin:9px 0}
+.lesson21 .ud2-final-challenge p{color:#564157;line-height:1.63}
+.lesson21 .ud2-final-challenge .lesson21-options{margin-top:15px}
+.lesson21 .ud2-final-challenge .ud2-reflection{background:#fff;margin-top:17px}
+.lesson21>.concept-drop{scroll-margin-top:105px}
+@media(max-width:760px){
+ .lesson21 .ud2-score{padding:14px}
+ .lesson21 .ud2-final-challenge{padding:16px}
+ .lesson21 .ud2-photo-tech .lesson21-photo-frame{aspect-ratio:16/9;min-height:200px}
+ .lesson21 .ud2-score-dot{font-size:10px}
+}
+@media(prefers-reduced-motion:reduce){.lesson21 .ud2-score-fill{transition:none}}
