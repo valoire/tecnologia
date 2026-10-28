@@ -123,3 +123,10 @@
  .ud-overview-summary strong{font-size:15px}
 }
 @media(prefers-reduced-motion:reduce){.concept-arrow,.ud-arrow{transition:none}}
+
+/* Els dibuixos tornen a utilitzar els colors combinats, no un sol color per UD. */
+.concept-sketch svg rect:nth-of-type(1){fill:#fff0d3;stroke:#ff850e}
+.concept-sketch svg rect:nth-of-type(2){fill:#ffe5f4;stroke:#e34baa}
+.concept-sketch svg rect:nth-of-type(3){fill:#f0e5ff;stroke:#9344d9}
+.concept-sketch svg text{fill:#84309d}
+.concept-sketch svg line{stroke:#e68b2e}
