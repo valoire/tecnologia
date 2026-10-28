@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#214d56">
+  <title>Laboratori interactiu · Tecnologia Rovira</title><link rel="stylesheet" href="estils.css">
+</head>
+<body>
+  <header class="top"><div class="wrap bar"><a class="brand" href="index.html">TECNOLOGIA ROVIRA<small>Institut Rovira-Forns</small></a><nav aria-label="Navegació principal"><a href="curs.html?grup=optativa">4t Optativa Tecnologia</a><a href="curs.html?grup=e">4t E</a><a href="batxillerat.html">Batxillerat</a></nav></div></header>
+  <div class="hero small"><div class="wrap"><div class="eyebrow">Experimenta</div><h1>Laboratori interactiu</h1><p>Canvia valors, comprova idees i resol preguntes al teu ritme.</p></div></div>
+  <main class="main wrap"><div class="crumb"><a href="index.html">Inici</a><span>/</span><span>Laboratori interactiu</span></div>
+    <div class="lab-grid">
+      <section class="box"><h2>Simulador de moment</h2><p>El moment d'una força depèn de la força aplicada i de la distància perpendicular a l'eix de gir.</p>
+        <div class="control"><label for="force"><span>Força</span><span id="force-val">40 N</span></label><input id="force" type="range" min="5" max="150" value="40" step="5"></div>
+        <div class="control"><label for="arm"><span>Braç de palanca</span><span id="arm-val">0,30 m</span></label><input id="arm" type="range" min="5" max="100" value="30" step="5"></div>
+        <div class="result"><span>M = F · d</span><strong id="moment-val" aria-live="polite">12,0 N·m</strong></div>
+      </section>
+      <section class="box"><h2>Repte ràpid</h2><p>Respon i consulta l'explicació. No es desen resultats ni es posa cap nota.</p><div class="subtle" id="quiz-progress">Pregunta 1 de 6</div><h3 id="quiz-question"></h3><div class="answers" id="quiz-answers"></div><div class="feedback" id="quiz-feedback" role="status" aria-live="polite"></div><button id="quiz-next" type="button" class="button" disabled>Següent pregunta</button></section>
+    </div>
+    <div class="strip"><h2>Continua aprenent</h2><p>Trobaràs les unitats al menú de <a href="curs.html?grup=optativa">4t Optativa Tecnologia</a>, <a href="curs.html?grup=e">4t E</a> i <a href="batxillerat.html">Batxillerat</a>.</p></div>
+  </main>
+  <footer class="footer"><div class="wrap"><span>Tecnologia Rovira · Institut Rovira-Forns</span><span><a href="index.html">Tornar a l'inici</a></span></div></footer>
+  <script>
+    'use strict';
+    const f=document.getElementById('force'),d=document.getElementById('arm'),formatter=new Intl.NumberFormat('ca-ES',{minimumFractionDigits:1,maximumFractionDigits:2});
+    function moment(){const force=Number(f.value),arm=Number(d.value)/100;document.getElementById('force-val').textContent=force+' N';document.getElementById('arm-val').textContent=arm.toFixed(2).replace('.',',')+' m';document.getElementById('moment-val').textContent=formatter.format(force*arm)+' N·m'}
+    f.addEventListener('input',moment);d.addEventListener('input',moment);moment();
+    const questions=[
+      {q:'Quina és la primera etapa d’un projecte tecnològic?',a:['Construir sense pla','Identificar la necessitat','Comprar tots els materials'],right:1,why:'Abans de construir cal entendre quin problema volem resoldre.'},
+      {q:'Quina acció ajuda a reduir residus?',a:['Reparar un producte','Canviar-lo cada setmana','Fer servir més embolcalls'],right:0,why:'Reparar allarga la vida útil i redueix la generació de residus.'},
+      {q:'Quina porta lògica dona 1 només si les dues entrades són 1?',a:['OR','NOT','AND'],right:2,why:'AND necessita totes dues entrades a 1.'},
+      {q:'Quin fluid utilitza un sistema pneumàtic?',a:['Aire comprimit','Oli exclusivament','Aigua calenta exclusivament'],right:0,why:'La pneumàtica utilitza gas comprimit, habitualment aire.'},
+      {q:'Una força de 20 N actua a 0,5 m perpendiculars de l’eix. Quin moment produeix?',a:['40 N·m','10 N·m','20 W'],right:1,why:'M = F · d = 20 · 0,5 = 10 N·m.'},
+      {q:'Quin element informa un controlador sobre l’entorn?',a:['Un sensor','Una carcassa','Un cargol'],right:0,why:'Un sensor proporciona una entrada al sistema de control.'}
+    ];
+    let qi=0,score=0,done=false;
+    const answerHost=document.getElementById('quiz-answers'),question=document.getElementById('quiz-question'),feedback=document.getElementById('quiz-feedback'),progress=document.getElementById('quiz-progress'),next=document.getElementById('quiz-next');
+    function show(){done=false;const q=questions[qi];progress.textContent='Pregunta '+(qi+1)+' de '+questions.length;question.textContent=q.q;feedback.textContent='';answerHost.replaceChildren();next.disabled=true;next.textContent=qi===questions.length-1?'Veure el resultat':'Següent pregunta';q.a.forEach((a,i)=>{const b=document.createElement('button');b.type='button';b.className='answer';b.textContent=a;b.addEventListener('click',()=>{if(done)return;done=true;if(i===q.right)score++;feedback.textContent=(i===q.right?'Correcte! ':'Encara no. ')+q.why;Array.from(answerHost.children).forEach((el,j)=>{el.disabled=true;if(j===q.right)el.classList.add('good');else if(j===i)el.classList.add('bad')});next.disabled=false});answerHost.append(b)})}
+    next.addEventListener('click',()=>{if(qi===questions.length){qi=0;score=0;show();return}if(!done)return;if(qi===questions.length-1){qi=questions.length;progress.textContent='Repte completat';question.textContent='Has encertat '+score+' de '+questions.length+' preguntes.';answerHost.replaceChildren();feedback.textContent='Pots repetir el repte quan vulguis.';next.textContent='Tornar a començar';next.disabled=false}else{qi++;show()}});show();
+  </script>
+</body>
+</html>

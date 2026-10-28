@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#214d56">
+  <meta name="description" content="Blocs de Tecnologia i Enginyeria i preparació de les PAU.">
+  <title>Batxillerat · Tecnologia Rovira</title><link rel="stylesheet" href="estils.css">
+</head>
+<body>
+  <header class="top"><div class="wrap bar"><a class="brand" href="index.html">TECNOLOGIA ROVIRA<small>Institut Rovira-Forns</small></a><nav aria-label="Navegació principal"><a href="curs.html?grup=optativa">4t Optativa Tecnologia</a><a href="curs.html?grup=e">4t E</a><a href="batxillerat.html" aria-current="page">Batxillerat</a></nav></div></header>
+  <div class="hero small"><div class="wrap"><div class="eyebrow">Tecnologia i Enginyeria</div><h1>Batxillerat</h1><p>Temari per blocs i pràctica per a les Proves d'Accés a la Universitat.</p></div></div>
+  <main class="main wrap"><div class="crumb"><a href="index.html">Inici</a><span>/</span><span>Batxillerat</span></div>
+    <div class="tabs" role="tablist" aria-label="Apartats de Batxillerat"><button class="tab" role="tab" id="tab-batx" aria-controls="panel-batx" aria-selected="true" type="button">Batxillerat</button><button class="tab" role="tab" id="tab-pau" aria-controls="panel-pau" aria-selected="false" type="button">PAU</button></div>
+    <section role="tabpanel" id="panel-batx" aria-labelledby="tab-batx"><div class="section-heading"><div><h2>Blocs temàtics</h2><p>Consulta els recursos d'exercicis per temes de Tecnologia Industrial.</p></div></div><div class="topics" id="topics"></div><p class="subtle">Enllaços externs a examenselectivitat.cat. Els temes propis i els materials de classe s'aniran incorporant aquí.</p></section>
+    <section role="tabpanel" id="panel-pau" aria-labelledby="tab-pau" hidden><div class="box" style="padding:24px"><h2>Preparació PAU</h2><p>Practica amb exercicis i exàmens de Tecnologia Industrial. Primer prova de resoldre'ls i després compara el procediment amb la solució.</p><a class="button" href="https://examenselectivitat.cat/selectivitat/Tecnologia%20industrial" target="_blank" rel="noopener noreferrer">Obrir exàmens i exercicis ↗</a></div></section>
+    <div class="strip"><h2>Un concepte per experimentar</h2><p>El <a href="laboratori.html">simulador de moment</a> et permet canviar una força i el seu braç de palanca per comprovar el càlcul.</p></div>
+  </main>
+  <footer class="footer"><div class="wrap"><span>Tecnologia Rovira · Institut Rovira-Forns</span><span><a href="index.html">Tornar a l'inici</a></span></div></footer>
+  <script>
+    const base='https://examenselectivitat.cat/selectivitat/Tecnologia%20industrial/per-temes/';
+    const topics=[['Energia','dinamica-maquines'],['Materials i assaigs','propietats-assaigs'],['Metrologia i normalització','metrologia-normalitzacio'],['Sistemes pneumàtics i oleohidràulics','oleohidraulica'],['Motors reductors','motors-reductors'],['Principis de les màquines','maquines-i-sistemes'],['Màquines i sistemes elèctrics i electrotècnics','electromagnetisme-i-corrent-altern'],['Control lògic i funcions lògiques','sistemes-digitals'],['Organització industrial','organitzacio-industrial']];
+    for(const [name,slug] of topics){const a=document.createElement('a');a.className='box';a.href=base+slug;a.target='_blank';a.rel='noopener noreferrer';const t=document.createElement('span');t.textContent=name;const arrow=document.createElement('span');arrow.textContent='↗';arrow.setAttribute('aria-hidden','true');a.append(t,arrow);document.getElementById('topics').append(a)}
+    const tabs=[document.getElementById('tab-batx'),document.getElementById('tab-pau')],panels=[document.getElementById('panel-batx'),document.getElementById('panel-pau')];
+    function selectTab(i){tabs.forEach((b,j)=>{b.setAttribute('aria-selected',String(i===j));b.tabIndex=i===j?0:-1;panels[j].hidden=i!==j})}
+    tabs.forEach((b,i)=>{b.addEventListener('click',()=>selectTab(i));b.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();const n=(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length;selectTab(n);tabs[n].focus()}})});
+  </script>
+</body>
+</html>

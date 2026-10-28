@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#214d56">
+  <title>4t ESO · Tecnologia Rovira</title>
+  <link rel="stylesheet" href="estils.css">
+  <script src="unitats.js" defer></script>
+</head>
+<body>
+  <header class="top"><div class="wrap bar">
+    <a class="brand" href="index.html">TECNOLOGIA ROVIRA<small>Institut Rovira-Forns</small></a>
+    <nav aria-label="Navegació principal"><a id="nav-optativa" href="curs.html?grup=optativa">4t Optativa Tecnologia</a><a id="nav-e" href="curs.html?grup=e">4t E</a><a href="batxillerat.html">Batxillerat</a></nav>
+  </div></header>
+  <div class="hero small"><div class="wrap"><div class="eyebrow">4t ESO · Programació 2026–2027</div><h1 id="course-title">4t ESO</h1><p id="course-description">Les set unitats de Tecnologia.</p></div></div>
+  <main class="main wrap">
+    <div class="crumb"><a href="index.html">Inici</a><span>/</span><span id="crumb-name">4t ESO</span></div>
+    <div class="section-heading"><div><h2>Unitats didàctiques</h2><p>Selecciona una unitat per entrar a la seva pàgina de teoria i recursos.</p></div><span class="tag">7 unitats</span></div>
+    <div id="course-units" class="unit-list"></div>
+    <div class="strip"><h3>Activitats i pràctiques</h3><p id="course-note">La teoria és comuna i els projectes es concreten segons el grup.</p><p style="margin-top:8px"><a href="laboratori.html">Obrir el laboratori interactiu →</a></p></div>
+  </main>
+  <footer class="footer"><div class="wrap"><span>Tecnologia Rovira · Institut Rovira-Forns</span><span><a href="index.html">Tornar a l'inici</a></span></div></footer>
+  <script>
+    document.addEventListener('DOMContentLoaded',()=>{
+      const g=new URLSearchParams(location.search).get('grup')==='e'?'e':'optativa';
+      const name=g==='e'?'4t E':'4t Optativa Tecnologia';
+      document.title=name+' · Tecnologia Rovira';
+      document.getElementById('course-title').textContent=name;
+      document.getElementById('crumb-name').textContent=name;
+      document.getElementById('nav-'+g).setAttribute('aria-current','page');
+      document.getElementById('course-description').textContent=g==='e'?'Investigar, experimentar i explicar què hem descobert.':'Dissenyar, construir i programar solucions tecnològiques.';
+      document.getElementById('course-note').textContent=g==='e'?'Les preguntes, hipòtesis, mesures i conclusions donen forma a les pràctiques del grup.':'El disseny, la fabricació digital i la programació donen forma als projectes del grup.';
+      const host=document.getElementById('course-units');
+      for(const u of UNITATS){
+        const a=document.createElement('a');a.className='box unit-link';a.href='unitat.html?ud='+u.id+'&grup='+g;
+        const n=document.createElement('span');n.className='unit-number';n.textContent='UD'+u.id;
+        const title=document.createElement('strong');title.textContent=u.nom;
+        const right=document.createElement('span');right.className='right';right.textContent='Entrar →';
+        a.append(n,title,right);host.append(a);
+      }
+    });
+  </script>
+</body>
+</html>

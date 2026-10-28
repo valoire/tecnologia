@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#214d56">
+  <title>Unitat didàctica · Tecnologia Rovira</title>
+  <link rel="stylesheet" href="estils.css">
+  <script src="unitats.js" defer></script>
+</head>
+<body>
+  <header class="top"><div class="wrap bar">
+    <a class="brand" href="index.html">TECNOLOGIA ROVIRA<small>Institut Rovira-Forns</small></a>
+    <nav aria-label="Navegació principal"><a href="curs.html?grup=optativa">4t Optativa Tecnologia</a><a href="curs.html?grup=e">4t E</a><a href="batxillerat.html">Batxillerat</a></nav>
+  </div></header>
+  <div class="hero small"><div class="wrap"><div class="eyebrow" id="unit-eyebrow">4t ESO · UD</div><h1 id="unit-title">Unitat didàctica</h1><p id="unit-description">Teoria, activitats i materials de la unitat.</p></div></div>
+  <main class="main wrap">
+    <div class="crumb"><a href="index.html">Inici</a><span>/</span><a id="course-back" href="curs.html?grup=optativa">4t ESO</a><span>/</span><span id="unit-crumb">UD</span></div>
+    <div class="lesson">
+      <article class="lesson-main">
+        <section class="box" id="unit-theory" style="padding:24px"></section>
+        <section class="box" style="padding:24px"><h2>Imatges i exemples</h2><p class="subtle">Un esquema visual per entendre els conceptes. Podrem afegir-hi les fotografies reals dels projectes.</p><figure class="lesson-illustration" id="unit-figure"></figure><div id="unit-photos" style="margin-top:16px"></div></section>
+        <section class="box" style="padding:24px"><h2>Documents i fitxes</h2><p class="subtle">Apunts, presentacions, fitxes i PDFs de la unitat.</p><div id="unit-resources" class="resource-list"></div></section>
+        <section class="box" style="padding:24px"><h2 id="project-heading">Pràctica del grup</h2><p id="unit-project"></p><div id="unit-extra"></div></section>
+        <div class="next-nav" id="unit-nav"></div>
+      </article>
+      <aside class="lesson-aside" aria-label="Guia de la unitat"><div class="box"><h2>En aquesta pàgina</h2><ul><li>Explicació del temari</li><li>Imatges i exemples</li><li>Documents i fitxes</li><li>Pràctica del grup</li></ul></div><div class="box"><h2>Com aprofitar-la</h2><p class="subtle">Llegeix, revisa l'esquema i practica. Pots tornar aquí sempre que ho necessitis.</p><a id="more-units" href="curs.html?grup=optativa">Veure totes les UD →</a></div></aside>
+    </div>
+  </main>
+  <footer class="footer"><div class="wrap"><span>Tecnologia Rovira · Institut Rovira-Forns</span><span><a href="index.html">Tornar a l'inici</a></span></div></footer>
+  <script>
+    document.addEventListener('DOMContentLoaded',()=>renderUnitat());
+  </script>
+</body>
+</html>
