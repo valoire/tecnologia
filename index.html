@@ -35,6 +35,27 @@
     .gate-card button{width:100%;margin-top:14px;border:0;border-radius:9px;padding:13px;background:var(--dark);color:#fff;font-weight:800}
     .gate-card button:hover{background:var(--primary)}
     .gate-error{min-height:1.4em;font-size:14px;color:#a23f36;margin:12px 0 0!important}
+
+    .lesson-content{color:var(--ink)!important;font-size:15px}
+    .lesson-content>h3{color:var(--dark);font-size:18px;margin:22px 0 9px;letter-spacing:-.015em}
+    .lesson-content>ul{padding-left:22px}
+    .lesson-content li{margin-bottom:7px}
+    .process-list{padding-left:24px;margin:6px 0 18px}
+    .process-list li::marker{color:var(--primary);font-weight:800}
+    .lesson-tip{border-left:3px solid var(--primary);background:#f4f9f9;padding:13px 16px;margin:20px 0;border-radius:0 8px 8px 0}
+    .ud1-practice{background:#f6fafa;border:1px solid var(--line);border-radius:12px;padding:20px;margin:24px 0}
+    .ud1-practice h3{font-size:20px;color:var(--dark);margin:7px 0 5px}
+    .ud1-practice p{margin:0 0 13px!important;color:var(--muted)}
+    .practice-kicker{font-size:11px;letter-spacing:.09em;font-weight:850;color:var(--primary)}
+    .game-status{font-weight:750;font-size:14px;margin:14px 0 9px}
+    .phase-buttons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+    .phase-button{background:#fff;color:var(--dark);border:1px solid #b8cbcf;border-radius:8px;padding:11px 12px;text-align:left;font-size:14px;font-weight:700}
+    .phase-button:hover:not(:disabled){background:var(--pale)}
+    .phase-button.done{background:#e7f5eb;border-color:#99c8ab;color:#27633e}
+    .game-feedback{min-height:1.5em;margin:12px 0!important;font-size:14px;font-weight:700!important;color:var(--dark)!important}
+    .game-reset{border:0;border-radius:8px;background:var(--dark);color:#fff;padding:10px 14px;font-weight:750}
+    .lesson-footnote{color:var(--muted)!important;font-size:13px;margin:18px 0 0!important}
+    @media(max-width:540px){.phase-buttons{grid-template-columns:1fr}.ud1-practice{padding:15px}}
     @media(max-width:720px){.bar{display:block;padding:13px 0}.brand{display:inline-block;margin-bottom:9px}nav a{padding:7px 9px}.hero{padding:45px 0 49px}.hero p{font-size:16px}.topics,.lab{grid-template-columns:1fr}.unit summary{padding:15px 13px;gap:9px;font-size:14px}.unit .number{min-width:42px;height:31px}.unit .inside{padding:0 16px 16px}.section-card,.lab .panel{padding:18px}.intro{align-items:start}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
   </style>
@@ -60,7 +81,46 @@
   <div class="hero" id="inici"><div class="wrap"><div class="eyebrow">Tecnologia · Aprenentatge interactiu</div><h1>Menys mirar. Més fer.</h1><p>Teoria clara, recursos per temes i petits reptes per aprendre tecnologia al teu ritme.</p><div class="actions"><a class="pill" href="#quart">Entrar a 4t ESO</a><a class="pill alt" href="#batxillerat">Entrar a Batxillerat</a></div></div></div>
   <main class="wrap">
     <section id="quart"><div class="intro"><div><h2>4t ESO</h2><p>Les set unitats de la programació. Obre la que necessitis.</p></div><span class="tag">7 unitats didàctiques</span></div><div class="units">
-      <details class="panel unit"><summary><span class="number">UD1</span><span>Desenvolupament de projectes i fabricació de productes</span><span class="arrow" aria-hidden="true">⌄</span></summary><div class="inside"><p>Un projecte tecnològic parteix d'una necessitat i avança des de les primeres idees fins a la construcció i l'avaluació del prototip.</p><ul><li>Identificar el problema i establir els requisits.</li><li>Dibuixar esbossos, planificar tasques i escollir materials.</li><li>Construir, comprovar i millorar la solució.</li></ul></div></details>
+      <details class="panel unit"><summary><span class="number">UD1</span><span>Desenvolupament de projectes i fabricació de productes</span><span class="arrow" aria-hidden="true">⌄</span></summary>
+        <div class="inside lesson-content">
+          <p>Un projecte tecnològic parteix d'una necessitat i avança des de les primeres idees fins a la construcció, la comprovació i la millora d'un prototip.</p>
+          <h3>Què aprendrem?</h3>
+          <ul>
+            <li>Identificar un problema real i concretar què ha de complir la solució.</li>
+            <li>Proposar idees, comparar alternatives i justificar-ne l'elecció.</li>
+            <li>Representar idees amb esbossos, croquis, plànols i models 2D/3D.</li>
+            <li>Planificar tasques, eines, temps, materials i normes de seguretat.</li>
+            <li>Construir, verificar, corregir errors i comunicar el resultat.</li>
+          </ul>
+          <h3>Les fases del procés tecnològic</h3>
+          <ol class="process-list">
+            <li><strong>Necessitat.</strong> Què volem resoldre? Per a qui? Quins requisits ha de tenir el producte?</li>
+            <li><strong>Recerca.</strong> Busquem informació i analitzem productes o solucions semblants.</li>
+            <li><strong>Disseny.</strong> Fem esbossos, comparem propostes i preparem el dibuix o model del producte.</li>
+            <li><strong>Planificació.</strong> Decidim materials, eines, passos, temps i mesures de seguretat.</li>
+            <li><strong>Construcció.</strong> Fabriquem el prototip, de manera manual, mecànica o digital.</li>
+            <li><strong>Verificació i comunicació.</strong> Provem si compleix els requisits, introduïm millores i expliquem el procés.</li>
+          </ol>
+          <h3>Del dibuix a la fabricació</h3>
+          <ul>
+            <li><strong>Esbós:</strong> dibuix ràpid a mà alçada per explicar una idea.</li>
+            <li><strong>Croquis:</strong> dibuix més definit amb forma, proporcions i mesures aproximades.</li>
+            <li><strong>Plànol:</strong> representació tècnica amb mesures i informació per fabricar.</li>
+            <li><strong>CAD 2D/3D:</strong> dibuix i modelatge amb eines digitals com Tinkercad.</li>
+            <li><strong>Fabricació:</strong> eines de taller, tall làser o impressió 3D segons el material i el projecte.</li>
+          </ul>
+          <div class="lesson-tip"><strong>Pensa com una enginyera o un enginyer:</strong> si el prototip no funciona a la primera, no vol dir que el projecte hagi fracassat. Cal observar què falla, revisar el disseny i provar una millora.</div>
+          <div class="ud1-practice" id="ud1-practice">
+            <span class="practice-kicker">ACTIVITAT INTERACTIVA · UD1</span>
+            <h3>Ordena les fases del projecte</h3>
+            <p>Toca els passos en l'ordre correcte. Si t'equivoques, pots tornar-ho a provar.</p>
+            <div class="game-status" id="ud1-game-status" aria-live="polite">Tria la primera fase de sis.</div>
+            <div class="phase-buttons" id="ud1-phase-buttons"></div>
+            <p class="game-feedback" id="ud1-game-feedback" role="status" aria-live="polite"></p>
+            <button type="button" class="game-reset" id="ud1-game-reset">Barrejar i repetir</button>
+          </div>
+          <p class="lesson-footnote">La teoria és comuna a tot 4t ESO. El projecte concret pot ser diferent segons el grup.</p>
+        </div></details>
       <details class="panel unit"><summary><span class="number">UD2</span><span>Tecnologia sostenible</span><span class="arrow" aria-hidden="true">⌄</span></summary><div class="inside"><p>Una tecnologia sostenible busca satisfer necessitats reduint el consum de recursos i l'impacte ambiental.</p><ul><li>Analitzar el cicle de vida dels productes.</li><li>Aplicar reducció, reutilització, reparació i reciclatge.</li><li>Comparar alternatives segons energia, materials i residus.</li></ul></div></details>
       <details class="panel unit"><summary><span class="number">UD3</span><span>Habitatges sostenibles</span><span class="arrow" aria-hidden="true">⌄</span></summary><div class="inside"><p>El disseny d'un habitatge influeix directament en el confort i el consum energètic.</p><ul><li>Aïllament tèrmic i orientació de l'edifici.</li><li>Il·luminació, ventilació i aprofitament solar.</li><li>Mesures d'estalvi d'aigua i electricitat.</li></ul></div></details>
       <details class="panel unit"><summary><span class="number">UD4</span><span>Electrònica analògica</span><span class="arrow" aria-hidden="true">⌄</span></summary><div class="inside"><p>Els circuits analògics treballen amb senyals que poden prendre valors continus.</p><ul><li>Resistències, potenciòmetres i divisors de tensió.</li><li>Díodes, LEDs, transistors i sensors.</li><li>Interpretació d'esquemes i comprovació de circuits.</li></ul></div></details>
@@ -101,6 +161,39 @@
       field.focus();
     }
   });
+
+  /* Repte UD1: ordenar el procés tecnològic, sense desar cap dada. */
+  (() => {
+    const phases=['Detectar la necessitat','Buscar informació','Dissenyar la solució','Planificar materials i tasques','Construir el prototip','Verificar, millorar i comunicar'];
+    const host=document.getElementById('ud1-phase-buttons');
+    const status=document.getElementById('ud1-game-status');
+    const feedback=document.getElementById('ud1-game-feedback');
+    const reset=document.getElementById('ud1-game-reset');
+    let sequence=[],next=0;
+    function start(){
+      sequence=phases.map((_,i)=>i);
+      for(let i=sequence.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[sequence[i],sequence[j]]=[sequence[j],sequence[i]]}
+      next=0;feedback.textContent='';render();
+    }
+    function render(){
+      status.textContent=next===phases.length?'Molt bé! Has completat les sis fases.':'Fase '+(next+1)+' de '+phases.length+': tria el pas següent.';
+      host.replaceChildren();
+      for(const i of sequence){
+        const b=document.createElement('button');
+        b.type='button';b.className='phase-button'+(i<next?' done':'');
+        b.textContent=phases[i];b.disabled=i<next;
+        b.addEventListener('click',()=>{
+          if(i!==next){feedback.textContent='Encara no és aquesta fase. Pensa què cal fer abans.';return}
+          next++;
+          feedback.textContent=next===phases.length?'Projecte ordenat! Ara ja pots aplicar aquestes fases al teu propi prototip.':'Correcte! Continua amb la fase següent.';
+          render();
+        });
+        host.append(b);
+      }
+    }
+    reset.addEventListener('click',start);
+    start();
+  })();
   const base='https://examenselectivitat.cat/selectivitat/Tecnologia%20industrial/per-temes/';
   const topics=[['Energia','dinamica-maquines'],['Materials i assaigs','propietats-assaigs'],['Metrologia i normalització','metrologia-normalitzacio'],['Sistemes pneumàtics i oleohidràulics','oleohidraulica'],['Motors reductors','motors-reductors'],['Principis de les màquines','maquines-i-sistemes'],['Màquines i sistemes elèctrics i electrotècnics','electromagnetisme-i-corrent-altern'],['Control lògic i funcions lògiques','sistemes-digitals'],['Organització industrial','organitzacio-industrial']];
   const topicHost=document.getElementById('temes');
