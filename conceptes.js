@@ -29,7 +29,9 @@ const CONCEPTES={
 2:[
  [
  ['El desenvolupament sostenible',[0],[], 'L’objectiu és atendre les necessitats actuals sense reduir les possibilitats de les generacions futures.'],
- ['Les tres dimensions de la sostenibilitat',[1],[0,1,2], 'No n’hi ha prou que una tecnologia sigui ecològica: també ha de ser justa per a les persones i viable econòmicament.'],
+ ['Dimensió ambiental',[1],[0], 'La dimensió ambiental protegeix l’aigua, l’aire, la biodiversitat i els recursos naturals.'],
+ ['Dimensió social',[],[1], 'La dimensió social analitza la salut, la seguretat, la igualtat i l’accessibilitat de les persones.'],
+ ['Dimensió econòmica',[],[2], 'La dimensió econòmica té en compte el cost de fabricar, utilitzar, reparar i mantenir un producte al llarg del temps.'],
  ['Com prenem decisions sostenibles?',[2],[3], 'Cal valorar l’ús, el manteniment, la reparació, el cost i l’efecte sobre les persones.']
  ],[
  ['Què és l’ONU?',[],[], 'L’Organització de les Nacions Unides és una organització internacional que promou la cooperació entre països, la pau i el desenvolupament.'],
@@ -37,16 +39,24 @@ const CONCEPTES={
  ['Els ODS vinculats a la tecnologia',[1],[0,1], 'Aigua, energia, indústria, ciutats, consum i clima són alguns dels àmbits on les decisions tecnològiques tenen un gran impacte.']
  ],[
  ['D’on surten les matèries primeres?',[0],[], 'Els materials dels productes tecnològics tenen un origen natural i requereixen extracció i transformació.'],
+ ['Recursos renovables i no renovables',[],[], 'Els recursos renovables poden regenerar-se a un ritme adequat; els no renovables es formen tan lentament que no es reposen a escala humana.'],
  ['Què són la mena i la ganga?',[1],[], 'En una explotació mineral, la mena conté el mineral d’interès i la ganga és la part que no es busca aprofitar.'],
  ['Impactes de les explotacions extractives',[],[2], 'L’extracció pot generar pols, soroll, residus, consum d’aigua i canvis sobre el paisatge i els ecosistemes.'],
  ['Prevenció i restauració',[2],[0,1], 'Prevenir és evitar danys abans que apareguin; restaurar significa recuperar les condicions del terreny després de l’activitat.'],
  ['La dimensió social de la mineria',[],[2,3], 'Les condicions laborals i els drets de les comunitats també formen part de la valoració d’un projecte extractiu.']
  ],[
- ['Energia i potència',[0],[], 'L’energia s’expressa en joules o kWh i la potència és la rapidesa amb què es transforma o transfereix.'],
+ ['Què és l’energia?',[0],[], 'L’energia és la capacitat de produir transformacions. Es mesura en joules i sovint en kWh quan parlem de consum elèctric.'],
+ ['Potència i consum',[],[], 'La potència indica quanta energia es transforma per unitat de temps: P = E / t. El consum depèn de la potència i les hores de funcionament.'],
  ['Conservació de l’energia',[1],[], 'L’energia no desapareix: passa d’una forma a una altra o es transfereix entre sistemes.'],
  ['Energia útil i energia dissipada',[],[], 'L’energia útil és la part que aconsegueix la funció buscada. La dissipada acaba en formes que no aprofitem per aquella funció, sovint calor.'],
  ['Rendiment o eficiència',[2],[4], 'El rendiment indica quina fracció de l’energia d’entrada es converteix en energia útil.'],
- ['Fonts d’energia renovables',[3],[], 'La solar, l’eòlica, la hidràulica o la geotèrmica aprofiten fluxos naturals renovables, però tenen impactes que cal analitzar.'],
+ ['Què són les energies renovables?',[3],[], 'Les fonts renovables aprofiten fluxos naturals que es reposen, tot i que els equips per captar-les també requereixen materials.'],
+ ['Energia solar fotovoltaica',[],[], 'Les plaques fotovoltaiques converteixen part de la llum del Sol en electricitat.'],
+ ['Energia solar tèrmica',[],[], 'Els captadors solars tèrmics aprofiten la radiació solar per escalfar un fluid.'],
+ ['Energia eòlica',[],[], 'Els aerogeneradors transformen part de l’energia cinètica del vent en energia elèctrica.'],
+ ['Energia hidràulica',[],[], 'Una central hidràulica aprofita el moviment o el desnivell de l’aigua per moure una turbina.'],
+ ['Energia geotèrmica',[],[], 'La geotèrmia aprofita la calor de l’interior de la Terra per a diferents aplicacions energètiques.'],
+ ['Energia de biomassa',[],[], 'La biomassa permet aprofitar matèria orgànica com a recurs energètic, amb emissions i impactes que també cal estudiar.'],
  ['Treball mecànic',[],[0], 'Quan una força constant actua en la direcció del desplaçament, el treball és W = F · d.'],
  ['Calor sensible',[],[1], 'L’energia per escalfar un material sense canvi de fase es pot estimar amb Q = m · c · ΔT.'],
  ['Energia eòlica i velocitat del vent',[],[2], 'La potència disponible al vent depèn de l’àrea escombrada i augmenta molt quan creix la velocitat.'],
@@ -55,7 +65,9 @@ const CONCEPTES={
  ['Escassetat i disponibilitat de l’aigua',[0],[], 'L’accés a l’aigua dolça depèn del clima, les infraestructures, la gestió i la distribució dels usos.'],
  ['Consum d’aigua i estalvi',[1],[0,1], 'Reduir les fuites, reutilitzar quan sigui adequat i evitar consums innecessaris ajuda a conservar el recurs.'],
  ['Qualitat de l’aigua',[2],[3], 'La transparència o el pH, per si sols, no permeten assegurar que l’aigua sigui potable.'],
- ['Potabilització, depuració i dessalinització',[3],[2], 'Potabilitzar fa que l’aigua sigui apta per al consum; depurar tracta l’aigua residual; dessalinitzar en redueix les sals.']
+ ['Potabilització de l’aigua',[3],[], 'La potabilització combina diversos tractaments per fer que l’aigua compleixi els requisits de consum humà.'],
+ ['Depuració d’aigües residuals',[],[2], 'Depurar és tractar l’aigua usada per reduir els contaminants abans del seu retorn o reutilització adequada.'],
+ ['Dessalinització',[],[], 'La dessalinització elimina una part de les sals de l’aigua salada, per exemple mitjançant osmosi inversa.']
  ],[
  ['Transport i mobilitat no són el mateix',[0],[], 'La mobilitat també inclou accessibilitat, infraestructura, normes i possibilitats de desplaçament per a totes les persones.'],
  ['Costos externs del transport',[1],[], 'La contaminació, el soroll, la congestió i l’ocupació d’espai tenen efectes que no sempre paga directament qui viatja.'],
@@ -82,7 +94,9 @@ const CONCEPTES={
  ]],
 4:[
  [
- ['Tensió, intensitat i resistència',[0],[], 'La tensió s’expressa en volts, la intensitat en amperes i la resistència en ohms.'],
+ ['Tensió elèctrica',[0],[], 'La tensió és la diferència de potencial entre dos punts i es mesura en volts (V).'],
+ ['Intensitat del corrent',[],[], 'La intensitat expressa la quantitat de càrrega que travessa una secció per unitat de temps i es mesura en amperes (A).'],
+ ['Resistència elèctrica',[],[], 'La resistència indica l’oposició al pas del corrent i s’expressa en ohms (Ω).'],
  ['La llei d’Ohm',[],[], 'Per a un conductor òhmic, V = I · R. Podem calcular una magnitud a partir de les altres dues.'],
  ['Connexions en sèrie i en paral·lel',[1],[], 'En sèrie hi ha un únic camí del corrent; en paral·lel, diverses branques.']
  ],[
@@ -97,7 +111,8 @@ const CONCEPTES={
  ]],
 5:[
  [
- ['Senyals analògics i digitals',[0],[], 'Un senyal analògic admet molts valors; un de digital utilitza estats discrets.'],
+ ['Senyals analògics',[0],[], 'Un senyal analògic pot variar de manera contínua dins d’un interval de valors.'],
+ ['Senyals digitals',[],[], 'Els sistemes digitals representen informació mitjançant un nombre discret d’estats, habitualment 0 i 1.'],
  ['El sistema binari',[1],[], 'El sistema de base 2 representa valors amb les xifres 0 i 1.']
  ],[
  ['La porta AND',[0],[], 'La sortida és 1 només quan totes les entrades són 1.'],
@@ -124,7 +139,8 @@ const CONCEPTES={
 7:[
  [
  ['Sensors',[0],[], 'Detecten una magnitud física com la temperatura, la llum o el moviment.'],
- ['Controladors i actuadors',[],[], 'El controlador interpreta la informació i ordena que un motor, un LED o un brunzidor actuï.'],
+ ['Controladors',[],[], 'Un controlador processa la informació dels sensors segons un programa i determina què ha de passar.'],
+ ['Actuadors',[],[], 'Un actuador transforma una ordre del sistema en una acció, com encendre un LED o moure un motor.'],
  ['Llaç obert i llaç tancat',[1],[], 'Amb retroalimentació, el sistema mesura el resultat i pot ajustar l’acció.']
  ],[
  ['Seqüències, condicions i repeticions',[0],[], 'Una condició «si..., llavors...» fa que el programa prengui decisions.'],
