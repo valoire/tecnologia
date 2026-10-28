@@ -1,0 +1,56 @@
+/* Tecnologia Rovira · UD2 · Sessió 1 clara, viva i llegible */
+.lesson21{border-top:6px solid #ff8b18!important;background:#fff;padding:18px!important}
+.lesson21 .concept-group-title{color:#a83e80!important;font-size:clamp(22px,3vw,30px);margin-bottom:14px}
+.lesson21-intro{background:linear-gradient(110deg,#fff0d0,#ffe5f6);border:1px solid #f5c3e2;border-radius:15px;padding:16px 19px;margin:14px 0 20px}
+.lesson21-intro strong{font-size:12px;letter-spacing:.1em;color:#c65d07;font-weight:900}
+.lesson21-intro p{margin:8px 0;font-size:15px;line-height:1.55;color:#593c58}
+.lesson21 .concept-drop{border:2px solid #f4d2e5;border-left:5px solid #ff8922;margin:10px 0}
+.lesson21 .concept-drop:nth-of-type(3n+2){border-left-color:#e454aa}
+.lesson21 .concept-drop:nth-of-type(3n+3){border-left-color:#9f5de5}
+.lesson21 .concept-drop[open]>.concept-summary{background:linear-gradient(110deg,#fff2d8,#ffe5f6)}
+.lesson21 .concept-title strong{font-size:16px;line-height:1.35}
+.lesson21 .concept-content{padding:22px 23px 25px}
+.lesson21-content{max-width:900px}
+.lesson21-kicker{display:block;text-transform:uppercase;color:#be5f0c;letter-spacing:.07em;font-weight:900;font-size:12px;margin-bottom:9px}
+.lesson21-definition{font-size:clamp(18px,2.35vw,24px);font-weight:850;line-height:1.45;color:#622778;background:linear-gradient(115deg,#fff0d8,#f6eaff);border-left:5px solid #ff8b12;padding:17px 20px;border-radius:0 14px 14px 0;margin:0 0 20px}
+.lesson21-layout{display:grid;grid-template-columns:minmax(0,1.06fr) minmax(240px,.94fr);gap:24px;align-items:start}
+.lesson21 h4{color:#a13b99;font-size:17px;line-height:1.3;margin:18px 0 8px}
+.lesson21-layout h4:first-child{margin-top:0}
+.lesson21-layout p{font-size:15px;line-height:1.69;color:#423545;margin:0 0 14px}
+.lesson21-photo{margin:0;border:1px solid #edc5e0;border-radius:15px;overflow:hidden;box-shadow:0 7px 17px #9c359514}
+.lesson21-photo-frame{position:relative;min-height:190px;aspect-ratio:4/3;background:linear-gradient(110deg,#ffe5b6,#f5d6f1);overflow:hidden}
+.lesson21-photo-img{position:absolute;width:100%;height:100%;object-fit:cover;filter:contrast(1.1) saturate(1.13) brightness(1.04);inset:0;display:block}
+.lesson21-photo-frame::after{content:'';position:absolute;inset:42% 0 0;background:linear-gradient(transparent,#451b4b60);pointer-events:none}
+.lesson21-photo-frame.missing::before{content:'✦  Observa també l’esquema de sota';position:absolute;inset:0;display:grid;place-items:center;font-weight:750;color:#7c2b81}
+.lesson21-photo-label{position:absolute;bottom:11px;left:12px;color:#fff;background:#703b86c9;border-radius:6px;font-size:10px;padding:5px 8px;z-index:1;font-weight:850;letter-spacing:.04em}
+.lesson21-credit{font-size:11px;line-height:1.4;background:#fff9fd;color:#785c74;padding:10px 12px}
+.lesson21-credit a{color:#94389a}
+.lesson21-remember{border:1px solid #f3d4e5;background:#fff8e9;border-radius:12px;padding:13px 16px;margin:17px 0;font-weight:720;color:#683b60;line-height:1.55}
+.lesson21-diagram{margin:11px 0 22px;background:#fff;border:1px solid #f1cce7;border-radius:16px;overflow:hidden}
+.lesson21-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:16px;background:linear-gradient(130deg,#fff6dd,#fff0fa)}
+.lesson21-card{padding:17px 13px;border:1px solid #f3d1e8;border-radius:13px;text-align:center;background:#fff;display:flex;align-items:center;flex-direction:column;gap:7px}
+.lesson21-card:nth-child(3n+1){border-top:5px solid #f18a14}
+.lesson21-card:nth-child(3n+2){border-top:5px solid #e952ad}
+.lesson21-card:nth-child(3n+3){border-top:5px solid #9850de}
+.lesson21-card strong{color:#822e93;font-size:14px;line-height:1.3}
+.lesson21-card p{font-size:12px;color:#5f4b61;margin:0;line-height:1.52}
+.lesson21-emoji{font-size:32px;line-height:1}
+.lesson21-diagram figcaption{font-size:11px;color:#8d6b83;background:#fff;padding:9px 15px}
+.lesson21-quiz{background:linear-gradient(110deg,#fff1d5,#fff0fb);padding:19px;border:1px solid #edbde6;border-radius:15px}
+.lesson21-quiz h4{font-size:18px;color:#8c2b9d;margin:0 0 9px}
+.lesson21-quiz>p{font-weight:660;color:#503b57;margin:0 0 13px}
+.lesson21-options{display:grid;gap:9px}
+.lesson21-answer{display:block;text-align:left;width:100%;padding:12px 14px;border-radius:10px;border:2px solid #efd2e9;background:#fff;color:#533d58;font-size:14px;line-height:1.5;font-weight:650}
+.lesson21-answer:hover:not(:disabled){background:#fff8e7;border-color:#f3aa53}
+.lesson21-answer.correct{border-color:#2aa971;background:#e8f9ee;color:#1b653f}
+.lesson21-answer.wrong{border-color:#e06486;background:#ffeaed;color:#8e314b}
+.lesson21-answer:disabled{cursor:default}
+.lesson21-feedback{min-height:22px;margin:10px 0 0!important;font-size:14px;color:#8b328d;font-weight:800}
+@media(max-width:760px){
+ .lesson21{padding:12px!important}.lesson21 .concept-content{padding:14px}
+ .lesson21-layout{grid-template-columns:1fr;gap:10px}
+ .lesson21-cards{grid-template-columns:1fr;padding:12px}
+ .lesson21-card{min-height:76px}
+ .lesson21-definition{font-size:18px;padding:13px}
+ .lesson21-photo-frame{aspect-ratio:16/9}
+}
