@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#214d56">
   <title>4t ESO · Tecnologia Rovira</title>
-  <link rel="stylesheet" href="estils.css?v=ud2-20261028">
-  <script src="unitats.js?v=ud2-20261028" defer></script>
+  <link rel="stylesheet" href="estils.css?v=espurnes-20261028b">
+  <script src="unitats.js?v=espurnes-20261028b" defer></script>
+  <script src="temes.js?v=espurnes-20261028b" defer></script>
 </head>
 <body>
   <header class="top"><div class="wrap bar">
@@ -31,14 +32,7 @@
       document.getElementById('nav-'+g).setAttribute('aria-current','page');
       document.getElementById('course-description').textContent=g==='e'?'Investigar, experimentar i explicar què hem descobert.':'Dissenyar, construir i programar solucions tecnològiques.';
       document.getElementById('course-note').textContent=g==='e'?'Les preguntes, hipòtesis, mesures i conclusions donen forma a les pràctiques del grup.':'El disseny, la fabricació digital i la programació donen forma als projectes del grup.';
-      const host=document.getElementById('course-units');
-      for(const u of UNITATS){
-        const a=document.createElement('a');a.className='box unit-link';a.href='unitat.html?ud='+u.id+'&grup='+g;
-        const n=document.createElement('span');n.className='unit-number';n.textContent='UD'+u.id;
-        const title=document.createElement('strong');title.textContent=u.nom;
-        const right=document.createElement('span');right.className='right';right.textContent='Entrar →';
-        a.append(n,title,right);host.append(a);
-      }
+      decorarIndexCurs(g);
     });
   </script>
 </body>
