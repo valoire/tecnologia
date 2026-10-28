@@ -1,0 +1,88 @@
+/* ✨ Tecnologia Rovira · Retoc visual fotogràfic i anotacions pròpies.
+   El tractament aplica retall, intensitat, color, superposicions i llegendes,
+   sense substituir les imatges originals ni la teoria del tema. */
+.photo-lesson{
+ --photo-accent:#f17e00;--photo-shift:50%;--photo-hue:0deg;
+ margin:22px 0 24px;max-width:880px;
+ border:2px solid #f3c9e9;border-radius:19px;overflow:hidden;background:#fff;
+ box-shadow:0 11px 27px #9d3d9c1b;
+}
+.photo-lesson-visual{
+ position:relative;min-height:255px;aspect-ratio:16/8.3;overflow:hidden;
+ background:linear-gradient(122deg,#ffdb9b,#ffdbec,#e9d5ff);
+ isolation:isolate;
+}
+.photo-lesson-image{
+ display:block;width:100%;height:100%;position:absolute;inset:0;
+ object-fit:cover;object-position:var(--photo-shift) 45%;
+ filter:contrast(1.13) saturate(1.22) brightness(1.05) hue-rotate(var(--photo-hue));
+ transform:scale(1.035);
+}
+.photo-lesson-tint{
+ position:absolute;inset:0;pointer-events:none;
+ background:linear-gradient(0deg,#241130dd 0%,#2c203e68 33%,transparent 65%),
+ linear-gradient(120deg,#ff8d191d 0%,transparent 36%,#b443dc19 100%);
+ mix-blend-mode:normal;
+}
+.photo-lesson-badge{
+ position:absolute;top:15px;left:15px;
+ background:#fff9;border:1px solid #fff9;color:#7d2285;
+ backdrop-filter:blur(8px);box-shadow:0 3px 12px #21102724;
+ padding:7px 11px;border-radius:999px;text-transform:uppercase;
+ font-size:11px;font-weight:900;letter-spacing:.09em;
+}
+.photo-lesson-badge::before{content:"✦";color:var(--photo-accent);padding-right:5px}
+.photo-lesson-visual::after{
+ content:"✧";color:#fff9d3;position:absolute;top:2px;right:18px;font-size:54px;
+ text-shadow:0 3px 14px #fff8;transform:rotate(-20deg);opacity:.82;
+}
+.photo-lesson-overlay{
+ position:absolute;bottom:18px;left:20px;right:20px;
+ display:flex;align-items:flex-end;gap:11px;justify-content:space-between;flex-wrap:wrap;
+}
+.photo-lesson-topic{
+ color:#fff;font-size:clamp(18px,3.1vw,30px);font-weight:950;line-height:1.1;
+ text-shadow:0 3px 10px #000a;max-width:min(570px,80%);
+}
+.photo-lesson-formula{
+ display:inline-block;border-radius:13px;
+ border:1px solid #ffffffb3;background:#fffdf4f2;
+ color:#7e2d96;box-shadow:0 5px 18px #0004;
+ padding:9px 13px;white-space:normal;
+ font-size:clamp(13px,2.2vw,20px);font-weight:900;
+ font-variant-numeric:tabular-nums;
+}
+.photo-lesson-caption{
+ padding:16px 18px 17px;
+ background:linear-gradient(113deg,#fff7e9,#fff1fb);
+ color:#57405c;
+ border-top:4px solid var(--photo-accent);
+}
+.photo-lesson-caption p{margin:0 0 8px;font-size:14px;line-height:1.5}
+.photo-lesson-caption strong{color:#90349e}
+.photo-lesson-caption .photo-lesson-key{
+ border-left:3px solid var(--photo-accent);padding:6px 10px;
+ background:#fff9;border-radius:0 9px 9px 0;margin:10px 0 11px;
+}
+.photo-lesson-credit{
+ display:inline-block;color:#9c4a7d;text-decoration:underline;
+ text-underline-offset:2px;font-size:11px;font-weight:750;
+}
+.photo-unavailable .photo-lesson-visual{
+ min-height:145px;aspect-ratio:auto;
+ background:linear-gradient(115deg,#ffb55a,#f5a2ce,#cda7fb);
+}
+.photo-unavailable .photo-lesson-badge{background:#fffe}
+.photo-unavailable .photo-lesson-badge::after{content:" · Veure l'esquema inferior";font-size:10px}
+.photo-unavailable .photo-lesson-visual::after{content:"✷"}
+.concept-content .photo-lesson + .concept-sketch{margin-top:12px}
+@media(max-width:760px){
+ .photo-lesson-visual{min-height:220px;aspect-ratio:4/3}
+ .photo-lesson-overlay{left:13px;right:13px;bottom:13px}
+ .photo-lesson-topic{font-size:20px;max-width:100%}
+ .photo-lesson-formula{font-size:14px;padding:7px 11px}
+ .photo-lesson-badge{left:10px;top:11px;font-size:10px}
+ .photo-lesson-caption{padding:12px 14px}
+ .photo-lesson-caption p{font-size:13px}
+}
+@media(prefers-reduced-motion:reduce){.photo-lesson-image{transform:none}}
