@@ -142,8 +142,7 @@ function assemble(title,photo,index,note){
 function putPhotos(){
  const ud=Number(new URLSearchParams(location.search).get('ud'))||1;
  const section=document.querySelector('.concept-hub');if(!section)return;
- const targets=[...section.querySelectorAll('.concept-group')];
- const units=[...section.querySelectorAll('.concept-group:not(:last-child) .concept-drop')];
+ const units=[...section.querySelectorAll('.concept-group:not(:last-of-type) .concept-drop')];
  const own=PICKS[ud]||PICKS[1];
  units.forEach((drop,i)=>{
    const target=drop.querySelector('.concept-reading');
