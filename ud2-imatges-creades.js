@@ -131,16 +131,53 @@ function make(i){
  }
  return {svg,caption:titles[i]};
 }
+function uploadIllustration(fig,src,alt,caption){
+ const img=document.createElement('img');
+ img.src=src;img.alt=alt;img.loading='lazy';img.decoding='async';
+ img.className='ud2-uploaded-img';
+ fig.replaceChildren(img);
+ const cap=document.createElement('figcaption');
+ cap.textContent=caption;
+ fig.append(cap);
+ fig.classList.add('ud2-technical-original','ud2-uploaded-figure');
+}
 function start(){
  if(new URLSearchParams(location.search).get('ud')!=='2')return;
  const figures=[...document.querySelectorAll('.ud2-solid-panel .ud2-technical-figure')];
  if(figures.length!==7)return;
+ // Altres sis apartats: els esquemes tècnics originals es conserven.
  figures.forEach((fig,i)=>{
+  if(i===0)return;
   const result=make(i);fig.replaceChildren(result.svg);
   const caption=document.createElement('figcaption');
   caption.textContent='Il·lustració tècnica original · '+result.caption+' Dibuix conceptual, no fotografia del prototip real.';
   fig.append(caption);fig.classList.add('ud2-technical-original');
  });
+ // Primer apartat: LES DUES IMATGES APORTADES per l'usuari, en qualitat original.
+ const panel=document.getElementById('ud2-main-panel-0');
+ if(!panel)return;
+ const dimens=panel.querySelector('.ud2-solid-diagram');
+ const fanal=figures[0];
+ if(dimen){
+  uploadIllustration(
+   dimens,
+   'assets/ud2/tres-dimensions-sostenibilitat.png',
+   'Infografia de les tres dimensions de la sostenibilitat: ambiental, social i econòmica, amb recursos, salut, accessibilitat, cost i manteniment',
+   'Les tres dimensions de la sostenibilitat · esquema complet per relacionar els conceptes que acabem d’estudiar.'
+  );
+  const chapters=panel.querySelectorAll('.ud2-solid-chapter');
+  // La infografia apareix després d'explicar ambiental, social i econòmica.
+  if(chapters.length)chapters[chapters.length-1].after(dimen);
+ }
+ uploadIllustration(
+  fanal,
+  'assets/ud2/fanalet-reutilitzable.png',
+  'Comparació de dos fanalets amb la mateixa carcassa: decoració de Halloween amb carabassa i decoració de Nadal amb arbre i floc de neu',
+  'Reutilització de la mateixa carcassa amb decoració intercanviable · exemple per al projecte del fanalet.'
+ );
+ // El fanalet es veu just després de l'explicació aplicada al taller.
+ const conclusion=panel.querySelector('.ud2-solid-conclusion');
+ if(conclusion)conclusion.after(fanal);
 }
 const prev=window.preparaUnitatVisual;
 if(typeof prev==='function')window.preparaUnitatVisual=function(){prev();start()};
