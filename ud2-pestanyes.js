@@ -155,7 +155,7 @@ function reorderExtras(originalGroups,panels,g){
  if(ods){
   const container=ods.querySelector('.concept-content');
   const explorer=container?.querySelector('#ods-explorer');
-  if(explorer){makeODSCards(explorer);panels[1].append(explorer);}
+  if(explorer){makeODSCards(explorer);panels[1].insertBefore(explorer,panels[1].querySelector('.ud2-oral-questions'));}
   // L'antic joc no es mostra: hi ha un únic qüestionari final.
  }
  const extrasData=[
@@ -180,7 +180,7 @@ function reorderExtras(originalGroups,panels,g){
    if(concept){
     const h=appendText(panels[3],'h3','Ampliació per a Batxillerat','ud2-extension-title');
     flattenChildren(concept);
-    panels[3].append(concept);
+    panels[3].insertBefore(concept,panels[3].querySelector('.ud2-oral-questions'));
    }
   }
  }
@@ -215,6 +215,7 @@ function install(){
  const panels=[];
  TEMES.forEach((meta,i)=>{
   const panel=createPanel(meta,i);
+  if(i===0)panel.classList.add('lesson21');
   const group=topicGroups[i];
   const contents=Array.from(group.querySelectorAll(':scope > .concept-drop'));
   contents.forEach((d,j)=>panel.append(showSubtopic(d,j,i)));
