@@ -115,3 +115,15 @@
  .ud2-topic-redesign .ud2-solid-photo-frame{aspect-ratio:16/9}
  .ud2-topic-redesign .ud2-solid-diagram{break-inside:avoid}
 }
+/* Els diagrames tècnics detallats es poden recórrer en pantalles estretes. */
+.ud2-topic-redesign .ud2-detailed-diagram{overflow-x:auto;overscroll-behavior-inline:contain}
+.ud2-topic-redesign .ud2-detailed-diagram svg{width:100%;max-width:none}
+@media(max-width:700px){
+ .ud2-topic-redesign .ud2-detailed-diagram::before{
+  content:"↔ Desplaça el dibuix lateralment per llegir-lo complet";
+  display:block;padding:9px 13px;background:#fff7e7;
+  color:#914d86;font-size:12px;font-weight:800;border-bottom:1px solid #f0d0e8
+ }
+ .ud2-topic-redesign .ud2-detailed-diagram svg{min-width:800px;height:auto}
+ .ud2-topic-redesign .ud2-detailed-diagram figcaption{min-width:100%;font-size:11px}
+}
