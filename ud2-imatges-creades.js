@@ -158,7 +158,7 @@ function start(){
  if(!panel)return;
  const dimens=panel.querySelector('.ud2-solid-diagram');
  const fanal=figures[0];
- if(dimen){
+ if(dimens){
   uploadIllustration(
    dimens,
    'assets/ud2/tres-dimensions-sostenibilitat.png',
