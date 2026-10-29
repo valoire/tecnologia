@@ -127,3 +127,52 @@
  .ud2-topic-redesign .ud2-detailed-diagram svg{min-width:800px;height:auto}
  .ud2-topic-redesign .ud2-detailed-diagram figcaption{min-width:100%;font-size:11px}
 }
+
+/* Una segona il·lustració original i útil al final de la teoria corresponent. */
+.ud2-topic-redesign .ud2-technical-figure{
+ display:block;max-width:980px;width:100%;margin:24px auto 30px;
+ background:linear-gradient(122deg,#fff8e7,#faf0ff);
+ border:2px solid #ecc2e5;border-radius:19px;
+ overflow:hidden;box-shadow:0 9px 25px #a44aa21a;
+}
+.ud2-topic-redesign .ud2-technical-figure svg{
+ display:block;width:100%;height:auto;max-width:960px;margin:auto
+}
+.ud2-topic-redesign .ud2-technical-figure figcaption{
+ font-size:12px;line-height:1.65;padding:12px 17px;
+ color:#7b5b80;background:#fff;border-top:1px solid #efd1e7
+}
+.ud2-topic-redesign .ud2-technical-figure:not(.ud2-technical-original){
+ min-height:190px;
+}
+.ud2-topic-redesign .ud2-context-links{
+ margin:22px 0;padding:18px 21px;background:linear-gradient(115deg,#fff5e7,#fff1fa);
+ border:1px solid #e9c8e6;border-radius:15px;
+}
+.ud2-topic-redesign .ud2-context-links h3{
+ color:#8b3299;font-size:18px;margin:0 0 12px
+}
+.ud2-topic-redesign .ud2-context-links a{
+ display:inline-flex;max-width:100%;margin:4px 8px 4px 0;padding:9px 12px;
+ background:#fff;border:1px solid #eccbe8;border-radius:10px;
+ text-decoration:none;font-size:14px;font-weight:750;color:#8d348d
+}
+.ud2-topic-redesign .ud2-context-links a:hover{
+ border-color:#e598ca;background:#fffaf2
+}
+@media(max-width:700px){
+ .ud2-topic-redesign .ud2-technical-figure{
+  overflow-x:auto;overscroll-behavior-inline:contain
+ }
+ .ud2-topic-redesign .ud2-technical-figure::before{
+  content:'↔ Desplaça el dibuix per veure tots els detalls';
+  display:block;padding:8px 13px;background:#fff6e4;
+  color:#92538b;font-size:12px;font-weight:800
+ }
+ .ud2-topic-redesign .ud2-technical-figure svg{
+  min-width:800px;width:100%;max-width:none
+ }
+ .ud2-topic-redesign .ud2-technical-figure figcaption{
+  min-width:100%;font-size:11px
+ }
+}
