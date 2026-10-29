@@ -15,7 +15,7 @@ function enhanceOne(concept,parts,index){
  const applied=el('div','ud2-applied');
  txt(applied,'strong','🛠️ Exemple, càlcul o proposta tècnica');
  txt(applied,'p',parts[2]);section.append(applied);
- const target=holder.querySelector('.photo-lesson,.lesson21-photo,.concept-sketch,.lesson21-remember');
+ const target=holder.classList.contains('lesson21-content')?holder.querySelector('.lesson21-remember'):holder.querySelector('.photo-lesson,.concept-sketch');
  if(target)target.before(section);else holder.append(section);
  concept.querySelectorAll('.concept-task,.lesson21-quiz,.lesson21-next').forEach(n=>n.remove());
  const subtitle=concept.querySelector('.concept-title small');
