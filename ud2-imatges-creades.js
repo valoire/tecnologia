@@ -132,9 +132,22 @@ function make(i){
  return {svg,caption:titles[i]};
 }
 function uploadIllustration(fig,src,alt,caption){
+ if(!fig)return;
+ const fallback=fig.querySelector('svg')?.cloneNode(true) || make(0).svg;
  const img=document.createElement('img');
- img.src=src;img.alt=alt;img.loading='lazy';img.decoding='async';
+ img.src=new URL(src,document.baseURI).href;
+ img.alt=alt;
+ img.loading='eager';
+ img.decoding='async';
  img.className='ud2-uploaded-img';
+ img.addEventListener('error',()=>{
+  // No hem de deixar un rectangle buit si l'arxiu no carrega.
+  fig.replaceChildren(fallback);
+  const p=document.createElement('figcaption');
+  p.textContent='Esquema explicatiu de reserva · '+caption;
+  fig.append(p);
+  fig.classList.remove('ud2-uploaded-figure');
+ },{once:true});
  fig.replaceChildren(img);
  const cap=document.createElement('figcaption');
  cap.textContent=caption;
@@ -143,21 +156,23 @@ function uploadIllustration(fig,src,alt,caption){
 }
 function start(){
  if(new URLSearchParams(location.search).get('ud')!=='2')return;
- const figures=[...document.querySelectorAll('.ud2-solid-panel .ud2-technical-figure')];
- if(figures.length!==7)return;
- // Altres sis apartats: els esquemes tècnics originals es conserven.
- figures.forEach((fig,i)=>{
+ // IMPORTANT: no dependre del nombre total de figures d'altres pestanyes.
+ const panels=Array.from(document.querySelectorAll('.ud2-main-panel')).slice(0,7);
+ if(!panels.length)return;
+ panels.forEach((panel,i)=>{
   if(i===0)return;
-  const result=make(i);fig.replaceChildren(result.svg);
+  const fig=panel.querySelector('.ud2-technical-figure');
+  if(!fig)return;
+  const result=make(i);
+  fig.replaceChildren(result.svg);
   const caption=document.createElement('figcaption');
   caption.textContent='Il·lustració tècnica original · '+result.caption+' Dibuix conceptual, no fotografia del prototip real.';
   fig.append(caption);fig.classList.add('ud2-technical-original');
  });
- // Primer apartat: LES DUES IMATGES APORTADES per l'usuari, en qualitat original.
- const panel=document.getElementById('ud2-main-panel-0');
- if(!panel)return;
+ // Les dues infografies carreguen sempre, independentment dels altres apartats.
+ const panel=panels[0];
  const dimens=panel.querySelector('.ud2-solid-diagram');
- const fanal=figures[0];
+ const fanal=panel.querySelector('.ud2-technical-figure');
  if(dimens){
   uploadIllustration(
    dimens,
