@@ -104,7 +104,7 @@ function createTab(meta,i,panelId){
  tab.tabIndex=-1;
  appendText(tab,'span',meta.icon||'✦','ud2-main-icon');
  const span=n('span','ud2-main-tab-words');
- appendText(span,'small',meta.tag||(i+1)+'. TEMA');
+ appendText(span,'small',meta.tag||(i+1)+'. TEORIA');
  appendText(span,'strong',meta.short||meta.title);
  tab.append(span);
  return tab;
@@ -117,7 +117,7 @@ function createPanel(meta,i){
  panel.tabIndex=0;
  panel.hidden=true;
  const header=n('div','ud2-main-topic-head');
- appendText(header,'span',meta.tag||'TEMA '+(i+1)+' DE 7','ud2-main-eyebrow');
+ appendText(header,'span',meta.tag||'TEORIA '+(i+1)+' DE 7','ud2-main-eyebrow');
  appendText(header,'h2',meta.title);
  appendText(header,'p',meta.subtitle||'Teoria, exemples i aplicacions tecnològiques.');
  panel.append(header);
@@ -234,16 +234,16 @@ function install(){
  });
  main.append(tabs);
  const introduction=n('div','ud2-tab-intro');
- appendText(introduction,'strong','Tria un tema de la unitat');
- appendText(introduction,'p','Una pestanya per tema principal. En obrir-la veuràs tota la teoria seguida, amb imatges i dues preguntes per fer en veu alta.');
+ appendText(introduction,'strong','Tria un apartat de teoria');
+ appendText(introduction,'p','Una pestanya per apartat principal. En obrir-la veuràs tota la teoria seguida, amb imatges i dues preguntes per fer en veu alta.');
  main.append(introduction);
  const panelFrame=n('div','ud2-panel-frame');
  panels.forEach(p=>panelFrame.append(p));
  main.append(panelFrame);
  const actions=n('nav','ud2-tab-bottom-actions');
  actions.setAttribute('aria-label','Navegació entre temes');
- const prev=n('button','ud2-tab-prev','← Tema anterior');prev.type='button';
- const next=n('button','ud2-tab-next','Tema següent →');next.type='button';
+ const prev=n('button','ud2-tab-prev','← Teoria anterior');prev.type='button';
+ const next=n('button','ud2-tab-next','Teoria següent →');next.type='button';
  actions.append(prev,next);main.append(actions);
  let selected=0;
  function select(index,scroll=false,focus=false){
@@ -274,7 +274,7 @@ function install(){
  const originalHeading=hub.querySelector(':scope > h2');
  if(originalHeading)originalHeading.textContent='UD2 · Tecnologia sostenible';
  const originalDescription=hub.querySelector(':scope > p:not(.concept-eyebrow)');
- if(originalDescription)originalDescription.textContent='Set temes principals amb tota la teoria en una sola pestanya cadascun. Sense desplegables dins del temari.';
+ if(originalDescription)originalDescription.textContent='Set apartats principals amb tota la teoria en una sola pestanya cadascun. Sense desplegables dins del temari.';
  const shortcut=hub.querySelector('.ud2-quiz-shortcut');
  if(shortcut)shortcut.textContent='📝 Anar al qüestionari global de 10 preguntes ↓';
  hub.classList.add('ud2-topic-redesign');
