@@ -106,6 +106,10 @@ function init(){
  if(params.get('ud')!=='2')return;
  const hub=document.querySelector('.concept-hub');if(!hub)return;
  hub.classList.add('ud2-full-course');
+ const shortcut=el('a','ud2-quiz-shortcut','📝 Anar al qüestionari final de 10 preguntes ↓');
+ shortcut.href='#ud2-questionari-final';
+ const description=hub.querySelector(':scope > p:not(.concept-eyebrow)');
+ if(description)description.after(shortcut);else hub.prepend(shortcut);
  const concepts=[...hub.querySelectorAll('.concept-group:not(:last-of-type) > .concept-drop')];
  if(concepts.length!==EXTRA_THEORY.length){console.warn('UD2: nombre de conceptes inesperat',concepts.length,EXTRA_THEORY.length);return}
  concepts.forEach((concept,i)=>enhanceOne(concept,EXTRA_THEORY[i],i));
