@@ -1,0 +1,38 @@
+name: Importar les il·lustracions de la UD2
+on:
+  push:
+    paths:
+      - '.github/workflows/importar-imatges-ud2.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  importar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Descarregar les dues il·lustracions proporcionades
+        env:
+          FOTO_FANAL: 'https://d2jqrm6oza8nb6.cloudfront.net/datasets/8b84cf82-31fa-4f62-9145-80849e4d1919.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNDYwMzFlZDUzMjlkODZlNCIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzQwNjQyMX0.IVHhJMQ2VuQbcy0hthVHqDGUxHLCuoh6gJX9MXLD30s'
+          FOTO_SOSTENIBILITAT: 'https://d2jqrm6oza8nb6.cloudfront.net/datasets/aa34a69e-46f2-450d-841b-11fd0a6fcb03.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZGIxMmI5YTU1ZjdhM2IzOSIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzM4NjI3N30.6t62xfngIgn9byqp_Fx0ocGpN005Hnypd7RNvrD9ngo'
+        run: |
+          set -euo pipefail
+          mkdir -p assets/ud2
+          curl --fail --location --silent --show-error --retry 3 "$FOTO_FANAL" --output assets/ud2/fanalet-reutilitzable.png
+          curl --fail --location --silent --show-error --retry 3 "$FOTO_SOSTENIBILITAT" --output assets/ud2/tres-dimensions-sostenibilitat.png
+          file assets/ud2/*.png
+          test "$(file --mime-type -b assets/ud2/fanalet-reutilitzable.png)" = "image/png"
+          test "$(file --mime-type -b assets/ud2/tres-dimensions-sostenibilitat.png)" = "image/png"
+          test "$(stat -c %s assets/ud2/fanalet-reutilitzable.png)" -gt 100000
+          test "$(stat -c %s assets/ud2/tres-dimensions-sostenibilitat.png)" -gt 100000
+      - name: Desar les imatges al repositori
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/ud2/fanalet-reutilitzable.png assets/ud2/tres-dimensions-sostenibilitat.png
+          if ! git diff --cached --quiet; then
+            git commit -m "Incorpora les imatges reals proporcionades per a la UD2"
+            git push
+          fi
