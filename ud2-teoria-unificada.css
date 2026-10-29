@@ -1,0 +1,117 @@
+/* UD2 · Una teoria llegible i contínua a cada pestanya.
+   Subtítols integrats al text, no pas targetes o blocs independents.
+   Únicament 1 esquema original i 1 fotografia tècnica per tema. */
+.ud2-topic-redesign .ud2-solid-article{
+ max-width:1060px;margin:0 auto 22px;background:#fff;color:#3f3446;
+ font-size:16px;line-height:1.8;
+}
+.ud2-topic-redesign .ud2-solid-intro{margin:0 0 20px}
+.ud2-topic-redesign .ud2-solid-intro p{font-size:16px;line-height:1.8;color:#493b51;margin:0 0 15px}
+.ud2-topic-redesign .ud2-solid-lead{
+ font-size:clamp(19px,2.35vw,23px)!important;
+ font-weight:800;line-height:1.58!important;color:#733382!important;
+ padding:18px 23px;background:linear-gradient(110deg,#fff2d9,#f8e9ff);
+ border-left:5px solid #ff8b13;border-radius:0 16px 16px 0;
+ margin-bottom:20px!important
+}
+.ud2-topic-redesign .ud2-solid-chapter{margin:28px 0 24px;padding:0}
+.ud2-topic-redesign .ud2-solid-chapter>h3{
+ font-size:clamp(22px,2.9vw,28px);font-weight:900;
+ color:#862c9a;margin:30px 0 17px;
+ border-bottom:2px solid #f0d0e8;padding:0 0 12px;
+}
+.ud2-topic-redesign .ud2-solid-section{
+ margin:0;padding:0;border:0;background:transparent;
+}
+.ud2-topic-redesign .ud2-solid-section h4{
+ font-size:clamp(17px,2.2vw,20px);font-weight:900;
+ color:#bc5a1f;margin:25px 0 9px;line-height:1.37;
+}
+.ud2-topic-redesign .ud2-solid-section p{
+ font-size:15.5px;line-height:1.78;color:#42364b;
+ margin:0 0 14px;max-width:960px
+}
+.ud2-topic-redesign .ud2-solid-section .ud2-solid-definition{
+ font-size:17px;font-weight:800;color:#7b337f;
+}
+.ud2-topic-redesign .ud2-solid-section .ud2-solid-application{
+ border:0;background:#fff9eb;border-left:4px solid #f4a84d;
+ padding:11px 15px;border-radius:0 11px 11px 0;
+ font-size:14.5px;line-height:1.7;margin:10px 0 22px
+}
+.ud2-topic-redesign .ud2-solid-application strong{color:#aa581b}
+.ud2-topic-redesign .ud2-solid-conclusion{
+ margin:27px 0 13px;background:linear-gradient(110deg,#fff0d8,#ffecf8);
+ border:1px solid #f0c9e3;padding:18px 21px;border-radius:16px
+}
+.ud2-topic-redesign .ud2-solid-conclusion strong{
+ color:#99349b;display:block;font-size:17px;margin-bottom:8px
+}
+.ud2-topic-redesign .ud2-solid-conclusion p{
+ margin:0;color:#4f3f57;line-height:1.72
+}
+.ud2-topic-redesign .ud2-solid-diagram{
+ max-width:950px;margin:25px auto 23px;
+ border:2px solid #edc3e5;border-radius:17px;
+ background:linear-gradient(125deg,#fff8e8,#fff2fc);overflow:hidden;
+ box-shadow:0 6px 21px #ab51aa13;
+}
+.ud2-topic-redesign .ud2-solid-diagram svg{
+ display:block;width:100%;height:auto;max-width:930px;margin:auto;
+}
+.ud2-topic-redesign .ud2-solid-diagram figcaption{
+ background:#fff;line-height:1.55;border-top:1px solid #eed2e8;
+ color:#825c79;font-size:12px;padding:10px 16px
+}
+.ud2-topic-redesign .ud2-solid-photo{
+ max-width:850px;margin:18px auto 29px;
+ border:2px solid #ecc5e4;border-radius:17px;
+ background:#fff;overflow:hidden;box-shadow:0 9px 26px #904b9f1c
+}
+.ud2-topic-redesign .ud2-solid-photo-frame{
+ width:100%;aspect-ratio:16/8.6;position:relative;
+ overflow:hidden;background:linear-gradient(120deg,#fff1d7,#eadcff);
+ display:flex;align-items:center;justify-content:center;
+}
+.ud2-topic-redesign .ud2-solid-photo-frame img{
+ position:absolute;inset:0;width:100%;height:100%;
+ object-fit:cover;filter:brightness(1.04) contrast(1.07) saturate(1.06);
+}
+.ud2-topic-redesign .ud2-solid-photo-loading{
+ padding:30px;color:#8b528d;font-weight:800;font-size:14px;text-align:center;
+}
+.ud2-topic-redesign .ud2-solid-photo-caption{
+ background:#fffafc;padding:15px 18px;color:#5b4960
+}
+.ud2-topic-redesign .ud2-solid-photo-caption strong{color:#8e3495;font-size:15px}
+.ud2-topic-redesign .ud2-solid-photo-caption ul{margin:7px 0;padding-left:23px;line-height:1.7;font-size:13px}
+.ud2-topic-redesign .ud2-solid-photo-caption li{margin:4px 0}
+.ud2-topic-redesign .ud2-solid-photo-caption li::marker{color:#f0861d}
+.ud2-topic-redesign .ud2-solid-credits{
+ color:#806480;font-size:11px;line-height:1.5;border-top:1px solid #efd8ea;
+ margin-top:12px;padding-top:9px
+}
+.ud2-topic-redesign .ud2-solid-credits a{color:#973898;font-weight:750}
+.ud2-topic-redesign .ud2-solid-photo-failed{display:none}
+.ud2-topic-redesign .ud2-oral-questions{
+ margin-top:31px!important;border-radius:19px!important
+}
+.ud2-topic-redesign .ud2-core-ods{background:#fff}
+.ud2-topic-redesign .ud2-core-extension{margin-top:20px}
+/* No afegim més diagrames de les antigues fitxes resum. */
+.ud2-topic-redesign .ud2-core-extension .concept-flow{display:none}
+.ud2-topic-redesign .ud2-solid-panel>.ud2-subtopic{display:none!important}
+@media(max-width:680px){
+ .ud2-topic-redesign .ud2-solid-intro p{font-size:14.5px}
+ .ud2-topic-redesign .ud2-solid-lead{font-size:18px!important;padding:14px 16px}
+ .ud2-topic-redesign .ud2-solid-section p{font-size:14.5px}
+ .ud2-topic-redesign .ud2-solid-chapter>h3{font-size:21px}
+ .ud2-topic-redesign .ud2-solid-section h4{font-size:17px}
+ .ud2-topic-redesign .ud2-solid-photo-frame{aspect-ratio:4/3}
+ .ud2-topic-redesign .ud2-solid-photo-caption{padding:13px}
+}
+@media print{
+ .ud2-topic-redesign .ud2-solid-article{color:#000}
+ .ud2-topic-redesign .ud2-solid-photo-frame{aspect-ratio:16/9}
+ .ud2-topic-redesign .ud2-solid-diagram{break-inside:avoid}
+}
