@@ -60,3 +60,11 @@
  .ud2-test-actions,.ud2-quiz-track{display:none}
  .ud2-quiz-option{break-inside:avoid}
 }
+
+.ud2-full-course .ud2-quiz-shortcut{
+ display:inline-flex;align-items:center;gap:7px;background:linear-gradient(105deg,#ff8920,#e44d9d);
+ color:#fff;text-decoration:none;font-size:14px;font-weight:850;
+ padding:10px 16px;border-radius:12px;margin:5px 0 13px;box-shadow:0 6px 15px #b85a8820
+}
+.ud2-full-course .ud2-quiz-shortcut:hover{filter:brightness(.96)}
+#ud2-questionari-final{scroll-margin-top:94px}
