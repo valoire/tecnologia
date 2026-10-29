@@ -142,7 +142,7 @@ function makeODSCards(source){
  });
  return source;
 }
-function reorderExtras(originalGroups,panels,g){
+function reorderExtras(originalGroups,panels,g,list){
  const extras=originalGroups.find(g=>g.querySelector('.concept-group-title')?.textContent?.includes('Projecte, activitats'));
  if(!extras)return;
  const drop=Array.from(extras.querySelectorAll(':scope > .concept-drop'));
@@ -151,7 +151,7 @@ function reorderExtras(originalGroups,panels,g){
  const fanal=getByTitle('Transformem el fanalet');
  const debat=getByTitle('Debat acadèmic');
  const ampliacio=getByTitle('Ampliació');
- const docs=getByTitle('Documents i fotografies');
+ const docs=getByTitle('Documents i fotografies')||list.querySelector(':scope > .concept-drop');
  // Els 17 ODS, directament al tema de l'Agenda 2030, en format consultable.
  if(ods){
   const container=ods.querySelector('.concept-content');
@@ -223,7 +223,7 @@ function install(){
   panel.append(oralQuestions(meta.questions));
   panels.push(panel);
  });
- const resource=reorderExtras(groups,panels,query.get('grup')==='e'?'e':'optativa');
+ const resource=reorderExtras(groups,panels,query.get('grup')==='e'?'e':'optativa',list);
  const allMeta=TEMES.concat([
   {title:'Projecte: fanalet de Nadal',short:'Projecte',tag:'TALLER',icon:'🎄'},
   {title:'Debat acadèmic',short:'Debat',tag:'ARGUMENTACIÓ',icon:'🎤'}
