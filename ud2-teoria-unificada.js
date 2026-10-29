@@ -129,6 +129,15 @@ function rewrite(panel,i){
  const close=N('section','ud2-solid-conclusion');A(close,'strong','✦ Aplicació al taller');A(close,'p',T[i].example);body.append(close);
  subs.forEach(x=>x.remove());
  if(oral)oral.before(body);else panel.append(body);
+ if(i===1){
+  const explorer=panel.querySelector('#ods-explorer');
+  if(explorer)body.append(explorer);
+ }
+ if(i===3){
+  // L’antiga fitxa resum no és una ampliació real; els càlculs ja són dins de la teoria.
+  panel.querySelector('#ud2-concepts')?.remove();
+  panel.querySelector('.ud2-extension-title')?.remove();
+ }
  panel.classList.add('ud2-solid-panel');
  panel.addEventListener('ud2:opened',()=>figure.fetchPhoto(),{once:true});
 }
