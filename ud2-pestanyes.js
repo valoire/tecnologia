@@ -133,7 +133,8 @@ function makeODSCards(source){
    const card=n('article','ud2-ods-static');
    const summary=d.querySelector(':scope > summary');
    if(summary){
-    const head=appendText(card,'h4',summary.textContent.trim());
+    const name=Array.from(summary.children).map(x=>x.textContent.trim()).filter(Boolean).join(' · ')||summary.textContent.trim();
+    const head=appendText(card,'h4',name);
     head.className='ud2-ods-title';
    }
    Array.from(d.children).filter(el=>el!==summary).forEach(el=>card.append(el));
