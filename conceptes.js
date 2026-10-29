@@ -280,10 +280,15 @@ window.decorarIndexCurs=function(g){
   const box=N('details','ud-overview');colorize(box,u.id);
   const s=N('summary','ud-overview-summary');A(s,'span','UD'+u.id,'ud-number');A(s,'strong',u.nom);A(s,'span','⌄','ud-arrow');
   const inside=N('div','ud-overview-inner');A(inside,'p',u.resum);
-  const list=N('ol','ud-preview');chunks(u).forEach(b=>b.ideas.forEach(idea=>A(list,'li',idea.title)));inside.append(list);
+  const list=N('ol','ud-preview');
+  if(u.id===2){
+    ['Entendre la sostenibilitat','L’Agenda 2030 i els ODS','Recursos naturals i processos extractius','Energia, transformacions i eficiència','L’aigua: disponibilitat, qualitat i tractament','Transport i mobilitat sostenible','Cicle de vida i economia circular']
+      .forEach(title=>A(list,'li',title));
+  }else chunks(u).forEach(b=>b.ideas.forEach(idea=>A(list,'li',idea.title)));
+  inside.append(list);
   const a=A(inside,'a','Entrar a la UD'+u.id+' i desplegar els conceptes →','button enter-ud');
-  a.href='unitat.html?ud='+u.id+'&grup='+g;box.append(s,inside);host.append(box);
+  a.href='unitat.html?ud='+u.id+'&grup='+g;if(u.id===2)a.textContent='Veure els 7 temes de la UD2 →';box.append(s,inside);host.append(box);
  });
- const p=document.querySelector('.section-heading p');if(p)p.textContent='Cada UD té el seu color. Entra a la unitat i obre cada concepte en el seu propi desplegable.';
+ const p=document.querySelector('.section-heading p');if(p)p.textContent='Tria una unitat. La UD2 presenta set pestanyes principals amb tota la teoria de cada tema.';
 };
 })();
