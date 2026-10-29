@@ -58,44 +58,6 @@ function diagram(i){
  V('text',{x:465,y:200,'font-size':16,'font-weight':700,'text-anchor':'middle',fill:'#65406d'},NOTE[i]);
  fig.append(s);A(fig,'figcaption','Esquema original per entendre la teoria · '+NOTE[i]);return fig;
 }
-function metadataText(value){return String(value||'').replace(/<[^>]*>/g,' ').replace(/&amp;/g,'&').replace(/&nbsp;/g,' ').replace(/\s+/g,' ').trim()}
-function photo(i){
- const fig=N('figure','ud2-solid-photo'),frame=N('div','ud2-solid-photo-frame');
- const loading=A(frame,'div','Fotografia tècnica: cercant una imatge de reutilització permesa…','ud2-solid-loading');
- const img=N('img','ud2-solid-photo-image');img.loading='lazy';img.decoding='async';frame.append(img);
- const cap=N('figcaption','ud2-solid-photo-caption');
- A(cap,'strong','Què hem d’observar?');
- const ul=N('ul');T[i].observe.forEach(item=>A(ul,'li',item));cap.append(ul);
- const credits=A(cap,'div','','ud2-solid-credits');fig.append(frame,cap);
- fig.fetchPhoto=async()=>{
-  if(fig.dataset.loaded)return;fig.dataset.loaded='yes';
-  try{
-   const u=new URL('https://commons.wikimedia.org/w/api.php');
-   const q={action:'query',generator:'search',gsrsearch:T[i].photo,gsrnamespace:6,gsrlimit:16,prop:'imageinfo',iiprop:'url|extmetadata|size',iiurlwidth:1100,format:'json',origin:'*'};
-   for(const [key,value] of Object.entries(q))u.searchParams.set(key,value);
-   const res=await fetch(u.toString(),{credentials:'omit',mode:'cors'});if(!res.ok)throw Error('Image API unavailable');
-   const data=await res.json();
-   const pages=Object.values(data.query?.pages||{}).sort((a,b)=>(a.index??99)-(b.index??99));
-   const found=pages.map(p=>({p,info:p.imageinfo?.[0]})).find(({p,info})=>{
-    if(!info?.thumburl||info.width<700||info.height<440||!/\.(jpe?g|webp|png)$/i.test(p.title))return false;
-    if(!info.thumburl.startsWith('https://upload.wikimedia.org/'))return false;
-    if(/logo|icon|map|illustration|diagram|flag|screenshot|emblem|badge|poster|drawing/i.test(p.title))return false;
-    const lic=metadataText(info.extmetadata?.LicenseShortName?.value||info.extmetadata?.UsageTerms?.value).toLowerCase();
-    return /cc0|public domain|^pd[- ]|cc[- ]by/.test(lic)&&!/by[- ]nc|by[- ]nd/.test(lic);
-   });
-   if(!found)throw Error('No licensed photos');
-   img.alt='Fotografia tècnica: '+found.p.title.replace('File:','').replace(/_/g,' ');
-   img.onload=()=>{loading.remove();fig.classList.add('ud2-solid-photo-ready')};
-   img.onerror=()=>{loading.textContent='Fotografia no disponible; consulta l’esquema tècnic que hi ha a sobre.'};
-   img.src=found.info.thumburl;
-   const link=A(credits,'a','Fotografia: Wikimedia Commons');link.href=found.info.descriptionurl||'https://commons.wikimedia.org/wiki/'+found.p.title.replace(/ /g,'_');link.target='_blank';link.rel='noopener noreferrer';
-   A(credits,'span',' · Llicència: '+metadataText(found.info.extmetadata?.LicenseShortName?.value));
-   const author=metadataText(found.info.extmetadata?.Artist?.value);if(author)A(credits,'span',' · Autor/a: '+author.slice(0,90));
-   A(credits,'span',' · Retall i rètols didàctics');
-  }catch(e){loading.textContent='No s’ha pogut carregar la fotografia. L’esquema original continua disponible.';fig.classList.add('ud2-solid-photo-failed');}
- };
- return fig;
-}
 function details(sub){
  const deep=sub.querySelector('.ud2-deep');
  const ps=deep?[...deep.querySelectorAll(':scope > p')].map(p=>p.textContent.trim()).filter(Boolean):[];
@@ -119,12 +81,16 @@ function rewrite(panel,i){
  const entries=subs.map(details);
  const body=N('article','ud2-solid-article');
  const intro=N('div','ud2-solid-intro');A(intro,'p',T[i].intro,'ud2-solid-lead');A(intro,'p',T[i].context);body.append(intro);
- body.append(diagram(i));
- const figure=photo(i);body.append(figure);
+ const figure=N('figure','ud2-technical-figure');
  const ranges=SEG[i];
  for(let k=0;k<ranges.length-1;k++){
   const slice=entries.slice(ranges[k],Math.min(ranges[k+1],entries.length));
-  if(slice.length)body.append(buildChapter(slice,H[i][k]||'Contingut tècnic'));
+  if(slice.length){
+   body.append(buildChapter(slice,H[i][k]||'Contingut tècnic'));
+   // Cada imatge apareix DESPRÉS de la teoria a què fa referència.
+   if(k===0)body.append(diagram(i));
+   if(k===ranges.length-2)body.append(figure);
+  }
  }
  const close=N('section','ud2-solid-conclusion');A(close,'strong','✦ Aplicació al taller');A(close,'p',T[i].example);body.append(close);
  subs.forEach(x=>x.remove());
@@ -139,20 +105,18 @@ function rewrite(panel,i){
   panel.querySelector('.ud2-extension-title')?.remove();
  }
  panel.classList.add('ud2-solid-panel');
- panel.addEventListener('ud2:opened',()=>figure.fetchPhoto(),{once:true});
+ // Il·lustracions originals en SVG: visibles sense xarxes, llicències externes ni errors de càrrega.
 }
 function init(){
  if(new URLSearchParams(location.search).get('ud')!=='2')return;
  const root=document.querySelector('.ud2-topic-redesign');if(!root)return;
  const panels=[...root.querySelectorAll('.ud2-main-panel')];if(panels.length<9)return;
  panels.slice(0,7).forEach(rewrite);
- const fire=()=>{const current=panels.find(p=>!p.hidden);if(current)current.dispatchEvent(new Event('ud2:opened'));};
- root.querySelectorAll('.ud2-main-tab,.ud2-tab-prev,.ud2-tab-next').forEach(b=>b.addEventListener('click',fire));
- fire();
+ 
  const intro=root.querySelector('.ud2-tab-intro p');
- if(intro)intro.textContent='Una teoria completa per apartat: explicacions detallades, un esquema, una fotografia tècnica i dues preguntes orals. Sense conceptes fragmentats.';
+ if(intro)intro.textContent='Cada teoria és una lectura completa, amb dues il·lustracions tècniques originals situades després de la seva explicació i dues preguntes orals al final.';
  const t=root.querySelector(':scope > p:not(.concept-eyebrow)');
- if(t)t.textContent='Cada pestanya presenta la teoria seguida, amb exemples tècnics i només dues imatges per apartat.';
+ if(t)t.textContent='Cada apartat conserva tota la teoria seguida, amb dues il·lustracions fetes per explicar els conceptes i les preguntes orals al final.';
  // Els 17 ODS es mantenen a la teoria 2. Els jocs, projecte i debat es conserven.
 }
 const previous=window.preparaUnitatVisual;
