@@ -128,6 +128,16 @@ function make(i){
   });
   R(svg,53,335,859,45,'#fff2d8','#efd0a4',9);
   T(svg,480,364,'Comparar temps, seguretat, accessibilitat i impactes.',18,'#a15923',800,'middle');
+ }else if(i===6){
+  T(svg,28,42,'ECONOMIA CIRCULAR · UNA CARCASSA, MÉS D’UNA FESTA',21,'#a64a85',900);
+  lantern(svg,33,68,'halloween');
+  R(svg,284,141,391,103,'#fff3df','#edba83',15);
+  T(svg,480,178,'CARCASSA CONSERVADA',21,'#ad5b16',900,'middle');
+  T(svg,480,209,'Decoració desmuntable i LED reparable',17,'#78557d',750,'middle');
+  lantern(svg,698,68,'nadal');
+  A(svg,286,291,674,291,'#c85ca4');
+  R(svg,58,344,844,45,'#f5ecff','#dbc1ef',9);
+  T(svg,480,372,'Disseny modular: evitar fabricar una carcassa nova per cada celebració.',16,'#76448a',780,'middle');
  }
  return {svg,caption:titles[i]};
 }
