@@ -223,7 +223,20 @@ function install(){
   panel.append(oralQuestions(meta.questions));
   panels.push(panel);
  });
- const resource=reorderExtras(groups,panels,query.get('grup')==='e'?'e':'optativa',list);
+ reorderExtras(groups,panels,query.get('grup')==='e'?'e':'optativa',list);
+ // Recursos integrats en el lloc on s'utilitzen, no abans de l'avaluació final.
+ const odsLinks=n('div','ud2-context-links');
+ appendText(odsLinks,'h3','Per ampliar: fonts oficials de les Nacions Unides');
+ const odsA=appendText(odsLinks,'a','ONU · Els 17 Objectius de Desenvolupament Sostenible ↗');
+ odsA.href='https://sdgs.un.org/es/goals';odsA.target='_blank';odsA.rel='noopener noreferrer';
+ const actA=appendText(odsLinks,'a','ONU · Campanya Actua Ara ↗');
+ actA.href='https://www.un.org/es/actnow';actA.target='_blank';actA.rel='noopener noreferrer';
+ panels[1].insertBefore(odsLinks,panels[1].querySelector('.ud2-oral-questions'));
+ const debatLinks=n('div','ud2-context-links');
+ appendText(debatLinks,'h3','Material per preparar el debat');
+ const fiche=appendText(debatLinks,'a','Fitxa imprimible · Investigació dels ODS i debat ↗');
+ fiche.href='fitxa-ud2.html';debatLinks.setAttribute('aria-label','Material del debat');
+ panels[8].append(debatLinks);
  const allMeta=TEMES.concat([
   {title:'Projecte: fanalet de Nadal',short:'Projecte',tag:'TALLER',icon:'🎄'},
   {title:'Debat acadèmic',short:'Debat',tag:'ARGUMENTACIÓ',icon:'🎤'}
@@ -282,7 +295,7 @@ function install(){
  // El qüestionari de 10 preguntes queda sempre al FINAL de tota la UD2.
  const footer=n('div','ud2-after-tabs');
  appendText(footer,'span','✦ AVALUACIÓ FINAL','ud2-main-eyebrow');
- if(resource)footer.append(resource);
+ // Els documents ja són als apartats d’Agenda 2030 i Debat.
  footer.append(oldQuiz);
  hub.append(footer);
  const initial=Number(query.get('tema'));
