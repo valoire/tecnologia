@@ -176,3 +176,26 @@
   min-width:100%;font-size:11px
  }
 }
+
+/* Les dues infografies facilitades, col·locades després de la teoria pertinent. */
+.ud2-topic-redesign .ud2-uploaded-figure{
+ max-width:1020px;width:100%;margin:22px auto 29px;
+ border:1px solid #efc9e7;border-radius:17px;overflow:hidden;
+ background:#fff;box-shadow:0 9px 26px #94449a18;
+}
+.ud2-topic-redesign .ud2-uploaded-figure .ud2-uploaded-img{
+ display:block;width:100%;height:auto;max-width:100%;
+ object-fit:contain;background:#fff;
+}
+.ud2-topic-redesign .ud2-uploaded-figure figcaption{
+ font-size:13px;font-weight:650;line-height:1.55;
+ color:#7b527d;padding:11px 16px;margin:0;
+ border-top:1px solid #ecd3e8;background:#fff;
+}
+@media(max-width:700px){
+ .ud2-topic-redesign .ud2-uploaded-figure{overflow:hidden}
+ .ud2-topic-redesign .ud2-uploaded-figure::before{content:none}
+ .ud2-topic-redesign .ud2-uploaded-figure .ud2-uploaded-img{
+  min-width:0;width:100%;height:auto
+ }
+}
