@@ -1,0 +1,62 @@
+/* UD2: Teoria més profunda i un únic qüestionari global de 10 preguntes.
+   Conservem la paleta taronja, rosa i violeta. */
+.ud2-full-course .ud2-deep{
+ margin:21px 0;padding:18px 20px 16px;
+ border:1px solid #edd0e8;border-left:5px solid #f68622;border-radius:0 16px 16px 0;
+ background:linear-gradient(130deg,#fffaf1,#fff5fd);
+}
+.ud2-full-course .ud2-deep h4{margin:1px 0 12px;color:#99339d;font-size:clamp(17px,2.2vw,20px)}
+.ud2-full-course .ud2-deep>p{font-size:15px;line-height:1.76;color:#493c51;margin:10px 0 13px}
+.ud2-full-course .ud2-applied{margin:15px 0 1px;padding:13px 16px;border:1px solid #f5cba3;border-radius:12px;background:#fff6df}
+.ud2-full-course .ud2-applied strong{font-size:13px;color:#ad5a0b}
+.ud2-full-course .ud2-applied p{font-size:14px;line-height:1.68;margin:6px 0 0;color:#654556}
+.ud2-full-course .ud2-global-test{margin:22px 0 16px;padding:26px;border:2px solid #eebee0;border-top:8px solid #ff8c0e;border-radius:23px;background:linear-gradient(142deg,#fff9ed,#fff3fb 48%,#f6edff);box-shadow:0 15px 30px #a03c9b17}
+.ud2-global-test .ud2-test-kicker{display:block;color:#c36c08;font-size:12px;font-weight:950;letter-spacing:.09em;margin-bottom:9px}
+.ud2-global-test h2{color:#822a98;font-size:clamp(25px,3.5vw,35px);margin:0 0 10px}
+.ud2-global-test>p{margin:0 0 18px;color:#65506c;max-width:800px;line-height:1.6}
+.ud2-quiz-meter{background:#fff;border:1px solid #efd0e5;border-radius:14px;padding:16px 17px;margin:19px 0 22px}
+.ud2-quiz-meter strong{display:block;font-size:16px;color:#983a9e;margin-bottom:10px}
+.ud2-quiz-track{height:13px;overflow:hidden;border-radius:999px;background:#f7e7f2;border:1px solid #e6c8e4}
+.ud2-quiz-fill{height:100%;width:0;background:linear-gradient(90deg,#fa8015,#ee47aa,#924bd8);transition:width .2s ease;border-radius:999px}
+.ud2-quiz-form{display:grid;gap:14px}
+.ud2-quiz-field{border:1px solid #eed0e8;border-left:5px solid #f48219;border-radius:16px;background:#fff;padding:15px 18px 18px;min-width:0}
+.ud2-quiz-field:nth-of-type(3n+2){border-left-color:#e553b3}
+.ud2-quiz-field:nth-of-type(3n+3){border-left-color:#914ce0}
+.ud2-quiz-field legend{padding:0 5px;margin:0 0 10px;font-weight:860;color:#683072;font-size:15px;line-height:1.47}
+.ud2-quiz-num{display:inline-flex;align-items:center;justify-content:center;min-width:35px;height:34px;margin-right:11px;border-radius:9px;background:#fff0d9;color:#c0620c;font-weight:900;font-variant-numeric:tabular-nums}
+.ud2-quiz-options{display:grid;gap:9px}
+.ud2-quiz-option{display:flex;align-items:flex-start;gap:9px;padding:11px 13px;border:2px solid #f1dcea;border-radius:10px;background:#fffcff;cursor:pointer;color:#58465c;font-size:14px;line-height:1.54}
+.ud2-quiz-option:hover{border-color:#f0b6d2;background:#fff6fb}
+.ud2-quiz-option input{margin-top:4px;flex-shrink:0;accent-color:#bd3fa4}
+.ud2-quiz-option.correct{border-color:#4cb887;background:#edfbf2;color:#206347}
+.ud2-quiz-option.incorrect{border-color:#e36a84;background:#fff0f2;color:#8a3549}
+.ud2-quiz-explanation{margin:9px 0 0;color:#684f67;font-weight:720;font-size:13px}
+.ud2-quiz-explanation:empty{display:none}
+.ud2-written{border:2px solid #e6c6e6;border-radius:17px;background:#fff7ee;padding:20px;margin:13px 0 0}
+.ud2-written label{display:block;font-weight:900;color:#873198;font-size:18px;margin-bottom:8px}
+.ud2-written p{font-size:14px;color:#665368;line-height:1.55;margin:0 0 14px}
+.ud2-written textarea{display:block;width:100%;min-height:100px;max-width:100%;padding:13px 15px;border-radius:12px;border:2px solid #e2c3e0;background:#fff;color:#49364e;font:inherit;font-size:15px;line-height:1.6;resize:vertical}
+.ud2-written textarea:focus-visible,.ud2-quiz-option:focus-within{outline:3px solid #f7a028;outline-offset:2px}
+.ud2-written small{display:block;color:#785e71;font-size:12px;margin-top:9px;line-height:1.5}
+.ud2-test-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:3px}
+.ud2-test-actions button{white-space:normal;box-shadow:none}
+.ud2-test-actions button:first-child{background:linear-gradient(105deg,#f98b14,#db4a9f);border:0}
+.ud2-test-actions button.secondary{color:#893795;background:#fff;border:1px solid #e7c2e4}
+.ud2-test-status{margin:0;min-height:22px;font-size:14px;color:#9b398c;font-weight:850;line-height:1.6}
+.ud2-test-status.ud2-test-graded{padding:14px 16px;border-left:5px solid #ea7e13;background:#fff4dc;border-radius:0 10px 10px 0;font-size:16px}
+.ud2-global-test fieldset legend{float:none}
+@media(max-width:760px){
+ .ud2-full-course .ud2-deep{padding:13px 14px}
+ .ud2-full-course .ud2-global-test{padding:15px}
+ .ud2-quiz-field{padding:13px 12px}
+ .ud2-quiz-option{padding:10px}
+ .ud2-written{padding:14px}
+ .ud2-test-actions{flex-direction:column}
+ .ud2-test-actions button{width:100%}
+}
+@media(prefers-reduced-motion:reduce){.ud2-quiz-fill{transition:none}}
+@media print{
+ .ud2-global-test{background:#fff!important;box-shadow:none}
+ .ud2-test-actions,.ud2-quiz-track{display:none}
+ .ud2-quiz-option{break-inside:avoid}
+}
