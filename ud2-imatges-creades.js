@@ -142,67 +142,78 @@ function make(i){
  return {svg,caption:titles[i]};
 }
 function uploadIllustration(fig,src,alt,caption){
+ // El diagrama SVG anterior s'ha de substituir, no quedar darrere com a caixa buida.
  if(!fig)return;
- const fallback=fig.querySelector('svg')?.cloneNode(true) || make(0).svg;
  const img=document.createElement('img');
- img.src=new URL(src,document.baseURI).href;
- img.alt=alt;
- img.loading='eager';
- img.decoding='async';
+ img.setAttribute('src',new URL(src,document.baseURI).href);
+ img.alt=alt;img.loading='eager';img.decoding='async';
  img.className='ud2-uploaded-img';
+ img.style.display='block';img.style.width='100%';img.style.height='auto';
  img.addEventListener('error',()=>{
-  // No hem de deixar un rectangle buit si l'arxiu no carrega.
+  // Un error de càrrega no ha de deixar una zona buida.
+  const fallback=document.createElement('p');
+  fallback.className='ud2-image-fallback';
+  fallback.textContent='Imatge no disponible. Consulta el contingut de la teoria anterior.';
   fig.replaceChildren(fallback);
-  const p=document.createElement('figcaption');
-  p.textContent='Esquema explicatiu de reserva · '+caption;
-  fig.append(p);
   fig.classList.remove('ud2-uploaded-figure');
  },{once:true});
- fig.replaceChildren(img);
  const cap=document.createElement('figcaption');
  cap.textContent=caption;
- fig.append(cap);
+ fig.replaceChildren(img,cap);
+ fig.classList.remove('ud2-detailed-diagram');
  fig.classList.add('ud2-technical-original','ud2-uploaded-figure');
+ fig.setAttribute('aria-label',alt);
 }
 function start(){
  if(new URLSearchParams(location.search).get('ud')!=='2')return;
- // IMPORTANT: no dependre del nombre total de figures d'altres pestanyes.
- const panels=Array.from(document.querySelectorAll('.ud2-main-panel')).slice(0,7);
+ const panels=[...document.querySelectorAll('.ud2-main-panel')];
  if(!panels.length)return;
- panels.forEach((panel,i)=>{
-  if(i===0)return;
+ panels.slice(1,7).forEach((panel,j)=>{
   const fig=panel.querySelector('.ud2-technical-figure');
   if(!fig)return;
-  const result=make(i);
+  const result=make(j+1);
   fig.replaceChildren(result.svg);
   const caption=document.createElement('figcaption');
   caption.textContent='Il·lustració tècnica original · '+result.caption+' Dibuix conceptual, no fotografia del prototip real.';
-  fig.append(caption);fig.classList.add('ud2-technical-original');
+  fig.append(caption);
+  fig.classList.add('ud2-technical-original');
  });
- // Les dues infografies carreguen sempre, independentment dels altres apartats.
+ // Apartat Sostenibilitat: conservem les dues infografies aportades.
  const panel=panels[0];
- const dimens=panel.querySelector('.ud2-solid-diagram');
- const fanal=panel.querySelector('.ud2-technical-figure');
- if(dimens){
-  uploadIllustration(
-   dimens,
-   'assets/ud2/tres-dimensions-sostenibilitat.png',
-   'Infografia de les tres dimensions de la sostenibilitat: ambiental, social i econòmica, amb recursos, salut, accessibilitat, cost i manteniment',
-   'Les tres dimensions de la sostenibilitat · esquema complet per relacionar els conceptes que acabem d’estudiar.'
-  );
-  const chapters=panel.querySelectorAll('.ud2-solid-chapter');
-  // La infografia apareix després d'explicar ambiental, social i econòmica.
-  if(chapters.length)chapters[chapters.length-1].after(dimen);
+ const sections=[...panel.querySelectorAll('.ud2-solid-chapter .ud2-solid-section')];
+ const economic=sections.find(section=>/Dimensió econòmica/i.test(section.querySelector('h4')?.textContent||''));
+ const chapter=panel.querySelector('.ud2-solid-chapter:last-of-type');
+ const conclusion=panel.querySelector('.ud2-solid-conclusion');
+ if(!conclusion)return;
+
+ // La infografia ambiental/social/econòmica va IMMEDIATAMENT
+ // després de la dimensió econòmica, abans de la matriu de decisió.
+ let dimensions=panel.querySelector('figure.ud2-solid-diagram');
+ if(!dimensions){
+  dimensions=document.createElement('figure');
+  dimensions.className='ud2-solid-diagram';
  }
  uploadIllustration(
-  fanal,
-  'assets/ud2/fanalet-reutilitzable.png',
-  'Comparació de dos fanalets amb la mateixa carcassa: decoració de Halloween amb carabassa i decoració de Nadal amb arbre i floc de neu',
-  'Reutilització de la mateixa carcassa amb decoració intercanviable · exemple per al projecte del fanalet.'
+  dimensions,'assets/ud2/tres-dimensions-sostenibilitat.png',
+  'Infografia de les tres dimensions de la sostenibilitat: ambiental, social i econòmica',
+  'Les tres dimensions de la sostenibilitat: ambiental, social i econòmica.'
  );
- // El fanalet es veu just després de l'explicació aplicada al taller.
- const conclusion=panel.querySelector('.ud2-solid-conclusion');
- if(conclusion)conclusion.after(fanal);
+ if(economic)economic.after(dimensions);
+ else if(chapter)chapter.after(dimensions);
+ else conclusion.before(dimensions);
+
+ // Eliminem els antics espais buits i fem una figura nova estable.
+ const stale=[...panel.querySelectorAll('figure.ud2-technical-figure')];
+ stale.forEach(fig=>fig.remove());
+ const lantern=document.createElement('figure');
+ lantern.className='ud2-technical-figure';
+ uploadIllustration(
+  lantern,'assets/ud2/fanalet-reutilitzable.png',
+  'Dos fanalets iguals amb decoracions de Halloween i Nadal per explicar la reutilització',
+  'Exemple de reutilització: conservem la carcassa i adaptem la decoració de Halloween a Nadal.'
+ );
+ // La imatge del fanalet il·lustra l'aplicació del projecte, no la matriu de decisió.
+ conclusion.after(lantern);
 }
 const prev=window.preparaUnitatVisual;
 if(typeof prev==='function')window.preparaUnitatVisual=function(){prev();start()};
