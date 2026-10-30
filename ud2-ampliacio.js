@@ -25,7 +25,7 @@ function quizPanel(){
  const box=el('section','ud2-global-test');box.id='ud2-questionari-final';
  txt(box,'span','✦ ACTIVITAT FINAL DE LA UNITAT','ud2-test-kicker');
  txt(box,'h2','Qüestionari global · 10 preguntes');
- txt(box,'p','Després de treballar tots els temes de Tecnologia sostenible, comprova què has après. Cada resposta correcta val un punt. La pregunta oberta és per explicar la teva opinió.');
+ txt(box,'p','Després de treballar tots els apartats de Tecnologia sostenible, comprova què has après. Cada resposta correcta val un punt.');
  const meter=el('div','ud2-quiz-meter');
  txt(meter,'strong','0 / 10 preguntes respostes','ud2-quiz-count');
  const track=el('div','ud2-quiz-track'),fill=el('div','ud2-quiz-fill');track.append(fill);meter.append(track);box.append(meter);
@@ -44,18 +44,11 @@ function quizPanel(){
   });
   field.append(choices);field.append(el('p','ud2-quiz-explanation'));form.append(field);
  });
- const open=el('div','ud2-written');
- const label=txt(open,'label','✍️ La teva aportació personal · resposta oberta');
- label.htmlFor='ud2-opinio';
- txt(open,'p','Proposa una millora sostenible per al nostre fanalet o per a l’institut. Justifica-la amb una raó ambiental, una de social i una d’econòmica.');
- const area=el('textarea');area.id='ud2-opinio';area.rows=4;area.maxLength=1000;
- area.placeholder='Jo proposaria... perquè...';area.setAttribute('aria-label','Escriu la teva proposta personal');
- open.append(area);txt(open,'small','La teva resposta no s’envia ni es desa automàticament. La pots copiar i lliurar a Google Classroom.');form.append(open);
  const status=el('p','ud2-test-status');status.setAttribute('role','status');status.setAttribute('aria-live','polite');
  const buttons=el('div','ud2-test-actions');
  const check=txt(buttons,'button','✓ Corregir el qüestionari','button');check.type='submit';
  const retry=txt(buttons,'button','↻ Tornar a començar','button secondary');retry.type='button';
- const copy=txt(buttons,'button','📋 Copiar el resultat i l’opinió','button secondary');copy.type='button';
+ const copy=txt(buttons,'button','📋 Copiar el resultat','button secondary');copy.type='button';
  form.append(buttons,status);box.append(form);
  function updateProgress(){
   const chosen=groups.reduce((n,{choices})=>n+(choices.querySelector('input:checked')?1:0),0);
@@ -95,8 +88,8 @@ function quizPanel(){
     const selected=choices.querySelector('input:checked');
     return (i+1)+'. '+(selected?String.fromCharCode(65+Number(selected.value)):'Sense resposta');
    }).join('\n');
-   const result='UD2 · Tecnologia sostenible\n'+(box.dataset.grade!==undefined?'Resultat: '+box.dataset.grade+'/10\n':'')+choices+'\n\nProposta personal:\n'+(area.value.trim()||'(Sense resposta)'); 
-   try{await navigator.clipboard.writeText(result);status.textContent='Resultat i proposta copiats. Enganxa’ls a la tasca de Google Classroom.'}
+   const result='UD2 · Tecnologia sostenible\n'+(box.dataset.grade!==undefined?'Resultat: '+box.dataset.grade+'/10\n':'')+choices; 
+   try{await navigator.clipboard.writeText(result);status.textContent='Resultat copiat. El pots enganxar a la tasca de Google Classroom.'}
    catch(e){status.textContent='No s’ha pogut copiar automàticament. Selecciona el text de la resposta i copia’l manualment.'}
  });
  return box;
