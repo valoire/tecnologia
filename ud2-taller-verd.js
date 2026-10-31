@@ -6,24 +6,24 @@
 const S=[
  {icon:'💻',short:'Tinkercad',title:'Comencem amb Tinkercad',
   lead:'Preparem el disseny de Nadal que substituirà la decoració del fanalet de Halloween.',
-  theory:'Treballarem amb formes planes i mides reals. Una fotografia JPG/PNG ens pot servir de model, però per importar contorns a Tinkercad cal un SVG adequat o dibuixar les formes directament.',
-  goal:'Disseny nou creat, dues imatges de referència triades i primeres mides comprovades.',
+  theory:'Treballarem amb imatges de Nadal descarregades de Pixabay i les adaptarem al fanalet. Una imatge JPG/PNG serveix de referència; per incorporar-ne el contorn a Tinkercad necessitem un SVG adequat o dibuixar les formes sobre el pla de treball, amb mides reals.',
+  goal:'Disseny nou creat, dues imatges de Pixabay descarregades i primeres mides comprovades.',
   tasks:[
    ['📏','MESURA','Observa la peça original, apunta les mides i els punts on encaixa al fanalet.'],
    ['💻','OBRE TINKERCAD','Crea un disseny nou amb el nom «UD2 · Fanalet Nadal».'],
-   ['🖼️','BUSCA I DESCARREGA','Tria dues imatges de Nadal com a referència. Comprova que les formes es poden dibuixar o convertir en contorns.'],
+   ['🖼️','BUSCA I DESCARREGA','Entra a Pixabay, cerca dues imatges de Nadal, descarrega-les i tria les que tinguin formes senzilles per poder-les adaptar.'],
    ['✅','COMPROVA','Fes una primera prova del contorn, compara les mides amb el fanalet i desa el projecte.']
-  ],links:[['Obrir Tinkercad','https://www.tinkercad.com/']]},
+  ],links:[['Buscar imatges a Pixabay','https://pixabay.com/es/'],['Obrir Tinkercad','https://www.tinkercad.com/']]},
  {icon:'✏️',short:'Modificacions',title:'Acabem de triar i modificar',
-  lead:'Revisem les fotografies o referències i adaptem les formes al nostre projecte.',
+  lead:'Revisem les imatges descarregades de Pixabay i modifiquem les formes perquè encaixin al fanalet.',
   theory:'Per tallar una forma amb làser necessitem contorns definits, una escala correcta i unions resistents. Els detalls massa fins poden trencar-se i les peces soltes poden caure.',
   goal:'Una proposta millorada, amb els contorns i els encaixos revisats.',
   tasks:[
-   ['🖼️','REVISA','Completa les imatges de Nadal que faràs servir de model i tria la més adequada.'],
+   ['🖼️','REVISA','Acaba de triar les imatges de Pixabay i identifica quin contorn aprofitaràs de cadascuna.'],
    ['✏️','MODIFICA','Canvia les formes, les mides, els forats i les unions perquè encaixin a la carcassa.'],
    ['👀','COMPARA','Fes dues versions i decideix quina és més fàcil de fabricar i aprofita millor el material.'],
    ['💾','GUARDA','Desa els canvis i fes una captura de la proposta escollida.']
-  ],links:[['Continuar a Tinkercad','https://www.tinkercad.com/']]},
+  ],links:[['Tornar a Pixabay','https://pixabay.com/es/'],['Continuar a Tinkercad','https://www.tinkercad.com/']]},
  {icon:'📤',short:'Lliurament',title:'Acabem les modificacions i lliurem',
   lead:'Deixem el disseny preparat perquè la professora el pugui revisar.',
   theory:'Un fitxer SVG conserva els contorns vectorials necessaris per preparar el tall. El programa de la talladora ha de verificar les línies, els forats i l’escala 1:1. No tallarem fins que la professora doni el vistiplau.',
