@@ -4,7 +4,7 @@
 (function(){
 'use strict';
 const SESIONS=[
- {num:"01",when:"AVUI",title:"De Halloween a Nadal",detail:"Mesurem la peça que ja tenim i comencem el disseny pla a Tinkercad.",out:"Esbós i contorn amb les mides reals.",now:true},
+ {num:"01",when:"AVUI",title:"Comprenem i decidim",detail:"Teoria de les tres dimensions, repte de sostenibilitat i primera mesura del fanalet.",out:"Decisió justificada i primer esbós del disseny de Nadal.",now:true},
  {num:"02",when:"PROPERA SESSIÓ",title:"Disseny 2D complet",detail:"Dibuixem una estrella, un arbre o un altre motiu nadalenc. Revisem buits, unions i encaixos.",out:"Disseny final preparat per revisar."},
  {num:"03",when:"ABANS DE TALLAR",title:"De Tinkercad al làser",detail:"Exportem el contorn en format SVG i comprovem l'escala 1:1 i les línies de tall amb el professorat.",out:"Fitxer vectorial revisat; tall només amb autorització."},
  {num:"04",when:"TALLER DE MUNTATGE",title:"Muntar i comprovar",detail:"Tallem sota supervisió, substituïm la decoració de Halloween i comprovem l'encaix i la il·luminació.",out:"Fanalet de Nadal acabat i carcassa reutilitzada."}
@@ -12,7 +12,7 @@ const SESIONS=[
 const TODAY=[
  'He observat la peça original i he mesurat l’obertura i els punts de fixació.',
  'He obert Tinkercad, he creat un disseny nou i he posat les mides de la peça.',
- 'He dibuixat un primer motiu nadalenc i he desat el projecte.'
+ 'He preparat un esbós d’un motiu nadalenc i he desat el primer disseny.'
 ];
 function make(tag,cls,text){const x=document.createElement(tag);if(cls)x.className=cls;if(text!==undefined)x.textContent=text;return x;}
 function add(parent,tag,cls,text){const x=make(tag,cls,text);parent.append(x);return x;}
@@ -34,10 +34,10 @@ function todayTask(){
  const task=make('section','ud2-work-today-card');
  const top=make('div','ud2-work-today-top');
  const badge=add(top,'span','ud2-work-badge','▶ FEM-HO AVUI');
- add(top,'strong','ud2-work-time','15 min de teoria + 40 min de taller');
+ add(top,'strong','ud2-work-time','20 min de teoria + 15 min de repte + 20 min de taller');
  task.append(top);
  add(task,'h3','ud2-work-today-heading','Comencem el disseny amb Tinkercad');
- add(task,'p','ud2-work-today-intro','Avui no fabricarem un fanalet nou: adaptarem les peces decoratives del de Halloween perquè tinguin temàtica de Nadal. Dissenyarem el contorn en 2D per preparar el tall amb làser.');
+ add(task,'p','ud2-work-today-intro','Després del repte sostenible, començarem l’adaptació del fanalet que ja tenim. Avui n’observarem les mides i iniciarem el disseny pla de la decoració de Nadal a Tinkercad; el tall làser quedarà per a una altra sessió.');
  const actions=make('ol','ud2-work-actions');
  [
  ['Observa i mesura','Agafa la peça que ja tenim. Mesura el contorn, els encaixos i l’espai que ocupa al fanalet. Fes un esbós de la nova decoració.'],
@@ -99,7 +99,7 @@ function build(){
  const first=todayTask();section.append(first,checklist());
  const timeline=make('div','ud2-work-roadmap');
  add(timeline,'h3','','🗓️ Cronologia del nostre projecte');
- add(timeline,'p','ud2-work-roadmap-subtitle','Avui comencem el disseny. Els passos següents ens portaran fins a la peça tallada i muntada.');
+ add(timeline,'p','ud2-work-roadmap-subtitle','Avui raonem en equip i fem un primer esbós. Les sessions següents serviran per completar el disseny, revisar el fitxer i muntar el fanalet.');
  const list=make('ol','ud2-work-timeline');SESIONS.forEach(s=>list.append(timelineItem(s)));
  timeline.append(list);
  section.append(timeline);
