@@ -1,0 +1,220 @@
+/* UD2 · Repte de les tres dimensions. Només la primera teoria.
+   Llegibilitat, tecles de ràdio accessibles, no es guarden respostes. */
+.ud2-topic-redesign #ud2-repte-tres-dimensions{
+ font-family:Verdana,'Trebuchet MS',Arial,sans-serif;
+ margin:26px 0 28px;color:#3e3045;border:2px solid #e7c1df;
+ border-radius:20px;overflow:hidden;background:#fff;
+ box-shadow:0 7px 22px #9c5e8d13;
+}
+.ud2-topic-redesign .ud2-challenge-head{
+ background:linear-gradient(110deg,#fff0d8 0%,#ffebf6 65%,#f1e7ff 100%);
+ padding:23px 25px 20px;
+}
+.ud2-topic-redesign .ud2-challenge-eyebrow{
+ font-size:12px;font-weight:900;letter-spacing:.05em;color:#9d4e12;
+ display:block;margin-bottom:8px;
+}
+.ud2-topic-redesign .ud2-challenge-head h2{
+ font-size:clamp(21px,3vw,30px);font-weight:900;line-height:1.4;
+ color:#793184;margin:0 0 12px;
+}
+.ud2-topic-redesign .ud2-challenge-head p{
+ font-size:15px;line-height:1.72;max-width:75ch;margin:0;
+ color:#524257;
+}
+.ud2-topic-redesign .ud2-challenge-context{
+ padding:20px 22px;border-bottom:1px solid #ecd8e9;
+ background:#fffefa;
+}
+.ud2-topic-redesign .ud2-challenge-context>h3{
+ font-size:21px;font-weight:900;color:#7b308d;line-height:1.4;margin:0 0 11px;
+}
+.ud2-topic-redesign .ud2-challenge-context>p{
+ font-size:15px;line-height:1.73;max-width:80ch;margin:0 0 15px;color:#4a3e50;
+}
+.ud2-topic-redesign .ud2-challenge-theory-cards{
+ display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;
+ margin:13px 0 17px;
+}
+.ud2-topic-redesign .ud2-challenge-theory-card{
+ display:flex;flex-direction:column;align-items:flex-start;
+ gap:7px;padding:15px;border-radius:13px;
+ background:#fff7e9;border:1px solid #e9cfaa;border-top:5px solid #db8520;min-width:0;
+}
+.ud2-topic-redesign .ud2-challenge-theory-card:nth-child(2){
+ background:#fff2fa;border-color:#edcbe2;border-top-color:#d34b99;
+}
+.ud2-topic-redesign .ud2-challenge-theory-card:nth-child(3){
+ background:#f4efff;border-color:#d8c7e7;border-top-color:#9056c8;
+}
+.ud2-topic-redesign .ud2-challenge-theory-icon{font-size:29px;line-height:1.2}
+.ud2-topic-redesign .ud2-challenge-theory-card strong{font-size:15px;font-weight:900;color:#752885}
+.ud2-topic-redesign .ud2-challenge-theory-card p{margin:0;color:#514357;font-size:13px;line-height:1.6}
+.ud2-topic-redesign .ud2-challenge-context .ud2-challenge-context-end{
+ font-weight:750;color:#74347c;
+ padding:13px 16px;border-left:4px solid #e19a3d;background:#fff5e3;
+ border-radius:0 10px 10px 0;margin:0;max-width:none;
+}
+.ud2-topic-redesign .ud2-challenge-progress{
+ display:flex;gap:10px;justify-content:space-between;align-items:center;
+ flex-wrap:wrap;padding:15px 22px;
+ background:#f8f2fd;border-bottom:1px solid #e4cde9;
+}
+.ud2-topic-redesign .ud2-challenge-progress strong{color:#81368e;font-size:15px}
+.ud2-topic-redesign .ud2-challenge-count{
+ border-radius:999px;background:#fff;border:1px solid #dbc7e3;
+ color:#80418e;font-size:13px;font-weight:850;padding:5px 11px;
+}
+.ud2-topic-redesign .ud2-challenge-progress.is-complete .ud2-challenge-count{
+ color:#1a673f;background:#e1f6e8;border-color:#a4d7b4;
+}
+.ud2-topic-redesign .ud2-challenge-cases{
+ display:grid;gap:17px;padding:20px 22px 23px;background:#fff;
+}
+.ud2-topic-redesign .ud2-challenge-case{
+ margin:0;border:1px solid #e9d2e5;border-radius:17px;
+ padding:20px 20px 18px;background:#fff;min-width:0;
+}
+.ud2-topic-redesign .ud2-challenge-case:nth-child(1){border-top:6px solid #db8b26;background:#fffdf9}
+.ud2-topic-redesign .ud2-challenge-case:nth-child(2){border-top:6px solid #d15aa7;background:#fffcfe}
+.ud2-topic-redesign .ud2-challenge-case:nth-child(3){border-top:6px solid #8f5ac3;background:#fdfbff}
+.ud2-topic-redesign .ud2-challenge-case-head{
+ display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:9px;
+ margin-bottom:9px;
+}
+.ud2-topic-redesign .ud2-challenge-case-count{
+ color:#a5571d;font-size:12px;font-weight:900;letter-spacing:.02em;
+}
+.ud2-topic-redesign .ud2-challenge-case-area{
+ background:#f6e8fb;color:#833c92;border-radius:999px;
+ padding:5px 11px;font-size:11px;font-weight:900;
+}
+.ud2-topic-redesign .ud2-challenge-case h3{
+ color:#77338b;font-size:clamp(18px,2.3vw,22px);font-weight:900;
+ line-height:1.4;margin:0 0 8px;
+}
+.ud2-topic-redesign .ud2-challenge-problem{
+ color:#4d3d54;font-size:15px;line-height:1.7;margin:0 0 15px;max-width:80ch;
+}
+.ud2-topic-redesign .ud2-challenge-options{
+ border:0;margin:0 0 15px;padding:0;
+ display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;
+ min-width:0;
+}
+.ud2-topic-redesign .ud2-challenge-options legend{
+ font-size:14px;font-weight:850;color:#783788;
+ margin-bottom:10px;padding:0;
+}
+.ud2-topic-redesign .ud2-challenge-option{
+ display:flex;gap:10px;align-items:flex-start;
+ border:2px solid #e8d3e3;background:#fff;
+ border-radius:13px;padding:13px 11px;
+ cursor:pointer;min-height:120px;min-width:0;
+ transition:background .1s,border-color .1s;
+}
+.ud2-topic-redesign .ud2-challenge-option input[type=radio]{
+ flex:0 0 18px;height:18px;width:18px;margin:4px 0 0;accent-color:#8a429b;
+}
+.ud2-topic-redesign .ud2-challenge-option:focus-within{
+ outline:3px solid #ad64b3;outline-offset:2px;
+}
+.ud2-topic-redesign .ud2-challenge-option.is-selected,
+.ud2-topic-redesign .ud2-challenge-option:has(input:checked){
+ background:#f3e7fb;border-color:#9655b9;
+}
+.ud2-topic-redesign .ud2-challenge-letter{
+ background:#ffe8c5;color:#9d5614;
+ border-radius:8px;min-width:27px;text-align:center;padding:4px;
+ font-size:13px;font-weight:900;
+}
+.ud2-topic-redesign .ud2-challenge-choice-text{
+ display:block;min-width:0;overflow-wrap:break-word;
+}
+.ud2-topic-redesign .ud2-challenge-choice-text strong{
+ display:block;color:#6c3279;font-size:14px;line-height:1.5;font-weight:900;
+}
+.ud2-topic-redesign .ud2-challenge-choice-text small{
+ display:block;color:#594b5e;font-size:12px;line-height:1.6;margin-top:5px;
+}
+.ud2-topic-redesign .ud2-challenge-reveal{
+ border:0;border-radius:11px;background:#78358b;color:#fff;
+ font-size:14px;font-weight:900;min-height:44px;padding:12px 18px;
+ cursor:pointer;
+}
+.ud2-topic-redesign .ud2-challenge-reveal:disabled{
+ background:#d1c7d3;color:#555;cursor:not-allowed;
+}
+.ud2-topic-redesign .ud2-challenge-feedback{
+ background:#fbf5ff;border:1px solid #e4c6eb;
+ padding:16px 18px;border-radius:14px;margin-top:14px;
+}
+.ud2-topic-redesign .ud2-challenge-feedback[hidden]{display:none}
+.ud2-topic-redesign .ud2-challenge-feedback h4{
+ color:#74338c;font-size:17px;font-weight:900;margin:0 0 12px;
+}
+.ud2-topic-redesign .ud2-challenge-impact-grid{
+ display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-bottom:15px;
+}
+.ud2-topic-redesign .ud2-challenge-impact{
+ padding:13px;border:1px solid #e9ccdd;border-left:4px solid #dd8c23;
+ background:#fffaf1;border-radius:0 10px 10px 0;
+}
+.ud2-topic-redesign .ud2-challenge-impact:nth-child(2){
+ border-left-color:#c75396;background:#fff5fa;
+}
+.ud2-topic-redesign .ud2-challenge-impact:nth-child(3){
+ border-left-color:#8d56c3;background:#f7f1ff;
+}
+.ud2-topic-redesign .ud2-challenge-impact strong{
+ color:#6d3284;display:block;margin-bottom:6px;font-size:14px;
+}
+.ud2-topic-redesign .ud2-challenge-impact p{
+ margin:0;font-size:13px;line-height:1.7;color:#423549;
+}
+.ud2-topic-redesign .ud2-challenge-hint{
+ background:#fff;border-radius:10px;padding:12px 14px;color:#503b58;
+ font-size:14px;line-height:1.65;margin:0 0 9px;
+}
+.ud2-topic-redesign .ud2-challenge-talk{
+ margin:0;font-size:14px;color:#6c3282;line-height:1.65;font-weight:650;
+}
+.ud2-topic-redesign .ud2-challenge-close{
+ padding:21px 23px 23px;background:linear-gradient(120deg,#f8efff,#fff7e8);
+ border-top:1px solid #e8d2e4;
+}
+.ud2-topic-redesign .ud2-challenge-close h3{
+ color:#74318a;font-size:21px;font-weight:900;margin:0 0 10px;
+}
+.ud2-topic-redesign .ud2-challenge-close p{
+ color:#4f4155;font-size:15px;line-height:1.7;margin:0 0 10px;max-width:78ch;
+}
+.ud2-topic-redesign .ud2-challenge-close .ud2-challenge-next{
+ font-weight:800;color:#884810;margin:0;
+}
+.ud2-topic-redesign.ud2-easy-large-text #ud2-repte-tres-dimensions p,
+.ud2-topic-redesign.ud2-easy-large-text #ud2-repte-tres-dimensions small{
+ font-size:18px!important;line-height:1.85!important;
+}
+@media(max-width:900px){
+ .ud2-topic-redesign .ud2-challenge-options{grid-template-columns:1fr}
+ .ud2-topic-redesign .ud2-challenge-option{min-height:0}
+ .ud2-topic-redesign .ud2-challenge-theory-cards,
+ .ud2-topic-redesign .ud2-challenge-impact-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+ .ud2-topic-redesign .ud2-challenge-head,
+ .ud2-topic-redesign .ud2-challenge-context,
+ .ud2-topic-redesign .ud2-challenge-close{padding:17px 15px}
+ .ud2-topic-redesign .ud2-challenge-cases{padding:14px 11px}
+ .ud2-topic-redesign .ud2-challenge-case{padding:14px 12px}
+ .ud2-topic-redesign .ud2-challenge-progress{padding:13px 14px}
+ .ud2-topic-redesign .ud2-challenge-theory-card{padding:11px 12px}
+}
+@media(prefers-reduced-motion:reduce){
+ .ud2-topic-redesign .ud2-challenge-option{transition:none}
+}
+@media print{
+ .ud2-topic-redesign .ud2-challenge-case{break-inside:avoid}
+ .ud2-topic-redesign .ud2-challenge-reveal{display:none}
+ .ud2-topic-redesign .ud2-challenge-feedback[hidden]{display:block}
+}
