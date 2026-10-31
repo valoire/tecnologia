@@ -1,0 +1,201 @@
+/* UD2: símbols d'acció de lectura ràpida.
+   Contrast adequat, text sempre al costat de la icona, sense fonts externes. */
+.ud2-topic-redesign .ud2-action-signal{
+ --sig-bg:#fff4df;
+ --sig-border:#eab76e;
+ --sig-text:#8c4308;
+ --sig-icon:#ffead0;
+ display:flex;
+ align-items:center;
+ gap:17px;
+ width:100%;
+ min-width:0;
+ padding:15px 18px;
+ margin:16px 0;
+ border:2px solid var(--sig-border);
+ border-left:7px solid var(--sig-border);
+ border-radius:16px;
+ background:var(--sig-bg);
+ font-family:Verdana,'Trebuchet MS',Arial,sans-serif;
+ box-sizing:border-box;
+}
+.ud2-topic-redesign .ud2-action-pink{
+ --sig-bg:#fff0f8;
+ --sig-border:#d88cbf;
+ --sig-text:#8c256c;
+ --sig-icon:#ffdcf0;
+}
+.ud2-topic-redesign .ud2-action-purple{
+ --sig-bg:#f6eeff;
+ --sig-border:#b999da;
+ --sig-text:#66308e;
+ --sig-icon:#eee1ff;
+}
+.ud2-topic-redesign .ud2-action-green{
+ --sig-bg:#effaf1;
+ --sig-border:#94caa7;
+ --sig-text:#22633d;
+ --sig-icon:#d7f3df;
+}
+.ud2-topic-redesign .ud2-action-glyph{
+ display:grid;
+ place-items:center;
+ width:70px;
+ height:70px;
+ min-width:70px;
+ flex:0 0 70px;
+ background:var(--sig-icon);
+ border:2px solid var(--sig-border);
+ border-radius:17px;
+ font-size:42px;
+ line-height:1;
+}
+.ud2-topic-redesign .ud2-action-message{
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+ gap:4px;
+ min-width:0;
+}
+.ud2-topic-redesign .ud2-action-verb{
+ display:block;
+ color:var(--sig-text);
+ font-size:clamp(19px,2.7vw,24px);
+ line-height:1.28;
+ font-weight:900;
+ letter-spacing:.025em;
+}
+.ud2-topic-redesign .ud2-action-detail{
+ margin:0;
+ color:#3f3445;
+ font-size:15px;
+ font-weight:650;
+ line-height:1.65;
+ max-width:76ch;
+}
+.ud2-topic-redesign .ud2-action-compact{
+ padding:10px 13px;
+ margin:12px 0;
+ gap:11px;
+ border-left-width:5px;
+ border-radius:13px;
+}
+.ud2-topic-redesign .ud2-action-compact .ud2-action-glyph{
+ width:51px;
+ height:51px;
+ min-width:51px;
+ flex-basis:51px;
+ border-radius:13px;
+ font-size:31px;
+}
+.ud2-topic-redesign .ud2-action-compact .ud2-action-verb{
+ font-size:17px;
+}
+.ud2-topic-redesign .ud2-action-compact .ud2-action-detail{
+ font-size:13px;
+ line-height:1.55;
+}
+.ud2-topic-redesign .ud2-challenge-case>.ud2-action-signal{
+ margin:13px 0 16px;
+}
+.ud2-topic-redesign .ud2-action-writing{
+ margin:3px 23px 18px;
+ padding:12px 16px 17px;
+ background:#fffafc;
+ border:1px solid #eccde1;
+ border-radius:18px;
+}
+.ud2-topic-redesign .ud2-action-writing>.ud2-action-signal{
+ margin:0 0 10px;
+}
+.ud2-topic-redesign .ud2-action-paper{
+ margin:0 2px;
+ padding:14px 17px;
+ background:#fff;
+ border:1px dashed #c998b5;
+ border-radius:11px;
+}
+.ud2-topic-redesign .ud2-action-paper strong{
+ display:block;
+ margin:0 0 6px;
+ color:#712775;
+ font-size:15px;
+}
+.ud2-topic-redesign .ud2-action-paper p{
+ margin:0;
+ color:#4c3655;
+ font-size:15px;
+ line-height:1.76;
+ font-style:italic;
+}
+.ud2-topic-redesign .ud2-challenge-close>.ud2-action-signal{
+ margin-top:0;
+ margin-bottom:18px;
+}
+.ud2-topic-redesign .ud2-action-workstep{
+ align-items:flex-start;
+}
+.ud2-topic-redesign .ud2-action-workstep>div{
+ flex:1;
+ min-width:0;
+}
+.ud2-topic-redesign .ud2-action-workstep .ud2-action-signal{
+ width:100%;
+ margin:0 0 9px;
+}
+.ud2-topic-redesign .ud2-work-checklist>.ud2-action-signal{
+ margin:0 0 13px;
+}
+.ud2-topic-redesign .ud2-easy-oral>.ud2-action-signal{
+ margin:0 0 16px;
+}
+.ud2-topic-redesign.ud2-easy-large-text .ud2-action-detail{
+ font-size:18px!important;
+ line-height:1.85!important;
+}
+@media(max-width:640px){
+ .ud2-topic-redesign .ud2-action-signal{
+  gap:12px;
+  padding:12px 13px;
+  margin:12px 0;
+ }
+ .ud2-topic-redesign .ud2-action-glyph{
+  width:53px;
+  height:53px;
+  min-width:53px;
+  flex-basis:53px;
+  border-radius:14px;
+  font-size:32px;
+ }
+ .ud2-topic-redesign .ud2-action-verb{
+  font-size:18px;
+ }
+ .ud2-topic-redesign .ud2-action-detail{
+  font-size:13px;
+  line-height:1.62;
+ }
+ .ud2-topic-redesign .ud2-action-compact .ud2-action-glyph{
+  width:43px;
+  height:43px;
+  min-width:43px;
+  flex-basis:43px;
+  font-size:26px;
+ }
+ .ud2-topic-redesign .ud2-action-compact .ud2-action-verb{
+  font-size:15px;
+ }
+ .ud2-topic-redesign .ud2-action-writing{
+  margin:2px 11px 17px;
+  padding:10px;
+ }
+ .ud2-topic-redesign .ud2-action-paper p{
+  font-size:13px;
+ }
+}
+@media print{
+ .ud2-topic-redesign .ud2-action-signal,
+ .ud2-topic-redesign .ud2-action-writing{
+  break-inside:avoid;
+  box-shadow:none;
+ }
+}
