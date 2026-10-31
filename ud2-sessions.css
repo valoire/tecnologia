@@ -1,0 +1,243 @@
+/* UD2 · Organització per sessions. Mostrem la teoria, després l'activitat i finalment el taller.
+   Només remaqueta la primera sessió, sense amagar teoria ni introduir desplegables. */
+.ud2-topic-redesign #ud2-sessio-1{
+ --s-orange:#ed8b1b;
+ --s-pink:#cf519d;
+ --s-purple:#8950c3;
+ margin:25px 0 20px;
+ font-family:Verdana,'Trebuchet MS',Arial,sans-serif;
+ color:#45344b;
+}
+.ud2-topic-redesign .ud2-session-header{
+ border:2px solid #e9c4df;
+ border-radius:22px;
+ padding:26px 28px 24px;
+ background:linear-gradient(120deg,#fff0d8,#ffecf6 65%,#f2eaff);
+ box-shadow:0 10px 25px #a96ba014;
+}
+.ud2-topic-redesign .ud2-session-kicker{
+ color:#a44e11;
+ font-size:12px;letter-spacing:.08em;font-weight:900;
+ display:block;margin:0 0 9px;
+}
+.ud2-topic-redesign .ud2-session-header>h2{
+ color:#743087;line-height:1.35;
+ font-size:clamp(22px,3vw,32px);
+ font-weight:900;margin:0 0 11px;
+}
+.ud2-topic-redesign .ud2-session-intro{
+ color:#513d56;font-size:16px;
+ line-height:1.75;max-width:79ch;
+ margin:0 0 19px;
+}
+.ud2-topic-redesign .ud2-session-progress{
+ display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+ gap:10px;margin:0 0 16px;
+}
+.ud2-topic-redesign .ud2-session-progress-step{
+ display:flex;align-items:center;gap:12px;
+ border:2px solid #edbb80;border-radius:15px;
+ padding:13px 12px;min-height:77px;
+ background:#fff9ec;
+ color:#773379;text-decoration:none;
+}
+.ud2-topic-redesign .ud2-session-progress-step:nth-child(2){
+ background:#fff3fa;border-color:#e7b8d5;
+}
+.ud2-topic-redesign .ud2-session-progress-step:nth-child(3){
+ background:#f6efff;border-color:#d4bce9;
+}
+.ud2-topic-redesign .ud2-session-progress-step:hover{
+ box-shadow:0 3px 12px #95629224;
+}
+.ud2-topic-redesign .ud2-session-progress-step:focus-visible{
+ outline:3px solid #77318d;outline-offset:3px;
+}
+.ud2-topic-redesign .ud2-session-progress-icon{
+ width:45px;height:45px;flex:0 0 45px;
+ display:grid;place-items:center;
+ border-radius:12px;background:#fff;
+ font-size:28px;line-height:1;
+}
+.ud2-topic-redesign .ud2-session-progress-step span:last-child{
+ display:flex;flex-direction:column;min-width:0;gap:5px;
+}
+.ud2-topic-redesign .ud2-session-progress-step strong{
+ font-size:15px;color:#78317e;font-weight:900;
+}
+.ud2-topic-redesign .ud2-session-progress-step small{
+ color:#7b4e7e;font-size:13px;font-weight:800;
+}
+.ud2-topic-redesign .ud2-session-goal{
+ padding:13px 17px;
+ background:#fff;border-left:5px solid #e88b2a;
+ border-radius:0 12px 12px 0;
+ margin:0!important;font-size:15px;line-height:1.7;
+ font-weight:750;color:#68406c;
+}
+.ud2-topic-redesign .ud2-session-phase{
+ margin:24px 0 0;border:2px solid #ead0e2;
+ border-radius:22px;overflow:hidden;
+ background:#fff;
+ box-shadow:0 7px 23px #98589710;
+ scroll-margin-top:35px;
+}
+.ud2-topic-redesign .ud2-session-phase-teoria{border-color:#f1c493}
+.ud2-topic-redesign .ud2-session-phase-activitat{border-color:#e5b7d5}
+.ud2-topic-redesign .ud2-session-phase-taller{border-color:#d6c1ed}
+.ud2-topic-redesign .ud2-session-phase-head{
+ display:flex;align-items:center;gap:16px;
+ padding:18px 24px;
+ border-bottom:1px solid #edcee3;
+ background:#fff0da;
+}
+.ud2-topic-redesign .ud2-session-phase-activitat>.ud2-session-phase-head{background:#fff0f8}
+.ud2-topic-redesign .ud2-session-phase-taller>.ud2-session-phase-head{background:#f4edff}
+.ud2-topic-redesign .ud2-session-phase-icon{
+ width:69px;height:69px;min-width:69px;flex:0 0 69px;
+ border-radius:18px;
+ display:grid;place-items:center;
+ background:white;border:2px solid #f2c384;
+ font-size:39px;line-height:1;
+}
+.ud2-topic-redesign .ud2-session-phase-activitat .ud2-session-phase-icon{border-color:#e4aed0}
+.ud2-topic-redesign .ud2-session-phase-taller .ud2-session-phase-icon{border-color:#cfb7e8}
+.ud2-topic-redesign .ud2-session-phase-eyebrow{
+ display:block;color:#a35718;font-size:12px;
+ letter-spacing:.05em;font-weight:900;margin-bottom:3px;
+}
+.ud2-topic-redesign .ud2-session-phase-activitat .ud2-session-phase-eyebrow{color:#a13d7d}
+.ud2-topic-redesign .ud2-session-phase-taller .ud2-session-phase-eyebrow{color:#7544a0}
+.ud2-topic-redesign .ud2-session-phase-heading h3{
+ color:#732f88;
+ font:900 clamp(20px,2.5vw,26px)/1.34 Verdana,'Trebuchet MS',sans-serif;
+ margin:0 0 5px;
+}
+.ud2-topic-redesign .ud2-session-phase-heading p{
+ margin:0;font-size:14px;
+ color:#634b6a;line-height:1.63;
+}
+.ud2-topic-redesign .ud2-session-phase-body{
+ padding:22px 24px 23px;min-width:0;
+}
+.ud2-topic-redesign .ud2-session-phase-body>.ud2-solid-article{
+ margin:0;max-width:100%;
+}
+.ud2-topic-redesign .ud2-session-phase-body>.ud2-challenge-context{
+ margin-top:22px;border:1px solid #edd6e6;
+ border-left:6px solid #ec962b;
+ border-radius:16px;
+ background:#fffbf1;
+}
+.ud2-topic-redesign .ud2-session-phase-body>.ud2-challenge{
+ border:0;
+ border-radius:0;
+ box-shadow:none;
+ margin:0;
+ overflow:visible;
+}
+.ud2-topic-redesign .ud2-session-phase-activitat .ud2-challenge-head{
+ border-radius:16px 16px 0 0;
+}
+.ud2-topic-redesign .ud2-session-phase-activitat .ud2-easy-practice{
+ margin-top:19px;
+}
+.ud2-topic-redesign .ud2-session-phase-activitat .ud2-easy-oral{
+ margin-top:19px;
+}
+.ud2-topic-redesign .ud2-session-phase-body>#ud2-taller-avui{
+ margin:0;border:0;box-shadow:none;background:transparent;
+ border-radius:0;overflow:visible;
+}
+.ud2-topic-redesign .ud2-session-phase-taller .ud2-workshop-head{
+ border:1px solid #e4cbed;border-radius:16px;
+ padding:18px 22px;margin-bottom:16px;
+ background:linear-gradient(115deg,#fff4df,#f7edff);
+}
+.ud2-topic-redesign .ud2-session-phase-taller .ud2-workshop-head h2{
+ font-size:22px;margin-bottom:7px;
+}
+.ud2-topic-redesign .ud2-session-phase-taller .ud2-work-today-card{
+ margin:0 0 15px;padding:18px 20px;
+}
+.ud2-topic-redesign .ud2-session-phase-taller .ud2-work-checklist{
+ margin:0;padding:17px;
+}
+.ud2-topic-redesign .ud2-session-next{
+ margin:23px 0 28px;
+ border:1px dashed #c6a0d1;
+ border-radius:18px;overflow:hidden;
+ background:#fff;
+}
+.ud2-topic-redesign .ud2-session-next-head{
+ padding:19px 22px 16px;
+ background:#f9f3ff;
+ border-bottom:1px solid #e9d5ef;
+}
+.ud2-topic-redesign .ud2-session-next-head h2{
+ color:#7a3b8c;line-height:1.4;font-size:21px;margin:0 0 8px;
+}
+.ud2-topic-redesign .ud2-session-next-head p{
+ color:#66526a;font-size:14px;line-height:1.72;margin:0;
+}
+.ud2-topic-redesign .ud2-session-next .ud2-work-roadmap{
+ border:0;padding:19px 21px;
+ background:#fff;
+}
+.ud2-topic-redesign .ud2-session-next .ud2-work-timeline{
+ grid-template-columns:repeat(3,minmax(0,1fr));
+}
+.ud2-topic-redesign .ud2-session-next .ud2-work-endnote{
+ margin:0;border-top:1px solid #eddaeb;
+}
+.ud2-topic-redesign.ud2-easy-large-text .ud2-session-intro,
+.ud2-topic-redesign.ud2-easy-large-text .ud2-session-goal{
+ font-size:19px!important;line-height:1.85!important;
+}
+@media(max-width:890px){
+ .ud2-topic-redesign .ud2-session-progress{
+  grid-template-columns:1fr;
+ }
+ .ud2-topic-redesign .ud2-session-progress-step{min-height:0;}
+ .ud2-topic-redesign .ud2-session-next .ud2-work-timeline{
+  grid-template-columns:1fr;
+ }
+}
+@media(max-width:640px){
+ .ud2-topic-redesign .ud2-session-header{
+  padding:19px 16px;
+ }
+ .ud2-topic-redesign .ud2-session-phase-head{
+  padding:14px;gap:11px;
+ }
+ .ud2-topic-redesign .ud2-session-phase-icon{
+  width:52px;height:52px;min-width:52px;flex-basis:52px;
+  font-size:31px;border-radius:14px;
+ }
+ .ud2-topic-redesign .ud2-session-phase-body{
+  padding:15px 12px 18px;
+ }
+ .ud2-topic-redesign .ud2-session-phase-heading h3{font-size:20px}
+ .ud2-topic-redesign .ud2-session-phase-heading p{font-size:13px}
+ .ud2-topic-redesign .ud2-session-next-head{padding:16px}
+ .ud2-topic-redesign .ud2-session-next .ud2-work-roadmap{
+  padding:14px;
+ }
+ .ud2-topic-redesign .ud2-session-phase-taller .ud2-workshop-head{
+  padding:15px;
+ }
+ .ud2-topic-redesign .ud2-session-phase-taller .ud2-work-today-card{
+  padding:13px 11px;
+ }
+ .ud2-topic-redesign .ud2-session-phase-taller .ud2-work-checklist{
+  padding:13px;
+ }
+}
+@media(prefers-reduced-motion:reduce){
+ .ud2-topic-redesign .ud2-session-phase{scroll-behavior:auto}
+}
+@media print{
+ .ud2-topic-redesign .ud2-session-progress{display:none}
+ .ud2-topic-redesign .ud2-session-phase-head{break-after:avoid}
+ .ud2-topic-redesign .ud2-session-next{break-before:page}
+}
