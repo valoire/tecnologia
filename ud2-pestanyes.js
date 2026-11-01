@@ -6,25 +6,25 @@ const TEMES=[
  {title:'Entendre la sostenibilitat',short:'Sostenibilitat',icon:'🌱',
   subtitle:'Què és, les tres dimensions i com prenem decisions tecnològiques.',
   questions:[
-   'Si el fanalet de Halloween encara funciona, en quines condicions seria millor adaptar-lo per a Nadal que fabricar-ne un de nou?',
+   'Com milloraries una plaça del barri perquè fos més fresca, accessible i sostenible?',
    'Pots posar un exemple en què una solució sigui bona ambientalment, però presenti un problema social o econòmic? Com el resoldries?'
   ]},
  {title:'L’Agenda 2030 i els ODS',short:'Agenda 2030 i ODS',icon:'🌍',
   subtitle:'L’ONU, els 17 objectius i la relació amb la tecnologia.',
   questions:[
-   'Quins ODS es relacionen amb la reutilització del fanalet i amb la reducció del consum dels LEDs? Justifica la resposta.',
+   'Quins ODS es relacionen amb la reducció del consum elèctric de l’institut i la reutilització de materials? Justifica-ho.',
    'Quina millora tecnològica podríem fer al nostre institut i quin indicador utilitzaríem per comprovar si funciona?'
   ]},
  {title:'Recursos naturals i processos extractius',short:'Recursos i mineria',icon:'⛏️',
   subtitle:'Matèries primeres, mena i ganga, impactes, prevenció i restauració.',
   questions:[
-   'D’on provenen el coure dels cables i els materials de la carcassa d’un aparell? Quines etapes han seguit abans d’arribar al taller?',
+   'D’on provenen el coure dels cables i l’alumini d’una bicicleta? Quines etapes han seguit abans d’arribar al consumidor?',
    'Una mina aporta materials per fabricar bateries, però altera el paisatge. Quines condicions exigiries per reduir-ne els impactes?'
   ]},
  {title:'Energia, transformacions i eficiència',short:'Energia i rendiment',icon:'⚡',
   subtitle:'Energia útil i dissipada, potència, fonts renovables i càlculs.',
   questions:[
-   'En un fanalet amb LED, quina energia considerem útil i quina es dissipa? La resposta canviaria si parléssim d’una estufa?',
+   'En un llum de lectura LED, quina energia considerem útil i quina es dissipa? Canviaria si parléssim d’una estufa?',
    'Un LED de 3 W funciona durant 5 hores. Quina energia consumeix en Wh i en kWh? Què hauríem de saber per calcular-ne el cost?'
   ]},
  {title:'L’aigua: disponibilitat, qualitat i tractament',short:'Recursos hídrics',icon:'💧',
@@ -43,7 +43,7 @@ const TEMES=[
   subtitle:'Dissenyar per durar, reparar, reutilitzar i recuperar materials.',
   questions:[
    'Per què reutilitzar un producte sencer pot ser preferible a reciclar-ne els materials? En quins casos podria no ser així?',
-   'Com dissenyaries una carcassa perquè el mateix fanalet serveixi per Halloween, Nadal i altres celebracions sense generar tants residus?'
+   'Com dissenyaries una motxilla escolar perquè fos reparable, duradora i generés menys residus?'
   ]}
 ];
 function n(tag,cls,text){
