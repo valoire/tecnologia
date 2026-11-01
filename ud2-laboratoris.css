@@ -1,0 +1,251 @@
+/* UD2 · Laboratoris interactius amb reforç positiu i teoria separada del taller. */
+.ud2-topic-redesign .ud2-lab-modes{
+ display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;
+ margin:0 0 20px;
+}
+.ud2-topic-redesign .ud2-lab-mode-button{
+ cursor:pointer;min-height:62px;
+ background:#fff7e9;border:2px solid #edcc9e;border-radius:15px;
+ color:#885216;padding:14px 17px;text-align:center;
+ font:900 18px/1.35 Verdana,'Trebuchet MS',Arial,sans-serif;
+}
+.ud2-topic-redesign .ud2-lab-mode-button:nth-child(2){
+ background:#f0eafd;border-color:#d7bfe9;color:#763a9a;
+}
+.ud2-topic-redesign .ud2-lab-mode-button.is-active{
+ background:#ffe7ba;border-color:#d97914;
+ box-shadow:0 5px 15px #bf85302b;
+}
+.ud2-topic-redesign .ud2-lab-mode-button:nth-child(2).is-active{
+ background:#e9dcfd;border-color:#8a4bc0;
+ box-shadow:0 5px 15px #ab79be2b;
+}
+.ud2-topic-redesign .ud2-lab-mode-button:focus-visible,
+.ud2-topic-redesign .ud2-lab-check:focus-visible{
+ outline:3px solid #7d328d;outline-offset:3px;
+}
+.ud2-topic-redesign .ud2-lab-mode-panel[hidden],
+.ud2-topic-redesign .ud2-lab-feedback[hidden],
+.ud2-topic-redesign .ud2-lab-celebration[hidden]{
+ display:none!important;
+}
+.ud2-topic-redesign .ud2-lab-mode-panel{
+ min-width:0;
+}
+.ud2-topic-redesign .ud2-lab{
+ font-family:Verdana,'Trebuchet MS',Arial,sans-serif;
+ border:2px solid #e2bfe8;
+ border-radius:20px;
+ overflow:hidden;
+ background:#fff;
+ color:#3d3144;
+ margin:14px 0 22px;
+ box-shadow:0 9px 24px #9750a213;
+}
+.ud2-topic-redesign .ud2-lab-head{
+ background:linear-gradient(110deg,#f3e7ff,#ffeaf3 55%,#fff0d9);
+ padding:20px 23px 22px;
+}
+.ud2-topic-redesign .ud2-lab-eyebrow{
+ display:block;color:#8e4d95;
+ font-size:12px;letter-spacing:.06em;font-weight:900;margin-bottom:9px;
+}
+.ud2-topic-redesign .ud2-lab-head h3{
+ color:#6e2c83;
+ font-size:clamp(20px,2.7vw,28px);
+ line-height:1.4;font-weight:900;margin:0 0 11px;
+}
+.ud2-topic-redesign .ud2-lab-head p{
+ font-size:15px;line-height:1.73;color:#504058;
+ max-width:78ch;margin:0;
+}
+.ud2-topic-redesign .ud2-lab-progress{
+ display:flex;justify-content:space-between;gap:10px;
+ align-items:center;flex-wrap:wrap;
+ border-block:1px solid #e7cde3;
+ padding:13px 22px;background:#faf5ff;
+}
+.ud2-topic-redesign .ud2-lab-progress strong{
+ color:#713085;font-size:14px;font-weight:900;
+}
+.ud2-topic-redesign .ud2-lab-count{
+ background:#fff;border:1px solid #dcbfe5;
+ color:#743789;border-radius:999px;
+ font-size:13px;font-weight:900;padding:6px 13px;
+}
+.ud2-topic-redesign .ud2-lab-progress.is-done{
+ background:#e9f8ef;border-color:#afdec2;
+}
+.ud2-topic-redesign .ud2-lab-progress.is-done .ud2-lab-count{
+ background:#d8f2e2;color:#276342;border-color:#97c9ac;
+}
+.ud2-topic-redesign .ud2-lab-cases{
+ display:grid;gap:15px;padding:19px 20px 22px;
+}
+.ud2-topic-redesign .ud2-lab-case{
+ padding:19px 19px 18px;
+ border:1px solid #e6d3e5;
+ border-top:5px solid #de8a2a;
+ border-radius:16px;
+ background:#fffdf9;
+}
+.ud2-topic-redesign .ud2-lab-case:nth-child(2){
+ border-top-color:#cc5aa9;background:#fffafe;
+}
+.ud2-topic-redesign .ud2-lab-case:nth-child(3){
+ border-top-color:#8d60c8;background:#fbfaff;
+}
+.ud2-topic-redesign .ud2-lab-case.is-solved{
+ border-color:#a9d5b5;border-top-color:#258654;
+ background:#f5fcf7;
+}
+.ud2-topic-redesign .ud2-lab-case-label{
+ font-size:12px;color:#a35c1b;font-weight:900;letter-spacing:.05em;
+ display:block;margin-bottom:6px;
+}
+.ud2-topic-redesign .ud2-lab-case h4{
+ font-size:19px;line-height:1.45;color:#773087;font-weight:900;
+ margin:0 0 8px;
+}
+.ud2-topic-redesign .ud2-lab-question{
+ margin:0 0 15px!important;
+ color:#46364b!important;
+ font-size:15px!important;line-height:1.72!important;
+}
+.ud2-topic-redesign .ud2-lab-choices{
+ border:0;margin:0 0 15px;padding:0;
+ display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;
+}
+.ud2-topic-redesign .ud2-lab-choices legend{
+ display:block;color:#753785;font-size:14px;font-weight:850;
+ line-height:1.55;margin-bottom:11px;padding:0;
+}
+.ud2-topic-redesign .ud2-lab-choice{
+ display:flex;align-items:flex-start;gap:8px;min-width:0;
+ padding:13px 11px;
+ background:#fff;border:2px solid #e8d6e8;border-radius:12px;
+ cursor:pointer;color:#42374a;
+ font-size:14px;line-height:1.65;
+}
+.ud2-topic-redesign .ud2-lab-choice:focus-within{
+ outline:3px solid #9150a4;outline-offset:2px;
+}
+.ud2-topic-redesign .ud2-lab-choice.is-chosen{
+ border-color:#9c5db9;background:#f5eaff;
+}
+.ud2-topic-redesign .ud2-lab-case.is-solved .ud2-lab-choice.is-chosen{
+ border-color:#258654;background:#e4f7ea;
+}
+.ud2-topic-redesign .ud2-lab-choice input{
+ width:18px;height:18px;min-width:18px;
+ margin:3px 0 0;
+ accent-color:#894ca0;
+}
+.ud2-topic-redesign .ud2-lab-choice-letter{
+ display:inline-flex;align-items:center;justify-content:center;
+ width:23px;height:23px;min-width:23px;
+ background:#f3e4ff;border-radius:7px;
+ color:#742e91;font-size:12px;font-weight:900;
+}
+.ud2-topic-redesign .ud2-lab-choice-text{
+ overflow-wrap:break-word;
+}
+.ud2-topic-redesign .ud2-lab-check{
+ background:#74328f;color:#fff;
+ font:900 14px Verdana,Arial,sans-serif;
+ padding:11px 17px;min-height:44px;
+ border:0;border-radius:11px;
+ cursor:pointer;
+}
+.ud2-topic-redesign .ud2-lab-check:disabled{
+ background:#d5ccd6;color:#4c3a4f;cursor:not-allowed;
+}
+.ud2-topic-redesign .ud2-lab-case.is-solved .ud2-lab-check:disabled{
+ background:#daf4e2;color:#21623d;
+}
+.ud2-topic-redesign .ud2-lab-feedback{
+ border:1px solid #d8c3e9;
+ border-left:5px solid #9256bc;
+ background:#f8f1ff;
+ border-radius:0 12px 12px 0;
+ padding:13px 16px;margin:15px 0 0!important;
+ color:#513e59!important;
+ font-size:15px!important;
+ line-height:1.75!important;
+}
+.ud2-topic-redesign .ud2-lab-feedback.is-correct{
+ border-color:#a7d7ba;
+ border-left-color:#2f8a54;
+ background:#eaf8ef;
+ color:#24593c!important;
+}
+.ud2-topic-redesign .ud2-lab-celebration{
+ margin:0 20px 19px!important;
+ padding:16px 18px;
+ background:#e4f7ec;border:1px solid #9ed2b4;
+ border-radius:13px;
+ color:#21603d!important;
+ font-size:17px!important;font-weight:850;line-height:1.7!important;
+}
+.ud2-topic-redesign .ud2-lab-journal{
+ display:flex;align-items:center;gap:15px;
+ margin:0 20px 22px;
+ padding:15px 17px;
+ border:1px solid #e3b4d9;
+ border-left:6px solid #d24c9e;
+ border-radius:0 14px 14px 0;
+ background:#fff0f7;
+}
+.ud2-topic-redesign .ud2-lab-journal-icon{
+ font-size:40px;line-height:1.1;flex:0 0 52px;
+}
+.ud2-topic-redesign .ud2-lab-journal strong{
+ display:block;color:#832a79;font-size:18px;
+ font-weight:900;margin-bottom:5px;
+}
+.ud2-topic-redesign .ud2-lab-journal p{
+ color:#4b3851;font-size:14px;line-height:1.65;margin:0;
+}
+.ud2-topic-redesign .ud2-lab-lantern-workshop{
+ margin:16px 18px 18px;padding:14px;
+ border-radius:15px;border:1px solid #afe0c0;
+ background:#f1fbf5;
+}
+.ud2-topic-redesign .ud2-lab-lantern-workshop h4{
+ color:#1b6541;margin:3px 0 12px;font-size:17px;
+}
+.ud2-topic-redesign .ud2-lab-lantern-workshop figure{
+ display:block;max-width:900px;width:100%;
+ margin:0 auto;background:#fff;
+ border:1px solid #c7e8d2;border-radius:12px;
+ overflow:hidden;
+}
+.ud2-topic-redesign .ud2-lab-lantern-workshop img{
+ display:block;max-width:100%;width:100%;height:auto;
+}
+.ud2-topic-redesign .ud2-lab-lantern-workshop figcaption{
+ font-size:13px;padding:10px 14px;line-height:1.6;
+ color:#2c6342;background:#f7fcf8;
+}
+@media(max-width:850px){
+ .ud2-topic-redesign .ud2-lab-choices{grid-template-columns:1fr}
+ .ud2-topic-redesign .ud2-lab-mode-button{font-size:16px}
+}
+@media(max-width:590px){
+ .ud2-topic-redesign .ud2-lab-head,
+ .ud2-topic-redesign .ud2-lab-cases{padding:15px 12px}
+ .ud2-topic-redesign .ud2-lab-case{padding:14px 12px}
+ .ud2-topic-redesign .ud2-lab-progress{padding:12px}
+ .ud2-topic-redesign .ud2-lab-journal{margin:0 12px 17px;padding:12px}
+ .ud2-topic-redesign .ud2-lab-celebration{margin:0 12px 17px!important}
+ .ud2-topic-redesign .ud2-lab-choices{gap:8px}
+ .ud2-topic-redesign .ud2-lab-lantern-workshop{margin:12px}
+}
+@media(prefers-reduced-motion:reduce){
+ .ud2-topic-redesign .ud2-lab-choice{transition:none}
+}
+@media print{
+ .ud2-topic-redesign .ud2-lab-cases{gap:8px}
+ .ud2-topic-redesign .ud2-lab-case{break-inside:avoid}
+ .ud2-topic-redesign .ud2-lab-check{display:none}
+}
