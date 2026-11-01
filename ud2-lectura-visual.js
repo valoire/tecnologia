@@ -6,7 +6,7 @@
 const UNITS=[
  {icon:'🌱',key:'Una tecnologia és sostenible quan resol una necessitat sense oblidar el medi ambient, les persones i el cost al llarg del temps.',goals:['Entendre què és la sostenibilitat.','Diferenciar les tres dimensions.','Justificar una decisió tècnica.'],
  vocab:[['Ambiental','Recursos, energia i residus.'],['Social','Salut, seguretat i accés.'],['Econòmica','Cost, durada i manteniment.']],
- action:'Si un fanalet funciona, quines peces conservaries abans de fabricar-ne un de nou?'},
+ action:'Què és més sostenible per a una plaça: plantar arbres adaptats al clima o construir una zona sense ombra? Justifica-ho.'},
  {icon:'🌍',key:'Els ODS transformen grans objectius mundials en accions que podem observar i mesurar.',goals:['Situar l’ONU i l’Agenda 2030.','Relacionar tecnologies amb els ODS.','Distingir una acció d’un indicador.'],
  vocab:[['ODS','Objectiu mundial compartit.'],['Meta','Resultat concret que es vol assolir.'],['Indicador','Dada que permet mesurar un canvi.']],
  action:'Quin ODS podem treballar si mesurem els kWh que consumeix el centre?'},
@@ -24,7 +24,7 @@ const UNITS=[
  action:'Com milloraries l’arribada al centre sense perjudicar qui viu lluny?'},
  {icon:'♻️',key:'La millor manera d’evitar residus sovint és allargar la vida dels productes: cuidar, reparar i reutilitzar abans de reciclar.',goals:['Entendre el cicle de vida.','Comparar economia lineal i circular.','Dissenyar un producte reparable.'],
  vocab:[['Reutilitzar','Tornar a utilitzar un producte o peça.'],['Reparar','Restablir-ne el funcionament.'],['Reciclar','Processar materials per crear-ne de nous.']],
- action:'Quina unió permetria canviar la decoració del fanalet sense llençar la carcassa?'}
+ action:'Quines unions permetrien reparar una cadira sense haver de comprar-ne una de nova?'}
 ];
 function E(tag,cls,text){const a=document.createElement(tag);if(cls)a.className=cls;if(text!==undefined)a.textContent=text;return a}
 function A(parent,tag,text,cls){const el=E(tag,cls,text);parent.append(el);return el}
