@@ -237,6 +237,10 @@ function init(){
  if(new URLSearchParams(location.search).get('ud')!=='2')return;
  setupWorkshop();
  setupFirstSession();
+ // Retirem les dues franges informatives superiors a petició de la docent.
+ // Es mantenen el menú de pestanyes, la teoria i el taller verd.
+ document.querySelector('.ud2-topic-redesign .ud2-tab-intro')?.remove();
+ document.querySelector('.ud2-topic-redesign .ud2-easy-toolbar')?.remove();
 }
 const prev=window.preparaUnitatVisual;
 if(typeof prev==='function')window.preparaUnitatVisual=function(){prev();init()};
