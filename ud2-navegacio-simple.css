@@ -116,3 +116,15 @@
  .ud2-topic-redesign .ud2-mini-answer{font-size:13px;padding:10px}
 }
 @media(prefers-reduced-motion:reduce){.ud2-topic-redesign .ud2-mini-answer{transition:none}}
+
+/* Tres opcions principals; el qüestionari es consulta al final de la pàgina. */
+.ud2-simple-menu-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.ud2-topic-redesign .ud2-final-quiz-footer{
+ margin:42px 0 10px;padding-top:25px;border-top:5px solid #e2b6d8;
+ scroll-margin-top:75px;
+}
+.ud2-topic-redesign #ud2-questionari-final{scroll-margin-top:85px}
+@media(max-width:720px){
+ .ud2-simple-menu-grid{grid-template-columns:1fr}
+ .ud2-simple-menu-button{min-height:85px}
+}
