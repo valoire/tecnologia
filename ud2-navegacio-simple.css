@@ -66,3 +66,53 @@
  border-radius:0 13px 13px 0;background:#fff0f7;color:#823477;
  font:900 clamp(19px,2.5vw,24px)/1.4 Verdana,'Trebuchet MS',Arial,sans-serif;
 }
+
+/* Minilaboratori contextual al final del punt 1: una decisió i feedback immediat. */
+.ud2-topic-redesign .ud2-mini-lab{
+ margin:24px 0 30px;padding:20px 22px;border:2px solid #e5c4e9;
+ border-left:7px solid #e88620;border-radius:16px;background:#fffaf2;
+ box-shadow:0 6px 20px #894b7310;
+}
+.ud2-topic-redesign .ud2-mini-kicker{
+ display:block;margin:0 0 8px;color:#975221;font-size:12px;font-weight:900;letter-spacing:.04em
+}
+.ud2-topic-redesign .ud2-mini-title{
+ margin:0 0 10px;color:#75318a;font-size:clamp(19px,2.4vw,24px);line-height:1.35;font-weight:900
+}
+.ud2-topic-redesign .ud2-mini-context{
+ margin:0 0 16px;color:#49384e;font-size:15px;line-height:1.65
+}
+.ud2-topic-redesign .ud2-mini-answers{
+ display:grid;grid-template-columns:1fr;gap:8px
+}
+.ud2-topic-redesign .ud2-mini-answer{
+ display:flex;align-items:center;gap:12px;text-align:left;width:100%;min-height:54px;
+ padding:11px 13px;background:#fff;border:2px solid #e9d5e6;border-radius:12px;
+ font:650 14px/1.5 Verdana,'Trebuchet MS',Arial,sans-serif;color:#4a3a50;
+ cursor:pointer;transition:background .15s,border-color .15s
+}
+.ud2-topic-redesign .ud2-mini-answer:hover{background:#f9eefb;border-color:#b786c4}
+.ud2-topic-redesign .ud2-mini-answer:focus-visible{outline:3px solid #9344ac;outline-offset:2px}
+.ud2-topic-redesign .ud2-mini-answer-letter{
+ display:grid;place-items:center;flex:0 0 31px;width:31px;height:31px;
+ background:#f5e8fd;border-radius:9px;color:#77318a;font-size:14px
+}
+.ud2-topic-redesign .ud2-mini-answer.is-chosen{border-color:#b46bbf;background:#f9ecfc}
+.ud2-topic-redesign .ud2-mini-answer.is-correct{border-color:#4b9d73;background:#edfaf1}
+.ud2-topic-redesign .ud2-mini-feedback{
+ padding:13px 15px;margin:13px 0 0;border-radius:11px;
+ border-left:5px solid #bd7eac;background:#f8eefd;color:#653276;
+ font-size:14px;line-height:1.6;font-weight:700
+}
+.ud2-topic-redesign .ud2-mini-feedback.is-correct{
+ border-left-color:#399466;background:#eaf8ef;color:#245c3e
+}
+.ud2-topic-redesign .ud2-mini-feedback[hidden]{display:none!important}
+.ud2-topic-redesign .ud2-mini-reflection{
+ margin:15px 0 0;color:#77417d;font-size:14px;line-height:1.6;font-weight:750
+}
+@media(max-width:600px){
+ .ud2-topic-redesign .ud2-mini-lab{padding:15px 13px;margin:20px 0 24px}
+ .ud2-topic-redesign .ud2-mini-answer{font-size:13px;padding:10px}
+}
+@media(prefers-reduced-motion:reduce){.ud2-topic-redesign .ud2-mini-answer{transition:none}}
