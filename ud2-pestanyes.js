@@ -197,6 +197,46 @@ function reorderExtras(originalGroups,panels,g,list){
  }
  return null;
 }
+function addDebateExample(panel){
+ if(!panel||panel.querySelector('#ud2-debate-exemple'))return;
+ const block=n('section','ud2-debate-example');
+ block.id='ud2-debate-exemple';
+ block.setAttribute('aria-labelledby','ud2-debate-exemple-titol');
+ const video=n('div','ud2-debate-video');
+ appendText(video,'span','▶️ VÍDEO D’EXEMPLE','ud2-debate-kicker');
+ const title=appendText(video,'h3','Mira com és un debat acadèmic');
+ title.id='ud2-debate-exemple-titol';
+ appendText(video,'p','Mira els torns de paraula, els arguments i les rèpliques d’una final de debat. El debat comença aproximadament al minut 7:30.');
+ const link=appendText(video,'a','▶ Veure l’exemple de debat a YouTube ↗','ud2-debate-video-link');
+ link.href='https://youtu.be/7oNHT1DtI1w?si=QhhhnlMIDJTsFcHL';
+ link.target='_blank';link.rel='noopener noreferrer';
+ block.append(video);
+ const sample=n('div','ud2-debate-motion');
+ appendText(sample,'span','💬 EXEMPLE PER PREPARAR EL DEBAT','ud2-debate-kicker');
+ appendText(sample,'h3','Tema: L’institut hauria de prohibir les ampolles de plàstic d’un sol ús?');
+ appendText(sample,'p','Un mateix tema es pot defensar des de dues posicions. Aquests arguments serveixen d’exemple: cal justificar-los amb dades o situacions reals.');
+ const wrap=n('div','ud2-debate-table-wrap');
+ const table=n('table','ud2-debate-table');
+ const thead=n('thead'),tr=n('tr');
+ appendText(tr,'th','A FAVOR').setAttribute('scope','col');
+ appendText(tr,'th','EN CONTRA').setAttribute('scope','col');
+ thead.append(tr);table.append(thead);
+ const tbody=n('tbody');
+ const rows=[
+  ['Reduiríem els residus d’envasos que es generen cada dia.','Primer caldria garantir fonts d’aigua potable accessibles per a tothom.'],
+  ['Fomentaríem l’ús d’ampolles reutilitzables entre l’alumnat.','Algunes persones poden necessitar una ampolla d’un sol ús en situacions puntuals.'],
+  ['Es podrien reduir la recollida de residus i la compra d’envasos nous.','Les ampolles reutilitzables també consumeixen recursos per fabricar-les i netejar-les.']
+ ];
+ rows.forEach(([favor,contra])=>{
+  const row=n('tr');appendText(row,'td',favor);appendText(row,'td',contra);tbody.append(row);
+ });
+ table.append(tbody);wrap.append(table);sample.append(wrap);
+ appendText(sample,'p','Ara, en equips, afegiu exemples i prepareu una resposta als arguments de l’altre grup.','ud2-debate-prompt');
+ block.append(sample);
+ const content=panel.querySelector(':scope > .concept-content');
+ if(content)panel.insertBefore(block,content);
+ else panel.append(block);
+}
 function install(){
  const query=new URLSearchParams(location.search);
  if(query.get('ud')!=='2')return;
@@ -237,6 +277,7 @@ function install(){
  const fiche=appendText(debatLinks,'a','Fitxa imprimible · Investigació dels ODS i debat ↗');
  fiche.href='fitxa-ud2.html';debatLinks.setAttribute('aria-label','Material del debat');
  panels[8].append(debatLinks);
+ addDebateExample(panels[8]);
  const allMeta=TEMES.concat([
   {title:'Projecte: fanalet de Nadal',short:'Projecte',tag:'TALLER',icon:'🎄'},
   {title:'Debat acadèmic',short:'Debat',tag:'ARGUMENTACIÓ',icon:'🎤'}
