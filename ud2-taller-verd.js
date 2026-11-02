@@ -5,7 +5,7 @@
 'use strict';
 const S=[
  {icon:'💻',short:'Tinkercad',title:'Comencem amb Tinkercad',
-  lead:'Obrirem Tinkercad, buscarem una imatge de Nadal a Pixabay i començarem el disseny 2D per a la talladora làser.',
+  lead:'Entrarem a Pixabay, seleccionarem la pestanya «Vectorials» i descarregarem dibuixos de Nadal molt senzills en format .svg per començar el disseny a Tinkercad.',
   theory:'Treballarem amb imatges de Nadal descarregades de Pixabay i les adaptarem al fanalet. Una imatge JPG/PNG serveix de referència; per incorporar-ne el contorn a Tinkercad necessitem un SVG adequat o dibuixar les formes sobre el pla de treball, amb mides reals.',
   goal:'Disseny nou creat, dues imatges de Pixabay descarregades i primeres mides comprovades.',
   tasks:[
@@ -13,9 +13,9 @@ const S=[
    ['💻','OBRE TINKERCAD','Crea un disseny nou amb el nom «UD2 · Fanalet Nadal».'],
    ['🖼️','BUSCA I DESCARREGA','Entra a Pixabay, cerca dues imatges de Nadal, descarrega-les i tria les que tinguin formes senzilles per poder-les adaptar.'],
    ['✅','COMPROVA','Fes una primera prova del contorn, compara les mides amb el fanalet i desa el projecte.']
-  ],links:[['Buscar imatges a Pixabay','https://pixabay.com/es/'],['Obrir Tinkercad','https://www.tinkercad.com/']]},
+  ],links:[['Pixabay · pestanya Vectorials','https://pixabay.com/es/'],['Obrir Tinkercad','https://www.tinkercad.com/']]},
  {icon:'✏️',short:'Modificacions',title:'Acabem de triar i modificar',
-  lead:'Revisarem les imatges descarregades i comprovarem els contorns i les mides del disseny a Tinkercad.',
+  lead:'Revisarem que els dibuixos de Pixabay siguin vectorials, de formes senzilles i en format .svg, i comprovarem els contorns i les mides del disseny.',
   theory:'Per tallar una forma amb làser necessitem contorns definits, una escala correcta i unions resistents. Els detalls massa fins poden trencar-se i les peces soltes poden caure.',
   goal:'Una proposta millorada, amb els contorns i els encaixos revisats.',
   tasks:[
@@ -23,9 +23,9 @@ const S=[
    ['✏️','MODIFICA','Canvia les formes, les mides, els forats i les unions perquè encaixin a la carcassa.'],
    ['👀','COMPARA','Fes dues versions i decideix quina és més fàcil de fabricar i aprofita millor el material.'],
    ['💾','GUARDA','Desa els canvis i fes una captura de la proposta escollida.']
-  ],links:[['Tornar a Pixabay','https://pixabay.com/es/'],['Continuar a Tinkercad','https://www.tinkercad.com/']]},
+  ],links:[['Pixabay · pestanya Vectorials','https://pixabay.com/es/'],['Continuar a Tinkercad','https://www.tinkercad.com/']]},
  {icon:'📤',short:'Lliurament',title:'Acabem les modificacions i lliurem',
-  lead:'Farem els últims canvis del disseny i lliurarem els arxius perquè la professora els revisi.',
+  lead:'Acabarem els últims canvis i lliurarem els arxius en format .svg perquè la professora els revisi abans de preparar el tall làser.',
   theory:'Un fitxer SVG conserva els contorns vectorials necessaris per preparar el tall. El programa de la talladora ha de verificar les línies, els forats i l’escala 1:1. No tallarem fins que la professora doni el vistiplau.',
   goal:'Disseny final desat, captura i fitxer revisable lliurats a la professora.',
   tasks:[
