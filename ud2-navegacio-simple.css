@@ -128,3 +128,6 @@
  .ud2-simple-menu-grid{grid-template-columns:1fr}
  .ud2-simple-menu-button{min-height:85px}
 }
+
+/* Qüestionari final visible només quan s'estudia la teoria. */
+.ud2-topic-redesign .ud2-final-quiz-footer[hidden]{display:none!important}
