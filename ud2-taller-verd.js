@@ -35,7 +35,7 @@ const S=[
    ['📤','ENVIA','Lliura el disseny, l’SVG i la captura segons les instruccions de la professora.']
   ],links:[['Obrir Tinkercad','https://www.tinkercad.com/'],['Obrir Classroom','https://classroom.google.com/']]},
  {icon:'🧩',short:'micro:bit I',title:'Programació de micro:bit · Part 1',
-  lead:'Començarem a programar la micro:bit amb MakeCode seguint les indicacions explicades a classe.',
+  lead:'Utilitzarem la IA autoritzada del centre (Gemini, si està habilitada) per proposar el codi de la micro:bit i el provarem a MakeCode.',
   theory:'MakeCode permet programar la micro:bit amb blocs, esdeveniments, condicions i repeticions. Abans de crear cap bloc cal entendre què ens demana exactament la professora.',
   goal:'Projecte creat i primera versió del programa seguint les consignes explicades a classe.',
   tasks:[
@@ -43,9 +43,9 @@ const S=[
    ['💻','OBRE MAKECODE','Crea un projecte anomenat «UD2 · Microbit Nadal».'],
    ['🧩','PROGRAMA','Construeix els primers blocs del programa seguint l’ordre de les instruccions.'],
    ['▶️','PROVA','Fes una prova al simulador, identifica els errors i desa el projecte.']
-  ],links:[['Obrir MakeCode','https://makecode.microbit.org/']]},
+  ],links:[['Obrir Gemini (si està habilitat)','https://gemini.google.com/'],['Obrir MakeCode','https://makecode.microbit.org/']]},
  {icon:'✅',short:'micro:bit II',title:'Programació de micro:bit · Part 2',
-  lead:'Acabarem el programa de la micro:bit i comprovarem que funciona amb el simulador i el material.',
+  lead:'Amb l’ajuda de la IA autoritzada del centre, revisarem i millorarem el codi de la micro:bit i el comprovarem a MakeCode i al dispositiu.',
   theory:'Programar també vol dir provar, detectar errors i tornar a provar. No podem donar per correcte un programa només perquè els blocs estan col·locats.',
   goal:'Programa acabat, verificat i preparat per transferir-lo a la micro:bit.',
   tasks:[
@@ -53,7 +53,7 @@ const S=[
    ['▶️','SIMULA','Comprova cada resposta i cada acció que ha de realitzar.'],
    ['🔌','PROVA','Transfereix el programa a la micro:bit i comprova que funciona amb el material del taller.'],
    ['💾','GUARDA','Conserva el projecte i el fitxer .hex per poder muntar-lo després.']
-  ],links:[['Continuar a MakeCode','https://makecode.microbit.org/']]},
+  ],links:[['Obrir Gemini (si està habilitat)','https://gemini.google.com/'],['Continuar a MakeCode','https://makecode.microbit.org/']]},
  {icon:'🎄',short:'Muntatge',title:'Muntem el fanalet de Nadal',
   lead:'Muntarem el fanalet de Nadal amb les peces preparades i la micro:bit, i en comprovarem el funcionament.',
   theory:'Reutilitzarem la carcassa original. Abans del muntatge hem de verificar que les peces encaixin i que el circuit sigui segur. El tall làser i la manipulació elèctrica es faran amb les instruccions i supervisió de la professora.',
