@@ -16,7 +16,7 @@ function addMiniLab(){
  const lab=make('section','ud2-mini-lab');
  lab.id='ud2-mini-lab-sostenibilitat';
  lab.setAttribute('aria-labelledby','ud2-mini-lab-title');
- lab.append(make('span','ud2-mini-kicker','🔬 MINI LABORATORI · DESPRÉS DEL PUNT 1'));
+ lab.append(make('span','ud2-mini-kicker','✏️ ACTIVITATS · DESPRÉS DEL PUNT 1'));
  const heading=make('h3','ud2-mini-title','Quina decisió és més sostenible?');
  heading.id='ud2-mini-lab-title';lab.append(heading);
  lab.append(make('p','ud2-mini-context','A l’institut hi ha 20 ordinadors que van lents, però encara funcionen. Quina solució ajuda a cobrir les necessitats d’avui sense perjudicar el futur?'));
@@ -48,7 +48,6 @@ function addMiniLab(){
   return button;
  });
  lab.append(options,feedback);
- lab.append(make('p','ud2-mini-reflection','✏️ Al quadern: explica en una frase per què la decisió que has triat és bona per al present i per al futur.'));
  next.before(lab);
 }
 
