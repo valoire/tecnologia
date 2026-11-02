@@ -114,6 +114,8 @@ function init(){
   title.hidden=i!==0;
   tabs.hidden=i!==0;
   if(actions)actions.hidden=i!==0;
+  // El qüestionari final només pertany a TEORIA I ACTIVITATS.
+  footer.hidden=i!==0;
   if(scroll)main.scrollIntoView({
    block:'start',
    behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'
