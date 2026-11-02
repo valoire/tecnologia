@@ -74,9 +74,8 @@ function init(){
 
  const categories=[
   ['📖','TEORIA I ACTIVITATS','7 apartats, pas a pas'],
-  ['🛠️','TALLER','7 sessions en verd'],
-  ['🎤','DEBAT','Parlem i argumentem'],
-  ['📝','QÜESTIONARI FINAL','10 preguntes per repassar']
+  ['🛠️','TALLER','7 sessions seguides'],
+  ['🎤','DEBAT','Parlem i argumentem']
  ];
  const nav=make('nav','ud2-simple-menu');
  nav.setAttribute('aria-label','Tria el teu espai de la unitat');
@@ -97,17 +96,13 @@ function init(){
  main.insertBefore(nav,tabs);
  main.insertBefore(title,tabs);
 
- const quizPanel=make('section','ud2-main-panel ud2-quiz-separate');
- quizPanel.id='ud2-quiz-panel';
- quizPanel.setAttribute('role','region');
- quizPanel.setAttribute('aria-label','Qüestionari final de la UD2');
- quizPanel.hidden=true;
- quizPanel.append(quiz);
- frame.append(quizPanel);
- footer.remove();
+ // El qüestionari es manté fora de les pestanyes, al final de tota la unitat.
+ footer.classList.add('ud2-final-quiz-footer');
+ footer.hidden=false;
+ quiz.hidden=false;
  hub.querySelector('.ud2-quiz-shortcut')?.remove();
  const desc=hub.querySelector(':scope > p:not(.concept-eyebrow)');
- if(desc)desc.textContent='Tria una opció. Cada apartat de teoria inclou les activitats just a sota. El taller, el debat i el qüestionari final van per separat.';
+ if(desc)desc.textContent='Tria teoria, taller o debat. El qüestionari final és al final de la pàgina.';
 
  themeTabs.forEach((tab,i)=>{if(i>=7)tab.hidden=true;});
  let lastTheory=0;
@@ -119,8 +114,6 @@ function init(){
   title.hidden=i!==0;
   tabs.hidden=i!==0;
   if(actions)actions.hidden=i!==0;
-  quizPanel.hidden=i!==3;
-  if(i===3)originalPanels.forEach(panel=>panel.hidden=true);
   if(scroll)main.scrollIntoView({
    block:'start',
    behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'
@@ -133,7 +126,6 @@ function init(){
   showCategory(i<7?0:i===7?1:2);
  }
  selectors.forEach((b,i)=>b.addEventListener('click',()=>{
-  if(i===3){showCategory(3,true);return;}
   themeTabs[i===0?lastTheory:i===1?7:8].click();
   syncFromTabs();
  }));
@@ -177,9 +169,10 @@ function init(){
  });
  addMiniLab();
  simplifyWorkshop();
+ syncFromTabs();
  if(location.hash==='#ud2-questionari-final'||new URLSearchParams(location.search).get('seccio')==='questionari'){
-  showCategory(3);
- }else syncFromTabs();
+  requestAnimationFrame(()=>quiz.scrollIntoView({block:'start',behavior:'auto'}));
+ }
 }
 const previous=window.preparaUnitatVisual;
 if(typeof previous==='function'){
