@@ -7,6 +7,51 @@ function make(tag,cls,text){
  if(text!==undefined)el.textContent=text;
  return el;
 }
+function addMiniLab(){
+ const article=document.querySelector('#ud2-sessio-1-teoria .ud2-solid-article');
+ if(!article||article.querySelector('#ud2-mini-lab-sostenibilitat'))return;
+ const chapters=[...article.querySelectorAll(':scope > .ud2-solid-chapter')];
+ const next=chapters.find(x=>x.querySelector('h3')?.textContent?.trim().startsWith('2.'));
+ if(!next)return;
+ const lab=make('section','ud2-mini-lab');
+ lab.id='ud2-mini-lab-sostenibilitat';
+ lab.setAttribute('aria-labelledby','ud2-mini-lab-title');
+ lab.append(make('span','ud2-mini-kicker','🔬 MINI LABORATORI · DESPRÉS DEL PUNT 1'));
+ const heading=make('h3','ud2-mini-title','Quina decisió és més sostenible?');
+ heading.id='ud2-mini-lab-title';lab.append(heading);
+ lab.append(make('p','ud2-mini-context','A l’institut hi ha 20 ordinadors que van lents, però encara funcionen. Quina solució ajuda a cobrir les necessitats d’avui sense perjudicar el futur?'));
+ const answers=[
+  ['A','Canviar tots els ordinadors cada any per models nous.','🔎 Pensa-ho: fabricar equips nous sense necessitat consumeix materials i genera residus. Torna-ho a provar.'],
+  ['B','Reparar o millorar els equips que es puguin aprofitar i reciclar correctament els irrecuperables.','🎉 Molt bé! Allargar la vida útil redueix residus, pot estalviar diners i permet continuar utilitzant els equips.'],
+  ['C','Comprar els equips més barats sense valorar-ne la durada ni el consum.','🔎 El preu inicial no és l’únic criteri: cal mirar la durada, el consum i les reparacions. Torna-ho a provar.']
+ ];
+ const options=make('div','ud2-mini-answers');
+ const feedback=make('p','ud2-mini-feedback');
+ feedback.hidden=true;feedback.setAttribute('role','status');feedback.setAttribute('aria-live','polite');
+ const buttons=answers.map(([letter,answer],i)=>{
+  const button=make('button','ud2-mini-answer');
+  button.type='button';button.setAttribute('aria-pressed','false');
+  button.append(make('strong','ud2-mini-answer-letter',letter),make('span','',answer));
+  button.addEventListener('click',()=>{
+   buttons.forEach(b=>{
+    b.classList.remove('is-chosen','is-correct');
+    b.setAttribute('aria-pressed','false');
+   });
+   button.classList.add('is-chosen');
+   if(i===1)button.classList.add('is-correct');
+   button.setAttribute('aria-pressed','true');
+   feedback.textContent=answers[i][2];
+   feedback.classList.toggle('is-correct',i===1);
+   feedback.hidden=false;
+  });
+  options.append(button);
+  return button;
+ });
+ lab.append(options,feedback);
+ lab.append(make('p','ud2-mini-reflection','✏️ Al quadern: explica en una frase per què la decisió que has triat és bona per al present i per al futur.'));
+ next.before(lab);
+}
+
 function init(){
  if(new URLSearchParams(location.search).get('ud')!=='2')return;
  const hub=document.querySelector('.ud2-topic-redesign');
@@ -124,6 +169,7 @@ function init(){
    panes[1].prepend(make('h3','ud2-activities-title','✏️ ACTIVITATS'));
   }
  });
+ addMiniLab();
  if(location.hash==='#ud2-questionari-final'||new URLSearchParams(location.search).get('seccio')==='questionari'){
   showCategory(3);
  }else syncFromTabs();
