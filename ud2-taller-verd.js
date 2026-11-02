@@ -79,7 +79,7 @@ function E(tag,cls,content){const e=document.createElement(tag);if(cls)e.classNa
 function A(parent,tag,cls,content){const el=E(tag,cls,content);parent.append(el);return el}
 function makeSession(item,i){
  const pane=E('section','ud2-green-session');pane.id='ud2-green-session-'+(i+1);
- pane.setAttribute('role','tabpanel');pane.setAttribute('aria-labelledby','ud2-green-tab-'+(i+1));pane.hidden=true;
+ pane.setAttribute('role','region');pane.setAttribute('aria-label','Sessió '+(i+1)+': '+item.title);
  const header=E('header','ud2-green-session-header');
  A(header,'span','ud2-green-big-icon',item.icon).setAttribute('aria-hidden','true');
  const headText=E('div');
@@ -117,52 +117,21 @@ function setupWorkshop(){
   const eyebrow=header.querySelector('.ud2-main-eyebrow');
   if(eyebrow)eyebrow.textContent='🌿 PROJECTE DE NADAL · 7 SESSIONS';
   const h=header.querySelector('h2');
-  if(h)h.textContent='Taller · Del fanalet de Halloween al de Nadal';
+  if(h)h.textContent='Taller · Fanalet de Nadal';
   const p=header.querySelector('p');
-  if(p)p.textContent='Tria la sessió: una frase explica què farem i, a sota, tens les pàgines que has d’obrir.';
+  if(p)p.textContent='Segueix les set sessions en ordre. Cada sessió explica què farem i inclou les pàgines que has d’obrir.';
  }
  // Conservem la informació original del projecte dins de la sessió de muntatge.
  const originals=[...project.children].filter(node=>node!==header);
  originals.forEach(node=>node.remove()); // Eliminem la fitxa antiga, ja que les sessions només mostren una frase i enllaços.
  const wrapper=E('div','ud2-green-inner');
- const nav=E('div','ud2-green-tablist');nav.setAttribute('role','tablist');nav.setAttribute('aria-label','Set sessions del taller');
  const panes=E('div','ud2-green-panels');
- const buttons=[],contents=[];
- S.forEach((item,i)=>{
-  const btn=E('button','ud2-green-tab');btn.type='button';btn.id='ud2-green-tab-'+(i+1);
-  btn.setAttribute('role','tab');btn.setAttribute('aria-controls','ud2-green-session-'+(i+1));
-  A(btn,'span','ud2-green-tab-icon',item.icon).setAttribute('aria-hidden','true');
-  const name=E('span','ud2-green-tab-words');
-  A(name,'small','','SESSIÓ '+(i+1));A(name,'strong','',item.short);
-  btn.append(name);nav.append(btn);buttons.push(btn);
-  const pane=makeSession(item,i);panes.append(pane);contents.push(pane);
- });
- wrapper.append(nav,panes);project.append(wrapper);
- function select(index,focus=false){
-  buttons.forEach((btn,j)=>{
-   const active=j===index;
-   btn.setAttribute('aria-selected',String(active));btn.tabIndex=active?0:-1;
-   btn.classList.toggle('is-active',active);
-   contents[j].hidden=!active;
-  });
-  if(focus)buttons[index].focus({preventScroll:true});
- }
- buttons.forEach((btn,i)=>{
-  btn.addEventListener('click',()=>select(i));
-  btn.addEventListener('keydown',ev=>{
-   let next=null;
-   if(ev.key==='ArrowRight')next=(i+1)%buttons.length;
-   if(ev.key==='ArrowLeft')next=(i+buttons.length-1)%buttons.length;
-   if(ev.key==='Home')next=0;
-   if(ev.key==='End')next=buttons.length-1;
-   if(next!==null){ev.preventDefault();select(next,true);}
-  });
- });
- select(0);
+ S.forEach((item,i)=>panes.append(makeSession(item,i)));
+ wrapper.append(panes);project.append(wrapper);
  const intro=document.querySelector('.ud2-tab-intro');
  if(intro){
   const p=intro.querySelector('p');
-  if(p)p.textContent='Tria una teoria o entra al TALLER verd. Dins del taller trobaràs les set sessions de Tinkercad, micro:bit, muntatge i vídeo final.';
+  if(p)p.textContent='Tria una teoria o entra al TALLER verd, amb les set sessions seguides de Tinkercad, micro:bit, muntatge i vídeo final.';
  }
 }
 function setupFirstSession(){
