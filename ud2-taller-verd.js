@@ -125,9 +125,27 @@ function setupWorkshop(){
  const originals=[...project.children].filter(node=>node!==header);
  originals.forEach(node=>node.remove()); // Eliminem la fitxa antiga, ja que les sessions només mostren una frase i enllaços.
  const wrapper=E('div','ud2-green-inner');
+ const chooser=E('div','ud2-green-index-intro');
+ A(chooser,'strong','','Tria la sessió que vols treballar');
+ A(chooser,'span','','Clica una targeta per anar-hi. Les set sessions són seguides.');
+ const index=E('nav','ud2-green-session-index');
+ index.setAttribute('aria-label','Accés ràpid a les set sessions del taller');
  const panes=E('div','ud2-green-panels');
- S.forEach((item,i)=>panes.append(makeSession(item,i)));
- wrapper.append(panes);project.append(wrapper);
+ S.forEach((item,i)=>{
+  const btn=E('button','ud2-green-index-card');btn.type='button';
+  btn.setAttribute('aria-label','Anar a la sessió '+(i+1)+': '+item.title);
+  A(btn,'span','ud2-green-index-icon',item.icon).setAttribute('aria-hidden','true');
+  const words=E('span','ud2-green-index-words');
+  A(words,'small','',(i+1)+'. TALLER');
+  A(words,'strong','',item.short);
+  btn.append(words);index.append(btn);
+  const pane=makeSession(item,i);panes.append(pane);
+  btn.addEventListener('click',()=>pane.scrollIntoView({
+   block:'start',
+   behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'
+  }));
+ });
+ wrapper.append(chooser,index,panes);project.append(wrapper);
  const intro=document.querySelector('.ud2-tab-intro');
  if(intro){
   const p=intro.querySelector('p');
