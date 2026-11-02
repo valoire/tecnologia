@@ -22,7 +22,7 @@ function init(){
  if(originalPanels.length<9||themeTabs.length<9)return;
 
  const categories=[
-  ['📖','TEORIA','7 temes per aprendre'],
+  ['📖','TEORIA I ACTIVITATS','7 apartats, pas a pas'],
   ['🛠️','TALLER','7 sessions en verd'],
   ['🎤','DEBAT','Parlem i argumentem'],
   ['📝','QÜESTIONARI FINAL','10 preguntes per repassar']
@@ -42,7 +42,7 @@ function init(){
  });
  nav.append(buttons);
  const title=make('div','ud2-theory-choose');
- title.append(make('strong','','Tria el tema de teoria'),make('span','','Segueix de l’1 al 7. Només s’obre el tema que esculls.'));
+ title.append(make('strong','','Tria l’apartat que vols treballar'),make('span','','Primer llegeix la teoria i després fes les activitats, en aquest mateix ordre.'));
  main.insertBefore(nav,tabs);
  main.insertBefore(title,tabs);
 
@@ -56,7 +56,7 @@ function init(){
  footer.remove();
  hub.querySelector('.ud2-quiz-shortcut')?.remove();
  const desc=hub.querySelector(':scope > p:not(.concept-eyebrow)');
- if(desc)desc.textContent='Tria una de les quatre opcions. Cada espai té el seu contingut, sense haver de baixar per tota la pàgina.';
+ if(desc)desc.textContent='Tria una opció. Cada apartat de teoria inclou les activitats just a sota. El taller, el debat i el qüestionari final van per separat.';
 
  themeTabs.forEach((tab,i)=>{if(i>=7)tab.hidden=true;});
  let lastTheory=0;
@@ -91,20 +91,39 @@ function init(){
   tab.addEventListener('keydown',syncFromTabs);
  });
  actions?.querySelectorAll('button').forEach(b=>b.addEventListener('click',syncFromTabs));
- // La sessió inicial tenia tres targetes grans i franges de temps que
- // duplicaven el menú de la UD. Conservem només dos accessos compactes.
+ // Cada apartat es llegeix de dalt a baix: TEORIA i, a continuació, ACTIVITATS.
+ // Eliminem els commutadors antics que amagaven una de les dues parts.
  const session=document.querySelector('#ud2-main-panel-0 #ud2-sessio-1');
- const progress=session?.querySelector('.ud2-session-progress');
- const steps=[...(progress?.querySelectorAll('.ud2-session-progress-step')||[])];
- if(steps.length===3){
-  progress.classList.add('ud2-compact-progress');
-  steps[0].textContent='📖  TEORIA';
-  steps[1].textContent='🔬  LABORATORI';
-  steps[2].remove(); // El taller ja té un espai verd propi al menú principal.
+ if(session){
+  session.querySelector('.ud2-session-progress')?.remove();
+  const theory=session.querySelector('#ud2-sessio-1-teoria');
+  const activities=session.querySelector('#ud2-sessio-1-activitat');
+  if(theory)theory.hidden=false;
+  if(activities){
+   activities.hidden=false;
+   const label=activities.querySelector('.ud2-session-phase-heading h3');
+   if(label)label.textContent='ACTIVITATS';
+  }
+  const goal=session.querySelector('.ud2-session-goal');
+  if(goal)goal.textContent='🎯 Objectiu: entendre la sostenibilitat i aplicar-la a decisions reals.';
   session.querySelectorAll('.ud2-session-phase-eyebrow').forEach(el=>{
    el.textContent=el.textContent.replace(/\s*·\s*\d+'/, '');
   });
  }
+ originalPanels.slice(1,7).forEach(panel=>{
+  const modes=panel.querySelector('.ud2-lab-modes');
+  const panes=[...panel.querySelectorAll(':scope > .ud2-lab-mode-panel')];
+  if(panes.length!==2)return;
+  if(modes)modes.remove();
+  panes.forEach(p=>{
+   p.hidden=false;
+   p.removeAttribute('role');
+   p.removeAttribute('aria-labelledby');
+  });
+  if(!panes[1].querySelector('.ud2-activities-title')){
+   panes[1].prepend(make('h3','ud2-activities-title','✏️ ACTIVITATS'));
+  }
+ });
  if(location.hash==='#ud2-questionari-final'||new URLSearchParams(location.search).get('seccio')==='questionari'){
   showCategory(3);
  }else syncFromTabs();
