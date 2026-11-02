@@ -91,6 +91,20 @@ function init(){
   tab.addEventListener('keydown',syncFromTabs);
  });
  actions?.querySelectorAll('button').forEach(b=>b.addEventListener('click',syncFromTabs));
+ // La sessió inicial tenia tres targetes grans i franges de temps que
+ // duplicaven el menú de la UD. Conservem només dos accessos compactes.
+ const session=document.querySelector('#ud2-main-panel-0 #ud2-sessio-1');
+ const progress=session?.querySelector('.ud2-session-progress');
+ const steps=[...(progress?.querySelectorAll('.ud2-session-progress-step')||[])];
+ if(steps.length===3){
+  progress.classList.add('ud2-compact-progress');
+  steps[0].textContent='📖  TEORIA';
+  steps[1].textContent='🔬  LABORATORI';
+  steps[2].remove(); // El taller ja té un espai verd propi al menú principal.
+  session.querySelectorAll('.ud2-session-phase-eyebrow').forEach(el=>{
+   el.textContent=el.textContent.replace(/\s*·\s*\d+'/, '');
+  });
+ }
  if(location.hash==='#ud2-questionari-final'||new URLSearchParams(location.search).get('seccio')==='questionari'){
   showCategory(3);
  }else syncFromTabs();
