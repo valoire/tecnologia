@@ -283,3 +283,16 @@
  .ud2-topic-redesign .ud2-green-open-label{margin:15px 14px 9px}
  .ud2-topic-redesign .ud2-green-no-web{margin:14px;padding:12px}
 }
+
+/* Les set sessions es llegeixen seguides, sense pestanyes. */
+.ud2-topic-redesign .ud2-green-panels{
+ display:grid;gap:17px;border:0;border-radius:0;overflow:visible;background:transparent;
+}
+.ud2-topic-redesign .ud2-green-session{
+ display:block;border:2px solid #cbe9d6;border-radius:16px;
+ overflow:hidden;background:#fff;box-shadow:0 5px 16px #24744a12;
+}
+.ud2-topic-redesign .ud2-green-session-header{border-bottom:1px solid #cbebd8;}
+@media print{
+ .ud2-topic-redesign .ud2-green-session{break-inside:avoid}
+}
