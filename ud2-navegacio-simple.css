@@ -59,3 +59,10 @@
   min-width:0;width:100%;padding:10px 6px;font-size:12px
  }
 }
+
+/* Lectura continuada: primer teoria, després activitats, sense pestanyes interiors. */
+.ud2-topic-redesign .ud2-activities-title{
+ margin:30px 0 15px;padding:13px 17px;border-left:6px solid #ca4f96;
+ border-radius:0 13px 13px 0;background:#fff0f7;color:#823477;
+ font:900 clamp(19px,2.5vw,24px)/1.4 Verdana,'Trebuchet MS',Arial,sans-serif;
+}
