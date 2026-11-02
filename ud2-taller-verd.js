@@ -5,7 +5,7 @@
 'use strict';
 const S=[
  {icon:'💻',short:'Tinkercad',title:'Comencem amb Tinkercad',
-  lead:'Preparem el disseny de Nadal que substituirà la decoració del fanalet de Halloween.',
+  lead:'Obrirem Tinkercad, buscarem una imatge de Nadal a Pixabay i començarem el disseny 2D per a la talladora làser.',
   theory:'Treballarem amb imatges de Nadal descarregades de Pixabay i les adaptarem al fanalet. Una imatge JPG/PNG serveix de referència; per incorporar-ne el contorn a Tinkercad necessitem un SVG adequat o dibuixar les formes sobre el pla de treball, amb mides reals.',
   goal:'Disseny nou creat, dues imatges de Pixabay descarregades i primeres mides comprovades.',
   tasks:[
@@ -15,7 +15,7 @@ const S=[
    ['✅','COMPROVA','Fes una primera prova del contorn, compara les mides amb el fanalet i desa el projecte.']
   ],links:[['Buscar imatges a Pixabay','https://pixabay.com/es/'],['Obrir Tinkercad','https://www.tinkercad.com/']]},
  {icon:'✏️',short:'Modificacions',title:'Acabem de triar i modificar',
-  lead:'Revisem les imatges descarregades de Pixabay i modifiquem les formes perquè encaixin al fanalet.',
+  lead:'Revisarem les imatges descarregades i comprovarem els contorns i les mides del disseny a Tinkercad.',
   theory:'Per tallar una forma amb làser necessitem contorns definits, una escala correcta i unions resistents. Els detalls massa fins poden trencar-se i les peces soltes poden caure.',
   goal:'Una proposta millorada, amb els contorns i els encaixos revisats.',
   tasks:[
@@ -25,7 +25,7 @@ const S=[
    ['💾','GUARDA','Desa els canvis i fes una captura de la proposta escollida.']
   ],links:[['Tornar a Pixabay','https://pixabay.com/es/'],['Continuar a Tinkercad','https://www.tinkercad.com/']]},
  {icon:'📤',short:'Lliurament',title:'Acabem les modificacions i lliurem',
-  lead:'Deixem el disseny preparat perquè la professora el pugui revisar.',
+  lead:'Farem els últims canvis del disseny i lliurarem els arxius perquè la professora els revisi.',
   theory:'Un fitxer SVG conserva els contorns vectorials necessaris per preparar el tall. El programa de la talladora ha de verificar les línies, els forats i l’escala 1:1. No tallarem fins que la professora doni el vistiplau.',
   goal:'Disseny final desat, captura i fitxer revisable lliurats a la professora.',
   tasks:[
@@ -35,7 +35,7 @@ const S=[
    ['📤','ENVIA','Lliura el disseny, l’SVG i la captura segons les instruccions de la professora.']
   ],links:[['Obrir Tinkercad','https://www.tinkercad.com/'],['Obrir Classroom','https://classroom.google.com/']]},
  {icon:'🧩',short:'micro:bit I',title:'Programació de micro:bit · Part 1',
-  lead:'Comencem el programa que controlarà el nostre projecte de Nadal.',
+  lead:'Començarem a programar la micro:bit amb MakeCode seguint les indicacions explicades a classe.',
   theory:'MakeCode permet programar la micro:bit amb blocs, esdeveniments, condicions i repeticions. Abans de crear cap bloc cal entendre què ens demana exactament la professora.',
   goal:'Projecte creat i primera versió del programa seguint les consignes explicades a classe.',
   tasks:[
@@ -45,7 +45,7 @@ const S=[
    ['▶️','PROVA','Fes una prova al simulador, identifica els errors i desa el projecte.']
   ],links:[['Obrir MakeCode','https://makecode.microbit.org/']]},
  {icon:'✅',short:'micro:bit II',title:'Programació de micro:bit · Part 2',
-  lead:'Acabem el programa i comprovem que compleix tots els requisits.',
+  lead:'Acabarem el programa de la micro:bit i comprovarem que funciona amb el simulador i el material.',
   theory:'Programar també vol dir provar, detectar errors i tornar a provar. No podem donar per correcte un programa només perquè els blocs estan col·locats.',
   goal:'Programa acabat, verificat i preparat per transferir-lo a la micro:bit.',
   tasks:[
@@ -55,7 +55,7 @@ const S=[
    ['💾','GUARDA','Conserva el projecte i el fitxer .hex per poder muntar-lo després.']
   ],links:[['Continuar a MakeCode','https://makecode.microbit.org/']]},
  {icon:'🎄',short:'Muntatge',title:'Muntem el fanalet de Nadal',
-  lead:'Col·loquem les peces noves i la micro:bit al fanalet que ja teníem.',
+  lead:'Muntarem el fanalet de Nadal amb les peces preparades i la micro:bit, i en comprovarem el funcionament.',
   theory:'Reutilitzarem la carcassa original. Abans del muntatge hem de verificar que les peces encaixin i que el circuit sigui segur. El tall làser i la manipulació elèctrica es faran amb les instruccions i supervisió de la professora.',
   goal:'Fanalet de Nadal muntat, estable i amb el programa comprovat.',
   tasks:[
@@ -65,7 +65,7 @@ const S=[
    ['✅','COMPROVA','Revisa els encaixos, el muntatge, la seguretat i el funcionament.']
   ],links:[]},
  {icon:'🎬',short:'Vídeo final',title:'Vídeo final a Google Classroom',
-  lead:'Mostrem com hem transformat el fanalet i què hem après.',
+  lead:'Gravarem un vídeo breu del fanalet acabat i el lliurarem a Google Classroom.',
   theory:'Una presentació tècnica ha de mostrar el procés, el resultat i els motius de les decisions. Podem gravar el projecte i les mans, sense mostrar cares ni dades personals.',
   goal:'Vídeo breu explicatiu lliurat a la tasca indicada de Google Classroom.',
   tasks:[
@@ -86,25 +86,16 @@ function makeSession(item,i){
  A(headText,'span','ud2-green-eyebrow','TALLER · SESSIÓ '+(i+1)+' DE 7');
  A(headText,'h3','',item.title);
  A(headText,'p','',item.lead);header.append(headText);pane.append(header);
- const theory=E('div','ud2-green-theory');
- A(theory,'strong','','💡 ABANS DE COMENÇAR · Què cal saber?');
- A(theory,'p','',item.theory);pane.append(theory);
- A(pane,'h4','ud2-green-task-title','🛠️ Què toca fer en aquesta sessió?');
- const list=E('ol','ud2-green-task-list');
- item.tasks.forEach(([icon,verb,detail],k)=>{
-  const li=E('li','ud2-green-task');
-  A(li,'span','ud2-green-task-number',String(k+1).padStart(2,'0'));
-  A(li,'span','ud2-green-task-icon',icon).setAttribute('aria-hidden','true');
-  const words=E('div','ud2-green-task-words');
-  A(words,'strong','',verb);A(words,'p','',detail);li.append(words);list.append(li);
- });pane.append(list);
- const goal=E('aside','ud2-green-result');
- A(goal,'strong','','✅ Al final de la sessió hem de tenir…');
- A(goal,'p','',item.goal);pane.append(goal);
  if(item.links.length){
+  A(pane,'p','ud2-green-open-label','🌐 PÀGINES QUE HAS D’OBRIR');
   const links=E('div','ud2-green-links');
-  item.links.forEach(([label,href])=>{const link=A(links,'a','ud2-green-link',label+' ↗');link.href=href;link.target='_blank';link.rel='noopener noreferrer';});
+  item.links.forEach(([label,href])=>{
+   const link=A(links,'a','ud2-green-link',label+' ↗');
+   link.href=href;link.target='_blank';link.rel='noopener noreferrer';
+  });
   pane.append(links);
+ }else{
+  A(pane,'p','ud2-green-no-web','🌿 Avui no cal obrir cap web: treballarem al taller amb el material de classe.');
  }
  return pane;
 }
@@ -128,10 +119,11 @@ function setupWorkshop(){
   const h=header.querySelector('h2');
   if(h)h.textContent='Taller · Del fanalet de Halloween al de Nadal';
   const p=header.querySelector('p');
-  if(p)p.textContent='Tria la sessió del taller. Cada dia veuràs només la teoria breu, les tasques i el resultat d’aquell dia.';
+  if(p)p.textContent='Tria la sessió: una frase explica què farem i, a sota, tens les pàgines que has d’obrir.';
  }
  // Conservem la informació original del projecte dins de la sessió de muntatge.
  const originals=[...project.children].filter(node=>node!==header);
+ originals.forEach(node=>node.remove()); // Eliminem la fitxa antiga, ja que les sessions només mostren una frase i enllaços.
  const wrapper=E('div','ud2-green-inner');
  const nav=E('div','ud2-green-tablist');nav.setAttribute('role','tablist');nav.setAttribute('aria-label','Set sessions del taller');
  const panes=E('div','ud2-green-panels');
@@ -145,12 +137,6 @@ function setupWorkshop(){
   btn.append(name);nav.append(btn);buttons.push(btn);
   const pane=makeSession(item,i);panes.append(pane);contents.push(pane);
  });
- if(originals.length){
-  const reference=E('details','ud2-green-original-material');
-  A(reference,'summary','','📎 Fitxa del projecte i recursos anteriors');
-  const block=E('div','ud2-green-original-body');originals.forEach(node=>block.append(node));
-  reference.append(block);contents[5].append(reference);
- }
  wrapper.append(nav,panes);project.append(wrapper);
  function select(index,focus=false){
   buttons.forEach((btn,j)=>{
