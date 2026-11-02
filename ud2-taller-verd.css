@@ -269,3 +269,17 @@
  .ud2-topic-redesign .ud2-green-tablist{display:none}
  .ud2-topic-redesign .ud2-green-original-material{display:none}
 }
+/* Cada sessió del taller: només una frase i les pàgines per obrir. */
+.ud2-topic-redesign .ud2-green-open-label{
+ margin:19px 23px 11px;color:#246d48;font:900 13px/1.5 Verdana,Arial,sans-serif;
+ letter-spacing:.045em
+}
+.ud2-topic-redesign .ud2-green-no-web{
+ margin:20px 23px 23px;padding:14px 16px;border-radius:12px;
+ background:#f0faf3;border:1px solid #b5dfc3;color:#23593c;
+ font:700 14px/1.6 Verdana,Arial,sans-serif
+}
+@media(max-width:600px){
+ .ud2-topic-redesign .ud2-green-open-label{margin:15px 14px 9px}
+ .ud2-topic-redesign .ud2-green-no-web{margin:14px;padding:12px}
+}
