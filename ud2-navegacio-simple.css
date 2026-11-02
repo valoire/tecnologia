@@ -1,0 +1,31 @@
+/* UD2: quatre camins clars. Continguts originals intactes. */
+.ud2-simple-menu{margin:18px 0 22px;scroll-margin-top:90px}
+.ud2-simple-menu-heading{font-size:clamp(21px,2.8vw,27px);font-weight:900;color:#73328d;margin:0 0 14px}
+.ud2-simple-menu-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px}
+.ud2-simple-menu-button{display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-height:116px;padding:16px;text-align:left;background:#fff;border:2px solid #e9c8e4;border-radius:16px;box-shadow:0 4px 12px #672c8210;color:#663076;font:inherit;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.ud2-simple-menu-button:hover,.ud2-simple-menu-button:focus-visible{transform:translateY(-2px);box-shadow:0 8px 18px #672c8220}
+.ud2-simple-menu-icon{font-size:29px;line-height:1}
+.ud2-simple-menu-words{display:grid;gap:3px}
+.ud2-simple-menu-words strong{font-size:15px;font-weight:950;line-height:1.25}
+.ud2-simple-menu-words small{font-size:12px;font-weight:600;color:#6b6071;line-height:1.35}
+.ud2-simple-menu-0{border-top:5px solid #ee8a19}
+.ud2-simple-menu-1{border-top:5px solid #25845d;background:#f5fff9}
+.ud2-simple-menu-2{border-top:5px solid #9659d8}
+.ud2-simple-menu-3{border-top:5px solid #db4b99;background:#fff8fd}
+.ud2-simple-menu-button.is-current{border-color:#9b4abb;background:#f8efff;box-shadow:0 0 0 3px #ca90d42c}
+.ud2-simple-menu-1.is-current{background:#e3f8eb;border-color:#25845d}
+.ud2-simple-menu-3.is-current{background:#ffe8f5;border-color:#cc4a91}
+.ud2-theory-choose{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:5px 14px;margin:16px 0 11px;padding:0 2px}
+.ud2-theory-choose strong{color:#78378e;font-size:17px;font-weight:900}
+.ud2-theory-choose span{color:#715f75;font-size:13px}
+.ud2-topic-redesign .ud2-tablist{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-bottom:17px}
+.ud2-topic-redesign .ud2-main-tab{padding:10px;gap:8px;min-height:66px;border-radius:11px;box-shadow:none}
+.ud2-topic-redesign .ud2-main-tab .ud2-main-icon{font-size:23px;flex-basis:28px}
+.ud2-topic-redesign .ud2-main-tab-words small{font-size:10px}
+.ud2-topic-redesign .ud2-main-tab-words strong{font-size:13px}
+.ud2-topic-redesign .ud2-tablist[hidden],.ud2-topic-redesign .ud2-main-tab[hidden],.ud2-topic-redesign .ud2-tab-bottom-actions[hidden],.ud2-theory-choose[hidden]{display:none!important}
+.ud2-quiz-separate .ud2-global-test{margin:0}
+.ud2-quiz-separate{border-top:6px solid #d5539b}
+@media(max-width:960px){.ud2-simple-menu-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ud2-topic-redesign .ud2-tablist{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:600px){.ud2-simple-menu-button{min-height:105px;padding:12px}.ud2-simple-menu-icon{font-size:25px}.ud2-simple-menu-words strong{font-size:13px}.ud2-simple-menu-words small{font-size:11px}.ud2-topic-redesign .ud2-tablist{grid-template-columns:repeat(2,minmax(0,1fr))}.ud2-topic-redesign .ud2-main-tab{min-height:59px}.ud2-theory-choose span{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.ud2-simple-menu-button{transition:none}}
