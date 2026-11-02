@@ -51,6 +51,13 @@ function addMiniLab(){
  next.before(lab);
 }
 
+function simplifyWorkshop(){
+ document.querySelectorAll('#ud2-main-panel-7 .ud2-green-session').forEach(pane=>{
+  [...pane.children].forEach(child=>{
+   if(!child.matches('.ud2-green-session-header,.ud2-green-open-label,.ud2-green-no-web,.ud2-green-links'))child.remove();
+  });
+ });
+}
 function init(){
  if(new URLSearchParams(location.search).get('ud')!=='2')return;
  const hub=document.querySelector('.ud2-topic-redesign');
@@ -169,6 +176,7 @@ function init(){
   }
  });
  addMiniLab();
+ simplifyWorkshop();
  if(location.hash==='#ud2-questionari-final'||new URLSearchParams(location.search).get('seccio')==='questionari'){
   showCategory(3);
  }else syncFromTabs();
