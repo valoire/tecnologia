@@ -13,7 +13,7 @@ const S=[
    ['💻','OBRE TINKERCAD','Crea un disseny nou amb el nom «UD2 · Fanalet Nadal».'],
    ['🖼️','BUSCA I DESCARREGA','Entra a Pixabay, cerca dues imatges de Nadal, descarrega-les i tria les que tinguin formes senzilles per poder-les adaptar.'],
    ['✅','COMPROVA','Fes una primera prova del contorn, compara les mides amb el fanalet i desa el projecte.']
-  ],links:[['Pixabay · pestanya Vectorials','https://pixabay.com/es/'],['Obrir Tinkercad','https://www.tinkercad.com/']]},
+  ],links:[['Pixabay · pestanya Vectorials','https://pixabay.com/es/vectors/'],['Obrir Tinkercad','https://www.tinkercad.com/']]},
  {icon:'✏️',short:'Modificacions',title:'Acabem de triar i modificar',
   lead:'Revisarem que els dibuixos de Pixabay siguin vectorials, de formes senzilles i en format .svg, i comprovarem els contorns i les mides del disseny.',
   theory:'Per tallar una forma amb làser necessitem contorns definits, una escala correcta i unions resistents. Els detalls massa fins poden trencar-se i les peces soltes poden caure.',
@@ -23,7 +23,7 @@ const S=[
    ['✏️','MODIFICA','Canvia les formes, les mides, els forats i les unions perquè encaixin a la carcassa.'],
    ['👀','COMPARA','Fes dues versions i decideix quina és més fàcil de fabricar i aprofita millor el material.'],
    ['💾','GUARDA','Desa els canvis i fes una captura de la proposta escollida.']
-  ],links:[['Pixabay · pestanya Vectorials','https://pixabay.com/es/'],['Continuar a Tinkercad','https://www.tinkercad.com/']]},
+  ],links:[['Pixabay · pestanya Vectorials','https://pixabay.com/es/vectors/'],['Continuar a Tinkercad','https://www.tinkercad.com/']]},
  {icon:'📤',short:'Lliurament',title:'Acabem les modificacions i lliurem',
   lead:'Acabarem els últims canvis i lliurarem els arxius en format .svg perquè la professora els revisi abans de preparar el tall làser.',
   theory:'Un fitxer SVG conserva els contorns vectorials necessaris per preparar el tall. El programa de la talladora ha de verificar les línies, els forats i l’escala 1:1. No tallarem fins que la professora doni el vistiplau.',
