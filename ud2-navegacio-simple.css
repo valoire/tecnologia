@@ -501,3 +501,19 @@
  .ud2-topic-redesign .ud2-debate-position-preview{padding:14px 12px}
  .ud2-topic-redesign .ud2-debate-preview-grid{grid-template-columns:1fr}
 }
+
+/* Llistes de tres pistes i salt directe en escollir un tema. */
+.ud2-topic-redesign .ud2-debate-position-preview{
+ scroll-margin-top:94px;
+}
+.ud2-topic-redesign .ud2-debate-preview-points{
+ list-style:disc;padding:0 0 0 19px;margin:0;
+ color:#3f4d44;font-size:14px;line-height:1.65;
+}
+.ud2-topic-redesign .ud2-debate-preview-points li{
+ padding-left:2px;margin:0 0 9px;
+}
+.ud2-topic-redesign .ud2-debate-preview-points li:last-child{margin-bottom:0}
+.ud2-topic-redesign .ud2-debate-preview-pro li::marker{color:#248251}
+.ud2-topic-redesign .ud2-debate-preview-contra .ud2-debate-preview-points{color:#60443f}
+.ud2-topic-redesign .ud2-debate-preview-contra li::marker{color:#c45d4a}
