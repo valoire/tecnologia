@@ -303,8 +303,8 @@ function renderUD2Activities(host,g){
     "short": "Centrals nuclears",
     "question": "Cal mantenir les centrals nuclears mentre s’amplien les energies renovables?",
     "ods": "ODS 7 i 13",
-    "pro": "Generen electricitat de manera estable amb baixes emissions de CO₂ durant el funcionament.",
-    "contra": "Produeixen residus radioactius que requereixen una gestió segura a llarg termini.",
+    "pro": "Generen electricitat de manera estable amb baixes emissions de CO₂ durant el funcionament. Això pot ajudar a cobrir la demanda quan el sol o el vent no produeixen prou energia.",
+    "contra": "Produeixen residus radioactius que requereixen una gestió segura a llarg termini. També cal mantenir controls de seguretat estrictes i preveure el cost de desmantellar les instal·lacions.",
     "data": "Com comparem les emissions, els costos, la seguretat i els residus de cada font?"
   },
   {
@@ -312,8 +312,8 @@ function renderUD2Activities(host,g){
     "short": "Plàstics d’un sol ús",
     "question": "Cal prohibir els envasos de plàstic d’un sol ús a l’institut?",
     "ods": "ODS 12 i 14",
-    "pro": "Es reduirien residus i es fomentarien alternatives reutilitzables.",
-    "contra": "Cal garantir alternatives accessibles i pràctiques per a tothom.",
+    "pro": "Es reduirien residus i es fomentarien alternatives reutilitzables. Amb ampolles i carmanyoles reutilitzables, el centre podria generar menys brossa cada dia.",
+    "contra": "Cal garantir alternatives accessibles i pràctiques per a tothom. Sense fonts d’aigua i recipients assequibles, la prohibició podria crear dificultats a algunes famílies.",
     "data": "Quants envasos llencem al centre i quin impacte tenen les alternatives?"
   },
   {
@@ -321,8 +321,8 @@ function renderUD2Activities(host,g){
     "short": "Cotxes a l’institut",
     "question": "Cal restringir l’accés dels cotxes particulars a l’entrada del Rovira-Forns?",
     "ods": "ODS 11 i 13",
-    "pro": "L’entorn podria ser més segur i menys contaminat.",
-    "contra": "Algunes famílies necessiten alternatives de transport que no sempre existeixen.",
+    "pro": "L’entorn podria ser més segur i menys contaminat. Menys vehicles a la porta també podria reduir el soroll i els riscos per als vianants.",
+    "contra": "Algunes famílies necessiten alternatives de transport que no sempre existeixen. Abans de restringir l’accés cal estudiar rutes segures, transport públic i necessitats de mobilitat.",
     "data": "Quin trànsit hi ha a l’entrada i quines alternatives reals tenim?"
   },
   {
@@ -330,8 +330,8 @@ function renderUD2Activities(host,g){
     "short": "Plaques solars",
     "question": "Cal instal·lar plaques solars als edificis públics sempre que sigui viable?",
     "ods": "ODS 7, 11 i 13",
-    "pro": "Es pot produir electricitat renovable prop d’on es consumeix.",
-    "contra": "La inversió inicial i el manteniment poden dificultar alguns projectes.",
+    "pro": "Es pot produir electricitat renovable prop d’on es consumeix. Una part del consum de cada edifici podria cobrir-se amb energia generada al mateix sostre.",
+    "contra": "La inversió inicial i el manteniment poden dificultar alguns projectes. Cal comprovar l’orientació, l’estat de la coberta i si el cost compensa l’energia que es produirà.",
     "data": "Quin estalvi energètic i econòmic es pot aconseguir?"
   },
   {
@@ -339,8 +339,8 @@ function renderUD2Activities(host,g){
     "short": "Reparar dispositius",
     "question": "Cal reparar els dispositius electrònics abans de comprar-ne de nous sempre que sigui viable?",
     "ods": "ODS 9 i 12",
-    "pro": "La reparació pot evitar residus i allargar la vida útil dels aparells.",
-    "contra": "Algunes reparacions poden resultar massa cares o poc eficients.",
+    "pro": "La reparació pot evitar residus i allargar la vida útil dels aparells. Aprofitar components que encara funcionen pot evitar fabricar aparells nous innecessàriament.",
+    "contra": "Algunes reparacions poden resultar massa cares o poc eficients. Si l’aparell és molt antic o no té recanvis, pot ser més raonable substituir-lo i reciclar-lo correctament.",
     "data": "Com comparem el cost, la durada i l’impacte ambiental?"
   },
   {
@@ -348,8 +348,8 @@ function renderUD2Activities(host,g){
     "short": "IA a les aules",
     "question": "Cal permetre l’ús supervisat de la intel·ligència artificial als treballs escolars?",
     "ods": "ODS 4 i 9",
-    "pro": "Amb criteris clars, la IA pot ajudar a aprendre i a programar.",
-    "contra": "Sense supervisió pot generar dependència, errors i desigualtats.",
+    "pro": "Amb criteris clars, la IA pot ajudar a aprendre i a programar. Pot servir per detectar errors i explorar solucions, sempre que l’alumnat comprovi el que proposa.",
+    "contra": "Sense supervisió pot generar dependència, errors i desigualtats. També pot portar a copiar respostes sense entendre-les o a confiar en informació incorrecta.",
     "data": "Quines normes i proves mostrarien si realment millora l’aprenentatge?"
   },
   {
@@ -357,8 +357,8 @@ function renderUD2Activities(host,g){
     "short": "Aigua i sequera",
     "question": "Cal limitar obligatòriament el consum d’aigua durant els períodes de sequera?",
     "ods": "ODS 6, 11 i 13",
-    "pro": "Els límits poden ajudar a preservar les reserves per als usos essencials.",
-    "contra": "Les restriccions poden afectar de manera desigual famílies i serveis.",
+    "pro": "Els límits poden ajudar a preservar les reserves per als usos essencials. Així es pot prioritzar l’aigua per beure, la higiene i altres necessitats bàsiques.",
+    "contra": "Les restriccions poden afectar de manera desigual famílies i serveis. Una mateixa limitació per a tothom pot ser injusta si no es tenen en compte les necessitats de cada llar o servei.",
     "data": "Quines dades d’aigua disponible i de consum necessitem?"
   },
   {
@@ -366,8 +366,8 @@ function renderUD2Activities(host,g){
     "short": "Mines per a bateries",
     "question": "Cal autoritzar noves mines de minerals necessaris per fabricar bateries?",
     "ods": "ODS 9, 12 i 15",
-    "pro": "Les bateries faciliten l’emmagatzematge d’energia i la mobilitat elèctrica.",
-    "contra": "L’extracció pot afectar ecosistemes i comunitats locals.",
+    "pro": "Les bateries faciliten l’emmagatzematge d’energia i la mobilitat elèctrica. Aconseguir minerals pot facilitar tecnologies que redueixen l’ús de combustibles fòssils.",
+    "contra": "L’extracció pot afectar ecosistemes i comunitats locals. Cal valorar el consum d’aigua, els residus de la mina i els possibles efectes sobre el territori.",
     "data": "Quines opcions de reciclatge i alternatives a la mineria existeixen?"
   },
   {
@@ -375,8 +375,8 @@ function renderUD2Activities(host,g){
     "short": "Transport públic gratuït",
     "question": "Cal fer gratuït el transport públic per reduir l’ús del cotxe?",
     "ods": "ODS 10, 11 i 13",
-    "pro": "Pot facilitar la mobilitat i animar a utilitzar transports col·lectius.",
-    "contra": "Cal finançar el servei i garantir-ne la qualitat i la freqüència.",
+    "pro": "Pot facilitar la mobilitat i animar a utilitzar transports col·lectius. La gratuïtat pot ajudar especialment les persones amb menys recursos a desplaçar-se.",
+    "contra": "Cal finançar el servei i garantir-ne la qualitat i la freqüència. Si augmenten els viatgers sense ampliar les línies, el servei podria saturar-se.",
     "data": "Quant costaria i com canviaria l’ús del transport?"
   },
   {
@@ -384,8 +384,8 @@ function renderUD2Activities(host,g){
     "short": "Responsabilitat pels ODS",
     "question": "Els governs i les empreses han d’assumir més responsabilitat pels ODS que la ciutadania?",
     "ods": "ODS 12, 13, 16 i 17",
-    "pro": "Les lleis i les infraestructures tenen un impacte molt gran.",
-    "contra": "Els hàbits de consum i la participació també poden impulsar canvis.",
+    "pro": "Les lleis i les infraestructures tenen un impacte molt gran. Poden canviar normes i processos de producció amb efectes sobre moltes persones.",
+    "contra": "Els hàbits de consum i la participació també poden impulsar canvis. Si la ciutadania no canvia hàbits ni exigeix responsabilitats, les mesures institucionals poden ser insuficients.",
     "data": "Quines accions han tingut resultats mesurables i qui les ha impulsades?"
   }
 ];
