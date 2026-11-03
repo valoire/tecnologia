@@ -182,11 +182,11 @@ function init(){
   const previewGrid=make('div','ud2-debate-preview-grid');
   const proCard=make('article','ud2-debate-preview-side ud2-debate-preview-pro');
   proCard.append(make('strong','','👍 A FAVOR'));
-  const proText=make('p','');
+  const proText=make('ul','ud2-debate-preview-points');
   proCard.append(proText);
   const conCard=make('article','ud2-debate-preview-side ud2-debate-preview-contra');
   conCard.append(make('strong','','👎 EN CONTRA'));
-  const conText=make('p','');
+  const conText=make('ul','ud2-debate-preview-points');
   conCard.append(conText);
   previewGrid.append(proCard,conCard);
   const previewQuestion=make('p','ud2-debate-preview-evidence');
@@ -196,17 +196,30 @@ function init(){
   topicSection.append(topicPreview);
 
   const debatePrompt=debateExercise.querySelector('#debate-prompt');
+  function fillPreviewPoints(list,text){
+   list.replaceChildren();
+   const points=text.match(/[^.!?]+(?:[.!?]+|$)/g)||[text];
+   points.map(point=>point.trim()).filter(Boolean).forEach(point=>{
+    list.append(make('li','',point));
+   });
+  }
   function updateTopicPreview(){
    if(!debatePrompt)return;
    const lines=[...debatePrompt.querySelectorAll(':scope > p')];
    const value=(p)=>p?.textContent?.replace(p.querySelector('strong')?.textContent||'','').trim()||'';
    previewTitle.textContent=debatePrompt.querySelector('h4')?.textContent||'';
-   proText.textContent=value(lines[1]);
-   conText.textContent=value(lines[2]);
+   fillPreviewPoints(proText,value(lines[1]));
+   fillPreviewPoints(conText,value(lines[2]));
    previewQuestion.textContent='🔎 Què hauríem d’investigar? '+value(lines[3]);
   }
   debateGrid.querySelectorAll('.debate-topic-card').forEach(button=>{
-   button.addEventListener('click',updateTopicPreview);
+   button.addEventListener('click',()=>{
+    updateTopicPreview();
+    requestAnimationFrame(()=>topicPreview.scrollIntoView({
+     block:'start',
+     behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'
+    }));
+   });
   });
   updateTopicPreview();
   topicSection.append(make('p','ud2-debate-topic-hint','Quan hagis triat el tema, passa al segon apartat per preparar el debat.'));
