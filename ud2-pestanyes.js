@@ -213,7 +213,7 @@ function addDebateExample(panel){
  block.append(video);
  const sample=n('div','ud2-debate-motion');
  appendText(sample,'span','💬 EXEMPLE PER PREPARAR EL DEBAT','ud2-debate-kicker');
- appendText(sample,'h3','Tema: L’institut hauria de prohibir les ampolles de plàstic d’un sol ús?');
+ appendText(sample,'h3','Tema: Cal mantenir les centrals nuclears mentre s’amplien les energies renovables?');
  appendText(sample,'p','Un mateix tema es pot defensar des de dues posicions. Aquests arguments serveixen d’exemple: cal justificar-los amb dades o situacions reals.');
  const wrap=n('div','ud2-debate-table-wrap');
  const table=n('table','ud2-debate-table');
@@ -223,9 +223,9 @@ function addDebateExample(panel){
  thead.append(tr);table.append(thead);
  const tbody=n('tbody');
  const rows=[
-  ['Reduiríem els residus d’envasos que es generen cada dia.','Primer caldria garantir fonts d’aigua potable accessibles per a tothom.'],
-  ['Fomentaríem l’ús d’ampolles reutilitzables entre l’alumnat.','Algunes persones poden necessitar una ampolla d’un sol ús en situacions puntuals.'],
-  ['Es podrien reduir la recollida de residus i la compra d’envasos nous.','Les ampolles reutilitzables també consumeixen recursos per fabricar-les i netejar-les.']
+  ['Proporcionen electricitat de manera constant, independentment del vent i del sol.','Generen residus radioactius que necessiten una gestió segura durant molt de temps.'],
+  ['Les emissions de CO₂ al llarg del seu cicle de vida són baixes.','La construcció i el desmantellament requereixen temps i inversions importants.'],
+  ['Poden complementar les renovables quan no produeixen prou energia.','Cal mantenir controls de seguretat estrictes davant de possibles accidents.']
  ];
  rows.forEach(([favor,contra])=>{
   const row=n('tr');appendText(row,'td',favor);appendText(row,'td',contra);tbody.append(row);
