@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#70329a">
+  <meta name="description" content="Energia, transformacions, rendiment, parell motor i exercicis PAU de Tecnologia i Enginyeria de Batxillerat.">
+  <title>Energies · Batxillerat · Tecnologia</title>
+  <link rel="stylesheet" href="estils.css?v=espurnes-20261028b">
+  <style>
+    :root{--purple:#71308b;--ink:#3e2851;--muted:#63516d;--pink:#e57ac4;--orange:#f28b19;--mint:#1b946d;--paper:#fffaf3}
+    html{scroll-behavior:smooth;scroll-padding-top:95px}
+    body{background:linear-gradient(120deg,#fff5da 0%,#fff8f3 49%,#f8eaff 100%);color:var(--ink)}
+    .energy-hero{background:linear-gradient(115deg,#ffedd2,#ffe1f4 52%,#eee1ff);padding:48px 0 55px;border-bottom:4px solid #eab8ec}
+    .energy-hero h1{color:var(--purple);font-size:clamp(2.5rem,6vw,4.5rem);line-height:1.07;margin:12px 0 16px}
+    .energy-hero p{max-width:760px;font-size:1.13rem;color:#5e4665}
+    .kicker{font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:#aa4b17;font-size:.83rem}
+    .energy-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:23px}
+    .energy-badges span{background:#fff9;border:1.5px solid #e8bfdf;border-radius:999px;padding:8px 13px;font-weight:800;color:#693278}
+    .energy-main{padding-top:34px;padding-bottom:55px}
+    .crumb{margin-bottom:20px}
+    .energy-intro{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:16px;flex-wrap:wrap}
+    .energy-intro h2{color:var(--purple);font-size:1.8rem;margin:0}
+    .energy-intro p{color:#79687d;margin:0}
+    .topic-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin-bottom:32px}
+    .topic-card{display:flex;flex-direction:column;justify-content:center;gap:8px;background:#fff;border:2px solid #e9c7ea;border-top:8px solid var(--top);border-radius:19px;padding:21px 20px;min-height:132px;text-decoration:none;color:var(--ink);box-shadow:0 10px 25px #5627720b;transition:transform .17s,box-shadow .17s}
+    .topic-card:hover,.topic-card:focus-visible{transform:translateY(-3px);box-shadow:0 13px 28px #56277224;outline:2px solid var(--purple);outline-offset:2px}
+    .topic-card small{font-size:.77rem;font-weight:900;color:#b06943;letter-spacing:.07em}
+    .topic-card strong{font-size:1.06rem;color:#71308b;line-height:1.3}
+    .energy-section{background:#fff;border:2px solid #eed1ec;border-top:8px solid var(--accent);border-radius:24px;padding:27px clamp(18px,4vw,38px);margin:25px 0;box-shadow:0 8px 26px #8e509912}
+    .section-kicker{font-size:.84rem;font-weight:900;letter-spacing:.08em;color:#b85e24;text-transform:uppercase;margin-bottom:8px}
+    .energy-section h2{font-size:clamp(1.65rem,4vw,2.3rem);color:var(--purple);line-height:1.15;margin:0 0 13px}
+    .energy-section p{color:#594b61;line-height:1.65}
+    .info-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:19px 0}
+    .info-box{background:linear-gradient(130deg,#fffaf4,#faf0ff);padding:20px;border:1px solid #ead7e8;border-radius:18px}
+    .info-box h3{color:#8a438c;font-size:1.04rem;margin:0 0 9px}
+    .info-box p{margin:0}
+    .formula{display:block;background:linear-gradient(115deg,#fff0db,#f5e9ff);padding:15px 18px;margin:12px 0;border-left:6px solid #f28b19;border-radius:12px;font-weight:900;color:#703080;font-size:1.11rem;line-height:1.5;overflow-wrap:anywhere}
+    .formula small{display:block;color:#75637b;font-weight:600;font-size:.8rem;margin-top:4px}
+    .mini-note{background:#e8faef;color:#27624d;border-radius:14px;padding:15px 18px;margin:17px 0;border-left:5px solid #24956b}
+    .mini-note strong{color:#175e42}
+    .worked{background:#fff8ea;border-radius:16px;padding:18px 20px;margin-top:17px;border:1px solid #f2d49c}
+    .worked h3{margin:0 0 7px;color:#9c5717;font-size:1.03rem}
+    .worked p{margin:5px 0}
+    .diagram{display:flex;align-items:stretch;gap:10px;margin:20px 0;flex-wrap:wrap}
+    .diagram>div{flex:1;min-width:145px;text-align:center;background:#f8effe;border:2px solid #e8c5f2;border-radius:15px;padding:16px 10px;font-weight:850;color:#67347c}
+    .diagram .loss{background:#fef0e8;border-color:#f5d2b0;color:#98571b}
+    .diagram .useful{background:#e8faee;border-color:#b6e4c8;color:#20714a}
+    .diagram .arrow{flex:0 0 auto;min-width:0;display:grid;place-items:center;background:none;border:0;padding:0;color:#b47528;font-size:1.4rem}
+    .compare{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border:1px solid #ecd1e9;border-radius:13px;margin:20px 0}
+    .compare th,.compare td{text-align:left;padding:11px 14px;border-bottom:1px solid #efdaed;vertical-align:top}
+    .compare th{background:#f7e6fa;color:#71308b}
+    .compare tr:last-child td{border-bottom:0}
+    .pdf-link{display:inline-flex;align-items:center;gap:8px;text-decoration:none;background:#772f91;color:white!important;border-radius:999px;padding:11px 17px;font-weight:850;margin:10px 8px 0 0;transition:background .15s}
+    .pdf-link:hover{background:#5b206e}
+    .pdf-link.alt{background:#17855d}
+    .exercise-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin:18px 0}
+    .exercise-group{background:#fff9f1;border:1px solid #eed7ad;border-radius:15px;padding:17px}
+    .exercise-group b{display:block;color:#90521a;margin-bottom:5px}
+    .exercise-group span{font-size:.9rem;color:#726273}
+    .try-box{padding:20px;background:#fcf5ff;border:1.5px solid #dfbce7;border-radius:18px;margin:13px 0}
+    .try-box p{margin:6px 0 10px}
+    .try-box details{border-top:1px solid #e3cee5;padding-top:10px}
+    .try-box summary{cursor:pointer;color:#782e91;font-weight:850}
+    .doc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px;margin:20px 0}
+    .doc{border:2px solid #ead0e8;border-radius:18px;padding:21px;background:#fffdfb}
+    .doc h3{color:#71308b;margin:0 0 7px}
+    .doc p{font-size:.95rem;margin:0}
+    .doc-preview{margin-top:16px;border-top:1px solid #ecd2e8;padding-top:12px}
+    .doc-preview summary{cursor:pointer;color:#7e3b8d;font-weight:850}
+    .doc-preview iframe{display:block;width:100%;height:500px;border:1px solid #edd4e8;border-radius:12px;margin-top:13px;background:#f9f5fb}
+    .end-note{color:#76657a;font-size:.9rem;margin-top:25px}
+    @media(max-width:1000px){.topic-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.exercise-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:650px){.topic-grid,.info-grid,.doc-grid,.exercise-grid{grid-template-columns:1fr}.energy-hero{padding:35px 0}.energy-section{padding:20px 16px}.diagram{flex-direction:column}.diagram .arrow{transform:rotate(90deg)}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.topic-card{transition:none}}
+  </style>
+</head>
+<body>
+  <header class="top"><div class="wrap bar"><a class="brand" href="index.html">TECNOLOGIA</a><nav aria-label="Navegació principal"><a href="curs.html?grup=optativa">4t Optativa</a><a href="curs.html?grup=e">4t E</a><a href="batxillerat.html" aria-current="page">Batxillerat</a></nav></div></header>
+  <div class="energy-hero"><div class="wrap">
+    <div class="kicker">Tecnologia i Enginyeria · 2n de Batxillerat</div>
+    <h1>⚡ Energies</h1>
+    <p>Entén com es transforma l'energia, quina part aprofitem i com calcular el rendiment, la potència i el parell motor. Al final podràs practicar amb exercicis de les PAU.</p>
+    <div class="energy-badges"><span>📖 Teoria clara</span><span>🧮 Fórmules i exemples</span><span>📄 4 documents</span><span>🎓 30 exercicis PAU</span></div>
+  </div></div>
+  <main class="main wrap energy-main">
+    <div class="crumb"><a href="index.html">Inici</a><span>/</span><a href="batxillerat.html">Batxillerat</a><span>/</span><span>Energies</span></div>
+    <div class="energy-intro"><h2>Tria l'apartat que vols treballar</h2><p>Segueix l'ordre per passar de la teoria a la pràctica.</p></div>
+    <nav class="topic-grid" aria-label="Apartats d'energies">
+      <a class="topic-card" href="#conceptes" style="--top:#dc71bd"><small>01 · TEORIA</small><strong>⚡ Energia i transformacions</strong></a>
+      <a class="topic-card" href="#rendiment" style="--top:#f28b19"><small>02 · TEORIA</small><strong>🔋 Energia útil i rendiment</strong></a>
+      <a class="topic-card" href="#parell" style="--top:#7c43c6"><small>03 · TEORIA</small><strong>⚙️ Parell motor i moment</strong></a>
+      <a class="topic-card" href="#practica" style="--top:#1e9971"><small>04 · PRÀCTICA</small><strong>🎓 Exercicis de les PAU</strong></a>
+    </nav>
+
+    <section id="conceptes" class="energy-section" style="--accent:#dc71bd">
+      <div class="section-kicker">Teoria 1 · Conceptes bàsics</div>
+      <h2>Energia, treball, potència i transformacions</h2>
+      <p>L'energia permet que un sistema produeixi canvis: moviment, calor, llum o deformacions. Quan una força provoca un desplaçament, pot transferir energia en forma de <strong>treball mecànic</strong>. La <strong>potència</strong> ens diu a quin ritme es transfereix aquesta energia.</p>
+      <div class="info-grid">
+        <div class="info-box"><h3>Força i treball</h3><p>Una força es mesura en <strong>newtons (N)</strong>. El treball és energia transferida i es mesura en <strong>joules (J)</strong>. Si no hi ha desplaçament, el treball mecànic d'aquesta força és zero.</p></div>
+        <div class="info-box"><h3>Energia i potència</h3><p>L'energia es mesura en <strong>J</strong> o <strong>kWh</strong>. La potència es mesura en <strong>watts (W)</strong>. No són el mateix: un kW és potència; un kWh és energia.</p></div>
+      </div>
+      <span class="formula">W = F · d · cos α <small>W: treball (J) · F: força (N) · d: desplaçament (m) · α: angle</small></span>
+      <span class="formula">E<sub>c</sub> = ½ · m · v<sup>2</sup> &nbsp;&nbsp; E<sub>p</sub> = m · g · h <small>Energia cinètica i energia potencial gravitatòria (J)</small></span>
+      <span class="formula">P = E / t &nbsp;&nbsp; E = P · t <small>Amb P en W i t en segons, l'energia s'obté en J</small></span>
+      <div class="worked"><h3>🧠 Exemple ràpid</h3><p>Un aparell de 2 kW funciona durant mitja hora: <strong>E = 2 · 0,5 = 1 kWh</strong>. El resultat és una energia, no una potència.</p></div>
+      <div class="mini-note"><strong>Recorda:</strong> 1 kWh = 3,6 · 10<sup>6</sup> J. En un sistema real, l'energia es transforma, però no desapareix.</div>
+      <a class="pdf-link" href="https://drive.google.com/file/d/1HhvR_CdEqVi-g6-tfdoXISy6jMio2asO/view" target="_blank" rel="noopener noreferrer">📄 Obrir teoria completa</a>
+    </section>
+
+    <section id="rendiment" class="energy-section" style="--accent:#f28b19">
+      <div class="section-kicker">Teoria 2 · Balanç energètic</div>
+      <h2>Energia útil, energia dissipada i rendiment</h2>
+      <p>Una màquina rep energia, però no tota arriba al resultat que volem. La part que serveix per a la tasca és l'<strong>energia útil</strong>; la resta pot dissipar-se en forma de calor, so o vibracions. El rendiment expressa quina fracció aprofitem.</p>
+      <div class="diagram" aria-label="L'energia d'entrada es reparteix en energia útil i dissipada"><div>⚡ Energia d'entrada</div><div class="arrow">→</div><div class="useful">✅ Energia útil</div><div class="arrow">+</div><div class="loss">🌡️ Energia dissipada</div></div>
+      <span class="formula">E<sub>entrada</sub> = E<sub>útil</sub> + E<sub>dissipada</sub> <small>Balanç quan no hi ha variació de l'energia emmagatzemada</small></span>
+      <span class="formula">η = E<sub>útil</sub> / E<sub>entrada</sub> = P<sub>útil</sub> / P<sub>entrada</sub> <small>Per obtenir el percentatge, multiplica η per 100; compara magnituds del mateix tipus</small></span>
+      <div class="worked"><h3>🧮 Exemple resolt</h3><p>Un motor rep <strong>800 J</strong> i en proporciona <strong>600 J útils</strong>.</p><p>Energia dissipada: 800 − 600 = <strong>200 J</strong>.</p><p>Rendiment: 600 / 800 = 0,75 = <strong>75 %</strong>.</p></div>
+      <div class="mini-note"><strong>Compte:</strong> un 75 % de rendiment s'introdueix a les fórmules com a 0,75. Si coneixes l'energia útil, l'entrada necessària és E<sub>útil</sub> / η.</div>
+      <a class="pdf-link" href="https://drive.google.com/file/d/1S-vXpmHQjhQx7Ar9dDk2bdhHywyYXFg3/view" target="_blank" rel="noopener noreferrer">📄 Teoria i exemples resolts</a>
+    </section>
+
+    <section id="parell" class="energy-section" style="--accent:#7c43c6">
+      <div class="section-kicker">Teoria 3 · Màquines i moviment</div>
+      <h2>Parell motor i moment d'una força</h2>
+      <p>El <strong>moment d'una força</strong> indica la seva capacitat de fer girar un cos respecte d'un punt o eix. El <strong>parell motor</strong> és el moment de gir que un motor transmet pel seu eix. Tots dos es mesuren en <strong>N·m</strong>, però s'utilitzen en contextos diferents.</p>
+      <table class="compare"><thead><tr><th>Moment d'una força</th><th>Parell motor</th></tr></thead><tbody>
+        <tr><td>Estudiem l'efecte de gir d'una força al voltant d'un punt o eix.</td><td>Estudiem el gir que proporciona el motor al seu eix.</td></tr>
+        <tr><td>Exemple: obrir una porta o girar una clau anglesa.</td><td>Exemple: fer funcionar un tambor, un reductor o una hèlix.</td></tr>
+        <tr><td>M = F · b, si b és el braç perpendicular.</td><td>Γ = F · b; quan gira, P = Γ · ω.</td></tr>
+      </tbody></table>
+      <span class="formula">M = F · b &nbsp;&nbsp; Γ = F · r · sin α <small>Amb força perpendicular: Γ = F · r; r és el radi, no el diàmetre</small></span>
+      <span class="formula">ω = 2π · n / 60 &nbsp;&nbsp; P = Γ · ω <small>n en rpm · ω en rad/s · Γ en N·m · P en W</small></span>
+      <div class="worked"><h3>⚙️ Exemple resolt</h3><p>Un motor proporciona 2,2 kW mecànics a 1.400 rpm.</p><p>ω = 2π · 1.400 / 60 = <strong>146,61 rad/s</strong>.</p><p>Γ = 2.200 / 146,61 = <strong>15,01 N·m</strong>.</p></div>
+      <div class="mini-note"><strong>Reductor:</strong> si definim i = n<sub>entrada</sub> / n<sub>sortida</sub>, aleshores Γ<sub>sortida</sub> = η<sub>reductor</sub> · i · Γ<sub>entrada</sub>. El reductor augmenta el parell a canvi de reduir la velocitat; no crea potència.</div>
+      <a class="pdf-link" href="https://drive.google.com/file/d/1EUMCqggmtjIlDPbjSa7Wy_scQqicKLS1/view" target="_blank" rel="noopener noreferrer">📄 Teoria de parell motor</a>
+    </section>
+
+    <section class="energy-section" style="--accent:#4cb9a0">
+      <div class="section-kicker">Ampliació · Aplicacions</div>
+      <h2>Energia tèrmica i elèctrica</h2>
+      <p>Les fórmules energètiques també permeten calcular l'escalfament d'un material o el consum d'un receptor elèctric. Abans de substituir dades, comprova sempre les unitats.</p>
+      <div class="info-grid"><div class="info-box"><h3>🌡️ Calor sensible</h3><span class="formula">Q = m · c · ΔT</span><p>Massa en kg, calor específica en J/(kg·K) i canvi de temperatura en K.</p></div><div class="info-box"><h3>💡 Electricitat i consum</h3><span class="formula">P = U · I &nbsp;&nbsp; E = P · t</span><p>En un receptor, la potència es calcula amb tensió i intensitat; el consum depèn del temps.</p></div></div>
+      <div class="mini-note"><strong>Conversió clau:</strong> 1 kW = 1.000 W; 1 h = 3.600 s. Una diferència de 1 °C equival a una diferència d'1 K.</div>
+      <a class="pdf-link" href="https://drive.google.com/file/d/1HhvR_CdEqVi-g6-tfdoXISy6jMio2asO/view" target="_blank" rel="noopener noreferrer">📄 Veure tots els exemples d'energia</a>
+    </section>
+
+    <section id="practica" class="energy-section" style="--accent:#1e9971">
+      <div class="section-kicker">Pràctica 4 · Preparació de les PAU</div>
+      <h2>30 exercicis organitzats per temes</h2>
+      <p>Comença pels exemples resolts de la teoria. Després passa als exercicis d'examen: són de <strong>dificultat alta</strong> i estan agrupats perquè puguis escollir què vols practicar.</p>
+      <div class="exercise-grid">
+        <div class="exercise-group"><b>01 · Treball, potència i energia</b><span>Exercicis 1–3</span></div>
+        <div class="exercise-group"><b>02 · Rendiment de motors</b><span>Exercicis 4–6</span></div>
+        <div class="exercise-group"><b>03 · Bateries i mobilitat elèctrica</b><span>Exercicis 7–12</span></div>
+        <div class="exercise-group"><b>04 · Energia tèrmica</b><span>Exercicis 13–17</span></div>
+        <div class="exercise-group"><b>05 · Producció i captació d'energia</b><span>Exercicis 18–24</span></div>
+        <div class="exercise-group"><b>06 · Estalvi energètic i emissions</b><span>Exercicis 25–30</span></div>
+      </div>
+      <a class="pdf-link alt" href="https://drive.google.com/file/d/1Y8EEtM6od8qTpBMYTIStYioAMbpuXdfD/view" target="_blank" rel="noopener noreferrer">🎓 Obrir els 30 exercicis PAU</a>
+      <h3 style="margin-top:28px;color:#753589">Comprova si domines els conceptes</h3>
+      <div class="try-box"><strong>1. Energia i potència</strong><p>Un aparell de 1.500 W funciona durant 2 hores. Quanta energia consumeix en kWh?</p><details><summary>Veure la solució</summary><p>1.500 W = 1,5 kW; E = 1,5 · 2 = <strong>3 kWh</strong>.</p></details></div>
+      <div class="try-box"><strong>2. Rendiment</strong><p>Una màquina rep 1.200 J i proporciona 900 J útils. Quin és el rendiment i l'energia dissipada?</p><details><summary>Veure la solució</summary><p>η = 900 / 1.200 = <strong>75 %</strong>; E<sub>dissipada</sub> = 1.200 − 900 = <strong>300 J</strong>.</p></details></div>
+      <div class="try-box"><strong>3. Moment de gir</strong><p>Una força tangencial de 100 N actua sobre una roda de radi 0,20 m. Quin moment genera?</p><details><summary>Veure la solució</summary><p>Γ = 100 · 0,20 = <strong>20 N·m</strong>.</p></details></div>
+    </section>
+
+    <section id="documents" class="energy-section" style="--accent:#f28b19">
+      <div class="section-kicker">Biblioteca · Material original de classe</div>
+      <h2>Documents per estudiar i practicar</h2>
+      <p>Aquests són els quatre PDF de la teva pàgina de «Energies». Pots obrir-los a Google Drive o previsualitzar-los sense sortir d'aquí.</p>
+      <div class="doc-grid">
+        <article class="doc"><h3>📕 Energia i transformacions</h3><p>Definicions, fórmules, unitats, treball, potència, transformacions i aplicacions.</p><a class="pdf-link" href="https://drive.google.com/file/d/1HhvR_CdEqVi-g6-tfdoXISy6jMio2asO/view" target="_blank" rel="noopener noreferrer">Obrir PDF</a><details class="doc-preview"><summary>Previsualitzar document</summary><iframe loading="lazy" title="PDF d'energia i transformacions" src="https://drive.google.com/file/d/1HhvR_CdEqVi-g6-tfdoXISy6jMio2asO/preview"></iframe></details></article>
+        <article class="doc"><h3>📗 Energia útil i rendiment</h3><p>Explicacions pas a pas i exemples de càlcul del rendiment de màquines.</p><a class="pdf-link" href="https://drive.google.com/file/d/1S-vXpmHQjhQx7Ar9dDk2bdhHywyYXFg3/view" target="_blank" rel="noopener noreferrer">Obrir PDF</a><details class="doc-preview"><summary>Previsualitzar document</summary><iframe loading="lazy" title="PDF d'energia útil i rendiment" src="https://drive.google.com/file/d/1S-vXpmHQjhQx7Ar9dDk2bdhHywyYXFg3/preview"></iframe></details></article>
+        <article class="doc"><h3>📘 Parell motor</h3><p>Moment de gir, velocitat angular, potència i relació de transmissió.</p><a class="pdf-link" href="https://drive.google.com/file/d/1EUMCqggmtjIlDPbjSa7Wy_scQqicKLS1/view" target="_blank" rel="noopener noreferrer">Obrir PDF</a><details class="doc-preview"><summary>Previsualitzar document</summary><iframe loading="lazy" title="PDF de parell motor" src="https://drive.google.com/file/d/1EUMCqggmtjIlDPbjSa7Wy_scQqicKLS1/preview"></iframe></details></article>
+        <article class="doc"><h3>📙 30 exercicis PAU</h3><p>Problemes ordenats en sis blocs temàtics, amb dades i resultats finals.</p><a class="pdf-link alt" href="https://drive.google.com/file/d/1Y8EEtM6od8qTpBMYTIStYioAMbpuXdfD/view" target="_blank" rel="noopener noreferrer">Obrir PDF</a><details class="doc-preview"><summary>Previsualitzar document</summary><iframe loading="lazy" title="PDF de 30 exercicis PAU" src="https://drive.google.com/file/d/1Y8EEtM6od8qTpBMYTIStYioAMbpuXdfD/preview"></iframe></details></article>
+      </div>
+      <p class="end-note">Els documents s'obren des de Google Drive i poden requerir accés amb el compte del centre si la seva configuració ho exigeix.</p>
+    </section>
+    <p><a class="pdf-link" href="batxillerat.html">← Tornar a Batxillerat</a></p>
+  </main>
+  <footer class="footer"><div class="wrap"><span>Tecnologia</span><span><a href="batxillerat.html">Més temes de Batxillerat</a></span></div></footer>
+</body>
+</html>
