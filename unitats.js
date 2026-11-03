@@ -236,7 +236,7 @@ function renderUD2Activities(host,g){
       <p class="subtle">Calculadora de consum elèctric durant l’ús; no mesura l’impacte total ni el consum de fabricació. Només cal fer servir circuits de baixa tensió i treballar seguint les normes del taller.</p>
       <ul><li><strong>Abans:</strong> fotografia el fanalet de Halloween i identifica què es pot conservar.</li><li><strong>Transformació:</strong> incorpora decoració nadalenca desmuntable, preferiblement amb retalls recuperats.</li><li><strong>Després:</strong> fotografia el resultat i justifica quins materials i quanta energia heu estalviat o estimat.</li></ul>
     </div>
-    <div class="exercise" id="ods-debate"><h3>Debat acadèmic a l’estil nord-americà</h3>
+    <div class="exercise" id="ods-debate"><h3>Debat acadèmic a secundària</h3>
       <p>Debat estructurat amb una <strong>moció</strong> clara, equip afirmatiu, equip negatiu, moderació i jurat. No és una baralla ni un concurs de cridar: guanya força l’argument més ben defensat, no necessàriament el més popular.</p>
       <label class="field-label" for="debate-topic">Quina qüestió debatrem?</label>
       <select id="debate-topic" class="simple-select"><option value="0">Moció 1 · Cal reparar abans de comprar nous dispositius?</option><option value="1">Moció 2 · Cal limitar els cotxes davant de l’institut?</option><option value="2">Moció 3 · Els governs han d’assumir la major responsabilitat pels ODS?</option><option value="3">Moció 4 · És millor reutilitzar el fanalet que fabricar-ne un de nou?</option></select>
