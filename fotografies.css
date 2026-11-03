@@ -86,3 +86,17 @@
  .photo-lesson-caption p{font-size:13px}
 }
 @media(prefers-reduced-motion:reduce){.photo-lesson-image{transform:none}}
+
+/* Enllaç directe al vídeo del debat d'alumnes de secundària. */
+.photo-lesson-watch-video{
+ display:inline-flex;align-items:center;justify-content:center;
+ margin:9px 12px 10px 0;padding:11px 15px;
+ border-radius:11px;border:2px solid #cb792a;
+ background:#fff0d9;color:#844515!important;
+ font-size:13px;font-weight:900;text-decoration:none;
+ box-shadow:0 4px 12px #9d5c2420;
+}
+.photo-lesson-watch-video:hover,.photo-lesson-watch-video:focus-visible{
+ background:#ffdfa9;border-color:#a65318;
+}
+.photo-lesson-watch-video:focus-visible{outline:3px solid #8948a5;outline-offset:3px}
