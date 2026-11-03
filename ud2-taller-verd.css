@@ -423,3 +423,16 @@
  .ud2-topic-redesign .ud2-green-index-card{min-height:59px;padding:10px}
  .ud2-topic-redesign .ud2-green-index-words strong{font-size:13px}
 }
+
+/* Capçalera verda situada sota les set targetes, com la capçalera rosa de teoria. */
+.ud2-topic-redesign .ud2-green-inner > .ud2-main-topic-head.ud2-green-head{
+ padding:21px 24px;
+ border-left:6px solid #278153!important;
+ border-radius:17px;
+ margin:0 0 27px;
+ background:linear-gradient(115deg,#e2f9ea,#d4f1e1 58%,#eafff1)!important;
+}
+.ud2-topic-redesign .ud2-green-inner > .ud2-main-topic-head.ud2-green-head h2{
+ font-size:clamp(26px,3.5vw,35px);
+ line-height:1.35;
+}
