@@ -298,13 +298,133 @@ function renderUD2Activities(host,g){
   calculate();
 
   const debates=[
-    {question:'El centre hauria de reparar els dispositius electrònics abans de comprar-ne de nous sempre que sigui viable?',ods:'ODS 9 i 12',pro:'La reparació allarga la vida dels materials i evita fabricar aparells abans d’hora.',contra:'Alguns aparells poden ser difícils de reparar, consumir massa energia o no satisfer necessitats actuals.',data:'Com compararíem el preu i la vida útil d’una reparació amb la compra d’un dispositiu nou?'},
-    {question:'El municipi hauria de limitar l’arribada de cotxes particulars just davant del Rovira-Forns?',ods:'ODS 11 i 13',pro:'Es pot guanyar espai segur i reduir contaminació i congestió a les hores d’entrada.',contra:'Algunes famílies necessiten alternatives accessibles i transports que ara no sempre existeixen.',data:'Quin ús real es fa de l’espai i quines alternatives de mobilitat hi ha a la zona?'},
-    {question:'Els governs i les empreses han d’assumir més responsabilitat pels ODS que la ciutadania?',ods:'ODS 12, 13, 16 i 17',pro:'Les decisions sobre infraestructures, lleis i indústria tenen un impacte gran i requereixen recursos col·lectius.',contra:'Els hàbits quotidians, les compres i la participació ciutadana també poden impulsar canvis.',data:'Quines mesures podem documentar i com se’n reparteixen els costos i els beneficis?'},
-    {question:'Per Nadal és més responsable adaptar el fanalet de Halloween que fabricar-ne un de nou?',ods:'ODS 7, 12 i 13',pro:'Aprofitar la carcassa existent evita utilitzar alguns materials nous i allarga la vida del projecte.',contra:'Cal valorar si la conversió és segura, duradora i si convé canviar alguns components ineficients.',data:'Quins materials reutilitzem, quin consum tenen els LEDs i com de durador serà el resultat?'}
-  ];
+  {
+    "icon": "⚛️",
+    "short": "Centrals nuclears",
+    "question": "Cal mantenir les centrals nuclears mentre s’amplien les energies renovables?",
+    "ods": "ODS 7 i 13",
+    "pro": "Generen electricitat de manera estable amb baixes emissions de CO₂ durant el funcionament.",
+    "contra": "Produeixen residus radioactius que requereixen una gestió segura a llarg termini.",
+    "data": "Com comparem les emissions, els costos, la seguretat i els residus de cada font?"
+  },
+  {
+    "icon": "♻️",
+    "short": "Plàstics d’un sol ús",
+    "question": "Cal prohibir els envasos de plàstic d’un sol ús a l’institut?",
+    "ods": "ODS 12 i 14",
+    "pro": "Es reduirien residus i es fomentarien alternatives reutilitzables.",
+    "contra": "Cal garantir alternatives accessibles i pràctiques per a tothom.",
+    "data": "Quants envasos llencem al centre i quin impacte tenen les alternatives?"
+  },
+  {
+    "icon": "🚗",
+    "short": "Cotxes a l’institut",
+    "question": "Cal restringir l’accés dels cotxes particulars a l’entrada del Rovira-Forns?",
+    "ods": "ODS 11 i 13",
+    "pro": "L’entorn podria ser més segur i menys contaminat.",
+    "contra": "Algunes famílies necessiten alternatives de transport que no sempre existeixen.",
+    "data": "Quin trànsit hi ha a l’entrada i quines alternatives reals tenim?"
+  },
+  {
+    "icon": "☀️",
+    "short": "Plaques solars",
+    "question": "Cal instal·lar plaques solars als edificis públics sempre que sigui viable?",
+    "ods": "ODS 7, 11 i 13",
+    "pro": "Es pot produir electricitat renovable prop d’on es consumeix.",
+    "contra": "La inversió inicial i el manteniment poden dificultar alguns projectes.",
+    "data": "Quin estalvi energètic i econòmic es pot aconseguir?"
+  },
+  {
+    "icon": "🔧",
+    "short": "Reparar dispositius",
+    "question": "Cal reparar els dispositius electrònics abans de comprar-ne de nous sempre que sigui viable?",
+    "ods": "ODS 9 i 12",
+    "pro": "La reparació pot evitar residus i allargar la vida útil dels aparells.",
+    "contra": "Algunes reparacions poden resultar massa cares o poc eficients.",
+    "data": "Com comparem el cost, la durada i l’impacte ambiental?"
+  },
+  {
+    "icon": "🤖",
+    "short": "IA a les aules",
+    "question": "Cal permetre l’ús supervisat de la intel·ligència artificial als treballs escolars?",
+    "ods": "ODS 4 i 9",
+    "pro": "Amb criteris clars, la IA pot ajudar a aprendre i a programar.",
+    "contra": "Sense supervisió pot generar dependència, errors i desigualtats.",
+    "data": "Quines normes i proves mostrarien si realment millora l’aprenentatge?"
+  },
+  {
+    "icon": "💧",
+    "short": "Aigua i sequera",
+    "question": "Cal limitar obligatòriament el consum d’aigua durant els períodes de sequera?",
+    "ods": "ODS 6, 11 i 13",
+    "pro": "Els límits poden ajudar a preservar les reserves per als usos essencials.",
+    "contra": "Les restriccions poden afectar de manera desigual famílies i serveis.",
+    "data": "Quines dades d’aigua disponible i de consum necessitem?"
+  },
+  {
+    "icon": "⛏️",
+    "short": "Mines per a bateries",
+    "question": "Cal autoritzar noves mines de minerals necessaris per fabricar bateries?",
+    "ods": "ODS 9, 12 i 15",
+    "pro": "Les bateries faciliten l’emmagatzematge d’energia i la mobilitat elèctrica.",
+    "contra": "L’extracció pot afectar ecosistemes i comunitats locals.",
+    "data": "Quines opcions de reciclatge i alternatives a la mineria existeixen?"
+  },
+  {
+    "icon": "🚌",
+    "short": "Transport públic gratuït",
+    "question": "Cal fer gratuït el transport públic per reduir l’ús del cotxe?",
+    "ods": "ODS 10, 11 i 13",
+    "pro": "Pot facilitar la mobilitat i animar a utilitzar transports col·lectius.",
+    "contra": "Cal finançar el servei i garantir-ne la qualitat i la freqüència.",
+    "data": "Quant costaria i com canviaria l’ús del transport?"
+  },
+  {
+    "icon": "🌍",
+    "short": "Responsabilitat pels ODS",
+    "question": "Els governs i les empreses han d’assumir més responsabilitat pels ODS que la ciutadania?",
+    "ods": "ODS 12, 13, 16 i 17",
+    "pro": "Les lleis i les infraestructures tenen un impacte molt gran.",
+    "contra": "Els hàbits de consum i la participació també poden impulsar canvis.",
+    "data": "Quines accions han tingut resultats mesurables i qui les ha impulsades?"
+  }
+];
   const select=container.querySelector('#debate-topic'),prompt=container.querySelector('#debate-prompt');
+
+  select.replaceChildren();
+  const topicGrid=document.createElement('div');
+  topicGrid.className='debate-topic-grid';
+  topicGrid.setAttribute('role','group');
+  topicGrid.setAttribute('aria-label','Deu temes per escollir el debat');
+  const topicButtons=[];
+  debates.forEach((d,i)=>{
+    const opt=document.createElement('option');opt.value=String(i);opt.textContent=(i+1)+'. TEMA · '+d.short;select.append(opt);
+    const button=document.createElement('button');button.type='button';button.className='debate-topic-card';
+    button.setAttribute('aria-label','Tema '+(i+1)+': '+d.question);
+    const icon=document.createElement('span');icon.className='debate-topic-icon';icon.textContent=d.icon;
+    const copy=document.createElement('span');copy.className='debate-topic-copy';
+    const n=document.createElement('small');n.textContent=(i+1)+'. TEMA';
+    const name=document.createElement('strong');name.textContent=d.short;
+    copy.append(n,name);button.append(icon,copy);
+    button.addEventListener('click',()=>{select.value=String(i);drawDebate()});
+    topicGrid.append(button);topicButtons.push(button);
+  });
+  const heading=container.querySelector('label[for="debate-topic"]');
+  if(heading){
+    heading.textContent='Tria el tema que vols debatre';
+    heading.classList.add('debate-picker-heading');
+    const note=document.createElement('p');note.className='debate-picker-help';
+    note.textContent='Clica una targeta per veure la pregunta i preparar arguments a favor i en contra.';
+    heading.after(note);
+  }
+  select.hidden=true;
+  select.after(topicGrid);
   function drawDebate(){const d=debates[Number(select.value)];prompt.replaceChildren();
+    topicButtons.forEach((btn,i)=>{
+      const isCurrent=i===Number(select.value);
+      btn.classList.toggle('is-selected',isCurrent);
+      btn.setAttribute('aria-pressed',String(isCurrent));
+    });
     const title=document.createElement('h4');title.textContent=d.question;prompt.append(title);
     for(const [label,txt] of [['ODS relacionats',d.ods],['Una raó a favor',d.pro],['Una objecció possible',d.contra],['Quina prova necessitem?',d.data]]){const p=document.createElement('p');const strong=document.createElement('strong');strong.textContent=label+': ';p.append(strong,document.createTextNode(txt));prompt.append(p)}
   }
