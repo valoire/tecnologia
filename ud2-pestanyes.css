@@ -203,3 +203,68 @@
  .ud2-topic-redesign .ud2-debate-table td{padding:10px 9px}
  .ud2-topic-redesign .ud2-debate-table th{font-size:13px}
 }
+
+/* Debat · 10 targetes amb exactament les mides de l'índex de les sessions del taller. */
+.ud2-topic-redesign .debate-picker-heading{
+ display:block;margin:22px 0 4px;color:#703481!important;
+ font:900 17px/1.4 Verdana,'Trebuchet MS',Arial,sans-serif;
+}
+.ud2-topic-redesign .debate-picker-help{
+ margin:0 0 14px;color:#765b78;font-size:13px;font-weight:650;
+}
+.ud2-topic-redesign .debate-topic-grid{
+ display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+ gap:12px;margin:0 0 25px;
+}
+.ud2-topic-redesign .debate-topic-card{
+ appearance:none;display:flex;align-items:center;gap:11px;
+ min-width:0;min-height:105px;padding:13px 14px;
+ border:2px solid #dec5e8;border-top:8px solid #ae56d0;border-radius:15px;
+ background:linear-gradient(135deg,#fbf3ff,#fffdf9);
+ color:#6c347e;box-shadow:0 5px 14px #71347d14;
+ text-align:left;font:inherit;cursor:pointer;
+ transition:transform .16s,box-shadow .16s,background .16s;
+}
+.ud2-topic-redesign .debate-topic-card:nth-child(3n+2){
+ border-top-color:#e767a9;background:linear-gradient(135deg,#fff2fa,#fff);
+}
+.ud2-topic-redesign .debate-topic-card:nth-child(3n+3){
+ border-top-color:#f29121;background:linear-gradient(135deg,#fff9ec,#fff6fd);
+}
+.ud2-topic-redesign .debate-topic-card:hover{
+ transform:translateY(-3px);background:#f5e6fb;box-shadow:0 9px 20px #71347d25;
+}
+.ud2-topic-redesign .debate-topic-card.is-selected{
+ border-color:#873fa4;border-top-color:#6e2e91;
+ background:linear-gradient(135deg,#eed9ff,#fff8fd);
+ box-shadow:0 5px 15px #803f9626;
+}
+.ud2-topic-redesign .debate-topic-card:focus-visible{
+ outline:3px solid #803bad;outline-offset:3px;
+}
+.ud2-topic-redesign .debate-topic-icon{
+ display:grid;place-items:center;flex:0 0 39px;
+ width:39px;height:39px;background:#fff;border-radius:10px;
+ font-size:27px;
+}
+.ud2-topic-redesign .debate-topic-copy{
+ display:flex;flex-direction:column;gap:3px;min-width:0;overflow-wrap:anywhere;
+}
+.ud2-topic-redesign .debate-topic-copy small{
+ color:#956043;font-size:12px;font-weight:900;letter-spacing:.035em;
+}
+.ud2-topic-redesign .debate-topic-copy strong{
+ color:#743c85;font-size:16px;font-weight:900;line-height:1.35;
+}
+.ud2-topic-redesign #debate-topic[hidden]{display:none!important}
+@media(max-width:950px){
+ .ud2-topic-redesign .debate-topic-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:590px){
+ .ud2-topic-redesign .debate-topic-grid{grid-template-columns:1fr;gap:9px}
+ .ud2-topic-redesign .debate-topic-card{min-height:77px;padding:10px 12px}
+ .ud2-topic-redesign .debate-topic-copy strong{font-size:15px}
+}
+@media(prefers-reduced-motion:reduce){
+ .ud2-topic-redesign .debate-topic-card{transition:none}
+}
