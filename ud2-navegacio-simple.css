@@ -296,49 +296,49 @@
 .ud2-topic-redesign .ud2-debate-index-intro span{
  color:#7e6149;font-size:13px;font-weight:650;
 }
-.ud2-topic-redesign .ud2-debate-choose .debate-topic-grid{
+.ud2-topic-redesign .ud2-debate-topic-section .debate-topic-grid{
  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
  gap:8px;margin:0 0 17px;
 }
-.ud2-topic-redesign .ud2-debate-choose .debate-topic-card{
+.ud2-topic-redesign .ud2-debate-topic-section .debate-topic-card{
  gap:8px;min-height:66px;padding:10px;
  border:2px solid #efd3b4;border-top:5px solid #e88c28;
  border-radius:11px;background:linear-gradient(120deg,#fff,#fff7ec);
  box-shadow:none;color:#8b4b1b;
 }
-.ud2-topic-redesign .ud2-debate-choose .debate-topic-card:nth-child(3n+2){
+.ud2-topic-redesign .ud2-debate-topic-section .debate-topic-card:nth-child(3n+2){
  border-top-color:#eea34a;background:linear-gradient(120deg,#fff,#fffaf1);
 }
-.ud2-topic-redesign .ud2-debate-choose .debate-topic-card:nth-child(3n+3){
+.ud2-topic-redesign .ud2-debate-topic-section .debate-topic-card:nth-child(3n+3){
  border-top-color:#dc7440;background:linear-gradient(120deg,#fff,#fff5ec);
 }
-.ud2-topic-redesign .ud2-debate-choose .debate-topic-card.is-selected{
+.ud2-topic-redesign .ud2-debate-topic-section .debate-topic-card.is-selected{
  border-color:#c97827;border-top-color:#c97827;
  background:linear-gradient(120deg,#ffedd4,#fff7e9);
  box-shadow:0 0 0 2px #eac49d50;
 }
-.ud2-topic-redesign .ud2-debate-choose .debate-topic-icon{
+.ud2-topic-redesign .ud2-debate-topic-section .debate-topic-icon{
  flex:0 0 28px;width:28px;min-height:0;height:auto;
  background:transparent;border-radius:0;font-size:23px;
 }
-.ud2-topic-redesign .ud2-debate-choose .debate-topic-copy{gap:3px}
-.ud2-topic-redesign .ud2-debate-choose .debate-topic-copy small{
+.ud2-topic-redesign .ud2-debate-topic-section .debate-topic-copy{gap:3px}
+.ud2-topic-redesign .ud2-debate-topic-section .debate-topic-copy small{
  color:#a76f44;font-size:10px;letter-spacing:.08em;
 }
-.ud2-topic-redesign .ud2-debate-choose .debate-topic-copy strong{
+.ud2-topic-redesign .ud2-debate-topic-section .debate-topic-copy strong{
  color:#96551e;font-size:13px;font-weight:850;line-height:1.34;
 }
-.ud2-topic-redesign .ud2-debate-choose .debate-topic-card:hover{
+.ud2-topic-redesign .ud2-debate-topic-section .debate-topic-card:hover{
  transform:translateY(-2px);
  background:#fff0dc;border-color:#dcac7b;box-shadow:0 8px 20px #b47a3920;
 }
 .ud2-topic-redesign .ud2-panel-frame.ud2-debate-frame{border-color:#f1d1ab}
-.ud2-topic-redesign #ud2-main-panel-8 > .ud2-main-topic-head{
+.ud2-topic-redesign #ud2-main-panel-8 .ud2-main-topic-head{
  background:linear-gradient(115deg,#fff0d9,#ffe3c2 59%,#fff1e3);
  border-left-color:#e88c28;
 }
-.ud2-topic-redesign #ud2-main-panel-8 > .ud2-main-topic-head h2{color:#88481e}
-.ud2-topic-redesign #ud2-main-panel-8 > .ud2-main-topic-head p{color:#815c42}
+.ud2-topic-redesign #ud2-main-panel-8 .ud2-main-topic-head h2{color:#88481e}
+.ud2-topic-redesign #ud2-main-panel-8 .ud2-main-topic-head p{color:#815c42}
 .ud2-topic-redesign .ud2-green-inner > .ud2-main-topic-head.ud2-green-head{
  margin:-3px 0 27px;
  padding:21px 24px;
@@ -351,16 +351,102 @@
  line-height:1.55;
 }
 @media(max-width:960px){
- .ud2-topic-redesign .ud2-debate-choose .debate-topic-grid{
+ .ud2-topic-redesign .ud2-debate-topic-section .debate-topic-grid{
   grid-template-columns:repeat(3,minmax(0,1fr));
  }
 }
 @media(max-width:600px){
- .ud2-topic-redesign .ud2-debate-choose .debate-topic-grid{
+ .ud2-topic-redesign .ud2-debate-topic-section .debate-topic-grid{
   grid-template-columns:repeat(2,minmax(0,1fr));
  }
- .ud2-topic-redesign .ud2-debate-choose .debate-topic-card{
+ .ud2-topic-redesign .ud2-debate-topic-section .debate-topic-card{
   min-height:59px;padding:10px;
  }
  .ud2-topic-redesign .ud2-debate-index-intro span{font-size:12px}
+}
+
+
+/* Debat en dos passos: els temes són dins del primer, i la pràctica al segon. */
+.ud2-topic-redesign .ud2-debate-step-grid{
+ display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:8px;margin:0 0 17px;
+}
+.ud2-topic-redesign .ud2-debate-step-card{
+ appearance:none;display:flex;align-items:center;gap:10px;
+ min-height:66px;padding:10px 14px;text-align:left;
+ background:linear-gradient(120deg,#fff,#fff7ea);
+ border:2px solid #f0d2ac;border-top:5px solid #e88a24;
+ border-radius:11px;color:#884b1d;font:inherit;cursor:pointer;
+ transition:transform .16s,background .16s,box-shadow .16s;
+}
+.ud2-topic-redesign .ud2-debate-step-card:nth-child(2){
+ border-top-color:#da7133;background:linear-gradient(120deg,#fff,#fff3e7);
+}
+.ud2-topic-redesign .ud2-debate-step-card.is-selected{
+ border-color:#c57926;background:linear-gradient(120deg,#ffebd0,#fff8e9);
+ box-shadow:0 0 0 2px #ebc8a056;
+}
+.ud2-topic-redesign .ud2-debate-step-card:hover{
+ transform:translateY(-2px);box-shadow:0 8px 18px #a75b2c23;
+}
+.ud2-topic-redesign .ud2-debate-step-card:focus-visible,
+.ud2-topic-redesign .ud2-debate-next:focus-visible{
+ outline:3px solid #8948a5;outline-offset:3px;
+}
+.ud2-topic-redesign .ud2-debate-step-icon{
+ display:grid;place-items:center;flex:0 0 28px;
+ font-size:23px;line-height:1;
+}
+.ud2-topic-redesign .ud2-debate-step-label{
+ display:flex;flex-direction:column;gap:3px;
+}
+.ud2-topic-redesign .ud2-debate-step-label small{
+ color:#a16b44;font-size:10px;font-weight:900;letter-spacing:.08em;
+}
+.ud2-topic-redesign .ud2-debate-step-label strong{
+ color:#8b4b1b;font-size:13px;font-weight:850;line-height:1.34;
+}
+.ud2-topic-redesign .ud2-debate-step[hidden]{display:none!important}
+.ud2-topic-redesign .ud2-debate-introduction{
+ padding:15px 18px;margin:0 0 19px;border:1px solid #f0d5b8;
+ border-left:6px solid #e88a24;border-radius:0 14px 14px 0;
+ background:#fff9f0;
+}
+.ud2-topic-redesign .ud2-debate-introduction h3{
+ font-size:19px;color:#92521e;margin:0 0 8px;
+}
+.ud2-topic-redesign .ud2-debate-introduction p{
+ font-size:15px;color:#655141;line-height:1.68;margin:0;
+}
+.ud2-topic-redesign .ud2-debate-topic-section{
+ padding:18px;margin:18px 0 24px;
+ border:2px solid #f0d5b8;border-radius:16px;background:#fffaf3;
+}
+.ud2-topic-redesign .ud2-debate-topic-section .debate-picker-heading{
+ display:block;margin:0 0 6px;color:#99521b!important;
+ font-size:18px;font-weight:900;
+}
+.ud2-topic-redesign .ud2-debate-topic-section .debate-picker-help{
+ color:#82644b;margin:0 0 15px;
+}
+.ud2-topic-redesign .ud2-debate-topic-hint{
+ margin:14px 0 0;color:#83521f;font-size:14px;font-weight:750;
+}
+.ud2-topic-redesign .ud2-debate-next{
+ display:inline-flex;align-items:center;justify-content:center;
+ min-height:44px;padding:12px 18px;margin:19px 0 5px;
+ border:0;border-radius:11px;background:#c67321;color:#fff;
+ font:900 14px/1.45 Verdana,Arial,sans-serif;cursor:pointer;
+}
+.ud2-topic-redesign .ud2-debate-next:hover{background:#a85b16}
+.ud2-topic-redesign #ud2-main-panel-8 #ods-debate{
+ margin-top:0;border-color:#edd4b8;background:#fffdf9;
+}
+@media(max-width:600px){
+ .ud2-topic-redesign .ud2-debate-step-grid{grid-template-columns:1fr}
+ .ud2-topic-redesign .ud2-debate-step-card{min-height:59px;padding:10px}
+ .ud2-topic-redesign .ud2-debate-topic-section{padding:12px}
+}
+@media(prefers-reduced-motion:reduce){
+ .ud2-topic-redesign .ud2-debate-step-card{transition:none}
 }
