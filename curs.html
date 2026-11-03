@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#214d56">
-  <title>4t ESO · Tecnologia Rovira</title>
+  <title>4t ESO · Tecnologia</title>
   <link rel="stylesheet" href="estils.css?v=espurnes-20261028b">
   <link rel="stylesheet" href="desplegables.css?v=20261028c">
   <link rel="stylesheet" href="conceptes.css?v=multicolor-20261028d">
@@ -15,8 +15,8 @@
 </head>
 <body >
   <header class="top"><div class="wrap bar">
-    <a class="brand" href="index.html">TECNOLOGIA ROVIRA<small>Institut Rovira-Forns</small></a>
-    <nav aria-label="Navegació principal"><a id="nav-optativa" href="curs.html?grup=optativa">4t Optativa Tecnologia</a><a id="nav-e" href="curs.html?grup=e">4t E</a><a href="batxillerat.html">Batxillerat</a></nav>
+    <a class="brand" href="index.html">TECNOLOGIA</a>
+    <nav aria-label="Navegació principal"><a id="nav-optativa" href="curs.html?grup=optativa">4t Optativa</a><a id="nav-e" href="curs.html?grup=e">4t E</a><a href="batxillerat.html">Batxillerat</a></nav>
   </div></header>
   <div class="hero small"><div class="wrap"><div class="eyebrow">4t ESO · Programació 2026–2027</div><h1 id="course-title">4t ESO</h1><p id="course-description">Les set unitats de Tecnologia.</p></div></div>
   <main class="main wrap">
@@ -25,12 +25,12 @@
     <div id="course-units" class="unit-list"></div>
     <div class="strip"><h3>Activitats i pràctiques</h3><p id="course-note">La teoria és comuna i els projectes es concreten segons el grup.</p><p style="margin-top:8px"><a href="laboratori.html">Obrir el laboratori interactiu →</a></p></div>
   </main>
-  <footer class="footer"><div class="wrap"><span>Tecnologia Rovira · Institut Rovira-Forns</span><span><a href="index.html">Tornar a l'inici</a></span></div></footer>
+  <footer class="footer"><div class="wrap"><span>Tecnologia</span><span><a href="index.html">Tornar a l'inici</a></span></div></footer>
   <script>
     document.addEventListener('DOMContentLoaded',()=>{
       const g=new URLSearchParams(location.search).get('grup')==='e'?'e':'optativa';
-      const name=g==='e'?'4t E':'4t Optativa Tecnologia';
-      document.title=name+' · Tecnologia Rovira';
+      const name=g==='e'?'4t E':'4t Optativa';
+      document.title=name+' · Tecnologia';
       document.getElementById('course-title').textContent=name;
       document.getElementById('crumb-name').textContent=name;
       document.getElementById('nav-'+g).setAttribute('aria-current','page');
