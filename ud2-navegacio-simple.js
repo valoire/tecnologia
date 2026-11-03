@@ -106,6 +106,25 @@ function init(){
   main.insertBefore(workshopChooser,frame);
  }
 
+ // Com a teoria: l'index dels deu temes del debat queda fora del marc.
+ const debatePanel=originalPanels[8];
+ const debateGrid=debatePanel?.querySelector('.debate-topic-grid');
+ const debateHeading=debatePanel?.querySelector('.debate-picker-heading');
+ const debateHelp=debatePanel?.querySelector('.debate-picker-help');
+ let debateChooser=null;
+ if(debateGrid){
+  debateChooser=make('div','ud2-debate-choose');
+  const debateIntro=make('div','ud2-debate-index-intro');
+  debateIntro.append(
+   make('strong','',debateHeading?.textContent?.trim()||'Tria el tema que vols debatre'),
+   make('span','',debateHelp?.textContent?.trim()||'Clica una targeta per preparar el debat.')
+  );
+  debateHeading?.remove();
+  debateHelp?.remove();
+  debateChooser.append(debateIntro,debateGrid);
+  main.insertBefore(debateChooser,frame);
+ }
+
  // El qüestionari es manté fora de les pestanyes, al final de tota la unitat.
  footer.classList.add('ud2-final-quiz-footer');
  footer.hidden=false;
@@ -124,7 +143,9 @@ function init(){
   title.hidden=i!==0;
   tabs.hidden=i!==0;
   if(workshopChooser)workshopChooser.hidden=i!==1;
+  if(debateChooser)debateChooser.hidden=i!==2;
   frame.classList.toggle('ud2-workshop-frame',i===1);
+  frame.classList.toggle('ud2-debate-frame',i===2);
   if(actions)actions.hidden=i!==0;
   // El qüestionari final només pertany a TEORIA I ACTIVITATS.
   footer.hidden=i!==0;
