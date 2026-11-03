@@ -517,3 +517,41 @@
 .ud2-topic-redesign .ud2-debate-preview-pro li::marker{color:#248251}
 .ud2-topic-redesign .ud2-debate-preview-contra .ud2-debate-preview-points{color:#60443f}
 .ud2-topic-redesign .ud2-debate-preview-contra li::marker{color:#c45d4a}
+
+/* Temes amb una explicació breu i una mostra guiada de la professora. */
+.ud2-topic-redesign .ud2-debate-topic-section .debate-topic-card{
+ align-items:flex-start;min-height:118px;padding:13px 12px;
+}
+.ud2-topic-redesign .ud2-debate-topic-section .debate-topic-copy{
+ display:flex;flex-direction:column;min-width:0;gap:3px;
+}
+.ud2-topic-redesign .ud2-debate-topic-section .debate-topic-summary{
+ display:block;margin-top:5px;color:#7b6250;
+ font-size:11.5px;font-weight:550;line-height:1.47;
+}
+.ud2-topic-redesign .ud2-debate-topic-section .debate-topic-card.is-sample{
+ grid-column:1/-1;min-height:86px;
+ background:linear-gradient(115deg,#f2e4fb,#fff7f0);
+ border-color:#c59add;border-top-color:#9853b4;
+}
+.ud2-topic-redesign .ud2-debate-topic-section .debate-topic-card.is-sample .debate-topic-copy strong{
+ color:#743588;font-size:15px;
+}
+.ud2-topic-redesign .ud2-debate-topic-section .debate-topic-card.is-sample .debate-topic-copy small{color:#7f399b}
+.ud2-topic-redesign .ud2-debate-topic-section .debate-topic-card.is-sample .debate-topic-summary{color:#725577}
+.ud2-topic-redesign .ud2-debate-topic-section .debate-topic-card.is-sample.is-selected{
+ border-color:#8c40a5;border-top-color:#8c40a5;
+ box-shadow:0 0 0 2px #b978d44d;
+}
+.ud2-topic-redesign .ud2-debate-topic-section .debate-topic-card.is-sample:hover{
+ background:#f3e3fb;border-color:#ab6bc0;
+}
+@media(max-width:600px){
+ .ud2-topic-redesign .ud2-debate-topic-section .debate-topic-card{
+  min-height:138px;padding:10px 9px;
+ }
+ .ud2-topic-redesign .ud2-debate-topic-section .debate-topic-card.is-sample{min-height:89px}
+ .ud2-topic-redesign .ud2-debate-topic-section .debate-topic-summary{
+  font-size:11px;line-height:1.4;
+ }
+}
