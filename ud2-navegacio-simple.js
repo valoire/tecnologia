@@ -153,7 +153,7 @@ function init(){
 
   debateHeader.querySelector('.ud2-main-eyebrow').textContent='DEBAT · PAS 1 DE 2';
   debateHeader.querySelector('h2').textContent='Com es fa un debat?';
-  debateHeader.querySelector('p').textContent='Aprèn com funciona un debat acadèmic i escull un dels deu temes.';
+  debateHeader.querySelector('p').textContent='Comença amb la MOSTRA per entendre com funciona. Després escull un dels deu temes.';
   first.append(debateHeader);
 
   const explanation=make('div','ud2-debate-introduction');
@@ -222,6 +222,20 @@ function init(){
    });
   });
   updateTopicPreview();
+  // La taula d'exemple és la mateixa MOSTRA que apareix a la primera targeta.
+  // Es copia només un cop, abans que l'alumnat seleccioni un tema diferent.
+  const sampleMotion=debateExample?.querySelector('.ud2-debate-motion');
+  if(sampleMotion){
+   const sampleTitle=sampleMotion.querySelector('h3');
+   if(sampleTitle)sampleTitle.textContent='MOSTRA · '+previewTitle.textContent;
+   const proPoints=[...proText.querySelectorAll('li')].map(x=>x.textContent);
+   const conPoints=[...conText.querySelectorAll('li')].map(x=>x.textContent);
+   [...sampleMotion.querySelectorAll('table tr')].slice(1).forEach((row,i)=>{
+    const cells=row.querySelectorAll('td');
+    if(cells[0])cells[0].textContent=proPoints[i]||'';
+    if(cells[1])cells[1].textContent=conPoints[i]||'';
+   });
+  }
   topicSection.append(make('p','ud2-debate-topic-hint','Quan hagis triat el tema, passa al segon apartat per preparar el debat.'));
   first.append(topicSection,debateExample);
   const photo=debateContent?.querySelector(':scope > .photo-lesson');
