@@ -16,6 +16,7 @@ const C={
  repair:[38264269,'Tècnic reparant un circuit electrònic'],
  meeting:[3184311,'Equip de treball prenent decisions'],
  conference:[8344905,'Taula de debat i cooperació entre persones'],
+ studentdebate:[17558086,'Alumna que parla amb un micròfon davant dels companys de classe'],
  collaboration:[7710139,'Persones treballant i debatent conjuntament'],
  nature:[7944399,'Planta jove sostinguda per unes mans'],
  restoration:[8543598,'Plantació i recuperació vegetal'],
@@ -104,6 +105,7 @@ const icon=['✦','◈','✧','✺','✳'];
 function elt(tag,cls,txt){const e=document.createElement(tag);if(cls)e.className=cls;if(txt!==undefined)e.textContent=txt;return e}
 function assemble(title,photo,index,note){
  const [number,subject]=C[photo]||C.nature;
+ const shownTitle=photo==='studentdebate'?'Debat acadèmic a secundària':title;
  const fig=elt('figure','photo-lesson');
  fig.style.setProperty('--photo-accent',ACCENT[index%ACCENT.length]);
  fig.style.setProperty('--photo-shift',String(49+(index%5-2)*5)+'%');
@@ -111,7 +113,7 @@ function assemble(title,photo,index,note){
  const imageBox=elt('div','photo-lesson-visual');
  const img=elt('img','photo-lesson-image');
  img.loading='lazy';img.decoding='async';img.width=960;img.height=540;
- img.alt='Fotografia de '+subject.toLocaleLowerCase('ca')+'. Exemple visual per al tema '+title+'.';
+ img.alt='Fotografia de '+subject.toLocaleLowerCase('ca')+'. Exemple visual per al tema '+shownTitle+'.';
  img.src='https://images.pexels.com/photos/'+number+'/pexels-photo-'+number+'.jpeg?auto=compress&cs=tinysrgb&w=1200';
  img.addEventListener('error',()=>{fig.classList.add('photo-unavailable');img.remove();});
  imageBox.append(img);
@@ -119,18 +121,24 @@ function assemble(title,photo,index,note){
  imageBox.append(elt('span','photo-lesson-badge',icon[index%icon.length]+' FOTOGRAFIA EXPLICATIVA'));
  const f=FORMULAS.find(([re])=>re.test(title));
  const overlay=elt('div','photo-lesson-overlay');
- overlay.append(elt('span','photo-lesson-topic',title));
+ overlay.append(elt('span','photo-lesson-topic',shownTitle));
  if(f)overlay.append(elt('span','photo-lesson-formula',f[1]));
  imageBox.append(overlay);
  fig.append(imageBox);
  const caption=elt('figcaption','photo-lesson-caption');
  const lead=elt('p');lead.append(elt('strong','','🔎 Què has d’observar? '));
- lead.append(document.createTextNode(subject+'. Relaciona aquesta imatge amb el concepte i identifica’n l’aplicació real.'));
+ lead.append(document.createTextNode(photo==='studentdebate'?'Observa qui té la paraula, com exposa els arguments i com escolten els altres alumnes.':subject+'. Relaciona aquesta imatge amb el concepte i identifica’n l’aplicació real.'));
  caption.append(lead);
  if(note){
   const explanatory=elt('p','photo-lesson-key');
   explanatory.append(elt('strong','','Idea clau: '),document.createTextNode(note));
   caption.append(explanatory);
+ }
+ if(photo==='studentdebate'){
+  const watch=elt('a','photo-lesson-watch-video','▶ Veure un debat acadèmic de secundària a YouTube ↗');
+  watch.href='https://youtu.be/7oNHT1DtI1w?si=QhhhnlMIDJTsFcHL';
+  watch.target='_blank';watch.rel='noopener noreferrer';
+  caption.append(watch);
  }
  const credit=elt('a','photo-lesson-credit','Fotografia original: Pexels ↗');
  credit.href='https://www.pexels.com/photo/'+number+'/';
@@ -155,7 +163,7 @@ function putPhotos(){
  });
  // Fotografies també per als espais especials de projectes i investigacions.
  const specials=[...section.querySelectorAll('.concept-group:last-of-type > .concept-drop')];
- const sp={2:['printing','nature','conference','solar'],1:['prototype','workshop']};
+ const sp={2:['printing','nature','studentdebate','solar'],1:['prototype','workshop']};
  (sp[ud]||['workshop']).forEach((key,i)=>{
   if(!specials[i])return;
   const h=specials[i].querySelector('.concept-title strong')?.textContent||'Activitat';
