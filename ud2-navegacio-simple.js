@@ -95,6 +95,16 @@ function init(){
  title.append(make('strong','','Tria l’apartat que vols treballar'),make('span','','Primer llegeix la teoria i després fes les activitats, en aquest mateix ordre.'));
  main.insertBefore(nav,tabs);
  main.insertBefore(title,tabs);
+ // Com a teoria: les set targetes del taller van abans del marc del contingut.
+ const greenInner=originalPanels[7]?.querySelector('.ud2-green-inner');
+ const greenIntro=greenInner?.querySelector('.ud2-green-index-intro');
+ const greenIndex=greenInner?.querySelector('.ud2-green-session-index');
+ let workshopChooser=null;
+ if(greenIntro&&greenIndex){
+  workshopChooser=make('div','ud2-workshop-choose');
+  workshopChooser.append(greenIntro,greenIndex);
+  main.insertBefore(workshopChooser,frame);
+ }
 
  // El qüestionari es manté fora de les pestanyes, al final de tota la unitat.
  footer.classList.add('ud2-final-quiz-footer');
@@ -113,6 +123,8 @@ function init(){
   });
   title.hidden=i!==0;
   tabs.hidden=i!==0;
+  if(workshopChooser)workshopChooser.hidden=i!==1;
+  frame.classList.toggle('ud2-workshop-frame',i===1);
   if(actions)actions.hidden=i!==0;
   // El qüestionari final només pertany a TEORIA I ACTIVITATS.
   footer.hidden=i!==0;
