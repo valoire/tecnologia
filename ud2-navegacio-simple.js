@@ -172,6 +172,43 @@ function init(){
   if(topicHelp)topicSection.append(topicHelp);
   if(topicSelect)topicSection.append(topicSelect);
   topicSection.append(debateGrid);
+
+  // Pistes breus per al tema escollit: una idea a favor, una en contra i què investigar.
+  // Els textos provenen de la mateixa fitxa que es reutilitza en el pas 2.
+  const topicPreview=make('section','ud2-debate-position-preview');
+  topicPreview.setAttribute('aria-live','polite');
+  topicPreview.append(make('span','ud2-debate-preview-eyebrow','💡 PISTES PER COMENÇAR'));
+  const previewTitle=make('h4','ud2-debate-preview-title');
+  const previewGrid=make('div','ud2-debate-preview-grid');
+  const proCard=make('article','ud2-debate-preview-side ud2-debate-preview-pro');
+  proCard.append(make('strong','','👍 A FAVOR'));
+  const proText=make('p','');
+  proCard.append(proText);
+  const conCard=make('article','ud2-debate-preview-side ud2-debate-preview-contra');
+  conCard.append(make('strong','','👎 EN CONTRA'));
+  const conText=make('p','');
+  conCard.append(conText);
+  previewGrid.append(proCard,conCard);
+  const previewQuestion=make('p','ud2-debate-preview-evidence');
+  const previewReminder=make('p','ud2-debate-preview-reminder',
+   'Aquestes idees són només el punt de partida: busca dades, exemples i fonts fiables per defensar la teva posició.');
+  topicPreview.append(previewTitle,previewGrid,previewQuestion,previewReminder);
+  topicSection.append(topicPreview);
+
+  const debatePrompt=debateExercise.querySelector('#debate-prompt');
+  function updateTopicPreview(){
+   if(!debatePrompt)return;
+   const lines=[...debatePrompt.querySelectorAll(':scope > p')];
+   const value=(p)=>p?.textContent?.replace(p.querySelector('strong')?.textContent||'','').trim()||'';
+   previewTitle.textContent=debatePrompt.querySelector('h4')?.textContent||'';
+   proText.textContent=value(lines[1]);
+   conText.textContent=value(lines[2]);
+   previewQuestion.textContent='🔎 Què hauríem d’investigar? '+value(lines[3]);
+  }
+  debateGrid.querySelectorAll('.debate-topic-card').forEach(button=>{
+   button.addEventListener('click',updateTopicPreview);
+  });
+  updateTopicPreview();
   topicSection.append(make('p','ud2-debate-topic-hint','Quan hagis triat el tema, passa al segon apartat per preparar el debat.'));
   first.append(topicSection,debateExample);
   const photo=debateContent?.querySelector(':scope > .photo-lesson');
