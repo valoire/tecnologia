@@ -436,3 +436,11 @@
  font-size:clamp(26px,3.5vw,35px);
  line-height:1.35;
 }
+
+/* El marc interior redundant desapareix: el títol i les sessions queden en el bloc com a teoria. */
+.ud2-topic-redesign .ud2-green-workshop-panel .ud2-green-inner{
+ border:0;
+ border-radius:0;
+ padding:0;
+ background:transparent;
+}
