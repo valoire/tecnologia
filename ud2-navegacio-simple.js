@@ -106,23 +106,105 @@ function init(){
   main.insertBefore(workshopChooser,frame);
  }
 
- // Com a teoria: l'index dels deu temes del debat queda fora del marc.
+ // El debat té dos passos com els altres índexs: primer aprenem i triem el tema;
+ // després preparem l'argumentació i fem el debat amb els rols i el cronòmetre.
  const debatePanel=originalPanels[8];
  const debateGrid=debatePanel?.querySelector('.debate-topic-grid');
- const debateHeading=debatePanel?.querySelector('.debate-picker-heading');
- const debateHelp=debatePanel?.querySelector('.debate-picker-help');
+ const debateHeader=debatePanel?.querySelector(':scope > .ud2-main-topic-head');
+ const debateExample=debatePanel?.querySelector(':scope > .ud2-debate-example');
+ const debateExercise=debatePanel?.querySelector('#ods-debate');
+ const debateContent=debatePanel?.querySelector(':scope > .concept-content');
+ const debateLinks=debatePanel?.querySelector(':scope > .ud2-context-links');
  let debateChooser=null;
- if(debateGrid){
+ if(debateGrid&&debateHeader&&debateExample&&debateExercise){
   debateChooser=make('div','ud2-debate-choose');
   const debateIntro=make('div','ud2-debate-index-intro');
   debateIntro.append(
-   make('strong','',debateHeading?.textContent?.trim()||'Tria el tema que vols debatre'),
-   make('span','',debateHelp?.textContent?.trim()||'Clica una targeta per preparar el debat.')
+   make('strong','','Tria l’apartat que vols treballar'),
+   make('span','','Primer coneix com es fa un debat i tria el tema; després posa-ho en pràctica.')
   );
-  debateHeading?.remove();
-  debateHelp?.remove();
-  debateChooser.append(debateIntro,debateGrid);
+  const stepNav=make('nav','ud2-debate-step-grid');
+  stepNav.setAttribute('aria-label','Els dos passos del debat');
+  const cards=[
+   ['📚','Com es fa un debat?'],
+   ['🎤','Fem el nostre debat']
+  ].map(([icon,label],i)=>{
+   const button=make('button','ud2-debate-step-card');
+   button.type='button';
+   button.setAttribute('aria-controls','ud2-debate-step-'+(i+1));
+   button.append(
+    make('span','ud2-debate-step-icon',icon),
+    make('span','ud2-debate-step-label')
+   );
+   button.lastElementChild.append(
+    make('small','',(i+1)+'. DEBAT'),
+    make('strong','',label)
+   );
+   stepNav.append(button);
+   return button;
+  });
+  debateChooser.append(debateIntro,stepNav);
   main.insertBefore(debateChooser,frame);
+
+  const first=make('section','ud2-debate-step');
+  first.id='ud2-debate-step-1';
+  const second=make('section','ud2-debate-step');
+  second.id='ud2-debate-step-2';
+
+  debateHeader.querySelector('.ud2-main-eyebrow').textContent='DEBAT · PAS 1 DE 2';
+  debateHeader.querySelector('h2').textContent='Com es fa un debat?';
+  debateHeader.querySelector('p').textContent='Aprèn com funciona un debat acadèmic i escull un dels deu temes.';
+  first.append(debateHeader);
+
+  const explanation=make('div','ud2-debate-introduction');
+  const origTitle=debateExercise.querySelector(':scope > h3');
+  const origText=debateExercise.querySelector(':scope > p');
+  if(origTitle){origTitle.textContent='Què és un debat acadèmic?';explanation.append(origTitle);}
+  if(origText)explanation.append(origText);
+  first.append(explanation);
+
+  const topicSection=make('section','ud2-debate-topic-section');
+  const topicHeading=debateExercise.querySelector('.debate-picker-heading');
+  const topicHelp=debateExercise.querySelector('.debate-picker-help');
+  const topicSelect=debateExercise.querySelector('#debate-topic');
+  if(topicHeading)topicSection.append(topicHeading);
+  else topicSection.append(make('h3','debate-picker-heading','Tria el tema que vols debatre'));
+  if(topicHelp)topicSection.append(topicHelp);
+  if(topicSelect)topicSection.append(topicSelect);
+  topicSection.append(debateGrid);
+  topicSection.append(make('p','ud2-debate-topic-hint','Quan hagis triat el tema, passa al segon apartat per preparar el debat.'));
+  first.append(topicSection,debateExample);
+  const photo=debateContent?.querySelector(':scope > .photo-lesson');
+  if(photo)first.append(photo);
+  const next=make('button','ud2-debate-next','Continuar · Fem el nostre debat →');
+  next.type='button';
+  first.append(next);
+
+  const secondHeader=make('div','ud2-main-topic-head ud2-debate-step-head');
+  secondHeader.append(
+   make('span','ud2-main-eyebrow','DEBAT · PAS 2 DE 2'),
+   make('h2','','Fem el nostre debat'),
+   make('p','','Prepara els arguments del tema escollit, reparteix els rols i segueix els torns del debat.')
+  );
+  second.append(secondHeader,debateExercise);
+  if(debateLinks)second.append(debateLinks);
+  debatePanel.replaceChildren(first,second);
+
+  function showDebateStep(i,scroll=false){
+   cards.forEach((button,j)=>{
+    button.setAttribute('aria-pressed',String(i===j));
+    button.classList.toggle('is-selected',i===j);
+   });
+   first.hidden=i!==0;
+   second.hidden=i!==1;
+   if(scroll)frame.scrollIntoView({
+    block:'start',
+    behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'
+   });
+  }
+  cards.forEach((button,i)=>button.addEventListener('click',()=>showDebateStep(i,true)));
+  next.addEventListener('click',()=>showDebateStep(1,true));
+  showDebateStep(0);
  }
 
  // El qüestionari es manté fora de les pestanyes, al final de tota la unitat.
