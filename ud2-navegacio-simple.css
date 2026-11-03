@@ -450,3 +450,54 @@
 @media(prefers-reduced-motion:reduce){
  .ud2-topic-redesign .ud2-debate-step-card{transition:none}
 }
+
+
+/* Una explicació breu per cada tema escollit, sense donar el debat resolt. */
+.ud2-topic-redesign .ud2-debate-position-preview{
+ margin:19px 0 10px;padding:18px 18px 15px;
+ border:2px solid #edd6b8;border-radius:15px;background:#fff;
+ box-shadow:0 5px 14px #af744914;
+}
+.ud2-topic-redesign .ud2-debate-preview-eyebrow{
+ display:block;margin:0 0 7px;color:#a26224;
+ font-size:11px;font-weight:950;letter-spacing:.07em;
+}
+.ud2-topic-redesign .ud2-debate-preview-title{
+ margin:0 0 16px;color:#87491c;
+ font-size:clamp(18px,2.1vw,22px);line-height:1.36;font-weight:900;
+}
+.ud2-topic-redesign .ud2-debate-preview-grid{
+ display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;
+}
+.ud2-topic-redesign .ud2-debate-preview-side{
+ padding:15px;border:1px solid #d5e6d7;border-radius:13px;
+ background:#f0faf2;
+}
+.ud2-topic-redesign .ud2-debate-preview-pro{
+ border-color:#b5ddc5;background:#ebf9f0;
+}
+.ud2-topic-redesign .ud2-debate-preview-contra{
+ border-color:#efc8c0;background:#fff1ed;
+}
+.ud2-topic-redesign .ud2-debate-preview-side strong{
+ display:block;margin:0 0 8px;font-size:13px;font-weight:950;
+ color:#246743;letter-spacing:.045em;
+}
+.ud2-topic-redesign .ud2-debate-preview-contra strong{color:#a44d3e}
+.ud2-topic-redesign .ud2-debate-preview-side p{
+ margin:0;color:#3f4d44;font-size:14px;line-height:1.7;
+}
+.ud2-topic-redesign .ud2-debate-preview-contra p{color:#60443f}
+.ud2-topic-redesign .ud2-debate-preview-evidence{
+ margin:15px 0 0;padding:12px 14px;
+ border-left:4px solid #e18a2d;border-radius:0 10px 10px 0;
+ background:#fff8e9;color:#684c31;font-size:14px;line-height:1.65;font-weight:750;
+}
+.ud2-topic-redesign .ud2-debate-preview-reminder{
+ margin:12px 0 0;color:#795c42;
+ font-size:13px;line-height:1.6;font-style:italic;
+}
+@media(max-width:600px){
+ .ud2-topic-redesign .ud2-debate-position-preview{padding:14px 12px}
+ .ud2-topic-redesign .ud2-debate-preview-grid{grid-template-columns:1fr}
+}
