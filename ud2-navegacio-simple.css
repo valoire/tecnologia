@@ -261,3 +261,21 @@
 @media(prefers-reduced-motion:reduce){
  .ud2-topic-redesign .ud2-simple-menu-button{transition:none}
 }
+
+/* Mateixa maquetació que teoria: les targetes verdes fora del marc del contingut. */
+.ud2-topic-redesign .ud2-workshop-choose{margin:16px 0 0}
+.ud2-topic-redesign .ud2-workshop-choose[hidden]{display:none!important}
+.ud2-topic-redesign .ud2-workshop-choose .ud2-green-index-intro{
+ margin:16px 0 11px;padding:0 2px;
+}
+.ud2-topic-redesign .ud2-workshop-choose .ud2-green-session-index{
+ margin:0 0 17px;
+}
+.ud2-topic-redesign .ud2-panel-frame.ud2-workshop-frame{
+ border-color:#bee3cc;
+}
+@media(max-width:600px){
+ .ud2-topic-redesign .ud2-workshop-choose .ud2-green-index-intro{
+  gap:5px;margin:14px 0 11px;padding:0 2px;
+ }
+}
