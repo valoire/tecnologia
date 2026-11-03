@@ -109,9 +109,9 @@ function renderUnitat(){
   const id=Number(params.get('ud'));
   const u=UNITATS.find(x=>x.id===id)||UNITATS[0];
   const g=params.get('grup')==='e'?'e':'optativa';
-  const name=g==='e'?'4t E':'4t Optativa Tecnologia';
+  const name=g==='e'?'4t E':'4t Optativa';
   const courseUrl='curs.html?grup='+g;
-  document.title='UD'+u.id+' · '+u.nom+' · Tecnologia Rovira';
+  document.title='UD'+u.id+' · '+u.nom+' · Tecnologia';
   document.getElementById('unit-eyebrow').textContent=name+' · UD'+u.id;
   document.getElementById('unit-title').textContent=u.nom;
   document.getElementById('unit-description').textContent=u.resum;
