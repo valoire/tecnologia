@@ -145,7 +145,10 @@ function setupWorkshop(){
    behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'
   }));
  });
- wrapper.append(chooser,index,panes);project.append(wrapper);
+ wrapper.append(chooser,index);
+ // Igual que a teoria: primer l'índex de targetes i, just a sota, la capçalera del taller.
+ if(header)wrapper.append(header);
+ wrapper.append(panes);project.append(wrapper);
  const intro=document.querySelector('.ud2-tab-intro');
  if(intro){
   const p=intro.querySelector('p');
