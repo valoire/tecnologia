@@ -161,7 +161,7 @@ function reorderExtras(originalGroups,panels,g,list){
  }
  const extrasData=[
   {title:'Projecte: del fanalet de Halloween al de Nadal',short:'Projecte de Nadal',tag:'PROJECTE DE TALLER',icon:'🎄',subtitle:'Reutilització, transformació i càlcul del consum de la il·luminació.',source:fanal},
-  {title:'Debat acadèmic a l’estil nord-americà',short:'Debat',tag:'ACTIVITAT D’ARGUMENTACIÓ',icon:'🎤',subtitle:'Mocions, equips, recerca, refutacions i cronòmetre.',source:debat}
+  {title:'Debat acadèmic a secundària',short:'Debat',tag:'ACTIVITAT D’ARGUMENTACIÓ',icon:'🎤',subtitle:'Mocions, equips, recerca, refutacions i cronòmetre.',source:debat}
  ];
  for(const meta of extrasData){
   const i=panels.length;
@@ -204,10 +204,10 @@ function addDebateExample(panel){
  block.setAttribute('aria-labelledby','ud2-debate-exemple-titol');
  const video=n('div','ud2-debate-video');
  appendText(video,'span','▶️ VÍDEO D’EXEMPLE','ud2-debate-kicker');
- const title=appendText(video,'h3','Mira com és un debat acadèmic');
+ const title=appendText(video,'h3','Mira un debat acadèmic de secundària');
  title.id='ud2-debate-exemple-titol';
  appendText(video,'p','Mira els torns de paraula, els arguments i les rèpliques d’una final de debat. El debat comença aproximadament al minut 7:30.');
- const link=appendText(video,'a','▶ Veure l’exemple de debat a YouTube ↗','ud2-debate-video-link');
+ const link=appendText(video,'a','▶ Veure el debat de secundària a YouTube ↗','ud2-debate-video-link');
  link.href='https://youtu.be/7oNHT1DtI1w?si=QhhhnlMIDJTsFcHL';
  link.target='_blank';link.rel='noopener noreferrer';
  block.append(video);
