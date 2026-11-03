@@ -299,8 +299,20 @@ function renderUD2Activities(host,g){
 
   const debates=[
   {
+    "isSample": true,
+    "icon": "🌳",
+    "short": "Arbres al pati",
+    "summary": "Exemple per fer a classe: aprendrem a defensar dues opinions sobre un canvi al pati.",
+    "question": "Cal plantar més arbres al pati de l’institut?",
+    "ods": "ODS 11, 13 i 15",
+    "pro": "Els arbres poden crear zones d’ombra durant els dies calorosos. També afavoreixen la biodiversitat i poden fer més agradable el pati. Un espai amb vegetació pot ajudar a millorar el benestar de l’alumnat.",
+    "contra": "Els arbres joves necessiten aigua i cures per créixer. Les arrels i l’espai que ocupen poden condicionar l’ús del pati. Caldria planificar la despesa, les espècies adequades i el manteniment.",
+    "data": "On els plantaríem, quanta aigua necessitarien i quin cost tindria mantenir-los?"
+  },
+  {
     "icon": "⚛️",
     "short": "Centrals nuclears",
+    "summary": "Valorem si cal mantenir aquesta font d’electricitat mentre augmenten les energies renovables.",
     "question": "Cal mantenir les centrals nuclears mentre s’amplien les energies renovables?",
     "ods": "ODS 7 i 13",
     "pro": "Generen electricitat de manera estable amb baixes emissions de CO₂ durant el funcionament. Això pot ajudar a cobrir la demanda quan el sol o el vent no produeixen prou energia. La continuïtat de la producció pot donar estabilitat al sistema elèctric mentre es despleguen altres fonts.",
@@ -310,6 +322,7 @@ function renderUD2Activities(host,g){
   {
     "icon": "♻️",
     "short": "Plàstics d’un sol ús",
+    "summary": "Imaginem un institut sense envasos d’un sol ús i pensem com afectaria el dia a dia.",
     "question": "Cal prohibir els envasos de plàstic d’un sol ús a l’institut?",
     "ods": "ODS 12 i 14",
     "pro": "Es reduirien residus i es fomentarien alternatives reutilitzables. Amb ampolles i carmanyoles reutilitzables, el centre podria generar menys brossa cada dia. Reduir els envasos també pot facilitar la separació dels residus al centre.",
@@ -319,6 +332,7 @@ function renderUD2Activities(host,g){
   {
     "icon": "🚗",
     "short": "Cotxes a l’institut",
+    "summary": "Analitzem si s’hauria de limitar l’arribada de cotxes a la porta del centre.",
     "question": "Cal restringir l’accés dels cotxes particulars a l’entrada del Rovira-Forns?",
     "ods": "ODS 11 i 13",
     "pro": "L’entorn podria ser més segur i menys contaminat. Menys vehicles a la porta també podria reduir el soroll i els riscos per als vianants. Un entorn amb menys trànsit podria animar més alumnes a arribar a peu o en bicicleta.",
@@ -328,6 +342,7 @@ function renderUD2Activities(host,g){
   {
     "icon": "☀️",
     "short": "Plaques solars",
+    "summary": "Debatem si els edificis públics haurien d’instal·lar plaques solars quan sigui possible.",
     "question": "Cal instal·lar plaques solars als edificis públics sempre que sigui viable?",
     "ods": "ODS 7, 11 i 13",
     "pro": "Es pot produir electricitat renovable prop d’on es consumeix. Una part del consum de cada edifici podria cobrir-se amb energia generada al mateix sostre. A llarg termini, la instal·lació pot disminuir una part de la factura elèctrica.",
@@ -337,6 +352,7 @@ function renderUD2Activities(host,g){
   {
     "icon": "🔧",
     "short": "Reparar dispositius",
+    "summary": "Pensem quan convé reparar un aparell electrònic en lloc de comprar-ne un altre.",
     "question": "Cal reparar els dispositius electrònics abans de comprar-ne de nous sempre que sigui viable?",
     "ods": "ODS 9 i 12",
     "pro": "La reparació pot evitar residus i allargar la vida útil dels aparells. Aprofitar components que encara funcionen pot evitar fabricar aparells nous innecessàriament. Reparar també ajuda a valorar els coneixements i els oficis tècnics.",
@@ -346,6 +362,7 @@ function renderUD2Activities(host,g){
   {
     "icon": "🤖",
     "short": "IA a les aules",
+    "summary": "Decidim si la intel·ligència artificial pot ajudar a aprendre i amb quines normes.",
     "question": "Cal permetre l’ús supervisat de la intel·ligència artificial als treballs escolars?",
     "ods": "ODS 4 i 9",
     "pro": "Amb criteris clars, la IA pot ajudar a aprendre i a programar. Pot servir per detectar errors i explorar solucions, sempre que l’alumnat comprovi el que proposa. Pot oferir pistes i explicacions adaptades quan un alumne no entén un problema.",
@@ -355,6 +372,7 @@ function renderUD2Activities(host,g){
   {
     "icon": "💧",
     "short": "Aigua i sequera",
+    "summary": "Reflexionem sobre els límits del consum d’aigua quan hi ha períodes de sequera.",
     "question": "Cal limitar obligatòriament el consum d’aigua durant els períodes de sequera?",
     "ods": "ODS 6, 11 i 13",
     "pro": "Els límits poden ajudar a preservar les reserves per als usos essencials. Així es pot prioritzar l’aigua per beure, la higiene i altres necessitats bàsiques. Reduir els usos no essencials pot ajudar a conservar l’aigua dels embassaments.",
@@ -364,6 +382,7 @@ function renderUD2Activities(host,g){
   {
     "icon": "⛏️",
     "short": "Mines per a bateries",
+    "summary": "Debatem l’extracció dels minerals que s’utilitzen per fabricar bateries.",
     "question": "Cal autoritzar noves mines de minerals necessaris per fabricar bateries?",
     "ods": "ODS 9, 12 i 15",
     "pro": "Les bateries faciliten l’emmagatzematge d’energia i la mobilitat elèctrica. Aconseguir minerals pot facilitar tecnologies que redueixen l’ús de combustibles fòssils. Produir alguns minerals més a prop pot disminuir la dependència de proveïdors llunyans.",
@@ -373,6 +392,7 @@ function renderUD2Activities(host,g){
   {
     "icon": "🚌",
     "short": "Transport públic gratuït",
+    "summary": "Ens preguntem si viatjar sense pagar bitllet reduiria l’ús del cotxe.",
     "question": "Cal fer gratuït el transport públic per reduir l’ús del cotxe?",
     "ods": "ODS 10, 11 i 13",
     "pro": "Pot facilitar la mobilitat i animar a utilitzar transports col·lectius. La gratuïtat pot ajudar especialment les persones amb menys recursos a desplaçar-se. Si més persones deixen el cotxe, també es podria reduir part de la contaminació.",
@@ -382,6 +402,7 @@ function renderUD2Activities(host,g){
   {
     "icon": "🌍",
     "short": "Responsabilitat pels ODS",
+    "summary": "Valorem qui hauria de liderar els canvis: governs, empreses o ciutadania.",
     "question": "Els governs i les empreses han d’assumir més responsabilitat pels ODS que la ciutadania?",
     "ods": "ODS 12, 13, 16 i 17",
     "pro": "Les lleis i les infraestructures tenen un impacte molt gran. Poden canviar normes i processos de producció amb efectes sobre moltes persones. Les empreses poden reduir l’impacte canviant materials, transports i consum d’energia.",
@@ -395,17 +416,19 @@ function renderUD2Activities(host,g){
   const topicGrid=document.createElement('div');
   topicGrid.className='debate-topic-grid';
   topicGrid.setAttribute('role','group');
-  topicGrid.setAttribute('aria-label','Deu temes per escollir el debat');
+  topicGrid.setAttribute('aria-label','Una mostra i deu temes per escollir el debat');
   const topicButtons=[];
   debates.forEach((d,i)=>{
-    const opt=document.createElement('option');opt.value=String(i);opt.textContent=(i+1)+'. TEMA · '+d.short;select.append(opt);
-    const button=document.createElement('button');button.type='button';button.className='debate-topic-card';
-    button.setAttribute('aria-label','Tema '+(i+1)+': '+d.question);
+    const label=d.isSample?'MOSTRA':i+'. TEMA';
+    const opt=document.createElement('option');opt.value=String(i);opt.textContent=label+' · '+d.short;select.append(opt);
+    const button=document.createElement('button');button.type='button';button.className='debate-topic-card'+(d.isSample?' is-sample':'');
+    button.setAttribute('aria-label',(d.isSample?'Mostra':'Tema '+i)+': '+d.question);
     const icon=document.createElement('span');icon.className='debate-topic-icon';icon.textContent=d.icon;
     const copy=document.createElement('span');copy.className='debate-topic-copy';
-    const n=document.createElement('small');n.textContent=(i+1)+'. TEMA';
+    const n=document.createElement('small');n.textContent=label;
     const name=document.createElement('strong');name.textContent=d.short;
-    copy.append(n,name);button.append(icon,copy);
+    const description=document.createElement('span');description.className='debate-topic-summary';description.textContent=d.summary||'';
+    copy.append(n,name,description);button.append(icon,copy);
     button.addEventListener('click',()=>{select.value=String(i);drawDebate()});
     topicGrid.append(button);topicButtons.push(button);
   });
@@ -414,7 +437,7 @@ function renderUD2Activities(host,g){
     heading.textContent='Tria el tema que vols debatre';
     heading.classList.add('debate-picker-heading');
     const note=document.createElement('p');note.className='debate-picker-help';
-    note.textContent='Clica una targeta per veure la pregunta i preparar arguments a favor i en contra.';
+    note.textContent='Comença amb la MOSTRA per veure com funciona. Després tria un dels deu temes i prepara els teus arguments.';
     heading.after(note);
   }
   select.hidden=true;
