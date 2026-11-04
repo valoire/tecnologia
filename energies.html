@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#70329a">
-  <meta name="description" content="Energia, transformacions, rendiment, parell motor i exercicis PAU de Tecnologia i Enginyeria de Batxillerat.">
+  <meta name="description" content="Sis blocs d'energies de Tecnologia i Enginyeria: teoria, fórmules, exemples i 30 exercicis PAU.">
   <title>Energies · Batxillerat · Tecnologia</title>
   <link rel="stylesheet" href="estils.css?v=espurnes-20261028b">
   <style>
@@ -22,7 +22,7 @@
     .energy-intro{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:16px;flex-wrap:wrap}
     .energy-intro h2{color:var(--purple);font-size:1.8rem;margin:0}
     .energy-intro p{color:#79687d;margin:0}
-    .topic-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin-bottom:32px}
+    .topic-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin-bottom:22px}
     .topic-card{display:flex;flex-direction:column;justify-content:center;gap:8px;background:#fff;border:2px solid #e9c7ea;border-top:8px solid var(--top);border-radius:19px;padding:21px 20px;min-height:132px;text-decoration:none;color:var(--ink);box-shadow:0 10px 25px #5627720b;transition:transform .17s,box-shadow .17s}
     .topic-card:hover,.topic-card:focus-visible{transform:translateY(-3px);box-shadow:0 13px 28px #56277224;outline:2px solid var(--purple);outline-offset:2px}
     .topic-card small{font-size:.77rem;font-weight:900;color:#b06943;letter-spacing:.07em}
@@ -39,6 +39,14 @@
     .formula small{display:block;color:#75637b;font-weight:600;font-size:.8rem;margin-top:4px}
     .mini-note{background:#e8faef;color:#27624d;border-radius:14px;padding:15px 18px;margin:17px 0;border-left:5px solid #24956b}
     .mini-note strong{color:#175e42}
+    .key-idea{background:#f5edff;border:2px solid #caa4ea;border-radius:18px;padding:20px;margin:20px 0}
+    .key-idea h3{color:#71308b;margin:0 0 9px}
+    .key-idea p{margin:8px 0}
+    .paus{display:inline-block;color:#693080;background:#f5e9ff;border-radius:999px;padding:5px 12px;font-weight:850;font-size:.87rem;text-decoration:none;margin-top:9px}
+    .paus:hover{background:#e9d2fa}
+    .practice-bar{background:#fff6e9;border:1.5px solid #f6cf93;border-radius:17px;padding:15px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:30px}
+    .practice-bar strong{color:#915319}
+    .practice-bar a{color:#74318e;font-weight:900}
     .worked{background:#fff8ea;border-radius:16px;padding:18px 20px;margin-top:17px;border:1px solid #f2d49c}
     .worked h3{margin:0 0 7px;color:#9c5717;font-size:1.03rem}
     .worked p{margin:5px 0}
@@ -55,7 +63,8 @@
     .pdf-link:hover{background:#5b206e}
     .pdf-link.alt{background:#17855d}
     .exercise-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin:18px 0}
-    .exercise-group{background:#fff9f1;border:1px solid #eed7ad;border-radius:15px;padding:17px}
+    .exercise-group{display:block;background:#fff9f1;border:1px solid #eed7ad;border-radius:15px;padding:17px;text-decoration:none;transition:background .16s}
+    .exercise-group:hover,.exercise-group:focus-visible{background:#f7eaff;outline:2px solid #7f399e;outline-offset:2px}
     .exercise-group b{display:block;color:#90521a;margin-bottom:5px}
     .exercise-group span{font-size:.9rem;color:#726273}
     .try-box{padding:20px;background:#fcf5ff;border:1.5px solid #dfbce7;border-radius:18px;margin:13px 0}
@@ -80,22 +89,25 @@
   <div class="energy-hero"><div class="wrap">
     <div class="kicker">Tecnologia i Enginyeria · 2n de Batxillerat</div>
     <h1>⚡ Energies</h1>
-    <p>Entén com es transforma l'energia, quina part aprofitem i com calcular el rendiment, la potència i el parell motor. Al final podràs practicar amb exercicis de les PAU.</p>
-    <div class="energy-badges"><span>📖 Teoria clara</span><span>🧮 Fórmules i exemples</span><span>📄 4 documents</span><span>🎓 30 exercicis PAU</span></div>
+    <p>Aprèn a resoldre els problemes de les PAU: treball i potència, rendiment, motors i reductors, bateries, calor, producció d'energia, consum i emissions. Cada bloc té les fórmules que necessites i exemples per entendre-les.</p>
+    <div class="energy-badges"><span>📖 6 blocs de teoria</span><span>🧮 Fórmules i exemples</span><span>⚙️ Relacions de transmissió</span><span>🎓 30 exercicis PAU</span></div>
   </div></div>
   <main class="main wrap energy-main">
     <div class="crumb"><a href="index.html">Inici</a><span>/</span><a href="batxillerat.html">Batxillerat</a><span>/</span><span>Energies</span></div>
-    <div class="energy-intro"><h2>Tria l'apartat que vols treballar</h2><p>Segueix l'ordre per passar de la teoria a la pràctica.</p></div>
+    <div class="energy-intro"><h2>Tria l'apartat que vols treballar</h2><p>Els sis apartats segueixen exactament els blocs dels 30 exercicis.</p></div>
     <nav class="topic-grid" aria-label="Apartats d'energies">
-      <a class="topic-card" href="#conceptes" style="--top:#dc71bd"><small>01 · TEORIA</small><strong>⚡ Energia i transformacions</strong></a>
-      <a class="topic-card" href="#rendiment" style="--top:#f28b19"><small>02 · TEORIA</small><strong>🔋 Energia útil i rendiment</strong></a>
-      <a class="topic-card" href="#parell" style="--top:#7c43c6"><small>03 · TEORIA</small><strong>⚙️ Parell motor i moment</strong></a>
-      <a class="topic-card" href="#practica" style="--top:#1e9971"><small>04 · PRÀCTICA</small><strong>🎓 Exercicis de les PAU</strong></a>
+      <a class="topic-card" href="#conceptes" style="--top:#dc71bd"><small>01 · EXERCICIS 1–3</small><strong>⚡ Treball, potència i energia</strong></a>
+      <a class="topic-card" href="#rendiment" style="--top:#f28b19"><small>02 · EXERCICIS 4–6</small><strong>⚙️ Rendiment i transmissions</strong></a>
+      <a class="topic-card" href="#bateries" style="--top:#7c43c6"><small>03 · EXERCICIS 7–12</small><strong>🔋 Motors, bateries i mobilitat</strong></a>
+      <a class="topic-card" href="#termica" style="--top:#1e9971"><small>04 · EXERCICIS 13–17</small><strong>🌡️ Energia tèrmica</strong></a>
+      <a class="topic-card" href="#produccio" style="--top:#e2a225"><small>05 · EXERCICIS 18–24</small><strong>🌬️ Producció i captació d'energia</strong></a>
+      <a class="topic-card" href="#estalvi" style="--top:#3481c3"><small>06 · EXERCICIS 25–30</small><strong>🌍 Estalvi, costos i emissions</strong></a>
     </nav>
+    <div class="practice-bar"><strong>🎓 Ja saps la teoria? Practica amb els 30 exercicis reals de preparació PAU.</strong><a href="#practica">Anar als exercicis ↓</a></div>
 
     <section id="conceptes" class="energy-section" style="--accent:#dc71bd">
-      <div class="section-kicker">Teoria 1 · Conceptes bàsics</div>
-      <h2>Energia, treball, potència i transformacions</h2>
+      <div class="section-kicker">Bloc 1 · Exercicis PAU 1–3</div>
+      <h2>Treball, potència i energia</h2>
       <p>L'energia permet que un sistema produeixi canvis: moviment, calor, llum o deformacions. Quan una força provoca un desplaçament, pot transferir energia en forma de <strong>treball mecànic</strong>. La <strong>potència</strong> ens diu a quin ritme es transfereix aquesta energia.</p>
       <div class="info-grid">
         <div class="info-box"><h3>Força i treball</h3><p>Una força es mesura en <strong>newtons (N)</strong>. El treball és energia transferida i es mesura en <strong>joules (J)</strong>. Si no hi ha desplaçament, el treball mecànic d'aquesta força és zero.</p></div>
@@ -104,26 +116,35 @@
       <span class="formula">W = F · d · cos α <small>W: treball (J) · F: força (N) · d: desplaçament (m) · α: angle</small></span>
       <span class="formula">E<sub>c</sub> = ½ · m · v<sup>2</sup> &nbsp;&nbsp; E<sub>p</sub> = m · g · h <small>Energia cinètica i energia potencial gravitatòria (J)</small></span>
       <span class="formula">P = E / t &nbsp;&nbsp; E = P · t <small>Amb P en W i t en segons, l'energia s'obté en J</small></span>
+      <span class="formula">ΔE<sub>c</sub> = ½ · m · (v<sub>f</sub><sup>2</sup> − v<sub>i</sub><sup>2</sup>) &nbsp;&nbsp; P<sub>elevació</sub> = m · g · h / t <small>Accelera un vehicle o calcula la potència per elevar una càrrega. Velocitats en m/s.</small></span>
       <div class="worked"><h3>🧠 Exemple ràpid</h3><p>Un aparell de 2 kW funciona durant mitja hora: <strong>E = 2 · 0,5 = 1 kWh</strong>. El resultat és una energia, no una potència.</p></div>
-      <div class="mini-note"><strong>Recorda:</strong> 1 kWh = 3,6 · 10<sup>6</sup> J. En un sistema real, l'energia es transforma, però no desapareix.</div>
+      <div class="mini-note"><strong>Recorda:</strong> 1 kWh = 3,6 · 10<sup>6</sup> J; 1 MJ = 10<sup>6</sup> J; per passar de km/h a m/s divideix entre 3,6. En un sistema real, l'energia es transforma, però no desapareix.</div>
+      <a class="paus" href="#practica">🎓 Practica els exercicis 1, 2 i 3</a><br>
       <a class="pdf-link" href="https://drive.google.com/file/d/1HhvR_CdEqVi-g6-tfdoXISy6jMio2asO/view" target="_blank" rel="noopener noreferrer">📄 Obrir teoria completa</a>
     </section>
 
     <section id="rendiment" class="energy-section" style="--accent:#f28b19">
-      <div class="section-kicker">Teoria 2 · Balanç energètic</div>
-      <h2>Energia útil, energia dissipada i rendiment</h2>
+      <div class="section-kicker">Bloc 2 · Exercicis PAU 4–6</div>
+      <h2>Rendiment de motors i transmissions</h2>
       <p>Una màquina rep energia, però no tota arriba al resultat que volem. La part que serveix per a la tasca és l'<strong>energia útil</strong>; la resta pot dissipar-se en forma de calor, so o vibracions. El rendiment expressa quina fracció aprofitem.</p>
       <div class="diagram" aria-label="L'energia d'entrada es reparteix en energia útil i dissipada"><div>⚡ Energia d'entrada</div><div class="arrow">→</div><div class="useful">✅ Energia útil</div><div class="arrow">+</div><div class="loss">🌡️ Energia dissipada</div></div>
       <span class="formula">E<sub>entrada</sub> = E<sub>útil</sub> + E<sub>dissipada</sub> <small>Balanç quan no hi ha variació de l'energia emmagatzemada</small></span>
       <span class="formula">η = E<sub>útil</sub> / E<sub>entrada</sub> = P<sub>útil</sub> / P<sub>entrada</sub> <small>Per obtenir el percentatge, multiplica η per 100; compara magnituds del mateix tipus</small></span>
+      <span class="formula">η<sub>total</sub> = η<sub>motor</sub> · η<sub>reductor</sub> · η<sub>alternador</sub> <small>Només multipliquem els rendiments dels elements que intervenen en la cadena energètica.</small></span>
+      <span class="formula">E<sub>combustible</sub> = m · H = ρ · V · H <small>H és el poder calorífic (J/kg); ρ és la densitat (kg/L o kg/m³, coherent amb V).</small></span>
       <div class="worked"><h3>🧮 Exemple resolt</h3><p>Un motor rep <strong>800 J</strong> i en proporciona <strong>600 J útils</strong>.</p><p>Energia dissipada: 800 − 600 = <strong>200 J</strong>.</p><p>Rendiment: 600 / 800 = 0,75 = <strong>75 %</strong>.</p></div>
       <div class="mini-note"><strong>Compte:</strong> un 75 % de rendiment s'introdueix a les fórmules com a 0,75. Si coneixes l'energia útil, l'entrada necessària és E<sub>útil</sub> / η.</div>
+      <div class="info-grid">
+        <div class="info-box"><h3>🚗 Motor de combustió</h3><p>El combustible aporta energia <strong>química</strong>. El motor la transforma en energia <strong>mecànica</strong>, amb pèrdues. Si coneixes la potència mecànica i el rendiment, divideix per η per trobar la potència química necessària.</p></div>
+        <div class="info-box"><h3>🔌 Grup electrogen</h3><p>La cadena pot tenir <strong>motor + alternador</strong>. Primer calcula la potència mecànica del motor i després l'elèctrica, o bé treballa directament amb el producte dels rendiments.</p></div>
+      </div>
+      <a class="paus" href="#practica">🎓 Practica els exercicis 4, 5 i 6</a><br>
       <a class="pdf-link" href="https://drive.google.com/file/d/1S-vXpmHQjhQx7Ar9dDk2bdhHywyYXFg3/view" target="_blank" rel="noopener noreferrer">📄 Teoria i exemples resolts</a>
     </section>
 
-    <section id="parell" class="energy-section" style="--accent:#7c43c6">
-      <div class="section-kicker">Teoria 3 · Màquines i moviment</div>
-      <h2>Parell motor i moment d'una força</h2>
+    <section id="bateries" class="energy-section" style="--accent:#7c43c6">
+      <div class="section-kicker">Bloc 3 · Exercicis PAU 7–12</div>
+      <h2>Parell motor, reductors, bateries i mobilitat elèctrica</h2>
       <p>El <strong>moment d'una força</strong> indica la seva capacitat de fer girar un cos respecte d'un punt o eix. El <strong>parell motor</strong> és el moment de gir que un motor transmet pel seu eix. Tots dos es mesuren en <strong>N·m</strong>, però s'utilitzen en contextos diferents.</p>
       <table class="compare"><thead><tr><th>Moment d'una força</th><th>Parell motor</th></tr></thead><tbody>
         <tr><td>Estudiem l'efecte de gir d'una força al voltant d'un punt o eix.</td><td>Estudiem el gir que proporciona el motor al seu eix.</td></tr>
@@ -132,37 +153,93 @@
       </tbody></table>
       <span class="formula">M = F · b &nbsp;&nbsp; Γ = F · r · sin α <small>Amb força perpendicular: Γ = F · r; r és el radi, no el diàmetre</small></span>
       <span class="formula">ω = 2π · n / 60 &nbsp;&nbsp; P = Γ · ω <small>n en rpm · ω en rad/s · Γ en N·m · P en W</small></span>
+      <span class="formula">v = ω<sub>roda</sub> · r <small>La velocitat del vehicle (m/s) és la velocitat angular de la roda (rad/s) multiplicada pel radi (m), quan roda sense lliscar.</small></span>
       <div class="worked"><h3>⚙️ Exemple resolt</h3><p>Un motor proporciona 2,2 kW mecànics a 1.400 rpm.</p><p>ω = 2π · 1.400 / 60 = <strong>146,61 rad/s</strong>.</p><p>Γ = 2.200 / 146,61 = <strong>15,01 N·m</strong>.</p></div>
-      <div class="mini-note"><strong>Reductor:</strong> si definim i = n<sub>entrada</sub> / n<sub>sortida</sub>, aleshores Γ<sub>sortida</sub> = η<sub>reductor</sub> · i · Γ<sub>entrada</sub>. El reductor augmenta el parell a canvi de reduir la velocitat; no crea potència.</div>
+      <div class="key-idea">
+        <h3>⭐ La relació ω<sub>motor</sub> / ω<sub>roda</sub>: què vol dir?</h3>
+        <p>La lletra grega <strong>ω (omega)</strong> representa la <strong>velocitat angular</strong>, no el treball W ni la unitat watt (W). Un reductor fa que el motor giri més ràpid que la roda; la relació de transmissió indica quantes voltes fa un eix per cada volta de l'altre.</p>
+        <div class="diagram" aria-label="El motor gira ràpid, un reductor disminueix la velocitat i la roda gira més lentament"><div>⚙️ Motor<br>ω<sub>motor</sub> alta<br>Γ<sub>motor</sub> petit</div><div class="arrow">→</div><div class="loss">🔧 Reductor<br>η<sub>red</sub></div><div class="arrow">→</div><div class="useful">🚲 Roda<br>ω<sub>roda</sub> baixa<br>Γ<sub>roda</sub> gran</div></div>
+        <span class="formula">i = ω<sub>motor</sub> / ω<sub>roda</sub> = n<sub>motor</sub> / n<sub>roda</sub> <small>Convenció «entrada / sortida» per a un reductor. Les dues velocitats han d'estar en les mateixes unitats.</small></span>
+        <span class="formula">ω<sub>motor</sub> = i · ω<sub>roda</sub> &nbsp;&nbsp; Γ<sub>roda</sub> = η<sub>red</sub> · i · Γ<sub>motor</sub> <small>El parell augmenta en un reductor; cal incloure el seu rendiment.</small></span>
+        <div class="worked"><h3>🧮 Exemple de l'exercici PAU 11</h3><p>L'enunciat dona <strong>n<sub>roda</sub> / n<sub>motor</sub> = 0,08</strong>. Atenció: és la relació <em>inversa</em> de la que hem definit com a i!</p><p>Per tant, <strong>i = 1 / 0,08 = 12,5</strong>. Si ω<sub>roda</sub> = 10,28 rad/s, aleshores ω<sub>motor</sub> = 12,5 · 10,28 = <strong>128,5 rad/s</strong>.</p></div>
+        <p><strong>Regla d'or:</strong> copia exactament la fracció que dona l'enunciat. No tots els problemes defineixen «i» igual. Per exemple, a l'<strong>exercici 24</strong> el multiplicador de velocitat es defineix com a <strong>τ = n<sub>sortida</sub> / n<sub>entrada</sub></strong>: la velocitat augmenta i el parell disminueix.</p>
+      </div>
+      <h3 style="color:#753589">🔋 Capacitat, energia i autonomia d'una bateria</h3>
+      <p>Una bateria emmagatzema energia. La seva <strong>capacitat elèctrica</strong> es dona sovint en Ah o mAh; l'<strong>energia</strong>, en Wh. L'autonomia depèn de l'energia disponible i de la potència consumida.</p>
+      <span class="formula">E<sub>bateria</sub> (Wh) = U (V) · C (Ah) &nbsp;&nbsp; C (Ah) = C (mAh) / 1.000 <small>Si l'enunciat ja dona la bateria en Wh, no la multipliquis una altra vegada per la tensió.</small></span>
+      <span class="formula">t (h) = E<sub>disponible</sub> (Wh) / P<sub>consumida</sub> (W) &nbsp;&nbsp; d = v · t <small>Amb v en km/h i t en hores, la distància s'obté en km.</small></span>
+      <span class="formula">P<sub>roda</sub> = η<sub>motor</sub> · η<sub>red</sub> · P<sub>elèctrica</sub> <small>Si hi ha motor i reductor, s'apliquen tots dos rendiments. En frenada regenerativa, només torna a la bateria la fracció recuperable de l'energia.</small></span>
+      <div class="worked"><h3>🔋 Exemple ràpid</h3><p>Una bateria de 36 V i 10 Ah emmagatzema <strong>36 · 10 = 360 Wh</strong>. Si un equip consumeix 180 W constants, l'autonomia teòrica és <strong>360 / 180 = 2 h</strong>.</p></div>
+      <div class="mini-note"><strong>Unitats PAU:</strong> 1 Ah = 1.000 mAh; 1 Wh = 3.600 J. Comprova sempre si el problema et dona la potència elèctrica que entra al motor o la mecànica que arriba a la roda.</div>
+      <a class="paus" href="#practica">🎓 Practica els exercicis 7–12 (especialment l'11)</a><br>
       <a class="pdf-link" href="https://drive.google.com/file/d/1EUMCqggmtjIlDPbjSa7Wy_scQqicKLS1/view" target="_blank" rel="noopener noreferrer">📄 Teoria de parell motor</a>
     </section>
 
-    <section class="energy-section" style="--accent:#4cb9a0">
-      <div class="section-kicker">Ampliació · Aplicacions</div>
-      <h2>Energia tèrmica i elèctrica</h2>
-      <p>Les fórmules energètiques també permeten calcular l'escalfament d'un material o el consum d'un receptor elèctric. Abans de substituir dades, comprova sempre les unitats.</p>
-      <div class="info-grid"><div class="info-box"><h3>🌡️ Calor sensible</h3><span class="formula">Q = m · c · ΔT</span><p>Massa en kg, calor específica en J/(kg·K) i canvi de temperatura en K.</p></div><div class="info-box"><h3>💡 Electricitat i consum</h3><span class="formula">P = U · I &nbsp;&nbsp; E = P · t</span><p>En un receptor, la potència es calcula amb tensió i intensitat; el consum depèn del temps.</p></div></div>
-      <div class="mini-note"><strong>Conversió clau:</strong> 1 kW = 1.000 W; 1 h = 3.600 s. Una diferència de 1 °C equival a una diferència d'1 K.</div>
-      <a class="pdf-link" href="https://drive.google.com/file/d/1HhvR_CdEqVi-g6-tfdoXISy6jMio2asO/view" target="_blank" rel="noopener noreferrer">📄 Veure tots els exemples d'energia</a>
+    <section id="termica" class="energy-section" style="--accent:#1e9971">
+      <div class="section-kicker">Bloc 4 · Exercicis PAU 13–17</div>
+      <h2>Energia tèrmica, combustibles i electricitat</h2>
+      <p>En un sistema tèrmic podem <strong>augmentar la temperatura</strong>, provocar un <strong>canvi d'estat</strong> o mantenir un flux continu de calor. També podem calcular quina quantitat de combustible o d'electricitat cal per subministrar-la.</p>
+      <div class="info-grid">
+        <div class="info-box"><h3>🌡️ Calor sensible</h3><span class="formula">Q = m · c · ΔT</span><p>Escalfar o refredar sense canviar d'estat. m en kg, c en J/(kg·K) i ΔT en K o °C.</p></div>
+        <div class="info-box"><h3>💨 Calor latent</h3><span class="formula">Q = m · L</span><p>Fondre o vaporitzar a temperatura constant. L és la calor latent, en J/kg. Si escalfem i després vaporitzem, <strong>sumem les etapes</strong>.</p></div>
+        <div class="info-box"><h3>🔥 Energia del combustible</h3><span class="formula">E = m · H &nbsp;&nbsp; P = ṁ · H</span><p>H és el poder calorífic en J/kg, i ṁ és el consum de combustible en kg/s. Per calcular la calor útil, multiplica per η.</p></div>
+        <div class="info-box"><h3>💡 Energia elèctrica</h3><span class="formula">P = U · I = U<sup>2</sup> / R</span><p>En una resistència: E = P · t i R = ρ<sub>e</sub> · L / S (ρ<sub>e</sub>, resistivitat del material).</p></div>
+      </div>
+      <span class="formula">P<sub>tèrmica</sub> = ṁ · c · ΔT &nbsp;&nbsp; ṁ = ρ · q<sub>v</sub> <small>Si l'aigua circula, la potència depèn del cabal màssic ṁ (kg/s); q<sub>v</sub> és el cabal volumètric (m³/s).</small></span>
+      <div class="worked"><h3>🧮 Exemple: escalfar i vaporitzar</h3><p>Per escalfar <strong>1 kg d'aigua de 20 °C a 100 °C</strong>, amb c = 4.180 J/(kg·K): Q<sub>1</sub> = 1 · 4.180 · 80 = <strong>334.400 J</strong>.</p><p>Si després la vaporitzem amb L = 2.260.000 J/kg: Q<sub>2</sub> = <strong>2.260.000 J</strong>. Energia total: <strong>Q<sub>1</sub> + Q<sub>2</sub> = 2.594.400 J</strong>, abans de considerar el rendiment.</p></div>
+      <div class="mini-note"><strong>Compte:</strong> per calcular el combustible o l'electricitat que cal subministrar, divideix l'energia tèrmica útil entre η. Un cabal en L/min s'ha de convertir a m³/s o kg/s.</div>
+      <a class="paus" href="#practica">🎓 Practica els exercicis 13–17</a><br>
+      <a class="pdf-link" href="https://drive.google.com/file/d/1HhvR_CdEqVi-g6-tfdoXISy6jMio2asO/view" target="_blank" rel="noopener noreferrer">📄 Teoria general d'energia</a>
+    </section>
+
+    <section id="produccio" class="energy-section" style="--accent:#e2a225">
+      <div class="section-kicker">Bloc 5 · Exercicis PAU 18–24</div>
+      <h2>Producció i captació d'energia</h2>
+      <p>Una instal·lació aprofita un recurs natural i el transforma en electricitat o calor. Primer calcula la <strong>potència disponible</strong> en el recurs; després aplica el rendiment dels elements que intervenen.</p>
+      <div class="info-grid">
+        <div class="info-box"><h3>💧 Hidràulica</h3><span class="formula">P<sub>hidràulica</sub> = ρ · g · q<sub>v</sub> · h</span><p>ρ: densitat de l'aigua (kg/m³); q<sub>v</sub>: cabal (m³/s); h: salt (m). Potència elèctrica = η · potència hidràulica.</p></div>
+        <div class="info-box"><h3>🌬️ Eòlica</h3><span class="formula">P<sub>vent</sub> = ½ · ρ · A · v<sup>3</sup></span><p>A = πr² és l'àrea escombrada pel rotor. La potència captada depèn del coeficient de captació i del rendiment de la màquina.</p></div>
+        <div class="info-box"><h3>☀️ Fotovoltaica</h3><span class="formula">P<sub>elèctrica</sub> = I · A · η</span><p>I: irradiància (W/m²); A: superfície (m²). Per dimensionar panells, divideix la potència necessària per la de cada panell i <strong>arrodoneix cap amunt</strong>.</p></div>
+        <div class="info-box"><h3>🌞 Solar tèrmica</h3><span class="formula">η = η<sub>0</sub> − k · (T − T<sub>a</sub>) / I</span><p>Si l'enunciat dona aquest model, calcula abans el rendiment del captador; després la potència tèrmica útil i el consum auxiliar, si n'hi ha.</p></div>
+      </div>
+      <div class="worked"><h3>🧮 Exemple: una central hidràulica</h3><p>Amb ρ = 1.000 kg/m³, g = 9,81 m/s², q<sub>v</sub> = 2 m³/s i h = 10 m:</p><p>P<sub>hidràulica</sub> = 1.000 · 9,81 · 2 · 10 = <strong>196.200 W</strong>. Amb η = 0,85, P<sub>elèctrica</sub> = <strong>166.770 W ≈ 166,8 kW</strong>.</p></div>
+      <div class="key-idea"><h3>⚙️ I si la màquina multiplica la velocitat? (PAU 24)</h3><p>En una transmissió <strong>multiplicadora</strong>, la sortida pot girar més ràpid que l'entrada. Si l'enunciat defineix <strong>τ = n<sub>sortida</sub> / n<sub>entrada</sub></strong>, amb 10 rpm a l'entrada i 1.500 rpm a la sortida: <strong>τ = 150</strong>.</p><span class="formula">P<sub>sortida</sub> = η · P<sub>entrada</sub> &nbsp;&nbsp; Γ<sub>sortida</sub> = P<sub>sortida</sub> / ω<sub>sortida</sub> <small>La velocitat augmenta i, a igual potència, el parell disminueix. No confonguis aquesta τ amb la relació i = entrada / sortida de l'exercici 11.</small></span></div>
+      <div class="mini-note"><strong>Detall PAU:</strong> si el vent baixa un 10 %, la seva potència disponible queda multiplicada per 0,9³ = 0,729. En centrals de cicle combinat, segueix el flux d'energia de cada etapa i aplica els rendiments corresponents.</div>
+      <a class="paus" href="#practica">🎓 Practica els exercicis 18–24 (especialment el 24)</a>
+    </section>
+
+    <section id="estalvi" class="energy-section" style="--accent:#3481c3">
+      <div class="section-kicker">Bloc 6 · Exercicis PAU 25–30</div>
+      <h2>Estalvi energètic, costos i emissions</h2>
+      <p>Els problemes d'estalvi comparen <strong>dues tecnologies</strong> o dos combustibles: cal calcular la mateixa energia útil per a cadascuna, estimar el consum real i després el preu o les emissions.</p>
+      <span class="formula">E<sub>consumida</sub> = E<sub>útil</sub> / η &nbsp;&nbsp; V<sub>combustible</sub> = E<sub>consumida</sub> / (ρ · H) <small>Si H es dona per kg i ρ per kg/L, V s'obté en litres. Mantén unitats coherents.</small></span>
+      <span class="formula">Cost (€) = consum · tarifa &nbsp;&nbsp; CO₂ = consum · factor d'emissió <small>El factor d'emissió pot venir en kg CO₂/L, kg CO₂/kg o kg CO₂/kWh: utilitza la unitat indicada.</small></span>
+      <span class="formula">Estalvi = consum<sub>abans</sub> − consum<sub>després</sub> &nbsp;&nbsp; T<sub>retorn</sub> = inversió / estalvi anual (€) <small>El període de retorn simple només s'utilitza quan es demana o quan s'assumeixen estalvis constants.</small></span>
+      <div class="worked"><h3>💡 Exemple: substituir bombetes</h3><p>Canviem 10 bombetes de 60 W per 10 de 9 W, enceses 4 hores al dia durant 300 dies.</p><p>Estalvi de potència: 10 · (60 − 9) = <strong>510 W = 0,51 kW</strong>.</p><p>Estalvi d'energia: 0,51 · 4 · 300 = <strong>612 kWh/any</strong>. Si l'electricitat costa 0,20 €/kWh: <strong>122,40 €/any</strong>.</p></div>
+      <div class="mini-note"><strong>Estratègia:</strong> identifica la magnitud final: litres, kg, kWh, euros o kg de CO₂. Les emissions depenen del <em>factor</em> indicat per l'enunciat; no barregis valors per litre amb valors per kWh.</div>
+      <a class="paus" href="#practica">🎓 Practica els exercicis 25–30</a>
     </section>
 
     <section id="practica" class="energy-section" style="--accent:#1e9971">
-      <div class="section-kicker">Pràctica 4 · Preparació de les PAU</div>
+      <div class="section-kicker">Pràctica · Preparació de les PAU</div>
       <h2>30 exercicis organitzats per temes</h2>
-      <p>Comença pels exemples resolts de la teoria. Després passa als exercicis d'examen: són de <strong>dificultat alta</strong> i estan agrupats perquè puguis escollir què vols practicar.</p>
+      <p>Comença pels exemples resolts de la teoria. Després passa als exercicis de les PAU: són de <strong>dificultat alta</strong> i estan agrupats en el mateix ordre que els sis blocs de teoria. <strong>Clica un bloc per repassar-ne les fórmules</strong> o obre el PDF amb els 30 enunciats i resultats.</p>
       <div class="exercise-grid">
-        <div class="exercise-group"><b>01 · Treball, potència i energia</b><span>Exercicis 1–3</span></div>
-        <div class="exercise-group"><b>02 · Rendiment de motors</b><span>Exercicis 4–6</span></div>
-        <div class="exercise-group"><b>03 · Bateries i mobilitat elèctrica</b><span>Exercicis 7–12</span></div>
-        <div class="exercise-group"><b>04 · Energia tèrmica</b><span>Exercicis 13–17</span></div>
-        <div class="exercise-group"><b>05 · Producció i captació d'energia</b><span>Exercicis 18–24</span></div>
-        <div class="exercise-group"><b>06 · Estalvi energètic i emissions</b><span>Exercicis 25–30</span></div>
+        <a class="exercise-group" href="#conceptes"><b>01 · Treball, potència i energia</b><span>Exercicis 1–3 · Repassar teoria ↑</span></a>
+        <a class="exercise-group" href="#rendiment"><b>02 · Rendiment de motors</b><span>Exercicis 4–6 · Repassar teoria ↑</span></a>
+        <a class="exercise-group" href="#bateries"><b>03 · Bateries i mobilitat elèctrica</b><span>Exercicis 7–12 · Repassar teoria ↑</span></a>
+        <a class="exercise-group" href="#termica"><b>04 · Energia tèrmica</b><span>Exercicis 13–17 · Repassar teoria ↑</span></a>
+        <a class="exercise-group" href="#produccio"><b>05 · Producció i captació d'energia</b><span>Exercicis 18–24 · Repassar teoria ↑</span></a>
+        <a class="exercise-group" href="#estalvi"><b>06 · Estalvi energètic i emissions</b><span>Exercicis 25–30 · Repassar teoria ↑</span></a>
       </div>
       <a class="pdf-link alt" href="https://drive.google.com/file/d/1Y8EEtM6od8qTpBMYTIStYioAMbpuXdfD/view" target="_blank" rel="noopener noreferrer">🎓 Obrir els 30 exercicis PAU</a>
       <h3 style="margin-top:28px;color:#753589">Comprova si domines els conceptes</h3>
       <div class="try-box"><strong>1. Energia i potència</strong><p>Un aparell de 1.500 W funciona durant 2 hores. Quanta energia consumeix en kWh?</p><details><summary>Veure la solució</summary><p>1.500 W = 1,5 kW; E = 1,5 · 2 = <strong>3 kWh</strong>.</p></details></div>
       <div class="try-box"><strong>2. Rendiment</strong><p>Una màquina rep 1.200 J i proporciona 900 J útils. Quin és el rendiment i l'energia dissipada?</p><details><summary>Veure la solució</summary><p>η = 900 / 1.200 = <strong>75 %</strong>; E<sub>dissipada</sub> = 1.200 − 900 = <strong>300 J</strong>.</p></details></div>
-      <div class="try-box"><strong>3. Moment de gir</strong><p>Una força tangencial de 100 N actua sobre una roda de radi 0,20 m. Quin moment genera?</p><details><summary>Veure la solució</summary><p>Γ = 100 · 0,20 = <strong>20 N·m</strong>.</p></details></div>
+      <div class="try-box"><strong>3. Bateries i transmissió</strong><p>Si n<sub>roda</sub> / n<sub>motor</sub> = 0,1 i el motor gira a 2.000 rpm, a quantes rpm gira la roda?</p><details><summary>Veure la solució</summary><p>n<sub>roda</sub> = 0,1 · 2.000 = <strong>200 rpm</strong>. La relació inversa motor/roda seria i = <strong>10</strong>.</p></details></div>
+      <div class="try-box"><strong>4. Calor sensible</strong><p>Quanta energia necessites per escalfar 2 kg d'aigua 10 °C? Pren c = 4.180 J/(kg·K).</p><details><summary>Veure la solució</summary><p>Q = 2 · 4.180 · 10 = <strong>83.600 J = 83,6 kJ</strong>.</p></details></div>
+      <div class="try-box"><strong>5. Energia hidràulica</strong><p>Una central aprofita un cabal d'1 m³/s i un salt de 20 m. Quina potència hidràulica està disponible? Pren ρ = 1.000 kg/m³ i g = 9,81 m/s².</p><details><summary>Veure la solució</summary><p>P = 1.000 · 9,81 · 1 · 20 = <strong>196.200 W = 196,2 kW</strong>, abans de les pèrdues.</p></details></div>
+      <div class="try-box"><strong>6. Estalvi energètic</strong><p>Si estalvies 500 kWh a l'any i la tarifa és de 0,18 €/kWh, quants euros t'estalvies?</p><details><summary>Veure la solució</summary><p>Cost evitat = 500 · 0,18 = <strong>90 €/any</strong>.</p></details></div>
     </section>
 
     <section id="documents" class="energy-section" style="--accent:#f28b19">
