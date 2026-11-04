@@ -51,6 +51,149 @@ function addMiniLab(){
  next.before(lab);
 }
 
+function addODSIndividualActivity(){
+ const explorer=document.querySelector('#ud2-main-panel-1 #ods-explorer');
+ if(!explorer||document.querySelector('#ud2-ods-passaport'))return;
+ const noms={
+  1:'Fi de la pobresa',2:'Fam zero',3:'Salut i benestar',4:'Educació de qualitat',
+  5:'Igualtat de gènere',6:'Aigua neta i sanejament',7:'Energia neta i assequible',
+  8:'Treball digne i creixement econòmic',9:'Indústria, innovació i infraestructures',
+  10:'Reducció de les desigualtats',11:'Ciutats i comunitats sostenibles',
+  12:'Consum i producció responsables',13:'Acció climàtica',
+  14:'Vida submarina',15:'Vida terrestre',16:'Pau, justícia i institucions sòlides',
+  17:'Aliances per assolir els objectius'
+ };
+ // Una situació per a cadascun dels 17 ODS. Els casos es barregen per evitar
+ // que l'alumnat pugui respondre només seguint l'ordre de les fitxes.
+ const missions=[
+  {ods:1,text:'Un ajuntament ajuda les famílies sense recursos a pagar un habitatge digne.',alts:[8,10,11],why:'L’objectiu principal és eliminar la pobresa i garantir necessitats bàsiques.'},
+  {ods:2,text:'Un projecte reparteix aliments nutritius i redueix la malnutrició infantil.',alts:[1,3,12],why:'Fam zero tracta de l’alimentació suficient, segura i nutritiva.'},
+  {ods:3,text:'Un centre de salut facilita vacunes i revisions mèdiques a tothom.',alts:[4,6,10],why:'La prevenció de malalties i l’atenció sanitària formen part de Salut i benestar.'},
+  {ods:4,text:'Una escola proporciona recursos perquè tots els alumnes puguin continuar estudiant.',alts:[1,5,9],why:'L’accés a una educació inclusiva i de qualitat és el centre de l’ODS 4.'},
+  {ods:5,text:'Una empresa tecnològica garanteix les mateixes oportunitats a dones i homes.',alts:[4,8,10],why:'L’ODS 5 posa el focus en la igualtat de drets i oportunitats entre gèneres.'},
+  {ods:6,text:'Un poble construeix una xarxa de clavegueram i una instal·lació de potabilització.',alts:[3,7,11],why:'L’aigua potable i el sanejament són la prioritat de l’ODS 6.'},
+  {ods:7,text:'Una comunitat instal·la plaques solars per disposar d’electricitat neta i assequible.',alts:[9,12,13],why:'L’accés a energia moderna, neta i assequible correspon a l’ODS 7.'},
+  {ods:8,text:'Una fàbrica millora la seguretat laboral i assegura salaris i horaris dignes.',alts:[5,9,12],why:'L’ODS 8 defensa el treball digne i unes condicions laborals justes.'},
+  {ods:9,text:'Un equip dissenya un pont resistent i una xarxa de transport que suporti inundacions.',alts:[7,11,13],why:'Les infraestructures resilients i la innovació són claus a l’ODS 9.'},
+  {ods:10,text:'Un municipi adapta els serveis públics perquè ningú quedi exclòs per la seva situació personal o econòmica.',alts:[1,5,11],why:'L’ODS 10 vol reduir les desigualtats entre persones i col·lectius.'},
+  {ods:11,text:'Una ciutat crea carrils bici segurs, parcs de barri i transport públic accessible.',alts:[7,9,13],why:'L’ODS 11 busca ciutats i comunitats habitables, segures i sostenibles.'},
+  {ods:12,text:'L’institut repara ordinadors antics abans de comprar-ne de nous i separa els residus.',alts:[4,9,13],why:'Reparar, reutilitzar i consumir amb responsabilitat són accions pròpies de l’ODS 12.'},
+  {ods:13,text:'Un municipi redacta un pla per reduir emissions i adaptar-se a les onades de calor.',alts:[7,11,15],why:'L’acció davant del canvi climàtic és l’objectiu central de l’ODS 13.'},
+  {ods:14,text:'Un grup retira plàstics del mar i protegeix les praderies de posidònia.',alts:[6,12,15],why:'Els mars, els oceans i els ecosistemes marins corresponen a l’ODS 14.'},
+  {ods:15,text:'Es recupera un bosc incendiat i es protegeixen les espècies que hi viuen.',alts:[11,13,14],why:'L’ODS 15 se centra en els ecosistemes terrestres i la biodiversitat.'},
+  {ods:16,text:'Una institució publica com utilitza els diners públics i facilita l’accés a la justícia.',alts:[8,10,17],why:'La transparència, la justícia i les institucions responsables són l’ODS 16.'},
+  {ods:17,text:'Diversos instituts, entitats i ajuntaments cooperen en un projecte ambiental compartit.',alts:[9,11,16],why:'L’ODS 17 tracta de cooperar i crear aliances per assolir els altres objectius.'}
+ ];
+ const barreja=items=>{
+  const resultat=[...items];
+  for(let i=resultat.length-1;i>0;i--){
+   const j=Math.floor(Math.random()*(i+1));
+   [resultat[i],resultat[j]]=[resultat[j],resultat[i]];
+  }
+  return resultat;
+ };
+ const block=make('section','ud2-ods-passaport');
+ block.id='ud2-ods-passaport';
+ block.setAttribute('aria-labelledby','ud2-ods-passaport-titol');
+ block.append(
+  make('span','ud2-ods-passaport-eyebrow','✏️ ACTIVITAT INDIVIDUAL · 15–20 MINUTS')
+ );
+ const heading=make('h3','ud2-ods-passaport-heading','Passaport dels 17 ODS');
+ heading.id='ud2-ods-passaport-titol';block.append(heading);
+ block.append(make('p','ud2-ods-passaport-intro',
+  'Llegeix les 17 fitxes de dalt. Després, en cada situació, busca quin ODS hi està més relacionat. Pots tornar a consultar les fitxes sempre que vulguis.'));
+ const steps=make('ol','ud2-ods-passaport-steps');
+ ['Llegeix les fitxes','Relaciona 17 situacions','Proposa una millora al Rovira-Forns'].forEach(s=>steps.append(make('li','',s)));
+ block.append(steps);
+ const game=make('div','ud2-ods-passaport-game');
+ const count=make('div','ud2-ods-passaport-count');
+ count.setAttribute('aria-live','polite');
+ const meter=make('progress','ud2-ods-passaport-progress');
+ meter.max=missions.length;meter.value=0;
+ meter.setAttribute('aria-label','Missions completades');
+ const question=make('h4','ud2-ods-passaport-question');
+ const options=make('div','ud2-ods-passaport-options');
+ const feedback=make('p','ud2-ods-passaport-feedback');
+ feedback.setAttribute('role','status');feedback.setAttribute('aria-live','polite');
+ const next=make('button','ud2-ods-passaport-next','Següent situació →');
+ next.type='button';next.hidden=true;
+ game.append(count,meter,question,options,feedback,next);
+ const done=make('div','ud2-ods-passaport-done');
+ done.hidden=true;
+ const result=make('h4','ud2-ods-passaport-result');
+ done.append(result,make('p','',
+  'Ara tria una necessitat real del nostre institut i pensa com millorar-la amb un ODS. Escriu les teves respostes individualment.'));
+ const label1=make('label','ud2-ods-passaport-label','1. Quin ODS triaries per millorar el Rovira-Forns? Per què?');
+ const answer1=make('textarea','ud2-ods-passaport-textarea');
+ answer1.rows=3;answer1.placeholder='Triaria l’ODS ... perquè ...';
+ const label2=make('label','ud2-ods-passaport-label','2. Quina acció concreta proposes i com comprovaries que ha funcionat?');
+ const answer2=make('textarea','ud2-ods-passaport-textarea');
+ answer2.rows=3;answer2.placeholder='Podríem ... i ho comprovaríem mesurant ...';
+ label1.append(answer1);label2.append(answer2);
+ const controls=make('div','ud2-ods-passaport-controls');
+ const copy=make('button','ud2-ods-passaport-copy','📋 Copiar les meves respostes');
+ copy.type='button';
+ const again=make('button','ud2-ods-passaport-again','↻ Tornar a practicar');
+ again.type='button';
+ const copyStatus=make('p','ud2-ods-passaport-copy-status');
+ copyStatus.setAttribute('role','status');
+ controls.append(copy,again);done.append(label1,label2,controls,copyStatus);
+ block.append(game,done);
+ explorer.insertAdjacentElement('afterend',block);
+ let ordre=barreja(missions),index=0,encerts=0;
+ function showQuestion(){
+  const item=ordre[index];
+  count.textContent='SITUACIÓ '+(index+1)+' DE '+missions.length;
+  meter.value=index;
+  question.textContent=item.text;
+  options.replaceChildren();feedback.textContent='';feedback.hidden=true;next.hidden=true;
+  const buttons=barreja([item.ods,...item.alts]).map(ods=>{
+   const button=make('button','ud2-ods-passaport-option','ODS '+ods+' · '+noms[ods]);
+   button.type='button';
+   button.addEventListener('click',()=>{
+    const correct=ods===item.ods;
+    if(correct)encerts++;
+    buttons.forEach(b=>{
+     b.disabled=true;
+     b.classList.toggle('is-correct',b.textContent.startsWith('ODS '+item.ods+' ·'));
+    });
+    button.classList.add(correct?'is-chosen-correct':'is-chosen-wrong');
+    feedback.textContent=(correct?'✅ Molt bé! ':'🔎 La resposta principal és l’ODS '+item.ods+'. ')+item.why;
+    feedback.hidden=false;next.hidden=false;
+    next.textContent=index===ordre.length-1?'Veure el meu resultat →':'Següent situació →';
+   });
+   options.append(button);return button;
+  });
+ }
+ next.addEventListener('click',()=>{
+  index++;
+  if(index<ordre.length)showQuestion();
+  else{
+   meter.value=missions.length;game.hidden=true;done.hidden=false;
+   result.textContent='🎉 Passaport completat! '+encerts+' de '+missions.length+' respostes correctes a la primera.';
+   done.scrollIntoView({block:'nearest',behavior:'smooth'});
+  }
+ });
+ copy.addEventListener('click',async()=>{
+  const a=answer1.value.trim(),b=answer2.value.trim();
+  if(!a||!b){copyStatus.textContent='Escriu les dues respostes abans de copiar-les.';return;}
+  const output='Passaport dels 17 ODS · 4t ESO\nEncerts: '+encerts+'/'+missions.length+
+   '\n\n1. ODS que triaria i justificació:\n'+a+'\n\n2. Acció i indicador:\n'+b;
+  try{
+   await navigator.clipboard.writeText(output);
+   copyStatus.textContent='✅ Respostes copiades. Ara les pots enganxar a Classroom.';
+  }catch(e){
+   copyStatus.textContent='No s’han pogut copiar automàticament. Selecciona el text de les dues respostes per enganxar-lo a Classroom.';
+  }
+ });
+ again.addEventListener('click',()=>{
+  ordre=barreja(missions);index=0;encerts=0;
+  game.hidden=false;done.hidden=true;answer1.value='';answer2.value='';copyStatus.textContent='';
+  showQuestion();block.scrollIntoView({block:'start',behavior:'smooth'});
+ });
+ showQuestion();
+}
+
 function simplifyWorkshop(){
  document.querySelectorAll('#ud2-main-panel-7 .ud2-green-session').forEach(pane=>{
   [...pane.children].forEach(child=>{
@@ -349,6 +492,7 @@ function init(){
   }
  });
  addMiniLab();
+ addODSIndividualActivity();
  simplifyWorkshop();
  syncFromTabs();
  if(location.hash==='#ud2-questionari-final'||new URLSearchParams(location.search).get('seccio')==='questionari'){
