@@ -15,9 +15,9 @@ const LABS=[
   icon:'🌍',title:'Activitats dels 17 ODS',
   lead:'Ets un equip de l’Agenda 2030. Relaciona cada actuació amb l’objectiu de desenvolupament sostenible que més directament treballa.',
   cases:[
-   {name:'Una escola estalvia aigua',ask:'Quin ODS es relaciona directament amb una millora de la gestió de l’aigua?',opts:['ODS 6 · Aigua neta i sanejament','ODS 7 · Energia assequible i no contaminant','ODS 12 · Consum i producció responsables'],good:0,why:'L’ODS 6 inclou la gestió sostenible de l’aigua i el sanejament.'},
-   {name:'Electricitat més eficient',ask:'Quin ODS tracta específicament l’accés i l’ús d’energia sostenible?',opts:['ODS 6 · Aigua neta i sanejament','ODS 7 · Energia assequible i no contaminant','ODS 15 · Vida terrestre'],good:1,why:'L’ODS 7 tracta l’energia assequible, fiable, sostenible i moderna.'},
-   {name:'Menys residus al centre',ask:'Quin ODS inclou la prevenció i reducció de residus?',opts:['ODS 4 · Educació de qualitat','ODS 3 · Salut i benestar','ODS 12 · Consum i producció responsables'],good:2,why:'L’ODS 12 inclou reduir residus mitjançant prevenció, reducció, reciclatge i reutilització.'}
+   {name:'Una escola estalvia aigua',ask:'Quin ODS es relaciona directament amb una millora de la gestió de l’aigua?',opts:['ODS 6 · Aigua neta i sanejament','ODS 7 · Energia assequible i no contaminant','ODS 12 · Consum i producció responsables'],good:0,why:'L’ODS 6 inclou la gestió sostenible de l’aigua i el sanejament.',wrong:['','L’ODS 7 parla d’energia, però aquí es tracta de gestionar l’aigua.','L’ODS 12 tracta el consum responsable en general, però l’aigua té un ODS específic.']},
+   {name:'Electricitat més eficient',ask:'Quin ODS tracta específicament l’accés i l’ús d’energia sostenible?',opts:['ODS 6 · Aigua neta i sanejament','ODS 7 · Energia assequible i no contaminant','ODS 15 · Vida terrestre'],good:1,why:'L’ODS 7 tracta l’energia assequible, fiable, sostenible i moderna.',wrong:['L’ODS 6 s’ocupa de l’aigua. Busca l’objectiu dedicat a l’energia.','','L’ODS 15 protegeix els ecosistemes terrestres, no l’accés a l’electricitat.']},
+   {name:'Menys residus al centre',ask:'Quin ODS inclou la prevenció i reducció de residus?',opts:['ODS 4 · Educació de qualitat','ODS 3 · Salut i benestar','ODS 12 · Consum i producció responsables'],good:2,why:'L’ODS 12 inclou reduir residus mitjançant prevenció, reducció, reciclatge i reutilització.',wrong:['L’ODS 4 parla d’educació, però aquí la clau és reduir els residus.','L’ODS 3 parla de salut. Pensa en el consum i la producció dels productes.','']}
   ]},
  {
   icon:'⛏️',title:'Activitats de recursos i mineria',
@@ -70,7 +70,7 @@ function makeLab(data,i){
  A(head,'p','',data.lead);
  root.append(head);
  const bar=E('div','ud2-lab-progress');
- A(bar,'strong','','Missió: comprova 3 decisions');
+ A(bar,'strong','','Missió: encerta 3 decisions');
  const counter=A(bar,'span','ud2-lab-count','0 de 3 completades');
  root.append(bar);
  const status=[];
@@ -91,31 +91,32 @@ function makeLab(data,i){
    option.prepend(input);group.append(option);radios.push(input);
   });
   item.append(group);
-  const btn=A(item,'button','ud2-lab-check','✅ Comprova la resposta');
-  btn.type='button';btn.disabled=true;
   const msg=E('p','ud2-lab-feedback');
   msg.hidden=true;msg.setAttribute('role','status');msg.setAttribute('aria-live','polite');
-  item.append(btn,msg);cards.append(item);
+  item.append(msg);cards.append(item);
   let solved=false;
   status.push(()=>solved);
   radios.forEach(r=>r.addEventListener('change',()=>{
-   radios.forEach(t=>t.closest('label').classList.toggle('is-chosen',t.checked));
-   btn.disabled=false;
-   if(!solved)msg.hidden=true;
-  }));
-  btn.addEventListener('click',()=>{
    if(solved)return;
    const sel=radios.find(t=>t.checked);
    if(!sel)return;
    const correct=Number(sel.value)===test.good;
-   msg.hidden=false;msg.classList.toggle('is-correct',correct);
+   radios.forEach(t=>{
+    const option=t.closest('label');
+    option.classList.toggle('is-chosen',t.checked);
+    option.classList.toggle('is-correct-option',t.checked&&correct);
+    option.classList.toggle('is-wrong-option',t.checked&&!correct);
+   });
+   msg.hidden=false;
+   msg.classList.toggle('is-correct',correct);
+   msg.classList.toggle('is-wrong',!correct);
    if(correct){
     solved=true;item.classList.add('is-solved');
-    msg.textContent='🌟 Molt bé! '+test.why;
-    btn.textContent='✓ Repte superat';btn.disabled=true;
+    msg.textContent='✅ Correcte! '+test.why;
     radios.forEach(t=>t.disabled=true);
    }else{
-    msg.textContent='💜 Bona reflexió! Encara hi ha un criteri a revisar. Pensa en les persones, els recursos i les dades, i torna-ho a provar.';
+    const hint=test.wrong?.[Number(sel.value)]||test.why;
+    msg.textContent='❌ Encara no. '+hint+' Torna-ho a provar.';
    }
    const count=status.filter(fn=>fn()).length;
    counter.textContent=count+' de 3 completades';
@@ -124,7 +125,7 @@ function makeLab(data,i){
     const done=root.querySelector('.ud2-lab-celebration');
     if(done)done.hidden=false;
    }
-  });
+  }));
  });
  root.append(cards);
  const done=A(root,'p','ud2-lab-celebration','🎉 Activitats completades! Has aplicat els conceptes i has justificat decisions amb criteris tècnics. Enhorabona!');
