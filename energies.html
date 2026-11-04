@@ -154,8 +154,20 @@
     .info-box .formula-card{padding:15px 16px;background:#fff;border-radius:15px}
     .info-box .formula-card h3{font-size:1rem}
     .info-box .formula-card p{font-size:.95rem}
+    .moment-guide{margin:18px 0 25px;padding:22px;border:1.5px solid #b9d7e9;border-radius:20px;background:linear-gradient(140deg,#f5fbff,#eaf5fd)}
+    .moment-guide h3{color:#205c8b;margin:0 0 9px;font-size:1.3rem}
+    .moment-guide>.section-kicker{margin:0 0 7px}
+    .moment-guide>.moment-intro{margin:0 0 17px}
+    .moment-visuals{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+    .moment-visual{border:1px solid #c5deef;background:white;border-radius:16px;padding:15px}
+    .moment-visual h4{color:#25638f;margin:0 0 8px;font-size:1.02rem}
+    .moment-visual svg{display:block;width:100%;height:auto;max-height:180px}
+    .moment-visual p{font-size:.92rem;margin:7px 0 0}
+    .moment-summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin:15px 0 0}
+    .moment-summary .worked{margin:0;background:#fff;border-color:#c8e0ef}
+    .moment-guide .mini-note{margin-bottom:0}
     @media(max-width:1000px){.topic-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.exercise-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media(max-width:650px){.topic-grid,.info-grid,.doc-grid,.exercise-grid,.legend,.formula-grid{grid-template-columns:1fr}.energy-hero{padding:35px 0}.energy-section{padding:20px 16px}.diagram{flex-direction:column}.diagram .arrow{transform:rotate(90deg)}.formula-card{padding:18px 16px}}
+    @media(max-width:650px){.topic-grid,.info-grid,.doc-grid,.exercise-grid,.legend,.formula-grid,.moment-visuals,.moment-summary{grid-template-columns:1fr}.energy-hero{padding:35px 0}.energy-section{padding:20px 16px}.diagram{flex-direction:column}.diagram .arrow{transform:rotate(90deg)}.formula-card{padding:18px 16px}.moment-guide{padding:17px 14px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.topic-card{transition:none}}
   </style>
 </head>
@@ -313,6 +325,59 @@
         <span class="formula">Γ = F · r · sin α</span>
         <div class="legend"><span><b>Γ (gamma):</b> parell motor (N·m)</span><span><b>F:</b> força aplicada (N)</span><span><b>r:</b> radi des de l'eix (m)</span><span><b>α:</b> angle entre força i radi (°; si és 90°, sin α = 1)</span></div>
       </article>
+      </div>
+
+      <aside class="moment-guide" aria-labelledby="moment-guide-title">
+        <div class="section-kicker">📘 Fitxa de suport · Moment i parell motor</div>
+        <h3 id="moment-guide-title">La mateixa magnitud física, en dos contextos diferents</h3>
+        <p class="moment-intro">El <strong>moment d'una força</strong> descriu l'efecte de gir respecte d'un punt. El <strong>parell motor</strong> és aquest mateix tipus de moment quan un motor el transmet al seu eix. <strong>Tots dos es mesuren en N·m</strong>: el parell no és una força (N) ni una potència (W).</p>
+        <div class="moment-visuals">
+          <div class="moment-visual">
+            <h4>1. Moment d'una força · Porta o palanca</h4>
+            <svg viewBox="0 0 400 190" role="img" aria-label="Barra horitzontal amb eix O a l'esquerra, força F vertical a la dreta i braç perpendicular d entre l'eix i la força">
+              <line x1="49" y1="116" x2="329" y2="116" stroke="#276995" stroke-width="13" stroke-linecap="round"/>
+              <circle cx="49" cy="116" r="13" fill="#d7effe" stroke="#205c8b" stroke-width="4"/>
+              <circle cx="49" cy="116" r="4" fill="#205c8b"/>
+              <text x="31" y="150" fill="#245e87" font-size="19" font-weight="700">O</text>
+              <line x1="329" y1="145" x2="329" y2="36" stroke="#e08c26" stroke-width="5"/>
+              <polygon points="329,21 317,42 341,42" fill="#e08c26"/>
+              <text x="345" y="48" fill="#aa6514" font-size="18" font-weight="700">F</text>
+              <line x1="329" y1="13" x2="329" y2="166" stroke="#b3cce0" stroke-width="2" stroke-dasharray="6 7"/>
+              <path d="M49 167V156 M329 167V156 M49 160H329" fill="none" stroke="#4b89b5" stroke-width="2"/>
+              <text x="181" y="182" fill="#26658f" font-size="19" font-weight="700">d</text>
+              <path d="M309 116v-20h20" fill="none" stroke="#4b89b5" stroke-width="2"/>
+            </svg>
+            <span class="formula">M = F · d</span>
+            <p><strong>d</strong> és la distància <strong>perpendicular</strong> des de l'eix fins a la línia d'acció de F. Si la força és perpendicular a la barra, <strong>d = r</strong>.</p>
+          </div>
+          <div class="moment-visual">
+            <h4>2. Parell motor · Eix i tambor</h4>
+            <svg viewBox="0 0 400 190" role="img" aria-label="Tambor circular amb eix O, radi R fins a la vora dreta i força F tangencial cap amunt">
+              <circle cx="158" cy="103" r="72" fill="#e7f4fc" stroke="#3178a7" stroke-width="5"/>
+              <circle cx="158" cy="103" r="12" fill="#b8d9ed" stroke="#205c8b" stroke-width="3"/>
+              <circle cx="158" cy="103" r="4" fill="#205c8b"/>
+              <text x="140" y="131" fill="#245e87" font-size="18" font-weight="700">O</text>
+              <line x1="158" y1="103" x2="230" y2="103" stroke="#276995" stroke-width="4"/>
+              <text x="186" y="93" fill="#205c8b" font-size="19" font-weight="700">R</text>
+              <line x1="230" y1="143" x2="230" y2="33" stroke="#e08c26" stroke-width="5"/>
+              <polygon points="230,18 218,39 242,39" fill="#e08c26"/>
+              <text x="249" y="38" fill="#aa6514" font-size="19" font-weight="700">F</text>
+              <path d="M210 103v-20h20" fill="none" stroke="#4b89b5" stroke-width="2"/>
+              <text x="265" y="111" fill="#2c668e" font-size="14">Força tangencial</text>
+              <text x="265" y="130" fill="#2c668e" font-size="14">al tambor</text>
+            </svg>
+            <span class="formula">Γ = F · R</span>
+            <p>En un <strong>tambor, roda o politja</strong>, si F és tangencial, el braç coincideix amb el radi <strong>R</strong>. Si et donen el diàmetre, <strong>R = D/2</strong>.</p>
+          </div>
+        </div>
+        <div class="moment-summary">
+          <div class="worked"><h3>🧮 Exemple · Força inclinada</h3><p>Una barra de <strong>0,40 m</strong> rep una força de <strong>50 N</strong> a <strong>30°</strong> respecte de la barra.</p><p><strong>d = r · sin α</strong> = 0,40 · sin 30° = <strong>0,20 m</strong>.</p><p><strong>M = F · d</strong> = 50 · 0,20 = <strong>10 N·m</strong>.</p></div>
+          <div class="worked"><h3>🧮 Exemple · Motor i tambor</h3><p>Un motor transmet <strong>12 N·m</strong> a un tambor i es vol obtenir una força tangencial de <strong>80 N</strong>.</p><p><strong>R = Γ / F</strong> = 12 / 80 = <strong>0,15 m</strong>.</p><p>El diàmetre del tambor és <strong>0,30 m</strong>.</p></div>
+        </div>
+        <div class="mini-note"><strong>💡 No confonguis distàncies:</strong> si la força és inclinada, <strong>d = r · sin α</strong>. No multipliquis per <em>sin α</em> una segona vegada si ja has calculat el braç perpendicular d. Un <em>parell de forces</em> és un altre concepte: dues forces oposades que produeixen un moment resultant.</div>
+      </aside>
+
+      <div class="formula-grid">
       <article class="formula-card">
         <h3>Velocitat angular</h3>
         <p>indica la rapidesa de gir i permet convertir rpm en rad/s.</p>
