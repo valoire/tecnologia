@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#20628f">
+  <meta name="description" content="Energia i transformacions de 1r de Batxillerat: teoria ordenada segons els 23 exercicis del dossier, fórmules, explicacions i exemples.">
+  <title>Energia i transformacions · 1r de Batxillerat</title>
+  <link rel="stylesheet" href="estils.css?v=espurnes-20261028b">
+  <style>
+    :root{--blue:#205f8d;--ink:#28455a;--line:#c4ddec;--soft:#ebf6fe}
+    html{scroll-behavior:smooth;scroll-padding-top:84px}
+    body{background:linear-gradient(110deg,#f3faff,#fff 55%,#e9f5fd);color:var(--ink)}
+    .intro{background:linear-gradient(120deg,#e1f2ff,#fff 56%,#e5f1fc);border-bottom:4px solid #bbddec;padding:44px 0 40px}
+    .intro h1{font-size:clamp(2.1rem,5vw,3.8rem);line-height:1.13;color:#185884;margin:10px 0 13px}
+    .intro p{max-width:850px;color:#46657c;font-size:1.11rem;line-height:1.55;margin:0}
+    .eyebrow-course{letter-spacing:.1em;color:#2d739e;font-weight:900;text-transform:uppercase;font-size:.84rem}
+    .badges{display:flex;gap:9px;flex-wrap:wrap;margin-top:20px}
+    .badges span{background:#fff;border:1.5px solid #bcdceb;color:#275c7f;font-size:.9rem;font-weight:800;border-radius:99px;padding:7px 13px}
+    .page{padding-top:25px;padding-bottom:60px}
+    .crumb{margin:0 0 22px}
+    .lead{background:white;border:2px solid var(--line);border-radius:20px;padding:22px 25px;line-height:1.6}
+    .lead h2{color:var(--blue);margin:0 0 8px;font-size:1.4rem}
+    .lead p{margin:4px 0 10px}
+    .actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:19px}
+    .action{display:inline-block;padding:11px 17px;color:white!important;background:#206c9d;text-decoration:none;border-radius:11px;font-weight:850}
+    .action.alt{background:#ecf7ff;color:#20618d!important;border:1.5px solid #a4cbe4}
+    .action:hover{filter:brightness(.95)}
+    .index-title{color:var(--blue);margin:30px 0 15px;font-size:1.55rem}
+    .index{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+    .index a{border:1.5px solid #c6deee;background:#fff;border-top:6px solid var(--top,#448eba);padding:17px;border-radius:16px;text-decoration:none;color:#295b7b;display:flex;flex-direction:column;gap:7px;min-height:115px}
+    .index a:hover,.index a:focus-visible{background:#e9f5ff;outline:2px solid #4089b4;outline-offset:2px}
+    .index small{color:#5885a4;font-size:.77rem;font-weight:850}
+    .index strong{font-size:1rem;color:#1f5f8d;line-height:1.25}
+    .topic{background:#fff;border:2px solid #d0e3f0;border-top:8px solid var(--accent,#397da8);border-radius:22px;padding:28px clamp(17px,3.5vw,34px);margin:25px 0;box-shadow:0 8px 30px #2d789211}
+    .topic>.tag{color:#397caa;font-weight:900;letter-spacing:.06em;font-size:.82rem;text-transform:uppercase;margin-bottom:9px}
+    .topic h2{color:var(--blue);font-size:clamp(1.45rem,3.5vw,2rem);line-height:1.2;margin:0 0 12px}
+    .topic>p{line-height:1.67;color:#4b6477;margin:0 0 14px}
+    .formula-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin:20px 0}
+    .formula-card{background:linear-gradient(145deg,#fff,#f1f8fe);border:1.5px solid #cbdfee;border-radius:18px;padding:20px;min-width:0}
+    .formula-card h3{margin:0 0 9px;color:#25658f;font-size:1.05rem}
+    .formula-card>p{margin:0 0 13px;color:#4f6376;line-height:1.55}
+    .formula{background:linear-gradient(105deg,#e7f4fc,#edf5ff);border-left:6px solid #2681b9;border-radius:12px;color:#205d8c;font-weight:900;font-size:1.15rem;line-height:1.5;padding:14px 16px;overflow-wrap:anywhere;margin:12px 0}
+    .legend{background:#fbfdff;border:1px solid #d9e7f2;border-radius:11px;padding:12px 15px;color:#526b7c;font-size:.87rem;line-height:1.58}
+    .legend b{color:#21638e}
+    .worked{background:#eaf5fc;border-left:5px solid #559fce;border-radius:13px;padding:17px 20px;margin:17px 0;line-height:1.62;color:#355c79}
+    .worked strong{color:#1e5c85}
+    .worked h3{margin:0 0 6px;color:#225e88;font-size:1.02rem}
+    .worked p{margin:4px 0}
+    .tip{background:#fff9ec;border:1.5px solid #f1d9ac;color:#765a2b;border-radius:12px;padding:13px 16px;margin:17px 0;line-height:1.6}
+    .exercise-ref{font-weight:800;color:#22628d;background:#f0f8fe;border-radius:12px;padding:12px 16px;margin-top:15px}
+    .exercise-ref a{color:#1d648f}
+    .final-doc{background:#eaf5fd;border:2px solid #bedbeb;border-radius:20px;padding:25px;margin:32px 0}
+    .final-doc h2{color:var(--blue);margin:0 0 8px}
+    .final-doc p{line-height:1.65}
+    .final-doc details{margin-top:18px}
+    .final-doc summary{cursor:pointer;font-weight:900;color:#245f89}
+    .final-doc iframe{width:100%;height:650px;border:1.5px solid #c3dcea;border-radius:12px;background:#fff;margin-top:13px}
+    @media(max-width:960px){.index{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:630px){.index,.formula-grid{grid-template-columns:1fr}.intro{padding:32px 0}.topic{padding:20px 16px}.final-doc iframe{height:410px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+  <header class="top"><div class="wrap bar"><a class="brand" href="index.html">TECNOLOGIA</a><nav aria-label="Navegació principal"><a href="curs.html?grup=optativa">4t Optativa</a><a href="curs.html?grup=e">4t E</a><a href="batxillerat.html#primer" aria-current="page">Batxillerat</a></nav></div></header>
+  <div class="intro"><div class="wrap"><div class="eyebrow-course">Tecnologia i Enginyeria · 1r de Batxillerat</div><h1>⚡ Energia i transformacions</h1><p>Teoria pensada per resoldre els exercicis del dossier: primer entenem els conceptes, després identifiquem les fórmules i finalment les apliquem.</p><div class="badges"><span>📖 8 apartats</span><span>🧮 Fórmules amb unitats</span><span>🔍 Exemples resolts</span><span>📄 23 exercicis del dossier</span></div></div></div>
+  <main class="main wrap page">
+    <div class="crumb"><a href="index.html">Inici</a><span>/</span><a href="batxillerat.html#primer">1r de Batxillerat</a><span>/</span><span>Energia i transformacions</span></div>
+    <div class="lead"><h2>📚 Com estudiar aquest tema?</h2><p>La numeració que veus a cada bloc correspon als exercicis del PDF <em>Energia i transformacions</em>. Així pots consultar la teoria que necessites per a cada problema sense buscar entre temes diferents.</p><p><strong>Abans de calcular:</strong> escriu les dades i les unitats, passa-les a un sistema coherent, tria la fórmula i comprova si el resultat té sentit.</p><div class="actions"><a class="action" href="#index">Triar un apartat ↓</a><a class="action alt" target="_blank" rel="noopener noreferrer" href="https://drive.google.com/file/d/1HhvR_CdEqVi-g6-tfdoXISy6jMio2asO/view">📄 Obrir els 23 exercicis ↗</a></div></div>
+    <h2 class="index-title" id="index">Tria la teoria segons l'exercici</h2>
+    <nav class="index" aria-label="Apartats de teoria segons els exercicis">
+      <a href="#treball" style="--top:#296d9d"><small>EXERCICIS 1–2</small><strong>🚗 Treball i energia mecànica</strong></a>
+      <a href="#potencia" style="--top:#478eb8"><small>EXERCICI 3</small><strong>⏱️ Potència i consum</strong></a>
+      <a href="#termica" style="--top:#2c78a9"><small>EXERCICIS 4–7</small><strong>🌡️ Calor i temperatura</strong></a>
+      <a href="#electricitat" style="--top:#548eb2"><small>EXERCICI 8</small><strong>🔌 Energia elèctrica</strong></a>
+      <a href="#rendiment" style="--top:#236a99"><small>EXERCICIS 9–12</small><strong>⚙️ Rendiment</strong></a>
+      <a href="#motors" style="--top:#3c82ab"><small>EXERCICIS 13–16</small><strong>🚙 Combustibles i motors</strong></a>
+      <a href="#sistemes" style="--top:#5a99bd"><small>EXERCICIS 17–21</small><strong>🔥 Sistemes tèrmics</strong></a>
+      <a href="#maquines" style="--top:#286a96"><small>EXERCICIS 22–23</small><strong>🏭 Màquines tèrmiques</strong></a>
+    </nav>
+
+    <section class="topic" id="treball" style="--accent:#296d9d">
+      <div class="tag">Bloc 1 · Exercicis 1–2 · Cotxe i patinet</div><h2>Treball i energia mecànica</h2>
+      <p>Una força fa <strong>treball mecànic</strong> quan produeix un desplaçament. Un cos en moviment té <strong>energia cinètica</strong>; si està a una altura, té <strong>energia potencial gravitatòria</strong>. En absència de pèrdues, podem relacionar aquestes energies.</p>
+      <div class="formula-grid">
+        <article class="formula-card"><h3>Treball d'una força</h3><p>Energia transferida per una força al llarg d'un desplaçament.</p><div class="formula">W = F · d · cos α</div><div class="legend"><b>W:</b> treball (J)<br><b>F:</b> força (N)<br><b>d:</b> desplaçament (m)<br><b>α:</b> angle entre força i desplaçament (°)</div></article>
+        <article class="formula-card"><h3>Energia cinètica</h3><p>És l'energia que té un cos perquè es mou.</p><div class="formula">E<sub>c</sub> = ½ · m · v<sup>2</sup></div><div class="legend"><b>E<sub>c</sub>:</b> energia cinètica (J)<br><b>m:</b> massa (kg)<br><b>v:</b> velocitat (m/s)</div></article>
+        <article class="formula-card"><h3>Variació d'energia cinètica</h3><p>Permet trobar el treball net necessari per canviar la velocitat.</p><div class="formula">W<sub>net</sub> = ΔE<sub>c</sub> = ½ · m · (v<sub>f</sub><sup>2</sup> − v<sub>i</sub><sup>2</sup>)</div><div class="legend"><b>v<sub>f</sub>:</b> velocitat final (m/s)<br><b>v<sub>i</sub>:</b> velocitat inicial (m/s)<br><b>m:</b> massa (kg)<br><b>W<sub>net</sub>:</b> treball net (J)</div></article>
+        <article class="formula-card"><h3>Energia potencial gravitatòria</h3><p>Augmenta quan un cos puja i disminueix quan baixa.</p><div class="formula">E<sub>p</sub> = m · g · h</div><div class="legend"><b>E<sub>p</sub>:</b> energia potencial (J)<br><b>m:</b> massa (kg)<br><b>g:</b> gravetat (9,81 m/s²)<br><b>h:</b> altura respecte del nivell de referència (m)</div></article>
+      </div>
+      <div class="worked"><h3>🧮 Exemple de l'exercici 1 · Cotxe</h3><p>Un cotxe de 1.250 kg passa de 0 a 50 km/h. <strong>Primer:</strong> 50 / 3,6 = 13,89 m/s. <strong>Després:</strong> W = ½ · 1.250 · (13,89² − 0²) ≈ <strong>120,6 kJ</strong> de treball net, sense resistències.</p></div>
+      <div class="tip"><strong>💡 Exercici 2:</strong> per al patinet que baixa un pendent de 30 m i 5°, primer troba l'altura <strong>h = 30 · sin 5°</strong> i després relaciona m·g·h amb ½·m·v².</div>
+      <div class="exercise-ref">Practica els <strong>exercicis 1 i 2</strong> del <a href="#dossier">dossier de classe ↓</a>.</div>
+    </section>
+
+    <section class="topic" id="potencia" style="--accent:#478eb8">
+      <div class="tag">Bloc 2 · Exercici 3 · Rentadora</div><h2>Potència, energia consumida i cost</h2>
+      <p>La <strong>potència</strong> indica la rapidesa amb què un dispositiu transfereix energia. Si coneixem la potència i les hores de funcionament, podem calcular el consum elèctric i el cost.</p>
+      <div class="formula-grid">
+        <article class="formula-card"><h3>Potència mitjana</h3><p>Energia o treball per unitat de temps.</p><div class="formula">P = E / t</div><div class="legend"><b>P:</b> potència (W)<br><b>E:</b> energia (J)<br><b>t:</b> temps (s)</div></article>
+        <article class="formula-card"><h3>Energia consumida</h3><p>Potència multiplicada pel temps de funcionament.</p><div class="formula">E = P · t</div><div class="legend"><b>E:</b> energia (kWh si P és en kW i t en h)<br><b>P:</b> potència (kW)<br><b>t:</b> temps (h)</div></article>
+        <article class="formula-card"><h3>Cost de l'energia</h3><p>El preu de cada kWh multiplicat pels kWh gastats.</p><div class="formula">Cost = E · tarifa</div><div class="legend"><b>Cost:</b> import (€)<br><b>E:</b> consum (kWh)<br><b>tarifa:</b> preu de l'energia (€/kWh)</div></article>
+        <article class="formula-card"><h3>Percentatge d'una fase</h3><p>Compara una part del consum amb el consum total.</p><div class="formula">Percentatge = (E<sub>fase</sub> / E<sub>total</sub>) · 100</div><div class="legend"><b>E<sub>fase</sub>:</b> energia de la fase (kWh)<br><b>E<sub>total</sub>:</b> suma de totes les fases (kWh)</div></article>
+      </div>
+      <div class="worked"><h3>🧮 Exemple de l'exercici 3</h3><p>Rentadora: 2 kW durant 0,5 h i 0,25 kW durant 1 h.</p><p>E = 2 · 0,5 + 0,25 · 1 = <strong>1,25 kWh</strong>. Primera fase: (1 / 1,25) · 100 = <strong>80 %</strong>.</p></div>
+      <div class="tip"><strong>Compte:</strong> <strong>kW</strong> és potència, però <strong>kWh</strong> és energia. 1 kWh = 3,6 · 10<sup>6</sup> J.</div>
+      <div class="exercise-ref">Practica l'<strong>exercici 3</strong> del <a href="#dossier">dossier ↓</a>.</div>
+    </section>
+
+    <section class="topic" id="termica" style="--accent:#2c78a9">
+      <div class="tag">Bloc 3 · Exercicis 4–7 · Coure, aigua i dutxa</div><h2>Calor, temperatura i canvis d'estat</h2>
+      <p>La <strong>calor</strong> és energia transferida per diferència de temperatura. Quan escalfem o refredem una substància sense canviar-ne l'estat, necessitem la massa, la calor específica i la variació de temperatura.</p>
+      <div class="formula-grid">
+        <article class="formula-card"><h3>Calor sensible</h3><p>Energia que canvia la temperatura sense canviar l'estat de la substància.</p><div class="formula">Q = m · c · ΔT</div><div class="legend"><b>Q:</b> calor transferida (J)<br><b>m:</b> massa (kg)<br><b>c:</b> calor específica [J/(kg·K)]<br><b>ΔT:</b> T<sub>final</sub> − T<sub>inicial</sub> (K o °C de diferència)</div></article>
+        <article class="formula-card"><h3>Calor latent</h3><p>Energia que absorbeix o allibera una substància durant un canvi d'estat a temperatura constant.</p><div class="formula">Q = m · L</div><div class="legend"><b>Q:</b> calor del canvi d'estat (J)<br><b>m:</b> massa (kg)<br><b>L:</b> calor latent específica (J/kg)</div></article>
+        <article class="formula-card"><h3>Massa a partir del volum</h3><p>Si el problema dona litres o mil·lilitres, cal transformar-los en massa.</p><div class="formula">m = ρ · V</div><div class="legend"><b>m:</b> massa (kg)<br><b>ρ:</b> densitat (kg/L)<br><b>V:</b> volum (L)</div></article>
+        <article class="formula-card"><h3>Temperatura final</h3><p>Després de substituir a la fórmula de calor, aïllem la temperatura final.</p><div class="formula">T<sub>f</sub> = T<sub>i</sub> + Q / (m · c)</div><div class="legend"><b>T<sub>f</sub>:</b> temperatura final (°C)<br><b>T<sub>i</sub>:</b> temperatura inicial (°C)<br><b>Q:</b> calor aportada (J)<br><b>m · c:</b> capacitat calorífica (J/K)</div></article>
+      </div>
+      <div class="worked"><h3>🧮 Exemple de l'exercici 4 · Refredament del coure</h3><p>40 kg de coure baixen de 250 °C a 25 °C, amb c = 0,385 kJ/(kg·°C). Q = 40 · 0,385 · (25 − 250) = <strong>−3.465 kJ</strong>. El signe negatiu indica que el coure cedeix calor: cal <strong>extreure 3.465 kJ</strong>.</p></div>
+      <div class="tip"><strong>Exercicis 5–7:</strong> si et donen 50 mL d'aigua, pots considerar 0,05 kg quan ρ = 1 kg/L. Per a diferències de temperatura, un canvi d'1 °C equival a un canvi d'1 K.</div>
+      <div class="exercise-ref">Practica els <strong>exercicis 4, 5, 6 i 7</strong> del <a href="#dossier">dossier ↓</a>.</div>
+    </section>
+
+    <section class="topic" id="electricitat" style="--accent:#548eb2">
+      <div class="tag">Bloc 4 · Exercici 8 · Escalfador elèctric</div><h2>Electricitat, potència i resistència</h2>
+      <p>Un receptor elèctric transforma energia elèctrica en calor, moviment o llum. En un receptor purament resistiu relacionem tensió, intensitat, resistència i potència.</p>
+      <div class="formula-grid">
+        <article class="formula-card"><h3>Llei d'Ohm</h3><p>Relaciona la tensió amb la intensitat que circula per una resistència.</p><div class="formula">V = I · R</div><div class="legend"><b>V:</b> tensió (V, volts)<br><b>I:</b> intensitat (A, amperes)<br><b>R:</b> resistència (Ω, ohms)</div></article>
+        <article class="formula-card"><h3>Potència elèctrica</h3><p>Potència d'un receptor elèctric en corrent continu o en un receptor resistiu.</p><div class="formula">P = V · I</div><div class="legend"><b>P:</b> potència (W)<br><b>V:</b> tensió (V)<br><b>I:</b> intensitat (A)</div></article>
+        <article class="formula-card"><h3>Potència en un receptor resistiu</h3><p>Expressió útil quan coneixem tensió i resistència.</p><div class="formula">P = V<sup>2</sup> / R</div><div class="legend"><b>P:</b> potència (W)<br><b>V:</b> tensió (V)<br><b>R:</b> resistència (Ω)</div></article>
+        <article class="formula-card"><h3>Una altra expressió resistiva</h3><p>Expressió equivalent quan tenim intensitat i resistència.</p><div class="formula">P = I<sup>2</sup> · R</div><div class="legend"><b>P:</b> potència (W)<br><b>I:</b> intensitat (A)<br><b>R:</b> resistència (Ω)</div></article>
+      </div>
+      <div class="worked"><h3>🧮 Exemple de l'exercici 8</h3><p>Un escalfador de 1.200 W funciona a 230 V. Si és resistiu, <strong>R = V² / P = 230² / 1.200 = 44,08 Ω</strong>.</p></div>
+      <div class="exercise-ref">Practica l'<strong>exercici 8</strong> del <a href="#dossier">dossier ↓</a>.</div>
+    </section>
+
+    <section class="topic" id="rendiment" style="--accent:#236a99">
+      <div class="tag">Bloc 5 · Exercicis 9–12 · Rentaplats, biomassa i aigua</div><h2>Balanç energètic i rendiment</h2>
+      <p>El <strong>rendiment</strong> compara l'energia útil amb l'energia que entra al sistema. Una part es dissipa com a calor, vibracions o soroll. El rendiment es calcula com una fracció i després es pot expressar en percentatge.</p>
+      <div class="formula-grid">
+        <article class="formula-card"><h3>Balanç energètic</h3><p>En un procés sense acumulació neta d'energia, l'entrada es reparteix entre energia útil i dissipada.</p><div class="formula">E<sub>entrada</sub> = E<sub>útil</sub> + E<sub>dissipada</sub></div><div class="legend"><b>E<sub>entrada</sub>:</b> energia aportada (J)<br><b>E<sub>útil</sub>:</b> energia aprofitada (J)<br><b>E<sub>dissipada</sub>:</b> energia no aprofitada (J)</div></article>
+        <article class="formula-card"><h3>Rendiment energètic</h3><p>Proporció d'energia útil.</p><div class="formula">η = E<sub>útil</sub> / E<sub>entrada</sub></div><div class="legend"><b>η (eta):</b> rendiment (sense unitat)<br><b>E<sub>útil</sub>:</b> energia útil (J)<br><b>E<sub>entrada</sub>:</b> energia aportada (J)<br>Multiplica η per 100 per obtenir el percentatge.</div></article>
+        <article class="formula-card"><h3>Rendiment per potències</h3><p>La mateixa relació quan coneixem les potències en règim estacionari.</p><div class="formula">η = P<sub>útil</sub> / P<sub>entrada</sub></div><div class="legend"><b>P<sub>útil</sub>:</b> potència útil (W)<br><b>P<sub>entrada</sub>:</b> potència subministrada (W)<br><b>η:</b> fracció sense unitat</div></article>
+        <article class="formula-card"><h3>Energia d'entrada necessària</h3><p>Si et demanen el combustible o el consum necessari, aïlla l'entrada.</p><div class="formula">E<sub>entrada</sub> = E<sub>útil</sub> / η</div><div class="legend"><b>E<sub>entrada</sub>:</b> energia necessària (J)<br><b>E<sub>útil</sub>:</b> energia aprofitada (J)<br><b>η:</b> rendiment com a fracció: 85 % = 0,85</div></article>
+      </div>
+      <div class="worked"><h3>🧮 Exemple de l'exercici 9</h3><p>El rentaplats consumeix 0,9 kWh per escalfar 11 kg d'aigua 60 °C. Energia útil: Q = 11 · 4,18 · 60 = <strong>2.758,8 kJ</strong>. Energia d'entrada: 0,9 · 3.600 = <strong>3.240 kJ</strong>. Rendiment = 2.758,8 / 3.240 = <strong>85,15 %</strong>.</p></div>
+      <div class="tip"><strong>Exercicis 10–12:</strong> converteix primer les energies a la mateixa unitat. En el cas de la biomassa, per calcular el rendiment hauràs de comparar l'energia útil obtinguda amb la del combustible.</div>
+      <div class="exercise-ref">Practica els <strong>exercicis 9–12</strong> del <a href="#dossier">dossier ↓</a>.</div>
+    </section>
+
+    <section class="topic" id="motors" style="--accent:#3c82ab">
+      <div class="tag">Bloc 6 · Exercicis 13–16 · Motors dièsel i de gasolina</div><h2>Poder calorífic, combustible i cicles del motor</h2>
+      <p>El <strong>poder calorífic</strong> indica l'energia que s'obté per cada quilogram de combustible. El motor només transforma una part en energia útil. En un motor de <strong>quatre temps</strong>, cada cicle de treball necessita dues voltes de cigonyal.</p>
+      <div class="formula-grid">
+        <article class="formula-card"><h3>Energia química del combustible</h3><p>Energia que pot aportar una massa determinada de combustible.</p><div class="formula">E<sub>química</sub> = m · PC</div><div class="legend"><b>E<sub>química</sub>:</b> energia disponible (J)<br><b>m:</b> massa de combustible (kg)<br><b>PC:</b> poder calorífic (J/kg)</div></article>
+        <article class="formula-card"><h3>Massa de combustible necessària</h3><p>Inclou el rendiment per trobar la quantitat que s'ha de cremar.</p><div class="formula">m = E<sub>útil</sub> / (η · PC)</div><div class="legend"><b>m:</b> combustible (kg)<br><b>E<sub>útil</sub>:</b> energia útil (J)<br><b>η:</b> rendiment (fracció)<br><b>PC:</b> poder calorífic (J/kg)</div></article>
+        <article class="formula-card"><h3>Freqüència de cicles d'un motor de 4 temps</h3><p>En dues voltes de cigonyal es completa un cicle.</p><div class="formula">N<sub>cicles/min</sub> = n / 2</div><div class="legend"><b>N<sub>cicles/min</sub>:</b> nombre de cicles per minut<br><b>n:</b> règim del motor (revolucions/min)</div></article>
+        <article class="formula-card"><h3>Combustible per cicle</h3><p>Divideix el consum per minut entre els cicles que fa en un minut.</p><div class="formula">m<sub>cicle</sub> = ṁ<sub>min</sub> / (n / 2)</div><div class="legend"><b>m<sub>cicle</sub>:</b> massa per cicle (kg/cicle)<br><b>ṁ<sub>min</sub>:</b> massa consumida per minut (kg/min)<br><b>n:</b> règim (revolucions/min)</div></article>
+      </div>
+      <div class="worked"><h3>🧮 Exemple de l'exercici 14</h3><p>Un motor de 4 temps gira a 2.500 min⁻¹ i consumeix 7,5 kg/h. Fa <strong>1.250 cicles/min</strong>. Consumeix 7.500 / 60 = 125 g/min; per tant, <strong>0,1 g/cicle</strong>. En 100 cicles, <strong>10 g</strong>.</p></div>
+      <div class="tip"><strong>Exercicis 13 i 16:</strong> no confonguis energia útil amb energia química. A l'exercici 16, passa de massa a litres amb la densitat, i després de litres a emissions de CO₂.</div>
+      <div class="exercise-ref">Practica els <strong>exercicis 13–16</strong> del <a href="#dossier">dossier ↓</a>.</div>
+    </section>
+
+    <section class="topic" id="sistemes" style="--accent:#5a99bd">
+      <div class="tag">Bloc 7 · Exercicis 17–21 · Dutxes, butà i fogonet</div><h2>Sistemes tèrmics: energia, temps i cost</h2>
+      <p>Per escalfar aigua amb un combustible, cal calcular <strong>primer la calor útil</strong>; després, el rendiment ens indica l'energia real que s'ha de consumir i el poder calorífic permet trobar la quantitat de combustible. Amb un cabal podem calcular el temps i el cost.</p>
+      <div class="formula-grid">
+        <article class="formula-card"><h3>Calor útil de l'aigua</h3><p>La quantitat de calor que realment rep el fluid.</p><div class="formula">Q<sub>útil</sub> = m · c · ΔT</div><div class="legend"><b>Q<sub>útil</sub>:</b> calor útil (J)<br><b>m:</b> massa de fluid (kg)<br><b>c:</b> calor específica [J/(kg·K)]<br><b>ΔT:</b> variació de temperatura (K)</div></article>
+        <article class="formula-card"><h3>Energia que cal consumir</h3><p>La caldera necessita més energia que la calor útil si hi ha pèrdues.</p><div class="formula">E<sub>entrada</sub> = Q<sub>útil</sub> / η</div><div class="legend"><b>E<sub>entrada</sub>:</b> energia consumida (J)<br><b>Q<sub>útil</sub>:</b> calor útil (J)<br><b>η:</b> rendiment com a fracció</div></article>
+        <article class="formula-card"><h3>Consum de combustible</h3><p>Converteix l'energia d'entrada en massa de gas.</p><div class="formula">m<sub>gas</sub> = E<sub>entrada</sub> / PC</div><div class="legend"><b>m<sub>gas</sub>:</b> massa de gas (kg)<br><b>E<sub>entrada</sub>:</b> energia del combustible (J)<br><b>PC:</b> poder calorífic (J/kg)</div></article>
+        <article class="formula-card"><h3>Temps a partir del cabal</h3><p>Troba quant dura el consum d'una massa determinada.</p><div class="formula">t = m / ṁ</div><div class="legend"><b>t:</b> temps (h si el cabal és en kg/h)<br><b>m:</b> massa de combustible (kg)<br><b>ṁ:</b> cabal màssic (kg/h)</div></article>
+      </div>
+      <div class="worked"><h3>🧮 Exemple de l'exercici 17</h3><p>75 kg d'aigua s'escalfen 20 °C; c = 4,18 kJ/(kg·K) i η = 0,87. Q = 75 · 4,18 · 20 = <strong>6.270 kJ</strong>. Entrada = 6.270 / 0,87 = <strong>7,207 MJ</strong>. Amb PC = 47,7 MJ/kg, gas = 7,207 / 47,7 = <strong>0,1511 kg de butà</strong>.</p></div>
+      <div class="tip"><strong>Exercicis 18–21:</strong> si calcules costos, separa aigua i combustible abans de sumar. Si un fogonet funciona al 30 % del cabal durant 18 minuts, aplica aquest percentatge al cabal i converteix els minuts a hores.</div>
+      <div class="exercise-ref">Practica els <strong>exercicis 17–21</strong> del <a href="#dossier">dossier ↓</a>.</div>
+    </section>
+
+    <section class="topic" id="maquines" style="--accent:#286a96">
+      <div class="tag">Bloc 8 · Exercicis 22–23 · Màquines de Carnot</div><h2>Màquines tèrmiques i rendiment de Carnot</h2>
+      <p>Una màquina tèrmica rep calor d'un <strong>focus calent</strong>, produeix <strong>treball útil</strong> i cedeix la resta de calor a un <strong>focus fred</strong>. El rendiment de Carnot és el màxim teòric possible entre dues temperatures: cap màquina real entre aquests focus pot superar-lo.</p>
+      <div class="formula-grid">
+        <article class="formula-card"><h3>Balanç de la màquina tèrmica</h3><p>El treball útil és la diferència entre la calor absorbida i la cedida.</p><div class="formula">W<sub>útil</sub> = Q<sub>calent</sub> − Q<sub>fred</sub></div><div class="legend"><b>W<sub>útil</sub>:</b> treball útil (J)<br><b>Q<sub>calent</sub>:</b> calor absorbida (J)<br><b>Q<sub>fred</sub>:</b> calor cedida (J)</div></article>
+        <article class="formula-card"><h3>Rendiment de la màquina</h3><p>Compara el treball útil amb la calor que entra.</p><div class="formula">η = 1 − Q<sub>fred</sub> / Q<sub>calent</sub></div><div class="legend"><b>η:</b> rendiment (sense unitat)<br><b>Q<sub>fred</sub>:</b> calor cedida (J)<br><b>Q<sub>calent</sub>:</b> calor absorbida (J)</div></article>
+        <article class="formula-card"><h3>Rendiment màxim de Carnot</h3><p>Depèn de les temperatures absolutes dels focus.</p><div class="formula">η<sub>màx</sub> = 1 − T<sub>fred</sub> / T<sub>calent</sub></div><div class="legend"><b>η<sub>màx</sub>:</b> rendiment teòric (sense unitat)<br><b>T<sub>fred</sub>:</b> focus fred (K)<br><b>T<sub>calent</sub>:</b> focus calent (K)</div></article>
+        <article class="formula-card"><h3>Conversió de temperatura absoluta</h3><p>És imprescindible passar els °C a kelvins abans de calcular Carnot.</p><div class="formula">T [K] = T [°C] + 273,15</div><div class="legend"><b>T [K]:</b> temperatura absoluta (K)<br><b>T [°C]:</b> temperatura en graus Celsius (°C)</div></article>
+      </div>
+      <div class="worked"><h3>🧮 Exemple dels exercicis 22 i 23</h3><p>Focus calent a 610 °C i fred a 270 °C. Primer: <strong>883,15 K</strong> i <strong>543,15 K</strong>. Després: η<sub>màx</sub> = 1 − 543,15 / 883,15 = <strong>0,3850 = 38,50 %</strong>.</p></div>
+      <div class="tip"><strong>Important:</strong> a la fórmula de Carnot sempre utilitza kelvins, mai directament graus Celsius.</div>
+      <div class="exercise-ref">Practica els <strong>exercicis 22 i 23</strong> del <a href="#dossier">dossier ↓</a>.</div>
+    </section>
+
+    <div class="final-doc" id="dossier"><h2>📄 Dossier: teoria i 23 exercicis</h2><p>Aquí tens el document que utilitzem com a referència per a 1r de Batxillerat. Inclou les explicacions originals, els enunciats i els resultats finals perquè puguis comprovar els càlculs.</p><div class="actions"><a class="action" href="https://drive.google.com/file/d/1HhvR_CdEqVi-g6-tfdoXISy6jMio2asO/view" target="_blank" rel="noopener noreferrer">Obrir el PDF complet ↗</a><a class="action alt" href="batxillerat.html#primer">Tornar a 1r de Batxillerat</a></div><details><summary>👀 Veure el dossier sense sortir de la web</summary><iframe title="Dossier d'Energia i transformacions, amb teoria i 23 exercicis" loading="lazy" src="https://drive.google.com/file/d/1HhvR_CdEqVi-g6-tfdoXISy6jMio2asO/preview"></iframe></details></div>
+  </main>
+  <footer class="footer"><div class="wrap"><span>Tecnologia i Enginyeria · 1r de Batxillerat</span><span><a href="batxillerat.html#primer">Tornar al curs</a></span></div></footer>
+</body>
+</html>
