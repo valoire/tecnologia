@@ -6,9 +6,12 @@
   <title>Batxillerat · Tecnologia</title><link rel="stylesheet" href="estils.css?v=espurnes-20261028b">
   <link rel="stylesheet" href="conceptes.css?v=multicolor-20261028d">
   <style>
-    .topics .box[href="energies.html"],.topics .box[href="cifres-significatives.html"]{border:2px solid #bdd9ed;background:linear-gradient(115deg,#fff,#e9f5fe)}
+    .topics .box[href="energies.html"]{border:2px solid #bdd9ed;background:linear-gradient(115deg,#fff,#e9f5fe)}
     .sig-pau-link{display:inline-block;margin-top:14px;padding:10px 15px;border:1px solid #bdd9ed;border-radius:10px;background:#eaf5fd;color:#205c8a;text-decoration:none;font-weight:800}
     .sig-pau-link:hover{background:#d9edfb}
+    .pau-sig-card{border:2px solid #bdd9ed;border-radius:16px;background:linear-gradient(115deg,#fff,#e9f5fe);padding:20px 22px;margin-top:20px}
+    .pau-sig-card h3{margin:0 0 7px;color:#205c8a}
+    .pau-sig-card p{margin:0}
     .pau-reunio{padding:24px;border:2px solid #bdd9ed;background:linear-gradient(135deg,#fff,#f0f8fe)}
     .pau-reunio h2{color:#185981;margin-top:0}
     .pau-reunio .pau-pdf{display:inline-flex;align-items:center;gap:8px;background:#216c9d;color:white;text-decoration:none;font-weight:800;border-radius:12px;padding:13px 18px;margin:8px 0}
@@ -36,8 +39,20 @@
   <div class="hero small"><div class="wrap"><div class="eyebrow">Tecnologia i Enginyeria</div><h1>Batxillerat</h1><p>Temari per blocs i pràctica per a les Proves d'Accés a la Universitat.</p></div></div>
   <main class="main wrap"><div class="crumb"><a href="index.html">Inici</a><span>/</span><span>Batxillerat</span></div>
     <div class="tabs" role="tablist" aria-label="Apartats de Batxillerat"><button class="tab" role="tab" id="tab-batx" aria-controls="panel-batx" aria-selected="true" type="button">Batxillerat</button><button class="tab" role="tab" id="tab-pau" aria-controls="panel-pau" aria-selected="false" type="button">PAU</button><button class="tab" role="tab" id="tab-reunio" aria-controls="panel-reunio" aria-selected="false" type="button">📑 Reunió PAU</button></div>
-    <section role="tabpanel" id="panel-batx" aria-labelledby="tab-batx"><div class="section-heading"><div><h2>Blocs temàtics</h2><p>Comença per Energies i Cifres significatives, amb teoria i exemples per preparar les PAU.</p></div></div><div class="topics" id="topics"></div><p class="subtle">Energies i Cifres significatives tenen explicacions i activitats pròpies. La resta de blocs enllacen amb recursos externs de les PAU.</p></section>
-    <section role="tabpanel" id="panel-pau" aria-labelledby="tab-pau" hidden><div class="box" style="padding:24px"><h2>Preparació PAU</h2><p>Practica amb exercicis i exàmens de Tecnologia Industrial. Primer prova de resoldre'ls i després compara el procediment amb la solució.</p><a class="button" href="https://examenselectivitat.cat/selectivitat/Tecnologia%20industrial" target="_blank" rel="noopener noreferrer">Obrir exàmens i exercicis ↗</a><p style="margin:17px 0 0"><strong>Recorda:</strong> als criteris de Tecnologia i Enginyeria es recomana presentar els resultats amb quatre xifres significatives.</p><a class="sig-pau-link" href="cifres-significatives.html">🔢 Aprèn les 4 xifres significatives →</a></div></section>
+    <section role="tabpanel" id="panel-batx" aria-labelledby="tab-batx"><div class="section-heading"><div><h2>Blocs temàtics</h2><p>Comença pel bloc d'Energies i continua amb els altres continguts de Tecnologia i Enginyeria.</p></div></div><div class="topics" id="topics"></div><p class="subtle">Energies té explicacions i activitats pròpies. La resta de blocs enllacen amb recursos externs de les PAU. La pràctica de xifres significatives la trobaràs a la pestanya PAU.</p></section>
+    <section role="tabpanel" id="panel-pau" aria-labelledby="tab-pau" hidden>
+      <div class="box" style="padding:24px">
+        <h2>Preparació PAU</h2>
+        <p>Practica amb exercicis i exàmens de Tecnologia Industrial. Primer prova de resoldre'ls i després compara el procediment amb la solució.</p>
+        <a class="button" href="https://examenselectivitat.cat/selectivitat/Tecnologia%20industrial" target="_blank" rel="noopener noreferrer">Obrir exàmens i exercicis ↗</a>
+        <div class="pau-sig-card">
+          <h3>🔢 Cifres significatives</h3>
+          <p>Aprèn a arrodonir els resultats a quatre xifres significatives, amb exemples del nostre temari, vídeo i 30 exercicis autocorrectius.</p>
+          <a class="sig-pau-link" href="cifres-significatives.html">Entrar al tema de Cifres significatives →</a>
+        </div>
+        <p style="margin:17px 0 0"><strong>Recorda:</strong> als criteris de Tecnologia i Enginyeria es recomana presentar els resultats amb quatre xifres significatives.</p>
+      </div>
+    </section>
     <section role="tabpanel" id="panel-reunio" aria-labelledby="tab-reunio" hidden>
       <div class="box pau-reunio">
         <h2>📑 Reunió PAU 2027 · Tecnologia i Enginyeria</h2>
@@ -90,11 +105,12 @@
   <footer class="footer"><div class="wrap"><span>Tecnologia</span><span><a href="index.html">Tornar a l'inici</a></span></div></footer>
   <script>
     const base='https://examenselectivitat.cat/selectivitat/Tecnologia%20industrial/per-temes/';
-    const topics=[['Energies','energies.html','local'],['Cifres significatives','cifres-significatives.html','local'],['Materials i assaigs','propietats-assaigs'],['Metrologia i normalització','metrologia-normalitzacio'],['Sistemes pneumàtics i oleohidràulics','oleohidraulica'],['Motors reductors','motors-reductors'],['Principis de les màquines','maquines-i-sistemes'],['Màquines i sistemes elèctrics i electrotècnics','electromagnetisme-i-corrent-altern'],['Control lògic i funcions lògiques','sistemes-digitals'],['Organització industrial','organitzacio-industrial']];
+    const topics=[['Energies','energies.html','local'],['Materials i assaigs','propietats-assaigs'],['Metrologia i normalització','metrologia-normalitzacio'],['Sistemes pneumàtics i oleohidràulics','oleohidraulica'],['Motors reductors','motors-reductors'],['Principis de les màquines','maquines-i-sistemes'],['Màquines i sistemes elèctrics i electrotècnics','electromagnetisme-i-corrent-altern'],['Control lògic i funcions lògiques','sistemes-digitals'],['Organització industrial','organitzacio-industrial']];
     for(const [name,slug,kind] of topics){const a=document.createElement('a');a.className='box';a.href=kind==='local'?slug:base+slug;if(kind!=='local'){a.target='_blank';a.rel='noopener noreferrer'}else{a.style.border='2px solid #bdd9ed';a.style.background='linear-gradient(115deg,#fff,#e9f5fe)'}const t=document.createElement('span');t.textContent=name;const arrow=document.createElement('span');arrow.textContent=kind==='local'?'→':'↗';arrow.setAttribute('aria-hidden','true');a.append(t,arrow);document.getElementById('topics').append(a)}
     const tabs=[document.getElementById('tab-batx'),document.getElementById('tab-pau'),document.getElementById('tab-reunio')],panels=[document.getElementById('panel-batx'),document.getElementById('panel-pau'),document.getElementById('panel-reunio')];
     function selectTab(i){tabs.forEach((b,j)=>{b.setAttribute('aria-selected',String(i===j));b.tabIndex=i===j?0:-1;panels[j].hidden=i!==j})}
     tabs.forEach((b,i)=>{b.addEventListener('click',()=>selectTab(i));b.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();const n=(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length;selectTab(n);tabs[n].focus()}})});
+    if(window.location.hash==='#pau')selectTab(1);
   </script>
 </body>
 </html>
