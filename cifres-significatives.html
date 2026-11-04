@@ -127,20 +127,41 @@
     </section>
     <section class="sig-section" id="exemples">
       <h2>4. Exemples: de la calculadora a les PAU</h2>
-      <p>A la columna del mig tens el resultat amb <strong>quatre xifres significatives</strong>. Fixa't que <strong>no sempre són quatre decimals</strong>.</p>
+      <p>A la columna del mig tens el resultat amb <strong>quatre xifres significatives</strong>. Fixa't que <strong>no sempre són quatre decimals</strong>. Hem afegit molts casos perquè puguis comparar els resultats de la calculadora amb els que escriuries a les PAU.</p>
+      <div class="sig-note"><strong>🧠 El truc de les quatre xifres</strong><p><strong>1.</strong> Ignora els zeros inicials. <strong>2.</strong> Subratlla mentalment les quatre primeres xifres que compten. <strong>3.</strong> Mira la cinquena: de 0 a 4, mantens; de 5 a 9, puges. <strong>4.</strong> Si cal, escriu zeros finals per deixar clar que tens quatre xifres.</p></div>
       <div class="sig-table-wrap"><table class="sig-table">
         <thead><tr><th>La calculadora mostra...</th><th>Resultat amb 4 xifres</th><th>Què passa?</th></tr></thead>
         <tbody>
+          <tr><th colspan="3" scope="rowgroup">🟦 Comencem per casos senzills</th></tr>
           <tr><td>8,13427</td><td>8,134</td><td>La cinquena xifra és 2; no pugem.</td></tr>
           <tr><td>35,678</td><td>35,68</td><td>La cinquena xifra és 8; pugem.</td></tr>
+          <tr><td>3,141592</td><td>3,142</td><td>La cinquena xifra és 5; pugem de 3,141 a 3,142.</td></tr>
+          <tr><td>456,789</td><td>456,8</td><td>Comptem 4, 5, 6 i 7; la cinquena és 8.</td></tr>
+          <tr><td>17,7777</td><td>17,78</td><td>La cinquena xifra és 7; pugem la quarta.</td></tr>
+          <tr><td>12,03049</td><td>12,03</td><td>El zero del mig compta; la cinquena xifra és 0.</td></tr>
+          <tr><th colspan="3" scope="rowgroup">🟦 Nombres petits i zeros</th></tr>
           <tr><td>0,0047859</td><td>0,004786</td><td>Els zeros inicials no compten.</td></tr>
           <tr><td>0,098765</td><td>0,09877</td><td>Quatre xifres des del primer 9.</td></tr>
+          <tr><td>0,000123449</td><td>0,0001234</td><td>Comptem 1, 2, 3, 4; la cinquena és 4.</td></tr>
+          <tr><td>0,000123459</td><td>0,0001235</td><td>Quasi igual que l'anterior, però la cinquena és 5.</td></tr>
+          <tr><td>0,0027182818</td><td>0,002718</td><td>Els zeros de davant no compten.</td></tr>
+          <tr><td>0,010056</td><td>0,01006</td><td>Comptem 1, 0, 0 i 5; com que ve un 6, arrodonim.</td></tr>
+          <tr><td>0,0090096</td><td>0,009010</td><td>Els zeros interiors compten i el zero final confirma les 4 xifres.</td></tr>
+          <tr><th colspan="3" scope="rowgroup">🟦 Zeros finals, canvis de desena i notació científica</th></tr>
           <tr><td>120,048</td><td>120,0</td><td>El zero final després de la coma compta.</td></tr>
           <tr><td>3,00047</td><td>3,000</td><td>Els tres zeros decimals són significatius.</td></tr>
+          <tr><td>73,0067</td><td>73,01</td><td>La cinquena xifra és 6: el quart 0 passa a 1.</td></tr>
+          <tr><td>99,996</td><td>100,0</td><td>En arrodonir, la centena canvia; el zero decimal compta.</td></tr>
+          <tr><td>0,99996</td><td>1,000</td><td>Un canvi de valor conserva les quatre xifres gràcies als zeros.</td></tr>
           <tr><td>98765</td><td>9,877 · 10<sup>4</sup></td><td>La notació científica deixa clares les 4 xifres.</td></tr>
           <tr><td>1499,96</td><td>1,500 · 10<sup>3</sup></td><td>En arrodonir, hi ha un canvi de desena.</td></tr>
+          <tr><td>10005,6</td><td>1,001 · 10<sup>4</sup></td><td>Després de 1, 0, 0 i 0 ve un 5; pugem la quarta.</td></tr>
+          <tr><td>23001,8</td><td>2,300 · 10<sup>4</sup></td><td>Els zeros després de la coma indiquen precisió.</td></tr>
+          <tr><td>−0,00234579</td><td>−0,002346</td><td>El signe negatiu no compta com a xifra significativa.</td></tr>
         </tbody>
       </table></div>
+      <h3>⚡ Exemples del nostre temari de Tecnologia i Enginyeria</h3>
+      <p>Els resultats que apareixen a continuació són de <strong>potència, calor, motors, treball, electricitat i estàtica</strong>: els mateixos tipus de magnituds que treballem a classe. Sempre s'arrodoneix al final del càlcul.</p>
       <div class="sig-grid">
         <div class="sig-card">
           <h3>⚡ Exemple de potència i energia</h3>
@@ -154,6 +175,42 @@
           <span class="sig-example">η = 1820 / 2350 = 0,774468...<br>η ≈ 0,7745 = 77,45 %</span>
           <p>El resultat pot ser una proporció o un percentatge. En tots dos casos hi ha <strong>quatre xifres significatives</strong>.</p>
         </div>
+        <div class="sig-card">
+          <h3>🌡️ Calor sensible</h3>
+          <p>Escalfem 0,850 kg d'aigua, amb c = 4.180 J/(kg·K), i ΔT = 12,75 K. Amb <strong>Q = m · c · ΔT</strong>:</p>
+          <span class="sig-example">Q = 0,850 · 4180 · 12,75 = 45300,75 J<br>Q ≈ 4,530 · 10<sup>4</sup> J</span>
+          <p>En notació científica, el zero final <strong>també compta</strong>.</p>
+        </div>
+        <div class="sig-card">
+          <h3>🧊 Calor latent</h3>
+          <p>Es fonen 0,325 kg de gel i L = 334.000 J/kg. Amb <strong>Q = m · L</strong>:</p>
+          <span class="sig-example">Q = 0,325 · 334000 = 108550 J<br>Q ≈ 1,086 · 10<sup>5</sup> J</span>
+          <p>La cinquena xifra és 5: arrodonim el 5 de les primeres quatre xifres a 6.</p>
+        </div>
+        <div class="sig-card">
+          <h3>💡 Potència elèctrica</h3>
+          <p>Un receptor treballa a 230 V i consumeix 3,476 A. Amb <strong>P = U · I</strong>:</p>
+          <span class="sig-example">P = 230 · 3,476 = 799,48 W<br>P ≈ 799,5 W</span>
+          <p>En <strong>799,5</strong> hi ha exactament quatre xifres significatives.</p>
+        </div>
+        <div class="sig-card">
+          <h3>🔧 Moment d'una força</h3>
+          <p>Una força perpendicular de 125,67 N actua a 0,3564 m de l'eix. Amb <strong>M = F · d</strong>:</p>
+          <span class="sig-example">M = 125,67 · 0,3564 = 44,788788 N·m<br>M ≈ 44,79 N·m</span>
+          <p>Comptem 4, 4, 7 i 8; la cinquena xifra és 8 i hem de pujar.</p>
+        </div>
+        <div class="sig-card">
+          <h3>🏗️ Treball mecànic</h3>
+          <p>Una força de 345,67 N actua en la direcció d'un desplaçament de 12,58 m. Amb <strong>W = F · s</strong>:</p>
+          <span class="sig-example">W = 345,67 · 12,58 = 4348,5286 J<br>W ≈ 4,349 · 10<sup>3</sup> J</span>
+          <p>Com que la cinquena xifra és 5, el resultat de 4,348 passa a <strong>4,349</strong>.</p>
+        </div>
+        <div class="sig-card">
+          <h3>🔋 Energia elèctrica consumida</h3>
+          <p>Un aparell de 750,35 W funciona durant 372,8 s. Amb <strong>E = P · t</strong>:</p>
+          <span class="sig-example">E = 750,35 · 372,8 = 279730,48 J<br>E ≈ 2,797 · 10<sup>5</sup> J</span>
+          <p>La cinquena xifra és 3, així que <strong>no pugem</strong> la quarta.</p>
+        </div>
       </div>
       <div class="sig-note"><strong>💡 Un detall important</strong><p>Les xifres significatives descriuen la precisió de les dades. En les mesures experimentals no hem d'inventar precisió; aquí practiquem com <strong>presentar els resultats numèrics dels problemes PAU</strong> amb el format recomanat.</p></div>
     </section>
@@ -166,8 +223,9 @@
       <p class="sig-muted">Si el vídeo no es carrega a l'aula, fes servir el botó per veure'l directament a YouTube.</p>
     </section>
     <section class="sig-section" id="practica">
-      <h2>6. Ara et toca a tu!</h2>
-      <p>Converteix cada nombre a <strong>quatre xifres significatives</strong> sense mirar la resposta. Clica cada targeta per comprovar-la.</p>
+      <h2>6. Ara et toca a tu! · 30 exercicis</h2>
+      <p>Comença pels senzills i avança fins als càlculs típics de Tecnologia i Enginyeria. <strong>Fes el càlcul, arrodoneix a quatre xifres significatives i després obre la resposta</strong>. Pots repetir-los tantes vegades com vulguis.</p>
+      <h3>🟢 Nivell 1 · Agafar confiança</h3>
       <div class="sig-quiz">
         <details><summary>1. 12,3456 → ?</summary><p><strong>12,35</strong>. La cinquena xifra és 5, així que el 4 puja a 5.</p></details>
         <details><summary>2. 0,00093746 → ?</summary><p><strong>0,0009375</strong>. Les quatre xifres són 9, 3, 7 i 4; la cinquena és 6.</p></details>
@@ -175,6 +233,38 @@
         <details><summary>4. 82,9964 → ?</summary><p><strong>83,00</strong>. La cinquena xifra és 6; en arrodonir, 82,99 passa a 83,00. Els zeros finals indiquen les quatre xifres.</p></details>
         <details><summary>5. 0,004700 → quantes xifres té?</summary><p><strong>4 xifres significatives</strong>: 4, 7, 0 i 0. Els zeros inicials no compten, els finals decimals sí.</p></details>
         <details><summary>6. 234567 → 4 xifres?</summary><p><strong>2,346 · 10<sup>5</sup></strong>. Les quatre primeres xifres són 2, 3, 4 i 5; la cinquena és 6.</p></details>
+        <details><summary>7. 24,687 → ?</summary><p><strong>24,69</strong>. Les quatre primeres són 2, 4, 6, 8; la cinquena és 7.</p></details>
+        <details><summary>8. 5,1328 → ?</summary><p><strong>5,133</strong>. La cinquena xifra és 8; pugem el 2 a 3.</p></details>
+        <details><summary>9. 0,53291 → ?</summary><p><strong>0,5329</strong>. La cinquena xifra és 1; el 9 es queda igual.</p></details>
+        <details><summary>10. 567,891 → ?</summary><p><strong>567,9</strong>. Les quatre primeres són 5, 6, 7, 8; la cinquena és 9.</p></details>
+        <details><summary>11. −19,287 → ?</summary><p><strong>−19,29</strong>. El signe menys no és una xifra. La cinquena és 7.</p></details>
+        <details><summary>12. 1,23456 → ?</summary><p><strong>1,235</strong>. La cinquena xifra és 5; pugem el 4 a 5.</p></details>
+        <details><summary>13. 70,395 → ?</summary><p><strong>70,40</strong>. La cinquena és 5. En pujar el 9, es produeix una reagrupació; el zero final compta.</p></details>
+        <details><summary>14. 1234,06 → ?</summary><p><strong>1234</strong>. Les quatre primeres xifres són 1, 2, 3 i 4; la cinquena és 0.</p></details>
+      </div>
+      <h3>🟠 Nivell 2 · Els zeros que ens fan dubtar</h3>
+      <p>Recorda: els zeros que hi ha <strong>abans de la primera xifra diferent de zero</strong> no compten. Els zeros interiors sí, i els zeros decimals finals ens poden indicar la precisió.</p>
+      <div class="sig-quiz">
+        <details><summary>15. 0,000678943 → ?</summary><p><strong>0,0006789</strong>. La primera xifra és el 6; la cinquena xifra és 4 i no pugem.</p></details>
+        <details><summary>16. 0,000678963 → ?</summary><p><strong>0,0006790</strong>. Com que la cinquena és 6, el 9 de la quarta posició fa que pugem la tercera; el zero final és significatiu.</p></details>
+        <details><summary>17. 6,00079 → ?</summary><p><strong>6,001</strong>. Els tres zeros després del 6 compten; la cinquena és 7.</p></details>
+        <details><summary>18. 8,00049 → ?</summary><p><strong>8,000</strong>. La cinquena xifra és 4; els tres zeros decimals es mantenen.</p></details>
+        <details><summary>19. 0,010050 → ?</summary><p><strong>0,01005</strong>. Les quatre xifres són 1, 0, 0 i 5. La cinquena és 0; no cal canviar res.</p></details>
+        <details><summary>20. 0,0099999 → ?</summary><p><strong>0,01000</strong>. En arrodonir, es produeix un canvi de valor; escrivim tres zeros finals per indicar les quatre xifres.</p></details>
+        <details><summary>21. 999,96 → ?</summary><p><strong>1,000 · 10<sup>3</sup></strong>. El resultat és mil, però la notació científica explicita les quatre xifres significatives.</p></details>
+        <details><summary>22. 20100,54 → ?</summary><p><strong>2,010 · 10<sup>4</sup></strong>. Les quatre primeres xifres són 2, 0, 1 i 0; la cinquena és 0.</p></details>
+      </div>
+      <h3>🔵 Nivell 3 · Exercicis com els de Tecnologia i Enginyeria</h3>
+      <p>Aquí has de trobar primer el resultat de la fórmula. Les respostes inclouen el valor <strong>abans</strong> d'arrodonir, el valor final amb <strong>quatre xifres significatives</strong> i les <strong>unitats</strong>.</p>
+      <div class="sig-quiz">
+        <details><summary>23. Moment: F = 125,67 N i d = 0,3564 m. M = F · d → ?</summary><p>125,67 · 0,3564 = 44,788788 N·m.<br><strong>M ≈ 44,79 N·m</strong>. La cinquena xifra és 8.</p></details>
+        <details><summary>24. Energia: P = 750,35 W i t = 372,8 s. E = P · t → ?</summary><p>750,35 · 372,8 = 279730,48 J.<br><strong>E ≈ 2,797 · 10<sup>5</sup> J</strong>. La cinquena xifra és 3.</p></details>
+        <details><summary>25. Calor latent: m = 0,325 kg i L = 334000 J/kg. Q = m · L → ?</summary><p>0,325 · 334000 = 108550 J.<br><strong>Q ≈ 1,086 · 10<sup>5</sup> J</strong>. La cinquena xifra és 5.</p></details>
+        <details><summary>26. Electricitat: U = 230 V i I = 3,476 A. P = U · I → ?</summary><p>230 · 3,476 = 799,48 W.<br><strong>P ≈ 799,5 W</strong>. La cinquena xifra és 8.</p></details>
+        <details><summary>27. Calor sensible: m = 0,850 kg, c = 4180 J/(kg·K) i ΔT = 12,75 K. Q = m · c · ΔT → ?</summary><p>0,850 · 4180 · 12,75 = 45300,75 J.<br><strong>Q ≈ 4,530 · 10<sup>4</sup> J</strong>. El zero final de 4,530 és significatiu.</p></details>
+        <details><summary>28. Energia potencial: m = 12,35 kg, g = 9,81 m/s² i h = 4,275 m. E = m · g · h → ?</summary><p>12,35 · 9,81 · 4,275 = 517,9312125 J.<br><strong>E ≈ 517,9 J</strong>. La cinquena xifra és 3.</p></details>
+        <details><summary>29. Treball: F = 345,67 N i s = 12,58 m. W = F · s → ?</summary><p>345,67 · 12,58 = 4348,5286 J.<br><strong>W ≈ 4,349 · 10<sup>3</sup> J</strong>. La cinquena xifra és 5.</p></details>
+        <details><summary>30. Rendiment: P<sub>útil</sub> = 1820 W i P<sub>entrada</sub> = 2350 W. η = P<sub>útil</sub> / P<sub>entrada</sub> → ?</summary><p>1820 / 2350 = 0,774468...<br><strong>η ≈ 0,7745 = 77,45 %</strong>. Tots dos resultats tenen quatre xifres significatives.</p></details>
       </div>
       <div class="sig-note"><strong>✅ Abans de lliurar un exercici de PAU</strong>
         <ul>
