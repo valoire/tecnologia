@@ -133,6 +133,12 @@
 .ud2-topic-redesign .ud2-lab-choice.is-chosen{
  border-color:#9c5db9;background:#f5eaff;
 }
+.ud2-topic-redesign .ud2-lab-choice.is-wrong-option{
+ border-color:#d8706c;background:#fff0ed;color:#8a3e38;
+}
+.ud2-topic-redesign .ud2-lab-choice.is-correct-option{
+ border-color:#258654;background:#e4f7ea;color:#21623d;
+}
 .ud2-topic-redesign .ud2-lab-case.is-solved .ud2-lab-choice.is-chosen{
  border-color:#258654;background:#e4f7ea;
 }
@@ -178,6 +184,12 @@
  border-left-color:#2f8a54;
  background:#eaf8ef;
  color:#24593c!important;
+}
+.ud2-topic-redesign .ud2-lab-feedback.is-wrong{
+ border-color:#e7b6ae;
+ border-left-color:#c95047;
+ background:#fff1ed;
+ color:#8b3c36!important;
 }
 .ud2-topic-redesign .ud2-lab-celebration{
  margin:0 20px 19px!important;
