@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#215c90">
+  <meta name="description" content="Aprèn a comptar i arrodonir a quatre xifres significatives per a les PAU de Tecnologia i Enginyeria. Teoria, exemples, vídeo i pràctica.">
+  <title>Cifres significatives · Batxillerat · Tecnologia</title>
+  <link rel="stylesheet" href="estils.css?v=espurnes-20261028b">
+  <style>
+    :root{--brand:#256a99;--brand-dark:#184c75;--ink:#234059;--muted:#526c81;--line:#d1e4f1;--pale:#eaf5fd;--paper:#fff}
+    html{scroll-padding-top:92px}
+    body{background:linear-gradient(120deg,#f0f7fc 0%,#fff 52%,#eaf4fc 100%);color:var(--ink)}
+    .top .brand{color:#205f90}
+    .top nav a[aria-current="page"]{background:#dceefa;color:#174e7b}
+    .sig-hero{padding:50px 0 48px;background:linear-gradient(115deg,#e5f4ff,#f6fbff 56%,#d6eafb);border-bottom:4px solid #b9d9ee}
+    .sig-kicker{font-size:.82rem;letter-spacing:.12em;font-weight:900;text-transform:uppercase;color:#407aa7}
+    .sig-hero h1{color:#215c90;font-size:clamp(2.5rem,6vw,4.25rem);margin:13px 0 13px;line-height:1.1}
+    .sig-hero p{max-width:775px;font-size:1.12rem;color:#3e5b76;margin:0}
+    .sig-badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:23px}
+    .sig-badges span{background:#ffffffbd;border:1px solid #c9dfef;border-radius:99px;padding:8px 13px;color:#285c84;font-weight:780;font-size:.91rem}
+    .sig-main{padding:31px 0 65px}
+    .sig-nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:19px 0 26px}
+    .sig-nav a{display:block;padding:16px 18px;background:white;border:1.5px solid #cbdfee;border-top:6px solid #4c90bd;border-radius:16px;text-decoration:none;font-weight:800;color:#286891;box-shadow:0 5px 16px #2559830c}
+    .sig-nav a:hover{background:#f0f8ff}
+    .sig-section{background:#fff;border:1.5px solid #cfe3f0;border-top:7px solid #397fae;border-radius:23px;padding:27px clamp(17px,4vw,37px);margin:23px 0;box-shadow:0 8px 25px #2f719012}
+    .sig-section h2{font-size:clamp(1.55rem,4vw,2rem);color:#215c90;margin:0 0 13px}
+    .sig-section h3{color:#276a98;font-size:1.15rem;margin:0 0 9px}
+    .sig-section p{color:#415d74;line-height:1.68;margin:8px 0 14px}
+    .sig-section ol,.sig-section ul{padding-left:23px;color:#415d74}
+    .sig-section li{margin:8px 0}
+    .sig-section li::marker{color:#2f7eb2;font-weight:900}
+    .sig-note{background:#e9f5fd;border:1.5px solid #acd3ec;border-left:6px solid #2c82b9;border-radius:16px;padding:18px 20px;margin:17px 0}
+    .sig-note p{margin:4px 0;color:#285673}
+    .sig-note strong{color:#1b587e}
+    .sig-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px;margin:18px 0}
+    .sig-card{background:linear-gradient(140deg,#fffdfb,#eef7ff);border:1.5px solid #cbdff0;border-radius:21px;padding:21px 22px}
+    .sig-card p:last-child{margin-bottom:0}
+    .sig-card small{color:#577b98;font-size:.84rem}
+    .sig-number{display:inline-grid;place-items:center;background:#d9ecf9;color:#215c90;width:33px;height:33px;border-radius:10px;font-weight:900;margin-right:6px}
+    .sig-example{display:block;margin:14px 0;padding:14px 17px;background:linear-gradient(115deg,#e5f2fc,#f1f7ff);border-left:6px solid #2680b8;border-radius:13px;color:#205b88;font-weight:900;font-size:1.19rem;overflow-wrap:anywhere}
+    .sig-example small{display:block;margin-top:5px;font-size:.82rem;font-weight:600}
+    .sig-table-wrap{overflow:auto;border:1px solid #cbdfee;border-radius:15px;margin:17px 0}
+    .sig-table{border-collapse:collapse;width:100%;background:#fff;font-size:.95rem}
+    .sig-table th,.sig-table td{text-align:left;padding:12px 15px;border-bottom:1px solid #e1ebf3;vertical-align:top}
+    .sig-table th{background:#e5f2fc;color:#245d86}
+    .sig-table tr:last-child td{border-bottom:0}
+    .sig-table td:first-child,.sig-table td:nth-child(2){font-variant-numeric:tabular-nums;font-weight:740}
+    .sig-action{display:inline-flex;align-items:center;justify-content:center;gap:7px;text-decoration:none;background:#246d9f;color:#fff!important;padding:11px 18px;border-radius:99px;font-weight:820;margin:10px 10px 3px 0}
+    .sig-action:hover{background:#164d79}
+    .sig-action.alt{background:#e5f2fc;color:#225c87!important;border:1px solid #cbdfee}
+    .sig-video{position:relative;aspect-ratio:16/9;overflow:hidden;border-radius:17px;border:1.5px solid #cbdfee;background:#d9ebf8;margin:18px 0 5px}
+    .sig-video iframe{display:block;width:100%;height:100%;border:0}
+    .sig-quiz{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin:18px 0}
+    .sig-quiz details{background:linear-gradient(140deg,#fff,#f1f8fe);border:1.5px solid #cfe1ee;border-radius:16px;padding:15px 18px}
+    .sig-quiz summary{cursor:pointer;color:#235d8c;font-weight:840}
+    .sig-quiz summary::marker{color:#3885b5}
+    .sig-quiz p{margin:12px 0 0;font-size:.95rem}
+    .sig-muted{color:#5f788b!important;font-size:.92rem}
+    .sig-back{display:inline-block;margin-top:20px;font-weight:800}
+    @media(max-width:670px){.sig-nav,.sig-grid,.sig-quiz{grid-template-columns:1fr}.sig-hero{padding:33px 0 37px}.sig-section{padding:22px 17px}.sig-table{font-size:.87rem}.sig-table th,.sig-table td{padding:10px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+  <header class="top"><div class="wrap bar"><a class="brand" href="index.html">TECNOLOGIA</a><nav aria-label="Navegació principal"><a href="curs.html?grup=optativa">4t Optativa</a><a href="curs.html?grup=e">4t E</a><a href="batxillerat.html" aria-current="page">Batxillerat</a></nav></div></header>
+  <div class="sig-hero"><div class="wrap">
+    <div class="sig-kicker">Tecnologia i Enginyeria · 2n de Batxillerat · Preparació PAU</div>
+    <h1>🔢 Cifres significatives</h1>
+    <p>Aprèn a donar els resultats numèrics amb la precisió adequada: comptar xifres, arrodonir a quatre xifres significatives i escriure les unitats correctes.</p>
+    <div class="sig-badges"><span>🎯 Objectiu: 4 xifres</span><span>🧮 Exemples pas a pas</span><span>▶️ Vídeo explicatiu</span><span>✍️ Pràctica ràpida</span></div>
+  </div></div>
+  <main class="main wrap sig-main">
+    <div class="crumb"><a href="index.html">Inici</a><span>/</span><a href="batxillerat.html">Batxillerat</a><span>/</span><span>Cifres significatives</span></div>
+    <div class="sig-note">
+      <strong>🎓 Què diuen els criteris de les PAU?</strong>
+      <p>A Tecnologia i Enginyeria, els criteris oficials <strong>recomanen donar els resultats amb quatre xifres significatives</strong>. Per obtenir la màxima puntuació també cal arribar al resultat correcte amb les <strong>unitats del Sistema Internacional (SI)</strong> i mostrar d'on surt el resultat.</p>
+      <a href="https://universitats.gencat.cat/ca/pau/materies-pau/tecnologia-enginyeria/" target="_blank" rel="noopener noreferrer">Consultar els criteris oficials de Tecnologia i Enginyeria ↗</a>
+    </div>
+    <nav class="sig-nav" aria-label="Índex de la lliçó">
+      <a href="#que-son">01 · Què són?</a>
+      <a href="#zeros">02 · Com comptem els zeros?</a>
+      <a href="#arrodonir">03 · Arrodonir a quatre xifres</a>
+      <a href="#exemples">04 · Exemples de les PAU</a>
+      <a href="#video">05 · Mira el vídeo</a>
+      <a href="#practica">06 · Practica tu</a>
+    </nav>
+    <section class="sig-section" id="que-son">
+      <h2>1. Què són les xifres significatives?</h2>
+      <p>Les <strong>xifres significatives</strong> són les xifres d'un nombre que ens aporten informació sobre el seu valor i la precisió amb què l'expressem. Comencem a comptar per la <strong>primera xifra diferent de zero</strong>, de l'esquerra cap a la dreta.</p>
+      <div class="sig-grid">
+        <div class="sig-card">
+          <h3>🔍 Xifres significatives</h3>
+          <p>En <strong>0,01234</strong>, les xifres significatives són l'<strong>1, 2, 3 i 4</strong>. Els zeros inicials només situen la coma.</p>
+          <span class="sig-example">0,0<strong>1234</strong> → 4 xifres</span>
+        </div>
+        <div class="sig-card">
+          <h3>↔️ No són el mateix que els decimals</h3>
+          <p>En <strong>12,345</strong> hi ha <strong>3 decimals</strong> (345), però <strong>5 xifres significatives</strong> (12345). No comptem les mateixes coses!</p>
+          <span class="sig-example">12,345 → 3 decimals / 5 xifres significatives</span>
+        </div>
+      </div>
+      <p><strong>Per què importa?</strong> Una calculadora pot donar 10 decimals, però a les PAU hem de presentar una resposta llegible i precisa, no copiar totes les xifres de la pantalla.</p>
+    </section>
+    <section class="sig-section" id="zeros">
+      <h2>2. Els zeros: quan compten?</h2>
+      <div class="sig-grid">
+        <div class="sig-card"><h3>① Zeros inicials</h3><p><strong>No compten</strong> si estan abans de la primera xifra diferent de zero.</p><span class="sig-example">0,00<strong>37</strong> → 2 xifres</span></div>
+        <div class="sig-card"><h3>② Zeros entre xifres</h3><p><strong>Sí que compten</strong> si estan entre xifres diferents de zero.</p><span class="sig-example"><strong>20,04</strong> → 4 xifres</span></div>
+        <div class="sig-card"><h3>③ Zeros decimals finals</h3><p><strong>Sí que compten</strong> quan es mostren després de la coma decimal i d'una xifra significativa.</p><span class="sig-example">3,400 → 4 xifres</span></div>
+        <div class="sig-card"><h3>④ Zeros finals en nombres enters</h3><p>Poden ser <strong>ambigus</strong>. Per indicar clarament la precisió, utilitza la notació científica.</p><span class="sig-example">1,500 · 10<sup>3</sup> → 4 xifres<small>Evita l'ambigüitat de posar simplement «1500».</small></span></div>
+      </div>
+    </section>
+    <section class="sig-section" id="arrodonir">
+      <h2>3. Com arrodonim a quatre xifres significatives?</h2>
+      <div class="sig-grid">
+        <div class="sig-card"><h3><span class="sig-number">1</span> Troba la primera</h3><p>Localitza la <strong>primera xifra diferent de zero</strong>. A partir d'aquí comença el recompte.</p></div>
+        <div class="sig-card"><h3><span class="sig-number">2</span> Conserva'n quatre</h3><p>Compta <strong>quatre xifres significatives</strong>. Pots travessar la coma: no t'aturis als decimals.</p></div>
+        <div class="sig-card"><h3><span class="sig-number">3</span> Mira la cinquena</h3><p>Si és de <strong>0 a 4</strong>, la quarta es manté. Si és de <strong>5 a 9</strong>, augmenta la quarta en una unitat.</p></div>
+        <div class="sig-card"><h3><span class="sig-number">4</span> Escriu les unitats</h3><p>Acaba el resultat amb la <strong>unitat corresponent</strong> (J, W, N·m, m/s...). Si queden zeros finals, la notació científica t'ajudarà.</p></div>
+      </div>
+      <div class="sig-note">
+        <strong>Exemple pas a pas</strong>
+        <p>Arrodonim <strong>35,6782</strong>: les quatre primeres xifres són <strong>3 · 5 · 6 · 7</strong>. La cinquena és <strong>8</strong>, per tant el 7 puja a 8.</p>
+        <span class="sig-example">35,6782 → 35,68 <small>4 xifres significatives: 3, 5, 6 i 8.</small></span>
+      </div>
+    </section>
+    <section class="sig-section" id="exemples">
+      <h2>4. Exemples: de la calculadora a les PAU</h2>
+      <p>A la columna del mig tens el resultat amb <strong>quatre xifres significatives</strong>. Fixa't que <strong>no sempre són quatre decimals</strong>.</p>
+      <div class="sig-table-wrap"><table class="sig-table">
+        <thead><tr><th>La calculadora mostra...</th><th>Resultat amb 4 xifres</th><th>Què passa?</th></tr></thead>
+        <tbody>
+          <tr><td>8,13427</td><td>8,134</td><td>La cinquena xifra és 2; no pugem.</td></tr>
+          <tr><td>35,678</td><td>35,68</td><td>La cinquena xifra és 8; pugem.</td></tr>
+          <tr><td>0,0047859</td><td>0,004786</td><td>Els zeros inicials no compten.</td></tr>
+          <tr><td>0,098765</td><td>0,09877</td><td>Quatre xifres des del primer 9.</td></tr>
+          <tr><td>120,048</td><td>120,0</td><td>El zero final després de la coma compta.</td></tr>
+          <tr><td>3,00047</td><td>3,000</td><td>Els tres zeros decimals són significatius.</td></tr>
+          <tr><td>98765</td><td>9,877 · 10<sup>4</sup></td><td>La notació científica deixa clares les 4 xifres.</td></tr>
+          <tr><td>1499,96</td><td>1,500 · 10<sup>3</sup></td><td>En arrodonir, hi ha un canvi de desena.</td></tr>
+        </tbody>
+      </table></div>
+      <div class="sig-grid">
+        <div class="sig-card">
+          <h3>⚡ Exemple de potència i energia</h3>
+          <p>Un receptor de 2.350 W funciona durant 172,5 s. Amb <strong>E = P · t</strong>:</p>
+          <span class="sig-example">E = 2350 · 172,5 = 405375 J<br>E ≈ 4,054 · 10<sup>5</sup> J</span>
+          <p><strong>Compte:</strong> conserva les xifres de la calculadora durant les operacions i arrodoneix <strong>al final</strong>.</p>
+        </div>
+        <div class="sig-card">
+          <h3>⚙️ Exemple de rendiment</h3>
+          <p>Una màquina rep 2.350 W i n'aprofita 1.820 W. Amb <strong>η = P<sub>útil</sub> / P<sub>entrada</sub></strong>:</p>
+          <span class="sig-example">η = 1820 / 2350 = 0,774468...<br>η ≈ 0,7745 = 77,45 %</span>
+          <p>El resultat pot ser una proporció o un percentatge. En tots dos casos hi ha <strong>quatre xifres significatives</strong>.</p>
+        </div>
+      </div>
+      <div class="sig-note"><strong>💡 Un detall important</strong><p>Les xifres significatives descriuen la precisió de les dades. En les mesures experimentals no hem d'inventar precisió; aquí practiquem com <strong>presentar els resultats numèrics dels problemes PAU</strong> amb el format recomanat.</p></div>
+    </section>
+    <section class="sig-section" id="video">
+      <h2>5. Mira-ho explicat en vídeo</h2>
+      <p>La <strong>Universitat Politècnica de València</strong> explica en català/valencià què són les xifres significatives, com comptar-les i com arrodonir els resultats. Mira'l i després prova els exercicis de sota.</p>
+      <div class="sig-video"><iframe src="https://www.youtube-nocookie.com/embed/v51TYjxM3SU" title="Xifres significatives — Universitat Politècnica de València" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+      <a class="sig-action" href="https://www.youtube.com/watch?v=v51TYjxM3SU" target="_blank" rel="noopener noreferrer">▶️ Obrir el vídeo de la UPV</a>
+      <a class="sig-action alt" href="https://www.youtube.com/watch?v=xWbxWFxU6b0" target="_blank" rel="noopener noreferrer">▶️ Alternativa en castellà: cifras significativas y redondeo</a>
+      <p class="sig-muted">Si el vídeo no es carrega a l'aula, fes servir el botó per veure'l directament a YouTube.</p>
+    </section>
+    <section class="sig-section" id="practica">
+      <h2>6. Ara et toca a tu!</h2>
+      <p>Converteix cada nombre a <strong>quatre xifres significatives</strong> sense mirar la resposta. Clica cada targeta per comprovar-la.</p>
+      <div class="sig-quiz">
+        <details><summary>1. 12,3456 → ?</summary><p><strong>12,35</strong>. La cinquena xifra és 5, així que el 4 puja a 5.</p></details>
+        <details><summary>2. 0,00093746 → ?</summary><p><strong>0,0009375</strong>. Les quatre xifres són 9, 3, 7 i 4; la cinquena és 6.</p></details>
+        <details><summary>3. 7,00482 → ?</summary><p><strong>7,005</strong>. Els zeros entre el 7 i el 4 també compten; la cinquena és 8.</p></details>
+        <details><summary>4. 82,9964 → ?</summary><p><strong>83,00</strong>. La cinquena xifra és 6; en arrodonir, 82,99 passa a 83,00. Els zeros finals indiquen les quatre xifres.</p></details>
+        <details><summary>5. 0,004700 → quantes xifres té?</summary><p><strong>4 xifres significatives</strong>: 4, 7, 0 i 0. Els zeros inicials no compten, els finals decimals sí.</p></details>
+        <details><summary>6. 234567 → 4 xifres?</summary><p><strong>2,346 · 10<sup>5</sup></strong>. Les quatre primeres xifres són 2, 3, 4 i 5; la cinquena és 6.</p></details>
+      </div>
+      <div class="sig-note"><strong>✅ Abans de lliurar un exercici de PAU</strong>
+        <ul>
+          <li>He escrit la fórmula i el procediment?</li>
+          <li>He fet les conversions necessàries al SI?</li>
+          <li>He arrodonit només el resultat final a quatre xifres significatives?</li>
+          <li>He escrit les unitats al costat del nombre?</li>
+        </ul>
+      </div>
+      <a class="sig-action" href="energies.html">⚡ Tornar als exercicis d'Energies</a>
+      <a class="sig-action alt" href="batxillerat.html">📚 Tornar als temes de Batxillerat</a>
+    </section>
+    <a class="sig-back" href="batxillerat.html">← Tornar a Batxillerat</a>
+  </main>
+  <footer class="footer"><div class="wrap"><span>Tecnologia</span><span><a href="batxillerat.html">Més temes de Batxillerat</a></span></div></footer>
+</body>
+</html>
