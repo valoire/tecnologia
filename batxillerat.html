@@ -15,6 +15,20 @@
     .pau-reunio .pau-pdf:hover{background:#174b72}
     .pau-reunio .pau-warning{background:#e8f4fc;border-left:4px solid #257db2;padding:12px 16px;border-radius:8px;margin:16px 0}
     .pau-reunio li{margin:7px 0}
+    .pau-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:22px 0}
+    .pau-kpi{background:#e6f3fc;border:1px solid #c4dfef;border-radius:16px;padding:17px 12px;text-align:center}
+    .pau-kpi strong{display:block;color:#16577e;font-size:1.75rem;line-height:1.15}
+    .pau-kpi span{display:block;color:#37657e;font-size:.87rem;margin-top:6px;font-weight:650}
+    .pau-reunio h3{color:#195d84;margin-top:25px}
+    .pau-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:16px 0}
+    .pau-mini{border:1.5px solid #cce2f1;background:#fff;border-radius:14px;padding:17px 18px}
+    .pau-mini h4{color:#1b648e;font-size:1.05rem;margin:0 0 8px}
+    .pau-mini p{margin:0;font-size:.95rem}
+    .pau-pdf-view{border:1.5px solid #bad8ea;background:#edf7fe;border-radius:14px;margin:18px 0;padding:13px 16px}
+    .pau-pdf-view summary{font-weight:800;color:#205f88;cursor:pointer}
+    .pau-pdf-view iframe{display:block;width:100%;height:570px;max-height:78vh;background:white;border:1px solid #cbdfee;border-radius:9px;margin-top:15px}
+    .pau-reunio .pau-pdf-note{font-size:.92rem;color:#57768d}
+    @media(max-width:720px){.pau-kpis,.pau-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.pau-kpi strong{font-size:1.45rem}.pau-reunio{padding:18px}.pau-pdf-view iframe{height:390px}}
   </style>
 </head>
 <body>
@@ -26,17 +40,47 @@
     <section role="tabpanel" id="panel-pau" aria-labelledby="tab-pau" hidden><div class="box" style="padding:24px"><h2>Preparació PAU</h2><p>Practica amb exercicis i exàmens de Tecnologia Industrial. Primer prova de resoldre'ls i després compara el procediment amb la solució.</p><a class="button" href="https://examenselectivitat.cat/selectivitat/Tecnologia%20industrial" target="_blank" rel="noopener noreferrer">Obrir exàmens i exercicis ↗</a><p style="margin:17px 0 0"><strong>Recorda:</strong> als criteris de Tecnologia i Enginyeria es recomana presentar els resultats amb quatre xifres significatives.</p><a class="sig-pau-link" href="cifres-significatives.html">🔢 Aprèn les 4 xifres significatives →</a></div></section>
     <section role="tabpanel" id="panel-reunio" aria-labelledby="tab-reunio" hidden>
       <div class="box pau-reunio">
-        <h2>📑 Reunió de coordinació · Tecnologia i Enginyeria</h2>
-        <p><strong>Diapositives oficials de la UPC:</strong> presentació per als centres de batxillerat sobre les <strong>PAU 2026</strong>, de la reunió del <strong>22 d'octubre de 2025</strong>.</p>
-        <a class="pau-pdf" href="https://em.upc.edu/ca/docencia/pau/pau26_teceng.pdf" target="_blank" rel="noopener noreferrer">📄 Obrir les diapositives de la reunió (PDF) ↗</a>
-        <h3>Què cal recordar per preparar l'examen?</h3>
+        <h2>📑 Reunió PAU 2027 · Tecnologia i Enginyeria</h2>
+        <p>Resum per a l'alumnat de la <strong>presentació oficial del 14 d'octubre de 2026</strong>. A sota hi trobaràs el <strong>PDF original de 29 diapositives</strong> per llegir-lo o descarregar-lo.</p>
+        <div class="pau-kpis" aria-label="Dades bàsiques de l'examen">
+          <div class="pau-kpi"><strong>4</strong><span>exercicis obligatoris</span></div>
+          <div class="pau-kpi"><strong>2,5</strong><span>punts per exercici</span></div>
+          <div class="pau-kpi"><strong>5 de 8</strong><span>preguntes tipus test</span></div>
+          <div class="pau-kpi"><strong>4</strong><span>xifres significatives recomanades</span></div>
+        </div>
+        <h3>🧩 1. Com serà l'examen?</h3>
         <ul>
-          <li><strong>Quatre exercicis obligatoris:</strong> consulta l'estructura i els exemples als criteris oficials.</li>
-          <li><strong>Quatre xifres significatives:</strong> es recomana emprar-les en els resultats numèrics.</li>
-          <li><strong>Unitats del SI:</strong> escriure-les correctament és essencial; un resultat sense unitats no puntua en l'apartat corresponent.</li>
-          <li><strong>Justificació:</strong> cal mostrar els càlculs, les fórmules i els raonaments.</li>
+          <li><strong>Model únic:</strong> els quatre exercicis són obligatoris, sense opcionalitat entre exercicis.</li>
+          <li><strong>Test:</strong> hi ha 8 preguntes, però se'n corregeixen com a màxim 5. Si en contestes més de cinc, només compten les cinc primeres. Cada encert val <strong>+0,50 punts</strong>, cada error resta <strong>0,16</strong> i deixar-ne una en blanc no penalitza. L'exercici no pot tenir nota negativa.</li>
+          <li><strong>Altres tres exercicis:</strong> problemes de càlcul, representació, deducció o interpretació, amb apartats que valen entre 0,5 i 1,5 punts.</li>
+          <li><strong>Enfocament competencial:</strong> situacions tècniques pràctiques i casos relacionats amb l'entorn industrial. Els models de 2025 i 2026 serveixen per practicar l'estructura de 2027.</li>
         </ul>
-        <div class="pau-warning"><strong>Atenció al curs 2026–2027:</strong> aquestes diapositives són de la reunió de les PAU 2026. Encara no hem pogut confirmar una presentació pública més nova per a les PAU 2027. Consulta sempre els criteris vigents.</div>
+        <h3>📚 2. Quins blocs entren?</h3>
+        <div class="pau-grid">
+          <div class="pau-mini"><h4>🧱 Materials i fabricació · 10 %</h4><p>Propietats, assaigs, processos de fabricació, selecció de materials i sostenibilitat.</p></div>
+          <div class="pau-mini"><h4>⚙️ Sistemes mecànics · 40 %</h4><p>Estàtica, dinàmica, màquines tèrmiques, termodinàmica, pneumàtica, hidràulica i cabals.</p></div>
+          <div class="pau-mini"><h4>⚡ Electromecànica i automatització · 40 %</h4><p>Energia, treball, potència, rendiment, circuits, màquines, control automàtic i funcions lògiques.</p></div>
+          <div class="pau-mini"><h4>🌍 Projectes de desenvolupament · 10 %</h4><p>Producció i logística, qualitat, metrologia, impacte ambiental i cicle de vida, integrats en altres problemes.</p></div>
+        </div>
+        <p><strong>Detall dels circuits:</strong> s'hi inclouen fonts de tensió i components passius. La presentació indica que no es plantejaran fonts de corrent ni acoblaments o transformadors.</p>
+        <h3>✅ 3. Què valoraran a la correcció?</h3>
+        <ul>
+          <li><strong>Justifica sempre d'on surt cada resultat:</strong> escriu les fórmules, substitueix les dades i explica el procediment.</li>
+          <li><strong>Unitats obligatòries:</strong> si presentes un resultat sense unitats, l'apartat rep <strong>0 punts</strong>. Utilitza les del Sistema Internacional.</li>
+          <li><strong>Quatre xifres significatives:</strong> la coordinació <strong>recomana</strong> aquest arrodoniment; no és una obligació formulada com a tal.</li>
+          <li><strong>Gràfics i esquemes:</strong> les escales i les unitats han de ser clares. Evita errors de concepte i d'unitats.</li>
+          <li><strong>Portes lògiques:</strong> fes servir la simbologia normativa; els esquemes de portes no normatius no puntuen en l'apartat.</li>
+        </ul>
+        <h3>🧮 4. Quina calculadora pots portar?</h3>
+        <p>Es permeten calculadores científiques que facin operacions aritmètiques i funcions habituals, inclosa la resolució d'equacions de segon grau. <strong>No es permeten</strong> calculadores gràfiques, programables, amb càlcul simbòlic, intel·ligència artificial, memòria de documents o capacitat de comunicació.</p>
+        <p>La presentació inclou llistes orientatives de models admesos i exclosos (diapositives 26–27). <strong>Abans de l'examen, comprova sempre les indicacions definitives de Canal Universitats.</strong></p>
+        <h3>📅 5. Quan es fa Tecnologia i Enginyeria?</h3>
+        <div class="pau-warning"><strong>Convocatòria ordinària:</strong> dimecres <strong>2 de juny de 2027, de 15.00 a 16.30 h</strong>. La presentació també indica una convocatòria de juliol del 6 al 8 de juliol. Consulta les dates definitives abans de la prova.</div>
+        <h3>📄 6. Presentació oficial completa · PAU 2027</h3>
+        <p>Vols veure què es va explicar exactament a la reunió? Aquí tens el document original de la Generalitat, amb <strong>29 diapositives</strong>.</p>
+        <a class="pau-pdf" href="https://www.gencat.cat/recercaiuniversitats/accesuniversitat/centres/materies/pau_2027_tecnologia_presentacio.pdf" target="_blank" rel="noopener noreferrer">📄 Obrir o descarregar el PDF oficial 2027 ↗</a>
+        <details class="pau-pdf-view"><summary>👀 Veure les diapositives aquí mateix</summary><iframe title="Presentació oficial PAU 2027 de Tecnologia i Enginyeria" loading="lazy" src="https://www.gencat.cat/recercaiuniversitats/accesuniversitat/centres/materies/pau_2027_tecnologia_presentacio.pdf#toolbar=1"></iframe><p class="pau-pdf-note">Si el visor no funciona al teu dispositiu, obre el document amb el botó superior.</p></details>
+        <a class="sig-pau-link" href="https://universitats.gencat.cat/ca/pau/models-examen-anys-anteriors/tecnologia-industrial/index.html" target="_blank" rel="noopener noreferrer">📝 Models oficials d'examen 2025 i 2026 ↗</a>
         <a class="sig-pau-link" href="https://universitats.gencat.cat/ca/pau/materies-pau/tecnologia-enginyeria/" target="_blank" rel="noopener noreferrer">🎓 Criteris oficials actualitzats ↗</a>
         <a class="sig-pau-link" href="cifres-significatives.html">🔢 Practicar les 4 xifres significatives →</a>
       </div>
