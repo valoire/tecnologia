@@ -650,6 +650,72 @@
  background:#e5f4ed;border:1px solid #adcfbf;color:#23664e
 }
 .ud2-topic-redesign .ud2-ods-passaport-copy-status{font-size:13px;color:#26634d}
+
+/* Memory breu dels ODS: parelles nom + descripció. */
+.ud2-topic-redesign .ud2-ods-memory{
+ margin:28px 0;padding:clamp(18px,3vw,30px);
+ border:2px solid #d9c4ed;border-top:7px solid #8d63cb;border-radius:20px;
+ background:linear-gradient(135deg,#f7f0ff,#fff 68%,#fff8ee);
+ box-shadow:0 9px 24px #8d63cb12;scroll-margin-top:100px
+}
+.ud2-topic-redesign .ud2-ods-memory-eyebrow{
+ display:block;color:#8153b6;letter-spacing:.08em;font-size:12px;font-weight:950
+}
+.ud2-topic-redesign .ud2-ods-memory-heading{
+ margin:7px 0 9px;color:#67349b;font-size:clamp(22px,3vw,30px);font-weight:950
+}
+.ud2-topic-redesign .ud2-ods-memory-intro{
+ color:#564568;line-height:1.65;margin:0 0 18px
+}
+.ud2-topic-redesign .ud2-ods-memory-info{
+ display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;
+ color:#60318e;margin:0 0 12px
+}
+.ud2-topic-redesign .ud2-ods-memory-round{
+ padding:7px 12px;border-radius:20px;background:#eadbfa;font-size:12px;font-weight:950
+}
+.ud2-topic-redesign .ud2-ods-memory-counter{font-size:13px;font-weight:850}
+.ud2-topic-redesign .ud2-ods-memory-grid{
+ display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px
+}
+.ud2-topic-redesign .ud2-ods-memory-card{
+ display:flex;align-items:center;justify-content:center;min-height:111px;
+ padding:12px 10px;border:2px solid #8054b9;border-radius:13px;
+ background:linear-gradient(145deg,#9069c9,#6135a1);color:white;
+ font:inherit;font-size:29px;font-weight:900;line-height:1.35;
+ text-align:center;cursor:pointer;box-shadow:0 4px 10px #52308e1c;
+ transition:background .15s,transform .15s,border-color .15s
+}
+.ud2-topic-redesign .ud2-ods-memory-card:hover:not(:disabled),
+.ud2-topic-redesign .ud2-ods-memory-card:focus-visible{
+ transform:translateY(-2px);outline-offset:3px;box-shadow:0 7px 13px #52308e20
+}
+.ud2-topic-redesign .ud2-ods-memory-card.is-open{
+ font-size:13px;letter-spacing:0;font-weight:800;overflow-wrap:anywhere
+}
+.ud2-topic-redesign .ud2-ods-memory-card.is-name{
+ background:#f2e8ff;border-color:#b58adf;color:#66339b
+}
+.ud2-topic-redesign .ud2-ods-memory-card.is-meaning{
+ background:#fff1dc;border-color:#e7ad5e;color:#814d17
+}
+.ud2-topic-redesign .ud2-ods-memory-card.is-matched{
+ background:#dff6e7;border-color:#53a878;color:#176039;opacity:1;cursor:default
+}
+.ud2-topic-redesign .ud2-ods-memory-feedback{
+ min-height:22px;margin:16px 0 0;color:#6e4b88;font-size:14px;font-weight:700;line-height:1.5
+}
+.ud2-topic-redesign .ud2-ods-memory-next{
+ margin-top:14px;padding:11px 17px;border:0;border-radius:11px;
+ background:#7c48b4;color:#fff;font:inherit;font-size:14px;font-weight:900;cursor:pointer
+}
+.ud2-topic-redesign .ud2-ods-memory-next:hover{background:#5e318e}
+.ud2-topic-redesign .ud2-ods-memory-next[hidden]{display:none}
+@media(max-width:680px){
+ .ud2-topic-redesign .ud2-ods-memory-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .ud2-topic-redesign .ud2-ods-memory-card{min-height:112px;padding:10px 8px}
+ .ud2-topic-redesign .ud2-ods-memory-card.is-open{font-size:12px}
+}
 @media(max-width:680px){
  .ud2-topic-redesign .ud2-ods-passaport-steps{grid-template-columns:1fr}
  .ud2-topic-redesign .ud2-ods-passaport-options{grid-template-columns:1fr}
