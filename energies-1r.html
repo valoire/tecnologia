@@ -65,6 +65,33 @@
     .anatomy h3{color:#235f8c;margin:0 0 10px;font-size:1.16rem}
     .anatomy ul{padding-left:20px;margin:0;color:#45647b;line-height:1.65}
     .anatomy li{margin:5px 0}
+    .motor-sim{margin:20px 0 23px;padding:21px;border:2px solid #a8d3e9;border-radius:20px;background:linear-gradient(120deg,#eef8ff,#fff 66%);color:#315c78}
+    .motor-sim h3{margin:0 0 7px;color:#185d8a;font-size:1.4rem}
+    .motor-sim>.sim-lead{margin:0 0 15px;line-height:1.56}
+    .sim-layout{display:grid;grid-template-columns:minmax(245px,.9fr) minmax(270px,1.1fr);gap:17px;align-items:stretch}
+    .sim-machine{background:#f5faff;border:1px solid #b9d9eb;border-radius:15px;padding:8px;min-width:0}
+    .sim-machine svg{display:block;width:100%;max-height:365px}
+    .sim-info{display:flex;flex-direction:column;gap:12px;justify-content:center}
+    .sim-phase{border-radius:15px;background:#fff;padding:17px;border:1.5px solid #cbdfea;min-height:165px}
+    .sim-phase .sim-kicker{display:inline-block;font-weight:900;color:#4484a8;letter-spacing:.04em;font-size:.81rem;text-transform:uppercase}
+    .sim-phase h4{font-size:1.4rem;margin:5px 0 8px;color:#195d88}
+    .sim-phase p{margin:0;line-height:1.6}
+    .sim-counters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+    .sim-counter{border-radius:11px;background:#dcedf9;padding:12px 13px}
+    .sim-counter strong{font-size:1.33rem;display:block;color:#1c608a;font-variant-numeric:tabular-nums}
+    .sim-counter span{font-size:.79rem;font-weight:750;color:#527489}
+    .sim-controls{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin-top:15px}
+    .sim-controls button,.sim-stages button{border:1.5px solid #9fc8df;background:#fff;color:#1b628f;font-weight:850;border-radius:10px;padding:10px 14px;cursor:pointer;font:inherit;font-weight:800}
+    .sim-controls button.primary{background:#216b9a;color:white;border-color:#216b9a;min-width:143px}
+    .sim-controls button:focus-visible,.sim-stages button:focus-visible{outline:3px solid #ffae45;outline-offset:2px}
+    .sim-controls button:hover,.sim-stages button:hover{filter:brightness(.95)}
+    .sim-controls label{font-weight:800;color:#3b6f90;margin-left:auto}
+    .sim-controls select{border:1.5px solid #9fc8df;background:#fff;color:#1b628f;border-radius:9px;padding:9px 11px;font:inherit}
+    .sim-stages{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin-top:14px}
+    .sim-stages button{padding:12px 7px;font-size:.9rem;line-height:1.35}
+    .sim-stages button small{display:block;font-size:.76rem;margin-top:3px;font-weight:650;opacity:.82}
+    .sim-stages button[aria-pressed="true"]{background:#d9eeff;border-color:#217aaa;box-shadow:inset 0 0 0 1px #217aaa;color:#15577f}
+    .sim-reminder{margin:14px 0 0;background:#e4f4ff;border-left:5px solid #2683b9;padding:11px 14px;border-radius:9px;font-weight:850;line-height:1.5}
     .cycle-guide{background:linear-gradient(120deg,#eaf5fc,#f5fbff);border:1.5px solid #b8d8e9;border-radius:17px;padding:19px 21px;margin:18px 0}
     .cycle-guide h3{color:#205e8c;margin:0 0 7px;font-size:1.22rem}
     .cycle-guide p{margin:8px 0 14px;color:#41617a;line-height:1.62}
@@ -82,6 +109,7 @@
     .final-doc iframe{width:100%;height:650px;border:1.5px solid #c3dcea;border-radius:12px;background:#fff;margin-top:13px}
     @media(max-width:960px){.index,.cycle-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(max-width:630px){.index,.formula-grid,.motor-photos,.anatomy{grid-template-columns:1fr}.intro{padding:32px 0}.topic{padding:20px 16px}.final-doc iframe{height:410px}.motor-photo img{height:235px}}
+    @media(max-width:760px){.sim-layout{grid-template-columns:1fr}.sim-machine svg{max-height:315px}.sim-stages{grid-template-columns:repeat(2,minmax(0,1fr))}.sim-controls label{margin-left:0}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   </style>
 </head>
@@ -182,6 +210,53 @@
       <div class="anatomy"><figure><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/4/47/Four_stroke_engine_diagram.jpg" alt="Esquema d'un cilindre d'un motor de quatre temps amb les lletres C per al cigonyal, R per a la biela, P per al pistó, S per a la bugia, V per a les vàlvules i I i E per als arbres de lleves" width="533" height="600"><figcaption>Esquema: <a href="https://commons.wikimedia.org/wiki/File:Four_stroke_engine_diagram.jpg" target="_blank" rel="noopener noreferrer">Wapcaplet / Shizhao</a> · CC BY-SA 3.0 · sense modificacions.</figcaption></figure>
         <div><h3>🔍 Identifica les parts del motor</h3><ul><li><strong>C · Cigonyal:</strong> rep el moviment de la biela i gira.</li><li><strong>R · Biela:</strong> uneix el pistó amb el cigonyal.</li><li><strong>P · Pistó:</strong> puja i baixa a l'interior del cilindre.</li><li><strong>V · Vàlvules:</strong> deixen entrar la mescla o l'aire i sortir els gasos.</li><li><strong>I i E · Arbres de lleves:</strong> obren les vàlvules d'admissió i escapament en el moment adequat.</li><li><strong>S · Bugia:</strong> genera l'espurna en un motor de gasolina; en un dièsel s'utilitza injecció i autoencesa.</li></ul></div>
       </div>
+      <div class="motor-sim" id="simulador-motor" aria-labelledby="sim-title">
+        <h3 id="sim-title">🎬 Mira com funcionen els quatre temps</h3>
+        <p class="sim-lead">Animació interactiva d'un <strong>cilindre d'un motor de gasolina de quatre temps</strong>. Observa el pistó, la biela, el cigonyal i les vàlvules. Pots aturar l'animació i triar una fase per estudiar-la.</p>
+        <div class="sim-layout">
+          <div class="sim-machine">
+            <svg id="motor-svg" viewBox="0 0 460 440" role="img" aria-labelledby="motor-svg-title motor-svg-desc">
+              <title id="motor-svg-title">Funcionament del pistó, les vàlvules, la biela i el cigonyal</title>
+              <desc id="motor-svg-desc">Tall esquemàtic animat d'un cilindre. El cigonyal fa dues voltes i el pistó puja i baixa quatre vegades al llarg dels temps d'admissió, compressió, expansió i escapament.</desc>
+              <rect x="126" y="53" width="208" height="270" rx="17" fill="#dae9f1" stroke="#7da6bc" stroke-width="7"/>
+              <rect x="164" y="85" width="132" height="222" rx="3" fill="#f8fcff" stroke="#7b9caf" stroke-width="5"/>
+              <rect id="sim-gas" x="170" y="106" width="120" height="58" fill="#82cbed" opacity=".56"/>
+              <path d="M175 75 L175 103 L203 103" fill="none" stroke="#7c99aa" stroke-width="10" stroke-linejoin="round"/>
+              <path d="M285 103 L314 103 L314 75" fill="none" stroke="#7c99aa" stroke-width="10" stroke-linejoin="round"/>
+              <line x1="191" y1="62" x2="191" y2="120" stroke="#526c7b" stroke-width="6"/>
+              <line x1="270" y1="62" x2="270" y2="120" stroke="#526c7b" stroke-width="6"/>
+              <g id="sim-inlet-valve"><rect x="174" y="116" width="34" height="7" rx="3" fill="#2983b9"/><rect x="188" y="89" width="6" height="29" rx="2" fill="#2983b9"/></g>
+              <g id="sim-outlet-valve"><rect x="253" y="116" width="34" height="7" rx="3" fill="#bc684b"/><rect x="267" y="89" width="6" height="29" rx="2" fill="#bc684b"/></g>
+              <text x="142" y="41" text-anchor="middle" font-size="14" font-weight="800" fill="#2876a4">Admissió</text>
+              <text x="325" y="41" text-anchor="middle" font-size="14" font-weight="800" fill="#af6349">Escapament</text>
+              <path id="sim-intake-arrow" d="M110 111 H166" stroke="#1687bf" stroke-width="6" stroke-linecap="round" fill="none"/>
+              <path id="sim-exhaust-arrow" d="M296 111 H353" stroke="#d06c43" stroke-width="6" stroke-linecap="round" fill="none"/>
+              <path id="sim-intake-tip" d="M157 103 L169 111 L157 119" fill="none" stroke="#1687bf" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path id="sim-exhaust-tip" d="M342 103 L355 111 L342 119" fill="none" stroke="#d06c43" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+              <g id="sim-spark" opacity="0"><path d="M229 80 l-13 23 h15 l-8 22 24-31 h-16 l8-14" fill="#f4ba22" stroke="#d47c0a" stroke-width="2"/></g>
+              <circle cx="230" cy="361" r="65" fill="#e4eef5" stroke="#b3cddc" stroke-width="2" stroke-dasharray="6 5"/>
+              <circle cx="230" cy="361" r="11" fill="#477a9e"/>
+              <line id="sim-crank" x1="230" y1="361" x2="230" y2="315" stroke="#e39436" stroke-width="16" stroke-linecap="round"/>
+              <line id="sim-rod" x1="230" y1="315" x2="230" y2="183" stroke="#4d7b98" stroke-width="14" stroke-linecap="round"/>
+              <g id="sim-piston"><rect x="173" y="161" width="114" height="41" rx="9" fill="#9abacc" stroke="#37637f" stroke-width="4"/><line x1="173" y1="175" x2="287" y2="175" stroke="#d9eef7" stroke-width="4"/><circle cx="230" cy="183" r="10" fill="#d0e2ee" stroke="#386886" stroke-width="4"/></g>
+              <circle id="sim-crank-pin" cx="230" cy="315" r="9" fill="#ffe2ae" stroke="#a85f1f" stroke-width="4"/>
+              <text x="336" y="210" font-size="15" font-weight="800" fill="#426d87">Pistó</text><path d="M329 213 H292" stroke="#7599ac" stroke-width="2"/>
+              <text x="339" y="314" font-size="15" font-weight="800" fill="#426d87">Biela</text><path d="M329 314 L274 280" stroke="#7599ac" stroke-width="2"/>
+              <text x="325" y="404" font-size="15" font-weight="800" fill="#b56f2c">Cigonyal</text><path d="M314 400 L270 379" stroke="#d09c63" stroke-width="2"/>
+              <path d="M146 347 a96 96 0 0 1 0 45" fill="none" stroke="#6a9fbd" stroke-width="4" stroke-linecap="round"/>
+              <path d="M136 379 l10 14 6-16" fill="none" stroke="#6a9fbd" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="sim-info">
+            <div class="sim-phase" aria-live="polite" aria-atomic="true"><span class="sim-kicker" id="sim-kicker">TEMPS 1 DE 4</span><h4 id="sim-phase-name">Admissió ↓</h4><p id="sim-phase-desc">La vàlvula d'admissió s'obre i el pistó baixa. Entra aire i combustible al cilindre.</p></div>
+            <div class="sim-counters"><div class="sim-counter"><strong id="sim-degrees">0° / 720°</strong><span>Gir acumulat del cigonyal</span></div><div class="sim-counter"><strong id="sim-turns">0 / 2</strong><span>Voltes del cigonyal</span></div></div>
+            <div class="sim-counter"><strong id="sim-stroke">Baixada ↓</strong><span>Moviment del pistó en aquesta fase</span></div>
+          </div>
+        </div>
+        <div class="sim-controls"><button type="button" class="primary" id="sim-toggle" aria-pressed="true">⏸ Pausa</button><button type="button" id="sim-restart">↺ Torna a començar</button><label for="sim-speed">Velocitat</label><select id="sim-speed"><option value="0.5">Lenta · 0,5×</option><option value="1" selected>Normal · 1×</option><option value="2">Ràpida · 2×</option></select></div>
+        <div class="sim-stages" role="group" aria-label="Tria un dels quatre temps"><button type="button" data-phase="0" aria-pressed="true">1 · Admissió<small>0°–180°</small></button><button type="button" data-phase="1" aria-pressed="false">2 · Compressió<small>180°–360°</small></button><button type="button" data-phase="2" aria-pressed="false">3 · Expansió<small>360°–540°</small></button><button type="button" data-phase="3" aria-pressed="false">4 · Escapament<small>540°–720°</small></button></div>
+        <p class="sim-reminder">Fixa't-hi: quan el pistó ha fet els quatre temps, el cigonyal ha girat <strong>720° (2 voltes)</strong>. Per això, a 3.000 rpm, cada cilindre fa 1.500 cicles complets per minut.</p>
+      </div>
       <div class="cycle-guide"><h3>🔄 Per què són tan importants les voltes del cigonyal?</h3><p>El <strong>pistó</strong> fa quatre carreres (dos moviments cap avall i dos cap amunt) per completar el cicle d'un motor de quatre temps. Cada carrera fa girar el cigonyal <strong>mitja volta (180°)</strong>.</p>
         <div class="cycle-steps" aria-label="Les quatre fases d'un cicle de motor de quatre temps">
           <div class="cycle-step"><span>1 · 0°–180°</span><strong>Admissió ↓</strong><p>El pistó baixa. Entra aire o mescla pel conducte d'admissió.</p></div>
@@ -235,5 +310,82 @@
     <div class="final-doc" id="dossier"><h2>📄 Dossier: teoria i 23 exercicis</h2><p>Aquí tens el document que utilitzem com a referència per a 1r de Batxillerat. Inclou les explicacions originals, els enunciats i els resultats finals perquè puguis comprovar els càlculs.</p><div class="actions"><a class="action" href="https://drive.google.com/file/d/1HhvR_CdEqVi-g6-tfdoXISy6jMio2asO/view" target="_blank" rel="noopener noreferrer">Obrir el PDF complet ↗</a><a class="action alt" href="batxillerat.html#primer">Tornar a 1r de Batxillerat</a></div><details><summary>👀 Veure el dossier sense sortir de la web</summary><iframe title="Dossier d'Energia i transformacions, amb teoria i 23 exercicis" loading="lazy" src="https://drive.google.com/file/d/1HhvR_CdEqVi-g6-tfdoXISy6jMio2asO/preview"></iframe></details></div>
   </main>
   <footer class="footer"><div class="wrap"><span>Tecnologia i Enginyeria · 1r de Batxillerat</span><span><a href="batxillerat.html#primer">Tornar al curs</a></span></div></footer>
+  <script>
+    (() => {
+      const sim = document.getElementById('simulador-motor');
+      if (!sim) return;
+      const part = id => document.getElementById(id);
+      const phases = [
+        {name:'Admissió ↓',desc:'S’obre la vàlvula d’admissió. El pistó baixa i entra la mescla d’aire i combustible.',stroke:'Baixada ↓',gas:'#82cbed'},
+        {name:'Compressió ↑',desc:'Les dues vàlvules es tanquen. El pistó puja i comprimeix la mescla.',stroke:'Pujada ↑',gas:'#bcdce9'},
+        {name:'Expansió ↓',desc:'La bugia encén la mescla comprimida. Els gasos empenyen el pistó avall i fan girar el cigonyal: és el temps que aporta treball útil.',stroke:'Baixada ↓',gas:'#ffbf76'},
+        {name:'Escapament ↑',desc:'S’obre la vàlvula d’escapament. El pistó puja i expulsa els gasos cremats.',stroke:'Pujada ↑',gas:'#e6b6a7'}
+      ];
+      const buttons = Array.from(sim.querySelectorAll('[data-phase]'));
+      const toggle = part('sim-toggle');
+      const speed = part('sim-speed');
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let degrees = 0;
+      let running = !reduced;
+      let lastStamp = null;
+      let previousPhase = -1;
+      const setRunning = value => {running = value;toggle.textContent = running ? '⏸ Pausa' : '▶ Reprodueix';toggle.setAttribute('aria-pressed', String(running));lastStamp = null;};
+      function render(){
+        const at = degrees >= 720 ? 0 : degrees;
+        const phase = Math.min(3,Math.floor(at/180));
+        const angle = at * Math.PI / 180;
+        const r = 46, l = 132, cx = 230, cy = 361;
+        const pinX = cx + r * Math.sin(angle);
+        const pinY = cy - r * Math.cos(angle);
+        const pistonY = pinY - Math.sqrt(l*l-(pinX-cx)*(pinX-cx));
+        const pistonTop = pistonY - 22;
+        const fixed = num => Number(num.toFixed(2));
+        part('sim-piston').setAttribute('transform',`translate(0 ${fixed(pistonY-183)})`);
+        part('sim-rod').setAttribute('x1',fixed(pinX));
+        part('sim-rod').setAttribute('y1',fixed(pinY));
+        part('sim-rod').setAttribute('x2',cx);
+        part('sim-rod').setAttribute('y2',fixed(pistonY));
+        part('sim-crank').setAttribute('x2',fixed(pinX));
+        part('sim-crank').setAttribute('y2',fixed(pinY));
+        part('sim-crank-pin').setAttribute('cx',fixed(pinX));
+        part('sim-crank-pin').setAttribute('cy',fixed(pinY));
+        part('sim-gas').setAttribute('height',Math.max(2,fixed(pistonTop-106)));
+        part('sim-gas').setAttribute('fill',phases[phase].gas);
+        part('sim-inlet-valve').setAttribute('transform',`translate(0 ${phase===0 ? 14 : 0})`);
+        part('sim-outlet-valve').setAttribute('transform',`translate(0 ${phase===3 ? 14 : 0})`);
+        for(const id of ['sim-intake-arrow','sim-intake-tip']) part(id).style.opacity = phase===0 ? '1':'0';
+        for(const id of ['sim-exhaust-arrow','sim-exhaust-tip']) part(id).style.opacity = phase===3 ? '1':'0';
+        part('sim-spark').setAttribute('opacity',phase===2 && at<410 ? '1' : '0');
+        part('sim-degrees').textContent = `${Math.round(degrees)}° / 720°`;
+        part('sim-turns').textContent = `${(degrees/360).toLocaleString('ca-ES',{maximumFractionDigits:2})} / 2`;
+        if(phase !== previousPhase){
+          previousPhase = phase;
+          part('sim-kicker').textContent = `TEMPS ${phase+1} DE 4`;
+          part('sim-phase-name').textContent = phases[phase].name;
+          part('sim-phase-desc').textContent = phases[phase].desc;
+          part('sim-stroke').textContent = phases[phase].stroke;
+          buttons.forEach((b,i)=>b.setAttribute('aria-pressed',String(i===phase)));
+        }
+      }
+      function frame(now){
+        if(running){
+          if(lastStamp !== null){
+            degrees += Math.min(64,now-lastStamp) * 0.09 * Number(speed.value);
+            if(degrees >= 720) degrees %= 720;
+          }
+          render();
+        }
+        lastStamp = now;
+        requestAnimationFrame(frame);
+      }
+      toggle.addEventListener('click',()=>setRunning(!running));
+      part('sim-restart').addEventListener('click',()=>{degrees=0;previousPhase=-1;render();setRunning(true);});
+      buttons.forEach((button,index)=>button.addEventListener('click',()=>{degrees=index*180+90;previousPhase=-1;render();setRunning(false);}));
+      document.addEventListener('visibilitychange',()=>{lastStamp=null;});
+      setRunning(running);
+      render();
+      requestAnimationFrame(frame);
+    })();
+  </script>
 </body>
 </html>
