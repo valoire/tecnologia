@@ -555,3 +555,103 @@
   font-size:11px;line-height:1.4;
  }
 }
+
+/* Passaport individual dels 17 ODS, després de les fitxes de lectura de l'Agenda 2030. */
+.ud2-topic-redesign .ud2-ods-passaport{
+ margin:28px 0;padding:clamp(18px,3vw,30px);
+ border:2px solid #a8ddce;border-top:7px solid #299675;border-radius:20px;
+ background:linear-gradient(140deg,#f1fff9 0%,#fff 65%,#f5faff 100%);
+ box-shadow:0 9px 24px #23775d10;scroll-margin-top:100px
+}
+.ud2-topic-redesign .ud2-ods-passaport-eyebrow{
+ display:block;color:#237960;font-weight:950;letter-spacing:.08em;font-size:12px
+}
+.ud2-topic-redesign .ud2-ods-passaport-heading{
+ margin:7px 0 10px;color:#185e4f;font-size:clamp(22px,3vw,30px);font-weight:950
+}
+.ud2-topic-redesign .ud2-ods-passaport-intro{
+ margin:0 0 18px;color:#37554e;line-height:1.65;font-size:1rem
+}
+.ud2-topic-redesign .ud2-ods-passaport-steps{
+ display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;
+ list-style:none;counter-reset:pas;padding:0;margin:0 0 22px
+}
+.ud2-topic-redesign .ud2-ods-passaport-steps li{
+ counter-increment:pas;display:flex;align-items:center;gap:9px;
+ padding:12px;background:#e5f6ee;border:1px solid #c1e6d6;border-radius:12px;
+ color:#266754;font-size:13px;font-weight:800
+}
+.ud2-topic-redesign .ud2-ods-passaport-steps li:before{
+ content:counter(pas);display:grid;place-items:center;flex:none;width:25px;height:25px;
+ background:#28916d;color:white;border-radius:50%;font-weight:950
+}
+.ud2-topic-redesign .ud2-ods-passaport-game,.ud2-topic-redesign .ud2-ods-passaport-done{
+ padding:20px;border:1px solid #cce5dd;border-radius:16px;background:white
+}
+.ud2-topic-redesign .ud2-ods-passaport-game[hidden],
+.ud2-topic-redesign .ud2-ods-passaport-done[hidden],
+.ud2-topic-redesign .ud2-ods-passaport-next[hidden]{display:none}
+.ud2-topic-redesign .ud2-ods-passaport-count{
+ color:#287c61;font-size:12px;font-weight:950;letter-spacing:.06em
+}
+.ud2-topic-redesign .ud2-ods-passaport-progress{
+ display:block;width:100%;height:12px;margin:10px 0 20px;
+ accent-color:#2a976d;border-radius:10px
+}
+.ud2-topic-redesign .ud2-ods-passaport-question{
+ margin:0 0 19px;color:#224a40;font-size:clamp(18px,2.2vw,22px);line-height:1.5;font-weight:850
+}
+.ud2-topic-redesign .ud2-ods-passaport-options{
+ display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px
+}
+.ud2-topic-redesign .ud2-ods-passaport-option{
+ padding:14px 15px;border:1.5px solid #c4ded7;border-radius:12px;
+ background:#f7fcfa;color:#254e44;font:inherit;font-size:14px;font-weight:750;
+ line-height:1.45;text-align:left;cursor:pointer;transition:background .15s,border-color .15s
+}
+.ud2-topic-redesign .ud2-ods-passaport-option:hover:not(:disabled),
+.ud2-topic-redesign .ud2-ods-passaport-option:focus-visible{
+ background:#e5f6ee;border-color:#318b6e;outline-offset:3px
+}
+.ud2-topic-redesign .ud2-ods-passaport-option:disabled{cursor:default;opacity:.72}
+.ud2-topic-redesign .ud2-ods-passaport-option.is-correct{
+ background:#d7f4e3;border-color:#27895b;color:#135537;opacity:1
+}
+.ud2-topic-redesign .ud2-ods-passaport-option.is-chosen-wrong{
+ background:#fff0e9;border-color:#d78b6d;color:#8f4334;opacity:1
+}
+.ud2-topic-redesign .ud2-ods-passaport-feedback{
+ margin:16px 0 0;padding:12px 14px;background:#ebf8f3;
+ border-left:4px solid #379a78;border-radius:8px;color:#285b4b;line-height:1.6
+}
+.ud2-topic-redesign .ud2-ods-passaport-feedback[hidden]{display:none}
+.ud2-topic-redesign .ud2-ods-passaport-next,
+.ud2-topic-redesign .ud2-ods-passaport-copy,
+.ud2-topic-redesign .ud2-ods-passaport-again{
+ margin-top:16px;padding:11px 16px;border:0;border-radius:11px;
+ background:#237e60;color:white;font:inherit;font-size:14px;font-weight:900;cursor:pointer
+}
+.ud2-topic-redesign .ud2-ods-passaport-next:hover,
+.ud2-topic-redesign .ud2-ods-passaport-copy:hover{background:#165e48}
+.ud2-topic-redesign .ud2-ods-passaport-result{
+ color:#195f4d;font-size:clamp(19px,2.5vw,24px);margin:0 0 9px
+}
+.ud2-topic-redesign .ud2-ods-passaport-label{
+ display:block;margin:18px 0 0;color:#24574a;font-weight:850;font-size:15px
+}
+.ud2-topic-redesign .ud2-ods-passaport-textarea{
+ display:block;width:100%;min-height:95px;box-sizing:border-box;resize:vertical;
+ margin-top:8px;padding:13px 14px;border:1.5px solid #accfc2;border-radius:10px;
+ font:inherit;color:#254f45;background:#fff
+}
+.ud2-topic-redesign .ud2-ods-passaport-textarea:focus-visible{outline:3px solid #a9dbca;outline-offset:2px}
+.ud2-topic-redesign .ud2-ods-passaport-controls{display:flex;flex-wrap:wrap;gap:10px}
+.ud2-topic-redesign .ud2-ods-passaport-again{
+ background:#e5f4ed;border:1px solid #adcfbf;color:#23664e
+}
+.ud2-topic-redesign .ud2-ods-passaport-copy-status{font-size:13px;color:#26634d}
+@media(max-width:680px){
+ .ud2-topic-redesign .ud2-ods-passaport-steps{grid-template-columns:1fr}
+ .ud2-topic-redesign .ud2-ods-passaport-options{grid-template-columns:1fr}
+ .ud2-topic-redesign .ud2-ods-passaport-game,.ud2-topic-redesign .ud2-ods-passaport-done{padding:14px}
+}
