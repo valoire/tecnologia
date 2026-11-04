@@ -138,8 +138,24 @@
     .doc h3,.doc-preview summary{color:#246c9b}
     .doc-preview{border-top-color:#d6e6f1}
     .doc-preview iframe{border-color:#d3e4f0;background:#f1f8fd}
+    /* Cada fórmula recupera la targeta explicativa original; fórmules germanes, targetes diferents. */
+    .formula-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:20px 0 24px;align-items:stretch}
+    .formula-card{min-width:0;background:linear-gradient(140deg,#fffdfb,#eef7ff);border:1.5px solid #cbdff0;border-radius:22px;padding:22px 23px;box-shadow:0 4px 14px #2a6e9810}
+    .formula-card h3{font-size:1.15rem;color:#245f8e;margin:0 0 10px;line-height:1.35}
+    .formula-card p{margin:0 0 12px!important;line-height:1.65!important;color:#40586e!important}
+    .formula-card p::first-letter{text-transform:uppercase}
+    .formula-card .formula,.info-box>.formula{background:linear-gradient(115deg,#e5f2fc,#f1f7ff);border-left:6px solid #2680b8;border-radius:13px;color:#205b88;font-size:1.2rem;padding:16px 19px;margin:16px 0 13px}
+    .formula-card .legend,.info-box>.legend{grid-template-columns:1fr;background:#f5faff;border:1px solid #d5e5f2;border-radius:15px;padding:15px 17px;margin:0}
+    .formula-card .legend span,.info-box>.legend span{font-size:.91rem;line-height:1.52}
+    .info-box:has(>.formula){background:linear-gradient(140deg,#fffdfb,#eef7ff);border:1.5px solid #cbdff0;border-radius:22px;padding:22px 23px}
+    .info-box:has(>.formula) h3{font-size:1.15rem;margin-bottom:10px}
+    .info-box:has(>.formula) p{line-height:1.65}
+    .info-box .formula-grid{grid-template-columns:1fr;gap:13px;margin:15px 0}
+    .info-box .formula-card{padding:15px 16px;background:#fff;border-radius:15px}
+    .info-box .formula-card h3{font-size:1rem}
+    .info-box .formula-card p{font-size:.95rem}
     @media(max-width:1000px){.topic-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.exercise-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media(max-width:650px){.topic-grid,.info-grid,.doc-grid,.exercise-grid,.legend{grid-template-columns:1fr}.energy-hero{padding:35px 0}.energy-section{padding:20px 16px}.diagram{flex-direction:column}.diagram .arrow{transform:rotate(90deg)}}
+    @media(max-width:650px){.topic-grid,.info-grid,.doc-grid,.exercise-grid,.legend,.formula-grid{grid-template-columns:1fr}.energy-hero{padding:35px 0}.energy-section{padding:20px 16px}.diagram{flex-direction:column}.diagram .arrow{transform:rotate(90deg)}.formula-card{padding:18px 16px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.topic-card{transition:none}}
   </style>
 </head>
@@ -172,27 +188,50 @@
         <div class="info-box"><h3>Força i treball</h3><p>Una força es mesura en <strong>newtons (N)</strong>. El treball és energia transferida i es mesura en <strong>joules (J)</strong>. Si no hi ha desplaçament, el treball mecànic d'aquesta força és zero.</p></div>
         <div class="info-box"><h3>Energia i potència</h3><p>L'energia es mesura en <strong>J</strong> o <strong>kWh</strong>. La potència es mesura en <strong>watts (W)</strong>. No són el mateix: un kW és potència; un kWh és energia.</p></div>
       </div>
-      <p class="formula-intro"><strong>Treball mecànic:</strong> energia que una força transfereix a un cos quan el desplaça.</p>
-      <span class="formula">W = F · d · cos α</span>
-      <div class="legend"><span><b>W:</b> treball mecànic (J, joules)</span><span><b>F:</b> força aplicada (N, newtons)</span><span><b>d:</b> desplaçament (m, metres)</span><span><b>α:</b> angle entre la força i el desplaçament (°, graus; cos α no té unitats)</span></div>
-      <p class="formula-intro"><strong>Energia cinètica:</strong> energia que té un cos pel fet d'estar en moviment.</p>
-      <span class="formula">E<sub>c</sub> = ½ · m · v<sup>2</sup></span>
-      <div class="legend"><span><b>E<sub>c</sub>:</b> energia cinètica (J)</span><span><b>m:</b> massa (kg)</span><span><b>v:</b> velocitat (m/s)</span></div>
-      <p class="formula-intro"><strong>Energia potencial gravitatòria:</strong> energia que un cos té perquè es troba a una certa altura.</p>
-      <span class="formula">E<sub>p</sub> = m · g · h</span>
-      <div class="legend"><span><b>E<sub>p</sub>:</b> energia potencial (J)</span><span><b>m:</b> massa (kg)</span><span><b>g:</b> acceleració de la gravetat (m/s²; habitualment 9,81)</span><span><b>h:</b> altura (m)</span></div>
-      <p class="formula-intro"><strong>Potència:</strong> rapidesa amb què es transfereix o consumeix l'energia.</p>
-      <span class="formula">P = E / t</span>
-      <div class="legend"><span><b>P:</b> potència (W, watts)</span><span><b>E:</b> energia (J, joules)</span><span><b>t:</b> temps (s, segons)</span></div>
-      <p class="formula-intro"><strong>Energia consumida:</strong> quantitat d'energia utilitzada durant un temps de funcionament.</p>
-      <span class="formula">E = P · t</span>
-      <div class="legend"><span><b>E:</b> energia (J si P és en W i t en s; kWh si P és en kW i t en h)</span><span><b>P:</b> potència (W o kW)</span><span><b>t:</b> temps (s o h, coherent amb les unitats d'E)</span></div>
-      <p class="formula-intro"><strong>Canvi d'energia cinètica:</strong> permet calcular l'energia que guanya o perd un vehicle quan canvia la velocitat.</p>
-      <span class="formula">ΔE<sub>c</sub> = ½ · m · (v<sub>f</sub><sup>2</sup> − v<sub>i</sub><sup>2</sup>)</span>
-      <div class="legend"><span><b>ΔE<sub>c</sub>:</b> variació d'energia cinètica (J)</span><span><b>m:</b> massa (kg)</span><span><b>v<sub>f</sub>, v<sub>i</sub>:</b> velocitats final i inicial (m/s)</span></div>
-      <p class="formula-intro"><strong>Potència d'elevació:</strong> potència mecànica necessària per aixecar una massa una altura determinada en un temps.</p>
-      <span class="formula">P<sub>elevació</sub> = m · g · h / t</span>
-      <div class="legend"><span><b>P<sub>elevació</sub>:</b> potència mecànica (W)</span><span><b>m:</b> massa (kg)</span><span><b>g:</b> gravetat (m/s²)</span><span><b>h:</b> altura (m)</span><span><b>t:</b> temps (s)</span></div>
+      <div class="formula-grid">
+      <article class="formula-card">
+        <h3>Treball mecànic</h3>
+        <p>energia que una força transfereix a un cos quan el desplaça.</p>
+        <span class="formula">W = F · d · cos α</span>
+        <div class="legend"><span><b>W:</b> treball mecànic (J, joules)</span><span><b>F:</b> força aplicada (N, newtons)</span><span><b>d:</b> desplaçament (m, metres)</span><span><b>α:</b> angle entre la força i el desplaçament (°, graus; cos α no té unitats)</span></div>
+      </article>
+      <article class="formula-card">
+        <h3>Energia cinètica</h3>
+        <p>energia que té un cos pel fet d'estar en moviment.</p>
+        <span class="formula">E<sub>c</sub> = ½ · m · v<sup>2</sup></span>
+        <div class="legend"><span><b>E<sub>c</sub>:</b> energia cinètica (J)</span><span><b>m:</b> massa (kg)</span><span><b>v:</b> velocitat (m/s)</span></div>
+      </article>
+      <article class="formula-card">
+        <h3>Energia potencial gravitatòria</h3>
+        <p>energia que un cos té perquè es troba a una certa altura.</p>
+        <span class="formula">E<sub>p</sub> = m · g · h</span>
+        <div class="legend"><span><b>E<sub>p</sub>:</b> energia potencial (J)</span><span><b>m:</b> massa (kg)</span><span><b>g:</b> acceleració de la gravetat (m/s²; habitualment 9,81)</span><span><b>h:</b> altura (m)</span></div>
+      </article>
+      <article class="formula-card">
+        <h3>Potència</h3>
+        <p>rapidesa amb què es transfereix o consumeix l'energia.</p>
+        <span class="formula">P = E / t</span>
+        <div class="legend"><span><b>P:</b> potència (W, watts)</span><span><b>E:</b> energia (J, joules)</span><span><b>t:</b> temps (s, segons)</span></div>
+      </article>
+      <article class="formula-card">
+        <h3>Energia consumida</h3>
+        <p>quantitat d'energia utilitzada durant un temps de funcionament.</p>
+        <span class="formula">E = P · t</span>
+        <div class="legend"><span><b>E:</b> energia (J si P és en W i t en s; kWh si P és en kW i t en h)</span><span><b>P:</b> potència (W o kW)</span><span><b>t:</b> temps (s o h, coherent amb les unitats d'E)</span></div>
+      </article>
+      <article class="formula-card">
+        <h3>Canvi d'energia cinètica</h3>
+        <p>permet calcular l'energia que guanya o perd un vehicle quan canvia la velocitat.</p>
+        <span class="formula">ΔE<sub>c</sub> = ½ · m · (v<sub>f</sub><sup>2</sup> − v<sub>i</sub><sup>2</sup>)</span>
+        <div class="legend"><span><b>ΔE<sub>c</sub>:</b> variació d'energia cinètica (J)</span><span><b>m:</b> massa (kg)</span><span><b>v<sub>f</sub>, v<sub>i</sub>:</b> velocitats final i inicial (m/s)</span></div>
+      </article>
+      <article class="formula-card">
+        <h3>Potència d'elevació</h3>
+        <p>potència mecànica necessària per aixecar una massa una altura determinada en un temps.</p>
+        <span class="formula">P<sub>elevació</sub> = m · g · h / t</span>
+        <div class="legend"><span><b>P<sub>elevació</sub>:</b> potència mecànica (W)</span><span><b>m:</b> massa (kg)</span><span><b>g:</b> gravetat (m/s²)</span><span><b>h:</b> altura (m)</span><span><b>t:</b> temps (s)</span></div>
+      </article>
+      </div>
       <div class="worked"><h3>🧠 Exemple ràpid</h3><p>Un aparell de 2 kW funciona durant mitja hora: <strong>E = 2 · 0,5 = 1 kWh</strong>. El resultat és una energia, no una potència.</p></div>
       <div class="mini-note"><strong>Recorda:</strong> 1 kWh = 3,6 · 10<sup>6</sup> J; 1 MJ = 10<sup>6</sup> J; per passar de km/h a m/s divideix entre 3,6. En un sistema real, l'energia es transforma, però no desapareix.</div>
       <a class="paus" href="#practica">🎓 Practica els exercicis 1, 2 i 3</a><br>
@@ -204,24 +243,44 @@
       <h2>Rendiment de motors i transmissions</h2>
       <p>Una màquina rep energia, però no tota arriba al resultat que volem. La part que serveix per a la tasca és l'<strong>energia útil</strong>; la resta pot dissipar-se en forma de calor, so o vibracions. El rendiment expressa quina fracció aprofitem.</p>
       <div class="diagram" aria-label="L'energia d'entrada es reparteix en energia útil i dissipada"><div>⚡ Energia d'entrada</div><div class="arrow">→</div><div class="useful">✅ Energia útil</div><div class="arrow">+</div><div class="loss">🌡️ Energia dissipada</div></div>
-      <p class="formula-intro"><strong>Balanç energètic:</strong> l'energia que rep una màquina es reparteix entre la que aprofitem i la que es perd, si no varia l'energia emmagatzemada.</p>
-      <span class="formula">E<sub>entrada</sub> = E<sub>útil</sub> + E<sub>dissipada</sub></span>
-      <div class="legend"><span><b>E<sub>entrada</sub>:</b> energia que rep la màquina (J)</span><span><b>E<sub>útil</sub>:</b> energia aprofitada (J)</span><span><b>E<sub>dissipada</sub>:</b> energia perduda en calor, soroll, etc. (J)</span><span><b>Important:</b> totes les energies han d'estar en la mateixa unitat (J, kJ o kWh)</span></div>
-      <p class="formula-intro"><strong>Rendiment a partir de l'energia:</strong> fracció de l'energia d'entrada que es converteix en energia útil.</p>
-      <span class="formula">η = E<sub>útil</sub> / E<sub>entrada</sub></span>
-      <div class="legend"><span><b>η (eta):</b> rendiment (sense unitats; entre 0 i 1)</span><span><b>E<sub>útil</sub>:</b> energia aprofitada (J)</span><span><b>E<sub>entrada</sub>:</b> energia aportada (J)</span></div>
-      <p class="formula-intro"><strong>Rendiment a partir de la potència:</strong> la mateixa proporció expressada amb potències útils i d'entrada.</p>
-      <span class="formula">η = P<sub>útil</sub> / P<sub>entrada</sub></span>
-      <div class="legend"><span><b>η:</b> rendiment (sense unitats; en % si multipliques per 100)</span><span><b>P<sub>útil</sub>:</b> potència aprofitada (W)</span><span><b>P<sub>entrada</sub>:</b> potència subministrada (W)</span></div>
-      <p class="formula-intro"><strong>Rendiment d'una cadena:</strong> quan l'energia passa per diverses màquines seguides, els rendiments es multipliquen.</p>
-      <span class="formula">η<sub>total</sub> = η<sub>motor</sub> · η<sub>reductor</sub> · η<sub>alternador</sub></span>
-      <div class="legend"><span><b>η<sub>total</sub>:</b> rendiment de tot el conjunt (sense unitats)</span><span><b>η<sub>motor</sub>:</b> rendiment del motor (sense unitats)</span><span><b>η<sub>reductor</sub>:</b> rendiment de la transmissió (sense unitats)</span><span><b>η<sub>alternador</sub>:</b> rendiment de l'alternador (sense unitats)</span></div>
-      <p class="formula-intro"><strong>Energia d'un combustible a partir de la massa:</strong> és l'energia química que pot alliberar en cremar-se.</p>
-      <span class="formula">E<sub>combustible</sub> = m · H</span>
-      <div class="legend"><span><b>E<sub>combustible</sub>:</b> energia química disponible (J)</span><span><b>m:</b> massa de combustible (kg)</span><span><b>H:</b> poder calorífic (J/kg)</span></div>
-      <p class="formula-intro"><strong>Energia d'un combustible a partir del volum:</strong> si et donen litres en lloc de quilograms, utilitza la densitat.</p>
-      <span class="formula">E<sub>combustible</sub> = ρ · V · H</span>
-      <div class="legend"><span><b>E<sub>combustible</sub>:</b> energia química (J)</span><span><b>ρ:</b> densitat (kg/L)</span><span><b>V:</b> volum (L)</span><span><b>H:</b> poder calorífic (J/kg)</span></div>
+      <div class="formula-grid">
+      <article class="formula-card">
+        <h3>Balanç energètic</h3>
+        <p>l'energia que rep una màquina es reparteix entre la que aprofitem i la que es perd, si no varia l'energia emmagatzemada.</p>
+        <span class="formula">E<sub>entrada</sub> = E<sub>útil</sub> + E<sub>dissipada</sub></span>
+        <div class="legend"><span><b>E<sub>entrada</sub>:</b> energia que rep la màquina (J)</span><span><b>E<sub>útil</sub>:</b> energia aprofitada (J)</span><span><b>E<sub>dissipada</sub>:</b> energia perduda en calor, soroll, etc. (J)</span><span><b>Important:</b> totes les energies han d'estar en la mateixa unitat (J, kJ o kWh)</span></div>
+      </article>
+      <article class="formula-card">
+        <h3>Rendiment a partir de l'energia</h3>
+        <p>fracció de l'energia d'entrada que es converteix en energia útil.</p>
+        <span class="formula">η = E<sub>útil</sub> / E<sub>entrada</sub></span>
+        <div class="legend"><span><b>η (eta):</b> rendiment (sense unitats; entre 0 i 1)</span><span><b>E<sub>útil</sub>:</b> energia aprofitada (J)</span><span><b>E<sub>entrada</sub>:</b> energia aportada (J)</span></div>
+      </article>
+      <article class="formula-card">
+        <h3>Rendiment a partir de la potència</h3>
+        <p>la mateixa proporció expressada amb potències útils i d'entrada.</p>
+        <span class="formula">η = P<sub>útil</sub> / P<sub>entrada</sub></span>
+        <div class="legend"><span><b>η:</b> rendiment (sense unitats; en % si multipliques per 100)</span><span><b>P<sub>útil</sub>:</b> potència aprofitada (W)</span><span><b>P<sub>entrada</sub>:</b> potència subministrada (W)</span></div>
+      </article>
+      <article class="formula-card">
+        <h3>Rendiment d'una cadena</h3>
+        <p>quan l'energia passa per diverses màquines seguides, els rendiments es multipliquen.</p>
+        <span class="formula">η<sub>total</sub> = η<sub>motor</sub> · η<sub>reductor</sub> · η<sub>alternador</sub></span>
+        <div class="legend"><span><b>η<sub>total</sub>:</b> rendiment de tot el conjunt (sense unitats)</span><span><b>η<sub>motor</sub>:</b> rendiment del motor (sense unitats)</span><span><b>η<sub>reductor</sub>:</b> rendiment de la transmissió (sense unitats)</span><span><b>η<sub>alternador</sub>:</b> rendiment de l'alternador (sense unitats)</span></div>
+      </article>
+      <article class="formula-card">
+        <h3>Energia d'un combustible a partir de la massa</h3>
+        <p>és l'energia química que pot alliberar en cremar-se.</p>
+        <span class="formula">E<sub>combustible</sub> = m · H</span>
+        <div class="legend"><span><b>E<sub>combustible</sub>:</b> energia química disponible (J)</span><span><b>m:</b> massa de combustible (kg)</span><span><b>H:</b> poder calorífic (J/kg)</span></div>
+      </article>
+      <article class="formula-card">
+        <h3>Energia d'un combustible a partir del volum</h3>
+        <p>si et donen litres en lloc de quilograms, utilitza la densitat.</p>
+        <span class="formula">E<sub>combustible</sub> = ρ · V · H</span>
+        <div class="legend"><span><b>E<sub>combustible</sub>:</b> energia química (J)</span><span><b>ρ:</b> densitat (kg/L)</span><span><b>V:</b> volum (L)</span><span><b>H:</b> poder calorífic (J/kg)</span></div>
+      </article>
+      </div>
       <div class="worked"><h3>🧮 Exemple resolt</h3><p>Un motor rep <strong>800 J</strong> i en proporciona <strong>600 J útils</strong>.</p><p>Energia dissipada: 800 − 600 = <strong>200 J</strong>.</p><p>Rendiment: 600 / 800 = 0,75 = <strong>75 %</strong>.</p></div>
       <div class="mini-note"><strong>Compte:</strong> un 75 % de rendiment s'introdueix a les fórmules com a 0,75. Si coneixes l'energia útil, l'entrada necessària és E<sub>útil</sub> / η.</div>
       <div class="info-grid">
@@ -241,58 +300,106 @@
         <tr><td>Exemple: obrir una porta o girar una clau anglesa.</td><td>Exemple: fer funcionar un tambor, un reductor o una hèlix.</td></tr>
         <tr><td>M = F · b, si b és el braç perpendicular.</td><td>Γ = F · b; quan gira, P = Γ · ω.</td></tr>
       </tbody></table>
-      <p class="formula-intro"><strong>Moment d'una força:</strong> mesura la capacitat d'una força de provocar un gir respecte d'un punt o eix.</p>
-      <span class="formula">M = F · b</span>
-      <div class="legend"><span><b>M:</b> moment de la força (N·m)</span><span><b>F:</b> força aplicada (N)</span><span><b>b:</b> braç perpendicular de la força (m)</span></div>
-      <p class="formula-intro"><strong>Parell motor:</strong> és el moment de gir transmès pel motor quan la força no és necessàriament perpendicular.</p>
-      <span class="formula">Γ = F · r · sin α</span>
-      <div class="legend"><span><b>Γ (gamma):</b> parell motor (N·m)</span><span><b>F:</b> força aplicada (N)</span><span><b>r:</b> radi des de l'eix (m)</span><span><b>α:</b> angle entre força i radi (°; si és 90°, sin α = 1)</span></div>
-      <p class="formula-intro"><strong>Velocitat angular:</strong> indica la rapidesa de gir i permet convertir rpm en rad/s.</p>
-      <span class="formula">ω = 2π · n / 60</span>
-      <div class="legend"><span><b>ω (omega):</b> velocitat angular (rad/s)</span><span><b>n:</b> velocitat de rotació (rpm, voltes/min)</span><span><b>π:</b> constant matemàtica ≈ 3,1416 (sense unitats)</span></div>
-      <p class="formula-intro"><strong>Potència mecànica:</strong> depèn del parell motor i de la velocitat de gir.</p>
-      <span class="formula">P = Γ · ω</span>
-      <div class="legend"><span><b>P:</b> potència mecànica (W)</span><span><b>Γ:</b> parell motor (N·m)</span><span><b>ω:</b> velocitat angular (rad/s)</span></div>
-      <p class="formula-intro"><strong>Velocitat de la roda:</strong> relaciona el gir de la roda amb la velocitat de desplaçament, si roda sense lliscar.</p>
-      <span class="formula">v = ω<sub>roda</sub> · r</span>
-      <div class="legend"><span><b>v:</b> velocitat lineal del vehicle (m/s)</span><span><b>ω<sub>roda</sub>:</b> velocitat angular de la roda (rad/s)</span><span><b>r:</b> radi de la roda (m)</span></div>
+      <div class="formula-grid">
+      <article class="formula-card">
+        <h3>Moment d'una força</h3>
+        <p>mesura la capacitat d'una força de provocar un gir respecte d'un punt o eix.</p>
+        <span class="formula">M = F · b</span>
+        <div class="legend"><span><b>M:</b> moment de la força (N·m)</span><span><b>F:</b> força aplicada (N)</span><span><b>b:</b> braç perpendicular de la força (m)</span></div>
+      </article>
+      <article class="formula-card">
+        <h3>Parell motor</h3>
+        <p>és el moment de gir transmès pel motor quan la força no és necessàriament perpendicular.</p>
+        <span class="formula">Γ = F · r · sin α</span>
+        <div class="legend"><span><b>Γ (gamma):</b> parell motor (N·m)</span><span><b>F:</b> força aplicada (N)</span><span><b>r:</b> radi des de l'eix (m)</span><span><b>α:</b> angle entre força i radi (°; si és 90°, sin α = 1)</span></div>
+      </article>
+      <article class="formula-card">
+        <h3>Velocitat angular</h3>
+        <p>indica la rapidesa de gir i permet convertir rpm en rad/s.</p>
+        <span class="formula">ω = 2π · n / 60</span>
+        <div class="legend"><span><b>ω (omega):</b> velocitat angular (rad/s)</span><span><b>n:</b> velocitat de rotació (rpm, voltes/min)</span><span><b>π:</b> constant matemàtica ≈ 3,1416 (sense unitats)</span></div>
+      </article>
+      <article class="formula-card">
+        <h3>Potència mecànica</h3>
+        <p>depèn del parell motor i de la velocitat de gir.</p>
+        <span class="formula">P = Γ · ω</span>
+        <div class="legend"><span><b>P:</b> potència mecànica (W)</span><span><b>Γ:</b> parell motor (N·m)</span><span><b>ω:</b> velocitat angular (rad/s)</span></div>
+      </article>
+      <article class="formula-card">
+        <h3>Velocitat de la roda</h3>
+        <p>relaciona el gir de la roda amb la velocitat de desplaçament, si roda sense lliscar.</p>
+        <span class="formula">v = ω<sub>roda</sub> · r</span>
+        <div class="legend"><span><b>v:</b> velocitat lineal del vehicle (m/s)</span><span><b>ω<sub>roda</sub>:</b> velocitat angular de la roda (rad/s)</span><span><b>r:</b> radi de la roda (m)</span></div>
+      </article>
+      </div>
       <div class="worked"><h3>⚙️ Exemple resolt</h3><p>Un motor proporciona 2,2 kW mecànics a 1.400 rpm.</p><p>ω = 2π · 1.400 / 60 = <strong>146,61 rad/s</strong>.</p><p>Γ = 2.200 / 146,61 = <strong>15,01 N·m</strong>.</p></div>
       <div class="key-idea">
         <h3>⭐ La relació ω<sub>motor</sub> / ω<sub>roda</sub>: què vol dir?</h3>
         <p>La lletra grega <strong>ω (omega)</strong> representa la <strong>velocitat angular</strong>, no el treball W ni la unitat watt (W). Un reductor fa que el motor giri més ràpid que la roda; la relació de transmissió indica quantes voltes fa un eix per cada volta de l'altre.</p>
         <div class="diagram" aria-label="El motor gira ràpid, un reductor disminueix la velocitat i la roda gira més lentament"><div>⚙️ Motor<br>ω<sub>motor</sub> alta<br>Γ<sub>motor</sub> petit</div><div class="arrow">→</div><div class="loss">🔧 Reductor<br>η<sub>red</sub></div><div class="arrow">→</div><div class="useful">🚲 Roda<br>ω<sub>roda</sub> baixa<br>Γ<sub>roda</sub> gran</div></div>
-        <p class="formula-intro"><strong>Relació de transmissió amb velocitats angulars:</strong> compara el gir del motor amb el de la roda, en rad/s.</p>
-        <span class="formula">i = ω<sub>motor</sub> / ω<sub>roda</sub></span>
-        <div class="legend"><span><b>i:</b> relació de transmissió (sense unitats)</span><span><b>ω<sub>motor</sub>:</b> velocitat angular del motor (rad/s)</span><span><b>ω<sub>roda</sub>:</b> velocitat angular de la roda (rad/s)</span></div>
-        <p class="formula-intro"><strong>Relació de transmissió amb rpm:</strong> és el mateix quocient quan les velocitats estan expressades en voltes per minut.</p>
-        <span class="formula">i = n<sub>motor</sub> / n<sub>roda</sub></span>
-        <div class="legend"><span><b>i:</b> relació de transmissió (sense unitats)</span><span><b>n<sub>motor</sub>:</b> velocitat del motor (rpm)</span><span><b>n<sub>roda</sub>:</b> velocitat de la roda (rpm)</span></div>
-        <p class="formula-intro"><strong>Velocitat del motor:</strong> un reductor fa que el motor giri més de pressa que la roda.</p>
-        <span class="formula">ω<sub>motor</sub> = i · ω<sub>roda</sub></span>
-        <div class="legend"><span><b>ω<sub>motor</sub>:</b> velocitat angular del motor (rad/s)</span><span><b>i:</b> relació motor/roda (sense unitats)</span><span><b>ω<sub>roda</sub>:</b> velocitat angular de la roda (rad/s)</span></div>
-        <p class="formula-intro"><strong>Parell a la roda:</strong> el reductor augmenta el parell disponible, però cal considerar les pèrdues.</p>
-        <span class="formula">Γ<sub>roda</sub> = η<sub>red</sub> · i · Γ<sub>motor</sub></span>
-        <div class="legend"><span><b>Γ<sub>roda</sub>:</b> parell a la roda (N·m)</span><span><b>η<sub>red</sub>:</b> rendiment del reductor (sense unitats)</span><span><b>i:</b> relació de transmissió (sense unitats)</span><span><b>Γ<sub>motor</sub>:</b> parell del motor (N·m)</span></div>
+        <div class="formula-grid">
+        <article class="formula-card">
+          <h3>Relació de transmissió amb velocitats angulars</h3>
+          <p>compara el gir del motor amb el de la roda, en rad/s.</p>
+          <span class="formula">i = ω<sub>motor</sub> / ω<sub>roda</sub></span>
+          <div class="legend"><span><b>i:</b> relació de transmissió (sense unitats)</span><span><b>ω<sub>motor</sub>:</b> velocitat angular del motor (rad/s)</span><span><b>ω<sub>roda</sub>:</b> velocitat angular de la roda (rad/s)</span></div>
+        </article>
+        <article class="formula-card">
+          <h3>Relació de transmissió amb rpm</h3>
+          <p>és el mateix quocient quan les velocitats estan expressades en voltes per minut.</p>
+          <span class="formula">i = n<sub>motor</sub> / n<sub>roda</sub></span>
+          <div class="legend"><span><b>i:</b> relació de transmissió (sense unitats)</span><span><b>n<sub>motor</sub>:</b> velocitat del motor (rpm)</span><span><b>n<sub>roda</sub>:</b> velocitat de la roda (rpm)</span></div>
+        </article>
+        <article class="formula-card">
+          <h3>Velocitat del motor</h3>
+          <p>un reductor fa que el motor giri més de pressa que la roda.</p>
+          <span class="formula">ω<sub>motor</sub> = i · ω<sub>roda</sub></span>
+          <div class="legend"><span><b>ω<sub>motor</sub>:</b> velocitat angular del motor (rad/s)</span><span><b>i:</b> relació motor/roda (sense unitats)</span><span><b>ω<sub>roda</sub>:</b> velocitat angular de la roda (rad/s)</span></div>
+        </article>
+        <article class="formula-card">
+          <h3>Parell a la roda</h3>
+          <p>el reductor augmenta el parell disponible, però cal considerar les pèrdues.</p>
+          <span class="formula">Γ<sub>roda</sub> = η<sub>red</sub> · i · Γ<sub>motor</sub></span>
+          <div class="legend"><span><b>Γ<sub>roda</sub>:</b> parell a la roda (N·m)</span><span><b>η<sub>red</sub>:</b> rendiment del reductor (sense unitats)</span><span><b>i:</b> relació de transmissió (sense unitats)</span><span><b>Γ<sub>motor</sub>:</b> parell del motor (N·m)</span></div>
+        </article>
+        </div>
         <div class="worked"><h3>🧮 Exemple de l'exercici PAU 11</h3><p>L'enunciat dona <strong>n<sub>roda</sub> / n<sub>motor</sub> = 0,08</strong>. Atenció: és la relació <em>inversa</em> de la que hem definit com a i!</p><p>Per tant, <strong>i = 1 / 0,08 = 12,5</strong>. Si ω<sub>roda</sub> = 10,28 rad/s, aleshores ω<sub>motor</sub> = 12,5 · 10,28 = <strong>128,5 rad/s</strong>.</p></div>
         <p><strong>Regla d'or:</strong> copia exactament la fracció que dona l'enunciat. No tots els problemes defineixen «i» igual. Per exemple, a l'<strong>exercici 24</strong> el multiplicador de velocitat es defineix com a <strong>τ = n<sub>sortida</sub> / n<sub>entrada</sub></strong>: la velocitat augmenta i el parell disminueix.</p>
       </div>
       <h3 style="color:#215c90">🔋 Capacitat, energia i autonomia d'una bateria</h3>
       <p>Una bateria emmagatzema energia. La seva <strong>capacitat elèctrica</strong> es dona sovint en Ah o mAh; l'<strong>energia</strong>, en Wh. L'autonomia depèn de l'energia disponible i de la potència consumida.</p>
-      <p class="formula-intro"><strong>Energia emmagatzemada:</strong> la tensió i la capacitat elèctrica permeten calcular l'energia de la bateria.</p>
-      <span class="formula">E<sub>bateria</sub> = U · C</span>
-      <div class="legend"><span><b>E<sub>bateria</sub>:</b> energia emmagatzemada (Wh)</span><span><b>U:</b> tensió de la bateria (V)</span><span><b>C:</b> capacitat elèctrica (Ah)</span></div>
-      <p class="formula-intro"><strong>Conversió de capacitat:</strong> passa de mAh a Ah abans de calcular l'energia.</p>
-      <span class="formula">C (Ah) = C (mAh) / 1.000</span>
-      <div class="legend"><span><b>C:</b> capacitat elèctrica (Ah o mAh segons el costat de la igualtat)</span><span><b>1.000:</b> factor de conversió de mAh a Ah</span></div>
-      <p class="formula-intro"><strong>Autonomia en temps:</strong> temps que pot funcionar un dispositiu amb l'energia disponible.</p>
-      <span class="formula">t = E<sub>disponible</sub> / P<sub>consumida</sub></span>
-      <div class="legend"><span><b>t:</b> temps de funcionament (h)</span><span><b>E<sub>disponible</sub>:</b> energia de la bateria (Wh)</span><span><b>P<sub>consumida</sub>:</b> potència elèctrica consumida (W)</span></div>
-      <p class="formula-intro"><strong>Autonomia en distància:</strong> distància recorreguda durant el temps de funcionament.</p>
-      <span class="formula">d = v · t</span>
-      <div class="legend"><span><b>d:</b> distància recorreguda (km)</span><span><b>v:</b> velocitat mitjana (km/h)</span><span><b>t:</b> temps (h)</span></div>
-      <p class="formula-intro"><strong>Potència a la roda:</strong> part de la potència elèctrica es perd al motor i a la transmissió; la resta arriba a la roda.</p>
-      <span class="formula">P<sub>roda</sub> = η<sub>motor</sub> · η<sub>red</sub> · P<sub>elèctrica</sub></span>
-      <div class="legend"><span><b>P<sub>roda</sub>:</b> potència mecànica a la roda (W)</span><span><b>P<sub>elèctrica</sub>:</b> potència que rep el motor (W)</span><span><b>η<sub>motor</sub>, η<sub>red</sub>:</b> rendiments del motor i del reductor (sense unitats)</span></div>
+      <div class="formula-grid">
+      <article class="formula-card">
+        <h3>Energia emmagatzemada</h3>
+        <p>la tensió i la capacitat elèctrica permeten calcular l'energia de la bateria.</p>
+        <span class="formula">E<sub>bateria</sub> = U · C</span>
+        <div class="legend"><span><b>E<sub>bateria</sub>:</b> energia emmagatzemada (Wh)</span><span><b>U:</b> tensió de la bateria (V)</span><span><b>C:</b> capacitat elèctrica (Ah)</span></div>
+      </article>
+      <article class="formula-card">
+        <h3>Conversió de capacitat</h3>
+        <p>passa de mAh a Ah abans de calcular l'energia.</p>
+        <span class="formula">C (Ah) = C (mAh) / 1.000</span>
+        <div class="legend"><span><b>C:</b> capacitat elèctrica (Ah o mAh segons el costat de la igualtat)</span><span><b>1.000:</b> factor de conversió de mAh a Ah</span></div>
+      </article>
+      <article class="formula-card">
+        <h3>Autonomia en temps</h3>
+        <p>temps que pot funcionar un dispositiu amb l'energia disponible.</p>
+        <span class="formula">t = E<sub>disponible</sub> / P<sub>consumida</sub></span>
+        <div class="legend"><span><b>t:</b> temps de funcionament (h)</span><span><b>E<sub>disponible</sub>:</b> energia de la bateria (Wh)</span><span><b>P<sub>consumida</sub>:</b> potència elèctrica consumida (W)</span></div>
+      </article>
+      <article class="formula-card">
+        <h3>Autonomia en distància</h3>
+        <p>distància recorreguda durant el temps de funcionament.</p>
+        <span class="formula">d = v · t</span>
+        <div class="legend"><span><b>d:</b> distància recorreguda (km)</span><span><b>v:</b> velocitat mitjana (km/h)</span><span><b>t:</b> temps (h)</span></div>
+      </article>
+      <article class="formula-card">
+        <h3>Potència a la roda</h3>
+        <p>part de la potència elèctrica es perd al motor i a la transmissió; la resta arriba a la roda.</p>
+        <span class="formula">P<sub>roda</sub> = η<sub>motor</sub> · η<sub>red</sub> · P<sub>elèctrica</sub></span>
+        <div class="legend"><span><b>P<sub>roda</sub>:</b> potència mecànica a la roda (W)</span><span><b>P<sub>elèctrica</sub>:</b> potència que rep el motor (W)</span><span><b>η<sub>motor</sub>, η<sub>red</sub>:</b> rendiments del motor i del reductor (sense unitats)</span></div>
+      </article>
+      </div>
       <div class="worked"><h3>🔋 Exemple ràpid</h3><p>Una bateria de 36 V i 10 Ah emmagatzema <strong>36 · 10 = 360 Wh</strong>. Si un equip consumeix 180 W constants, l'autonomia teòrica és <strong>360 / 180 = 2 h</strong>.</p></div>
       <div class="mini-note"><strong>Unitats PAU:</strong> 1 Ah = 1.000 mAh; 1 Wh = 3.600 J. Comprova sempre si el problema et dona la potència elèctrica que entra al motor o la mecànica que arriba a la roda.</div>
       <a class="paus" href="#practica">🎓 Practica els exercicis 7–12 (especialment l'11)</a><br>
@@ -320,37 +427,67 @@
         <div class="info-box">
           <h3>🔥 Energia del combustible</h3>
           <p>És l'<strong>energia química que allibera un combustible</strong> quan es crema. Permet trobar l'energia total o la potència que subministra un cremador.</p>
-          <p class="formula-intro"><strong>Energia del combustible:</strong> energia obtinguda d'una massa de combustible.</p>
-          <span class="formula">E = m · H</span>
-          <div class="legend"><span><b>E:</b> energia química (J)</span><span><b>m:</b> massa consumida (kg)</span><span><b>H:</b> poder calorífic (J/kg)</span></div>
-          <p class="formula-intro"><strong>Potència del combustible:</strong> energia química aportada cada segon.</p>
-          <span class="formula">P = ṁ · H</span>
-          <div class="legend"><span><b>P:</b> potència química (W)</span><span><b>ṁ:</b> cabal màssic consumit (kg/s)</span><span><b>H:</b> poder calorífic (J/kg)</span></div>
+          <div class="formula-grid">
+          <article class="formula-card">
+            <h3>Energia del combustible</h3>
+            <p>energia obtinguda d'una massa de combustible.</p>
+            <span class="formula">E = m · H</span>
+            <div class="legend"><span><b>E:</b> energia química (J)</span><span><b>m:</b> massa consumida (kg)</span><span><b>H:</b> poder calorífic (J/kg)</span></div>
+          </article>
+          <article class="formula-card">
+            <h3>Potència del combustible</h3>
+            <p>energia química aportada cada segon.</p>
+            <span class="formula">P = ṁ · H</span>
+            <div class="legend"><span><b>P:</b> potència química (W)</span><span><b>ṁ:</b> cabal màssic consumit (kg/s)</span><span><b>H:</b> poder calorífic (J/kg)</span></div>
+          </article>
+          </div>
           <p>La calor útil és menor que l'energia química si el sistema té pèrdues: s'ha de tenir en compte el rendiment.</p>
         </div>
         <div class="info-box">
           <h3>💡 Energia elèctrica</h3>
           <p>És l'energia <strong>transferida pel corrent elèctric</strong>. La potència indica quanta energia consumeix o transforma un aparell per unitat de temps.</p>
-          <p class="formula-intro"><strong>Potència elèctrica:</strong> depèn de la tensió i de la intensitat.</p>
-          <span class="formula">P = U · I</span>
-          <div class="legend"><span><b>P:</b> potència elèctrica (W)</span><span><b>U:</b> tensió (V, volts)</span><span><b>I:</b> intensitat de corrent (A, amperes)</span></div>
-          <p class="formula-intro"><strong>Potència en una resistència:</strong> una altra manera de calcular la potència d'un receptor resistiu.</p>
-          <span class="formula">P = U<sup>2</sup> / R</span>
-          <div class="legend"><span><b>P:</b> potència dissipada (W)</span><span><b>U:</b> tensió (V)</span><span><b>R:</b> resistència elèctrica (Ω, ohms)</span></div>
-          <p class="formula-intro"><strong>Energia elèctrica:</strong> energia consumida per un aparell durant un temps.</p>
-          <span class="formula">E = P · t</span>
-          <div class="legend"><span><b>E:</b> energia elèctrica (J amb t en s; Wh amb t en h)</span><span><b>P:</b> potència (W)</span><span><b>t:</b> temps (s o h)</span></div>
-          <p class="formula-intro"><strong>Resistència d'un fil:</strong> depèn del material, la longitud i la secció del conductor.</p>
-          <span class="formula">R = ρ<sub>e</sub> · ℓ / S</span>
-          <div class="legend"><span><b>R:</b> resistència del fil (Ω)</span><span><b>ρ<sub>e</sub>:</b> resistivitat (Ω·m)</span><span><b>ℓ:</b> longitud (m)</span><span><b>S:</b> secció (m²)</span></div>
+          <div class="formula-grid">
+          <article class="formula-card">
+            <h3>Potència elèctrica</h3>
+            <p>depèn de la tensió i de la intensitat.</p>
+            <span class="formula">P = U · I</span>
+            <div class="legend"><span><b>P:</b> potència elèctrica (W)</span><span><b>U:</b> tensió (V, volts)</span><span><b>I:</b> intensitat de corrent (A, amperes)</span></div>
+          </article>
+          <article class="formula-card">
+            <h3>Potència en una resistència</h3>
+            <p>una altra manera de calcular la potència d'un receptor resistiu.</p>
+            <span class="formula">P = U<sup>2</sup> / R</span>
+            <div class="legend"><span><b>P:</b> potència dissipada (W)</span><span><b>U:</b> tensió (V)</span><span><b>R:</b> resistència elèctrica (Ω, ohms)</span></div>
+          </article>
+          <article class="formula-card">
+            <h3>Energia elèctrica</h3>
+            <p>energia consumida per un aparell durant un temps.</p>
+            <span class="formula">E = P · t</span>
+            <div class="legend"><span><b>E:</b> energia elèctrica (J amb t en s; Wh amb t en h)</span><span><b>P:</b> potència (W)</span><span><b>t:</b> temps (s o h)</span></div>
+          </article>
+          <article class="formula-card">
+            <h3>Resistència d'un fil</h3>
+            <p>depèn del material, la longitud i la secció del conductor.</p>
+            <span class="formula">R = ρ<sub>e</sub> · ℓ / S</span>
+            <div class="legend"><span><b>R:</b> resistència del fil (Ω)</span><span><b>ρ<sub>e</sub>:</b> resistivitat (Ω·m)</span><span><b>ℓ:</b> longitud (m)</span><span><b>S:</b> secció (m²)</span></div>
+          </article>
+          </div>
         </div>
       </div>
-      <p class="formula-intro"><strong>Potència tèrmica:</strong> quan un fluid circula, depèn de la massa que passa cada segon i de l'escalfament.</p>
-      <span class="formula">P<sub>tèrmica</sub> = ṁ · c · ΔT</span>
-      <div class="legend"><span><b>P<sub>tèrmica</sub>:</b> potència de calefacció (W)</span><span><b>ṁ:</b> cabal màssic del fluid (kg/s)</span><span><b>c:</b> calor específica (J/(kg·K))</span><span><b>ΔT:</b> augment de temperatura (K o °C)</span></div>
-      <p class="formula-intro"><strong>Conversió de cabal:</strong> transforma el cabal volumètric en massa per segon.</p>
-      <span class="formula">ṁ = ρ · q<sub>v</sub></span>
-      <div class="legend"><span><b>ṁ:</b> cabal màssic (kg/s)</span><span><b>ρ:</b> densitat del fluid (kg/m³)</span><span><b>q<sub>v</sub>:</b> cabal volumètric (m³/s)</span></div>
+      <div class="formula-grid">
+      <article class="formula-card">
+        <h3>Potència tèrmica</h3>
+        <p>quan un fluid circula, depèn de la massa que passa cada segon i de l'escalfament.</p>
+        <span class="formula">P<sub>tèrmica</sub> = ṁ · c · ΔT</span>
+        <div class="legend"><span><b>P<sub>tèrmica</sub>:</b> potència de calefacció (W)</span><span><b>ṁ:</b> cabal màssic del fluid (kg/s)</span><span><b>c:</b> calor específica (J/(kg·K))</span><span><b>ΔT:</b> augment de temperatura (K o °C)</span></div>
+      </article>
+      <article class="formula-card">
+        <h3>Conversió de cabal</h3>
+        <p>transforma el cabal volumètric en massa per segon.</p>
+        <span class="formula">ṁ = ρ · q<sub>v</sub></span>
+        <div class="legend"><span><b>ṁ:</b> cabal màssic (kg/s)</span><span><b>ρ:</b> densitat del fluid (kg/m³)</span><span><b>q<sub>v</sub>:</b> cabal volumètric (m³/s)</span></div>
+      </article>
+      </div>
       <div class="worked"><h3>🧮 Exemple: escalfar i vaporitzar</h3><p>Per escalfar <strong>1 kg d'aigua de 20 °C a 100 °C</strong>, amb c = 4.180 J/(kg·K): Q<sub>1</sub> = 1 · 4.180 · 80 = <strong>334.400 J</strong>.</p><p>Si després la vaporitzem amb L = 2.260.000 J/kg: Q<sub>2</sub> = <strong>2.260.000 J</strong>. Energia total: <strong>Q<sub>1</sub> + Q<sub>2</sub> = 2.594.400 J</strong>, abans de considerar el rendiment.</p></div>
       <div class="mini-note"><strong>Atenció a les lletres:</strong> <strong>Q</strong> és la calor o energia tèrmica transferida (J); <strong>c</strong> minúscula és la calor específica; <strong>C</strong> majúscula a les bateries és la capacitat (Ah). Per calcular el combustible o l'electricitat necessària, divideix la calor útil entre η. Un cabal en L/min s'ha de convertir a m³/s o kg/s.</div>
       <a class="paus" href="#practica">🎓 Practica els exercicis 13–17</a><br>
@@ -395,12 +532,20 @@
       <div class="key-idea">
         <h3>⚙️ I si la màquina multiplica la velocitat? (PAU 24)</h3>
         <p>En una transmissió <strong>multiplicadora</strong>, la sortida pot girar més ràpid que l'entrada. Si l'enunciat defineix <strong>τ = n<sub>sortida</sub> / n<sub>entrada</sub></strong>, amb 10 rpm a l'entrada i 1.500 rpm a la sortida: <strong>τ = 150</strong>.</p>
-        <p class="formula-intro"><strong>Potència a la sortida:</strong> l'energia es transforma amb algunes pèrdues, de manera que la potència útil és menor que l'entrada.</p>
-        <span class="formula">P<sub>sortida</sub> = η · P<sub>entrada</sub></span>
-        <div class="legend"><span><b>P<sub>sortida</sub>:</b> potència mecànica de sortida (W)</span><span><b>P<sub>entrada</sub>:</b> potència mecànica d'entrada (W)</span><span><b>η:</b> rendiment del multiplicador (sense unitats)</span></div>
-        <p class="formula-intro"><strong>Parell a la sortida:</strong> si la velocitat angular augmenta, el parell disminueix per a una potència donada.</p>
-        <span class="formula">Γ<sub>sortida</sub> = P<sub>sortida</sub> / ω<sub>sortida</sub></span>
-        <div class="legend"><span><b>Γ<sub>sortida</sub>:</b> parell de sortida (N·m)</span><span><b>P<sub>sortida</sub>:</b> potència de sortida (W)</span><span><b>ω<sub>sortida</sub>:</b> velocitat angular de sortida (rad/s)</span><span><b>τ:</b> relació de velocitats sortida/entrada (sense unitats)</span></div>
+        <div class="formula-grid">
+        <article class="formula-card">
+          <h3>Potència a la sortida</h3>
+          <p>l'energia es transforma amb algunes pèrdues, de manera que la potència útil és menor que l'entrada.</p>
+          <span class="formula">P<sub>sortida</sub> = η · P<sub>entrada</sub></span>
+          <div class="legend"><span><b>P<sub>sortida</sub>:</b> potència mecànica de sortida (W)</span><span><b>P<sub>entrada</sub>:</b> potència mecànica d'entrada (W)</span><span><b>η:</b> rendiment del multiplicador (sense unitats)</span></div>
+        </article>
+        <article class="formula-card">
+          <h3>Parell a la sortida</h3>
+          <p>si la velocitat angular augmenta, el parell disminueix per a una potència donada.</p>
+          <span class="formula">Γ<sub>sortida</sub> = P<sub>sortida</sub> / ω<sub>sortida</sub></span>
+          <div class="legend"><span><b>Γ<sub>sortida</sub>:</b> parell de sortida (N·m)</span><span><b>P<sub>sortida</sub>:</b> potència de sortida (W)</span><span><b>ω<sub>sortida</sub>:</b> velocitat angular de sortida (rad/s)</span><span><b>τ:</b> relació de velocitats sortida/entrada (sense unitats)</span></div>
+        </article>
+        </div>
         <p>No confonguis aquesta τ amb la relació i = entrada / sortida de l'exercici 11.</p>
       </div>
       <div class="mini-note"><strong>Detall PAU:</strong> si el vent baixa un 10 %, la seva potència disponible queda multiplicada per 0,9³ = 0,729. En centrals de cicle combinat, segueix el flux d'energia de cada etapa i aplica els rendiments corresponents.</div>
@@ -411,24 +556,44 @@
       <div class="section-kicker">Bloc 6 · Exercicis PAU 25–30</div>
       <h2>Estalvi energètic, costos i emissions</h2>
       <p>Els problemes d'estalvi comparen <strong>dues tecnologies</strong> o dos combustibles: cal calcular la mateixa energia útil per a cadascuna, estimar el consum real i després el preu o les emissions.</p>
-      <p class="formula-intro"><strong>Energia real consumida:</strong> per obtenir una energia útil determinada, cal aportar més energia si el rendiment és inferior al 100 %.</p>
-      <span class="formula">E<sub>consumida</sub> = E<sub>útil</sub> / η</span>
-      <div class="legend"><span><b>E<sub>consumida</sub>:</b> energia subministrada (J)</span><span><b>E<sub>útil</sub>:</b> energia que volem aprofitar (J)</span><span><b>η:</b> rendiment del sistema (sense unitats)</span></div>
-      <p class="formula-intro"><strong>Volum de combustible:</strong> quantitat necessària quan en coneixem la densitat i el poder calorífic.</p>
-      <span class="formula">V<sub>combustible</sub> = E<sub>consumida</sub> / (ρ · H)</span>
-      <div class="legend"><span><b>V<sub>combustible</sub>:</b> volum gastat (L)</span><span><b>E<sub>consumida</sub>:</b> energia del combustible (J)</span><span><b>ρ:</b> densitat (kg/L)</span><span><b>H:</b> poder calorífic (J/kg)</span></div>
-      <p class="formula-intro"><strong>Cost del consum:</strong> despesa econòmica segons la quantitat consumida i el preu per unitat.</p>
-      <span class="formula">Cost (€) = consum · tarifa</span>
-      <div class="legend"><span><b>Cost:</b> despesa econòmica (€)</span><span><b>Consum:</b> quantitat consumida (kWh, L o kg)</span><span><b>Tarifa:</b> preu per unitat (€/kWh, €/L o €/kg)</span></div>
-      <p class="formula-intro"><strong>Emissions:</strong> quantitat de CO₂ emesa segons el combustible o l'energia utilitzada.</p>
-      <span class="formula">CO₂ = consum · factor d'emissió</span>
-      <div class="legend"><span><b>CO₂:</b> emissions de diòxid de carboni (kg CO₂)</span><span><b>Consum:</b> energia o combustible utilitzat (kWh, L o kg)</span><span><b>Factor d'emissió:</b> kg CO₂/kWh, kg CO₂/L o kg CO₂/kg, segons el cas</span></div>
-      <p class="formula-intro"><strong>Estalvi:</strong> diferència entre el consum inicial i el de la nova instal·lació.</p>
-      <span class="formula">Estalvi = consum<sub>abans</sub> − consum<sub>després</sub></span>
-      <div class="legend"><span><b>Estalvi:</b> quantitat no consumida (kWh, L o kg)</span><span><b>Consum<sub>abans</sub>:</b> consum inicial (mateixes unitats)</span><span><b>Consum<sub>després</sub>:</b> consum final (mateixes unitats)</span></div>
-      <p class="formula-intro"><strong>Retorn de la inversió:</strong> anys necessaris per recuperar una inversió amb estalvis econòmics constants.</p>
-      <span class="formula">T<sub>retorn</sub> = inversió / estalvi anual (€)</span>
-      <div class="legend"><span><b>T<sub>retorn</sub>:</b> període de retorn simple (anys)</span><span><b>Inversió:</b> cost inicial (€)</span><span><b>Estalvi anual:</b> diners estalviats cada any (€/any)</span></div>
+      <div class="formula-grid">
+      <article class="formula-card">
+        <h3>Energia real consumida</h3>
+        <p>per obtenir una energia útil determinada, cal aportar més energia si el rendiment és inferior al 100 %.</p>
+        <span class="formula">E<sub>consumida</sub> = E<sub>útil</sub> / η</span>
+        <div class="legend"><span><b>E<sub>consumida</sub>:</b> energia subministrada (J)</span><span><b>E<sub>útil</sub>:</b> energia que volem aprofitar (J)</span><span><b>η:</b> rendiment del sistema (sense unitats)</span></div>
+      </article>
+      <article class="formula-card">
+        <h3>Volum de combustible</h3>
+        <p>quantitat necessària quan en coneixem la densitat i el poder calorífic.</p>
+        <span class="formula">V<sub>combustible</sub> = E<sub>consumida</sub> / (ρ · H)</span>
+        <div class="legend"><span><b>V<sub>combustible</sub>:</b> volum gastat (L)</span><span><b>E<sub>consumida</sub>:</b> energia del combustible (J)</span><span><b>ρ:</b> densitat (kg/L)</span><span><b>H:</b> poder calorífic (J/kg)</span></div>
+      </article>
+      <article class="formula-card">
+        <h3>Cost del consum</h3>
+        <p>despesa econòmica segons la quantitat consumida i el preu per unitat.</p>
+        <span class="formula">Cost (€) = consum · tarifa</span>
+        <div class="legend"><span><b>Cost:</b> despesa econòmica (€)</span><span><b>Consum:</b> quantitat consumida (kWh, L o kg)</span><span><b>Tarifa:</b> preu per unitat (€/kWh, €/L o €/kg)</span></div>
+      </article>
+      <article class="formula-card">
+        <h3>Emissions</h3>
+        <p>quantitat de CO₂ emesa segons el combustible o l'energia utilitzada.</p>
+        <span class="formula">CO₂ = consum · factor d'emissió</span>
+        <div class="legend"><span><b>CO₂:</b> emissions de diòxid de carboni (kg CO₂)</span><span><b>Consum:</b> energia o combustible utilitzat (kWh, L o kg)</span><span><b>Factor d'emissió:</b> kg CO₂/kWh, kg CO₂/L o kg CO₂/kg, segons el cas</span></div>
+      </article>
+      <article class="formula-card">
+        <h3>Estalvi</h3>
+        <p>diferència entre el consum inicial i el de la nova instal·lació.</p>
+        <span class="formula">Estalvi = consum<sub>abans</sub> − consum<sub>després</sub></span>
+        <div class="legend"><span><b>Estalvi:</b> quantitat no consumida (kWh, L o kg)</span><span><b>Consum<sub>abans</sub>:</b> consum inicial (mateixes unitats)</span><span><b>Consum<sub>després</sub>:</b> consum final (mateixes unitats)</span></div>
+      </article>
+      <article class="formula-card">
+        <h3>Retorn de la inversió</h3>
+        <p>anys necessaris per recuperar una inversió amb estalvis econòmics constants.</p>
+        <span class="formula">T<sub>retorn</sub> = inversió / estalvi anual (€)</span>
+        <div class="legend"><span><b>T<sub>retorn</sub>:</b> període de retorn simple (anys)</span><span><b>Inversió:</b> cost inicial (€)</span><span><b>Estalvi anual:</b> diners estalviats cada any (€/any)</span></div>
+      </article>
+      </div>
       <div class="worked"><h3>💡 Exemple: substituir bombetes</h3><p>Canviem 10 bombetes de 60 W per 10 de 9 W, enceses 4 hores al dia durant 300 dies.</p><p>Estalvi de potència: 10 · (60 − 9) = <strong>510 W = 0,51 kW</strong>.</p><p>Estalvi d'energia: 0,51 · 4 · 300 = <strong>612 kWh/any</strong>. Si l'electricitat costa 0,20 €/kWh: <strong>122,40 €/any</strong>.</p></div>
       <div class="mini-note"><strong>Estratègia:</strong> identifica la magnitud final: litres, kg, kWh, euros o kg de CO₂. Les emissions depenen del <em>factor</em> indicat per l'enunciat; no barregis valors per litre amb valors per kWh.</div>
       <a class="paus" href="#practica">🎓 Practica els exercicis 25–30</a>
