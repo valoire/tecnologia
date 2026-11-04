@@ -96,7 +96,7 @@ function addODSIndividualActivity(){
  block.id='ud2-ods-passaport';
  block.setAttribute('aria-labelledby','ud2-ods-passaport-titol');
  block.append(
-  make('span','ud2-ods-passaport-eyebrow','✏️ ACTIVITAT INDIVIDUAL · 15–20 MINUTS')
+  make('span','ud2-ods-passaport-eyebrow','✏️ ACTIVITAT INDIVIDUAL COMPLETA · 25–35 MINUTS')
  );
  const heading=make('h3','ud2-ods-passaport-heading','Passaport dels 17 ODS');
  heading.id='ud2-ods-passaport-titol';block.append(heading);
@@ -192,6 +192,111 @@ function addODSIndividualActivity(){
   showQuestion();block.scrollIntoView({block:'start',behavior:'smooth'});
  });
  showQuestion();
+}
+
+function addODSMemoryGame(){
+ const explorer=document.querySelector('#ud2-main-panel-1 #ods-explorer');
+ if(!explorer||document.querySelector('#ud2-ods-memory'))return;
+ const ods=[...explorer.querySelectorAll('.ud2-ods-static')].map((card,i)=>({
+  id:i+1,
+  name:card.querySelector('h4')?.textContent?.replace(/^\s*0?\d+\s*[·.:-]?\s*/,'').trim(),
+  meaning:card.querySelector('p')?.textContent?.trim()
+ })).filter(item=>item.name&&item.meaning);
+ if(ods.length!==17)return;
+ const mix=list=>{
+  const copy=[...list];
+  for(let i=copy.length-1;i>0;i--){
+   const j=Math.floor(Math.random()*(i+1));
+   [copy[i],copy[j]]=[copy[j],copy[i]];
+  }
+  return copy;
+ };
+ const game=make('section','ud2-ods-memory');
+ game.id='ud2-ods-memory';
+ game.setAttribute('aria-labelledby','ud2-ods-memory-heading');
+ game.append(make('span','ud2-ods-memory-eyebrow','🎮 JOC RÀPID · 5–10 MINUTS PER PARTIDA'));
+ const h=make('h3','ud2-ods-memory-heading','Memory dels ODS');
+ h.id='ud2-ods-memory-heading';game.append(h);
+ game.append(make('p','ud2-ods-memory-intro','Gira dues cartes: una porta el nom de l’ODS i l’altra explica què vol aconseguir. Troba les parelles! Cada ronda descobreix objectius nous.'));
+ const info=make('div','ud2-ods-memory-info');
+ const round=make('strong','ud2-ods-memory-round');
+ const counter=make('span','ud2-ods-memory-counter');
+ info.append(round,counter);
+ const board=make('div','ud2-ods-memory-grid');
+ board.setAttribute('aria-label','Cartes del joc dels ODS');
+ const feedback=make('p','ud2-ods-memory-feedback');
+ feedback.setAttribute('role','status');feedback.setAttribute('aria-live','polite');
+ const next=make('button','ud2-ods-memory-next','Jugar la ronda següent →');
+ next.type='button';next.hidden=true;
+ game.append(info,board,feedback,next);
+ // Joc curt: 6, 6 i 5 parelles. Qui repeteix tres rondes veu els 17 ODS.
+ let pending=mix(ods),roundNumber=0,selected=[],blocked=false,matched=0,tries=0;
+ function showRound(){
+  if(!pending.length){pending=mix(ods);roundNumber=0;}
+  roundNumber++;
+  selected=[];blocked=false;matched=0;tries=0;
+  const batch=pending.splice(0,6);
+  const cards=mix(batch.flatMap(item=>[
+   {id:item.id,kind:'name',content:'ODS '+item.id+' · '+item.name},
+   {id:item.id,kind:'meaning',content:item.meaning}
+  ]));
+  round.textContent='RONDA '+roundNumber+' DE 3';
+  next.hidden=true;feedback.textContent='Tria una carta per començar.';
+  board.replaceChildren();
+  function updateCounter(){
+   counter.textContent=matched+' de '+batch.length+' parelles · '+tries+' intents';
+  }
+  updateCounter();
+  function reveal(button,item){
+   button.classList.add('is-open');
+   button.classList.add(item.kind==='name'?'is-name':'is-meaning');
+   button.textContent=item.content;
+   button.setAttribute('aria-pressed','true');
+  }
+  function hide(button){
+   button.classList.remove('is-open','is-name','is-meaning');
+   button.textContent='❔';
+   button.setAttribute('aria-pressed','false');
+  }
+  cards.forEach(item=>{
+   const button=make('button','ud2-ods-memory-card','❔');
+   button.type='button';button.setAttribute('aria-pressed','false');
+   button.setAttribute('aria-label','Carta oculta. Prem per girar-la.');
+   button.addEventListener('click',()=>{
+    if(blocked||button.disabled||selected.some(pair=>pair.button===button))return;
+    reveal(button,item);
+    button.removeAttribute('aria-label');
+    selected.push({button,item});
+    if(selected.length!==2)return;
+    tries++;
+    const [a,b]=selected;
+    if(a.item.id===b.item.id&&a.item.kind!==b.item.kind){
+     matched++;a.button.disabled=true;b.button.disabled=true;
+     a.button.classList.add('is-matched');b.button.classList.add('is-matched');
+     feedback.textContent='✅ Bona parella! ODS '+item.id+': '+ods[item.id-1].name+'.';
+     selected=[];updateCounter();
+     if(matched===batch.length){
+      feedback.textContent=roundNumber===3
+       ?'🏆 Has completat les tres rondes i descobert els 17 ODS!'
+       :'🎉 Ronda completada! Molt bé: has relacionat '+batch.length+' ODS.';
+      next.textContent=roundNumber===3?'↻ Tornar a jugar amb els 17 ODS':'Continuar amb altres ODS →';
+      next.hidden=false;
+     }
+    }else{
+     blocked=true;feedback.textContent='🔎 Encara no fan parella. Llegeix les dues cartes i torna-ho a provar.';
+     setTimeout(()=>{
+      hide(a.button);hide(b.button);selected=[];blocked=false;
+      feedback.textContent='Busca un objectiu i la seva descripció.';updateCounter();
+     },1300);
+    }
+   });
+   board.append(button);
+  });
+ }
+ next.addEventListener('click',showRound);
+ showRound();
+ // La partida breu precedeix l'activitat llarga i no substitueix les fitxes de lectura.
+ explorer.insertAdjacentElement('afterend',game);
 }
 
 function simplifyWorkshop(){
@@ -493,6 +598,7 @@ function init(){
  });
  addMiniLab();
  addODSIndividualActivity();
+ addODSMemoryGame();
  simplifyWorkshop();
  syncFromTabs();
  if(location.hash==='#ud2-questionari-final'||new URLSearchParams(location.search).get('seccio')==='questionari'){
