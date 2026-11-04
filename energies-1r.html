@@ -50,14 +50,38 @@
     .tip{background:#fff9ec;border:1.5px solid #f1d9ac;color:#765a2b;border-radius:12px;padding:13px 16px;margin:17px 0;line-height:1.6}
     .exercise-ref{font-weight:800;color:#22628d;background:#f0f8fe;border-radius:12px;padding:12px 16px;margin-top:15px}
     .exercise-ref a{color:#1d648f}
+    .motor-photos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin:20px 0}
+    .motor-photo{margin:0;border:1.5px solid #c8dfec;background:#f4f9fd;border-radius:17px;overflow:hidden;min-width:0}
+    .motor-photo img{display:block;width:100%;height:275px;object-fit:contain;background:#eef3f6}
+    .motor-photo figcaption{padding:13px 16px;font-size:.92rem;line-height:1.5;color:#42657d}
+    .motor-photo figcaption strong{display:block;font-size:1.05rem;color:#215f8b;margin-bottom:4px}
+    .motor-photo .credit{font-size:.76rem;color:#637c8d;display:block;margin-top:6px}
+    .motor-photo .credit a{color:#2e719f}
+    .anatomy{display:grid;grid-template-columns:minmax(170px,.8fr) minmax(0,1.2fr);gap:18px;align-items:center;border:1.5px solid #bdd9e9;background:#f1f8fe;padding:16px;border-radius:17px;margin:19px 0}
+    .anatomy figure{margin:0}
+    .anatomy img{display:block;max-width:100%;max-height:385px;margin:auto;object-fit:contain;border-radius:9px}
+    .anatomy figcaption{font-size:.76rem;color:#627b8d;text-align:center;margin-top:7px}
+    .anatomy figcaption a{color:#2e719f}
+    .anatomy h3{color:#235f8c;margin:0 0 10px;font-size:1.16rem}
+    .anatomy ul{padding-left:20px;margin:0;color:#45647b;line-height:1.65}
+    .anatomy li{margin:5px 0}
+    .cycle-guide{background:linear-gradient(120deg,#eaf5fc,#f5fbff);border:1.5px solid #b8d8e9;border-radius:17px;padding:19px 21px;margin:18px 0}
+    .cycle-guide h3{color:#205e8c;margin:0 0 7px;font-size:1.22rem}
+    .cycle-guide p{margin:8px 0 14px;color:#41617a;line-height:1.62}
+    .cycle-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:15px 0}
+    .cycle-step{background:#fff;border:1.5px solid #c8dfed;border-radius:12px;padding:13px 12px;min-width:0}
+    .cycle-step span{display:block;font-weight:900;font-size:.81rem;color:#4983aa;margin-bottom:5px}
+    .cycle-step strong{display:block;color:#215f8d;margin-bottom:5px}
+    .cycle-step p{font-size:.87rem;margin:0;color:#536d80;line-height:1.43}
+    .cycle-math{border-radius:11px;background:#d8edfb;color:#1f5f8a;text-align:center;font-weight:900;padding:13px 16px;font-size:1.13rem;line-height:1.5}
     .final-doc{background:#eaf5fd;border:2px solid #bedbeb;border-radius:20px;padding:25px;margin:32px 0}
     .final-doc h2{color:var(--blue);margin:0 0 8px}
     .final-doc p{line-height:1.65}
     .final-doc details{margin-top:18px}
     .final-doc summary{cursor:pointer;font-weight:900;color:#245f89}
     .final-doc iframe{width:100%;height:650px;border:1.5px solid #c3dcea;border-radius:12px;background:#fff;margin-top:13px}
-    @media(max-width:960px){.index{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media(max-width:630px){.index,.formula-grid{grid-template-columns:1fr}.intro{padding:32px 0}.topic{padding:20px 16px}.final-doc iframe{height:410px}}
+    @media(max-width:960px){.index,.cycle-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:630px){.index,.formula-grid,.motor-photos,.anatomy{grid-template-columns:1fr}.intro{padding:32px 0}.topic{padding:20px 16px}.final-doc iframe{height:410px}.motor-photo img{height:235px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   </style>
 </head>
@@ -151,11 +175,29 @@
     <section class="topic" id="motors" style="--accent:#3c82ab">
       <div class="tag">Bloc 6 · Exercicis 13–16 · Motors dièsel i de gasolina</div><h2>Poder calorífic, combustible i cicles del motor</h2>
       <p>El <strong>poder calorífic</strong> indica l'energia que s'obté per cada quilogram de combustible. El motor només transforma una part en energia útil. En un motor de <strong>quatre temps</strong>, cada cicle de treball necessita dues voltes de cigonyal.</p>
+      <div class="motor-photos" aria-label="Fotografies reals del cigonyal i de l'interior d'un motor">
+        <figure class="motor-photo"><img loading="lazy" decoding="async" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Crankshaft_of_an_engine.jpg/960px-Crankshaft_of_an_engine.jpg" alt="Fotografia real d'un cigonyal extret del motor, amb els colzes que transformen el moviment de les bieles en gir" width="960" height="711"><figcaption><strong>1. El cigonyal</strong>És l'eix amb colzes que transforma el moviment de pujada i baixada dels pistons, transmès per les bieles, en moviment de rotació.<span class="credit">Foto: <a href="https://commons.wikimedia.org/wiki/File:Crankshaft_of_an_engine.jpg" target="_blank" rel="noopener noreferrer">Seedlesslime, Wikimedia Commons</a> · CC BY-SA 4.0 · sense modificacions.</span></figcaption></figure>
+        <figure class="motor-photo"><img loading="lazy" decoding="async" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Engine_and_Gearbox_cutaway-001.jpg/960px-Engine_and_Gearbox_cutaway-001.jpg" alt="Fotografia d'un motor de combustió seccionat que deixa veure peces mecàniques internes i la caixa de canvis" width="960" height="720"><figcaption><strong>2. Un motor obert per dins</strong>En aquesta secció real podem observar com s'organitzen les peces del motor i la transmissió. Els pistons es connecten al cigonyal mitjançant les bieles.<span class="credit">Foto: <a href="https://commons.wikimedia.org/wiki/File:Engine_and_Gearbox_cutaway-001.jpg" target="_blank" rel="noopener noreferrer">NJR ZA, Wikimedia Commons</a> · CC BY-SA 3.0 · sense modificacions.</span></figcaption></figure>
+      </div>
+      <div class="anatomy"><figure><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/4/47/Four_stroke_engine_diagram.jpg" alt="Esquema d'un cilindre d'un motor de quatre temps amb les lletres C per al cigonyal, R per a la biela, P per al pistó, S per a la bugia, V per a les vàlvules i I i E per als arbres de lleves" width="533" height="600"><figcaption>Esquema: <a href="https://commons.wikimedia.org/wiki/File:Four_stroke_engine_diagram.jpg" target="_blank" rel="noopener noreferrer">Wapcaplet / Shizhao</a> · CC BY-SA 3.0 · sense modificacions.</figcaption></figure>
+        <div><h3>🔍 Identifica les parts del motor</h3><ul><li><strong>C · Cigonyal:</strong> rep el moviment de la biela i gira.</li><li><strong>R · Biela:</strong> uneix el pistó amb el cigonyal.</li><li><strong>P · Pistó:</strong> puja i baixa a l'interior del cilindre.</li><li><strong>V · Vàlvules:</strong> deixen entrar la mescla o l'aire i sortir els gasos.</li><li><strong>I i E · Arbres de lleves:</strong> obren les vàlvules d'admissió i escapament en el moment adequat.</li><li><strong>S · Bugia:</strong> genera l'espurna en un motor de gasolina; en un dièsel s'utilitza injecció i autoencesa.</li></ul></div>
+      </div>
+      <div class="cycle-guide"><h3>🔄 Per què són tan importants les voltes del cigonyal?</h3><p>El <strong>pistó</strong> fa quatre carreres (dos moviments cap avall i dos cap amunt) per completar el cicle d'un motor de quatre temps. Cada carrera fa girar el cigonyal <strong>mitja volta (180°)</strong>.</p>
+        <div class="cycle-steps" aria-label="Les quatre fases d'un cicle de motor de quatre temps">
+          <div class="cycle-step"><span>1 · 0°–180°</span><strong>Admissió ↓</strong><p>El pistó baixa. Entra aire o mescla pel conducte d'admissió.</p></div>
+          <div class="cycle-step"><span>2 · 180°–360°</span><strong>Compressió ↑</strong><p>El pistó puja i comprimeix el contingut del cilindre.</p></div>
+          <div class="cycle-step"><span>3 · 360°–540°</span><strong>Expansió ↓</strong><p>La combustió empeny el pistó i aporta treball útil.</p></div>
+          <div class="cycle-step"><span>4 · 540°–720°</span><strong>Escapament ↑</strong><p>El pistó puja i expulsa els gasos cremats.</p></div>
+        </div>
+        <div class="cycle-math">4 carreres del pistó = 720° = 2 voltes del cigonyal = 1 cicle complet</div>
+        <p>El comptarevolucions dona les <strong>voltes del cigonyal per minut (rpm)</strong>, però els exercicis demanen sovint <strong>cicles</strong> o <strong>massa de combustible per cicle</strong>. Si confons voltes i cicles, el resultat et sortirà el doble o la meitat.</p>
+        <div class="worked"><h3>🧮 Exemple: 3.000 rpm</h3><p>El cigonyal gira 3.000 vegades per minut. Cada cilindre completa un cicle cada dues voltes: <strong>3.000 / 2 = 1.500 cicles per minut i per cilindre</strong>.</p><p>En un motor de quatre cilindres, hi ha un total de <strong>6.000 combustions per minut</strong> (1.500 per cilindre), però el motor continua fent <strong>1.500 cicles complets per minut</strong>.</p></div>
+      </div>
       <div class="formula-grid">
         <article class="formula-card"><h3>Energia química del combustible</h3><p>Energia que pot aportar una massa determinada de combustible.</p><div class="formula">E<sub>química</sub> = m · PC</div><div class="legend"><b>E<sub>química</sub>:</b> energia disponible (J)<br><b>m:</b> massa de combustible (kg)<br><b>PC:</b> poder calorífic (J/kg)</div></article>
         <article class="formula-card"><h3>Massa de combustible necessària</h3><p>Inclou el rendiment per trobar la quantitat que s'ha de cremar.</p><div class="formula">m = E<sub>útil</sub> / (η · PC)</div><div class="legend"><b>m:</b> combustible (kg)<br><b>E<sub>útil</sub>:</b> energia útil (J)<br><b>η:</b> rendiment (fracció)<br><b>PC:</b> poder calorífic (J/kg)</div></article>
-        <article class="formula-card"><h3>Freqüència de cicles d'un motor de 4 temps</h3><p>En dues voltes de cigonyal es completa un cicle.</p><div class="formula">N<sub>cicles/min</sub> = n / 2</div><div class="legend"><b>N<sub>cicles/min</sub>:</b> nombre de cicles per minut<br><b>n:</b> règim del motor (revolucions/min)</div></article>
-        <article class="formula-card"><h3>Combustible per cicle</h3><p>Divideix el consum per minut entre els cicles que fa en un minut.</p><div class="formula">m<sub>cicle</sub> = ṁ<sub>min</sub> / (n / 2)</div><div class="legend"><b>m<sub>cicle</sub>:</b> massa per cicle (kg/cicle)<br><b>ṁ<sub>min</sub>:</b> massa consumida per minut (kg/min)<br><b>n:</b> règim (revolucions/min)</div></article>
+        <article class="formula-card"><h3>Freqüència de cicles d'un motor de 4 temps</h3><p>En dues voltes del cigonyal, cada cilindre completa un cicle de quatre carreres.</p><div class="formula">N<sub>cicles/min</sub> = n / 2</div><div class="legend"><b>N<sub>cicles/min</sub>:</b> cicles complets per minut i per cilindre<br><b>n:</b> règim del cigonyal (revolucions/min)<br><b>Important:</b> no confondre amb les combustions totals d'un motor de diversos cilindres.</div></article>
+        <article class="formula-card"><h3>Combustible per cicle complet del motor</h3><p>Divideix el consum total del motor per minut entre els cicles complets que fa en un minut.</p><div class="formula">m<sub>cicle</sub> = ṁ<sub>min</sub> / (n / 2)</div><div class="legend"><b>m<sub>cicle</sub>:</b> massa total consumida en dues voltes del cigonyal (kg/cicle)<br><b>ṁ<sub>min</sub>:</b> consum total del motor (kg/min)<br><b>n:</b> règim (revolucions/min)</div></article>
       </div>
       <div class="worked"><h3>🧮 Exemple de l'exercici 14</h3><p>Un motor de 4 temps gira a 2.500 min⁻¹ i consumeix 7,5 kg/h. Fa <strong>1.250 cicles/min</strong>. Consumeix 7.500 / 60 = 125 g/min; per tant, <strong>0,1 g/cicle</strong>. En 100 cicles, <strong>10 g</strong>.</p></div>
       <div class="tip"><strong>Exercicis 13 i 16:</strong> no confonguis energia útil amb energia química. A l'exercici 16, passa de massa a litres amb la densitat, i després de litres a emissions de CO₂.</div>
