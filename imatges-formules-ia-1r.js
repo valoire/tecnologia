@@ -119,8 +119,8 @@
   document.head.appendChild(style);
 
   const cards = Array.from(document.querySelectorAll('article.formula-card'));
-  visuals.forEach((asset, heading) => {
-    const card = cards.find(c => c.querySelector('h3')?.textContent.trim() === heading);
+  visuals.forEach((asset, formulaHeading) => {
+    const card = cards.find(c => c.querySelector('h3')?.textContent.trim() === formulaHeading);
     const formula = card?.querySelector('.formula');
     if (!formula) return;
     const figure = document.createElement('figure');
