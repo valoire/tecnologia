@@ -101,10 +101,10 @@
       case 'boiler': return `<g filter="url(#tinyshadow)"><rect x="290" y="53" width="137" height="117" rx="16" fill="#dcecf5" stroke="#79a6bc" stroke-width="5"/><circle cx="357" cy="109" r="35" fill="#fff" stroke="${c}" stroke-width="6"/>${text(357,118,'η',30,c)}<rect x="320" y="40" width="75" height="17" rx="5" fill="#8cabbc"/></g>${arrow(256,116,289,116,gold,6)}${arrow(428,116,481,116,mint,6)}${text(450,83,'Q útil',15,mint)}`;
       case 'bottle': return `${bottle(286,139,c)}${arrow(422,105,468,105,gold)}<path d="M482 154q-41-27-19-63q10 18 17 19q-1-24 14-40q30 53-12 84z" fill="${warm}"/>${text(359,188,'kg de gas',14,c)}`;
       case 'flow': return `<rect x="268" y="76" width="153" height="67" rx="13" fill="#a9d9ed" stroke="#85b8cd" stroke-width="4"/>${[0,1,2].map(i=>`<path d="M279 ${88+i*20}q30-10 62 0t71 0" stroke="#fff" stroke-width="4" fill="none"/>`).join('')}${arrow(420,110,466,110,c)}${dial(458,57,29,gold,-25)}${text(351,166,'cabal ṁ',15,c)}`;
-      case 'heatengine': return `${reservoir(251,40,warm,'Q calenta')}${arrow(362,76,400,76,gold,6)}${gear(444,102,30,c)}${arrow(443,138,443,174,blue,4)}${text(464,187,'W',16,c)}`;
+      case 'heatengine': return `${reservoir(251,40,warm,'Q calenta')}${arrow(362,76,400,76,gold,6)}${gear(434,95,27,c)}${arrow(462,89,492,89,mint,4)}${text(491,75,'W',16,mint)}${arrow(435,129,435,161,blue,4)}${text(464,186,'Q freda',13,ink)}`;
       case 'heatflow': return `${reservoir(259,38,warm,'Q calenta')}${arrow(374,73,410,73,gold,5)}${gear(450,85,25,c)}${arrow(451,119,451,151,blue,5)}${text(463,170,'Q freda',14,ink)}`;
       case 'carnot': return `${thermo(305,137,warm,true)}${thermo(458,137,blue,false)}${arrow(343,118,419,118,c,5)}${text(302,32,'T calenta',14,warm)}${text(456,32,'T freda',14,blue)}${text(382,160,'η màx',17,c)}`;
-      case 'kelvin': return `${thermo(310,138,warm,false)}${arrow(355,114,414,114,c,5)}${thermo(456,138,c,true)}${text(307,29,'°C',20,warm)}${text(456,29,'K',20,c)}`;
+      case 'kelvin': return `${thermo(310,138,warm,false)}${arrow(355,114,414,114,c,5)}${thermo(456,138,c,false)}${text(307,29,'°C',20,warm)}${text(456,29,'K',20,c)}${text(306,188,'25 °C',13,warm)}${text(457,188,'298,15 K',13,c)}`;
       default: return gear(375,110,50,c);
     }
   }
@@ -120,7 +120,7 @@
         <linearGradient id="bg-${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f9fdff"/><stop offset=".65" stop-color="${soft}"/><stop offset="1" stop-color="#fff"/></linearGradient>
         <linearGradient id="shine-${id}" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
         <pattern id="dots-${id}" width="21" height="21" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.25" fill="${accent}" opacity=".15"/></pattern>
-        <filter id="tinyshadow" x="-30%" y="-40%" width="170%" height="180%"><feDropShadow dx="1" dy="4" stdDeviation="3" flood-color="#345e84" flood-opacity=".17"/></filter>
+        <filter id="tinyshadow-${id}" x="-30%" y="-40%" width="170%" height="180%"><feDropShadow dx="1" dy="4" stdDeviation="3" flood-color="#345e84" flood-opacity=".17"/></filter>
       </defs>
       <rect width="520" height="205" rx="16" fill="url(#bg-${id})"/>
       <rect width="520" height="205" rx="16" fill="url(#dots-${id})"/>
@@ -132,7 +132,7 @@
       ${text(105,115,symbol,tag,dark,900)}
       ${text(105,151,sub,12,'#527189',750)}
       <path d="M209 24V181" stroke="${accent}" stroke-opacity=".2" stroke-width="2" stroke-dasharray="4 6"/>
-      ${drawing(scene,accent)}
+      ${drawing(scene,accent).replaceAll('url(#tinyshadow)',`url(#tinyshadow-${id})`)}
       <rect x="224" y="9" width="8" height="8" rx="2" fill="${accent}" opacity=".5"/>
     </svg>`;
     const figure=document.createElement('figure');
