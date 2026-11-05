@@ -44,7 +44,7 @@
   const style = document.createElement('style');
   style.textContent = `
     .formula-photo{margin:16px 0 14px;overflow:hidden;border-radius:16px;background:#eaf5fc;border:1px solid #c7e0ef;box-shadow:0 9px 22px rgba(33,93,137,.11)}
-    .formula-photo img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
+    .formula-photo img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
     .formula-photo figcaption{padding:12px 15px 14px;font-size:.87rem;line-height:1.52;color:#365d79;background:linear-gradient(125deg,#f7fcff,#e9f4fd);border-top:1px solid #d2e5f1}
     .formula-photo figcaption::before{content:'✦';color:#2782b6;font-size:1rem;font-weight:900;margin-right:8px}
   `;
