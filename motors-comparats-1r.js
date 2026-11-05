@@ -10,7 +10,7 @@
     petrol2:{
       visual:'GASOLINA · 2 TEMPS',
       total:360,
-      note:"<strong>Gasolina 2T:</strong> té <strong>bugia</strong> i, en aquest disseny habitual, <strong>llueres laterals</strong>, no vàlvules a la culata. La mescla fresca passa pel càrter i entra al cilindre quan el pistó descobreix el trànsfer. <strong>1 volta (360°) = 1 cicle.</strong>",
+      note:"<strong>Gasolina 2T:</strong> té <strong>bugia</strong> i, en aquest disseny habitual, <strong>llueres laterals</strong>, no vàlvules a la culata. La mescla fresca entra al càrter per una vàlvula de làmines, i passa al cilindre pel conducte de trànsfer quan el pistó en descobreix la lluera. <strong>1 volta (360°) = 1 cicle.</strong>",
       reminder:'Motor 2T: el pistó puja i baixa una vegada per cicle. El cigonyal gira 360° (una volta) i, teòricament, cada cilindre té una combustió per volta.',
       phases:[
         {name:'Expansió, escapament i escombratge ↓',label:'Expansió + gasos ↓',desc:'La bugia encén la mescla al punt mort superior. El pistó baixa; prop del punt mort inferior descobreix primer l’escapament i després el trànsfer: surten gasos cremats i entra mescla fresca del càrter.',stroke:'Baixada ↓',gas:'url(#sim-gas-power)'},
@@ -73,6 +73,10 @@
     part('sim-crank-pin').setAttribute('cy',fixed(pinY));
     part('sim-gas').setAttribute('height',Math.max(2,fixed(pistonTop-106)));
     const two=mode==='petrol2';
+    part('sim-label-piston-text').setAttribute('y',two?'160':'210');
+    part('sim-label-piston-line').setAttribute('d',two?'M329 164 L292 '+fixed(pistonY):'M329 213 H292');
+    part('sim-label-rod-text').setAttribute('y',two?'286':'314');
+    part('sim-label-rod-line').setAttribute('d',two?'M329 289 L274 280':'M329 314 L274 280');
     const exhaust2=two&&at>112&&at<248;
     const transfer2=two&&at>140&&at<220;
     const intake2=two&&at>248&&at<358;
