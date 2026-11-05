@@ -8,7 +8,7 @@
       file: 'cinetica-aplicada.webp',
       alt: 'Dos cotxes idèntics: el primer circula més lent i el segon, més ràpid.',
       marks: [
-        {label:'m = 1.000 kg', x:4, y:6, arrow:'↘'},
+        {label:'m = 1.000 kg', x:4, y:6, arrow:'→'},
         {label:'v₁ = 10 m/s', x:4, y:27, arrow:'→'},
         {label:'v₂ = 20 m/s', x:4, y:73, arrow:'→'}
       ],
@@ -22,7 +22,7 @@
       file: 'potencial-aplicada.webp',
       alt: 'Grua que aixeca una càrrega de 500 quilograms a una altura de 8 metres, amb una guia vertical.',
       marks: [
-        {label:'m = 500 kg', x:66, y:10, arrow:'↙'},
+        {label:'m = 500 kg', x:66, y:10, arrow:'←'},
         {label:'h = 8 m', x:70, y:73, arrow:'←'},
         {label:'g = 9,81 m/s²', x:3, y:13, arrow:'↓'}
       ],
@@ -35,7 +35,7 @@
       file: 'calor-latent-aplicat.webp',
       alt: 'Gel que es fon en aigua dins d’un vas de laboratori, amb les dues fases visibles.',
       marks: [
-        {label:'m = 0,5 kg', x:4, y:12, arrow:'↘'},
+        {label:'m = 0,5 kg', x:4, y:12, arrow:'→'},
         {label:'T = 0 °C', x:69, y:11, arrow:'↓'},
         {label:'L = 334 kJ/kg', x:49, y:76, arrow:'↑'}
       ],
@@ -89,7 +89,7 @@
       file: 'maquina-termica-aplicada.webp',
       alt: 'Turbina tèrmica amb calor d’entrada, treball mecànic a la sortida i calor rebutjada al condensador.',
       marks: [
-        {label:'Q calent = 1.000 J', x:2, y:12, arrow:'↘'},
+        {label:'Q calent = 1.000 J', x:2, y:12, arrow:'→'},
         {label:'W útil = 400 J', x:69, y:11, arrow:'↓'},
         {label:'Q fred = 600 J', x:37, y:79, arrow:'↑'}
       ],
@@ -102,6 +102,7 @@
 
   const style = document.createElement('style');
   style.textContent = [
+    '.formula-grid>.formula-card{align-self:start}',
     '.formula-photo{margin:16px 0 14px;overflow:hidden;border-radius:17px;background:#eaf5fc;border:1px solid #bfddec;box-shadow:0 9px 22px rgba(33,93,137,.11)}',
     '.formula-photo__stage{position:relative;isolation:isolate;overflow:hidden;background:#dbeef8}',
     '.formula-photo__stage img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}',
