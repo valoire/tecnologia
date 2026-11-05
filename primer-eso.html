@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#214d56">
+  <meta name="description" content="Espai de Tecnologia de 1r d'ESO: teoria, activitats i taller de l'Institut Rovira-Forns.">
+  <title>1r d'ESO · Tecnologia</title>
+  <link rel="stylesheet" href="estils.css?v=espurnes-20261028b">
+  <link rel="stylesheet" href="conceptes.css?v=multicolor-20261028d">
+  <style>
+    .first-year{background:linear-gradient(120deg,#20555e,#397a78 52%,#41806c)}
+    .first-year .eyebrow{color:#d8fcf0}
+    .first-year .hero-note{margin-top:16px;font-size:.93rem;opacity:.88}
+    .learning-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:22px}
+    .learn-card{padding:23px;background:#fff;border:1px solid #d6e4e2;border-top:6px solid var(--col);border-radius:16px;box-shadow:0 7px 24px #184f4d0a}
+    .learn-card .num{display:inline-grid;place-items:center;background:var(--pale);color:var(--brand-dark);width:36px;height:36px;border-radius:11px;font-weight:900}
+    .learn-card h3{margin:13px 0 8px;color:#244f51;font-size:1.35rem}
+    .learn-card p{color:#526d70;font-size:.95rem;line-height:1.6;margin:0}
+    .course-intro{padding:24px 26px;border:1px solid #d5e5e4;border-radius:17px;background:linear-gradient(120deg,#fff,#edf8f5);margin-bottom:28px}
+    .course-intro h2{margin:0 0 11px;color:#205962}
+    .course-intro p{margin:0;color:#536b6e}
+    .coming{display:flex;align-items:center;justify-content:space-between;gap:16px;border-radius:17px;border:1px solid #c6dede;background:#eaf6f1;padding:25px;margin-top:28px}
+    .coming h2{margin:0 0 7px;color:#22545a}
+    .coming p{margin:0;color:#557070}
+    .back-link{font-weight:850;text-decoration:none;border-radius:11px;padding:11px 16px;background:#296f77;color:#fff;white-space:nowrap}
+    .back-link:hover{background:#20565d}
+    @media(max-width:750px){.learning-cards{grid-template-columns:1fr}.coming{flex-direction:column;align-items:flex-start}}
+  </style>
+</head>
+<body>
+  <header class="top"><div class="wrap bar">
+    <a class="brand" href="index.html">TECNOLOGIA</a>
+    <nav aria-label="Navegació principal"><a href="primer-eso.html" aria-current="page">1r ESO</a><a href="curs.html?grup=optativa">4t Optativa</a><a href="curs.html?grup=e">4t E</a><a href="batxillerat.html">Batxillerat</a></nav>
+  </div></header>
+  <div class="hero small first-year"><div class="wrap">
+    <div class="eyebrow">1r d'ESO · Tecnologia</div>
+    <h1>Observar, imaginar i construir.</h1>
+    <p>Descobrirem com funciona allò que ens envolta i aprendrem a transformar una idea en una solució.</p>
+    <div class="hero-note">Institut Rovira-Forns · Aula digital</div>
+  </div></div>
+  <main class="main wrap">
+    <div class="crumb"><a href="index.html">Inici</a><span>/</span><span>1r d'ESO</span></div>
+    <section class="course-intro">
+      <h2>Com aprendrem tecnologia?</h2>
+      <p>Al llarg del curs combinarem explicacions clares, activitats per comprovar què hem entès i petits projectes pràctics. La idea és aprendre a fer bones preguntes, escollir materials, crear prototips i explicar com funcionen.</p>
+    </section>
+    <section aria-labelledby="metode">
+      <div class="section-heading"><div><h2 id="metode">Tres espais a cada unitat</h2><p>La mateixa estructura que utilitzarem a classe.</p></div></div>
+      <div class="learning-cards">
+        <article class="learn-card" style="--col:#d98eb2"><span class="num">1</span><h3>📖 Teoria</h3><p>Conceptes explicats amb exemples propers, fotografies i preguntes per pensar.</p></article>
+        <article class="learn-card" style="--col:#7ab8db"><span class="num">2</span><h3>✏️ Activitats</h3><p>Petits reptes per aplicar el que hem après i descobrir si ho entenem.</p></article>
+        <article class="learn-card" style="--col:#75b9a1"><span class="num">3</span><h3>🛠️ Taller</h3><p>Construcció, disseny i experiments: aprendrem provant, millorant i compartint.</p></article>
+      </div>
+    </section>
+    <section class="coming" aria-labelledby="unitats">
+      <div><h2 id="unitats">Unitats didàctiques en preparació</h2><p>Aquest és el nou espai de 1r d'ESO. Anirem incorporant aquí la teoria, les activitats i els tallers de cada unitat.</p></div>
+      <a class="back-link" href="index.html">Tornar a l'inici →</a>
+    </section>
+  </main>
+  <footer class="footer"><div class="wrap"><span>Tecnologia · 1r d'ESO</span><span>Aprendre, construir i comprovar</span></div></footer>
+</body>
+</html>
