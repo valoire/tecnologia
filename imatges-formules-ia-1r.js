@@ -2,7 +2,7 @@
 (() => {
   'use strict';
 
-  // Els índexs corresponen a les targetes .formula-card, començant per 0.
+  // Els índexs corresponen a les targetes .formula-card, començant per 0 (actualitzats amb la cilindrada).
   const visuals = new Map([
     [1, {
       file: 'cinetica-aplicada.webp',
@@ -85,7 +85,7 @@
       ],
       explanation: 'En un motor de quatre temps, cada cilindre completa un cicle d’admissió, compressió, expansió i escapament cada dues voltes del cigonyal.'
     }],
-    [28, {
+    [30, {
       file: 'maquina-termica-aplicada.webp',
       alt: 'Turbina tèrmica amb calor d’entrada, treball mecànic a la sortida i calor rebutjada al condensador.',
       marks: [
