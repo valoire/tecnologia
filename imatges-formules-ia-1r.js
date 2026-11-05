@@ -2,9 +2,9 @@
 (() => {
   'use strict';
 
-  // Els índexs corresponen a les targetes .formula-card, començant per 0 (actualitzats amb la cilindrada).
+  // Identifiquem cada il·lustració pel títol de la fórmula: no depèn de l’ordre de les targetes.
   const visuals = new Map([
-    [1, {
+    ["Energia cinètica", {
       file: 'cinetica-aplicada.webp',
       alt: 'Dos cotxes idèntics: el primer circula més lent i el segon, més ràpid.',
       marks: [
@@ -18,7 +18,7 @@
       ],
       explanation: 'Amb la mateixa massa, duplicar la velocitat multiplica per quatre l’energia cinètica: la velocitat està elevada al quadrat.'
     }],
-    [3, {
+    ["Energia potencial gravitatòria", {
       file: 'potencial-aplicada.webp',
       alt: 'Grua que aixeca una càrrega de 500 quilograms a una altura de 8 metres, amb una guia vertical.',
       marks: [
@@ -31,7 +31,7 @@
       ],
       explanation: 'La massa és la càrrega, h és la distància vertical fins al terra i g és l’acceleració de la gravetat.'
     }],
-    [9, {
+    ["Calor latent", {
       file: 'calor-latent-aplicat.webp',
       alt: 'Gel que es fon en aigua dins d’un vas de laboratori, amb les dues fases visibles.',
       marks: [
@@ -44,7 +44,7 @@
       ],
       explanation: 'Durant la fusió del gel a pressió atmosfèrica, la calor s’utilitza per canviar d’estat, no per augmentar la temperatura.'
     }],
-    [12, {
+    ["Llei d'Ohm", {
       file: 'llei-ohm-aplicada.webp',
       alt: 'Circuit senzill tancat amb pila, amperímetre en sèrie i una resistència.',
       marks: [
@@ -58,7 +58,7 @@
       ],
       explanation: 'Amb una tensió de 12 V i una resistència total de 6 Ω, pel circuit circulen 2 A. Les tres magnituds estan relacionades.'
     }],
-    [17, {
+    ["Rendiment energètic", {
       file: 'rendiment-aplicat.webp',
       alt: 'Motor que rep energia, mou una roda i dissipa una part de l’energia en forma de calor.',
       marks: [
@@ -72,7 +72,7 @@
       ],
       explanation: 'De cada 1.000 J que entren al motor, 750 J es converteixen en moviment útil i 250 J es dissipen.'
     }],
-    [22, {
+    ["Freqüència de cicles d'un motor de 4 temps", {
       file: 'motor-cicles-aplicat.webp',
       alt: 'Motor de quatre temps seccionat i representació del gir del cigonyal.',
       marks: [
@@ -85,7 +85,7 @@
       ],
       explanation: 'En un motor de quatre temps, cada cilindre completa un cicle d’admissió, compressió, expansió i escapament cada dues voltes del cigonyal.'
     }],
-    [30, {
+    ["Balanç de la màquina tèrmica", {
       file: 'maquina-termica-aplicada.webp',
       alt: 'Turbina tèrmica amb calor d’entrada, treball mecànic a la sortida i calor rebutjada al condensador.',
       marks: [
@@ -118,9 +118,10 @@
   ].join('');
   document.head.appendChild(style);
 
-  const cards = document.querySelectorAll('article.formula-card');
-  visuals.forEach((asset, index) => {
-    const formula = cards[index]?.querySelector('.formula');
+  const cards = Array.from(document.querySelectorAll('article.formula-card'));
+  visuals.forEach((asset, heading) => {
+    const card = cards.find(c => c.querySelector('h3')?.textContent.trim() === heading);
+    const formula = card?.querySelector('.formula');
     if (!formula) return;
     const figure = document.createElement('figure');
     figure.className = 'formula-photo';
