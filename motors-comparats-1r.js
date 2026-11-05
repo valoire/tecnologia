@@ -49,7 +49,7 @@
   let mode='petrol4',degrees=0,running=!reduced,lastStamp=null,lastPhase=-1;
   const fixed=n=>Number(n.toFixed(2));
   function setRunning(value){
-    running=value;toggle.textContent=running?'⏸ Pausa':'▶ Reprodueix';
+    running=value;sim.dataset.running=String(running);toggle.textContent=running?'⏸ Pausa':'▶ Reprodueix';
     toggle.setAttribute('aria-pressed',String(running));lastStamp=null;
   }
   function render(){
@@ -72,15 +72,29 @@
     part('sim-crank-pin').setAttribute('cx',fixed(pinX));
     part('sim-crank-pin').setAttribute('cy',fixed(pinY));
     part('sim-gas').setAttribute('height',Math.max(2,fixed(pistonTop-106)));
-    part('sim-gas').setAttribute('fill',spec.gas);
+    const two=mode==='petrol2';
+    const exhaust2=two&&at>112&&at<248;
+    const transfer2=two&&at>140&&at<220;
+    const intake2=two&&at>248&&at<358;
+    const twoGas=transfer2?'url(#sim-gas-air)':exhaust2?'url(#sim-gas-exhaust)':at<112?'url(#sim-gas-power)':'url(#sim-gas-compress)';
+    part('sim-gas').setAttribute('fill',two?twoGas:spec.gas);
     part('sim-inlet-valve').setAttribute('transform','translate(0 '+(phase===0&&mode!=='petrol2'?14:0)+')');
     part('sim-outlet-valve').setAttribute('transform','translate(0 '+(phase===3&&mode!=='petrol2'?14:0)+')');
     const four=mode!=='petrol2';
     for(const id of ['sim-intake-arrow','sim-intake-tip'])part(id).style.opacity=four&&phase===0?'1':'0';
     for(const id of ['sim-exhaust-arrow','sim-exhaust-tip'])part(id).style.opacity=four&&phase===3?'1':'0';
-    const ports=mode==='petrol2' && at>130 && at<230;
-    part('sim-transfer-arrow').style.opacity=ports?'1':'0';
-    part('sim-port-exhaust-arrow').style.opacity=ports?'1':'0';
+    const twoArrows={transfer:transfer2,exhaust:exhaust2,intake:intake2};
+    part('sim-transfer-arrow').style.opacity=transfer2?'1':'0';
+    part('sim-port-exhaust-arrow').style.opacity=exhaust2?'1':'0';
+    part('sim-two-transfer-flow').setAttribute('opacity',transfer2?'1':'0');
+    part('sim-two-exhaust-flow').setAttribute('opacity',exhaust2?'1':'0');
+    part('sim-two-intake-flow').setAttribute('opacity',intake2?'1':'0');
+    part('sim-reed').setAttribute('transform','rotate('+(intake2?-23:0)+' 336 356)');
+    part('sim-crankcase-charge').setAttribute('opacity',two?(at<180?'.6':'.38'):'0');
+    for(const [kind,active] of Object.entries(twoArrows)){
+      const status=sim.querySelector('[data-two-flow="'+kind+'"]');
+      if(status)status.dataset.active=String(active);
+    }
     const spark=mode!=='diesel4' && ((mode==='petrol2'&&at<48)||(mode==='petrol4'&&phase===2&&at<405));
     part('sim-spark').setAttribute('opacity',spark?'1':'0');
     const injection=mode==='diesel4'&&phase===2&&at<408;
@@ -115,6 +129,10 @@
       stage.innerHTML=(index+1)+' · '+spec.label+'<small>'+(index*180)+'°–'+((index+1)*180)+'°</small>';
     });
     part('sim-mode-visual').textContent=model.visual;
+    part('motor-svg-title').textContent=mode==='petrol2'?'Motor de gasolina de dos temps: càrter, llueres, pistó i cigonyal':'Motor de quatre temps: vàlvules, pistó i cigonyal';
+    part('motor-svg-desc').textContent=mode==='petrol2'
+      ?'Tall animat d’un motor de gasolina de dos temps amb mescla que entra al càrter quan el pistó puja, conducte de trànsfer cap al cilindre quan baixa, escapament lateral, bugia i una volta per cicle.'
+      :'Tall animat d’un motor de quatre temps amb les vàlvules d’admissió i escapament, bugia o injector, i dues voltes del cigonyal per completar el cicle.';
     part('sim-ignition-note').innerHTML=model.note;
     sim.querySelector('.sim-reminder').textContent=model.reminder;
     render();
