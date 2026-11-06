@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#215f89">
+  <meta name="description" content="Tecnologia i Enginyeria II: teoria completa per blocs, motors 2T i 4T, cilindrada, fórmules amb unitats, exemples resolts, esquemes i pràctica PAU.">
+  <title>Teoria i fórmules · 2n de Batxillerat · Tecnologia</title>
+  <link rel="stylesheet" href="estils.css?v=espurnes-20261028b">
+  <style>
+    :root{--navy:#205f8b;--ink:#31566d;--muted:#5d7689;--line:#c9dfec;--soft:#eef7fc}
+    html{scroll-behavior:smooth;scroll-padding-top:94px}
+    body{background:linear-gradient(112deg,#eff8ff,#fff 47%,#eef5fc);color:var(--ink)}
+    .course-hero{background:linear-gradient(115deg,#dceeff,#fff 55%,#edf4ff);border-bottom:4px solid #c3deef;padding:43px 0 42px}
+    .course-hero .eyebrow{font-size:.82rem;font-weight:900;text-transform:uppercase;letter-spacing:.09em;color:#307ca5}
+    .course-hero h1{color:#1c5f8e;font-size:clamp(2rem,5vw,3.65rem);margin:10px 0 14px;line-height:1.14}
+    .course-hero p{font-size:1.1rem;line-height:1.62;max-width:900px;color:#466980;margin:0}
+    .badges{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}.badges span{border:1px solid #b7d7e8;background:#fff;padding:8px 13px;border-radius:50px;font-weight:850;font-size:.88rem;color:#326781}
+    .course-main{padding:23px 0 65px}.crumb{margin-bottom:23px}
+    .guide-intro{border:2px solid var(--line);border-radius:20px;background:#fff;padding:22px 25px;line-height:1.65}
+    .guide-intro h2{margin:0 0 6px;color:var(--navy);font-size:1.45rem}.guide-intro p{margin:4px 0 9px}
+    .guide-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}.guide-actions a{display:inline-flex;align-items:center;text-decoration:none;background:#236e9f;color:#fff;border-radius:10px;padding:10px 15px;font-weight:850}.guide-actions a.secondary{background:#f0f8fe;color:#24668e;border:1px solid #b2d3e5}
+    .index-title{font-size:1.48rem;color:var(--navy);margin:29px 0 15px}
+    .topic-index{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+    .topic-index a{text-decoration:none;background:#fff;border:1.5px solid #c9e0ed;border-top:6px solid var(--topic-color,#3981ac);padding:17px 18px;border-radius:15px;display:flex;flex-direction:column;gap:9px;min-height:111px}
+    .topic-index a:hover,.topic-index a:focus-visible{background:#edf7fe;outline:2px solid #7ab3d3;outline-offset:2px}
+    .topic-index small{color:#5c859c;font-weight:850;letter-spacing:.04em}.topic-index strong{color:#235f89;font-size:1.03rem;line-height:1.3}
+    .topic{background:#fff;border:2px solid #d2e3ef;border-top:8px solid var(--topic-color,#3d86b2);border-radius:22px;padding:27px clamp(17px,3vw,31px);margin:29px 0;box-shadow:0 7px 26px #21658e0a}
+    .topic-kicker{font-size:.8rem;color:#467f9d;font-weight:900;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+    .topic h2{font-size:clamp(1.45rem,3vw,2rem);line-height:1.2;color:#1e608e;margin:0 0 10px}.topic-intro{line-height:1.68;color:#45677d;margin:0 0 15px}
+    .sequence{display:flex;align-items:center;gap:10px;margin:23px 0 14px;color:#215e88;font-size:1.08rem;font-weight:950;letter-spacing:.01em}
+    .sequence span{background:#367da9;color:#fff;padding:8px 10px;border-radius:9px;font-size:.85rem}
+    .theory-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+    .theory-item{border:1.5px solid #d0e2ee;border-top:4px solid var(--topic-color,#4a90b9);border-radius:15px;background:linear-gradient(140deg,#fff,#f7fbfe);padding:16px 18px;min-width:0}
+    .theory-item h3{margin:0 0 9px;color:#28658e;font-size:1.02rem}.theory-item p{margin:0;line-height:1.6;font-size:.96rem;color:#4e6b7d}
+    .formula-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .formula-card{border:1.5px solid #cee1ed;border-radius:15px;background:#f9fcff;padding:17px;min-width:0}
+    .formula-card h3{color:#24658f;font-size:1.01rem;margin:0 0 8px}.formula-card p{line-height:1.5;font-size:.91rem;color:#526d80;margin:0 0 12px}
+    .formula{background:#e7f4fd;border-left:5px solid #3e8ebd;border-radius:9px;padding:13px;color:#1c618e;font-size:1.1rem;font-weight:900;line-height:1.45;overflow-wrap:anywhere}
+    .units{background:#fff;border:1px solid #dbe9f1;border-radius:9px;padding:10px 12px;margin-top:10px;line-height:1.55;color:#557285;font-size:.86rem}.units b{color:#246b94}
+    .worked{background:#eaf5fd;border-left:5px solid #6aa4cb;border-radius:15px;padding:19px 22px;line-height:1.65;color:#355f7b}.worked h3{margin:0 0 9px;color:#1d628f}.worked p{margin:5px 0}.worked ol{margin:10px 0 9px;padding-left:21px}.worked li{padding-left:3px;margin:6px 0}.worked strong{color:#1f628d}
+    .result{background:#fff;border:1px solid #c5dfec;border-radius:10px;padding:10px 13px;margin-top:12px!important;font-weight:850}
+    .figure{border:1.5px solid #bbdbea;border-radius:16px;background:linear-gradient(115deg,#f1faff,#fff);padding:17px;margin:10px 0 16px}
+    .figure h3{color:#22658f;margin:0 0 8px;font-size:1.12rem}.figure p{color:#4d6d81;line-height:1.58;margin:8px 0 0;font-size:.94rem}
+    .figure svg{display:block;width:100%;height:auto;max-height:295px}.diagram-note{color:#577789!important;font-size:.86rem!important}
+    .motors-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin-top:14px}
+    .motor-box{background:#fff;border:1.5px solid #c4dfea;border-radius:14px;padding:15px;min-width:0}
+    .motor-box h4{font-size:1rem;color:#21658f;margin:0 0 7px}.motor-box svg{height:210px;width:100%}
+    .motor-box p{min-height:68px;font-size:.9rem;color:#506e7f;line-height:1.5}
+    .motor-box label{display:block;margin:14px 0 6px;font-size:.87rem;font-weight:850;color:#296786}
+    .motor-box input{width:100%;accent-color:#3185aa}.motor-box output{display:block;color:#2b6b90;font-weight:850;min-height:48px;font-size:.91rem}
+    .motor-compare{width:100%;border-collapse:collapse;font-size:.88rem;margin-top:15px}.motor-compare th,.motor-compare td{border:1px solid #cbe0ec;padding:11px;text-align:left}.motor-compare th{background:#e8f4fc;color:#266487}
+    .logic-table{width:100%;border-collapse:collapse;font-size:.93rem;background:#fff}.logic-table th,.logic-table td{border:1px solid #cde1ef;padding:10px;text-align:center}.logic-table th{background:#e4f2fb;color:#215f86}.logic-table tr:nth-child(even) td{background:#f5fbfe}.logic-table .out{font-weight:900;color:#1a7a68}
+    .practice{background:#f4f9fd;border:1px solid #c9ddec;border-radius:12px;padding:15px 17px;line-height:1.6;margin-top:19px}.practice strong{color:#246388}.practice a{color:#1b668f;font-weight:850}
+    .tip{background:#fff9eb;border:1px solid #ead7aa;border-radius:11px;color:#786035;padding:12px 15px;line-height:1.6;margin:16px 0}
+    .two-links{display:flex;gap:11px;flex-wrap:wrap;margin-top:10px}.two-links a{display:inline-block;background:#fff;border:1px solid #bad8e8;border-radius:9px;padding:8px 11px;text-decoration:none}
+    .topic-top{display:inline-block;margin-top:15px;color:#347ca7;text-decoration:none;font-size:.84rem;font-weight:850}
+    .slider-lab{display:grid;grid-template-columns:1fr 1fr;gap:17px;align-items:stretch}.slider-box{background:#fff;border:1px solid #c8deeb;border-radius:13px;padding:17px}
+    .slider-box label{display:block;color:#245f84;font-weight:850;margin-bottom:9px}.slider-box input{display:block;width:100%;accent-color:#2387ad}.slider-box output{display:block;font-weight:900;color:#1b6c95;font-size:1.6rem;margin:9px 0}
+    .slider-result{border-radius:12px;background:linear-gradient(135deg,#185c83,#2d87ad);color:#fff;padding:19px;display:flex;flex-direction:column;justify-content:center;gap:7px}.slider-result strong{font-size:1.6rem}.slider-result p{color:#e7f5fa;margin:0;line-height:1.5}
+    .module-note{color:#577487;background:#f4f9fc;border:1px solid #d3e4ed;border-radius:12px;padding:13px 16px;line-height:1.55;margin-top:20px}
+    @media(max-width:900px){.topic-index{grid-template-columns:repeat(2,minmax(0,1fr))}.motors-grid{grid-template-columns:1fr}.motor-box svg{max-width:350px;margin:auto}}
+    @media(max-width:640px){.topic-index,.theory-grid,.formula-grid,.slider-lab{grid-template-columns:1fr}.course-hero{padding:32px 0}.topic{padding:20px 15px}.guide-intro{padding:18px}.sequence{font-size:1rem}.topic-index a{min-height:94px}.motor-compare{font-size:.78rem}.motor-compare th,.motor-compare td{padding:7px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+  <header class="top"><div class="wrap bar"><a class="brand" href="index.html">TECNOLOGIA</a><nav aria-label="Navegació principal"><a href="curs.html?grup=optativa">4t Optativa</a><a href="curs.html?grup=e">4t E</a><a href="batxillerat.html#segon" aria-current="page">Batxillerat</a></nav></div></header>
+  <div class="course-hero"><div class="wrap"><div class="eyebrow">Tecnologia i Enginyeria · 2n de Batxillerat</div><h1>⚙️ Teoria, fórmules i exemples</h1><p>Primer comprenem què passa, després triem les fórmules i finalment resolem un exercici pas a pas. Els dibuixos apareixen quan ajuden a entendre una relació física o matemàtica.</p><div class="badges"><span>📖 10 blocs temàtics</span><span>🧮 Fórmules amb unitats</span><span>✏️ Exemples resolts</span><span>🎓 Pràctica PAU</span></div></div></div>
+  <main class="main wrap course-main">
+    <div class="crumb"><a href="index.html">Inici</a><span>/</span><a href="batxillerat.html#segon">2n de Batxillerat</a><span>/</span><span>Teoria i fórmules</span></div>
+    <div class="guide-intro"><h2>📚 Com estudiar aquests temes?</h2><p>Segueix sempre el mateix ordre: <strong>01 Teoria → 02 dibuix si aporta valor → fórmules → exemple resolt → activitats</strong>. Identifica les dades, converteix les unitats, escriu la fórmula, substitueix i comprova el resultat.</p><p>Els deu apartats recuperen la classificació per temes que ja utilitzes i afegeixen els motors tèrmics i la cilindrada. A les PAU actuals, els continguts es distribueixen en quatre àmbits oficials: materials i fabricació; sistemes mecànics; electromecànica i automatització; i projectes de desenvolupament.</p><div class="guide-actions"><a href="energies.html">⚡ Energies: 30 exercicis detallats</a><a class="secondary" href="batxillerat.html#pau">🎓 Preparació PAU</a></div></div>
+    <h2 class="index-title" id="index">Tria el bloc que vols treballar</h2>
+    <nav class="topic-index" id="topic-index" aria-label="Temari de segon de Batxillerat"></nav>
+    <div id="topics-content"></div>
+    <p class="module-note"><strong>Nota:</strong> aquesta guia és un material didàctic propi i els exemples són inventats per practicar. Per conèixer el format i els criteris vigents de l'examen, consulta sempre <a href="https://universitats.gencat.cat/ca/pau/materies-pau/tecnologia-enginyeria/" target="_blank" rel="noopener noreferrer">Canal Universitats</a>.</p>
+    <p style="margin-top:20px"><a href="batxillerat.html#segon">← Tornar a 2n de Batxillerat</a></p>
+  </main>
+  <footer class="footer"><div class="wrap"><span>Tecnologia i Enginyeria · 2n de Batxillerat</span><span><a href="index.html">Inici</a></span></div></footer>
+  <script src="teoria-2n.js" defer></script>
+</body>
+</html>
