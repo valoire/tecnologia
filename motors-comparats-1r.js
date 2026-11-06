@@ -8,7 +8,7 @@
   const part=id=>document.getElementById(id);
   const modes={
     petrol2:{
-      visual:'GASOLINA · 2 TEMPS',
+      visual:'2T GASOLINA',
       total:360,
       note:"<strong>Gasolina 2T:</strong> té <strong>bugia</strong> i, en aquest disseny habitual, <strong>llueres laterals</strong>, no vàlvules a la culata. La mescla fresca entra al càrter per una vàlvula de làmines, i passa al cilindre pel conducte de trànsfer quan el pistó en descobreix la lluera. <strong>1 volta (360°) = 1 cicle.</strong>",
       reminder:'Motor 2T: el pistó puja i baixa una vegada per cicle. El cigonyal gira 360° (una volta) i, teòricament, cada cilindre té una combustió per volta.',
@@ -18,7 +18,7 @@
       ]
     },
     petrol4:{
-      visual:'GASOLINA · 4 TEMPS',
+      visual:'4T GASOLINA',
       total:720,
       note:"<strong>Gasolina 4T:</strong> entra una <strong>mescla d’aire i gasolina</strong> per la vàlvula d’admissió. Es comprimeix i una <strong>bugia</strong> provoca l’espurna que inicia la combustió. Hi ha una expansió útil cada <strong>2 voltes (720°)</strong>.",
       reminder:'Motor de gasolina 4T: quatre carreres del pistó = 720° = dues voltes del cigonyal. A 3.000 rpm, cada cilindre completa 1.500 cicles per minut.',
@@ -30,7 +30,7 @@
       ]
     },
     diesel4:{
-      visual:'DIÈSEL · 4 TEMPS',
+      visual:'4T DIÈSEL',
       total:720,
       note:"<strong>Dièsel 4T:</strong> durant l’admissió hi entra <strong>només aire</strong>. La compressió l’escalfa molt i l’<strong>injector</strong> hi polvoritza gasoil al final de la compressió. El combustible s’encén per <strong>autoignició, sense espurna de bugia</strong>. Alguns dièsel tenen bugies d’incandescència per facilitar l’arrencada en fred, però no encenen cada combustió.",
       reminder:'Motor dièsel 4T: quatre carreres = 720° = dues voltes. Té el mateix nombre de cicles per volta que un gasolina 4T; canvia sobretot com es prepara i s’encén el combustible.',
@@ -43,6 +43,7 @@
     }
   };
   const stages=[...sim.querySelectorAll('[data-phase]')];
+  const twoSteps=[...sim.querySelectorAll('[data-two-step]')];
   const tabs=[...sim.querySelectorAll('[data-engine-mode]')];
   const toggle=part('sim-toggle'),speed=part('sim-speed');
   const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -109,11 +110,14 @@
     part('sim-turns').textContent=(at/360).toLocaleString('ca-ES',{maximumFractionDigits:2})+' / '+(total/360);
     if(phase!==lastPhase){
       lastPhase=phase;
-      part('sim-kicker').textContent='FASE '+(phase+1)+' DE '+model.phases.length;
+      part('sim-kicker').textContent='TEMPS '+(phase+1)+' DE '+model.phases.length;
       part('sim-phase-name').textContent=spec.name;
       part('sim-phase-desc').textContent=spec.desc;
       part('sim-stroke').textContent=spec.stroke;
       stages.forEach((b,i)=>b.setAttribute('aria-pressed',String(i===phase)));
+      twoSteps.forEach((button,i)=>button.setAttribute('aria-pressed',String(mode==='petrol2'&&i===phase)));
+      part('sim-two-stroke-title').textContent='TEMPS '+(phase+1);
+      part('sim-two-stroke-subtitle').textContent=phase===0?'BAIXADA ↓':'PUJADA ↑';
     }
   }
   function selectMode(next){
@@ -165,6 +169,10 @@
   });
   toggle.addEventListener('click',()=>setRunning(!running));
   part('sim-restart').addEventListener('click',()=>{degrees=0;lastPhase=-1;render();setRunning(true);});
+  twoSteps.forEach((button,index)=>button.addEventListener('click',()=>{
+    if(mode!=='petrol2')return;
+    degrees=index===0?160:280;lastPhase=-1;render();setRunning(false);
+  }));
   stages.forEach((button,index)=>button.addEventListener('click',()=>{
     degrees=index*180+90;lastPhase=-1;render();setRunning(false);
   }));
