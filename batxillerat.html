@@ -78,7 +78,17 @@
       </div>
       <p class="subtle">Els altres blocs de 1r s'afegiran quan avancem el temari. No es barregen amb els continguts de 2n ni amb la preparació específica de les PAU.</p>
     </section>
-    <section role="tabpanel" id="panel-segon" aria-labelledby="tab-segon" hidden><div class="section-heading"><div><h2>2n de Batxillerat · Blocs temàtics</h2><p>Teoria, fórmules i pràctica dels continguts de Tecnologia i Enginyeria II.</p></div></div><div class="topics" id="topics"></div><p class="subtle">Energies té explicacions, esquemes i exercicis propis. La resta de blocs enllacen amb recursos de preparació de les PAU.</p></section>
+    <section role="tabpanel" id="panel-segon" aria-labelledby="tab-segon" hidden>
+      <div class="section-heading"><div><h2>2n de Batxillerat · Teoria i exercicis</h2><p>Els continguts de Tecnologia i Enginyeria II, explicats per apartats.</p></div></div>
+      <div class="course-intro">
+        <h3>⚙️ Tecnologia i Enginyeria II · Guia completa</h3>
+        <p>Cada bloc segueix un ordre clar: <strong>teoria, dibuix o simulació quan és útil, fórmules amb unitats, exemple resolt i pràctica PAU</strong>. Pots estudiar els deu blocs en ordre o entrar directament al que necessitis, incloent-hi motors tèrmics i cilindrada.</p>
+        <div class="course-actions"><a href="teoria-2n.html">📖 Entrar a la teoria de 2n →</a><a class="secondary" href="energies.html">⚡ Energies · 30 exercicis PAU →</a></div>
+      </div>
+      <h3 style="color:#205c8a;margin:26px 0 12px">Tria el bloc de teoria</h3>
+      <div class="topics" id="topics"></div>
+      <p class="subtle">Els blocs enllacen a la nostra guia de teoria; cada apartat també ofereix recursos per practicar exercicis tipus PAU.</p>
+    </section>
     <section role="tabpanel" id="panel-pau" aria-labelledby="tab-pau" hidden>
       <div class="box" style="padding:24px">
         <h2>📝 Exercicis PAU</h2>
@@ -145,7 +155,7 @@
   <footer class="footer"><div class="wrap"><span>Tecnologia</span><span><a href="index.html">Tornar a l'inici</a></span></div></footer>
   <script>
     const base='https://examenselectivitat.cat/selectivitat/Tecnologia%20industrial/per-temes/';
-    const topics=[['Energies','energies.html','local'],['Materials i assaigs','propietats-assaigs'],['Metrologia i normalització','metrologia-normalitzacio'],['Sistemes pneumàtics i oleohidràulics','oleohidraulica'],['Motors reductors','motors-reductors'],['Principis de les màquines','maquines-i-sistemes'],['Màquines i sistemes elèctrics i electrotècnics','electromagnetisme-i-corrent-altern'],['Control lògic i funcions lògiques','sistemes-digitals'],['Organització industrial','organitzacio-industrial']];
+    const topics=[['Energies','teoria-2n.html#energies','local'],['Motors tèrmics i cilindrada','teoria-2n.html#motors-termics','local'],['Materials i assaigs','teoria-2n.html#materials','local'],['Metrologia i normalització','teoria-2n.html#metrologia','local'],['Sistemes pneumàtics i oleohidràulics','teoria-2n.html#fluids','local'],['Motors reductors','teoria-2n.html#reductors','local'],['Principis de les màquines','teoria-2n.html#maquines','local'],['Màquines i sistemes elèctrics i electrotècnics','teoria-2n.html#electrics','local'],['Control lògic i funcions lògiques','teoria-2n.html#logica','local'],['Organització industrial','teoria-2n.html#organitzacio','local']];
     for(const [name,slug,kind] of topics){const a=document.createElement('a');a.className='box';a.href=kind==='local'?slug:base+slug;if(kind!=='local'){a.target='_blank';a.rel='noopener noreferrer'}else{a.style.border='2px solid #bdd9ed';a.style.background='linear-gradient(115deg,#fff,#e9f5fe)'}const t=document.createElement('span');t.textContent=name;const arrow=document.createElement('span');arrow.textContent=kind==='local'?'→':'↗';arrow.setAttribute('aria-hidden','true');a.append(t,arrow);document.getElementById('topics').append(a)}
     const tabs=[document.getElementById('tab-primer'),document.getElementById('tab-segon'),document.getElementById('tab-pau')],panels=[document.getElementById('panel-primer'),document.getElementById('panel-segon'),document.getElementById('panel-pau')];
     function selectTab(i){tabs.forEach((b,j)=>{b.setAttribute('aria-selected',String(i===j));b.tabIndex=i===j?0:-1;panels[j].hidden=i!==j})}
