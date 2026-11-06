@@ -241,6 +241,43 @@
     .carnot-formula-strip .carnot-highlight{background:#fff6df;border-color:#efcf88}
     .carnot-visual-note{margin:12px 3px 0;color:#476881;line-height:1.56;font-size:.91rem}
     @media(max-width:740px){.carnot-formula-strip{grid-template-columns:1fr}.carnot-visual-head,.cylinder-total-heading{flex-direction:column}.carnot-ideal,.cylinder-total-pill{align-self:flex-start}.carnot-visual{padding:12px}.cylinder-total{padding:13px}}
+
+    /* Laboratori interactiu del rendiment de Carnot */
+    .carnot-lab{margin:22px 0 26px;padding:22px;border:1.5px solid #a9d1e4;border-radius:21px;background:linear-gradient(135deg,#f4fbff,#e8f5fc);box-shadow:0 8px 24px #13597915}
+    .carnot-lab-head{display:flex;align-items:start;justify-content:space-between;gap:16px;margin-bottom:18px}
+    .carnot-lab-head h3{margin:4px 0 8px;color:#1e6489;font-size:1.27rem}
+    .carnot-lab-head p{margin:0;line-height:1.6;color:#426982;font-size:.94rem}
+    .carnot-lab-tag{border-radius:25px;background:#def4fa;border:1px solid #b4dce9;color:#28799f;padding:8px 13px;white-space:nowrap;font-size:.75rem;font-weight:900}
+    .carnot-lab-grid{display:grid;grid-template-columns:minmax(250px,.85fr) minmax(360px,1.35fr);align-items:stretch;gap:17px}
+    .carnot-lab-controls{display:flex;flex-direction:column;gap:16px;border-radius:16px;background:#fff;border:1px solid #c5dfea;padding:18px}
+    .carnot-control-label{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:.91rem;font-weight:850;color:#275c7a}
+    .carnot-control-label output{font-size:1.38rem;font-weight:950;letter-spacing:-.02em}
+    .carnot-control.hot output{color:#bf6635}.carnot-control.cold output{color:#317cae}
+    .carnot-control input[type=range]{width:100%;cursor:pointer;accent-color:#dc8b4a;margin:13px 0 6px}
+    .carnot-control.cold input[type=range]{accent-color:#4d9cc5}
+    .carnot-scale{display:flex;justify-content:space-between;color:#6b899c;font-weight:700;font-size:.73rem}
+    .carnot-result{margin-top:auto;background:linear-gradient(135deg,#164768,#2679a1);color:white;border-radius:14px;padding:16px;text-align:center}
+    .carnot-result small{font-weight:900;letter-spacing:.06em;font-size:.73rem;text-transform:uppercase;color:#c0e7fa}
+    .carnot-result strong{display:block;font-size:clamp(2.3rem,5vw,3.1rem);line-height:1.25;font-weight:950;margin:3px 0}
+    .carnot-result span{font-size:.85rem;color:#ddf4fd;line-height:1.45}
+    .carnot-lab-chart{background:#fff;border:1px solid #c5dfea;border-radius:16px;padding:13px;min-width:0}
+    .carnot-lab-chart h4{font-size:1.01rem;margin:4px 7px 2px;color:#285e7d}
+    .carnot-lab-chart p{font-size:.77rem;margin:0 7px 4px;color:#5e8296}
+    .carnot-graph{display:block;width:100%;height:auto;min-height:205px}
+    .carnot-graph .axis{stroke:#8faebd;stroke-width:2}
+    .carnot-graph .gridline{stroke:#d4e6ee;stroke-width:1;stroke-dasharray:5 6}
+    .carnot-graph .ticks{fill:#5c7e92;font-size:15px;font-weight:700}
+    .carnot-graph .point-glow{fill:#ffdc90;stroke:#fff;stroke-width:5}
+    .carnot-lab-bottom{border:1px solid #c6dfea;background:#fff;border-radius:15px;margin-top:16px;padding:16px}
+    .carnot-lab-bottom h4{font-size:.92rem;color:#24617d;margin:0 0 10px}
+    .carnot-split{display:flex;overflow:hidden;height:22px;border-radius:20px;background:#d9eff9}
+    .carnot-split .work{background:linear-gradient(90deg,#4bce91,#8ddd9b);transition:width .17s}
+    .carnot-split .reject{background:linear-gradient(90deg,#83c7e7,#4e92c2);flex:1;transition:width .17s}
+    .carnot-split-legend{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;margin-top:9px;font-size:.84rem;font-weight:800;color:#466a81}
+    .carnot-split-legend b{color:#245e7f}
+    .carnot-lab-feedback{color:#3e6780;font-size:.9rem;line-height:1.55;margin:12px 0 0}
+    .carnot-lab-footer{margin:12px 3px 0;color:#56768d;font-size:.84rem;line-height:1.55}
+    @media(max-width:850px){.carnot-lab-grid{grid-template-columns:1fr}.carnot-lab-head{flex-direction:column}.carnot-lab{padding:14px}.carnot-lab-controls{padding:15px}}
 </style>
 </head>
 <body>
@@ -626,6 +663,35 @@
         </div>
         <p class="carnot-visual-note"><strong>Fixa-t’hi:</strong> com més properes són les temperatures dels dos focus, menor és el rendiment màxim. Les temperatures T<sub>calent</sub> i T<sub>fred</sub> s’expressen <strong>sempre en kelvins</strong>.</p>
       </div>
+
+      <section class="carnot-lab" id="carnot-interactiu" aria-labelledby="carnot-lab-title">
+        <div class="carnot-lab-head"><div><span class="diagram-eyebrow">EXPERIMENTA AMB LES TEMPERATURES</span><h3 id="carnot-lab-title">🎛️ Simulador del rendiment de Carnot</h3><p>Mou els dos controls: veuràs com canvia el <strong>rendiment màxim teòric</strong> i quina part de la calor podria transformar-se en treball.</p></div><span class="carnot-lab-tag">Simulació interactiva</span></div>
+        <div class="carnot-lab-grid">
+          <div class="carnot-lab-controls">
+            <div class="carnot-control hot"><label class="carnot-control-label" for="carnot-hot"><span>🔥 Focus calent (T<sub>calent</sub>)</span><output id="carnot-hot-value" for="carnot-hot">800 K</output></label><input id="carnot-hot" type="range" min="400" max="1200" step="20" value="800" aria-describedby="carnot-hot-desc"><div class="carnot-scale"><span>400 K</span><span>1.200 K</span></div><small id="carnot-hot-desc">Temperatura absoluta del focus que aporta calor.</small></div>
+            <div class="carnot-control cold"><label class="carnot-control-label" for="carnot-cold"><span>❄️ Focus fred (T<sub>fred</sub>)</span><output id="carnot-cold-value" for="carnot-cold">400 K</output></label><input id="carnot-cold" type="range" min="200" max="780" step="20" value="400" aria-describedby="carnot-cold-desc"><div class="carnot-scale"><span>200 K</span><span id="carnot-cold-max">780 K</span></div><small id="carnot-cold-desc">Ha de ser inferior a la temperatura del focus calent.</small></div>
+            <div class="carnot-result" aria-live="polite" aria-atomic="true"><small>Rendiment màxim de Carnot</small><strong id="carnot-efficiency">50,0 %</strong><span id="carnot-substitution">η<sub>màx</sub> = 1 − 400 / 800 = 0,500</span></div>
+          </div>
+          <div class="carnot-lab-chart">
+            <h4>📈 Rendiment màxim segons el focus fred</h4><p>La línia canvia quan modifiques el focus calent; el punt mostra les temperatures triades.</p>
+            <svg id="carnot-graph" class="carnot-graph" viewBox="0 0 780 330" role="img" aria-label="Gràfic del rendiment de Carnot en funció de la temperatura del focus fred.">
+              <defs><linearGradient id="carnot-area" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#37babc" stop-opacity=".3"/><stop offset="1" stop-color="#37babc" stop-opacity=".02"/></linearGradient></defs>
+              <rect x="70" y="50" width="650" height="200" rx="8" fill="#f7fbfe"/>
+              <g class="gridline"><path d="M70 50H720 M70 100H720 M70 150H720 M70 200H720 M70 250H720"/></g>
+              <g class="axis"><path d="M70 48V250H722" fill="none"/></g>
+              <g class="ticks" text-anchor="end"><text x="60" y="55">100 %</text><text x="60" y="105">75 %</text><text x="60" y="155">50 %</text><text x="60" y="205">25 %</text><text x="60" y="255">0 %</text></g>
+              <g class="ticks" text-anchor="middle"><text x="70" y="273">200</text><text x="200" y="273">400</text><text x="330" y="273">600</text><text x="460" y="273">800</text><text x="590" y="273">1.000</text><text x="720" y="273">1.200</text><text x="394" y="309" font-size="17" font-weight="850">T focus fred (K)</text></g>
+              <path id="carnot-area-path" fill="url(#carnot-area)" d="M70 100L460 250L70 250Z"/>
+              <path id="carnot-curve-path" stroke="#1c9fa6" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" d="M70 100L460 250"/>
+              <line id="carnot-x-guide" x1="200" x2="200" y1="150" y2="250" stroke="#d18b45" stroke-width="2" stroke-dasharray="6 6"/>
+              <line id="carnot-y-guide" x1="70" x2="200" y1="150" y2="150" stroke="#d18b45" stroke-width="2" stroke-dasharray="6 6"/>
+              <circle id="carnot-active-point" class="point-glow" cx="200" cy="150" r="10"><title id="carnot-point-title">400 K · 50 %</title></circle>
+            </svg>
+          </div>
+        </div>
+        <div class="carnot-lab-bottom"><h4>⚡ De cada 100 J de calor que entren, com es reparteix l'energia en una màquina ideal?</h4><div class="carnot-split" aria-hidden="true"><span class="work" id="carnot-work-bar" style="width:50%"></span><span class="reject" id="carnot-reject-bar"></span></div><div class="carnot-split-legend"><span>🟢 Treball útil màxim: <b id="carnot-work-label">50,0 J</b></span><span>🔵 Calor cedida mínima: <b id="carnot-reject-label">50,0 J</b></span></div><p class="carnot-lab-feedback" id="carnot-feedback">Si el focus fred s'acosta al calent, el rendiment màxim disminueix.</p></div>
+        <p class="carnot-lab-footer"><strong>Recorda:</strong> les dues temperatures han de ser en <strong>kelvins (K)</strong>. És un límit ideal: una màquina real té un rendiment inferior. No confonguis l'energia útil del cicle amb la potència instantània.</p>
+      </section>
       <h3 class="sequence-title"><span>02</span> REPERTORI DE FÓRMULES · Tria la relació correcta</h3><div class="formula-grid">
         <article class="formula-card"><h3>Balanç de la màquina tèrmica</h3><p>El treball útil és la diferència entre la calor absorbida i la cedida.</p><div class="formula">W<sub>útil</sub> = Q<sub>calent</sub> − Q<sub>fred</sub></div><div class="legend"><b>W<sub>útil</sub>:</b> treball útil (J)<br><b>Q<sub>calent</sub>:</b> calor absorbida (J)<br><b>Q<sub>fred</sub>:</b> calor cedida (J)</div></article>
         <article class="formula-card"><h3>Rendiment de la màquina</h3><p>Compara el treball útil amb la calor que entra.</p><div class="formula">η = 1 − Q<sub>fred</sub> / Q<sub>calent</sub></div><div class="legend"><b>η:</b> rendiment (sense unitat)<br><b>Q<sub>fred</sub>:</b> calor cedida (J)<br><b>Q<sub>calent</sub>:</b> calor absorbida (J)</div></article>
@@ -644,5 +710,65 @@
   <footer class="footer"><div class="wrap"><span>Tecnologia i Enginyeria · 1r de Batxillerat</span><span><a href="batxillerat.html#primer">Tornar al curs</a></span></div></footer>
   <script src="motors-comparats-1r.js?v=20261106a" defer></script>
   <script src="imatges-formules-ia-1r.js?v=20261105g" defer></script>
+
+  <script>
+  (() => {
+    'use strict';
+    const lab = document.getElementById('carnot-interactiu');
+    if (!lab) return;
+    const byId = id => document.getElementById(id);
+    const hotInput = byId('carnot-hot');
+    const coldInput = byId('carnot-cold');
+    const fmt = value => value.toFixed(1).replace('.', ',');
+    const x = temperature => 70 + (temperature - 200) / 1000 * 650;
+    const y = efficiency => 250 - efficiency * 200;
+    const update = () => {
+      const hot = Number(hotInput.value);
+      const coldLimit = Math.min(1100, hot - 20);
+      coldInput.max = String(coldLimit);
+      if (Number(coldInput.value) > coldLimit) coldInput.value = String(coldLimit);
+      const cold = Number(coldInput.value);
+      const efficiency = 1 - cold / hot;
+      const percent = 100 * efficiency;
+      const work = percent;
+      const rejected = 100 - percent;
+      byId('carnot-hot-value').textContent = hot.toLocaleString('ca-ES') + ' K';
+      byId('carnot-cold-value').textContent = cold.toLocaleString('ca-ES') + ' K';
+      byId('carnot-cold-max').textContent = coldLimit.toLocaleString('ca-ES') + ' K';
+      byId('carnot-efficiency').textContent = fmt(percent) + ' %';
+      byId('carnot-substitution').innerHTML = 'η<sub>màx</sub> = 1 − ' + cold + ' / ' + hot + ' = ' + efficiency.toFixed(3).replace('.', ',');
+      byId('carnot-work-bar').style.width = percent + '%';
+      byId('carnot-work-label').textContent = fmt(work) + ' J';
+      byId('carnot-reject-label').textContent = fmt(rejected) + ' J';
+      const points = [];
+      for (let temperature = 200; temperature <= hot; temperature += 20) {
+        const eta = 1 - temperature / hot;
+        points.push([x(temperature), y(eta)]);
+      }
+      const linePath = points.map((point, i) => (i ? 'L' : 'M') + point[0].toFixed(2) + ' ' + point[1].toFixed(2)).join(' ');
+      byId('carnot-curve-path').setAttribute('d', linePath);
+      byId('carnot-area-path').setAttribute('d', linePath + ' L' + x(hot).toFixed(2) + ' 250 L70 250 Z');
+      const px = x(cold);
+      const py = y(efficiency);
+      byId('carnot-active-point').setAttribute('cx', px.toFixed(2));
+      byId('carnot-active-point').setAttribute('cy', py.toFixed(2));
+      byId('carnot-x-guide').setAttribute('x1', px.toFixed(2));
+      byId('carnot-x-guide').setAttribute('x2', px.toFixed(2));
+      byId('carnot-x-guide').setAttribute('y1', py.toFixed(2));
+      byId('carnot-y-guide').setAttribute('x2', px.toFixed(2));
+      byId('carnot-y-guide').setAttribute('y1', py.toFixed(2));
+      byId('carnot-y-guide').setAttribute('y2', py.toFixed(2));
+      byId('carnot-point-title').textContent = cold + ' K · ' + fmt(percent) + ' %';
+      byId('carnot-graph').setAttribute('aria-label', 'Rendiment màxim de Carnot del ' + fmt(percent) + ' per cent, amb focus calent a ' + hot + ' kelvins i focus fred a ' + cold + ' kelvins.');
+      byId('carnot-feedback').textContent =
+        percent < 15 ? 'Els dos focus tenen temperatures molt properes: queda molt poca energia disponible com a treball útil.' :
+        percent > 65 ? 'La diferència de temperatures és gran: el límit teòric de rendiment augmenta.' :
+        'Prova d’acostar la temperatura del focus fred a la del calent: el rendiment màxim disminuirà.';
+    };
+    hotInput.addEventListener('input', update);
+    coldInput.addEventListener('input', update);
+    update();
+  })();
+  </script>
 </body>
 </html>
