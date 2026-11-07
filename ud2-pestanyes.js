@@ -15,8 +15,8 @@ const TEMES=[
    'Quins ODS es relacionen amb la reducció del consum elèctric de l’institut i la reutilització de materials? Justifica-ho.',
    'Quina millora tecnològica podríem fer al nostre institut i quin indicador utilitzaríem per comprovar si funciona?'
   ]},
- {title:'Recursos naturals i processos extractius',short:'Recursos i mineria',icon:'⛏️',
-  subtitle:'Matèries primeres, mena i ganga, impactes, prevenció i restauració.',
+ {title:'D’on surten els recursos que utilitzem?',short:'Matèries primeres i energia',icon:'🌍',
+  subtitle:'Dels minerals d’un mòbil al gas que produeix electricitat: origen, usos i impactes.',
   questions:[
    'D’on provenen el coure dels cables i l’alumini d’una bicicleta? Quines etapes han seguit abans d’arribar al consumidor?',
    'Una mina aporta materials per fabricar bateries, però altera el paisatge. Quines condicions exigiries per reduir-ne els impactes?'
