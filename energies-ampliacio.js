@@ -195,24 +195,148 @@
     picker.addEventListener('click',event=>{const btn=event.target.closest('button[data-engine]');if(btn)choose(btn.dataset.engine);});
     choose('2t');
   }
+  // Recorregut didàctic: teoria -> experimentació -> exemple fàcil -> dossier PAU.
+  const guidedExamples={
+    conceptes:{
+      title:'Quanta energia consumeix un projector?',
+      story:'Un projector de l’institut té una potència de 200 W i funciona durant 3 hores. Quina energia consumeix en kWh?',
+      steps:[
+        ['1 · Converteix la potència','200 W ÷ 1.000 = <strong>0,2 kW</strong>.'],
+        ['2 · Tria la fórmula','<strong>E = P · t</strong>.'],
+        ['3 · Substitueix i calcula','E = 0,2 kW · 3 h = <strong>0,6 kWh</strong>.']
+      ],result:'El projector consumeix 0,6 kWh.'
+    },
+    rendiment:{
+      title:'Quina energia aprofita una màquina?',
+      story:'Un motor del taller rep 1.000 J i proporciona 750 J de treball útil. Calcula el rendiment i les pèrdues.',
+      steps:[
+        ['1 · Tria la fórmula','<strong>η = E útil / E entrada</strong>.'],
+        ['2 · Calcula el rendiment','η = 750 / 1.000 = 0,75 = <strong>75 %</strong>.'],
+        ['3 · Calcula les pèrdues','E perduda = 1.000 − 750 = <strong>250 J</strong>.']
+      ],result:'El motor aprofita el 75 % i dissipa 250 J.'
+    },
+    bateries:{
+      title:'Quant dura una bateria?',
+      story:'Una bateria de 24 V i 5 Ah alimenta un dispositiu que consumeix 60 W constants. Quant temps pot funcionar, idealment?',
+      steps:[
+        ['1 · Energia disponible','<strong>E = U · C</strong> = 24 V · 5 Ah = <strong>120 Wh</strong>.'],
+        ['2 · Tria la fórmula','<strong>t = E / P</strong>.'],
+        ['3 · Substitueix i calcula','t = 120 Wh / 60 W = <strong>2 h</strong>.']
+      ],result:'L’autonomia teòrica és de 2 hores (sense pèrdues).'
+    },
+    termica:{
+      title:'Quanta calor cal per escalfar aigua?',
+      story:'Al laboratori escalfem 2 kg d’aigua i volem que la seva temperatura pugi 10 °C. Pren CE = 4.180 J/(kg·K).',
+      steps:[
+        ['1 · Identifica les dades','m = 2 kg; CE = 4.180 J/(kg·K); ΔT = 10 K.'],
+        ['2 · Tria la fórmula','<strong>Q = m · CE · ΔT</strong>.'],
+        ['3 · Substitueix i calcula','Q = 2 · 4.180 · 10 = <strong>83.600 J = 83,6 kJ</strong>.']
+      ],result:'Calen 83,6 kJ de calor, si no hi ha pèrdues.'
+    },
+    produccio:{
+      title:'Quina potència dona una minicentral?',
+      story:'Una central hidroelèctrica aprofita 1 m³/s d’aigua i un salt de 10 m. El rendiment global és del 80 %. Pren ρ = 1.000 kg/m³ i g = 9,81 m/s².',
+      steps:[
+        ['1 · Potència disponible','<strong>P = ρ · g · q · h</strong> = 1.000 · 9,81 · 1 · 10 = <strong>98.100 W</strong>.'],
+        ['2 · Aplica el rendiment','<strong>P útil = η · P disponible</strong>.'],
+        ['3 · Substitueix i calcula','P útil = 0,80 · 98.100 = <strong>78.480 W = 78,48 kW</strong>.']
+      ],result:'La potència elèctrica útil és de 78,48 kW.'
+    },
+    estalvi:{
+      title:'Quant estalviem amb una bombeta LED?',
+      story:'Canviem una bombeta de 100 W per una LED de 20 W. Funciona 5 h/dia durant 300 dies/any. L’electricitat val 0,20 €/kWh.',
+      steps:[
+        ['1 · Diferència de potència','100 − 20 = 80 W = <strong>0,08 kW</strong>.'],
+        ['2 · Energia estalviada','E = 0,08 · 5 · 300 = <strong>120 kWh/any</strong>.'],
+        ['3 · Estalvi econòmic','120 kWh · 0,20 €/kWh = <strong>24 €/any</strong>.']
+      ],result:'Estalviem 120 kWh i 24 € cada any.'
+    }
+  };
+  const lessonLabels={
+    theory:['01','TEORIA','Primer entén els conceptes i les fórmules'],
+    interactive:['02','VISUALITZA I EXPERIMENTA','Observa què passa i mou els controls'],
+    examples:['03','EXEMPLES FÀCILS RESOLTS','Segueix les fórmules i els càlculs pas a pas']
+  };
+  function makeLessonStage(topic,kind){
+    const [number,title,caption]=lessonLabels[kind];
+    const stage=document.createElement('section');
+    stage.className='lesson-stage lesson-stage--'+kind;
+    stage.id='tema-'+topic.id+'-'+kind;
+    stage.setAttribute('aria-label',title);
+    stage.innerHTML='<div class="lesson-stage-heading"><span class="lesson-stage-number">'+number+'</span><div><span class="lesson-stage-overline">PAS '+number+'</span><h3>'+title+'</h3><p>'+caption+'</p></div></div><div class="lesson-stage-content"></div>';
+    return {node:stage,body:stage.querySelector('.lesson-stage-content')};
+  }
+  function guidedExampleMarkup(id){
+    const ex=guidedExamples[id];
+    return '<article class="lesson-sample"><div class="lesson-sample-heading"><span>EXEMPLE GUIAT · NIVELL INICIAL</span><h4>'+ex.title+'</h4></div><p class="lesson-sample-story">'+ex.story+'</p><ol class="lesson-solution-steps">'+ex.steps.map(([title,body])=>'<li><strong>'+title+'</strong><p>'+body+'</p></li>').join('')+'</ol><p class="lesson-sample-result"><strong>RESULTAT:</strong> '+ex.result+'</p></article>';
+  }
   function renderTopic(topic){
     const root=document.getElementById(topic.id);
     if(!root)return;
-    const dossier=document.createElement('div');
-    dossier.className='deep-dossier';
-    dossier.innerHTML=`<h3>📘 Teoria ampliada · ${topic.heading}</h3><p class="deep-lead">${topic.lead}</p>
-      <div class="deep-heading"><span>01</span>Entén què passa físicament</div>
-      <div class="deep-theory">${topic.theory.map(([title,body])=>`<article><h4>${title}</h4><p>${body}</p></article>`).join('')}</div>
-      <div class="deep-heading"><span>02</span>Observa el fenomen al dibuix</div>${views[topic.visual]()}
-      <div class="deep-heading"><span>03</span>Experimenta i comprova les relacions</div>
-      ${renderLab(topic.lab,'Mou els controls: com canvia el resultat?')}
-      ${topic.extra==='engines'?enginePanel():topic.extra==='carnot'?carnotPanel():''}
-      <p class="deep-notice"><strong>Recorda:</strong> ${topic.tip}</p>
-      <div class="deep-next"><strong>05 · Fórmules, exemples resolts i activitats.</strong> A continuació tens les expressions, els exercicis i els recursos originals d’aquest bloc. Resol els problemes després d’observar què representen les magnituds.</div>`;
-    const anchor=root.querySelector(':scope > .formula-grid')||root.querySelector(':scope > .info-grid');
-    if(anchor)anchor.before(dossier);else root.appendChild(dossier);
-    dossier.querySelectorAll('[data-lab]').forEach(lab=>{lab.addEventListener('input',()=>updateLab(lab));updateLab(lab);});
-    const picker=dossier.querySelector('.engine-picker');if(picker)initEngine(picker);
+    const dossier=root.querySelector(':scope > .dossier-section');
+    const intro=root.querySelector(':scope > p');
+    if(!dossier||!intro)return;
+    const candidates=[];
+    let cursor=intro.nextElementSibling;
+    while(cursor&&cursor!==dossier){candidates.push(cursor);cursor=cursor.nextElementSibling;}
+    const stages={
+      theory:makeLessonStage(topic,'theory'),
+      interactive:makeLessonStage(topic,'interactive'),
+      examples:makeLessonStage(topic,'examples')
+    };
+    const roadmap=document.createElement('nav');
+    roadmap.className='lesson-roadmap';
+    roadmap.setAttribute('aria-label','Itinerari del bloc');
+    roadmap.innerHTML=[
+      ['01','Teoria','theory'],
+      ['02','Experimenta','interactive'],
+      ['03','Exemples resolts','examples'],
+      ['04','Dossier','dossier']
+    ].map(([number,label,part])=>'<a href="#tema-'+topic.id+'-'+part+'"><b>'+number+'</b><span>'+label+'</span></a>').join('');
+    root.insertBefore(roadmap,dossier);
+    Object.values(stages).forEach(stage=>root.insertBefore(stage.node,dossier));
+
+    const theoryNodes=[],workedNodes=[],notes=[],interactiveNodes=[];
+    candidates.forEach(node=>{
+      if(node.classList.contains('worked'))workedNodes.push(node);
+      else if(node.classList.contains('mini-note'))notes.push(node);
+      else if(topic.id==='bateries'&&node.classList.contains('key-idea'))interactiveNodes.push(node);
+      else theoryNodes.push(node);
+    });
+
+    // Conceptes intuïtius primer, expressions i esquemes després.
+    const theoryLead=document.createElement('div');
+    theoryLead.className='lesson-theory-lead';
+    theoryLead.innerHTML='<h4>Entén el perquè</h4><p>'+topic.lead+'</p><div class="deep-theory">'+topic.theory.map(([name,body])=>'<article><h4>'+name+'</h4><p>'+body+'</p></article>').join('')+'</div>';
+    if(theoryNodes[0]&&/^(info-grid|diagram|compare)$/.test(theoryNodes[0].className)){
+      stages.theory.body.appendChild(theoryNodes.shift());
+    }
+    stages.theory.body.appendChild(theoryLead);
+    theoryNodes.forEach(node=>stages.theory.body.appendChild(node));
+
+    stages.interactive.body.innerHTML='<div class="lesson-mini-heading"><span>OBSERVA</span> Dibuix i explicació del fenomen</div>'+views[topic.visual]()+
+      '<div class="lesson-mini-heading"><span>PROVA</span> Simulador interactiu</div>'+
+      renderLab(topic.lab,'Mou els controls: què passa si canvies les dades?')+
+      (topic.extra==='engines'?enginePanel():topic.extra==='carnot'?carnotPanel():'')+
+      '<p class="deep-notice"><strong>Recorda:</strong> '+topic.tip+'</p>';
+    interactiveNodes.forEach(node=>stages.interactive.body.appendChild(node));
+    stages.interactive.body.querySelectorAll('[data-lab]').forEach(lab=>{lab.addEventListener('input',()=>updateLab(lab));updateLab(lab);});
+    const picker=stages.interactive.body.querySelector('.engine-picker');
+    if(picker)initEngine(picker);
+
+    stages.examples.body.innerHTML=guidedExampleMarkup(topic.id);
+    if(workedNodes.length){
+      const extra=document.createElement('details');
+      extra.className='lesson-more-examples';
+      extra.innerHTML='<summary>➕ Altres exemples resolts d’aquest tema</summary><div class="lesson-more-body"></div>';
+      workedNodes.forEach(node=>extra.querySelector('.lesson-more-body').appendChild(node));
+      stages.examples.body.appendChild(extra);
+    }
+    notes.forEach(node=>stages.examples.body.appendChild(node));
+
+    dossier.id='tema-'+topic.id+'-dossier';
+    const dossierHead=dossier.querySelector('.dossier-head');
+    if(dossierHead)dossierHead.insertAdjacentHTML('beforebegin','<div class="dossier-phase"><b>04</b><span>PAS 04 · PRACTICA I LLIURA</span></div>');
   }
   function init(){topics.forEach(renderTopic);}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
