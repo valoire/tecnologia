@@ -24,8 +24,7 @@
     <div class="crumb"><a href="index.html">Inici</a><span>/</span><span id="crumb-name">4t ESO</span></div>
     <div class="section-heading"><div><h2>Unitats didàctiques</h2><p>Selecciona una unitat per entrar a la seva pàgina de teoria i recursos.</p></div><span class="tag">7 unitats</span></div>
     <div id="course-units" class="unit-list"></div>
-    <div class="strip"><h3>Activitats i pràctiques</h3><p id="course-note">La teoria és comuna i els projectes es concreten segons el grup.</p><p style="margin-top:8px"><a href="laboratori.html">Obrir el laboratori interactiu →</a></p></div>
-  </main>
+      </main>
   <footer class="footer"><div class="wrap"><span>Tecnologia</span><span><a href="index.html">Tornar a l'inici</a></span></div></footer>
   <script>
     document.addEventListener('DOMContentLoaded',()=>{
@@ -36,7 +35,6 @@
       document.getElementById('crumb-name').textContent=name;
       document.getElementById('nav-'+g).setAttribute('aria-current','page');
       document.getElementById('course-description').textContent=g==='e'?'Investigar, experimentar i explicar què hem descobert.':'Dissenyar, construir i programar solucions tecnològiques.';
-      document.getElementById('course-note').textContent=g==='e'?'Les preguntes, hipòtesis, mesures i conclusions donen forma a les pràctiques del grup.':'El disseny, la fabricació digital i la programació donen forma als projectes del grup.';
       decorarIndexCurs(g);
     });
   </script>
