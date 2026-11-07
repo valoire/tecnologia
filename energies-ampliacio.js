@@ -253,9 +253,10 @@
     }
   };
   const lessonLabels={
-    theory:['01','TEORIA','Primer entén els conceptes i les fórmules'],
-    interactive:['02','VISUALITZA I EXPERIMENTA','Observa què passa i mou els controls'],
-    examples:['03','EXEMPLES FÀCILS RESOLTS','Segueix les fórmules i els càlculs pas a pas']
+    theory:['01','TEORIA','Comprèn les idees abans de calcular'],
+    formulas:['02','FÓRMULES','Expressions, magnituds i unitats ben ordenades'],
+    interactive:['03','VISUALITZA I EXPERIMENTA','Observa què passa i mou els controls'],
+    examples:['04','EXEMPLES FÀCILS RESOLTS','Segueix les fórmules i els càlculs pas a pas']
   };
   function makeLessonStage(topic,kind){
     const [number,title,caption]=lessonLabels[kind];
@@ -281,6 +282,7 @@
     while(cursor&&cursor!==dossier){candidates.push(cursor);cursor=cursor.nextElementSibling;}
     const stages={
       theory:makeLessonStage(topic,'theory'),
+      formulas:makeLessonStage(topic,'formulas'),
       interactive:makeLessonStage(topic,'interactive'),
       examples:makeLessonStage(topic,'examples')
     };
@@ -289,19 +291,63 @@
     roadmap.setAttribute('aria-label','Itinerari del bloc');
     roadmap.innerHTML=[
       ['01','Teoria','theory'],
-      ['02','Experimenta','interactive'],
-      ['03','Exemples resolts','examples'],
-      ['04','Dossier','dossier']
+      ['02','Fórmules','formulas'],
+      ['03','Experimenta','interactive'],
+      ['04','Exemples resolts','examples'],
+      ['05','Dossier','dossier']
     ].map(([number,label,part])=>'<a href="#tema-'+topic.id+'-'+part+'"><b>'+number+'</b><span>'+label+'</span></a>').join('');
     root.insertBefore(roadmap,dossier);
     Object.values(stages).forEach(stage=>root.insertBefore(stage.node,dossier));
 
-    const theoryNodes=[],workedNodes=[],notes=[],interactiveNodes=[];
+    const theoryNodes=[],formulaNodes=[],workedNodes=[],notes=[],interactiveNodes=[];
+    function separateEmbeddedFormulas(container){
+      // Alguns apartats expliquen un concepte i hi amaguen les equacions.
+      // La teoria conserva el text; les equacions i llegendes passen a FÓRMULES.
+      [...container.querySelectorAll('.formula-grid, .info-box > .formula')].forEach(piece=>{
+        if(piece.classList.contains('formula-grid')){
+          if(piece.parentElement.closest('.formula-grid'))return;
+          const context=piece.closest('.info-box, .key-idea');
+          const heading=context?.querySelector(':scope > h3')?.textContent?.trim();
+          if(heading){
+            const group=document.createElement('div');
+            group.className='lesson-formula-group';
+            const title=document.createElement('h4');
+            title.textContent=heading;
+            group.appendChild(title);
+            group.appendChild(piece);
+            formulaNodes.push(group);
+          }else formulaNodes.push(piece);
+        }else{
+          const box=piece.closest('.info-box');
+          if(!box)return;
+          const grid=document.createElement('div');
+          grid.className='formula-grid';
+          const card=document.createElement('article');
+          card.className='formula-card';
+          const title=document.createElement('h3');
+          title.textContent=box.querySelector(':scope > h3')?.textContent?.trim()||'Expressió';
+          card.appendChild(title);
+          card.appendChild(piece);
+          const legend=box.querySelector(':scope > .legend');
+          if(legend)card.appendChild(legend);
+          grid.appendChild(card);
+          formulaNodes.push(grid);
+        }
+      });
+      // Les dues demostracions del moment i del parell són exemples, no teoria.
+      container.querySelectorAll('.moment-summary .worked').forEach(ex=>{workedNodes.push(ex);ex.remove();});
+      const empty=container.querySelector('.moment-summary');
+      if(empty&&!empty.querySelector('.worked'))empty.remove();
+    }
     candidates.forEach(node=>{
       if(node.classList.contains('worked'))workedNodes.push(node);
       else if(node.classList.contains('mini-note'))notes.push(node);
+      else if(node.classList.contains('formula-grid'))formulaNodes.push(node);
       else if(topic.id==='bateries'&&node.classList.contains('key-idea'))interactiveNodes.push(node);
-      else theoryNodes.push(node);
+      else{
+        separateEmbeddedFormulas(node);
+        theoryNodes.push(node);
+      }
     });
 
     // Conceptes intuïtius primer, expressions i esquemes després.
@@ -313,6 +359,9 @@
     }
     stages.theory.body.appendChild(theoryLead);
     theoryNodes.forEach(node=>stages.theory.body.appendChild(node));
+
+    stages.formulas.body.innerHTML='<p class="lesson-formulas-intro">Per a cada expressió tens el nom, les unitats i el significat dels símbols. Identifica primer quina magnitud et demanen.</p>';
+    formulaNodes.forEach(node=>stages.formulas.body.appendChild(node));
 
     stages.interactive.body.innerHTML='<div class="lesson-mini-heading"><span>OBSERVA</span> Dibuix i explicació del fenomen</div>'+views[topic.visual]()+
       '<div class="lesson-mini-heading"><span>PROVA</span> Simulador interactiu</div>'+
@@ -336,7 +385,7 @@
 
     dossier.id='tema-'+topic.id+'-dossier';
     const dossierHead=dossier.querySelector('.dossier-head');
-    if(dossierHead)dossierHead.insertAdjacentHTML('beforebegin','<div class="dossier-phase"><b>04</b><span>PAS 04 · PRACTICA I LLIURA</span></div>');
+    if(dossierHead)dossierHead.insertAdjacentHTML('beforebegin','<div class="dossier-phase"><b>05</b><span>PAS 05 · PRACTICA I LLIURA</span></div>');
   }
   function init(){topics.forEach(renderTopic);}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
