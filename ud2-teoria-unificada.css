@@ -282,3 +282,34 @@
  .ud2-topic-redesign .ud2-resource-hero,.ud2-topic-redesign .ud2-energy-chain{padding:17px}
  .ud2-topic-redesign .ud2-resource-card{padding:17px}
 }
+
+/* Repàs tècnic: les centrals i la cadena de transformacions. */
+.ud2-power-plants{margin:32px 0;padding:24px;background:#fffaf2;border:1px solid #efd5b9;border-radius:20px}
+.ud2-power-plants>h3{margin:0 0 8px;color:#713480;font-size:clamp(21px,2.5vw,27px)}
+.ud2-power-plants>p{line-height:1.65;color:#57465e}
+.ud2-plant-card{margin:22px 0 0;padding:20px;border-radius:16px;background:#fff;border:2px solid #d7e8ef}
+.ud2-plant-card.thermal{border-color:#f1d5bf}
+.ud2-plant-card.nuclear{border-color:#e2d5ef}
+.ud2-plant-title{display:flex;align-items:flex-start;gap:12px}
+.ud2-plant-title>span{font-size:29px}
+.ud2-plant-title h4{font-size:19px;color:#703078;margin:0 0 4px}
+.ud2-plant-title p{margin:0;color:#64526a;line-height:1.5;font-size:14px}
+.ud2-plant-flow{display:flex;align-items:stretch;justify-content:center;gap:5px;margin:18px 0 12px}
+.ud2-plant-node{min-width:0;flex:1;border-radius:12px;background:#eaf6fc;text-align:center;padding:13px 6px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.thermal .ud2-plant-node{background:#fff0df}
+.nuclear .ud2-plant-node{background:#f3edfc}
+.ud2-plant-node>span{font-size:29px}
+.ud2-plant-node b{font-size:13px;line-height:1.3;color:#43354b}
+.ud2-plant-node small{font-size:11px;line-height:1.35;color:#695c6d}
+.ud2-plant-flow>i{align-self:center;font-style:normal;color:#8a4e94;font-weight:900;font-size:23px}
+.ud2-plant-transform{font-size:14px;line-height:1.65;margin:0;color:#5a4a61}
+.ud2-plant-transform em{font-style:normal;color:#745778}
+.ud2-plant-key{border-left:4px solid #d88f37;background:#fff;padding:12px 15px;border-radius:8px;font-weight:500}
+@media(max-width:720px){
+ .ud2-power-plants{padding:15px}
+ .ud2-plant-card{padding:13px}
+ .ud2-plant-flow{flex-direction:column;align-items:stretch}
+ .ud2-plant-node{padding:10px 12px;display:grid;grid-template-columns:38px 1fr;column-gap:10px;text-align:left}
+ .ud2-plant-node>span{grid-row:span 2}
+ .ud2-plant-flow>i{transform:rotate(90deg);line-height:18px}
+}
