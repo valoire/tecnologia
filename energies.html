@@ -170,7 +170,38 @@
     @media(max-width:1000px){.topic-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.exercise-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(max-width:650px){.topic-grid,.info-grid,.doc-grid,.exercise-grid,.legend,.formula-grid,.moment-visuals,.moment-summary{grid-template-columns:1fr}.energy-hero{padding:35px 0}.energy-section{padding:20px 16px}.diagram{flex-direction:column}.diagram .arrow{transform:rotate(90deg)}.formula-card{padding:18px 16px}.moment-guide{padding:17px 14px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.topic-card{transition:none}}
-  </style>
+  
+    /* Exercicis del dossier PAU de 2n: targetes taronja, horitzontals i accessibles. */
+    .dossier-section{margin:28px 0 21px;padding:21px clamp(13px,2.3vw,24px);background:#fffaf2;border:2px solid #f4d3a7;border-radius:20px;clear:both}
+    .dossier-head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:9px 15px;margin-bottom:14px}
+    .dossier-tag{background:#d87316;color:#fff;border-radius:12px;padding:9px 14px;font-size:.96rem;font-weight:950;letter-spacing:.04em}
+    .dossier-range{color:#96501a;font-weight:850;font-size:.92rem}
+    .energy-section .dossier-instructions{margin:0 0 17px;background:#ffe7c4;border-left:4px solid #d87316;border-radius:10px;padding:12px 15px;color:#714114;line-height:1.5;font-size:.95rem}
+    .dossier-list{display:grid;grid-template-columns:minmax(0,1fr);gap:14px}
+    .dossier-ex-card{display:grid;grid-template-columns:minmax(148px,174px) minmax(0,1fr);gap:15px 22px;align-items:start;min-width:0;background:#fff0d8;border:1.5px solid #eebf82;border-left:6px solid #db7b1b;border-radius:16px;padding:18px 19px;box-shadow:0 3px 10px #a6601910}
+    .dossier-ex-heading{display:flex;flex-direction:column;align-items:flex-start;gap:11px;min-width:0}
+    .dossier-ex-number{display:grid;place-items:center;min-width:52px;height:52px;background:#c9680f;color:white;border-radius:12px;font-size:1.34rem;font-weight:950}
+    .dossier-ex-heading h4{margin:0;color:#83400d;font-size:1.07rem;line-height:1.28;overflow-wrap:break-word}
+    .dossier-ex-heading h4 small{display:block;margin-top:4px;color:#a35e25;font-weight:750;font-size:.92rem;line-height:1.33}
+    .dossier-ex-body{min-width:0}
+    .energy-section .dossier-ex-source{margin:0 0 12px;font-size:.84rem;font-weight:800;line-height:1.45;color:#925622}
+    .dossier-ex-statement{color:#3f332b;line-height:1.58;font-size:1rem;overflow-wrap:break-word}
+    .energy-section .dossier-ex-statement p{margin:0 0 11px;color:#3f332b;line-height:1.58}
+    .energy-section .dossier-ex-statement p.dossier-subquestion{margin:8px 0 9px;padding-left:10px;border-left:3px solid #e1a05e;color:#51392a}
+    .dossier-ex-solution{border-top:1px solid #e2b783;margin-top:15px;padding-top:10px}
+    .dossier-ex-solution summary{cursor:pointer;display:list-item;color:#9e520f;font-weight:900;padding:2px 0}
+    .energy-section .dossier-ex-solution p{color:#5c3a1e;margin:10px 0 0;background:#fff9ed;padding:11px 13px;border-radius:9px;line-height:1.5}
+    .dossier-table-wrap{width:100%;overflow-x:auto;margin:9px 0 14px;border:1px solid #e5bb82;border-radius:9px}
+    .dossier-data-table{border-collapse:collapse;width:100%;min-width:390px;font-size:.9rem;color:#493b2e;background:#fffaf0}
+    .dossier-data-table th,.dossier-data-table td{text-align:left;padding:9px 11px;border-bottom:1px solid #f0d7af}
+    .dossier-data-table th{background:#f7d69f;color:#713e13;font-weight:900}
+    .dossier-data-table tr:last-child td{border-bottom:none}
+    .dossier-scheme{display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin:12px 0 14px;font-size:.94rem;font-weight:850;color:#8b501e}
+    .dossier-scheme span{background:#fffaf2;border:1px solid #e8bb7d;border-radius:8px;padding:7px 9px}
+    .energy-section .dossier-pdf-ref{margin:15px 3px 0;line-height:1.5;color:#865018;font-size:.91rem}
+    .dossier-pdf-ref a{color:#8b4b10;font-weight:850;text-decoration:underline;text-underline-offset:2px}
+    @media(max-width:690px){.dossier-section{padding:14px}.dossier-ex-card{grid-template-columns:minmax(0,1fr);gap:10px;padding:15px 13px}.dossier-ex-heading{flex-direction:row;align-items:center;gap:12px}.dossier-ex-number{min-width:46px;height:46px;font-size:1.12rem}.dossier-ex-heading h4 small{margin-top:2px}.dossier-head{align-items:flex-start}.dossier-range{line-height:1.4}}
+</style>
 </head>
 <body>
   <header class="top"><div class="wrap bar"><a class="brand" href="index.html">TECNOLOGIA</a><nav aria-label="Navegació principal"><a href="curs.html?grup=optativa">4t Optativa</a><a href="curs.html?grup=e">4t E</a><a id="nav-primer" href="batxillerat.html#primer">1r Batxillerat</a><a id="nav-segon" href="batxillerat.html#segon" aria-current="page">2n Batxillerat</a></nav></div></header>
@@ -247,7 +278,54 @@
       </div>
       <div class="worked"><h3>🧠 Exemple ràpid</h3><p>Un aparell de 2 kW funciona durant mitja hora: <strong>E = 2 · 0,5 = 1 kWh</strong>. El resultat és una energia, no una potència.</p></div>
       <div class="mini-note"><strong>Recorda:</strong> 1 kWh = 3,6 · 10<sup>6</sup> J; 1 MJ = 10<sup>6</sup> J; per passar de km/h a m/s divideix entre 3,6. En un sistema real, l'energia es transforma, però no desapareix.</div>
-      <a class="paus" href="#practica">🎓 Practica els exercicis 1, 2 i 3</a><br>
+      
+      <div class="dossier-section" aria-label="Exercicis del dossier: Treball, potència i energia">
+        <div class="dossier-head"><div class="dossier-tag">EXERCICIS DOSSIER</div><div class="dossier-range">Exercicis 1–3 · Treball, potència i energia</div></div>
+        <p class="dossier-instructions"><strong>Activitat per lliurar:</strong> resol aquests exercicis al dossier, amb les fórmules, la substitució de dades, els càlculs i les unitats. Consulta el resultat final només després d’intentar-los.</p>
+        <div class="dossier-list">
+        <article class="dossier-ex-card" id="exercici-dossier-1" aria-labelledby="dossier-ex-title-1">
+          <div class="dossier-ex-heading"><span class="dossier-ex-number">01</span><h4 id="dossier-ex-title-1">Exercici 1<small>Energia cinètica i consum</small></h4></div>
+          <div class="dossier-ex-body">
+            <p class="dossier-ex-source">PAU 2020 · juny · sèrie 3 · exercici 4 · 2,5 punts · Enunciat adaptat</p>
+            <div class="dossier-ex-statement">
+<p>Un cotxe de benzina de 1 650 kg augmenta la velocitat de 80 km/h a 120 km/h en un interval de 6,9 s. El trajecte és horitzontal i es considera negligible la fricció amb l’aire. El conjunt motor-transmissió té un rendiment del 40 %. El combustible utilitzat té poder calorífic de 46 MJ/kg i densitat de 0,72 g/cm³. Estudia el balanç energètic d’aquesta acceleració.</p>
+<p class="dossier-subquestion">a) Calcula la potència mecànica útil mitjana, en kW. [1 p]</p>
+<p class="dossier-subquestion">b) Determina l’energia química consumida durant l’acceleració, en MJ. [0,5 p]</p>
+<p class="dossier-subquestion">c) Troba el volum de benzina emprat, en mL. [1 p]</p>
+            </div>
+            <details class="dossier-ex-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultats finals:</strong> a) 73,806 kW · b) 1,273 MJ · c) 38,44 mL</p></details>
+          </div>
+        </article>
+        <article class="dossier-ex-card" id="exercici-dossier-2" aria-labelledby="dossier-ex-title-2">
+          <div class="dossier-ex-heading"><span class="dossier-ex-number">02</span><h4 id="dossier-ex-title-2">Exercici 2<small>Potència d’elevació</small></h4></div>
+          <div class="dossier-ex-body">
+            <p class="dossier-ex-source">PAU 2019 · setembre · sèrie 5 · exercici 3 · Opció B · 2,5 punts · Enunciat adaptat</p>
+            <div class="dossier-ex-statement">
+<p>Una escala mecànica eleva els passatgers 6 m en 45 s. La massa mitjana per persona és de 70,8 kg i, de mitjana, hi viatgen 20 persones alhora. L’escala està en servei 10 h/dia. Sense passatgers consumeix 3,2 kW elèctrics. El grup d’accionament, format per motor, reductor i transmissió, presenta un rendiment electromecànic del 58 %. Per als càlculs, pren g = 9,81 m/s² i un flux uniforme de passatgers.</p>
+<p class="dossier-subquestion">a) Calcula la potència mecànica addicional per elevar els passatgers, en kW. [1 p]</p>
+<p class="dossier-subquestion">b) Determina quantes persones es transporten en un dia. [0,5 p]</p>
+<p class="dossier-subquestion">c) Troba l’energia elèctrica diària total, incloent-hi el consum en buit, en kWh/dia. [1 p]</p>
+            </div>
+            <details class="dossier-ex-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultats finals:</strong> a) 1,852 kW · b) 16 000 persones/dia · c) 63,933 kWh/dia</p></details>
+          </div>
+        </article>
+        <article class="dossier-ex-card" id="exercici-dossier-3" aria-labelledby="dossier-ex-title-3">
+          <div class="dossier-ex-heading"><span class="dossier-ex-number">03</span><h4 id="dossier-ex-title-3">Exercici 3<small>Treball i potència hidràulica</small></h4></div>
+          <div class="dossier-ex-body">
+            <p class="dossier-ex-source">PAU 2015 · juny · sèrie 2 · exercici 4 · Opció A · 2,5 punts · Enunciat adaptat</p>
+            <div class="dossier-ex-statement">
+<p>Una bomba accionada per un motor tèrmic eleva 600 m³ d’aigua fins a un nivell situat 3,6 m més amunt. El procés dura 10 h i es desenvolupa en règim estacionari. Per als càlculs, considera la densitat de l’aigua de 1 000 kg/m³ i g = 9,81 m/s².</p>
+<p class="dossier-subquestion">a) Calcula el treball hidràulic total, en MJ. [1 p]</p>
+<p class="dossier-subquestion">b) Determina la potència útil mitjana de la bomba, en W. [0,5 p]</p>
+<p class="dossier-subquestion">c) Calcula el rendiment global motor-bomba, en %, si en aquest procés es gasten 3 L de combustible de densitat 850 kg/m³ i poder calorífic 42,5 MJ/kg. [1 p]</p>
+            </div>
+            <details class="dossier-ex-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultats finals:</strong> a) 21,19 MJ · b) 588,6 W · c) 19,552 %</p></details>
+          </div>
+        </article>
+        </div>
+        <p class="dossier-pdf-ref">📄 <a href="https://drive.google.com/file/d/1Y8EEtM6od8qTpBMYTIStYioAMbpuXdfD/view" target="_blank" rel="noopener noreferrer">Consulta el dossier original de 30 exercicis PAU (PDF)</a></p>
+      </div>
+      <a class="paus" href="#practica">🎓 Resum dels exercicis i pràctica complementària</a><br>
       <a class="pdf-link" href="https://drive.google.com/file/d/1HhvR_CdEqVi-g6-tfdoXISy6jMio2asO/view" target="_blank" rel="noopener noreferrer">📄 Obrir teoria completa</a>
     </section>
 
@@ -300,7 +378,57 @@
         <div class="info-box"><h3>🚗 Motor de combustió</h3><p>El combustible aporta energia <strong>química</strong>. El motor la transforma en energia <strong>mecànica</strong>, amb pèrdues. Si coneixes la potència mecànica i el rendiment, divideix per η per trobar la potència química necessària.</p></div>
         <div class="info-box"><h3>🔌 Grup electrogen</h3><p>La cadena pot tenir <strong>motor + alternador</strong>. Primer calcula la potència mecànica del motor i després l'elèctrica, o bé treballa directament amb el producte dels rendiments.</p></div>
       </div>
-      <a class="paus" href="#practica">🎓 Practica els exercicis 4, 5 i 6</a><br>
+      
+      <div class="dossier-section" aria-label="Exercicis del dossier: Rendiment de motors i transmissions">
+        <div class="dossier-head"><div class="dossier-tag">EXERCICIS DOSSIER</div><div class="dossier-range">Exercicis 4–6 · Rendiment de motors i transmissions</div></div>
+        <p class="dossier-instructions"><strong>Activitat per lliurar:</strong> resol aquests exercicis al dossier, amb les fórmules, la substitució de dades, els càlculs i les unitats. Consulta el resultat final només després d’intentar-los.</p>
+        <div class="dossier-list">
+        <article class="dossier-ex-card" id="exercici-dossier-4" aria-labelledby="dossier-ex-title-4">
+          <div class="dossier-ex-heading"><span class="dossier-ex-number">04</span><h4 id="dossier-ex-title-4">Exercici 4<small>Rendiment d’un motor dièsel</small></h4></div>
+          <div class="dossier-ex-body">
+            <p class="dossier-ex-source">PAU 2021 · setembre · sèrie 1 · exercici 4 · 2,5 punts · Enunciat adaptat</p>
+            <div class="dossier-ex-statement">
+<p>Els bombers fan servir un ventilador per evacuar fum i refredar grans volums d’aire. Les hèlices tenen 420 mm de diàmetre i impulsen 33 660 m³/h. Un motor dièsel de quatre temps les acciona a 3 600 min⁻¹ i lliura 3,58 kW. El consum és d’1,4 L/h de gasoil, de densitat 0,85 kg/L i poder calorífic 44,8 MJ/kg. El factor d’emissió del carburant és de 2,87 kg CO₂/L.</p>
+<p class="dossier-subquestion">a) Calcula la potència química consumida, en kW. [1 p]</p>
+<p class="dossier-subquestion">b) Determina el rendiment del motor, en %. [0,5 p]</p>
+<p class="dossier-subquestion">c) Troba la velocitat tangencial a l’extrem d’una pala, en m/s. [0,5 p]</p>
+<p class="dossier-subquestion">d) Calcula les emissions durant 20 min de funcionament, en kg CO₂. [0,5 p]</p>
+            </div>
+            <details class="dossier-ex-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultats finals:</strong> a) 14,809 kW · b) 24,175 % · c) 79,168 m/s · d) 1,339 kg CO₂</p></details>
+          </div>
+        </article>
+        <article class="dossier-ex-card" id="exercici-dossier-5" aria-labelledby="dossier-ex-title-5">
+          <div class="dossier-ex-heading"><span class="dossier-ex-number">05</span><h4 id="dossier-ex-title-5">Exercici 5<small>Rendiment d’un grup electrogen</small></h4></div>
+          <div class="dossier-ex-body">
+            <p class="dossier-ex-source">PAU 2021 · juny · sèrie 2 · exercici 6 · 2,5 punts · Enunciat adaptat</p>
+            <div class="dossier-ex-statement">
+<p>Un grup electrogen dièsel subministra electricitat en indrets sense xarxa. El motor i un alternador monofàsic comparteixen eix i giren a 3 000 min⁻¹. El motor proporciona 7,457 kW mecànics i l’alternador lliura 5,5 kW elèctrics. El dipòsit conté 14 L i permet funcionar 13 h en aquest règim. El gasoil utilitzat té poder calorífic de 44,8 MJ/kg i densitat de 0,85 kg/L.</p>
+<p class="dossier-subquestion">a) Calcula el rendiment de l’alternador, en %. [0,5 p]</p>
+<p class="dossier-subquestion">b) Determina el consum màssic horari del motor, en g/h. [0,5 p]</p>
+<p class="dossier-subquestion">c) Troba el rendiment tèrmic del motor, en %. [1 p]</p>
+<p class="dossier-subquestion">d) Calcula la potència total dissipada pel grup, en kW. [0,5 p]</p>
+            </div>
+            <details class="dossier-ex-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultats finals:</strong> a) 73,756 % · b) 915,385 g/h · c) 65,461 % · d) 5,891 kW</p></details>
+          </div>
+        </article>
+        <article class="dossier-ex-card" id="exercici-dossier-6" aria-labelledby="dossier-ex-title-6">
+          <div class="dossier-ex-heading"><span class="dossier-ex-number">06</span><h4 id="dossier-ex-title-6">Exercici 6<small>Rendiment de la transmissió</small></h4></div>
+          <div class="dossier-ex-body">
+            <p class="dossier-ex-source">PAU 2019 · setembre · sèrie 5 · exercici 4 · Opció B · 2,5 punts · Enunciat adaptat</p>
+            <div class="dossier-ex-statement">
+<p>Un vehicle de tracció davantera consumeix 6,3 L/100 km quan circula a 120 km/h. El seu dipòsit admet 60 L. En línia recta i a aquesta velocitat, les rodes giren a 1 004 min⁻¹. Entre motor i rodes hi ha una transmissió mecànica amb rendiment del 92 %. El rendiment tèrmic del motor és del 30 %. El combustible té densitat de 0,75 kg/L i poder calorífic de 43,5 MJ/kg. Mantén les condicions de circulació indicades.</p>
+<p class="dossier-subquestion">a) Calcula l’autonomia amb el dipòsit al 80 %, en km. [0,5 p]</p>
+<p class="dossier-subquestion">b) Determina la potència tèrmica mitjana d’entrada, en kW. [0,5 p]</p>
+<p class="dossier-subquestion">c) Troba la potència a les rodes, en kW, i el parell total, en N·m. [1 p]</p>
+<p class="dossier-subquestion">d) Calcula la potència total dissipada pel motor i la transmissió, en kW. [0,5 p]</p>
+            </div>
+            <details class="dossier-ex-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultats finals:</strong> a) 761,905 km · b) 68,513 kW · c) 18,909 kW; 179,853 N·m · d) 49,603 kW</p></details>
+          </div>
+        </article>
+        </div>
+        <p class="dossier-pdf-ref">📄 <a href="https://drive.google.com/file/d/1Y8EEtM6od8qTpBMYTIStYioAMbpuXdfD/view" target="_blank" rel="noopener noreferrer">Consulta el dossier original de 30 exercicis PAU (PDF)</a></p>
+      </div>
+      <a class="paus" href="#practica">🎓 Resum dels exercicis i pràctica complementària</a><br>
       <a class="pdf-link" href="https://drive.google.com/file/d/1S-vXpmHQjhQx7Ar9dDk2bdhHywyYXFg3/view" target="_blank" rel="noopener noreferrer">📄 Teoria i exemples resolts</a>
     </section>
 
@@ -520,7 +648,98 @@
       </div>
       <div class="worked"><h3>🔋 Exemple ràpid</h3><p>Una bateria de 36 V i 10 Ah emmagatzema <strong>36 · 10 = 360 Wh</strong>. Si un equip consumeix 180 W constants, l'autonomia teòrica és <strong>360 / 180 = 2 h</strong>.</p></div>
       <div class="mini-note"><strong>Unitats PAU:</strong> 1 Ah = 1.000 mAh; 1 Wh = 3.600 J. Comprova sempre si el problema et dona la potència elèctrica que entra al motor o la mecànica que arriba a la roda.</div>
-      <a class="paus" href="#practica">🎓 Practica els exercicis 7–12 (especialment l'11)</a><br>
+      
+      <div class="dossier-section" aria-label="Exercicis del dossier: Parell motor, bateries i mobilitat">
+        <div class="dossier-head"><div class="dossier-tag">EXERCICIS DOSSIER</div><div class="dossier-range">Exercicis 7–12 · Parell motor, bateries i mobilitat</div></div>
+        <p class="dossier-instructions"><strong>Activitat per lliurar:</strong> resol aquests exercicis al dossier, amb les fórmules, la substitució de dades, els càlculs i les unitats. Consulta el resultat final només després d’intentar-los.</p>
+        <div class="dossier-list">
+        <article class="dossier-ex-card" id="exercici-dossier-7" aria-labelledby="dossier-ex-title-7">
+          <div class="dossier-ex-heading"><span class="dossier-ex-number">07</span><h4 id="dossier-ex-title-7">Exercici 7<small>Potència i parell motor</small></h4></div>
+          <div class="dossier-ex-body">
+            <p class="dossier-ex-source">PAU 2022 · juny · sèrie 5 · exercici 6 · 2,5 punts · Enunciat adaptat</p>
+            <div class="dossier-ex-statement">
+<p>Un prototip de motocicleta elèctrica incorpora el motor directament a la roda del darrere. Circula a velocitat constant sobre terreny horitzontal. En aquest règim, el motor lliura 15 kW amb un parell de 150 N·m i el fabricant declara una autonomia de 200 km. Els pneumàtics tenen 630 mm de diàmetre; el rendiment del motor és del 90 %. Considera bateries ideals i mantén aquestes condicions en tots els apartats.</p>
+<p class="dossier-subquestion">a) Calcula la velocitat angular de la roda, en rad/s, i la velocitat del vehicle, en km/h. [1 p]</p>
+<p class="dossier-subquestion">b) Troba la durada màxima del trajecte, en h, i l’energia mecànica lliurada, en kWh. [1 p]</p>
+<p class="dossier-subquestion">c) Determina l’energia mínima que ha d’emmagatzemar la bateria, en kWh. [0,5 p]</p>
+            </div>
+            <details class="dossier-ex-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultats finals:</strong> a) 100 rad/s; 113,4 km/h · b) 1,764 h; 26,455 kWh · c) 29,394 kWh</p></details>
+          </div>
+        </article>
+        <article class="dossier-ex-card" id="exercici-dossier-8" aria-labelledby="dossier-ex-title-8">
+          <div class="dossier-ex-heading"><span class="dossier-ex-number">08</span><h4 id="dossier-ex-title-8">Exercici 8<small>Frenada regenerativa</small></h4></div>
+          <div class="dossier-ex-body">
+            <p class="dossier-ex-source">PAU 2021 · juny · sèrie 5 · exercici 4 · 2,5 punts · Enunciat adaptat</p>
+            <div class="dossier-ex-statement">
+<p>Una moto elèctrica puja 12 km per una carretera de pendent constant del 5 %. Manté una velocitat constant. La moto i el conductor tenen una massa conjunta de 130 kg. La bateria ideal emmagatzema 1,53 kWh i el rendiment global en pujada és del 90 %. Negligeix el rodolament i la resistència aerodinàmica. Pren g = 9,81 m/s² i interpreta el pendent com tan α = 0,05.</p>
+<p class="dossier-subquestion">a) Determina el desnivell exacte del trajecte, en m. [0,5 p]</p>
+<p class="dossier-subquestion">b) Calcula l’augment d’energia potencial, en kJ. [0,5 p]</p>
+<p class="dossier-subquestion">c) Troba l’energia extreta de la bateria durant la pujada, en kWh. [0,5 p]</p>
+<p>Després torna pel mateix camí, frenant només amb el motor i recuperant energia amb un rendiment del 65 %. La bateria era plena abans d’iniciar la pujada.</p>
+<p class="dossier-subquestion">d) Calcula el percentatge de càrrega que queda després de pujar i baixar. [1 p]</p>
+            </div>
+            <details class="dossier-ex-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultats finals:</strong> a) 599,251 m · b) 764,225 kJ · c) 0,236 kWh · d) 93,602 %</p></details>
+          </div>
+        </article>
+        <article class="dossier-ex-card" id="exercici-dossier-9" aria-labelledby="dossier-ex-title-9">
+          <div class="dossier-ex-heading"><span class="dossier-ex-number">09</span><h4 id="dossier-ex-title-9">Exercici 9<small>Autonomia d’un patinet</small></h4></div>
+          <div class="dossier-ex-body">
+            <p class="dossier-ex-source">PAU 2019 · juny · sèrie 1 · exercici 4 · Opció A · 2,5 punts · Enunciat adaptat</p>
+            <div class="dossier-ex-statement">
+<p>Un patinet elèctric disposa d’una bateria ideal de 24 V i 250 Wh, inicialment plena. Alimenta un motor amb rendiment del 89 %. La roda motriu, de 160 mm de diàmetre, està unida directament a l’eix del motor. Durant l’estudi, el patinet circula uniformement per terreny horitzontal. La roda gira a 664 min⁻¹ i el motor li proporciona 200 W mecànics. Analitza el funcionament sense modificar aquest règim.</p>
+<p class="dossier-subquestion">a) Calcula el parell del motor, en N·m. [0,5 p]</p>
+<p class="dossier-subquestion">b) Determina la velocitat d’avanç, en km/h. [0,5 p]</p>
+<p class="dossier-subquestion">c) Troba l’energia mecànica útil disponible, en Wh. [0,5 p]</p>
+<p class="dossier-subquestion">d) Calcula l’autonomia temporal, en h, i la distància màxima, en km. [1 p]</p>
+            </div>
+            <details class="dossier-ex-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultats finals:</strong> a) 2,876 N·m · b) 20,026 km/h · c) 222,5 Wh · d) 1,113 h; 22,279 km</p></details>
+          </div>
+        </article>
+        <article class="dossier-ex-card" id="exercici-dossier-10" aria-labelledby="dossier-ex-title-10">
+          <div class="dossier-ex-heading"><span class="dossier-ex-number">10</span><h4 id="dossier-ex-title-10">Exercici 10<small>Bateria i pujada</small></h4></div>
+          <div class="dossier-ex-body">
+            <p class="dossier-ex-source">PAU 2023 · setembre · sèrie 2 · exercici 4 · 2,5 punts · Enunciat adaptat</p>
+            <div class="dossier-ex-statement">
+<p>Una cadira elèctrica experimental incorpora sensors per estudiar el consum. La bateria d’ió liti té tensió de 36 V i energia de 240 Wh; alimenta un motor-reductor de rendiment 72 %. Cadira i ocupant sumen 130 kg. S’estudien dues pujades uniformes pel mateix carrer, inclinat 8° respecte de l’horitzontal. En el primer règim el motor absorbeix 109,5 W; en el segon, 650,3 W. Per als càlculs, considera bateria ideal, fregaments negligibles i g = 9,81 m/s².</p>
+<p class="dossier-subquestion">a) Expressa la capacitat de càrrega de la bateria en Ah. [0,5 p]</p>
+<p class="dossier-subquestion">b) Calcula la velocitat d’avanç de cada règim, en km/h. [1 p]</p>
+<p class="dossier-subquestion">c) Troba el temps màxim de funcionament de cada règim, en h, i la distància màxima recorreguda, en km. [1 p]</p>
+            </div>
+            <details class="dossier-ex-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultats finals:</strong> a) 6,667 Ah · b) 1,599 km/h; 9,497 km/h · c) 2,192 h; 0,369 h; 3,505 km en tots dos règims</p></details>
+          </div>
+        </article>
+        <article class="dossier-ex-card" id="exercici-dossier-11" aria-labelledby="dossier-ex-title-11">
+          <div class="dossier-ex-heading"><span class="dossier-ex-number">11</span><h4 id="dossier-ex-title-11">Exercici 11<small>Motor, reductor i autonomia</small></h4></div>
+          <div class="dossier-ex-body">
+            <p class="dossier-ex-source">PAU 2020 · juny · sèrie 1 · exercici 3 · 2,5 punts · Enunciat adaptat</p>
+            <div class="dossier-ex-statement">
+<p>Una cadira manual incorpora un accionament per ajudar la persona que l’empeny. El sistema consta d’una bateria ideal d’ió liti de 12 V i 240 Wh, un motor de rendiment 87 %, un reductor de rendiment 95 % i dues rodes auxiliars de 200 mm de diàmetre. La relació de velocitats és n_roda/n_motor = 0,08. La cadira avança en línia recta sobre terreny horitzontal, a 3,7 km/h constants i sense lliscament. En aquestes condicions, el motor absorbeix 75 W.</p>
+<p class="dossier-subquestion">a) Calcula les velocitats angulars de la roda i del motor, en rad/s. [0,5 p]</p>
+<p class="dossier-subquestion">b) Determina la potència mecànica total que arriba a les rodes, en W. [0,5 p]</p>
+<p class="dossier-subquestion">c) Troba el parell a l’eix del motor, en N·m. [0,5 p]</p>
+<p class="dossier-subquestion">d) Calcula el temps màxim d’ús, en h, i la distància màxima, en km. [1 p]</p>
+            </div>
+            <details class="dossier-ex-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultats finals:</strong> a) 10,278 rad/s; 128,472 rad/s · b) 61,987 W · c) 0,508 N·m · d) 3,2 h; 11,84 km</p></details>
+          </div>
+        </article>
+        <article class="dossier-ex-card" id="exercici-dossier-12" aria-labelledby="dossier-ex-title-12">
+          <div class="dossier-ex-heading"><span class="dossier-ex-number">12</span><h4 id="dossier-ex-title-12">Exercici 12<small>Energia d’una bateria</small></h4></div>
+          <div class="dossier-ex-body">
+            <p class="dossier-ex-source">PAU 2021 · juny · sèrie 5 · exercici 5 · 2,5 punts · Enunciat adaptat</p>
+            <div class="dossier-ex-statement">
+<p>Un dron porta una bateria de 11,1 V i 5 200 mAh, inicialment carregada del tot. Hi connecta quatre motors en paral·lel, cadascun amb rendiment del 89 %. Durant el vol estudiat, tots giren a 10 000 min⁻¹; dos en sentit horari i dos en l’oposat. Cadascun lliura 30 W mecànics. Per relacionar càrrega i energia, utilitza E_bat = C·U: amb C en Ah i U en V, l’energia resulta en Wh. Considera únicament el consum d’aquests motors.</p>
+<p class="dossier-subquestion">a) Calcula l’energia inicial de la bateria, en Wh i en kJ. [0,5 p]</p>
+<p class="dossier-subquestion">b) Determina la potència elèctrica d’un motor, en W. [0,5 p]</p>
+<p class="dossier-subquestion">c) Quan s’ha consumit el 5 % de la càrrega inicial, quina energia s’ha utilitzat i quant temps ha transcorregut? [1 p]</p>
+<p class="dossier-subquestion">d) Troba el parell de cada motor, en N·m. [0,5 p]</p>
+            </div>
+            <details class="dossier-ex-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultats finals:</strong> a) 57,72 Wh; 207,792 kJ · b) 33,708 W · c) 2,886 Wh; 77,056 s · d) 0,029 N·m</p></details>
+          </div>
+        </article>
+        </div>
+        <p class="dossier-pdf-ref">📄 <a href="https://drive.google.com/file/d/1Y8EEtM6od8qTpBMYTIStYioAMbpuXdfD/view" target="_blank" rel="noopener noreferrer">Consulta el dossier original de 30 exercicis PAU (PDF)</a></p>
+      </div>
+      <a class="paus" href="#practica">🎓 Resum dels exercicis i pràctica complementària</a><br>
       <a class="pdf-link" href="https://drive.google.com/file/d/1EUMCqggmtjIlDPbjSa7Wy_scQqicKLS1/view" target="_blank" rel="noopener noreferrer">📄 Teoria de parell motor</a>
     </section>
 
@@ -608,7 +827,84 @@
       </div>
       <div class="worked"><h3>🧮 Exemple: escalfar i vaporitzar</h3><p>Per escalfar <strong>1 kg d'aigua de 20 °C a 100 °C</strong>, amb CE = 4.180 J/(kg·K): Q<sub>1</sub> = 1 · 4.180 · 80 = <strong>334.400 J</strong>.</p><p>Si després la vaporitzem amb L = 2.260.000 J/kg: Q<sub>2</sub> = <strong>2.260.000 J</strong>. Energia total: <strong>Q<sub>1</sub> + Q<sub>2</sub> = 2.594.400 J</strong>, abans de considerar el rendiment.</p></div>
       <div class="mini-note"><strong>Atenció a les lletres:</strong> <strong>Q</strong> és la calor o energia tèrmica transferida (J); <strong>CE</strong> és la calor específica; <strong>PC</strong> és el poder calorífic; <strong>C</strong> majúscula a les bateries és la capacitat (Ah). Per calcular el combustible o l'electricitat necessària, divideix la calor útil entre η. Un cabal en L/min s'ha de convertir a m³/s o kg/s.</div>
-      <a class="paus" href="#practica">🎓 Practica els exercicis 13–17</a><br>
+      
+      <div class="dossier-section" aria-label="Exercicis del dossier: Energia tèrmica i combustibles">
+        <div class="dossier-head"><div class="dossier-tag">EXERCICIS DOSSIER</div><div class="dossier-range">Exercicis 13–17 · Energia tèrmica i combustibles</div></div>
+        <p class="dossier-instructions"><strong>Activitat per lliurar:</strong> resol aquests exercicis al dossier, amb les fórmules, la substitució de dades, els càlculs i les unitats. Consulta el resultat final només després d’intentar-los.</p>
+        <div class="dossier-list">
+        <article class="dossier-ex-card" id="exercici-dossier-13" aria-labelledby="dossier-ex-title-13">
+          <div class="dossier-ex-heading"><span class="dossier-ex-number">13</span><h4 id="dossier-ex-title-13">Exercici 13<small>Energia dels pèl·lets</small></h4></div>
+          <div class="dossier-ex-body">
+            <p class="dossier-ex-source">PAU 2024 · juny · sèrie 5 · exercici 3 · 2,5 punts · Enunciat adaptat</p>
+            <div class="dossier-ex-statement">
+<p>Es vol escalfar una caseta de muntanya formada per una única habitació de 55 m². L’estufa de pèl·lets escollida té rendiment del 89 %, dipòsit de 15 kg i consum d’1,483 kg/h. Un sac conté 15 kg i costa 6 €. El fabricant indica un poder calorífic de 5,23 kWh/kg i una proporció de cendres del 0,7 % de la massa inicial. El dipòsit comença ple i s’estudia el consum de tot el contingut.</p>
+<p class="dossier-subquestion">a) Calcula l’energia química d’un sac, en kWh. [0,5 p]</p>
+<p class="dossier-subquestion">b) Troba l’energia útil del sac i el cost per kWh útil. [1 p]</p>
+<p class="dossier-subquestion">c) Determina l’autonomia amb el dipòsit ple, en h. [0,5 p]</p>
+<p class="dossier-subquestion">d) Calcula la massa de cendres generada per sac, en g. [0,5 p]</p>
+            </div>
+            <details class="dossier-ex-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultats finals:</strong> a) 78,45 kWh · b) 69,821 kWh; 0,086 €/kWh útil · c) 10,115 h · d) 105 g</p></details>
+          </div>
+        </article>
+        <article class="dossier-ex-card" id="exercici-dossier-14" aria-labelledby="dossier-ex-title-14">
+          <div class="dossier-ex-heading"><span class="dossier-ex-number">14</span><h4 id="dossier-ex-title-14">Exercici 14<small>Vaporització i rendiment</small></h4></div>
+          <div class="dossier-ex-body">
+            <p class="dossier-ex-source">PAU 2024 · setembre · sèrie 3 · exercici 6 · 2,5 punts · Enunciat adaptat</p>
+            <div class="dossier-ex-statement">
+<p>Una caldera de propà produeix diàriament vapor sec a 125 °C a partir de 1 500 kg d’aigua a 80 °C. Per fer-ho gasta 90 kg de propà al dia. El combustible té poder calorífic de 12,83 kWh/kg i factor d’emissió de 2,94 kg CO₂/kg. Utilitza c de l’aigua = 4,197 kJ/(kg·°C), c del vapor = 2,155 kJ/(kg·°C) i calor latent de vaporització = 2 257 kJ/kg. El canvi d’estat té lloc a 100 °C. Per al còmput anual, considera 365 dies de servei.</p>
+<p class="dossier-subquestion">a) Determina la calor útil diària, incloent-hi el canvi d’estat, en kWh/dia. [1 p]</p>
+<p class="dossier-subquestion">b) Calcula l’energia diària aportada pel combustible i el rendiment global. [1 p]</p>
+<p class="dossier-subquestion">c) Troba les emissions anuals, en t CO₂/any. [0,5 p]</p>
+            </div>
+            <details class="dossier-ex-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultats finals:</strong> a) 997,84 kWh/dia · b) 1 154,7 kWh/dia; 86,415 % · c) 96,579 t CO₂/any</p></details>
+          </div>
+        </article>
+        <article class="dossier-ex-card" id="exercici-dossier-15" aria-labelledby="dossier-ex-title-15">
+          <div class="dossier-ex-heading"><span class="dossier-ex-number">15</span><h4 id="dossier-ex-title-15">Exercici 15<small>Potència tèrmica i cabal</small></h4></div>
+          <div class="dossier-ex-body">
+            <p class="dossier-ex-source">PAU 2019 · juny · sèrie 1 · exercici 4 · Opció B · 2,5 punts · Enunciat adaptat</p>
+            <div class="dossier-ex-statement">
+<p>Una caldera mixta de condensació utilitza gas natural de poder calorífic 62 MJ/kg. Quan es dedica exclusivament a produir aigua calenta, lliura 28 kW útils i incrementa la temperatura de l’aigua en 25 °C. En aquest règim, el rendiment és del 87 %. Considera c = 4,18 J/(g·°C) i densitat de l’aigua d’1 000 kg/m³.</p>
+<p class="dossier-subquestion">a) Troba el cabal d’aigua escalfada, en L/min. [0,5 p]</p>
+<p class="dossier-subquestion">b) Calcula la potència d’entrada, en kW, i el consum de gas, en kg/h. [1 p]</p>
+<p class="dossier-subquestion">c) Determina el temps i la massa de gas necessaris per escalfar 0,1 m³ d’aigua amb el mateix increment tèrmic. [1 p]</p>
+            </div>
+            <details class="dossier-ex-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultats finals:</strong> a) 16,077 L/min · b) 32,184 kW; 1,869 kg/h · c) 373,214 s; 0,194 kg</p></details>
+          </div>
+        </article>
+        <article class="dossier-ex-card" id="exercici-dossier-16" aria-labelledby="dossier-ex-title-16">
+          <div class="dossier-ex-heading"><span class="dossier-ex-number">16</span><h4 id="dossier-ex-title-16">Exercici 16<small>Rendiment i resistivitat</small></h4></div>
+          <div class="dossier-ex-body">
+            <p class="dossier-ex-source">PAU 2019 · setembre · sèrie 5 · exercici 4 · Opció A · 2,5 punts · Enunciat adaptat</p>
+            <div class="dossier-ex-statement">
+<p>Un escalfador resistiu connectat a 230 V absorbeix 1,5 kW. Necessita 2 h i 5 min per elevar de 15 °C a 65 °C la temperatura de 50 L d’aigua. La calor específica de l’aigua és de 4,18 kJ/(kg·°C) i l’electricitat costa 0,125 €/kWh. Per al càlcul de la massa, pren ρ = 1 kg/L.</p>
+<p class="dossier-subquestion">a) Calcula l’energia tèrmica rebuda per l’aigua, en MJ. [0,5 p]</p>
+<p class="dossier-subquestion">b) Troba el consum elèctric, en kWh, i el cost del procés, en €. [0,5 p]</p>
+<p class="dossier-subquestion">c) Determina el rendiment del termo, en %. [0,5 p]</p>
+<p class="dossier-subquestion">d) Determina la resistivitat del material, en Ω·m, si la resistència consisteix en un fil de 0,25 mm de diàmetre i 1 500 mm de longitud. [1 p]</p>
+            </div>
+            <details class="dossier-ex-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultats finals:</strong> a) 10,45 MJ · b) 3,125 kWh; 0,391 € · c) 92,889 % · d) 1,154 × 10⁻⁶ Ω·m</p></details>
+          </div>
+        </article>
+        <article class="dossier-ex-card" id="exercici-dossier-17" aria-labelledby="dossier-ex-title-17">
+          <div class="dossier-ex-heading"><span class="dossier-ex-number">17</span><h4 id="dossier-ex-title-17">Exercici 17<small>Potència i autonomia tèrmica</small></h4></div>
+          <div class="dossier-ex-body">
+            <p class="dossier-ex-source">PAU 2020 · juny · sèrie 1 · exercici 4 · 2,5 punts · Enunciat adaptat</p>
+            <div class="dossier-ex-statement">
+<p>Una estufa de terrassa funciona amb butà i permet regular el consum entre 450 g/h i 800 g/h. El combustible té un poder calorífic de 49,61 MJ/kg i es ven en bombones de 12,5 kg.</p>
+<p class="dossier-subquestion">a) Calcula les potències tèrmiques d’entrada mínima i màxima, en kW. [0,5 p]</p>
+<p class="dossier-subquestion">b) Determina l’autonomia màxima d’una bombona, en h. [0,5 p]</p>
+<p class="dossier-subquestion">c) Representa l’autonomia t (h) en funció del consum c (g/h), dins l’interval de regulació, amb eixos i unitats. [1 p]</p>
+<p>En una terrassa de bar hi ha tres estufes iguals que treballen 10 h/dia al consum màxim. Utilitza un factor d’emissió de 2,96 kg CO₂/kg de butà.</p>
+<p class="dossier-subquestion">d) Calcula les emissions diàries de les tres estufes, en kg CO₂/dia. [0,5 p]</p>
+            </div>
+            <details class="dossier-ex-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultats finals:</strong> a) 6,201 kW; 11,024 kW · b) 27,778 h · c) t = 12 500/c; corba decreixent de (450 g/h; 27,778 h) a (800 g/h; 15,625 h) · d) 71,04 kg CO₂/dia</p></details>
+          </div>
+        </article>
+        </div>
+        <p class="dossier-pdf-ref">📄 <a href="https://drive.google.com/file/d/1Y8EEtM6od8qTpBMYTIStYioAMbpuXdfD/view" target="_blank" rel="noopener noreferrer">Consulta el dossier original de 30 exercicis PAU (PDF)</a></p>
+      </div>
+      <a class="paus" href="#practica">🎓 Resum dels exercicis i pràctica complementària</a><br>
       <a class="pdf-link" href="https://drive.google.com/file/d/1HhvR_CdEqVi-g6-tfdoXISy6jMio2asO/view" target="_blank" rel="noopener noreferrer">📄 Teoria general d'energia</a>
     </section>
 
@@ -667,7 +963,117 @@
         <p>No confonguis aquesta τ amb la relació i = entrada / sortida de l'exercici 11.</p>
       </div>
       <div class="mini-note"><strong>Detall PAU:</strong> si el vent baixa un 10 %, la seva potència disponible queda multiplicada per 0,9³ = 0,729. En centrals de cicle combinat, segueix el flux d'energia de cada etapa i aplica els rendiments corresponents.</div>
-      <a class="paus" href="#practica">🎓 Practica els exercicis 18–24 (especialment el 24)</a>
+      
+      <div class="dossier-section" aria-label="Exercicis del dossier: Producció i captació d’energia">
+        <div class="dossier-head"><div class="dossier-tag">EXERCICIS DOSSIER</div><div class="dossier-range">Exercicis 18–24 · Producció i captació d’energia</div></div>
+        <p class="dossier-instructions"><strong>Activitat per lliurar:</strong> resol aquests exercicis al dossier, amb les fórmules, la substitució de dades, els càlculs i les unitats. Consulta el resultat final només després d’intentar-los.</p>
+        <div class="dossier-list">
+        <article class="dossier-ex-card" id="exercici-dossier-18" aria-labelledby="dossier-ex-title-18">
+          <div class="dossier-ex-heading"><span class="dossier-ex-number">18</span><h4 id="dossier-ex-title-18">Exercici 18<small>Rendiment hidroelèctric</small></h4></div>
+          <div class="dossier-ex-body">
+            <p class="dossier-ex-source">PAU 2025 · juny · sèrie 4 · exercici 2 · 2,5 punts · Enunciat adaptat</p>
+            <div class="dossier-ex-statement">
+<p>El conjunt hidroelèctric de la Noguera de Cardós inclou tres centrals. Tavascan Superior, la més gran, disposa d’un salt de 882 m i de dues turbines. El cabal total és de 14 m³/s, repartit a parts iguals: 7 m³/s per turbina. Cadascuna lliura 57 MW. Durant el 2024 la producció va ser de 190 400 MWh. Pren com a consum de referència d’un habitatge català 3 400 kWh/any. Per als càlculs, utilitza ρ = 1 000 kg/m³ i g = 9,81 m/s².</p>
+<p class="dossier-subquestion">a) Calcula la potència hidràulica disponible, en MW. [1 p]</p>
+<p class="dossier-subquestion">b) Troba el rendiment global de la central, en %. [0,5 p]</p>
+<p class="dossier-subquestion">c) Determina les hores equivalents de funcionament a plena potència l’any 2024. [0,5 p]</p>
+<p class="dossier-subquestion">d) Calcula el nombre màxim d’habitatges que pot abastir durant un any. [0,5 p]</p>
+            </div>
+            <details class="dossier-ex-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultats finals:</strong> a) 121,134 MW · b) 94,111 % · c) 1 670,175 h · d) 56 000 habitatges</p></details>
+          </div>
+        </article>
+        <article class="dossier-ex-card" id="exercici-dossier-19" aria-labelledby="dossier-ex-title-19">
+          <div class="dossier-ex-heading"><span class="dossier-ex-number">19</span><h4 id="dossier-ex-title-19">Exercici 19<small>Producció hidroelèctrica</small></h4></div>
+          <div class="dossier-ex-body">
+            <p class="dossier-ex-source">PAU 2020 · setembre · sèrie 4 · exercici 4 · 2,5 punts · Enunciat adaptat</p>
+            <div class="dossier-ex-statement">
+<p>Una central aprofita un desnivell hidràulic de 61,9 m. Treballa amb un cabal mitjà de 35 m³/s durant 8 h/dia i 310 dies/any. El rendiment global de conversió és del 93 %. Per als càlculs, utilitza ρ = 1 000 kg/m³ i g = 9,81 m/s².</p>
+<p class="dossier-subquestion">a) Determina la potència del salt d’aigua, en MW. [0,5 p]</p>
+<p class="dossier-subquestion">b) Calcula la potència elèctrica útil, en MW. [0,5 p]</p>
+<p class="dossier-subquestion">c) Troba l’energia elèctrica produïda cada dia, en MWh. [0,5 p]</p>
+<p>Considera que cada habitatge català necessita, de mitjana, 3 487 kWh elèctrics a l’any.</p>
+<p class="dossier-subquestion">d) Determina quants habitatges complets es poden abastir durant un any. [1 p]</p>
+            </div>
+            <details class="dossier-ex-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultats finals:</strong> a) 21,253 MW · b) 19,766 MW · c) 158,125 MWh/dia · d) 14057 habitatges</p></details>
+          </div>
+        </article>
+        <article class="dossier-ex-card" id="exercici-dossier-20" aria-labelledby="dossier-ex-title-20">
+          <div class="dossier-ex-heading"><span class="dossier-ex-number">20</span><h4 id="dossier-ex-title-20">Exercici 20<small>Energia eòlica</small></h4></div>
+          <div class="dossier-ex-body">
+            <p class="dossier-ex-source">PAU 2019 · juny · sèrie 1 · exercici 3 · Opció A · 2,5 punts · Enunciat adaptat</p>
+            <div class="dossier-ex-statement">
+<p>Un parc eòlic disposa de 50 màquines de tres pales, amb un diàmetre d’escombratge de 77 m. La velocitat mitjana del vent és de 25 km/h. El coeficient de captació és 0,42 i el rendiment de l’aerogenerador és del 68 %. El parc produeix electricitat 18 h/dia durant 300 dies/any. La densitat de l’aire és d’1,225 kg/m³. La potència del vent es modelitza amb P = ½·ρ·A·v³, on A és l’àrea escombrada en m² i v la velocitat en m/s. L’energia es ven a 7,624 cèntims d’euro/kWh.</p>
+<p class="dossier-subquestion">a) Calcula la potència del vent a l’àrea d’un rotor, en kW. [0,5 p]</p>
+<p class="dossier-subquestion">b) Determina la potència elèctrica d’un aerogenerador, en kW. [0,5 p]</p>
+<p class="dossier-subquestion">c) Troba la producció anual del parc, en MWh. [0,5 p]</p>
+<p class="dossier-subquestion">d) Calcula els ingressos anuals, en €/any. [0,5 p]</p>
+<p class="dossier-subquestion">e) Amb un vent un 10 % més lent, quin percentatge d’ingressos es perdria? [0,5 p]</p>
+            </div>
+            <details class="dossier-ex-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultats finals:</strong> a) 955,19 kW · b) 272,802 kW · c) 73 656,642 MWh/any · d) 5 615 582,389 €/any · e) 27,1 %</p></details>
+          </div>
+        </article>
+        <article class="dossier-ex-card" id="exercici-dossier-21" aria-labelledby="dossier-ex-title-21">
+          <div class="dossier-ex-heading"><span class="dossier-ex-number">21</span><h4 id="dossier-ex-title-21">Exercici 21<small>Energia fotovoltaica</small></h4></div>
+          <div class="dossier-ex-body">
+            <p class="dossier-ex-source">PAU 2021 · juny · sèrie 2 · exercici 4 · 2,5 punts · Enunciat adaptat</p>
+            <div class="dossier-ex-statement">
+<p>L’ajuntament vol instal·lar plaques fotovoltaiques en un edifici municipal per cobrir el 15 % de la demanda elèctrica. La potència instal·lada és de 30 kW; el consum mitjà correspon al 75 % d’aquesta potència durant 12 h/dia. La comercialitzadora atribueix a l’electricitat 241 g CO₂/kWh. Cada placa ofereix una superfície efectiva d’1,45 m² i proporciona 194 W en les condicions de referència: temperatura de 20 °C i irradiància de 1 000 W/m². Considera un any de 365 dies i, per dimensionar, el 15 % de la potència mitjana demanada.</p>
+<p class="dossier-subquestion">a) Calcula el consum elèctric anual, en kWh/any. [0,5 p]</p>
+<p class="dossier-subquestion">b) Determina la potència fotovoltaica necessària per cobrir l’objectiu, en kW. [0,5 p]</p>
+<p class="dossier-subquestion">c) Troba el rendiment de la placa, en %. [0,5 p]</p>
+<p class="dossier-subquestion">d) Calcula el nombre mínim enter de plaques. [0,5 p]</p>
+<p class="dossier-subquestion">e) Calcula les emissions evitades per cobrir exactament el 15 %, en kg CO₂/any. [0,5 p]</p>
+            </div>
+            <details class="dossier-ex-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultats finals:</strong> a) 98 550 kWh/any · b) 3,375 kW · c) 13,379 % · d) 18 plaques · e) 3 562,582 kg CO₂/any</p></details>
+          </div>
+        </article>
+        <article class="dossier-ex-card" id="exercici-dossier-22" aria-labelledby="dossier-ex-title-22">
+          <div class="dossier-ex-heading"><span class="dossier-ex-number">22</span><h4 id="dossier-ex-title-22">Exercici 22<small>Captadors solars tèrmics</small></h4></div>
+          <div class="dossier-ex-body">
+            <p class="dossier-ex-source">PAU 2018 · juny · sèrie 1 · exercici 3 · Opció A · 2,5 punts · Enunciat adaptat</p>
+            <div class="dossier-ex-statement">
+<p>Un habitatge vol obtenir aigua calenta amb captadors solars de 2,1 m² i un escalfador elèctric auxiliar. El rendiment d’un captador segueix η = η₀ − k·(T − Tₐ)/I: η₀ és el rendiment òptic, k el coeficient de pèrdues, T la temperatura de treball, Tₐ l’ambient i I la irradiància. S’han de comparar els models A i B de la taula. Treballen a T = 50 °C, Tₐ = 18 °C i I = 800 W/m².</p>
+<div class="dossier-table-wrap"><table class="dossier-data-table"><thead><tr><th>Característica</th><th>Model A</th><th>Model B</th></tr></thead><tbody><tr><td>Rendiment òptic η₀</td><td>0,80</td><td>0,66</td></tr><tr><td>Coeficient k [W/(m²·°C)]</td><td>8,9</td><td>3,2</td></tr></tbody></table></div>
+<p class="dossier-subquestion">a) Compara els rendiments dels dos models, en %, i tria el millor. [0,5 p]</p>
+<p>S’escull el model més eficient i s’utilitza 8 h/dia. Cal escalfar 390 L/dia d’aigua amb ΔT = 35 °C. Pren c = 4,18 J/(g·°C), ρ = 1 kg/L i suport elèctric ideal.</p>
+<p class="dossier-subquestion">b) Calcula el nombre enter mínim de captadors per cobrir tota la demanda. [1 p]</p>
+<p class="dossier-subquestion">c) Si la irradiància baixa a 400 W/m², mantenint temperatures i hores, quanta energia elèctrica de suport cal al dia, en kWh? [1 p]</p>
+            </div>
+            <details class="dossier-ex-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultats finals:</strong> a) A: 44,4 %; B: 53,2 % → B · b) 3 captadors · c) 7,705 kWh/dia</p></details>
+          </div>
+        </article>
+        <article class="dossier-ex-card" id="exercici-dossier-23" aria-labelledby="dossier-ex-title-23">
+          <div class="dossier-ex-heading"><span class="dossier-ex-number">23</span><h4 id="dossier-ex-title-23">Exercici 23<small>Cicle combinat</small></h4></div>
+          <div class="dossier-ex-body">
+            <p class="dossier-ex-source">PAU 2018 · juny · sèrie 1 · exercici 4 · Opció B · 2,5 punts · Enunciat adaptat</p>
+            <div class="dossier-ex-statement">
+<p>Una central de cicle combinat produeix electricitat en dues etapes. Primer crema gas natural; després aprofita la calor residual per accionar una turbina de vapor. El combustible es distribueix liquat, amb una densitat de 0,423 kg/L i un poder calorífic de 32,5 MJ/kg. La central lliura 500 MW elèctrics amb un rendiment global del 57,5 %. El rendiment del cicle de gas és del 32 %. Considera que la calor residual d’aquest primer cicle alimenta el de vapor.</p>
+<p class="dossier-subquestion">a) Calcula la potència tèrmica d’entrada, en MW. [0,5 p]</p>
+<p class="dossier-subquestion">b) Determina el volum de combustible necessari per operar 24 h, en m³. [0,5 p]</p>
+<p class="dossier-subquestion">c) Troba la potència tèrmica que surt del cicle de gas cap al de vapor, en MW. [0,5 p]</p>
+<p class="dossier-subquestion">d) Calcula el rendiment del cicle de vapor respecte de la calor que rep, en %. [1 p]</p>
+            </div>
+            <details class="dossier-ex-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultats finals:</strong> a) 869,565 MW · b) 5 465,025 m³ · c) 591,304 MW · d) 37,5 %</p></details>
+          </div>
+        </article>
+        <article class="dossier-ex-card" id="exercici-dossier-24" aria-labelledby="dossier-ex-title-24">
+          <div class="dossier-ex-heading"><span class="dossier-ex-number">24</span><h4 id="dossier-ex-title-24">Exercici 24<small>Rendiment mareomotriu</small></h4></div>
+          <div class="dossier-ex-body">
+            <p class="dossier-ex-source">PAU 2019 · juny · sèrie 4 · exercici 4 · Opció A · 2,5 punts · Enunciat adaptat</p>
+            <div class="dossier-ex-statement">
+<p>Un sistema mareomotriu transforma el moviment de l’aigua en electricitat mitjançant una turbina, un multiplicador d’engranatges i un generador. En règim nominal, la turbina gira a n₁ = 10 min⁻¹ i proporciona un parell de 1 400 kN·m. El multiplicador eleva la velocitat fins a n₂ = 1 500 min⁻¹ a l’entrada del generador. Aquest té un rendiment del 87 % i subministra 1 000 kW elèctrics. Estudia el conjunt en aquestes condicions.</p>
+<div class="dossier-scheme"><span>Turbina</span><b>→</b><span>Multiplicador</span><b>→</b><span>Generador</span></div>
+<p class="dossier-subquestion">a) Troba la potència mecànica i el parell a l’entrada del generador, en kW i kN·m. [1 p]</p>
+<p class="dossier-subquestion">b) Calcula el rendiment del multiplicador i la relació τ = n₂/n₁. [1 p]</p>
+<p class="dossier-subquestion">c) Determina la potència perduda entre la sortida de la turbina i la sortida elèctrica, en kW. [0,5 p]</p>
+            </div>
+            <details class="dossier-ex-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultats finals:</strong> a) 1 149,425 kW; 7,317 kN·m · b) 78,401 %; τ = 150 (sense unitats) · c) 466,077 kW</p></details>
+          </div>
+        </article>
+        </div>
+        <p class="dossier-pdf-ref">📄 <a href="https://drive.google.com/file/d/1Y8EEtM6od8qTpBMYTIStYioAMbpuXdfD/view" target="_blank" rel="noopener noreferrer">Consulta el dossier original de 30 exercicis PAU (PDF)</a></p>
+      </div>
+      <a class="paus" href="#practica">🎓 Resum dels exercicis i pràctica complementària</a>
     </section>
 
     <section id="estalvi" class="energy-section" style="--accent:#245b89">
@@ -714,13 +1120,104 @@
       </div>
       <div class="worked"><h3>💡 Exemple: substituir bombetes</h3><p>Canviem 10 bombetes de 60 W per 10 de 9 W, enceses 4 hores al dia durant 300 dies.</p><p>Estalvi de potència: 10 · (60 − 9) = <strong>510 W = 0,51 kW</strong>.</p><p>Estalvi d'energia: 0,51 · 4 · 300 = <strong>612 kWh/any</strong>. Si l'electricitat costa 0,20 €/kWh: <strong>122,40 €/any</strong>.</p></div>
       <div class="mini-note"><strong>Estratègia:</strong> identifica la magnitud final: litres, kg, kWh, euros o kg de CO₂. Les emissions depenen del <em>factor</em> indicat per l'enunciat; no barregis valors per litre amb valors per kWh.</div>
-      <a class="paus" href="#practica">🎓 Practica els exercicis 25–30</a>
+      
+      <div class="dossier-section" aria-label="Exercicis del dossier: Estalvi energètic, costos i emissions">
+        <div class="dossier-head"><div class="dossier-tag">EXERCICIS DOSSIER</div><div class="dossier-range">Exercicis 25–30 · Estalvi energètic, costos i emissions</div></div>
+        <p class="dossier-instructions"><strong>Activitat per lliurar:</strong> resol aquests exercicis al dossier, amb les fórmules, la substitució de dades, els càlculs i les unitats. Consulta el resultat final només després d’intentar-los.</p>
+        <div class="dossier-list">
+        <article class="dossier-ex-card" id="exercici-dossier-25" aria-labelledby="dossier-ex-title-25">
+          <div class="dossier-ex-heading"><span class="dossier-ex-number">25</span><h4 id="dossier-ex-title-25">Exercici 25<small>Comparació de combustibles</small></h4></div>
+          <div class="dossier-ex-body">
+            <p class="dossier-ex-source">PAU 2023 · juny · sèrie 1 · exercici 4 · 2,5 punts · Enunciat adaptat</p>
+            <div class="dossier-ex-statement">
+<p>Un establiment turístic necessita 15 000 kWh útils anuals i compara dues instal·lacions. La de pèl·lets exigeix 7 000 € d’inversió i rendeix el 94 %; la de gasoil costa 2 000 € i rendeix el 82 %. El manteniment és de 400 €/any en ambdós casos. Els pèl·lets tenen poder calorífic de 4,8 kWh/kg i costen 0,40 €/kg. El gasoil té poder calorífic de 44,8 MJ/kg, densitat de 0,85 kg/L i preu d’1,30 €/L. Considera preus constants i un balanç econòmic sense interessos.</p>
+<p class="dossier-subquestion">a) Calcula el cost del kWh químic de cada combustible. [1 p]</p>
+<p class="dossier-subquestion">b) Troba la massa anual de pèl·lets, en kg/any. [0,5 p]</p>
+<p class="dossier-subquestion">c) Determina el volum anual de gasoil, en L/any. [0,5 p]</p>
+<p class="dossier-subquestion">d) Determina al cap de quants anys s’igualen els costos acumulats de les dues opcions, incloent-hi inversió, combustible i manteniment. [0,5 p]</p>
+            </div>
+            <details class="dossier-ex-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultats finals:</strong> a) Pèl·lets: 0,083 €/kWh; gasoil: 0,123 €/kWh · b) 3 324,468 kg/any · c) 1 729,35 L/any · d) 5,444 anys</p></details>
+          </div>
+        </article>
+        <article class="dossier-ex-card" id="exercici-dossier-26" aria-labelledby="dossier-ex-title-26">
+          <div class="dossier-ex-heading"><span class="dossier-ex-number">26</span><h4 id="dossier-ex-title-26">Exercici 26<small>Substitució de calderes</small></h4></div>
+          <div class="dossier-ex-body">
+            <p class="dossier-ex-source">PAU 2023 · juny · sèrie 5 · exercici 5 · 2,5 punts · Enunciat adaptat</p>
+            <div class="dossier-ex-statement">
+<p>Un habitatge utilitza una caldera de gasoil per a l’aigua calenta sanitària i la calefacció. Consumeix 1 000 L/any i té un rendiment del 89 %. El gasoil té poder calorífic de 44,8 MJ/kg, densitat de 0,85 kg/L i factor d’emissió de 2,79 kg CO₂/L. Es proposa substituir-la per una caldera de gas natural que cobreixi la mateixa demanda útil. La nova caldera rendeix el 94 %. El gas té poder calorífic d’11,7 kWh/m³ i emissions de 0,203 kg CO₂/kWh de combustible.</p>
+<p class="dossier-subquestion">a) Calcula l’energia útil anual de la instal·lació, en kWh/any. [0,5 p]</p>
+<p class="dossier-subquestion">b) Troba l’energia d’entrada i el volum anual de gas natural. [1 p]</p>
+<p class="dossier-subquestion">c) Calcula la disminució anual de les emissions de diòxid de carboni, en kg CO₂/any. [1 p]</p>
+            </div>
+            <details class="dossier-ex-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultats finals:</strong> a) 9 414,222 kWh/any · b) 10 015,13 kWh/any; 855,994 m³/any · c) 756,929 kg CO₂/any</p></details>
+          </div>
+        </article>
+        <article class="dossier-ex-card" id="exercici-dossier-27" aria-labelledby="dossier-ex-title-27">
+          <div class="dossier-ex-heading"><span class="dossier-ex-number">27</span><h4 id="dossier-ex-title-27">Exercici 27<small>Butà o electricitat</small></h4></div>
+          <div class="dossier-ex-body">
+            <p class="dossier-ex-source">PAU 2023 · setembre · sèrie 2 · exercici 3 · 2,5 punts · Enunciat adaptat</p>
+            <div class="dossier-ex-statement">
+<p>Es comparen un escalfador de butà i un d’elèctric que subministren 10 L/min d’aigua amb un augment tèrmic de 30 °C. El servei dura 5 h. Pren c = 4,187 kJ/(kg·K) i ρ = 1 kg/L. L’equip de butà rendeix el 89 %; el combustible té 47 MJ/kg, la bombona de 12,5 kg costa 17,66 € i les emissions són de 2,960 kg CO₂/kg. L’escalfador elèctric rendeix el 97 %; l’electricitat costa 0,21 €/kWh i el mix elèctric comporta 250 g CO₂/kWh.</p>
+<p class="dossier-subquestion">a) Calcula les potències d’entrada dels dos equips, en kW. [0,5 p]</p>
+<p class="dossier-subquestion">b) Determina el consum horari de butà, en kg/h. [0,5 p]</p>
+<p class="dossier-subquestion">c) Compara el cost de funcionament durant les 5 h, en €. [1 p]</p>
+<p class="dossier-subquestion">d) Compara les emissions del mateix període, en kg CO₂. [0,5 p]</p>
+            </div>
+            <details class="dossier-ex-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultats finals:</strong> a) Butà: 23,522 kW; elèctric: 21,582 kW · b) 1,802 kg/h · c) 12,727 €; 22,662 € · d) 26,665 kg; 26,978 kg CO₂ (butà; elèctric)</p></details>
+          </div>
+        </article>
+        <article class="dossier-ex-card" id="exercici-dossier-28" aria-labelledby="dossier-ex-title-28">
+          <div class="dossier-ex-heading"><span class="dossier-ex-number">28</span><h4 id="dossier-ex-title-28">Exercici 28<small>Consum i emissions</small></h4></div>
+          <div class="dossier-ex-body">
+            <p class="dossier-ex-source">PAU 2020 · juny · sèrie 3 · exercici 6 · 2,5 punts · Enunciat adaptat</p>
+            <div class="dossier-ex-statement">
+<p>Per mantenir un hivernacle entre 15 °C i 18 °C s’utilitza una caldera d’aigua alimentada amb gasoil, de rendiment 91 %. La potència mitjana lliurada és d’1 758 kW durant 4 h/dia, 170 dies/any. El combustible té poder calorífic de 44,8 MJ/kg, densitat de 0,85 kg/L i preu de 0,893 €/L. S’atribueixen al seu consum unes emissions de 2,79 kg CO₂ per litre.</p>
+<p class="dossier-subquestion">a) Calcula l’energia anual útil i la del combustible, en MWh/any. [1 p]</p>
+<p class="dossier-subquestion">b) Determina el consum de gasoil, en L/any. [0,5 p]</p>
+<p class="dossier-subquestion">c) Troba la despesa anual de combustible, en €/any. [0,5 p]</p>
+<p class="dossier-subquestion">d) Calcula les emissions, en t CO₂/any. [0,5 p]</p>
+            </div>
+            <details class="dossier-ex-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultats finals:</strong> a) 1 195,44 MWh/any; 1 313,67 MWh/any · b) 124 191,523 L/any · c) 110 903,03 €/any · d) 346,494 t CO₂/any</p></details>
+          </div>
+        </article>
+        <article class="dossier-ex-card" id="exercici-dossier-29" aria-labelledby="dossier-ex-title-29">
+          <div class="dossier-ex-heading"><span class="dossier-ex-number">29</span><h4 id="dossier-ex-title-29">Exercici 29<small>Cost i emissions dels vehicles</small></h4></div>
+          <div class="dossier-ex-body">
+            <p class="dossier-ex-source">PAU 2022 · juny · sèrie 5 · exercici 3 · 2,5 punts · Enunciat adaptat</p>
+            <div class="dossier-ex-statement">
+<p>Per anar a treballar, una persona recorre diàriament 120 km de carretera i 10 km de vies urbanes, durant 280 dies/any. Estudia si comprar un cotxe elèctric o un de gasoil. Utilitza les dades de la taula i considera igual el manteniment anual dels dos vehicles.</p>
+<div class="dossier-table-wrap"><table class="dossier-data-table"><thead><tr><th>Dada</th><th>Elèctric</th><th>Gasoil</th></tr></thead><tbody><tr><td>Compra</td><td>25 700 €</td><td>18 000 €</td></tr><tr><td>Emissions</td><td>241 g CO₂/kWh</td><td>2,87 kg CO₂/L</td></tr><tr><td>Preu de l’energia</td><td>0,14 €/kWh</td><td>1,209 €/L</td></tr><tr><td>Consum en carretera</td><td>13,3 kWh/100 km</td><td>3,6 L/100 km</td></tr><tr><td>Consum urbà</td><td>13,3 kWh/100 km</td><td>4,4 L/100 km</td></tr></tbody></table></div>
+<p class="dossier-subquestion">a) Compara les emissions diàries, en kg CO₂/dia. [1 p]</p>
+<p class="dossier-subquestion">b) Calcula la despesa energètica diària de cada vehicle, en €/dia. [0,5 p]</p>
+<p class="dossier-subquestion">c) Determina en quants anys l’estalvi energètic de l’elèctric compensa el sobrecost de compra. [1 p]</p>
+            </div>
+            <details class="dossier-ex-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultats finals:</strong> a) Elèctric: 4,167 kg; dièsel: 13,661 kg CO₂/dia · b) 2,421 €/dia; 5,755 €/dia · c) 8,248 anys</p></details>
+          </div>
+        </article>
+        <article class="dossier-ex-card" id="exercici-dossier-30" aria-labelledby="dossier-ex-title-30">
+          <div class="dossier-ex-heading"><span class="dossier-ex-number">30</span><h4 id="dossier-ex-title-30">Exercici 30<small>Estalvi amb il·luminació LED</small></h4></div>
+          <div class="dossier-ex-body">
+            <p class="dossier-ex-source">PAU 2021 · setembre · sèrie 1 · exercici 6 · 2,5 punts · Enunciat adaptat</p>
+            <div class="dossier-ex-statement">
+<p>L’enllumenat municipal consta de 308 punts amb bombetes de vapor de sodi d’alta pressió, de 100 W cadascuna. Funcionen, de mitjana, 11 h/dia. L’electricitat costa 0,1370 €/kWh i el manteniment anual suposa 14 000 €. Considera 365 dies/any.</p>
+<p class="dossier-subquestion">a) Calcula el consum anual i la factura energètica del sistema actual. [1 p]</p>
+<p>Es proposa substituir tots els punts per llums LED de 36 W. Cada llum complet costa 500 € i la instal·lació suma 43 000 €. El manteniment nou es considera negligible.</p>
+<p class="dossier-subquestion">b) Troba el consum anual LED i l’estalvi anual total, inclòs el manteniment. [1 p]</p>
+<p class="dossier-subquestion">c) Determina la inversió i el termini de retorn simple, en anys. [0,5 p]</p>
+            </div>
+            <details class="dossier-ex-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultats finals:</strong> a) 123 662 kWh/any; 16 941,694 €/any · b) 44 518,32 kWh/any; 24 842,684 €/any · c) 197 000 €; 7,93 anys</p></details>
+          </div>
+        </article>
+        </div>
+        <p class="dossier-pdf-ref">📄 <a href="https://drive.google.com/file/d/1Y8EEtM6od8qTpBMYTIStYioAMbpuXdfD/view" target="_blank" rel="noopener noreferrer">Consulta el dossier original de 30 exercicis PAU (PDF)</a></p>
+      </div>
+      <a class="paus" href="#practica">🎓 Resum dels exercicis i pràctica complementària</a>
     </section>
 
     <section id="practica" class="energy-section" style="--accent:#3a7daf">
       <div class="section-kicker">Pràctica · Preparació de les PAU</div>
       <h2>30 exercicis organitzats per temes</h2>
-      <p>Comença pels exemples resolts de la teoria. Després passa als exercicis de les PAU: són de <strong>dificultat alta</strong> i estan agrupats en el mateix ordre que els sis blocs de teoria. <strong>Clica un bloc per repassar-ne les fórmules</strong> o obre el PDF amb els 30 enunciats i resultats.</p>
+      <p>Els <strong>30 exercicis PAU</strong> ja estan incorporats després de la teoria i els exemples de cada bloc, en targetes taronja amb el títol <strong>EXERCICIS DOSSIER</strong>. Cal resoldre'ls i lliurar-los al dossier. Aquí tens un accés ràpid als sis blocs i activitats complementàries de repàs.</p>
       <div class="exercise-grid">
         <a class="exercise-group" href="#conceptes"><b>01 · Treball, potència i energia</b><span>Exercicis 1–3 · Repassar teoria ↑</span></a>
         <a class="exercise-group" href="#rendiment"><b>02 · Rendiment de motors</b><span>Exercicis 4–6 · Repassar teoria ↑</span></a>
