@@ -79,8 +79,8 @@
     .pau-choice p{margin:0;color:#536b7c;line-height:1.5;flex:1}
     .pau-choice-action{display:inline-flex;align-items:center;justify-content:center;gap:6px;margin-top:auto;padding:11px 15px;border:0;border-radius:11px;background:#236e9f;color:#fff;font:inherit;font-weight:800;font-size:.94rem;text-align:center;text-decoration:none;cursor:pointer}
     .pau-choice-action:hover,.pau-choice-action:focus-visible{background:#185783}
-    .pau-meeting-details--below{margin-top:18px}
-    .pau-meeting-details--below:target{scroll-margin-top:100px}
+    .pau-reunion-content{margin-top:18px;scroll-margin-top:100px}
+    .pau-reunion-content[hidden]{display:none}
     @media(max-width:900px){.pau-choice-grid{grid-template-columns:1fr}.pau-choice{min-height:0;gap:10px;padding:19px}.pau-choice p{flex:initial}.pau-choice-action{margin-top:8px}}
   </style>
   <link rel="stylesheet" href="colors-etapes.css?v=20261107b">
@@ -136,8 +136,7 @@
           <a class="pau-choice-action" href="cifres-significatives.html">Practicar les xifres →</a>
         </article>
       </div>
-      <details class="pau-meeting-details pau-meeting-details--below" id="reunio-dins-pau">
-        <summary><span>📑 Reunió PAU 2027<small>Què entra a l'examen, criteris de correcció i diapositives oficials</small></span></summary>
+      <section class="pau-reunion-content" id="reunio-dins-pau" hidden>
       <div class="box pau-reunio">
         <h2>📑 Reunió PAU 2027 · Tecnologia i Enginyeria</h2>
         <p>Resum per a l'alumnat de la <strong>presentació oficial del 14 d'octubre de 2026</strong>. A sota hi trobaràs el <strong>PDF original de 29 diapositives</strong> per llegir-lo o descarregar-lo.</p>
@@ -183,7 +182,7 @@
         <a class="sig-pau-link" href="https://universitats.gencat.cat/ca/pau/materies-pau/tecnologia-enginyeria/" target="_blank" rel="noopener noreferrer">🎓 Criteris oficials actualitzats ↗</a>
         <a class="sig-pau-link" href="cifres-significatives.html">🔢 Practicar les 4 xifres significatives →</a>
       </div>
-      </details>
+      </section>
     </section>
   </main>
   <footer class="footer"><div class="wrap"><span>Tecnologia</span><span><a href="index.html">Tornar a l'inici</a></span></div></footer>
@@ -191,10 +190,12 @@
     const reunio=document.getElementById('reunio-dins-pau');
     const obrirReunio=document.getElementById('obrir-reunio');
     obrirReunio.addEventListener('click',()=>{
-      reunio.open=!reunio.open;
-      if(reunio.open)reunio.scrollIntoView({behavior:'smooth',block:'start'});
+      reunio.hidden=!reunio.hidden;
+      const oberta=!reunio.hidden;
+      obrirReunio.setAttribute('aria-expanded',String(oberta));
+      obrirReunio.textContent=oberta?'Amagar la reunió ↑':'Veure la reunió ↓';
+      if(oberta)reunio.scrollIntoView({behavior:'smooth',block:'start'});
     });
-    reunio.addEventListener('toggle',()=>obrirReunio.setAttribute('aria-expanded',String(reunio.open)));
     const unitats=[
       ['Energies','energies.html'],
       ['Motors tèrmics i cilindrada','teoria-2n.html#motors-termics'],
