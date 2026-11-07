@@ -576,11 +576,10 @@ function init(){
    const label=activities.querySelector('.ud2-session-phase-heading h3');
    if(label)label.textContent='ACTIVITATS';
   }
-  const goal=session.querySelector('.ud2-session-goal');
-  if(goal)goal.textContent='🎯 Objectiu: entendre la sostenibilitat i aplicar-la a decisions reals.';
-  session.querySelectorAll('.ud2-session-phase-eyebrow').forEach(el=>{
-   el.textContent=el.textContent.replace(/\s*·\s*\d+'/, '');
-  });
+  // La capçalera i el bloc de teoria ja donen el context necessari.
+  session.querySelector('.ud2-session-intro')?.remove();
+  session.querySelector('.ud2-session-goal')?.remove();
+  session.querySelectorAll('.ud2-session-phase-eyebrow').forEach(el=>el.remove());
  }
  originalPanels.slice(1,7).forEach(panel=>{
   const modes=panel.querySelector('.ud2-lab-modes');
