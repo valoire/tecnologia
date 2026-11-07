@@ -1,0 +1,104 @@
+/* Identitat cromàtica única per a totes les etapes didàctiques del web.
+   TEORIA = blau; FÓRMULES = violeta; EXPERIMENTA = turquesa;
+   EXEMPLES RESOLTS = verd; EXERCICIS DOSSIER = taronja.
+   Els accents de cada unitat didàctica es mantenen independents. */
+:root{
+  --et-teoria:#2b79a8;--et-teoria-fons:#e9f3fc;--et-teoria-vora:#c8dfee;--et-teoria-text:#225d87;
+  --et-formules:#8953a9;--et-formules-fons:#f5eafa;--et-formules-vora:#e3cdec;--et-formules-text:#713c8e;
+  --et-experimenta:#147c78;--et-experimenta-fons:#e6f7f4;--et-experimenta-vora:#b9e0dd;--et-experimenta-text:#176965;
+  --et-exemples:#3a8b47;--et-exemples-fons:#f0f9eb;--et-exemples-vora:#c5dfb8;--et-exemples-text:#2c713c;
+  --et-dossier:#d8791b;--et-dossier-fons:#fff2dc;--et-dossier-vora:#eecb9d;--et-dossier-text:#87450f;
+}
+
+/* El mateix codi de colors al menú de cinc passos de 1r i 2n. */
+.lesson-steps .lesson-step:nth-child(1),.lesson-roadmap a:nth-child(1){background:var(--et-teoria-fons)!important;border-color:var(--et-teoria-vora)!important;color:var(--et-teoria-text)!important}
+.lesson-steps .lesson-step:nth-child(2),.lesson-roadmap a:nth-child(2){background:var(--et-formules-fons)!important;border-color:var(--et-formules-vora)!important;color:var(--et-formules-text)!important}
+.lesson-steps .lesson-step:nth-child(3),.lesson-roadmap a:nth-child(3){background:var(--et-experimenta-fons)!important;border-color:var(--et-experimenta-vora)!important;color:var(--et-experimenta-text)!important}
+.lesson-steps .lesson-step:nth-child(4),.lesson-roadmap a:nth-child(4){background:var(--et-exemples-fons)!important;border-color:var(--et-exemples-vora)!important;color:var(--et-exemples-text)!important}
+.lesson-steps .lesson-step:nth-child(5),.lesson-roadmap a:nth-child(5){background:var(--et-dossier-fons)!important;border-color:var(--et-dossier-vora)!important;color:var(--et-dossier-text)!important}
+.lesson-steps .lesson-step:nth-child(1) b,.lesson-roadmap a:nth-child(1) b{background:var(--et-teoria)!important}
+.lesson-steps .lesson-step:nth-child(2) b,.lesson-roadmap a:nth-child(2) b{background:var(--et-formules)!important}
+.lesson-steps .lesson-step:nth-child(3) b,.lesson-roadmap a:nth-child(3) b{background:var(--et-experimenta)!important}
+.lesson-steps .lesson-step:nth-child(4) b,.lesson-roadmap a:nth-child(4) b{background:var(--et-exemples)!important}
+.lesson-steps .lesson-step:nth-child(5) b,.lesson-roadmap a:nth-child(5) b{background:var(--et-dossier)!important}
+
+/* Titulars i superfícies dels cinc passos de 1r de Batxillerat. */
+.topic .sequence-title[id^="pas-"][id$="-1"]{color:var(--et-teoria-text)!important}
+.topic .sequence-title[id^="pas-"][id$="-2"]{color:var(--et-formules-text)!important}
+.topic .sequence-title[id^="pas-"][id$="-3"]{color:var(--et-experimenta-text)!important}
+.topic .sequence-title[id^="pas-"][id$="-4"]{color:var(--et-exemples-text)!important}
+.topic .sequence-title[id^="pas-"][id$="-5"]{color:var(--et-dossier-text)!important}
+.topic .sequence-title[id^="pas-"][id$="-1"] span{background:var(--et-teoria)!important}
+.topic .sequence-title[id^="pas-"][id$="-2"] span{background:var(--et-formules)!important}
+.topic .sequence-title[id^="pas-"][id$="-3"] span{background:var(--et-experimenta)!important}
+.topic .sequence-title[id^="pas-"][id$="-4"] span{background:var(--et-exemples)!important}
+.topic .sequence-title[id^="pas-"][id$="-5"] span{background:var(--et-dossier)!important}
+.topic .theory-block{background:var(--et-teoria-fons)!important;border-color:var(--et-teoria-vora)!important}
+.topic .theory-item{border-top-color:var(--et-teoria)!important;background:#fff}
+.topic .theory-item h4,.topic .theory-item h3{color:var(--et-teoria-text)!important}
+.topic .formula-card{background:linear-gradient(140deg,#fff,var(--et-formules-fons))!important;border-color:var(--et-formules-vora)!important}
+.topic .formula-card>h3{color:var(--et-formules-text)!important}
+.topic .formula-card>.formula{background:#efe2f6!important;border-left-color:var(--et-formules)!important;color:var(--et-formules-text)!important}
+.topic .formula-card .legend b,.topic .formula-card .units b{color:var(--et-formules-text)!important}
+.topic .lesson-practice{background:linear-gradient(135deg,var(--et-experimenta-fons),#fafffd)!important;border-color:var(--et-experimenta-vora)!important}
+.topic .lesson-practice-title,.topic .lesson-control output,.topic .lesson-result .lesson-math{color:var(--et-experimenta-text)!important}
+.topic .lesson-control{border-color:var(--et-experimenta-vora)!important}
+.topic .lesson-control input[type=range],.topic .slider-box input[type=range]{accent-color:var(--et-experimenta)!important}
+.topic .lesson-result{border-color:var(--et-experimenta-vora)!important;border-left-color:var(--et-experimenta)!important}
+.topic .lesson-substep{color:var(--et-experimenta-text)!important;border-left-color:var(--et-experimenta)!important;background:#f1faf8!important}
+.topic .lesson-substep span{background:var(--et-experimenta-fons)!important;color:var(--et-experimenta-text)!important}
+.topic .worked{background:var(--et-exemples-fons)!important;border-color:var(--et-exemples-vora)!important;border-left:5px solid var(--et-exemples)!important;color:#2b6040!important}
+.topic .worked h3,.topic .worked strong{color:var(--et-exemples-text)!important}
+.topic .exercise-section{background:#fffaf2!important;border-color:var(--et-dossier-vora)!important}
+.topic .exercise-section>.sequence-title{color:var(--et-dossier-text)!important}
+.topic .exercise-section>.sequence-title span{background:var(--et-dossier)!important}
+.topic .exercise-card{background:#fff0d7!important;border-left-color:var(--et-dossier)!important}
+
+/* Guia independent de 2n: teoria, fórmules, exemples i pràctica mantenen color fix. */
+.course-main .topic>.sequence:has(+ .theory-grid){color:var(--et-teoria-text)!important}
+.course-main .topic>.sequence:has(+ .theory-grid) span{background:var(--et-teoria)!important}
+.course-main .topic>.sequence:has(+ .formula-grid){color:var(--et-formules-text)!important}
+.course-main .topic>.sequence:has(+ .formula-grid) span{background:var(--et-formules)!important}
+.course-main .topic>.sequence:has(+ .worked){color:var(--et-exemples-text)!important}
+.course-main .topic>.sequence:has(+ .worked) span{background:var(--et-exemples)!important}
+.course-main .topic .slider-lab,.course-main .topic .slider-box{border-color:var(--et-experimenta-vora)!important}
+.course-main .topic .slider-result{background:linear-gradient(135deg,#136a68,var(--et-experimenta))!important}
+.course-main .topic .slider-box output{color:var(--et-experimenta-text)!important}
+
+/* Energies de 2n: la mateixa paleta a l'encapçalament, al número i al contingut. */
+.energy-section .lesson-stage--theory{border-color:var(--et-teoria-vora)!important}
+.energy-section .lesson-stage--theory .lesson-stage-heading{background:var(--et-teoria-fons)!important;border-color:var(--et-teoria-vora)!important}
+.energy-section .lesson-stage--theory .lesson-stage-number{background:var(--et-teoria)!important}
+.energy-section .lesson-stage--theory .lesson-stage-heading h3,.energy-section .lesson-stage--theory .lesson-stage-overline{color:var(--et-teoria-text)!important}
+.energy-section .lesson-stage--formulas{border-color:var(--et-formules-vora)!important}
+.energy-section .lesson-stage--formulas .lesson-stage-heading{background:var(--et-formules-fons)!important;border-color:var(--et-formules-vora)!important}
+.energy-section .lesson-stage--formulas .lesson-stage-number{background:var(--et-formules)!important}
+.energy-section .lesson-stage--formulas .lesson-stage-heading h3,.energy-section .lesson-stage--formulas .lesson-stage-overline{color:var(--et-formules-text)!important}
+.energy-section .lesson-stage--formulas .formula-card{background:linear-gradient(140deg,#fff,var(--et-formules-fons))!important;border-color:var(--et-formules-vora)!important}
+.energy-section .lesson-stage--formulas .formula-card>.formula{color:var(--et-formules-text)!important}
+.energy-section .lesson-stage--interactive{border-color:var(--et-experimenta-vora)!important}
+.energy-section .lesson-stage--interactive .lesson-stage-heading{background:var(--et-experimenta-fons)!important;border-color:var(--et-experimenta-vora)!important}
+.energy-section .lesson-stage--interactive .lesson-stage-number{background:var(--et-experimenta)!important}
+.energy-section .lesson-stage--interactive .lesson-stage-heading h3,.energy-section .lesson-stage--interactive .lesson-stage-overline{color:var(--et-experimenta-text)!important}
+.energy-section .lesson-stage--interactive input[type=range]{accent-color:var(--et-experimenta)!important}
+.energy-section .lesson-stage--examples{border-color:var(--et-exemples-vora)!important}
+.energy-section .lesson-stage--examples .lesson-stage-heading{background:var(--et-exemples-fons)!important;border-color:var(--et-exemples-vora)!important}
+.energy-section .lesson-stage--examples .lesson-stage-number{background:var(--et-exemples)!important}
+.energy-section .lesson-stage--examples .lesson-stage-heading h3,.energy-section .lesson-stage--examples .lesson-stage-overline{color:var(--et-exemples-text)!important}
+.energy-section .lesson-stage--examples .worked{background:var(--et-exemples-fons)!important;border-color:var(--et-exemples-vora)!important}
+.energy-section .dossier-section{border-color:var(--et-dossier-vora)!important}
+.energy-section .dossier-tag,.energy-section .dossier-ex-number{background:var(--et-dossier)!important}
+
+/* 4t ESO: la teoria és blava; el taller i el laboratori, turquesa. */
+.ud2-simple-menu-0{border-top-color:var(--et-teoria)!important;background:var(--et-teoria-fons)!important;color:var(--et-teoria-text)!important}
+.ud2-simple-menu-0.is-current{border-color:var(--et-teoria)!important;background:var(--et-teoria-fons)!important}
+.ud2-simple-menu-1{border-top-color:var(--et-experimenta)!important;background:var(--et-experimenta-fons)!important;color:var(--et-experimenta-text)!important}
+.ud2-simple-menu-1.is-current{border-color:var(--et-experimenta)!important;background:var(--et-experimenta-fons)!important}
+.ud2-theory-choose strong{color:var(--et-teoria-text)!important}
+#unit-theory:not(:empty){border-top:5px solid var(--et-teoria)!important}
+.lesson-main>section.box:has(#unit-figure){border-top:5px solid var(--et-exemples)!important}
+.lesson-main>section.box:has(#unit-extra){border-top:5px solid var(--et-experimenta)!important}
+.sig-section#exemples{border-top-color:var(--et-exemples)!important}
+.sig-section#exemples>h2{color:var(--et-exemples-text)!important}
+.lab-grid>section.box:first-child{border-top:5px solid var(--et-experimenta)!important}
+.lab-grid>section.box:first-child h2{color:var(--et-experimenta-text)!important}
