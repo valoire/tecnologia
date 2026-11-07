@@ -324,3 +324,9 @@
 .ud2-plant-machine-diagram svg{display:block;width:100%;height:auto}
 .ud2-plant-machine-diagram figcaption{margin-top:6px;padding:12px 15px;border-radius:10px;background:#faf3fc;color:#56425f;font-size:13px;line-height:1.6}
 @media(max-width:720px){.ud2-plant-machine-diagram{overflow-x:auto}.ud2-plant-machine-diagram svg{min-width:740px}.ud2-plant-machine-diagram figcaption{min-width:0}}
+
+.ud2-plant-full-scheme{padding:12px;background:#fff}
+.ud2-plant-full-scheme>a{display:block;background:#fff;overflow:hidden;border-radius:12px}
+.ud2-plant-full-scheme img{display:block;width:100%;height:auto;max-height:620px;object-fit:contain}
+.ud2-plant-full-scheme figcaption a{color:#7b3f8f;text-decoration:underline;text-underline-offset:2px}
+@media(max-width:720px){.ud2-plant-full-scheme{overflow:visible}.ud2-plant-full-scheme img{min-width:0;width:100%}}
