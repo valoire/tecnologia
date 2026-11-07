@@ -9,6 +9,11 @@
   <link rel="stylesheet" href="estils.css?v=espurnes-20261028b">
   <link rel="stylesheet" href="conceptes.css?v=multicolor-20261028d">
   <link rel="stylesheet" href="colors-etapes.css?v=20261107b">
+  <style>
+    .home-courses{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .home-courses .card:nth-child(4){border-top:7px solid #248ac3}
+    @media(max-width:760px){.home-courses{grid-template-columns:1fr}}
+  </style>
 </head>
 <body >
   <header class="top"><div class="wrap bar">
@@ -21,13 +26,13 @@
     <p>Tria el teu curs. Dins de cada unitat trobaràs explicacions, imatges, activitats i un espai per als documents de classe.</p>
   </div></div>
   <main class="main wrap">
-    <div class="intro"><h2>Tria el teu espai</h2><p>Les unitats de 4t comparteixen teoria, però els projectes i les pràctiques poden ser diferents segons el grup.</p></div>
-    <div class="cards">
+    <div class="cards home-courses" aria-label="Cursos de Tecnologia">
       <a class="card" href="curs.html?grup=optativa"><span class="num">4t ESO</span><h2>4t Optativa</h2><p>Disseny, fabricació de prototips, programació i projectes tecnològics.</p><span class="go">Veure les unitats →</span></a>
       <a class="card" href="curs.html?grup=e"><span class="num">4t ESO</span><h2>4t E</h2><p>Experimentació, preguntes, hipòtesis, proves i projectes pràctics.</p><span class="go">Veure les unitats →</span></a>
-      <a class="card" href="batxillerat.html"><span class="num">Tecnologia i Enginyeria</span><h2>Batxillerat</h2><p>Temari organitzat per blocs i recursos per preparar les PAU.</p><span class="go">Entrar a Batxillerat →</span></a>
+      <a class="card" href="batxillerat.html#primer"><span class="num">Tecnologia i Enginyeria I</span><h2>1r Batxillerat</h2><p>Teoria, activitats i recursos organitzats per unitats.</p><span class="go">Entrar a 1r →</span></a>
+      <a class="card" href="batxillerat.html#segon"><span class="num">Tecnologia i Enginyeria II</span><h2>2n Batxillerat</h2><p>Teoria, exercicis i preparació de les PAU.</p><span class="go">Entrar a 2n →</span></a>
     </div>
-      </main>
+  </main>
   <footer class="footer"><div class="wrap"><span>Tecnologia</span><span>Aprendre, construir i comprovar</span></div></footer>
 </body>
 </html>
