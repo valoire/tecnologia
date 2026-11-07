@@ -55,7 +55,7 @@
   </style>
 </head>
 <body>
-  <header class="top"><div class="wrap bar"><a class="brand" href="index.html">TECNOLOGIA</a><nav aria-label="Navegació principal"><a href="curs.html?grup=optativa">4t Optativa</a><a href="curs.html?grup=e">4t E</a><a href="batxillerat.html" aria-current="page">Batxillerat</a></nav></div></header>
+  <header class="top"><div class="wrap bar"><a class="brand" href="index.html">TECNOLOGIA</a><nav aria-label="Navegació principal"><a href="curs.html?grup=optativa">4t Optativa</a><a href="curs.html?grup=e">4t E</a><a id="nav-primer" href="batxillerat.html#primer" aria-current="page">1r Batxillerat</a><a id="nav-segon" href="batxillerat.html#segon">2n Batxillerat</a></nav></div></header>
   <div class="hero small"><div class="wrap"><div class="eyebrow">Tecnologia i Enginyeria</div><h1>Batxillerat</h1><p>Escull el teu curs per veure la teoria i els exercicis. També tens un espai específic per preparar les PAU.</p></div></div>
   <main class="main wrap"><div class="crumb"><a href="index.html">Inici</a><span>/</span><span>Batxillerat</span></div>
     <div class="tabs" role="tablist" aria-label="Apartats de Batxillerat"><button class="tab" role="tab" id="tab-primer" aria-controls="panel-primer" aria-selected="true" type="button">1r de Batxillerat</button><button class="tab" role="tab" id="tab-segon" aria-controls="panel-segon" aria-selected="false" type="button">2n de Batxillerat</button><button class="tab" role="tab" id="tab-pau" aria-controls="panel-pau" aria-selected="false" type="button">PAU</button></div>
@@ -158,10 +158,11 @@
     const topics=[['Energies','teoria-2n.html#energies','local'],['Motors tèrmics i cilindrada','teoria-2n.html#motors-termics','local'],['Materials i assaigs','teoria-2n.html#materials','local'],['Metrologia i normalització','teoria-2n.html#metrologia','local'],['Sistemes pneumàtics i oleohidràulics','teoria-2n.html#fluids','local'],['Motors reductors','teoria-2n.html#reductors','local'],['Principis de les màquines','teoria-2n.html#maquines','local'],['Màquines i sistemes elèctrics i electrotècnics','teoria-2n.html#electrics','local'],['Control lògic i funcions lògiques','teoria-2n.html#logica','local'],['Organització industrial','teoria-2n.html#organitzacio','local']];
     for(const [name,slug,kind] of topics){const a=document.createElement('a');a.className='box';a.href=kind==='local'?slug:base+slug;if(kind!=='local'){a.target='_blank';a.rel='noopener noreferrer'}else{a.style.border='2px solid #bdd9ed';a.style.background='linear-gradient(115deg,#fff,#e9f5fe)'}const t=document.createElement('span');t.textContent=name;const arrow=document.createElement('span');arrow.textContent=kind==='local'?'→':'↗';arrow.setAttribute('aria-hidden','true');a.append(t,arrow);document.getElementById('topics').append(a)}
     const tabs=[document.getElementById('tab-primer'),document.getElementById('tab-segon'),document.getElementById('tab-pau')],panels=[document.getElementById('panel-primer'),document.getElementById('panel-segon'),document.getElementById('panel-pau')];
-    function selectTab(i){tabs.forEach((b,j)=>{b.setAttribute('aria-selected',String(i===j));b.tabIndex=i===j?0:-1;panels[j].hidden=i!==j})}
+    function selectTab(i){tabs.forEach((b,j)=>{b.setAttribute('aria-selected',String(i===j));b.tabIndex=i===j?0:-1;panels[j].hidden=i!==j});document.getElementById('nav-primer').toggleAttribute('aria-current',i===0);document.getElementById('nav-segon').toggleAttribute('aria-current',i===1)}
     tabs.forEach((b,i)=>{b.addEventListener('click',()=>{selectTab(i);history.replaceState(null,'',['#primer','#segon','#pau'][i])});b.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();const n=(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length;selectTab(n);tabs[n].focus()}})});
     if(window.location.hash==='#pau')selectTab(2);
     else if(window.location.hash==='#segon'||window.location.hash==='#batx')selectTab(1);
+    window.addEventListener('hashchange',()=>{if(location.hash==='#segon'||location.hash==='#batx')selectTab(1);else if(location.hash==='#primer')selectTab(0);else if(location.hash==='#pau')selectTab(2)});
   </script>
 </body>
 </html>
