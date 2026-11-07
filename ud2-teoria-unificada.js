@@ -89,6 +89,7 @@ function miningEnergyChain(){
  <p>Fixa’t en <strong>què fa girar la turbina</strong>. A les tres centrals, el generador (alternador) transforma el moviment de rotació en electricitat.</p>
  <div class="ud2-plant-card hydro">
   <div class="ud2-plant-title"><span>💧</span><div><h4>1. Central hidroelèctrica</h4><p><b>Recurs:</b> aigua embassada o d’un riu · <b>Energia inicial:</b> potencial gravitatòria</p></div></div>
+  <figure class="ud2-plant-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ligonchio_hydroelectric_power_plant_and_dam.jpg?width=960" alt="Central hidroelèctrica de Ligonchio al costat de la presa, a Itàlia" loading="lazy" decoding="async"><figcaption>Central hidroelèctrica de Ligonchio: presa i edifici de la central. <a href="https://commons.wikimedia.org/wiki/File:Ligonchio_hydroelectric_power_plant_and_dam.jpg" target="_blank" rel="noopener noreferrer">Foto: Mattia Luigi Nappi · CC BY-SA 3.0</a></figcaption></figure>
   <div class="ud2-plant-flow" role="img" aria-label="Embassament, canonada forçada, turbina hidràulica, alternador i xarxa elèctrica">
    <div class="ud2-plant-node"><span>🏞️</span><b>Embassament</b><small>Aigua en altura</small></div><i aria-hidden="true">→</i>
    <div class="ud2-plant-node"><span>↘️</span><b>Canonada forçada</b><small>L’aigua baixa</small></div><i aria-hidden="true">→</i>
@@ -100,6 +101,7 @@ function miningEnergyChain(){
  </div>
  <div class="ud2-plant-card thermal">
   <div class="ud2-plant-title"><span>🔥</span><div><h4>2. Central tèrmica de gas natural</h4><p><b>Recurs:</b> combustible fòssil extret del subsòl · <b>Energia inicial:</b> química</p></div></div>
+  <figure class="ud2-plant-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Combined_Cycle_Gas_Fired_Power_Plant.jpg?width=960" alt="Fotografia d'una central tèrmica de cicle combinat alimentada amb gas natural" loading="lazy" decoding="async"><figcaption>Central tèrmica de cicle combinat alimentada amb gas natural. <a href="https://commons.wikimedia.org/wiki/File:Combined_Cycle_Gas_Fired_Power_Plant.jpg" target="_blank" rel="noopener noreferrer">Foto: Peoplepoweredbyenergy · CC BY-SA 4.0</a></figcaption></figure>
   <div class="ud2-plant-flow" role="img" aria-label="Gas natural, cambra de combustió, gasos calents, turbina, alternador i xarxa">
    <div class="ud2-plant-node"><span>🛢️</span><b>Gas natural</b><small>Combustible</small></div><i aria-hidden="true">→</i>
    <div class="ud2-plant-node"><span>🔥</span><b>Combustió</b><small>Gasos calents</small></div><i aria-hidden="true">→</i>
@@ -111,6 +113,7 @@ function miningEnergyChain(){
  </div>
  <div class="ud2-plant-card nuclear">
   <div class="ud2-plant-title"><span>☢️</span><div><h4>3. Central nuclear</h4><p><b>Recurs:</b> urani obtingut de minerals · <b>Energia inicial:</b> nuclear</p></div></div>
+  <figure class="ud2-plant-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Nuclear_Power_Plant_Cattenom.jpg" alt="Central nuclear de Cattenom, França, amb torres de refrigeració" loading="lazy" decoding="async"><figcaption>Central nuclear de Cattenom (França): les grans torres són de refrigeració, no el reactor. <a href="https://commons.wikimedia.org/wiki/File:Nuclear_Power_Plant_Cattenom.jpg" target="_blank" rel="noopener noreferrer">Foto: Stefan Kühn · CC BY-SA</a></figcaption></figure>
   <div class="ud2-plant-flow" role="img" aria-label="Reactor de fissió, generador de vapor, turbina de vapor, alternador i xarxa">
    <div class="ud2-plant-node"><span>☢️</span><b>Reactor</b><small>Fissió: calor</small></div><i aria-hidden="true">→</i>
    <div class="ud2-plant-node"><span>♨️</span><b>Vapor d’aigua</b><small>Intercanvi de calor</small></div><i aria-hidden="true">→</i>
