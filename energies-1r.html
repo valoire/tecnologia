@@ -282,6 +282,21 @@
     .carnot-lab-feedback{color:#3e6780;font-size:.9rem;line-height:1.55;margin:12px 0 0}
     .carnot-lab-footer{margin:12px 3px 0;color:#56768d;font-size:.84rem;line-height:1.55}
     @media(max-width:850px){.carnot-lab-grid{grid-template-columns:1fr}.carnot-lab-head{flex-direction:column}.carnot-lab{padding:14px}.carnot-lab-controls{padding:15px}}
+
+    /* Exercicis originals distribuïts darrere de cada bloc de teoria */
+    .exercise-section{margin-top:28px}
+    .exercise-intro{font-size:.98rem;color:#50697b;margin:8px 0 14px!important}
+    .exercise-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,350px),1fr));gap:13px}
+    .exercise-card{background:#fff;border:1.5px solid #d7e7f0;border-left:5px solid var(--accent,#2875a4);border-radius:13px;padding:17px 18px;box-shadow:0 2px 6px #1a4f6b09}
+    .exercise-card-heading{display:flex;align-items:center;gap:11px;margin-bottom:8px}
+    .exercise-card-heading h4{font-size:1.08rem;color:#205f84;margin:0!important}
+    .exercise-number{background:var(--accent,#2875a4);color:#fff;border-radius:10px;padding:7px 9px;font-size:1rem;min-width:37px;text-align:center;font-weight:900}
+    .exercise-card .exercise-origin{font-size:.79rem!important;color:#607482!important;margin:0 0 11px!important;line-height:1.45}
+    .exercise-card .exercise-statement{font-size:.97rem!important;line-height:1.68!important;color:#283f50!important;margin:0 0 14px!important}
+    .exercise-card .exercise-solution{border-top:1px solid #d6e6ed;padding-top:10px}
+    .exercise-card .exercise-solution summary{color:#24698e;font-weight:820;cursor:pointer}
+    .exercise-card .exercise-solution p{margin:9px 0 0!important;background:#eaf7f0;color:#215a47;border-radius:8px;padding:11px 12px!important}
+    @media(max-width:600px){.exercise-list{grid-template-columns:1fr}.exercise-card{padding:14px}}
 </style>
 </head>
 <body>
@@ -316,7 +331,23 @@
       <div class="worked"><h3>🧮 Exemple de l'exercici 1 · Cotxe</h3><p>Un cotxe de 1.250 kg passa de 0 a 50 km/h. <strong>Primer:</strong> 50 / 3,6 = 13,89 m/s. <strong>Després:</strong> W = ½ · 1.250 · (13,89² − 0²) ≈ <strong>120,6 kJ</strong> de treball net, sense resistències.</p></div>
       <div class="tip"><strong>💡 Exercici 2:</strong> per al patinet que baixa un pendent de 30 m i 5°, primer troba l'altura <strong>h = 30 · sin 5°</strong> i després relaciona m·g·h amb ½·m·v².</div>
       
-      <div class="exercise-ref">Practica els <strong>exercicis 1 i 2</strong> del <a href="#dossier">dossier de classe ↓</a>.</div>
+      <div class="exercise-section" aria-label="Exercicis del dossier: Treball i energia mecànica">
+          <h3 class="sequence-title"><span>04</span> ACTIVITATS · Exercicis de les diapositives</h3>
+          <p class="exercise-intro">Resol cada enunciat després d'estudiar la teoria i els exemples d'aquest bloc. Pots consultar la <strong>resposta final</strong> quan l'hagis intentat.</p>
+          <div class="exercise-list"><article class="exercise-card" id="exercici-1r-1" aria-labelledby="ex-title-1">
+              <div class="exercise-card-heading"><span class="exercise-number">01</span><h4 id="ex-title-1">Exercici 1</h4></div>
+              <p class="exercise-origin">Font PAU · 2024 · Juny · Sèrie 1 · Exercici 4 · Enunciat adaptat</p>
+              <p class="exercise-statement">Un cotxe de 1.250 kg accelera des del repòs fins a 50 km/h en un tram horitzontal. Negligeix les resistències. Determina el treball que ha de proporcionar el motor.</p>
+              <details class="exercise-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultat final:</strong> W = 120,56 kJ</p></details>
+            </article>
+<article class="exercise-card" id="exercici-1r-2" aria-labelledby="ex-title-2">
+              <div class="exercise-card-heading"><span class="exercise-number">02</span><h4 id="ex-title-2">Exercici 2</h4></div>
+              <p class="exercise-origin">Font PAU · 2021 · Setembre · Sèrie 1 · Exercici 1, qüestió 2 · Enunciat adaptat</p>
+              <p class="exercise-statement">Un conjunt format per un patinet i el seu ocupant té una massa de 82 kg. Baixa 30 m per un pendent de 5°, partint del repòs. Suposant que no hi ha pèrdues d’energia, determina la velocitat final.</p>
+              <details class="exercise-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultat final:</strong> v = 7,16 m/s</p></details>
+            </article></div>
+        </div>
+      <div class="exercise-ref">📄 També pots consultar aquests exercicis al <a href="#dossier">dossier original amb les diapositives ↓</a>.</div>
     </section>
 
     <section class="topic" id="potencia" style="--accent:#478eb8">
@@ -333,7 +364,17 @@
       <div class="worked"><h3>🧮 Exemple de l'exercici 3</h3><p>Rentadora: 2 kW durant 0,5 h i 0,25 kW durant 1 h.</p><p>E = 2 · 0,5 + 0,25 · 1 = <strong>1,25 kWh</strong>. Primera fase: (1 / 1,25) · 100 = <strong>80 %</strong>.</p></div>
       <div class="tip"><strong>Compte:</strong> <strong>kW</strong> és potència, però <strong>kWh</strong> és energia. 1 kWh = 3,6 · 10<sup>6</sup> J.</div>
       
-      <div class="exercise-ref">Practica l'<strong>exercici 3</strong> del <a href="#dossier">dossier ↓</a>.</div>
+      <div class="exercise-section" aria-label="Exercicis del dossier: Potència, energia i cost">
+          <h3 class="sequence-title"><span>04</span> ACTIVITATS · Exercicis de les diapositives</h3>
+          <p class="exercise-intro">Resol cada enunciat després d'estudiar la teoria i els exemples d'aquest bloc. Pots consultar la <strong>resposta final</strong> quan l'hagis intentat.</p>
+          <div class="exercise-list"><article class="exercise-card" id="exercici-1r-3" aria-labelledby="ex-title-3">
+              <div class="exercise-card-heading"><span class="exercise-number">03</span><h4 id="ex-title-3">Exercici 3</h4></div>
+              <p class="exercise-origin">Font PAU · 2022 · Juny · Sèrie 2 · Exercici 3 · Enunciat adaptat</p>
+              <p class="exercise-statement">Una rentadora funciona durant 30 min a una potència de 2.000 W i, després, durant 60 min a 250 W. Calcula l’energia consumida per cicle i el percentatge que correspon a la primera fase. Calcula el cost d’un cicle amb tarifes de 0,342930 €/kWh i 0,216951 €/kWh, i l’estalvi anual per 10 cicles al mes.</p>
+              <details class="exercise-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultat final:</strong> E = 1,25 kWh; primera fase = 80 %; costos = 0,429 € i 0,271 €; estalvi = 18,90 €/any</p></details>
+            </article></div>
+        </div>
+      <div class="exercise-ref">📄 També pots consultar aquests exercicis al <a href="#dossier">dossier original amb les diapositives ↓</a>.</div>
     </section>
 
     <section class="topic" id="termica" style="--accent:#2c78a9">
@@ -350,7 +391,35 @@
       <div class="worked"><h3>🧮 Exemple de l'exercici 4 · Refredament del coure</h3><p>40 kg de coure baixen de 250 °C a 25 °C, amb CE = 0,385 kJ/(kg·°C). Q = 40 · 0,385 · (25 − 250) = <strong>−3.465 kJ</strong>. El signe negatiu indica que el coure cedeix calor: cal <strong>extreure 3.465 kJ</strong>.</p></div>
       <div class="tip"><strong>Exercicis 5–7:</strong> si et donen 50 mL d'aigua, pots considerar 0,05 kg quan ρ = 1 kg/L. Per a diferències de temperatura, un canvi d'1 °C equival a un canvi d'1 K.</div>
       
-      <div class="exercise-ref">Practica els <strong>exercicis 4, 5, 6 i 7</strong> del <a href="#dossier">dossier ↓</a>.</div>
+      <div class="exercise-section" aria-label="Exercicis del dossier: Calor, temperatura i canvis d’estat">
+          <h3 class="sequence-title"><span>04</span> ACTIVITATS · Exercicis de les diapositives</h3>
+          <p class="exercise-intro">Resol cada enunciat després d'estudiar la teoria i els exemples d'aquest bloc. Pots consultar la <strong>resposta final</strong> quan l'hagis intentat.</p>
+          <div class="exercise-list"><article class="exercise-card" id="exercici-1r-4" aria-labelledby="ex-title-4">
+              <div class="exercise-card-heading"><span class="exercise-number">04</span><h4 id="ex-title-4">Exercici 4</h4></div>
+              <p class="exercise-origin">Font PAU · 2025 · Juny · Sèrie 1 · Exercici 1, qüestió 6 · Enunciat adaptat</p>
+              <p class="exercise-statement">Es refreden 40 kg de coure des de 250 °C fins a 25 °C. Sabent que la calor específica del coure és c = 0,385 kJ/(kg·°C), calcula l’energia tèrmica que cal extreure.</p>
+              <details class="exercise-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultat final:</strong> Q extreta = 3.465 kJ</p></details>
+            </article>
+<article class="exercise-card" id="exercici-1r-5" aria-labelledby="ex-title-5">
+              <div class="exercise-card-heading"><span class="exercise-number">05</span><h4 id="ex-title-5">Exercici 5</h4></div>
+              <p class="exercise-origin">Font PAU · 2025 · Examen de model · Sense sèrie · Exercici 1, qüestió 3 · Enunciat adaptat</p>
+              <p class="exercise-statement">S’aporten 3.000 J a 50 mL d’aigua que inicialment es troba a 5 °C. Considera que la calor específica de l’aigua és c = 4,18 kJ/(kg·K). Calcula la temperatura final de l’aigua. Considera ρaigua = 1 kg/L.</p>
+              <details class="exercise-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultat final:</strong> Tf = 19,35 °C</p></details>
+            </article>
+<article class="exercise-card" id="exercici-1r-6" aria-labelledby="ex-title-6">
+              <div class="exercise-card-heading"><span class="exercise-number">06</span><h4 id="ex-title-6">Exercici 6</h4></div>
+              <p class="exercise-origin">Font PAU · 2025 · Examen de model · Sense sèrie · Exercici 1, qüestió 8 · Enunciat adaptat</p>
+              <p class="exercise-statement">Una dutxa proporciona 12 L/min d’aigua durant 5 min. L’aigua passa de 15 °C a 38 °C. Considera c = 4,18 kJ/(kg·°C) i una densitat d’1 kg/L. Calcula l’energia tèrmica necessària en kJ i kWh.</p>
+              <details class="exercise-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultat final:</strong> Q = 5.768,4 kJ = 1,602 kWh</p></details>
+            </article>
+<article class="exercise-card" id="exercici-1r-7" aria-labelledby="ex-title-7">
+              <div class="exercise-card-heading"><span class="exercise-number">07</span><h4 id="ex-title-7">Exercici 7</h4></div>
+              <p class="exercise-origin">Font PAU · 2022 · Juny · Sèrie 5 · Exercici 4 · Enunciat adaptat</p>
+              <p class="exercise-statement">Cal escalfar 350 mL d’aigua de 20 °C a 95 °C. Considera c = 4,18 J/(g·°C). Calcula la calor útil necessària. Després, determina l’energia consumida per un escalfador de 1.200 W si funciona durant 125 s. Considera ρaigua = 1 kg/L.</p>
+              <details class="exercise-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultat final:</strong> Q útil = 109,73 kJ; energia consumida = 150 kJ</p></details>
+            </article></div>
+        </div>
+      <div class="exercise-ref">📄 També pots consultar aquests exercicis al <a href="#dossier">dossier original amb les diapositives ↓</a>.</div>
     </section>
 
     <section class="topic" id="electricitat" style="--accent:#548eb2">
@@ -366,7 +435,17 @@
       
       <div class="worked"><h3>🧮 Exemple de l'exercici 8</h3><p>Un escalfador de 1.200 W funciona a 230 V. Si és resistiu, <strong>R = V² / P = 230² / 1.200 = 44,08 Ω</strong>.</p></div>
       
-      <div class="exercise-ref">Practica l'<strong>exercici 8</strong> del <a href="#dossier">dossier ↓</a>.</div>
+      <div class="exercise-section" aria-label="Exercicis del dossier: Electricitat i resistència">
+          <h3 class="sequence-title"><span>04</span> ACTIVITATS · Exercicis de les diapositives</h3>
+          <p class="exercise-intro">Resol cada enunciat després d'estudiar la teoria i els exemples d'aquest bloc. Pots consultar la <strong>resposta final</strong> quan l'hagis intentat.</p>
+          <div class="exercise-list"><article class="exercise-card" id="exercici-1r-8" aria-labelledby="ex-title-8">
+              <div class="exercise-card-heading"><span class="exercise-number">08</span><h4 id="ex-title-8">Exercici 8</h4></div>
+              <p class="exercise-origin">Font PAU · 2022 · Juny · Sèrie 5 · Exercici 4 · Enunciat adaptat</p>
+              <p class="exercise-statement">Un escalfador elèctric té una potència de 1.200 W i funciona a 230 V. Calcula la resistència elèctrica de l’element calefactor, suposant-lo purament resistiu.</p>
+              <details class="exercise-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultat final:</strong> R = 44,08 Ω</p></details>
+            </article></div>
+        </div>
+      <div class="exercise-ref">📄 També pots consultar aquests exercicis al <a href="#dossier">dossier original amb les diapositives ↓</a>.</div>
     </section>
 
     <section class="topic" id="rendiment" style="--accent:#236a99">
@@ -383,7 +462,35 @@
       <div class="worked"><h3>🧮 Exemple de l'exercici 9</h3><p>El rentaplats consumeix 0,9 kWh per escalfar 11 kg d'aigua 60 °C. Energia útil: Q = 11 · 4,18 · 60 = <strong>2.758,8 kJ</strong>. Energia d'entrada: 0,9 · 3.600 = <strong>3.240 kJ</strong>. Rendiment = 2.758,8 / 3.240 = <strong>85,15 %</strong>.</p></div>
       <div class="tip"><strong>Exercicis 10–12:</strong> converteix primer les energies a la mateixa unitat. En el cas de la biomassa, per calcular el rendiment hauràs de comparar l'energia útil obtinguda amb la del combustible.</div>
       
-      <div class="exercise-ref">Practica els <strong>exercicis 9–12</strong> del <a href="#dossier">dossier ↓</a>.</div>
+      <div class="exercise-section" aria-label="Exercicis del dossier: Balanç energètic i rendiment">
+          <h3 class="sequence-title"><span>04</span> ACTIVITATS · Exercicis de les diapositives</h3>
+          <p class="exercise-intro">Resol cada enunciat després d'estudiar la teoria i els exemples d'aquest bloc. Pots consultar la <strong>resposta final</strong> quan l'hagis intentat.</p>
+          <div class="exercise-list"><article class="exercise-card" id="exercici-1r-9" aria-labelledby="ex-title-9">
+              <div class="exercise-card-heading"><span class="exercise-number">09</span><h4 id="ex-title-9">Exercici 9</h4></div>
+              <p class="exercise-origin">Font PAU · 2023 · Juny · Sèrie 1 · Exercici 1, qüestió 1 · Enunciat adaptat</p>
+              <p class="exercise-statement">Un rentaplats consumeix 0,9 kWh per escalfar 11 L d’aigua des de 10 °C fins a 70 °C. Considera que la calor específica de l’aigua és c = 4,18 kJ/(kg·°C). Determina el rendiment del procés. Considera ρaigua = 1 kg/L.</p>
+              <details class="exercise-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultat final:</strong> η = 85,15 %</p></details>
+            </article>
+<article class="exercise-card" id="exercici-1r-10" aria-labelledby="ex-title-10">
+              <div class="exercise-card-heading"><span class="exercise-number">10</span><h4 id="ex-title-10">Exercici 10</h4></div>
+              <p class="exercise-origin">Font PAU · 2022 · Juny · Sèrie 5 · Exercici 4 · Enunciat adaptat</p>
+              <p class="exercise-statement">Per escalfar l’aigua de l’exercici 7 (350 mL, de 20 °C a 95 °C, c = 4,18 J/(g·°C)), un escalfador consumeix 150 kJ i una vitroceràmica consumeix 0,11 kWh. Calcula el rendiment de cada sistema i indica quin és més eficient.</p>
+              <details class="exercise-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultat final:</strong> η escalfador = 73,15 %; η vitroceràmica = 27,71 %. És més eficient l’escalfador.</p></details>
+            </article>
+<article class="exercise-card" id="exercici-1r-11" aria-labelledby="ex-title-11">
+              <div class="exercise-card-heading"><span class="exercise-number">11</span><h4 id="ex-title-11">Exercici 11</h4></div>
+              <p class="exercise-origin">Font PAU · 2023 · Juny · Sèrie 5 · Exercici 4 · Enunciat adaptat</p>
+              <p class="exercise-statement">Una instal·lació crema cada dia 40 tones de biomassa amb un poder calorífic de 4 kWh/kg i genera 345,6 × 10⁹ J d’energia útil. Calcula el rendiment de la instal·lació.</p>
+              <details class="exercise-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultat final:</strong> η = 60 %</p></details>
+            </article>
+<article class="exercise-card" id="exercici-1r-12" aria-labelledby="ex-title-12">
+              <div class="exercise-card-heading"><span class="exercise-number">12</span><h4 id="ex-title-12">Exercici 12</h4></div>
+              <p class="exercise-origin">Font PAU · 2023 · Juny · Sèrie 5 · Exercici 4 · Enunciat adaptat</p>
+              <p class="exercise-statement">La instal·lació de biomassa de l’exercici 11 subministra 345,6 × 10⁹ J al dia a l’aigua i n’incrementa la temperatura 40 °C. Si c = 4,18 kJ/(kg·K), calcula la massa diària d’aigua escalfada.</p>
+              <details class="exercise-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultat final:</strong> m = 2,067 × 10⁶ kg</p></details>
+            </article></div>
+        </div>
+      <div class="exercise-ref">📄 També pots consultar aquests exercicis al <a href="#dossier">dossier original amb les diapositives ↓</a>.</div>
     </section>
 
     <section class="topic" id="motors" style="--accent:#3c82ab">
@@ -592,7 +699,35 @@
       <div class="worked"><h3>🧮 Exemple comparatiu · Dos motors a 3.000 rpm</h3><p>Si tots dos motors tenen <strong>4 cilindres</strong> i giren a <strong>3.000 rpm</strong>:</p><p><strong>Motor 2T:</strong> 4 · 3.000 = <strong>12.000 combustions/min</strong>.</p><p><strong>Motor 4T (gasolina o dièsel):</strong> 4 · 3.000 / 2 = <strong>6.000 combustions/min</strong>.</p><p>Aquest càlcul només compta combustions; <strong>no vol dir que un motor 2T tingui automàticament el doble de potència</strong>.</p></div>
       <div class="worked"><h3>🧮 Exemple de l'exercici 14</h3><p>Un motor de 4 temps gira a 2.500 min⁻¹ i consumeix 7,5 kg/h. Fa <strong>1.250 cicles/min</strong>. Consumeix 7.500 / 60 = 125 g/min; per tant, <strong>0,1 g/cicle</strong>. En 100 cicles, <strong>10 g</strong>.</p></div>
       <div class="tip"><strong>Exercicis 13 i 16:</strong> no confonguis energia útil amb energia química. A l'exercici 16, passa de massa a litres amb la densitat, i després de litres a emissions de CO₂.</div>
-            <div class="exercise-ref">Practica els <strong>exercicis 13–16</strong> del <a href="#dossier">dossier ↓</a>.</div>
+            <div class="exercise-section" aria-label="Exercicis del dossier: Combustibles i motors">
+          <h3 class="sequence-title"><span>09</span> ACTIVITATS · Exercicis de les diapositives</h3>
+          <p class="exercise-intro">Resol cada enunciat després d'estudiar la teoria i els exemples d'aquest bloc. Pots consultar la <strong>resposta final</strong> quan l'hagis intentat.</p>
+          <div class="exercise-list"><article class="exercise-card" id="exercici-1r-13" aria-labelledby="ex-title-13">
+              <div class="exercise-card-heading"><span class="exercise-number">13</span><h4 id="ex-title-13">Exercici 13</h4></div>
+              <p class="exercise-origin">Font PAU · 2023 · Juny · Sèrie 1 · Exercici 1, qüestió 2 · Enunciat adaptat</p>
+              <p class="exercise-statement">Un motor dièsel té un rendiment del 32 % i utilitza gasoil amb un poder calorífic de 44,8 MJ/kg. Calcula’n el consum específic, expressat en g/(kWh).</p>
+              <details class="exercise-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultat final:</strong> Consum específic = 251,1 g/(kWh)</p></details>
+            </article>
+<article class="exercise-card" id="exercici-1r-14" aria-labelledby="ex-title-14">
+              <div class="exercise-card-heading"><span class="exercise-number">14</span><h4 id="ex-title-14">Exercici 14</h4></div>
+              <p class="exercise-origin">Font PAU · 2025 · Juny · Sèrie 1 · Exercici 1, qüestió 2 · Enunciat adaptat</p>
+              <p class="exercise-statement">Un motor de propà consumeix 7,5 kg/h de combustible i gira a 2.500 min⁻¹. Si és un motor de quatre temps, quina massa de combustible consumeix durant 100 cicles?</p>
+              <details class="exercise-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultat final:</strong> m = 10 g</p></details>
+            </article>
+<article class="exercise-card" id="exercici-1r-15" aria-labelledby="ex-title-15">
+              <div class="exercise-card-heading"><span class="exercise-number">15</span><h4 id="ex-title-15">Exercici 15</h4></div>
+              <p class="exercise-origin">Font PAU · 2025 · Examen de model · Sense sèrie · Exercici 1, qüestió 1 · Enunciat adaptat</p>
+              <p class="exercise-statement">Un motor de gasolina de quatre temps consumeix 10,2 L/h de combustible i gira a 4.000 min⁻¹. La densitat de la gasolina és de 0,8 kg/L. Determina la massa de combustible consumida per cicle.</p>
+              <details class="exercise-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultat final:</strong> m = 68 mg per cicle</p></details>
+            </article>
+<article class="exercise-card" id="exercici-1r-16" aria-labelledby="ex-title-16">
+              <div class="exercise-card-heading"><span class="exercise-number">16</span><h4 id="ex-title-16">Exercici 16</h4></div>
+              <p class="exercise-origin">Font PAU · 2024 · Juny · Sèrie 1 · Exercici 4 · Enunciat adaptat</p>
+              <p class="exercise-statement">En el cas del cotxe de l’exercici 1 (1.250 kg, de 0 a 50 km/h), el motor té un rendiment del 25 %. La benzina té un poder calorífic de 46 MJ/kg, una densitat de 0,72 kg/L i emet 2,157 kg de CO₂ per litre. Calcula la massa de benzina, el volum i les emissions.</p>
+              <details class="exercise-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultat final:</strong> m = 10,48 g; V = 0,01456 L; CO₂ = 31,4 g</p></details>
+            </article></div>
+        </div>
+      <div class="exercise-ref">📄 També pots consultar aquests exercicis al <a href="#dossier">dossier original amb les diapositives ↓</a>.</div>
     </section>
 
     <section class="topic" id="sistemes" style="--accent:#5a99bd">
@@ -609,7 +744,41 @@
       <div class="worked"><h3>🧮 Exemple de l'exercici 17</h3><p>75 kg d'aigua s'escalfen 20 °C; CE = 4,18 kJ/(kg·K) i η = 0,87. Q = 75 · 4,18 · 20 = <strong>6.270 kJ</strong>. Entrada = 6.270 / 0,87 = <strong>7,207 MJ</strong>. Amb PC = 47,7 MJ/kg, gas = 7,207 / 47,7 = <strong>0,1511 kg de butà</strong>.</p></div>
       <div class="tip"><strong>Exercicis 18–21:</strong> si calcules costos, separa aigua i combustible abans de sumar. Si un fogonet funciona al 30 % del cabal durant 18 minuts, aplica aquest percentatge al cabal i converteix els minuts a hores.</div>
       
-      <div class="exercise-ref">Practica els <strong>exercicis 17–21</strong> del <a href="#dossier">dossier ↓</a>.</div>
+      <div class="exercise-section" aria-label="Exercicis del dossier: Sistemes tèrmics">
+          <h3 class="sequence-title"><span>04</span> ACTIVITATS · Exercicis de les diapositives</h3>
+          <p class="exercise-intro">Resol cada enunciat després d'estudiar la teoria i els exemples d'aquest bloc. Pots consultar la <strong>resposta final</strong> quan l'hagis intentat.</p>
+          <div class="exercise-list"><article class="exercise-card" id="exercici-1r-17" aria-labelledby="ex-title-17">
+              <div class="exercise-card-heading"><span class="exercise-number">17</span><h4 id="ex-title-17">Exercici 17</h4></div>
+              <p class="exercise-origin">Font PAU · 2024 · Juny · Sèrie 5 · Exercici 6 · Enunciat adaptat</p>
+              <p class="exercise-statement">Un escalfador amb rendiment del 87 % ha d’elevar 20 °C la temperatura de 75 L d’aigua. La calor específica és 4,18 kJ/(kg·K) i el butà proporciona 47,7 MJ/kg. Calcula l’energia consumida i la massa de butà. Considera ρaigua = 1 kg/L.</p>
+              <details class="exercise-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultat final:</strong> E consumida = 7,207 MJ; butà = 0,1511 kg</p></details>
+            </article>
+<article class="exercise-card" id="exercici-1r-18" aria-labelledby="ex-title-18">
+              <div class="exercise-card-heading"><span class="exercise-number">18</span><h4 id="ex-title-18">Exercici 18</h4></div>
+              <p class="exercise-origin">Font PAU · 2024 · Juny · Sèrie 5 · Exercici 6 · Enunciat adaptat</p>
+              <p class="exercise-statement">Cada bombona conté 12,5 kg de butà i costa 17,66 €. L’aigua costa 0,93 €/m³. Si cada dutxa consumeix 75 L d’aigua i 0,1511 kg de butà, calcula el cost total d’una dutxa.</p>
+              <details class="exercise-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultat final:</strong> Cost aproximat = 0,283 € per dutxa</p></details>
+            </article>
+<article class="exercise-card" id="exercici-1r-19" aria-labelledby="ex-title-19">
+              <div class="exercise-card-heading"><span class="exercise-number">19</span><h4 id="ex-title-19">Exercici 19</h4></div>
+              <p class="exercise-origin">Font PAU · 2025 · Juny · Sèrie 1 · Exercici 4 · Enunciat adaptat</p>
+              <p class="exercise-statement">Un fogonet escalfa 2 L d’aigua de 15 °C fins a 100 °C, amb c = 4,186 kJ/(kg·°C). El rendiment és del 20 % i el poder calorífic del butà és de 45,8 MJ/kg. Calcula la massa de gas necessària. Considera ρaigua = 1 kg/L.</p>
+              <details class="exercise-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultat final:</strong> m gas = 77,68 g</p></details>
+            </article>
+<article class="exercise-card" id="exercici-1r-20" aria-labelledby="ex-title-20">
+              <div class="exercise-card-heading"><span class="exercise-number">20</span><h4 id="ex-title-20">Exercici 20</h4></div>
+              <p class="exercise-origin">Font PAU · 2025 · Juny · Sèrie 1 · Exercici 4 · Enunciat adaptat</p>
+              <p class="exercise-statement">El fogonet de l’exercici 19 consumeix gas a un cabal màxim de 155 g/h. Si calen 77,68 g per portar l’aigua a ebullició, quant de temps tardarà?</p>
+              <details class="exercise-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultat final:</strong> t = 30,07 min</p></details>
+            </article>
+<article class="exercise-card" id="exercici-1r-21" aria-labelledby="ex-title-21">
+              <div class="exercise-card-heading"><span class="exercise-number">21</span><h4 id="ex-title-21">Exercici 21</h4></div>
+              <p class="exercise-origin">Font PAU · 2025 · Juny · Sèrie 1 · Exercici 4 · Enunciat adaptat</p>
+              <p class="exercise-statement">Després de bullir l’aigua, es manté el fogonet encès 18 min al 30 % del cabal màxim (155 g/h). Si abans s’han utilitzat 77,68 g de gas i el cartutx conté 230 g, calcula el percentatge total gastat.</p>
+              <details class="exercise-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultat final:</strong> Gas total = 91,63 g; consum = 39,84 %</p></details>
+            </article></div>
+        </div>
+      <div class="exercise-ref">📄 També pots consultar aquests exercicis al <a href="#dossier">dossier original amb les diapositives ↓</a>.</div>
     </section>
 
     <section class="topic" id="maquines" style="--accent:#286a96">
@@ -707,7 +876,23 @@
       <div class="worked"><h3>🧮 Exemple dels exercicis 22 i 23</h3><p>Focus calent a 610 °C i fred a 270 °C. Primer: <strong>883,15 K</strong> i <strong>543,15 K</strong>. Després: η<sub>màx</sub> = 1 − 543,15 / 883,15 = <strong>0,3850 = 38,50 %</strong>.</p></div>
       <div class="tip"><strong>Important:</strong> a la fórmula de Carnot sempre utilitza kelvins, mai directament graus Celsius.</div>
       
-      <div class="exercise-ref">Practica els <strong>exercicis 22 i 23</strong> del <a href="#dossier">dossier ↓</a>.</div>
+      <div class="exercise-section" aria-label="Exercicis del dossier: Màquines tèrmiques i Carnot">
+          <h3 class="sequence-title"><span>04</span> ACTIVITATS · Exercicis de les diapositives</h3>
+          <p class="exercise-intro">Resol cada enunciat després d'estudiar la teoria i els exemples d'aquest bloc. Pots consultar la <strong>resposta final</strong> quan l'hagis intentat.</p>
+          <div class="exercise-list"><article class="exercise-card" id="exercici-1r-22" aria-labelledby="ex-title-22">
+              <div class="exercise-card-heading"><span class="exercise-number">22</span><h4 id="ex-title-22">Exercici 22</h4></div>
+              <p class="exercise-origin">Font PAU · 2024 · Setembre · Sèrie 3 · Exercici 1, qüestió 2 · Enunciat adaptat</p>
+              <p class="exercise-statement">Una màquina tèrmica funciona entre dos focus a temperatures de 610 °C i 270 °C. Calcula el rendiment teòric màxim de la màquina i justifica si és possible superar-lo.</p>
+              <details class="exercise-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultat final:</strong> η màxim = 38,5 %; no és possible superar-lo</p></details>
+            </article>
+<article class="exercise-card" id="exercici-1r-23" aria-labelledby="ex-title-23">
+              <div class="exercise-card-heading"><span class="exercise-number">23</span><h4 id="ex-title-23">Exercici 23</h4></div>
+              <p class="exercise-origin">Font PAU · 2025 · Examen de model · Sense sèrie · Exercici 1, qüestió 5 · Enunciat adaptat</p>
+              <p class="exercise-statement">Una màquina tèrmica treballa entre dos focus a 610 °C i 270 °C. Expressa les temperatures en kelvins i calcula el rendiment màxim teòric.</p>
+              <details class="exercise-solution"><summary>✅ Comprova la resposta</summary><p><strong>Resultat final:</strong> Tcalent = 883,15 K; Tfred = 543,15 K; η màxim = 38,50 %</p></details>
+            </article></div>
+        </div>
+      <div class="exercise-ref">📄 També pots consultar aquests exercicis al <a href="#dossier">dossier original amb les diapositives ↓</a>.</div>
     </section>
 
     <div class="final-doc" id="dossier"><h2>📄 Dossier: teoria i 23 exercicis</h2><p>Aquí tens el document que utilitzem com a referència per a 1r de Batxillerat. Inclou les explicacions originals, els enunciats i els resultats finals perquè puguis comprovar els càlculs.</p><div class="actions"><a class="action" href="https://drive.google.com/file/d/1HhvR_CdEqVi-g6-tfdoXISy6jMio2asO/view" target="_blank" rel="noopener noreferrer">Obrir el PDF complet ↗</a><a class="action alt" href="batxillerat.html#primer">Tornar a 1r de Batxillerat</a></div><details><summary>👀 Veure el dossier sense sortir de la web</summary><iframe title="Dossier d'Energia i transformacions, amb teoria i 23 exercicis" loading="lazy" src="https://drive.google.com/file/d/1HhvR_CdEqVi-g6-tfdoXISy6jMio2asO/preview"></iframe></details></div>
