@@ -73,18 +73,40 @@ function make(i){
   });
   T(svg,480,368,'Exemple metodològic: mesurem dades i les comparem amb un punt de partida.',16,'#795a7e',740,'middle');
  }else if(i===2){
-  T(svg,32,43,'DEL MINERAL AL MATERIAL · MINIMITZAR L’IMPACTE',21,'#9c4b7b',900);
-  P(svg,'M 26 113 L 134 113 L 180 145 L 260 145 L 315 180 L 426 180 L 426 314 L 26 314 Z','#d8ba9d','#aa855f',3);
-  P(svg,'M 65 241 L 178 215 L 266 263 L 379 233','none','#d47b47',18);
-  T(svg,123,240,'MENA',18,'#fff',900);
-  T(svg,291,292,'Ganga',16,'#785334',760);
-  A(svg,439,207,487,207,'#cb8b42');
-  B(svg,495,157,191,'PREPARACIÓ','Separar materials','#fff1df');
-  A(svg,687,207,734,207,'#cb8b42');
-  R(svg,740,144,192,176,'#e9f8ee','#9bcca8',15);
-  T(svg,836,185,'RESTAURACIÓ',18,'#38855d',900,'middle');
-  [785,833,881].forEach(x=>{L(svg,x,274,x,232,'#936d48',6);C(svg,x,218,26,'#65a773','#58a46d')});
-  T(svg,481,374,'Protegir l’aigua, reduir la pols i recuperar el sòl.',17,'#765978',770,'middle');
+  T(svg,27,42,'DEL JACIMENT AL METALL · PROCÉS I IMPACTE AMBIENTAL',20,'#984b7a',900);
+  const stages=[['1 · EXTRACCIÓ','Mena + ganga','#f4e7d9'],['2 · TRITURACIÓ','Reduir la roca','#f1effc'],['3 · CONCENTRACIÓ','Separar la mena','#e8f3fa'],['4 · METAL·LÚRGIA','Refinar el metall','#fff0dc'],['5 · PRODUCTE','Cables de coure','#eaf6e9']];
+  stages.forEach(([title,detail,fill],j)=>{
+   const x=17+j*189;R(svg,x,85,171,200,fill,'#dac0d6',13);
+   T(svg,x+85,252,title,14,'#71347e',900,'middle');
+   T(svg,x+85,274,detail,13,'#66546b',650,'middle');
+   if(j<4)A(svg,x+174,176,x+187,176,'#a96891');
+  });
+  // Jaciment obert: veta de mineral dins de roca.
+  P(svg,'M 33 204 L 33 165 L 55 145 L 78 156 L 104 126 L 133 160 L 167 143 L 167 227 L 33 227Z','#caa787','#997454',3);
+  P(svg,'M 44 210 L 80 189 L 111 200 L 156 178','none','#ca6a38',11);
+  T(svg,92,117,'VETA',12,'#a25932',900,'middle');
+  // Trituradora de mandíbules.
+  R(svg,228,127,127,102,'#e7e5f3','#9383b0',9);
+  P(svg,'M 242 141 L 273 190 L 273 213 M 341 141 L 310 190 L 310 213','none','#746b99',7);
+  [249,271,301,325].forEach((x,j)=>C(svg,x,118+(j%2)*10,8,'#ae9586','#866e63'));
+  // Separació: dipòsit i sortides diferenciades.
+  R(svg,422,126,119,101,'#edf6fb','#8eafc1',11);
+  C(svg,481,164,35,'#b4d6e5','#6ba3bf');
+  P(svg,'M 450 161 Q 481 133 511 163 Q 481 192 450 161','none','#6299b7',5);
+  P(svg,'M 469 195 L 449 226 M 492 195 L 515 226','none','#b76a4a',5);
+  // Forn de fusió i refinació.
+  R(svg,617,124,108,107,'#f5d7b8','#b8794a',11);
+  P(svg,'M 632 139 H710 L699 204 H641Z','#b98062','#875941',3);
+  P(svg,'M 652 189 Q 669 158 687 189 L692 205 H648Z','#f6a849','#cf7430',2);
+  P(svg,'M 665 136 Q 651 111 667 101 M 689 136 Q 675 111 691 101','none','#d28855',4);
+  // Metall treballat: bobina de fil conductor.
+  C(svg,858,174,46,'#c77a4c','#9a5634');
+  C(svg,858,174,29,'#e7ba95','#a66a45');
+  C(svg,858,174,12,'#fff4e2','#a66a45');
+  P(svg,'M 896 194 Q 924 218 917 233','none','#c77a4c',7);
+  R(svg,18,310,924,76,'#eaf7ef','#9bc9a8',14);
+  T(svg,41,340,'GESTIÓ AMBIENTAL I RESTAURACIÓ',18,'#337d56',900);
+  T(svg,41,367,'Protegir l’aigua · Reduir la pols · Gestionar residus i ganga · Recuperar el sòl i la vegetació',15,'#4b6c58',720);
  }else if(i===3){
   T(svg,29,44,'EXEMPLE: LED VERMELL A 5 V AMB RESISTÈNCIA',21,'#9e4d86',900);
   B(svg,28,100,191,'FONT 5 V','Alimentació de baixa tensió','#e7f4fe');
