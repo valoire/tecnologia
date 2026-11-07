@@ -55,12 +55,38 @@ function diagram(kind){
  figure.append(svg,caption);
  return figure;
 }
+const fullSchemes={
+ hydro:{file:'Hydroelectric_dam-es.svg',name:'Secció de la presa, canonada, turbina, generador i línies elèctriques.',author:'Wikimedia Commons · Hydroelectric dam-es.svg',license:'CC BY 3.0'},
+ thermal:{file:'Gas_Turbine_Combined_Cycle_Generation_01.svg',name:'Central de cicle combinat: compressor, combustió, turbina de gas, caldera de recuperació, turbina de vapor i alternador.',author:'Σ64 · Wikimedia Commons',license:'CC BY-SA'},
+ nuclear:{file:'PWR_Nuclear_Power_Plant_-_es.svg',name:'Central nuclear: reactor, generador de vapor, turbina, alternador, condensador i refrigeració.',author:'Luquichurri · Wikimedia Commons',license:'CC BY-SA 4.0'}
+};
+function detailedScheme(kind){
+ const d=fullSchemes[kind];
+ const figure=document.createElement('figure');
+ figure.className='ud2-plant-machine-diagram ud2-plant-full-scheme';
+ const link=document.createElement('a');
+ const page='https://commons.wikimedia.org/wiki/File:'+d.file;
+ link.href=page;link.target='_blank';link.rel='noopener noreferrer';
+ link.setAttribute('aria-label','Obrir esquema tècnic ampliat: '+d.name);
+ const img=document.createElement('img');
+ img.src='https://commons.wikimedia.org/wiki/Special:FilePath/'+d.file+'?width=1280';
+ img.alt=d.name;img.loading='lazy';img.decoding='async';
+ link.append(img);figure.append(link);
+ const caption=document.createElement('figcaption');
+ caption.textContent=d.name+' ';
+ const credit=document.createElement('a');
+ credit.href=page;credit.target='_blank';credit.rel='noopener noreferrer';
+ credit.textContent='Font: '+d.author+' · '+d.license;
+ caption.append(credit);
+ figure.append(caption);
+ return figure;
+}
 function install(){
  if(new URLSearchParams(location.search).get('ud')!=='2')return;
  Object.keys(configs).forEach(kind=>{
   const card=document.querySelector('.ud2-plant-card.'+kind);
   const flow=card?.querySelector('.ud2-plant-flow');
-  if(flow&&!card.querySelector('.ud2-plant-machine-diagram'))flow.replaceWith(diagram(kind));
+  if(flow&&!card.querySelector('.ud2-plant-machine-diagram'))flow.replaceWith(detailedScheme(kind));
  });
 }
 const previous=window.preparaUnitatVisual;
