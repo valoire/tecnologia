@@ -38,3 +38,63 @@
 .deep-inline-formulas{display:flex;flex-wrap:wrap;gap:9px;margin:12px 0}.deep-inline-formulas span{background:#e3f4ff;border:1px solid #b7dcef;border-radius:9px;padding:7px 11px;font-weight:850;color:#216b93}
 @media(max-width:750px){.deep-theory,.deep-lab,.engine-panel-layout{grid-template-columns:1fr}.deep-dossier{padding:15px}.deep-theory article{padding:14px}.deep-result strong{font-size:1.24rem}.engine-picker{grid-template-columns:1fr}.deep-visual{padding:12px}.engine-graphic{max-width:220px}}
 @media(prefers-reduced-motion:reduce){.deep-bar .bar-value{transition:none}.deep-piston{animation:none}}
+
+/* Recorregut visual dels sis temes: un ordre de lectura constant. */
+.energy-section .lesson-roadmap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:22px 0 24px}
+.lesson-roadmap a{display:flex;align-items:center;gap:9px;padding:11px 12px;min-width:0;border:1.5px solid #c7dded;border-radius:13px;background:#f5faff;color:#1d5b82;text-decoration:none;font-size:.88rem;font-weight:900;transition:background .15s,transform .15s}
+.lesson-roadmap a:hover,.lesson-roadmap a:focus-visible{background:#dceefc;transform:translateY(-2px);outline:2px solid #246d9b;outline-offset:2px}
+.lesson-roadmap a b{display:grid;place-items:center;min-width:30px;height:30px;background:#277eb0;color:#fff;border-radius:9px;font-size:.8rem}
+.lesson-roadmap a:last-child{background:#fff2df;border-color:#edc38d;color:#8c4c12}
+.lesson-roadmap a:last-child b{background:#d47c20}
+.lesson-stage{border:2px solid #d0e2f0;border-radius:20px;margin:23px 0;overflow:hidden;background:#fff;box-shadow:0 5px 18px #285f7d0c;scroll-margin-top:100px}
+.lesson-stage-heading{display:flex;align-items:center;gap:16px;padding:18px 22px;background:#e9f3fc;border-bottom:1.5px solid #d0e2f0}
+.lesson-stage-number{display:grid;place-items:center;flex:none;width:57px;height:57px;border-radius:14px;background:#2b79a8;color:#fff;font-size:1.5rem;font-weight:950}
+.lesson-stage-overline{font-size:.69rem;font-weight:950;letter-spacing:.12em;color:#477b9c}
+.energy-section .lesson-stage-heading h3{margin:0;color:#225d87;font-size:1.28rem;font-weight:950;line-height:1.22;letter-spacing:.01em}
+.energy-section .lesson-stage-heading p{font-size:.86rem;margin:4px 0 0;line-height:1.45;color:#55748a}
+.lesson-stage-content{padding:22px;min-width:0}
+.lesson-stage-content>:first-child{margin-top:0}
+.lesson-stage-content>:last-child{margin-bottom:0}
+.lesson-stage--interactive{border-color:#b9e0dd}
+.lesson-stage--interactive .lesson-stage-heading{background:#e6f7f4;border-color:#b9e0dd}
+.lesson-stage--interactive .lesson-stage-number{background:#147c78}
+.lesson-stage--interactive .lesson-stage-heading h3{color:#176965}
+.lesson-stage--interactive .lesson-stage-overline{color:#3d8782}
+.lesson-stage--interactive .lesson-stage-heading p{color:#477974}
+.lesson-stage--examples{border-color:#c5dfb8}
+.lesson-stage--examples .lesson-stage-heading{background:#f0f9eb;border-color:#c5dfb8}
+.lesson-stage--examples .lesson-stage-number{background:#3a8b47}
+.lesson-stage--examples .lesson-stage-heading h3{color:#2c713c}
+.lesson-stage--examples .lesson-stage-overline{color:#62946c}
+.lesson-stage--examples .lesson-stage-heading p{color:#64806a}
+.lesson-theory-lead{background:#f6fbff;border:1px solid #d9e9f2;border-radius:15px;padding:18px 18px 20px;margin:17px 0 22px}
+.lesson-theory-lead>h4{color:#276992;font-size:1.08rem;margin:0 0 6px}
+.energy-section .lesson-theory-lead>p{font-size:.92rem;color:#4c6e84;line-height:1.55;margin:0 0 14px}
+.lesson-theory-lead .deep-theory{gap:10px}
+.lesson-theory-lead .deep-theory article{padding:14px;border-top-color:#74b3d2}
+.lesson-mini-heading{display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin:15px 0 12px;color:#266d73;font-size:.97rem;font-weight:900}
+.lesson-mini-heading:first-child{margin-top:0}
+.lesson-mini-heading span{background:#d0ede9;color:#1b6e68;border-radius:7px;padding:5px 8px;font-size:.74rem;letter-spacing:.06em}
+.lesson-stage--interactive .deep-visual{margin-top:0}
+.lesson-stage--interactive .deep-lab{margin-bottom:17px}
+.lesson-sample{background:linear-gradient(135deg,#f2fbe9,#fafff7);border:1.5px solid #bcdaa6;border-radius:17px;padding:19px 21px}
+.lesson-sample-heading>span{display:inline-block;color:#47834d;background:#e2f3d6;font-size:.73rem;font-weight:950;letter-spacing:.08em;border-radius:6px;padding:5px 9px}
+.lesson-sample-heading h4{font-size:1.14rem;color:#286637;line-height:1.25;margin:11px 0 7px}
+.energy-section .lesson-sample-story{color:#345e3b;font-size:1rem;line-height:1.55;margin:0 0 17px}
+.lesson-solution-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;list-style:none;counter-reset:none;padding:0;margin:0}
+.lesson-solution-steps li{min-width:0;background:#fff;border:1px solid #d2e8c5;border-top:4px solid #78b36e;border-radius:11px;padding:13px 14px}
+.lesson-solution-steps li>strong{display:block;color:#337242;font-size:.89rem;margin-bottom:7px}
+.energy-section .lesson-solution-steps p{color:#355a3f;font-size:.92rem;line-height:1.53;margin:0}
+.energy-section .lesson-sample-result{background:#d8efd1;border-left:4px solid #3c9556;border-radius:8px;padding:11px 13px;color:#25653b;font-size:.95rem;font-weight:700;margin:17px 0 0}
+.lesson-more-examples{margin-top:15px;border:1px solid #d3e7ca;border-radius:12px;background:#fbfef9}
+.lesson-more-examples summary{cursor:pointer;padding:13px 16px;font-weight:850;color:#3a7847}
+.lesson-more-examples[open] summary{border-bottom:1px solid #d3e7ca}
+.lesson-more-body{padding:4px 15px 15px}
+.lesson-more-body .worked{margin-top:12px}
+.lesson-stage--examples>.lesson-stage-content>.mini-note{margin-top:15px}
+.dossier-section{scroll-margin-top:100px}
+.dossier-phase{display:flex;align-items:center;gap:10px;color:#974f0e;font-size:.83rem;font-weight:900;letter-spacing:.04em;margin-bottom:14px}
+.dossier-phase b{display:grid;place-items:center;width:38px;height:38px;border-radius:10px;background:#d47a1a;color:#fff;font-size:1rem}
+@media(max-width:850px){.lesson-solution-steps{grid-template-columns:1fr}.lesson-stage-content{padding:17px}.lesson-stage-heading{padding:16px}}
+@media(max-width:670px){.energy-section .lesson-roadmap{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.lesson-roadmap a{padding:9px;font-size:.81rem}.lesson-roadmap a b{min-width:27px;height:27px}.lesson-stage-heading{gap:11px;padding:13px}.lesson-stage-number{width:44px;height:44px;font-size:1.15rem}.energy-section .lesson-stage-heading h3{font-size:1.07rem}.lesson-stage-content{padding:13px}.lesson-theory-lead{padding:13px}.lesson-sample{padding:13px}.lesson-solution-steps li{padding:11px}.lesson-roadmap a:last-child{grid-column:auto}}
+@media(prefers-reduced-motion:reduce){.lesson-roadmap a{transition:none}}
