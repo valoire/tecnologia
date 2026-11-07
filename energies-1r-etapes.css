@@ -1,0 +1,36 @@
+/* Recorregut didàctic de cinc passos · Energia i transformacions · 1r */
+.lesson-steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin:22px 0 24px;padding:10px;border:1px solid #d3e2ec;border-radius:16px;background:#f2f7fb}
+.lesson-step{display:flex;align-items:center;gap:9px;min-width:0;padding:12px 10px;border:1px solid #dce8ef;border-radius:11px;background:white;color:#294a60;text-decoration:none!important;font-weight:800;font-size:.82rem;line-height:1.24;transition:transform .16s,box-shadow .16s}
+.lesson-step:hover,.lesson-step:focus-visible{transform:translateY(-2px);box-shadow:0 5px 13px #1c5b8422;outline-offset:2px}
+.lesson-step b{display:grid;place-items:center;flex:none;width:31px;height:31px;background:#347ca9;border-radius:9px;color:#fff;font-size:.8rem}
+.lesson-step:nth-child(2) b{background:#5378b7}
+.lesson-step:nth-child(3) b{background:#8054ae}
+.lesson-step:nth-child(4) b{background:#36876d}
+.lesson-step:nth-child(5){background:#fff3e3;border-color:#eecb9d;color:#904b11}
+.lesson-step:nth-child(5) b{background:#d87819}
+.topic .sequence-title[id]{scroll-margin-top:104px}
+.topic > h3.sequence-title:not(.lesson-substep){padding-top:14px;border-top:1px solid #dce8f0;margin-top:30px}
+.topic .lesson-practice{margin:14px 0 26px;padding:22px;border:1.5px solid #d8c6ed;border-radius:17px;background:linear-gradient(135deg,#f7f0ff 0%,#fdfaff 100%);box-shadow:0 3px 13px #62468a0b}
+.lesson-practice-title{color:#67438d;font-weight:900;margin:0 0 6px;font-size:1.03rem}
+.lesson-practice-desc{margin:0 0 16px!important;color:#655573!important;line-height:1.6!important;font-size:.94rem!important}
+.lesson-controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin-bottom:14px}
+.lesson-control{display:block;background:white;border:1px solid #e4d6f0;border-radius:12px;padding:13px 15px;min-width:0}
+.lesson-control-line{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:11px;color:#4b3d5b;font-size:.89rem;font-weight:750}
+.lesson-control output{font-size:1.06rem;font-variant-numeric:tabular-nums;font-weight:900;color:#7848a1;white-space:nowrap}
+.lesson-control input[type=range]{width:100%;accent-color:#8054ae;cursor:pointer}
+.lesson-result{background:white;border:1px solid #e1d0ed;border-left:5px solid #8054ae;border-radius:12px;padding:15px 17px;line-height:1.7;color:#51415f;font-size:.95rem}
+.lesson-result .lesson-math{font-size:1.05rem;font-weight:850;color:#5b3182}
+.lesson-result .lesson-explain{font-size:.9rem;color:#63566c;margin-top:5px}
+.lesson-result .lesson-meter{display:flex;overflow:hidden;width:100%;height:17px;border-radius:20px;background:#f3d9cf;margin:10px 0 3px}
+.lesson-result .lesson-meter > span{height:100%;background:#59ad89;transition:width .15s ease}
+.topic .worked-starter{background:#effbf6;border:1.5px solid #b7e2d2;border-left:6px solid #369a78;color:#2d6455;margin-top:15px}
+.topic .worked-starter h3{color:#24785d;font-size:1.07rem}
+.worked-starter ol{margin:9px 0 0 19px;padding:0;line-height:1.75}
+.worked-starter li{padding-left:4px;margin:5px 0}
+.worked-starter strong{color:#176449}
+.topic .lesson-substep{color:#356b88;background:#f3f8fc;border-left:4px solid #91b7d1;border-radius:6px;padding:10px 13px;margin-top:23px}
+.topic .lesson-substep span{background:#d4e8f4;color:#255f84;box-shadow:none}
+.topic#motors > .lesson-substep:first-of-type{margin-top:16px}
+.topic .exercise-section{margin-top:22px}
+@media(max-width:980px){.lesson-steps{grid-template-columns:repeat(3,minmax(0,1fr))}.lesson-step:nth-child(4),.lesson-step:nth-child(5){grid-column:auto}}
+@media(max-width:660px){.lesson-steps{display:flex;overflow-x:auto;gap:8px;padding:9px;scroll-snap-type:x mandatory}.lesson-step{flex:0 0 139px;scroll-snap-align:start;min-height:55px}.lesson-controls{grid-template-columns:1fr}.topic .lesson-practice{padding:16px}.lesson-result{font-size:.9rem}.topic .worked-starter{padding:15px}}
