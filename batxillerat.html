@@ -72,6 +72,16 @@
     .module-details summary{cursor:pointer;color:#205c8a;font-weight:800}
     .module-details .course-modules{margin:15px 0 0}
     @media(max-width:700px){.unit-grid{grid-template-columns:1fr}}
+    .pau-choice-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:15px 0 22px}
+    .pau-choice{display:flex;flex-direction:column;align-items:flex-start;gap:12px;min-height:278px;padding:23px;border:2px solid #c5dff0;border-radius:19px;background:linear-gradient(145deg,#fff,#eef7fd);box-shadow:0 4px 14px #205c8a09}
+    .pau-choice-number{display:inline-grid;place-items:center;width:43px;height:43px;border-radius:12px;background:#dceef9;color:#236d99;font-weight:900}
+    .pau-choice h2{margin:0;color:#205c8a;font-size:1.38rem;line-height:1.23}
+    .pau-choice p{margin:0;color:#536b7c;line-height:1.5;flex:1}
+    .pau-choice-action{display:inline-flex;align-items:center;justify-content:center;gap:6px;margin-top:auto;padding:11px 15px;border:0;border-radius:11px;background:#236e9f;color:#fff;font:inherit;font-weight:800;font-size:.94rem;text-align:center;text-decoration:none;cursor:pointer}
+    .pau-choice-action:hover,.pau-choice-action:focus-visible{background:#185783}
+    .pau-meeting-details--below{margin-top:18px}
+    .pau-meeting-details--below:target{scroll-margin-top:100px}
+    @media(max-width:900px){.pau-choice-grid{grid-template-columns:1fr}.pau-choice{min-height:0;gap:10px;padding:19px}.pau-choice p{flex:initial}.pau-choice-action{margin-top:8px}}
   </style>
   <link rel="stylesheet" href="colors-etapes.css?v=20261107b">
 </head>
@@ -106,12 +116,27 @@
       <p class="subtle">Energies té una pàgina completa amb 30 exercicis PAU. Les altres unitats enllacen als apartats de teoria de segon.</p>
     </section>
     <section role="tabpanel" id="panel-pau" aria-labelledby="tab-pau" hidden>
-      <div class="box" style="padding:24px">
-        <h2>📝 Exercicis PAU</h2>
-        <p>Practica amb exercicis i exàmens de Tecnologia Industrial. Primer prova de resoldre'ls i després compara el procediment amb la solució.</p>
-        <a class="button" href="https://examenselectivitat.cat/selectivitat/Tecnologia%20industrial" target="_blank" rel="noopener noreferrer">Obrir exàmens i exercicis ↗</a>
+      <div class="pau-choice-grid" aria-label="Recursos per preparar les PAU">
+        <article class="pau-choice">
+          <span class="pau-choice-number" aria-hidden="true">01</span>
+          <h2>📝 Exercicis PAU</h2>
+          <p>Practica amb exàmens i exercicis de Tecnologia i Enginyeria. Resol els problemes i després comprova les solucions.</p>
+          <a class="pau-choice-action" href="https://examenselectivitat.cat/selectivitat/Tecnologia%20industrial" target="_blank" rel="noopener noreferrer">Obrir els exercicis ↗</a>
+        </article>
+        <article class="pau-choice">
+          <span class="pau-choice-number" aria-hidden="true">02</span>
+          <h2>📑 Reunió PAU 2027</h2>
+          <p>Consulta l'estructura de l'examen, els criteris de correcció i les diapositives de la presentació oficial.</p>
+          <button class="pau-choice-action" type="button" id="obrir-reunio" aria-controls="reunio-dins-pau" aria-expanded="false">Veure la reunió ↓</button>
+        </article>
+        <article class="pau-choice">
+          <span class="pau-choice-number" aria-hidden="true">03</span>
+          <h2>🔢 Xifres significatives</h2>
+          <p>Aprèn a arrodonir a quatre xifres significatives, amb exemples, vídeo i 30 exercicis autocorrectius.</p>
+          <a class="pau-choice-action" href="cifres-significatives.html">Practicar les xifres →</a>
+        </article>
       </div>
-      <details class="pau-meeting-details" id="reunio-dins-pau">
+      <details class="pau-meeting-details pau-meeting-details--below" id="reunio-dins-pau">
         <summary><span>📑 Reunió PAU 2027<small>Què entra a l'examen, criteris de correcció i diapositives oficials</small></span></summary>
       <div class="box pau-reunio">
         <h2>📑 Reunió PAU 2027 · Tecnologia i Enginyeria</h2>
@@ -159,17 +184,17 @@
         <a class="sig-pau-link" href="cifres-significatives.html">🔢 Practicar les 4 xifres significatives →</a>
       </div>
       </details>
-      <div class="pau-sig-card">
-        <h3>🔢 Xifres significatives</h3>
-        <p>Aprèn a arrodonir els resultats a quatre xifres significatives, amb exemples del nostre temari, vídeo i 30 exercicis autocorrectius.</p>
-        <a class="sig-pau-link" href="cifres-significatives.html">Entrar al tema de Xifres significatives →</a>
-      </div>
-      <p style="margin:17px 0 0"><strong>Recorda:</strong> als criteris de Tecnologia i Enginyeria es recomana presentar els resultats amb quatre xifres significatives.</p>
     </section>
-    <div class="strip"><h2>Un concepte per experimentar</h2><p>El <a href="laboratori.html">simulador de moment</a> et permet canviar una força i el seu braç de palanca per comprovar el càlcul.</p></div>
   </main>
   <footer class="footer"><div class="wrap"><span>Tecnologia</span><span><a href="index.html">Tornar a l'inici</a></span></div></footer>
   <script>
+    const reunio=document.getElementById('reunio-dins-pau');
+    const obrirReunio=document.getElementById('obrir-reunio');
+    obrirReunio.addEventListener('click',()=>{
+      reunio.open=!reunio.open;
+      if(reunio.open)reunio.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+    reunio.addEventListener('toggle',()=>obrirReunio.setAttribute('aria-expanded',String(reunio.open)));
     const unitats=[
       ['Energies','energies.html'],
       ['Motors tèrmics i cilindrada','teoria-2n.html#motors-termics'],
