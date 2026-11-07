@@ -84,6 +84,44 @@ function miningEnergyChain(){
   <div class="ud2-energy-mini oil"><b>🛢️ Petroli: una altra ruta</b><p>Petroli cru → refineria → gasolina o gasoil → motor → moviment i calor. També pot utilitzar-se com a combustible en algunes centrals, però és molt habitual en el transport.</p></div>
   <div class="ud2-energy-mini renewable"><b>☀️🌬️ Fonts renovables</b><p>La placa fotovoltaica transforma directament la llum en electricitat. En canvi, el vent i l’aigua fan girar turbines connectades a generadors.</p></div>
 </div>
+<section class="ud2-power-plants" aria-label="Esquemes tècnics de centrals elèctriques">
+ <h3>Com es produeix electricitat? Tres centrals per comparar</h3>
+ <p>Fixa’t en <strong>què fa girar la turbina</strong>. A les tres centrals, el generador (alternador) transforma el moviment de rotació en electricitat.</p>
+ <div class="ud2-plant-card hydro">
+  <div class="ud2-plant-title"><span>💧</span><div><h4>1. Central hidroelèctrica</h4><p><b>Recurs:</b> aigua embassada o d’un riu · <b>Energia inicial:</b> potencial gravitatòria</p></div></div>
+  <div class="ud2-plant-flow" role="img" aria-label="Embassament, canonada forçada, turbina hidràulica, alternador i xarxa elèctrica">
+   <div class="ud2-plant-node"><span>🏞️</span><b>Embassament</b><small>Aigua en altura</small></div><i aria-hidden="true">→</i>
+   <div class="ud2-plant-node"><span>↘️</span><b>Canonada forçada</b><small>L’aigua baixa</small></div><i aria-hidden="true">→</i>
+   <div class="ud2-plant-node"><span>⚙️</span><b>Turbina</b><small>Gira per l’aigua</small></div><i aria-hidden="true">→</i>
+   <div class="ud2-plant-node"><span>🔄</span><b>Alternador</b><small>Inducció elèctrica</small></div><i aria-hidden="true">→</i>
+   <div class="ud2-plant-node"><span>⚡</span><b>Xarxa</b><small>Electricitat</small></div>
+  </div>
+  <p class="ud2-plant-transform"><strong>Transformació:</strong> potencial → cinètica → mecànica → elèctrica. <em>L’aigua continua el seu curs després de la turbina.</em></p>
+ </div>
+ <div class="ud2-plant-card thermal">
+  <div class="ud2-plant-title"><span>🔥</span><div><h4>2. Central tèrmica de gas natural</h4><p><b>Recurs:</b> combustible fòssil extret del subsòl · <b>Energia inicial:</b> química</p></div></div>
+  <div class="ud2-plant-flow" role="img" aria-label="Gas natural, cambra de combustió, gasos calents, turbina, alternador i xarxa">
+   <div class="ud2-plant-node"><span>🛢️</span><b>Gas natural</b><small>Combustible</small></div><i aria-hidden="true">→</i>
+   <div class="ud2-plant-node"><span>🔥</span><b>Combustió</b><small>Gasos calents</small></div><i aria-hidden="true">→</i>
+   <div class="ud2-plant-node"><span>⚙️</span><b>Turbina de gas</b><small>Gira per l’expansió</small></div><i aria-hidden="true">→</i>
+   <div class="ud2-plant-node"><span>🔄</span><b>Alternador</b><small>Inducció elèctrica</small></div><i aria-hidden="true">→</i>
+   <div class="ud2-plant-node"><span>⚡</span><b>Xarxa</b><small>Electricitat</small></div>
+  </div>
+  <p class="ud2-plant-transform"><strong>Transformació:</strong> química → tèrmica → mecànica → elèctrica. <em>En cicle combinat, la calor residual produeix vapor per moure una segona turbina.</em></p>
+ </div>
+ <div class="ud2-plant-card nuclear">
+  <div class="ud2-plant-title"><span>☢️</span><div><h4>3. Central nuclear</h4><p><b>Recurs:</b> urani obtingut de minerals · <b>Energia inicial:</b> nuclear</p></div></div>
+  <div class="ud2-plant-flow" role="img" aria-label="Reactor de fissió, generador de vapor, turbina de vapor, alternador i xarxa">
+   <div class="ud2-plant-node"><span>☢️</span><b>Reactor</b><small>Fissió: calor</small></div><i aria-hidden="true">→</i>
+   <div class="ud2-plant-node"><span>♨️</span><b>Vapor d’aigua</b><small>Intercanvi de calor</small></div><i aria-hidden="true">→</i>
+   <div class="ud2-plant-node"><span>⚙️</span><b>Turbina</b><small>Gira pel vapor</small></div><i aria-hidden="true">→</i>
+   <div class="ud2-plant-node"><span>🔄</span><b>Alternador</b><small>Inducció elèctrica</small></div><i aria-hidden="true">→</i>
+   <div class="ud2-plant-node"><span>⚡</span><b>Xarxa</b><small>Electricitat</small></div>
+  </div>
+  <p class="ud2-plant-transform"><strong>Transformació:</strong> nuclear → tèrmica → mecànica → elèctrica. <em>La fissió allibera calor sense cremar urani; el circuit de vapor es refreda i es reutilitza.</em></p>
+ </div>
+ <p class="ud2-plant-key"><strong>Pregunta tècnica:</strong> quines dues centrals necessiten calor per moure una turbina? Quina pot moure-la directament amb l’aigua?</p>
+</section>
 <div class="ud2-energy-check"><span aria-hidden="true">🧠</span><p><strong>Queda’t amb aquesta idea:</strong> l’energia es transforma, però en cada procés una part es dispersa, sovint en forma de calor. Per això estudiem el <em>rendiment</em> de les màquines.</p></div>`;
  return section;
 }
