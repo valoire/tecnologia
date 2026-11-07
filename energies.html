@@ -405,23 +405,51 @@
         <p>La lletra grega <strong>ω (omega)</strong> és la <strong>velocitat angular</strong>: indica com de ràpid gira un eix i es mesura en <strong>rad/s</strong>. També podem comparar les velocitats amb <strong>n</strong>, en <strong>rpm</strong> (voltes per minut). <strong>ω no és el treball W ni la unitat watt (W)</strong>: totes tres magnituds són diferents.</p>
         <p>Amb la convenció que fem servir aquí, <strong>i = ω<sub>motor</sub> / ω<sub>roda</sub> = n<sub>motor</sub> / n<sub>roda</sub></strong>. Aquesta divisió respon una pregunta molt concreta: <em>«Quantes voltes fa el motor per cada volta que fa la roda?»</em> Si i = 3, el motor gira tres vegades més ràpid que la roda. La relació <strong>i no té unitats</strong>, perquè dividim dues velocitats expressades amb la mateixa unitat.</p>
         <div class="diagram" aria-label="El motor gira ràpid, un reductor disminueix la velocitat i la roda gira més lentament"><div>⚙️ Motor<br>ω<sub>motor</sub> alta<br>Γ<sub>motor</sub> petit</div><div class="arrow">→</div><div class="loss">🔧 Reductor<br>η<sub>red</sub></div><div class="arrow">→</div><div class="useful">🚲 Roda<br>ω<sub>roda</sub> baixa<br>Γ<sub>roda</sub> gran</div></div>
-<figure class="deep-visual" style="margin-top:17px">
-          <h4>⚙️ Mira-ho en moviment: per què el motor fa 3 voltes i la roda només 1?</h4>
-          <p style="margin:9px 0 14px!important">Aquests <strong>dos engranatges encaixen dent amb dent</strong>. El petit representa l'eix del <strong>motor (entrada)</strong>; el gran representa l'<strong>eix de sortida, connectat a la roda</strong>. Observa'ls: <strong>el petit gira més de pressa que el gran</strong>.</p>
-          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:18px">
-            <div style="flex:1 1 310px;text-align:center;background:#fff;border:1px solid #d5e4ed;border-radius:15px;padding:9px">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/3/32/Animated_two_spur_gears_1_3.gif" loading="lazy" decoding="async" alt="Animació real de dos engranatges encaixats: el pinyó vermell de 14 dents fa tres voltes per cada volta de l'engranatge verd de 42 dents. Giren en sentits contraris." style="display:block;width:100%;max-height:345px;object-fit:contain" />
-              <small style="display:block;margin-top:5px;color:#516777">Animació: fixa't en la velocitat de gir de cada engranatge.</small>
+<figure class="deep-visual" style="margin-top:17px" id="simulador-engranatges">
+          <h4>⚙️ Simulador interactiu: 3 voltes del motor = 1 volta de la sortida</h4>
+          <p style="margin:8px 0 13px!important">Mou la barra o prem <strong>Reprodueix</strong> i compara els engranatges. El <strong>pinyó vermell</strong> (motor) té 14 dents; l'<strong>engranatge verd</strong> (sortida) en té 42. Com que el gran té el triple de dents, <strong>gira tres vegades més lent</strong>.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:18px;align-items:center">
+            <div style="flex:1 1 340px;min-width:0;background:#fff;border:1px solid #d5e4ed;border-radius:15px;padding:12px">
+              <svg id="gear-sim-svg" viewBox="0 0 640 350" role="img" aria-label="Dos engranatges connectats. El vermell petit, de 14 dents, gira tres vegades per cada volta del verd gran, de 42 dents." style="display:block;width:100%;height:auto;max-height:335px">
+                <rect x="4" y="3" width="632" height="344" rx="16" fill="#f7fbff"/>
+                <text x="170" y="36" fill="#a63835" text-anchor="middle" font-size="21" font-weight="900">ENTRADA · MOTOR</text>
+                <text x="414" y="36" fill="#187a4e" text-anchor="middle" font-size="21" font-weight="900">SORTIDA · RODA</text>
+                <g id="gear-sim-small" transform="translate(188 177)">
+                  <path id="gear-sim-small-shape" fill="#f76659" stroke="#ab3834" stroke-width="2.3" stroke-linejoin="round"/>
+                  <circle r="15" fill="#fff" stroke="#ab3834" stroke-width="3"/>
+                  <line x1="0" y1="-24" x2="0" y2="-36" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+                </g>
+                <g id="gear-sim-large" transform="translate(380 177)">
+                  <path id="gear-sim-large-shape" fill="#39aa71" stroke="#19784d" stroke-width="2.3" stroke-linejoin="round"/>
+                  <circle r="22" fill="#fff" stroke="#19784d" stroke-width="3"/>
+                  <line x1="0" y1="-87" x2="0" y2="-115" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+                </g>
+                <text x="170" y="324" fill="#963d38" text-anchor="middle" font-size="19" font-weight="800">14 dents</text>
+                <text x="421" y="324" fill="#237650" text-anchor="middle" font-size="19" font-weight="800">42 dents</text>
+              </svg>
+              <div style="display:flex;justify-content:space-around;gap:10px;text-align:center;margin:4px 0 12px">
+                <div style="flex:1;background:#fff0ed;border-radius:10px;padding:9px 5px;color:#903e3c"><small style="display:block;font-weight:750">🔴 Motor (entrada)</small><strong style="font-size:1.25rem"><span id="gear-sim-input">0,00</span> voltes</strong></div>
+                <div style="flex:1;background:#eaf7ef;border-radius:10px;padding:9px 5px;color:#24764f"><small style="display:block;font-weight:750">🟢 Roda dentada (sortida)</small><strong style="font-size:1.25rem"><span id="gear-sim-output">0,00</span> voltes</strong></div>
+              </div>
+              <label for="gear-sim-range" style="display:block;font-weight:850;color:#235f8b;margin-bottom:7px">Fes girar el motor: arrossega per veure què passa</label>
+              <input id="gear-sim-range" type="range" min="0" max="6" step="0.05" value="0" style="display:block;width:100%;accent-color:#d7544e;cursor:pointer" aria-label="Voltes del motor, de zero a sis"/>
+              <div style="display:flex;justify-content:space-between;color:#607788;font-size:.8rem"><span>0 voltes</span><span>3 voltes</span><span>6 voltes</span></div>
+              <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px">
+                <button id="gear-sim-play" type="button" style="background:#256f98;color:white;border:0;border-radius:10px;padding:10px 17px;font-weight:850;cursor:pointer">▶ Reprodueix</button>
+                <button id="gear-sim-reset" type="button" style="background:#e6eef5;color:#245c80;border:1px solid #b5cddd;border-radius:10px;padding:10px 17px;font-weight:850;cursor:pointer">↺ Reinicia</button>
+              </div>
+              <noscript><p>Activa JavaScript per moure els engranatges. <a href="https://commons.wikimedia.org/wiki/File:Animated_two_spur_gears_1_3.gif">Veure animació alternativa</a>.</p></noscript>
             </div>
-            <div style="flex:1 1 250px">
-              <div style="background:#fff0ed;border-left:5px solid #d95c4c;border-radius:9px;padding:12px;margin-bottom:10px"><strong>🔴 VERMELL · ENTRADA / MOTOR</strong><div>Pinyó petit: <strong>14 dents</strong>. Gira <strong>3 voltes</strong>.</div></div>
-              <div style="background:#eaf7ef;border-left:5px solid #348b64;border-radius:9px;padding:12px;margin-bottom:10px"><strong>🟢 VERD · SORTIDA / CAP A LA RODA</strong><div>Engranatge gran: <strong>42 dents</strong>. Gira <strong>1 volta</strong>.</div></div>
-              <p style="margin:12px 0 7px!important"><strong>Relació de transmissió:</strong></p>
-              <p style="font-size:1.25rem;font-weight:900;color:#245c88;margin:0 0 10px!important">i = 42 / 14 = 3</p>
-              <p style="margin:0!important">El motor gira <strong>3 vegades més ràpid</strong>. Si gira a <strong>1.800 rpm</strong>, la sortida gira a <strong>600 rpm</strong> (1.800 ÷ 3).</p>
+            <div style="flex:1 1 235px">
+              <div style="background:#fff0ed;border-left:5px solid #d95c4c;border-radius:9px;padding:12px;margin-bottom:10px"><strong>🔴 Pinyó petit · MOTOR</strong><div>14 dents. <strong>3 voltes d'entrada.</strong></div></div>
+              <div style="background:#eaf7ef;border-left:5px solid #348b64;border-radius:9px;padding:12px;margin-bottom:13px"><strong>🟢 Roda dentada gran · SORTIDA</strong><div>42 dents. <strong>1 volta de sortida.</strong></div></div>
+              <p style="margin:9px 0 6px!important;font-weight:850">Relació de transmissió:</p>
+              <div style="font-size:1.35rem;font-weight:900;color:#245c88;background:#eef7fd;border-radius:10px;padding:12px">i = 42 ÷ 14 = 3</div>
+              <p style="margin:12px 0 6px!important">Si el motor gira a <strong>1.800 rpm</strong>, la roda de sortida gira a <strong>600 rpm</strong>.</p>
+              <p style="margin:6px 0!important;color:#516778;font-size:.92rem">La simulació va <strong>alentida</strong> perquè puguis veure les voltes. Els engranatges giren en sentits contraris.</p>
             </div>
           </div>
-          <figcaption><strong>Idea clau:</strong> el pinyó petit arrossega el gran: <strong>3 voltes d'entrada → 1 volta de sortida</strong>. En aquest dibuix els engranatges giren en sentits oposats, però per calcular i comparem les <strong>magnituds de les velocitats</strong>. La roda dentada verda representa la sortida del reductor; <strong>no és el pneumàtic del vehicle</strong>. <a href="https://commons.wikimedia.org/wiki/File:Animated_two_spur_gears_1_3.gif" target="_blank" rel="noopener noreferrer">Imatge original: Jahobr / Wikimedia Commons (CC0)</a>.</figcaption>
+          <figcaption><strong>Fes la prova:</strong> situa la barra en 3 voltes. El comptador verd marcarà <strong>1 volta</strong>. Si arribes a 6, en marcarà <strong>2</strong>. És la mateixa relació i = ω<sub>motor</sub>/ω<sub>roda</sub> = 3. La roda dentada verda representa l'eix de sortida del reductor, <strong>no el pneumàtic del vehicle</strong>. <a href="https://commons.wikimedia.org/wiki/File:Animated_two_spur_gears_1_3.gif" target="_blank" rel="noopener noreferrer">Animació de referència: Jahobr / Wikimedia Commons (CC0)</a>.</figcaption>
         </figure>
         <div class="deep-inline-formulas"><span>i = 1.800 / 600 = 3</span><span>n<sub>roda</sub> = n<sub>motor</sub> / i</span><span>ω = 2π · n / 60</span></div>
         <p><strong>Què guanyem en reduir la velocitat?</strong> La roda pot rebre més parell. Si el motor proporciona 12 N·m i el reductor té i = 3 i un rendiment del 90 %, el parell útil de la roda és <strong>Γ<sub>roda</sub> = 0,90 · 3 · 12 = 32,4 N·m</strong>. No hem creat energia: part de la velocitat de gir es transforma en més parell i una part es perd en la transmissió.</p>
@@ -727,5 +755,89 @@
   </main>
   <footer class="footer"><div class="wrap"><span>Tecnologia</span><span><a href="batxillerat.html#segon">Més temes de 2n de Batxillerat</a></span></div></footer>
   <script src="energies-ampliacio.js?v=20261107b" defer></script>
+<script>
+  (function () {
+    'use strict';
+    var slider = document.getElementById('gear-sim-range');
+    if (!slider) return;
+    var small = document.getElementById('gear-sim-small');
+    var large = document.getElementById('gear-sim-large');
+    var smallShape = document.getElementById('gear-sim-small-shape');
+    var largeShape = document.getElementById('gear-sim-large-shape');
+    var motorCount = document.getElementById('gear-sim-input');
+    var wheelCount = document.getElementById('gear-sim-output');
+    var play = document.getElementById('gear-sim-play');
+    var reset = document.getElementById('gear-sim-reset');
+    var turns = 0, playing = false, frameId = 0, lastTime = null;
+    var phase = 180 / 42; // Mitja dent a l'engranatge gran, per encaixar amb el petit.
+
+    function shape(teeth, rootRadius, tipRadius) {
+      var steps = teeth * 5, pts = [], radStep = Math.PI * 2 / teeth;
+      for (var tooth = 0; tooth < teeth; tooth++) {
+        var origin = (tooth - 0.5) * radStep;
+        var angles = [0, 0.20, 0.32, 0.68, 0.82];
+        var radii = [rootRadius, rootRadius, tipRadius, tipRadius, rootRadius];
+        for (var k = 0; k < 5; k++) {
+          var a = origin + angles[k] * radStep;
+          pts.push((pts.length ? 'L' : 'M') + (Math.cos(a) * radii[k]).toFixed(2) + ' ' + (Math.sin(a) * radii[k]).toFixed(2));
+        }
+      }
+      return pts.join(' ') + ' Z';
+    }
+    smallShape.setAttribute('d', shape(14, 42, 55));
+    largeShape.setAttribute('d', shape(42, 138, 151));
+
+    function format(n) {
+      return n.toLocaleString('ca-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    }
+    function paint() {
+      small.setAttribute('transform', 'translate(188 177) rotate(' + (turns * 360) + ')');
+      large.setAttribute('transform', 'translate(380 177) rotate(' + (phase - turns * 120) + ')');
+      motorCount.textContent = format(turns);
+      wheelCount.textContent = format(turns / 3);
+      slider.value = String(turns);
+    }
+    function stop() {
+      playing = false;
+      lastTime = null;
+      if (frameId) cancelAnimationFrame(frameId);
+      frameId = 0;
+      play.textContent = '▶ Reprodueix';
+    }
+    function advance(time) {
+      if (!playing) return;
+      if (lastTime !== null) {
+        turns = Math.min(6, turns + (time - lastTime) * 0.00065);
+        paint();
+        if (turns >= 6) { stop(); return; }
+      }
+      lastTime = time;
+      frameId = requestAnimationFrame(advance);
+    }
+    slider.addEventListener('input', function () {
+      stop();
+      turns = Number(slider.value);
+      paint();
+    });
+    play.addEventListener('click', function () {
+      if (playing) { stop(); return; }
+      if (turns >= 6) turns = 0;
+      playing = true;
+      lastTime = null;
+      play.textContent = '⏸ Pausa';
+      paint();
+      frameId = requestAnimationFrame(advance);
+    });
+    reset.addEventListener('click', function () {
+      stop();
+      turns = 0;
+      paint();
+    });
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden && playing) stop();
+    });
+    paint();
+  })();
+  </script>
 </body>
 </html>
