@@ -1,0 +1,40 @@
+/* Teoria ampliada de Tecnologia i Enginyeria II · Energies.
+   Manté els sis blocs i els 30 exercicis originals. */
+.deep-dossier{margin:22px 0 25px;border:1.5px solid #bcd8eb;background:linear-gradient(145deg,#f5fbff,#fff);border-radius:19px;padding:22px;box-shadow:0 7px 21px #185e8e0b}
+.deep-dossier>h3{color:#205f8c;font-size:1.28rem;margin:0 0 8px;letter-spacing:-.025em}
+.deep-dossier>.deep-lead{color:#456b84!important;margin:0 0 17px!important;line-height:1.65}
+.deep-heading{display:flex;align-items:center;gap:10px;font-weight:900;font-size:1.05rem;color:#1c608e;margin:20px 0 12px}
+.deep-heading span{display:inline-grid;place-items:center;background:#2d7fae;color:#fff;font-size:.82rem;border-radius:9px;min-width:32px;height:32px}
+.deep-theory{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.deep-theory article{border:1px solid #d5e5ef;border-top:4px solid #6da7ca;border-radius:13px;background:#fff;padding:16px 17px}
+.deep-theory h4{font-size:1rem;color:#21658f;margin:0 0 8px}.deep-theory p{font-size:.94rem;line-height:1.64;margin:0!important}
+.deep-visual{background:#fff;border:1px solid #cee2f0;border-radius:15px;padding:15px 18px;margin:12px 0 15px}
+.deep-visual h4{margin:0 0 7px;color:#245f87;font-size:1.02rem}.deep-visual svg{display:block;width:100%;height:auto;max-height:290px}
+.deep-visual figcaption{color:#55758c;font-size:.91rem;line-height:1.55;margin-top:8px}
+.deep-lab{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:15px;border:1px solid #a8d3e9;background:#edf8ff;border-radius:15px;padding:17px}
+.deep-controls{background:#fff;border:1px solid #d2e4ee;border-radius:12px;padding:15px}
+.deep-control{margin:0 0 15px}.deep-control:last-child{margin-bottom:0}
+.deep-control label{font-size:.93rem;font-weight:800;color:#215f86;display:flex;justify-content:space-between;gap:9px;align-items:center}
+.deep-control output{font-weight:900;color:#227cad;font-variant-numeric:tabular-nums}
+.deep-control input{width:100%;margin:9px 0 0;accent-color:#3186b5}
+.deep-result{background:linear-gradient(145deg,#205d85,#3186b4);border-radius:12px;padding:18px;color:#fff;display:flex;flex-direction:column;justify-content:center;gap:5px}
+.deep-result strong{display:block;font-size:1.42rem;line-height:1.25;color:#fff}.deep-result p{color:#e2f4ff!important;margin:0 0 8px!important;font-size:.89rem;line-height:1.48}
+.deep-result .stat-small{color:#eaf8ff;font-size:.89rem}.deep-bar{height:13px;background:#d8e5ed;border-radius:50px;overflow:hidden;position:relative;margin:10px 0}
+.deep-bar .bar-value{display:block;height:100%;width:0;background:linear-gradient(90deg,#68bcdc,#1b8a94);border-radius:50px;transition:width .2s}
+.deep-notice{font-size:.88rem!important;color:#4c718a!important;border-left:4px solid #75afcf;padding:10px 12px;background:#f5fbff;border-radius:8px;margin:12px 0 0!important}
+.deep-next{background:#dff1fc;border:1px solid #b3d7ec;border-radius:11px;padding:13px 15px;color:#2b688a;margin-top:17px;line-height:1.6}
+.deep-next strong{color:#1e608e}.deep-next a{font-weight:850;color:#20668e}
+.deep-carnot{margin-top:15px;border-top:1px solid #c3deef;padding-top:12px}
+.deep-carnot h4{color:#23638d;font-size:1.09rem;margin:8px 0}
+.engine-picker{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:13px 0}
+.engine-picker button{border:2px solid #bdd9e9;border-radius:12px;background:#fff;color:#27678e;padding:11px 9px;font-weight:850;cursor:pointer}
+.engine-picker button[aria-pressed="true"]{background:#236f9c;color:#fff;border-color:#236f9c}
+.engine-description{background:#fff;border:1px solid #c5dfed;border-radius:12px;padding:15px 16px;color:#3f667d}
+.engine-description h4{color:#235f86;margin:0 0 5px}.engine-description p{margin:7px 0!important;line-height:1.56}
+.engine-panel-layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:15px;align-items:start}.engine-graphic{background:#f0f9ff;border-radius:11px;max-width:220px}.engine-graphic svg{display:block;width:100%;height:auto}.engine-description ol{margin:9px 0 8px;padding-left:23px;line-height:1.6;font-size:.92rem}.engine-description li{margin:0 0 5px}.engine-description strong{color:#276b8f}
+.deep-piston{animation:deep-cylinder-stroke 2.5s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:center}@keyframes deep-cylinder-stroke{from{transform:translateY(-35px)}to{transform:translateY(21px)}}
+.deep-table{width:100%;border-collapse:collapse;background:white;font-size:.89rem;margin-top:14px}
+.deep-table th,.deep-table td{border:1px solid #d1e5f0;padding:9px 12px;text-align:left}.deep-table th{background:#e4f3fc;color:#1e5e88}
+.deep-inline-formulas{display:flex;flex-wrap:wrap;gap:9px;margin:12px 0}.deep-inline-formulas span{background:#e3f4ff;border:1px solid #b7dcef;border-radius:9px;padding:7px 11px;font-weight:850;color:#216b93}
+@media(max-width:750px){.deep-theory,.deep-lab,.engine-panel-layout{grid-template-columns:1fr}.deep-dossier{padding:15px}.deep-theory article{padding:14px}.deep-result strong{font-size:1.24rem}.engine-picker{grid-template-columns:1fr}.deep-visual{padding:12px}.engine-graphic{max-width:220px}}
+@media(prefers-reduced-motion:reduce){.deep-bar .bar-value{transition:none}.deep-piston{animation:none}}
