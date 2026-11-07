@@ -283,21 +283,23 @@
     .carnot-lab-footer{margin:12px 3px 0;color:#56768d;font-size:.84rem;line-height:1.55}
     @media(max-width:850px){.carnot-lab-grid{grid-template-columns:1fr}.carnot-lab-head{flex-direction:column}.carnot-lab{padding:14px}.carnot-lab-controls{padding:15px}}
 
-    /* Exercicis originals distribuïts darrere de cada bloc de teoria */
-    .exercise-section{margin-top:28px}
-    .exercise-intro{font-size:.98rem;color:#50697b;margin:8px 0 14px!important}
-    .exercise-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,350px),1fr));gap:13px}
-    .exercise-card{background:#fff;border:1.5px solid #d7e7f0;border-left:5px solid var(--accent,#2875a4);border-radius:13px;padding:17px 18px;box-shadow:0 2px 6px #1a4f6b09}
-    .exercise-card-heading{display:flex;align-items:center;gap:11px;margin-bottom:8px}
-    .exercise-card-heading h4{font-size:1.08rem;color:#205f84;margin:0!important}
-    .exercise-number{background:var(--accent,#2875a4);color:#fff;border-radius:10px;padding:7px 9px;font-size:1rem;min-width:37px;text-align:center;font-weight:900}
-    .exercise-card .exercise-origin{font-size:.79rem!important;color:#607482!important;margin:0 0 11px!important;line-height:1.45}
-    .exercise-card .exercise-statement{font-size:.97rem!important;line-height:1.68!important;color:#283f50!important;margin:0 0 14px!important}
-    .exercise-card .exercise-solution{border-top:1px solid #d6e6ed;padding-top:10px}
-    .exercise-card .exercise-solution summary{color:#24698e;font-weight:820;cursor:pointer}
-    .exercise-card .exercise-solution p{margin:9px 0 0!important;background:#eaf7f0;color:#215a47;border-radius:8px;padding:11px 12px!important}
-    @media(max-width:600px){.exercise-list{grid-template-columns:1fr}.exercise-card{padding:14px}}
-</style>
+    /* Exercicis dossier: franges horitzontals taronges, amb enunciat complet */
+    .exercise-section{margin-top:30px;background:#fffaf2;border:1.5px solid #f0d4aa;border-radius:17px;padding:21px}
+    .exercise-section .sequence-title{color:#8b4912}
+    .exercise-section .sequence-title span{background:#d8791b!important;color:#fff!important}
+    .exercise-intro{font-size:.98rem!important;color:#734419!important;background:#ffedcf;border-radius:9px;padding:11px 14px!important;margin:12px 0 15px!important}
+    .exercise-list{display:flex;flex-direction:column;gap:13px}
+    .exercise-card{display:grid;grid-template-columns:175px minmax(0,1fr);column-gap:23px;row-gap:10px;background:#fff0d7;border:1.5px solid #e7bf86;border-left:6px solid #de7b18;border-radius:13px;padding:18px 20px;box-shadow:0 2px 6px #8a520b10}
+    .exercise-card-heading{grid-column:1;grid-row:1 / span 3;display:flex;align-items:flex-start;gap:10px;flex-wrap:wrap;padding-top:3px}
+    .exercise-card-heading h4{font-size:1.04rem;color:#7d3d0a;margin:6px 0 0!important}
+    .exercise-number{background:#d87713;color:#fff;border-radius:9px;padding:7px 9px;font-size:1rem;min-width:38px;text-align:center;font-weight:900}
+    .exercise-card .exercise-origin{grid-column:2;font-size:.8rem!important;color:#795932!important;margin:0!important;line-height:1.4}
+    .exercise-card .exercise-statement{grid-column:2;font-size:1rem!important;line-height:1.68!important;color:#3c3329!important;margin:0!important;overflow-wrap:anywhere}
+    .exercise-card .exercise-solution{grid-column:2;border-top:1px solid #e8c795;padding-top:9px}
+    .exercise-card .exercise-solution summary{color:#99500b;font-weight:820;cursor:pointer}
+    .exercise-card .exercise-solution p{margin:9px 0 0!important;background:#fffaf1;color:#704321;border-radius:8px;padding:11px 12px!important}
+    @media(max-width:700px){.exercise-section{padding:15px}.exercise-card{grid-template-columns:1fr;gap:9px;padding:15px}.exercise-card-heading{grid-column:1;grid-row:auto;padding-top:0}.exercise-card-heading h4{margin-top:6px!important}.exercise-card .exercise-origin,.exercise-card .exercise-statement,.exercise-card .exercise-solution{grid-column:1}}
+    </style>
 </head>
 <body>
   <header class="top"><div class="wrap bar"><a class="brand" href="index.html">TECNOLOGIA</a><nav aria-label="Navegació principal"><a href="curs.html?grup=optativa">4t Optativa</a><a href="curs.html?grup=e">4t E</a><a id="nav-primer" href="batxillerat.html#primer" aria-current="page">1r Batxillerat</a><a id="nav-segon" href="batxillerat.html#segon">2n Batxillerat</a></nav></div></header>
@@ -332,8 +334,8 @@
       <div class="tip"><strong>💡 Exercici 2:</strong> per al patinet que baixa un pendent de 30 m i 5°, primer troba l'altura <strong>h = 30 · sin 5°</strong> i després relaciona m·g·h amb ½·m·v².</div>
       
       <div class="exercise-section" aria-label="Exercicis del dossier: Treball i energia mecànica">
-          <h3 class="sequence-title"><span>04</span> ACTIVITATS · Exercicis de les diapositives</h3>
-          <p class="exercise-intro">Resol cada enunciat després d'estudiar la teoria i els exemples d'aquest bloc. Pots consultar la <strong>resposta final</strong> quan l'hagis intentat.</p>
+          <h3 class="sequence-title"><span>04</span> EXERCICIS DOSSIER</h3>
+          <p class="exercise-intro"><strong>Cal resoldre aquests exercicis al dossier i lliurar-los.</strong> Fes els càlculs després de la teoria i consulta la resposta final només per comprovar el resultat.</p>
           <div class="exercise-list"><article class="exercise-card" id="exercici-1r-1" aria-labelledby="ex-title-1">
               <div class="exercise-card-heading"><span class="exercise-number">01</span><h4 id="ex-title-1">Exercici 1</h4></div>
               <p class="exercise-origin">Font PAU · 2024 · Juny · Sèrie 1 · Exercici 4 · Enunciat adaptat</p>
@@ -365,8 +367,8 @@
       <div class="tip"><strong>Compte:</strong> <strong>kW</strong> és potència, però <strong>kWh</strong> és energia. 1 kWh = 3,6 · 10<sup>6</sup> J.</div>
       
       <div class="exercise-section" aria-label="Exercicis del dossier: Potència, energia i cost">
-          <h3 class="sequence-title"><span>04</span> ACTIVITATS · Exercicis de les diapositives</h3>
-          <p class="exercise-intro">Resol cada enunciat després d'estudiar la teoria i els exemples d'aquest bloc. Pots consultar la <strong>resposta final</strong> quan l'hagis intentat.</p>
+          <h3 class="sequence-title"><span>04</span> EXERCICIS DOSSIER</h3>
+          <p class="exercise-intro"><strong>Cal resoldre aquests exercicis al dossier i lliurar-los.</strong> Fes els càlculs després de la teoria i consulta la resposta final només per comprovar el resultat.</p>
           <div class="exercise-list"><article class="exercise-card" id="exercici-1r-3" aria-labelledby="ex-title-3">
               <div class="exercise-card-heading"><span class="exercise-number">03</span><h4 id="ex-title-3">Exercici 3</h4></div>
               <p class="exercise-origin">Font PAU · 2022 · Juny · Sèrie 2 · Exercici 3 · Enunciat adaptat</p>
@@ -392,8 +394,8 @@
       <div class="tip"><strong>Exercicis 5–7:</strong> si et donen 50 mL d'aigua, pots considerar 0,05 kg quan ρ = 1 kg/L. Per a diferències de temperatura, un canvi d'1 °C equival a un canvi d'1 K.</div>
       
       <div class="exercise-section" aria-label="Exercicis del dossier: Calor, temperatura i canvis d’estat">
-          <h3 class="sequence-title"><span>04</span> ACTIVITATS · Exercicis de les diapositives</h3>
-          <p class="exercise-intro">Resol cada enunciat després d'estudiar la teoria i els exemples d'aquest bloc. Pots consultar la <strong>resposta final</strong> quan l'hagis intentat.</p>
+          <h3 class="sequence-title"><span>04</span> EXERCICIS DOSSIER</h3>
+          <p class="exercise-intro"><strong>Cal resoldre aquests exercicis al dossier i lliurar-los.</strong> Fes els càlculs després de la teoria i consulta la resposta final només per comprovar el resultat.</p>
           <div class="exercise-list"><article class="exercise-card" id="exercici-1r-4" aria-labelledby="ex-title-4">
               <div class="exercise-card-heading"><span class="exercise-number">04</span><h4 id="ex-title-4">Exercici 4</h4></div>
               <p class="exercise-origin">Font PAU · 2025 · Juny · Sèrie 1 · Exercici 1, qüestió 6 · Enunciat adaptat</p>
@@ -436,8 +438,8 @@
       <div class="worked"><h3>🧮 Exemple de l'exercici 8</h3><p>Un escalfador de 1.200 W funciona a 230 V. Si és resistiu, <strong>R = V² / P = 230² / 1.200 = 44,08 Ω</strong>.</p></div>
       
       <div class="exercise-section" aria-label="Exercicis del dossier: Electricitat i resistència">
-          <h3 class="sequence-title"><span>04</span> ACTIVITATS · Exercicis de les diapositives</h3>
-          <p class="exercise-intro">Resol cada enunciat després d'estudiar la teoria i els exemples d'aquest bloc. Pots consultar la <strong>resposta final</strong> quan l'hagis intentat.</p>
+          <h3 class="sequence-title"><span>04</span> EXERCICIS DOSSIER</h3>
+          <p class="exercise-intro"><strong>Cal resoldre aquests exercicis al dossier i lliurar-los.</strong> Fes els càlculs després de la teoria i consulta la resposta final només per comprovar el resultat.</p>
           <div class="exercise-list"><article class="exercise-card" id="exercici-1r-8" aria-labelledby="ex-title-8">
               <div class="exercise-card-heading"><span class="exercise-number">08</span><h4 id="ex-title-8">Exercici 8</h4></div>
               <p class="exercise-origin">Font PAU · 2022 · Juny · Sèrie 5 · Exercici 4 · Enunciat adaptat</p>
@@ -463,8 +465,8 @@
       <div class="tip"><strong>Exercicis 10–12:</strong> converteix primer les energies a la mateixa unitat. En el cas de la biomassa, per calcular el rendiment hauràs de comparar l'energia útil obtinguda amb la del combustible.</div>
       
       <div class="exercise-section" aria-label="Exercicis del dossier: Balanç energètic i rendiment">
-          <h3 class="sequence-title"><span>04</span> ACTIVITATS · Exercicis de les diapositives</h3>
-          <p class="exercise-intro">Resol cada enunciat després d'estudiar la teoria i els exemples d'aquest bloc. Pots consultar la <strong>resposta final</strong> quan l'hagis intentat.</p>
+          <h3 class="sequence-title"><span>04</span> EXERCICIS DOSSIER</h3>
+          <p class="exercise-intro"><strong>Cal resoldre aquests exercicis al dossier i lliurar-los.</strong> Fes els càlculs després de la teoria i consulta la resposta final només per comprovar el resultat.</p>
           <div class="exercise-list"><article class="exercise-card" id="exercici-1r-9" aria-labelledby="ex-title-9">
               <div class="exercise-card-heading"><span class="exercise-number">09</span><h4 id="ex-title-9">Exercici 9</h4></div>
               <p class="exercise-origin">Font PAU · 2023 · Juny · Sèrie 1 · Exercici 1, qüestió 1 · Enunciat adaptat</p>
@@ -700,8 +702,8 @@
       <div class="worked"><h3>🧮 Exemple de l'exercici 14</h3><p>Un motor de 4 temps gira a 2.500 min⁻¹ i consumeix 7,5 kg/h. Fa <strong>1.250 cicles/min</strong>. Consumeix 7.500 / 60 = 125 g/min; per tant, <strong>0,1 g/cicle</strong>. En 100 cicles, <strong>10 g</strong>.</p></div>
       <div class="tip"><strong>Exercicis 13 i 16:</strong> no confonguis energia útil amb energia química. A l'exercici 16, passa de massa a litres amb la densitat, i després de litres a emissions de CO₂.</div>
             <div class="exercise-section" aria-label="Exercicis del dossier: Combustibles i motors">
-          <h3 class="sequence-title"><span>09</span> ACTIVITATS · Exercicis de les diapositives</h3>
-          <p class="exercise-intro">Resol cada enunciat després d'estudiar la teoria i els exemples d'aquest bloc. Pots consultar la <strong>resposta final</strong> quan l'hagis intentat.</p>
+          <h3 class="sequence-title"><span>09</span> EXERCICIS DOSSIER</h3>
+          <p class="exercise-intro"><strong>Cal resoldre aquests exercicis al dossier i lliurar-los.</strong> Fes els càlculs després de la teoria i consulta la resposta final només per comprovar el resultat.</p>
           <div class="exercise-list"><article class="exercise-card" id="exercici-1r-13" aria-labelledby="ex-title-13">
               <div class="exercise-card-heading"><span class="exercise-number">13</span><h4 id="ex-title-13">Exercici 13</h4></div>
               <p class="exercise-origin">Font PAU · 2023 · Juny · Sèrie 1 · Exercici 1, qüestió 2 · Enunciat adaptat</p>
@@ -745,8 +747,8 @@
       <div class="tip"><strong>Exercicis 18–21:</strong> si calcules costos, separa aigua i combustible abans de sumar. Si un fogonet funciona al 30 % del cabal durant 18 minuts, aplica aquest percentatge al cabal i converteix els minuts a hores.</div>
       
       <div class="exercise-section" aria-label="Exercicis del dossier: Sistemes tèrmics">
-          <h3 class="sequence-title"><span>04</span> ACTIVITATS · Exercicis de les diapositives</h3>
-          <p class="exercise-intro">Resol cada enunciat després d'estudiar la teoria i els exemples d'aquest bloc. Pots consultar la <strong>resposta final</strong> quan l'hagis intentat.</p>
+          <h3 class="sequence-title"><span>04</span> EXERCICIS DOSSIER</h3>
+          <p class="exercise-intro"><strong>Cal resoldre aquests exercicis al dossier i lliurar-los.</strong> Fes els càlculs després de la teoria i consulta la resposta final només per comprovar el resultat.</p>
           <div class="exercise-list"><article class="exercise-card" id="exercici-1r-17" aria-labelledby="ex-title-17">
               <div class="exercise-card-heading"><span class="exercise-number">17</span><h4 id="ex-title-17">Exercici 17</h4></div>
               <p class="exercise-origin">Font PAU · 2024 · Juny · Sèrie 5 · Exercici 6 · Enunciat adaptat</p>
@@ -877,8 +879,8 @@
       <div class="tip"><strong>Important:</strong> a la fórmula de Carnot sempre utilitza kelvins, mai directament graus Celsius.</div>
       
       <div class="exercise-section" aria-label="Exercicis del dossier: Màquines tèrmiques i Carnot">
-          <h3 class="sequence-title"><span>04</span> ACTIVITATS · Exercicis de les diapositives</h3>
-          <p class="exercise-intro">Resol cada enunciat després d'estudiar la teoria i els exemples d'aquest bloc. Pots consultar la <strong>resposta final</strong> quan l'hagis intentat.</p>
+          <h3 class="sequence-title"><span>04</span> EXERCICIS DOSSIER</h3>
+          <p class="exercise-intro"><strong>Cal resoldre aquests exercicis al dossier i lliurar-los.</strong> Fes els càlculs després de la teoria i consulta la resposta final només per comprovar el resultat.</p>
           <div class="exercise-list"><article class="exercise-card" id="exercici-1r-22" aria-labelledby="ex-title-22">
               <div class="exercise-card-heading"><span class="exercise-number">22</span><h4 id="ex-title-22">Exercici 22</h4></div>
               <p class="exercise-origin">Font PAU · 2024 · Setembre · Sèrie 3 · Exercici 1, qüestió 2 · Enunciat adaptat</p>
