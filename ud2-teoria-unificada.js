@@ -42,6 +42,51 @@ const NOTE=[
 ];
 function N(t,c,txt){const e=document.createElement(t);if(c)e.className=c;if(txt!==undefined)e.textContent=txt;return e}
 function A(parent,tag,value,cls){const e=N(tag,cls,value);parent.append(e);return e}
+function miningStory(){
+ const section=N('section','ud2-resource-story');
+ section.setAttribute('aria-label','Per què estudiem les matèries primeres i d’on provenen');
+ section.innerHTML=`<div class="ud2-resource-hero">
+  <span class="ud2-resource-kicker">🌍 DE LA NATURA A LA TECNOLOGIA</span>
+  <h3>Abans d’un mòbil, una bicicleta o una bombeta… hi ha recursos naturals.</h3>
+  <p>Els materials no apareixen a les fàbriques per art de màgia: cal <strong>obtenir-los, transformar-los i transportar-los</strong>. Saber d’on venen ens ajuda a prendre decisions tecnològiques més responsables.</p>
+  <div class="ud2-resource-reasons">
+    <div><span aria-hidden="true">🔎</span><strong>Conèixer l’origen</strong><small>Quin recurs necessitem i on es troba?</small></div>
+    <div><span aria-hidden="true">⚡</span><strong>Entendre l’energia</strong><small>Com es transforma un combustible en moviment, calor o electricitat?</small></div>
+    <div><span aria-hidden="true">🌱</span><strong>Valorar l’impacte</strong><small>Quanta aigua, energia i terreny utilitzem? Es pot reparar o reciclar?</small></div>
+  </div>
+</div>
+<div class="ud2-resource-atlas">
+  <div class="ud2-resource-heading"><span class="ud2-resource-kicker">🧭 QUATRE ORÍGENS DIFERENTS</span><h3>D’on surten les matèries primeres?</h3><p>Compara el lloc on s’obté cada recurs amb els productes que podem fabricar.</p></div>
+  <div class="ud2-resource-cards">
+    <article class="ud2-resource-card mineral"><span class="ud2-resource-icon" aria-hidden="true">⛏️</span><span class="ud2-resource-type">SUBSÒL · MINES</span><h4>Metalls i minerals</h4><p>El coure s’obté de minerals; l’alumini, principalment de la bauxita. Cal extreure i processar la roca.</p><div class="ud2-resource-use"><b>Els trobem a…</b> cables, bicicletes, mòbils i estructures.</div></article>
+    <article class="ud2-resource-card oil"><span class="ud2-resource-icon" aria-hidden="true">🛢️</span><span class="ud2-resource-type">JACIMENTS · POUS</span><h4>Petroli</h4><p>És un combustible fòssil format durant milions d’anys. S’extreu perforant i es transforma a les refineries.</p><div class="ud2-resource-use"><b>En fem…</b> gasolina, gasoil i matèries per fabricar plàstics.</div></article>
+    <article class="ud2-resource-card gas"><span class="ud2-resource-icon" aria-hidden="true">🔥</span><span class="ud2-resource-type">JACIMENTS · POUS</span><h4>Gas natural</h4><p>És una barreja de gasos, principalment metà. Es troba en roques del subsòl i arriba per gasoductes o vaixells.</p><div class="ud2-resource-use"><b>El fem servir per a…</b> calefacció, indústria i centrals elèctriques.</div></article>
+    <article class="ud2-resource-card bio"><span class="ud2-resource-icon" aria-hidden="true">🌳</span><span class="ud2-resource-type">BOSCOS I CONREUS</span><h4>Recursos biològics</h4><p>La fusta, el cotó i el suro provenen d’éssers vius. Es poden renovar si el consum respecta la regeneració.</p><div class="ud2-resource-use"><b>En fem…</b> mobles, roba i aïllaments.</div></article>
+  </div>
+  <p class="ud2-resource-note">💡 <strong>Important:</strong> el petroli, el gas natural i els minerals metàl·lics són recursos no renovables a escala humana. Reciclar metalls no fa que el jaciment es renovi, però redueix la necessitat d’extreure’n més.</p>
+</div>`;
+ return section;
+}
+function miningEnergyChain(){
+ const section=N('section','ud2-energy-chain');
+ section.setAttribute('aria-label','Com es transforma el gas natural en electricitat i comparació amb altres fonts');
+ section.innerHTML=`<span class="ud2-resource-kicker">⚡ DE LA FONT A L’ELECTRICITAT</span>
+<h3>Com pot el gas natural encendre un llum?</h3>
+<p class="ud2-energy-lead">Una central elèctrica <strong>no crea energia del no-res</strong>: transforma l’energia química del combustible en calor, moviment i finalment electricitat.</p>
+<ol class="ud2-energy-steps">
+  <li><span class="ud2-energy-step-icon" aria-hidden="true">🛢️</span><b>1. S’extreu el gas</b><small>D’un jaciment subterrani i es transporta fins a la central.</small></li>
+  <li><span class="ud2-energy-step-icon" aria-hidden="true">🔥</span><b>2. Es crema</b><small>La combustió allibera calor i fa moure gasos a alta temperatura.</small></li>
+  <li><span class="ud2-energy-step-icon" aria-hidden="true">⚙️</span><b>3. Gira una turbina</b><small>Els gasos calents mouen la turbina connectada a un alternador.</small></li>
+  <li><span class="ud2-energy-step-icon" aria-hidden="true">💡</span><b>4. Arriba electricitat</b><small>L’alternador converteix el moviment en energia elèctrica.</small></li>
+</ol>
+<div class="ud2-energy-highlight"><strong>♻️ I en una central de cicle combinat?</strong><p>La calor dels gasos d’escapament també serveix per produir vapor d’aigua. Aquest vapor fa girar una <strong>segona turbina</strong> i s’aprofita millor l’energia del gas.</p></div>
+<div class="ud2-energy-compare">
+  <div class="ud2-energy-mini oil"><b>🛢️ Petroli: una altra ruta</b><p>Petroli cru → refineria → gasolina o gasoil → motor → moviment i calor. També pot utilitzar-se com a combustible en algunes centrals, però és molt habitual en el transport.</p></div>
+  <div class="ud2-energy-mini renewable"><b>☀️🌬️ Fonts renovables</b><p>La placa fotovoltaica transforma directament la llum en electricitat. En canvi, el vent i l’aigua fan girar turbines connectades a generadors.</p></div>
+</div>
+<div class="ud2-energy-check"><span aria-hidden="true">🧠</span><p><strong>Queda’t amb aquesta idea:</strong> l’energia es transforma, però en cada procés una part es dispersa, sovint en forma de calor. Per això estudiem el <em>rendiment</em> de les màquines.</p></div>`;
+ return section;
+}
 function diagram(i){
  const fig=N('figure','ud2-solid-diagram');
  const s=document.createElementNS('http://www.w3.org/2000/svg','svg');s.setAttribute('viewBox','0 0 930 226');
@@ -81,6 +126,7 @@ function rewrite(panel,i){
  const entries=subs.map(details);
  const body=N('article','ud2-solid-article');
  const intro=N('div','ud2-solid-intro');A(intro,'p',T[i].intro,'ud2-solid-lead');A(intro,'p',T[i].context);body.append(intro);
+ if(i===2)body.append(miningStory());
  const figure=N('figure','ud2-technical-figure');
  const ranges=SEG[i];
  for(let k=0;k<ranges.length-1;k++){
@@ -88,7 +134,10 @@ function rewrite(panel,i){
   if(slice.length){
    body.append(buildChapter(slice,H[i][k]||'Contingut tècnic'));
    // Cada imatge apareix DESPRÉS de la teoria a què fa referència.
-   if(k===0)body.append(diagram(i));
+   if(k===0){
+    if(i===2)body.append(miningEnergyChain());
+    else body.append(diagram(i));
+   }
    if(k===ranges.length-2)body.append(figure);
   }
  }
