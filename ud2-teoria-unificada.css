@@ -313,3 +313,9 @@
  .ud2-plant-node>span{grid-row:span 2}
  .ud2-plant-flow>i{transform:rotate(90deg);line-height:18px}
 }
+
+.ud2-plant-photo{margin:17px 0 19px;overflow:hidden;border-radius:14px;background:#f5f2f7;border:1px solid #e7d8e9}
+.ud2-plant-photo img{display:block;width:100%;height:clamp(220px,34vw,360px);object-fit:cover;object-position:center}
+.ud2-plant-photo figcaption{padding:10px 14px;font-size:12px;line-height:1.6;color:#594a63;background:#fff}
+.ud2-plant-photo figcaption a{color:#7b3f8f;text-decoration:underline;text-underline-offset:2px}
+@media(max-width:600px){.ud2-plant-photo img{height:225px}}
