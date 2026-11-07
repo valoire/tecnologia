@@ -323,7 +323,8 @@ function init(){
  const categories=[
   ['📖','TEORIA I ACTIVITATS','7 apartats, pas a pas'],
   ['🛠️','TALLER','7 sessions seguides'],
-  ['🎤','DEBAT','Parlem i argumentem']
+  ['🎤','DEBAT','Parlem i argumentem'],
+   ['📝','QÜESTIONARI FINAL','10 preguntes per repassar']
  ];
  const nav=make('nav','ud2-simple-menu');
  nav.setAttribute('aria-label','Tria el teu espai de la unitat');
@@ -519,13 +520,13 @@ function init(){
   showDebateStep(0);
  }
 
- // El qüestionari es manté fora de les pestanyes, al final de tota la unitat.
+ // El qüestionari té una pestanya pròpia i no es mostra als altres apartats.
  footer.classList.add('ud2-final-quiz-footer');
  footer.hidden=false;
  quiz.hidden=false;
  hub.querySelector('.ud2-quiz-shortcut')?.remove();
  const desc=hub.querySelector(':scope > p:not(.concept-eyebrow)');
- if(desc)desc.textContent='Tria teoria, taller o debat. El qüestionari final és al final de la pàgina.';
+ if(desc)desc.textContent='Tria teoria, taller, debat o qüestionari final.';
 
  themeTabs.forEach((tab,i)=>{if(i>=7)tab.hidden=true;});
  let lastTheory=0;
@@ -541,8 +542,9 @@ function init(){
   frame.classList.toggle('ud2-workshop-frame',i===1);
   frame.classList.toggle('ud2-debate-frame',i===2);
   if(actions)actions.hidden=i!==0;
-  // El qüestionari final només pertany a TEORIA I ACTIVITATS.
-  footer.hidden=i!==0;
+  // Només es mostra quan s'obre la seva pestanya.
+  frame.hidden=i===3;
+  footer.hidden=i!==3;
   if(scroll)main.scrollIntoView({
    block:'start',
    behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'
@@ -555,6 +557,7 @@ function init(){
   showCategory(i<7?0:i===7?1:2);
  }
  selectors.forEach((b,i)=>b.addEventListener('click',()=>{
+  if(i===3){showCategory(3,true);return;}
   themeTabs[i===0?lastTheory:i===1?7:8].click();
   syncFromTabs();
  }));
@@ -601,6 +604,7 @@ function init(){
  simplifyWorkshop();
  syncFromTabs();
  if(location.hash==='#ud2-questionari-final'||new URLSearchParams(location.search).get('seccio')==='questionari'){
+  showCategory(3);
   requestAnimationFrame(()=>quiz.scrollIntoView({block:'start',behavior:'auto'}));
  }
 }
