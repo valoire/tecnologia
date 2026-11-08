@@ -46,6 +46,14 @@ function courseIndex(g){
    u.blocs.forEach((b,i)=>body.append(menuLink(linkOf(u,g,i+1),emojiFor(u,i),'Sessió '+(i+1)+' · '+b.titol,'Entrar directament al tema')));
    details.append(body);host.append(details);
  });
+ if(g==='optativa'){
+  const link=el('a','dossier-course-card');link.href='dossier.html';
+  link.append(el('span','dossier-course-icon','📒'));
+  const info=el('span');
+  info.append(el('strong','','Lliurament del dossier'),el('small','','Requisits, apunts de classe i criteris de presentació'));
+  link.append(info,el('span','dossier-course-arrow','→'));
+  host.append(link);
+ }
  const p=document.querySelector('.section-heading p');
  if(p)p.textContent='Desplega una UD i entra directament al tema que treballarem avui. ✨';
 }
