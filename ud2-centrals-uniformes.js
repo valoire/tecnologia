@@ -11,14 +11,14 @@
  const shaft=d=>line(d,'#8261a4',9);
  const electric=d=>line(d,'#d5a83c',6,'marker-end="url(#gold-arr)"');
  function turbine(cx,cy,name='TURBINA'){
-  let s=rect(cx-68,cy-66,136,125,'#e7f0f4','#7497ac',14);
+  let s=`<path d="M ${cx-73} ${cy-62} L ${cx+75} ${cy-40} L ${cx+75} ${cy+47} L ${cx-73} ${cy+61} Z" fill="#e5f1f6" stroke="#618ba5" stroke-width="4"/>`;
   s+=dot(cx,cy-5,45,'#f8fcfe','#688ba3');
   for(let i=0;i<6;i++)s+=`<path d="M ${cx} ${cy-5} l 11 -37 q 25 15 3 38 Z" fill="#71a3bb" transform="rotate(${i*60} ${cx} ${cy-5})"/>`;
   s+=dot(cx,cy-5,10,'#fff','#52778e');
   return s+label(cx,cy+88,name,18);
  }
  function alternator(cx,cy){
-  return rect(cx-65,cy-61,130,115,'#fff1d7','#d2ad68',18)+dot(cx,cy-4,38,'#fff','#c6a35f')+label(cx,cy+5,'G',31,'middle',900,'#a27e3b')+label(cx,cy+85,'ALTERNADOR',17);
+  return rect(cx-65,cy-61,130,115,'#f9d991','#bd934a',18)+dot(cx,cy-4,38,'#fff9e8','#c6a35f')+label(cx,cy+5,'G',31,'middle',900,'#a27e3b')+label(cx,cy+85,'ALTERNADOR',17);
  }
  function transformer(cx,cy){
   return rect(cx-51,cy-51,102,100,'#f1eafd','#aa8bca',13)+line(`M ${cx-29} ${cy-25} q 23 -22 23 0 t 23 0 t 23 0`,'#8a69b1',5)+line(`M ${cx-29} ${cy+15} q 23 -22 23 0 t 23 0 t 23 0`,'#8a69b1',5)+label(cx,cy+76,'TRANSFORMADOR',16);
@@ -48,13 +48,14 @@
  function thermal(){
   let s=rect(22,316,116,90,'#f8e4cc','#c59c70',13)+label(80,348,'GAS',20)+label(80,373,'NATURAL',17);
   s+=hot('M 138 355 H 197')+steamBoiler(283,289,'CALDERA / COMBUSTIÓ');
+  s+=`<path d="M 275 373 q -35 -40 -10 -73 q 0 35 27 18 q 25 40 -17 55Z" fill="#f59c2f" stroke="#d97727" stroke-width="3"/>`;
   s+=line('M 210 202 H 140 V 87','#9c9fa4',12)+rect(121,45,39,107,'#e1e2e4','#acadb0',5)+label(153,31,'XEMENEIA',15);
   s+=hot('M 284 196 V 115 H 553')+label(429,93,'VAPOR A PRESSIÓ',18);
   s+=turbine(626,170,'TURBINA DE VAPOR')+shaft('M 693 165 H 756')+alternator(824,171);
   s+=electric('M 890 170 H 1018')+label(1019,143,'XARXA',17);
   s+=cold('M 625 235 V 328')+condenser(626,375);
   s+=cold('M 546 412 H 389')+pump(367,412)+cold('M 341 412 H 284 V 384');
-  s+=label(488,473,'AIGUA LÍQUIDA (RETORN A LA CALDERA)',15);
+  s+=label(488,473,'RETORN DE L’AIGUA A LA CALDERA',15);
   s+=rect(864,337,195,81,'#e7f6fa','#7db7ce',12)+label(961,369,'REFRIGERACIÓ',16)+label(961,394,'Aigua freda / calenta',14);
   s+=cold('M 865 355 H 721 V 355')+line('M 708 395 H 864','#e57547',7,'marker-end="url(#orange-arr)"');
   return s;
@@ -83,7 +84,7 @@
   const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('viewBox','0 0 1100 520');svg.setAttribute('role','img');
   svg.setAttribute('aria-label','Esquema tècnic en català: '+item.name);
   const defs=`<defs><marker id="orange-arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6Z" fill="#e57547"/></marker><marker id="blue-arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6Z" fill="#3f9fc9"/></marker><marker id="gold-arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6Z" fill="#d5a83c"/></marker></defs>`;
-  svg.innerHTML=defs+rect(5,5,1090,509,'#fffcf8','#ead4e7',20)+label(35,47,item.name.toUpperCase(),24,'start',900,'#783987')+item.draw();
+  svg.innerHTML=defs+rect(5,5,1090,509,'#f7fbfd','#bad8e9',20)+`<path d="M 17 442 H 1083" stroke="#d9e1d4" stroke-width="4"/><path d="M 17 447 H 1083 V 502 H 17 Z" fill="#f3eee2"/>`+label(35,47,item.name.toUpperCase(),24,'start',900,'#416c83')+item.draw();
   const caption=document.createElement('figcaption');caption.textContent=item.desc+' Llegenda: taronja = calor o vapor calent · blau = aigua · lila = eix mecànic · groc = electricitat.';
   el.append(svg,caption);return el;
  }
