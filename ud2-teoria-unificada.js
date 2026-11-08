@@ -81,6 +81,46 @@ function miningStory(){
    </svg>
    <figcaption><strong>On extraiem les matèries primeres?</strong> Els jaciments de minerals, petroli i gas que aprofitem es troben a l'<strong>escorça terrestre</strong>, no al nucli ni al mantell. Les capes del dibuix són esquemàtiques i no estan a escala.</figcaption>
   </figure>
+  <figure class="ud2-crust-figure">
+   <svg viewBox="0 0 1080 510" role="img" aria-label="Tall geològic de l'escorça terrestre: capes de roca, filó mineral, mina, mena i ganga">
+    <rect x="0" y="0" width="1080" height="510" rx="20" fill="#eef7fd"/>
+    <text x="32" y="43" font-size="27" font-weight="900" fill="#446c85">ON TROBEM LA MENA I LA GANGA?</text>
+    <path d="M0 160 L130 122 L280 147 L415 97 L550 145 L690 115 L825 151 L950 116 L1080 155 V510 H0Z" fill="#b89c84" stroke="#8f705e" stroke-width="4"/>
+    <path d="M0 202 Q160 145 330 198 T690 185 T1080 198 V510 H0Z" fill="#cdb299"/>
+    <path d="M0 278 Q160 244 320 287 T690 275 T1080 282 V510 H0Z" fill="#a99079"/>
+    <path d="M0 382 Q185 346 350 388 T700 372 T1080 381 V510 H0Z" fill="#806d60"/>
+    <path d="M475 131 Q490 196 516 233 L554 307 L605 387 L641 488 L699 510 H635 L580 421 L526 338 L480 272 L443 184Z" fill="#3f879e" stroke="#285e77" stroke-width="4"/>
+    <g fill="#f7c05c" stroke="#a87938" stroke-width="3">
+      <path d="M474 186 l20 8 2 28 -18 14 -10 -19Z"/><path d="M507 262 l24 7 14 33 -26 10 -13 -21Z"/><path d="M552 339 l26 7 11 34 -25 14 -15 -24Z"/><path d="M599 422 l20 7 12 29 -21 12 -18 -20Z"/>
+    </g>
+    <path d="M190 149 V275 H503" fill="none" stroke="#524947" stroke-width="31" stroke-linejoin="round"/>
+    <path d="M190 150 V274 H504" fill="none" stroke="#e0d5bb" stroke-width="23" stroke-linejoin="round"/>
+    <rect x="134" y="102" width="113" height="36" rx="7" fill="#777d82"/>
+    <rect x="149" y="90" width="85" height="14" fill="#a5a7a9"/>
+    <path d="M159 89 L190 53 L222 89" fill="none" stroke="#67717b" stroke-width="8"/>
+    <text x="270" y="78" font-size="20" font-weight="800" fill="#584a45">BOCA DE LA MINA</text>
+    <path d="M275 89 L213 119" stroke="#6a605d" stroke-width="3"/>
+    <text x="54" y="332" font-size="20" font-weight="800" fill="#fff">ROCA</text>
+    <text x="54" y="358" font-size="20" font-weight="800" fill="#fff">EN CAPES</text>
+    <path d="M650 245 L793 192" stroke="#226c89" stroke-width="4"/>
+    <rect x="790" y="125" width="259" height="139" rx="14" fill="#fff" stroke="#b7cfdb" stroke-width="3"/>
+    <text x="812" y="158" font-size="21" font-weight="900" fill="#286c89">FILÓ MINERAL</text>
+    <text x="812" y="188" font-size="17" fill="#44515b">Zona de roca que conté</text>
+    <text x="812" y="212" font-size="17" fill="#44515b">minerals d'interès i</text>
+    <text x="812" y="236" font-size="17" fill="#44515b">minerals acompanyants.</text>
+    <path d="M614 425 L797 370" stroke="#a77939" stroke-width="4"/>
+    <rect x="791" y="311" width="263" height="169" rx="14" fill="#fff" stroke="#d5c3ab" stroke-width="3"/>
+    <circle cx="819" cy="345" r="12" fill="#f7c05c" stroke="#a87938" stroke-width="3"/>
+    <text x="842" y="352" font-size="19" font-weight="900" fill="#6f542e">MENA</text>
+    <text x="814" y="381" font-size="16" fill="#52505a">Mineral que volem aprofitar</text>
+    <circle cx="819" cy="408" r="12" fill="#ad917b" stroke="#806d60" stroke-width="3"/>
+    <text x="842" y="415" font-size="19" font-weight="900" fill="#6d594b">GANGA</text>
+    <text x="814" y="445" font-size="16" fill="#52505a">Minerals que l'acompanyen</text>
+    <text x="814" y="466" font-size="15" fill="#52505a">i se separen durant el procés</text>
+    <text x="35" y="477" font-size="18" font-weight="800" fill="#fff">ESCORÇA TERRESTRE · TALL ESQUEMÀTIC</text>
+   </svg>
+   <figcaption>Un <strong>filó</strong> és una zona mineralitzada dins de l'escorça. La mina arriba fins a la roca que interessa extreure. Després, a la planta de tractament, se separen els minerals de la <strong>mena</strong> dels minerals de la <strong>ganga</strong>. Dibuix esquemàtic, no a escala.</figcaption>
+  </figure>
   <div class="ud2-ore-explainer">
    <h3>⛏️ Què són la mena i la ganga?</h3>
    <p>Quan extraiem una roca d'una mina, sovint hi ha una barreja de minerals. La <strong>mena</strong> és la part de la qual ens interessa obtenir una substància útil (per exemple, coure). La <strong>ganga</strong> és el material que l'acompanya i que no s'aprofita en aquell procés.</p>
