@@ -46,7 +46,7 @@ function courseIndex(g){
    u.blocs.forEach((b,i)=>body.append(menuLink(linkOf(u,g,i+1),emojiFor(u,i),'Sessió '+(i+1)+' · '+b.titol,'Entrar directament al tema')));
    details.append(body);host.append(details);
  });
- if(g==='optativa'){
+ {
   const link=el('a','dossier-course-card');link.href='dossier.html';
   link.append(el('span','dossier-course-icon','📒'));
   const info=el('span');
