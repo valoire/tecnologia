@@ -355,3 +355,8 @@
 .ud2-topic-redesign .ud2-plant-full-scheme{border:2px solid #d5dfec;background:#fff;padding:10px}
 .ud2-topic-redesign .ud2-plant-full-scheme figcaption{color:#536778;background:#f4f8fc}
 @media(max-width:720px){.ud2-topic-redesign .ud2-ore-photos{grid-template-columns:1fr}.ud2-topic-redesign .ud2-ore-photos img{height:245px}.ud2-topic-redesign .ud2-plant-photo img{height:230px}}
+
+.ud2-topic-redesign .ud2-crust-figure{margin:24px 0;padding:12px;border:2px solid #cbdce8;border-radius:19px;background:#fff;overflow:hidden}
+.ud2-topic-redesign .ud2-crust-figure svg{display:block;width:100%;height:auto}
+.ud2-topic-redesign .ud2-crust-figure figcaption{font-size:14px;line-height:1.65;color:#526678;background:#f1f7fb;padding:14px 17px;border-radius:10px;margin-top:9px}
+@media(max-width:700px){.ud2-topic-redesign .ud2-crust-figure{overflow-x:auto}.ud2-topic-redesign .ud2-crust-figure svg{min-width:740px}}
