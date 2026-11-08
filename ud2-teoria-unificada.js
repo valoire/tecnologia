@@ -84,19 +84,10 @@ function miningStory(){
   <div class="ud2-ore-explainer">
    <h3>⛏️ Què són la mena i la ganga?</h3>
    <p>Quan extraiem una roca d'una mina, sovint hi ha una barreja de minerals. La <strong>mena</strong> és la part de la qual ens interessa obtenir una substància útil (per exemple, coure). La <strong>ganga</strong> és el material que l'acompanya i que no s'aprofita en aquell procés.</p>
-   <svg viewBox="0 0 920 295" role="img" aria-label="Roca extreta de la mina amb cristalls blaus de mena i matriu marró de ganga, separades durant el tractament">
-    <rect width="920" height="295" rx="18" fill="#fffaf1"/>
-    <path d="M65 200 L90 83 L220 47 L328 105 L348 225 L248 260 L115 244 Z" fill="#bda18b" stroke="#826852" stroke-width="5"/>
-    <path d="M105 112 l34 -35 45 21 -12 54 -44 20 Z M218 151 l38 -33 43 29 -16 46 -45 16 Z M160 204 l29 -31 36 23 -14 36 -38 6 Z" fill="#3b9bb8" stroke="#226f96" stroke-width="4"/>
-    <circle cx="130" cy="187" r="7" fill="#3b9bb8"/><circle cx="288" cy="209" r="8" fill="#3b9bb8"/>
-    <path d="M348 160 H468" stroke="#a77747" stroke-width="6" stroke-linecap="round"/><path d="M450 144 L475 160 L450 176" fill="none" stroke="#a77747" stroke-width="6"/>
-    <rect x="510" y="58" width="170" height="164" rx="18" fill="#eaf8fc" stroke="#7dbacf" stroke-width="4"/>
-    <path d="M541 158 L569 100 L605 140 L637 87 L655 172 Z" fill="#3b9bb8" stroke="#226f96" stroke-width="4"/>
-    <rect x="707" y="58" width="170" height="164" rx="18" fill="#f1ebe4" stroke="#c7b5a0" stroke-width="4"/>
-    <path d="M728 178 L745 102 L786 130 L811 89 L850 178 Z" fill="#baa18b" stroke="#8a6e57" stroke-width="4"/>
-    <g font-family="Arial,sans-serif" font-size="20" font-weight="900" text-anchor="middle" fill="#553e5b"><text x="210" y="286">ROCA EXTRETA</text><text x="595" y="250">MENA</text><text x="795" y="250">GANGA</text></g>
-    <text x="595" y="276" font-size="16" text-anchor="middle" fill="#43758c">Mineral d'interès</text><text x="795" y="276" font-size="16" text-anchor="middle" fill="#806b5c">Material a separar</text>
-   </svg>
+   <div class="ud2-ore-photos">
+    <figure><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Chalcopyrite_Cross-section.jpg?width=960" alt="Tall real d'una roca mineralitzada amb un gra de calcopirita, mineral del qual es pot obtenir coure" loading="lazy" decoding="async"><figcaption><strong>Exemple de mena:</strong> calcopirita en una roca mineralitzada. <a href="https://commons.wikimedia.org/wiki/File:Chalcopyrite_Cross-section.jpg" target="_blank" rel="noopener noreferrer">Foto: TimBomBom1 · CC BY-SA 4.0</a></figcaption></figure>
+    <figure><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Pentlandita_de_la_Mina_Aguablanca.png?width=960" alt="Mostra de roca gabre amb pentlandita i calcopirita, procedent de la mina Aguablanca" loading="lazy" decoding="async"><figcaption><strong>Mena i roca acompanyant:</strong> pentlandita i calcopirita dins de gabre; la separació depèn del mineral que es vol obtenir. <a href="https://commons.wikimedia.org/wiki/File:Pentlandita_de_la_Mina_Aguablanca.png" target="_blank" rel="noopener noreferrer">Foto: Darth vader 92 · CC BY-SA 4.0</a></figcaption></figure>
+   </div>
    <p class="ud2-ore-example"><strong>Exemple:</strong> en una mina de coure, se separen els minerals que contenen coure de la resta de roca. La mena no és coure pur: encara s'ha de tractar per obtenir el metall.</p>
   </div>
     <p class="ud2-resource-note"><strong>Recorda:</strong> renovable no vol dir inesgotable, i reciclable no vol dir renovable. Per exemple, el coure és no renovable però reciclable; la fusta es pot renovar si el bosc es recupera.</p>
