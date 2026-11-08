@@ -63,7 +63,24 @@ function miningStory(){
     <article class="ud2-resource-card gas"><span class="ud2-resource-icon" aria-hidden="true">🔥</span><span class="ud2-resource-type">JACIMENTS · POUS</span><h4>Gas natural</h4><p>És una barreja de gasos, principalment metà. Es troba en roques del subsòl i arriba per gasoductes o vaixells.</p><div class="ud2-resource-use"><b>El fem servir per a…</b> calefacció, indústria i centrals elèctriques.</div></article>
     <article class="ud2-resource-card bio"><span class="ud2-resource-icon" aria-hidden="true">🌳</span><span class="ud2-resource-type">BOSCOS I CONREUS</span><h4>Recursos biològics</h4><p>La fusta, el cotó i el suro provenen d’éssers vius. Es poden renovar si el consum respecta la regeneració.</p><div class="ud2-resource-use"><b>En fem…</b> mobles, roba i aïllaments.</div></article>
   </div>
-  <p class="ud2-resource-note">💡 <strong>Important:</strong> el petroli, el gas natural i els minerals metàl·lics són recursos no renovables a escala humana. Reciclar metalls no fa que el jaciment es renovi, però redueix la necessitat d’extreure’n més.</p>
+  <div class="ud2-resource-cards">
+    <article class="ud2-resource-card mineral"><span class="ud2-resource-icon" aria-hidden="true">🪨</span><span class="ud2-resource-type">PEDRERES · JACIMENTS</span><h4>Roques, sorra i argila</h4><p>S'extreuen de pedreres, graveres i argileres. La sorra aporta sílice per fabricar vidre; la calcària i l'argila s'utilitzen per obtenir ciment, maons i ceràmica.</p><div class="ud2-resource-use"><b>Els trobem a…</b> finestres, habitatges, carreteres i rajoles.</div></article>
+    <article class="ud2-resource-card oil"><span class="ud2-resource-icon" aria-hidden="true">⚫</span><span class="ud2-resource-type">MINES · SUBSÒL</span><h4>Carbó i urani</h4><p>El carbó és un combustible fòssil que es pot cremar per obtenir calor. L'urani s'obté de minerals i s'utilitza com a combustible a les centrals nuclears.</p><div class="ud2-resource-use"><b>Els fem servir per a…</b> producció d'energia, amb tecnologies molt diferents.</div></article>
+    <article class="ud2-resource-card bio"><span class="ud2-resource-icon" aria-hidden="true">🐑</span><span class="ud2-resource-type">RAMADERIA · CONREUS</span><h4>Fibres i altres materials naturals</h4><p>La llana prové dels animals; el cotó, del cultiu d'una planta; el cautxú natural, del làtex d'arbres. Necessiten terres, aigua i processos de transformació.</p><div class="ud2-resource-use"><b>Els trobem a…</b> roba, aïllaments, pneumàtics i objectes flexibles.</div></article>
+  </div>
+  <div class="ud2-energy-highlight">
+   <strong>🌱 Renovables o no renovables?</strong>
+   <p><b>Renovables:</b> recursos que es poden regenerar a escala humana, com la fusta d'un bosc ben gestionat, el cotó, la llana o el suro. <b>Atenció:</b> esgotar un bosc o consumir més aigua de la que es recupera pot fer-ne un ús insostenible.</p>
+   <p><b>No renovables:</b> petroli, gas natural, carbó, urani, minerals metàl·lics i molts materials de pedrera. Les seves reserves són limitades o triguen períodes geològics a formar-se. Els metalls es poden <em>reciclar</em>, però això no renova el jaciment.</p>
+  </div>
+  <div class="ud2-resource-heading"><h3>Exemples: de quin recurs surt cada objecte?</h3></div>
+  <div class="ud2-energy-compare">
+    <div class="ud2-energy-mini renewable"><b>🪑 Taula de fusta</b><p>Arbre → fusta → serradora → taulons → moble. <strong>Recurs renovable</strong> si el bosc es regenera.</p></div>
+    <div class="ud2-energy-mini oil"><b>🧴 Ampolla de plàstic convencional</b><p>Petroli o gas natural → indústria petroquímica → polímer → envàs. <strong>Origen no renovable.</strong></p></div>
+    <div class="ud2-energy-mini renewable"><b>🪟 Finestra</b><p>Sorra rica en sílice → fusió en un forn → vidre. <strong>Origen mineral no renovable</strong>, encara que el vidre es pugui reciclar.</p></div>
+    <div class="ud2-energy-mini oil"><b>🔌 Cable elèctric</b><p>Mineral de coure → extracció i refinatge → fil conductor, recobert d'aïllant. <strong>Coure no renovable</strong> i reciclable.</p></div>
+  </div>
+  <p class="ud2-resource-note">💡 <strong>Idea clau:</strong> «renovable» descriu l'origen i la capacitat de regeneració del recurs; «reciclable» descriu què podem fer amb el material després d'utilitzar-lo. No són sinònims.</p>
 </div>`;
  return section;
 }
@@ -71,6 +88,12 @@ function miningEnergyChain(){
  const section=N('section','ud2-energy-chain');
  section.setAttribute('aria-label','Com es transforma el gas natural en electricitat i comparació amb altres fonts');
  section.innerHTML=`<span class="ud2-resource-kicker">⚡ DE LA FONT A L’ELECTRICITAT</span>
+<h3>D'on surt l'energia que utilitzem?</h3>
+<p>Les <strong>fonts primàries d'energia</strong> es troben a la natura: sol, vent, aigua en moviment, biomassa, calor interna de la Terra, petroli, gas natural, carbó i urani. L'electricitat és una <strong>forma d'energia secundària</strong>: habitualment la produïm transformant alguna d'aquestes fonts.</p>
+<div class="ud2-energy-compare">
+ <div class="ud2-energy-mini renewable"><b>☀️ Fonts renovables</b><p>Solar, eòlica, hidràulica, geotèrmica i biomassa gestionada sosteniblement. Es renoven de manera natural, però depenen del lloc, del temps i dels equips.</p></div>
+ <div class="ud2-energy-mini oil"><b>🛢️ Fonts no renovables</b><p>Petroli, gas, carbó i urani. Són reserves finites: els tres primers alliberen energia química per combustió; l'urani allibera energia nuclear per fissió.</p></div>
+</div>
 <h3>Com pot el gas natural encendre un llum?</h3>
 <p class="ud2-energy-lead">Una central elèctrica <strong>no crea energia del no-res</strong>: transforma l’energia química del combustible en calor, moviment i finalment electricitat.</p>
 <ol class="ud2-energy-steps">
@@ -85,7 +108,10 @@ function miningEnergyChain(){
   <div class="ud2-energy-mini renewable"><b>☀️🌬️ Fonts renovables</b><p>La placa fotovoltaica transforma directament la llum en electricitat. En canvi, el vent i l’aigua fan girar turbines connectades a generadors.</p></div>
 </div>
 <section class="ud2-power-plants" aria-label="Esquemes tècnics de centrals elèctriques">
- <h3>Com es produeix electricitat? Tres centrals per comparar</h3>
+ <h3>Com funciona una central elèctrica?</h3>
+<p>En moltes centrals hi ha una <strong>turbina</strong> que gira i mou l'<strong>alternador</strong>, l'aparell que genera electricitat. El que canvia és <strong>d'on surt el moviment</strong>: de l'aigua, dels gasos calents o del vapor.</p>
+<p><strong>La caldera o generador de vapor</strong> escalfa aigua per produir vapor que mou una turbina. A les centrals tèrmiques convencionals es fa amb combustibles; a les nuclears la calor surt del reactor. En una central de cicle combinat, la calor recuperada dels gasos genera vapor per a una segona turbina. <strong>No totes les centrals necessiten caldera:</strong> la hidroelèctrica fa girar la turbina amb aigua i la solar fotovoltaica genera electricitat sense turbina.</p>
+<h3>Tres centrals per comparar · fotografia i esquema tècnic</h3>
  <p>Fixa’t en <strong>què fa girar la turbina</strong>. A les tres centrals, el generador (alternador) transforma el moviment de rotació en electricitat.</p>
  <div class="ud2-plant-card hydro">
   <div class="ud2-plant-title"><span>💧</span><div><h4>1. Central hidroelèctrica</h4><p><b>Recurs:</b> aigua embassada o d’un riu · <b>Energia inicial:</b> potencial gravitatòria</p></div></div>
