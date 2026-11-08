@@ -343,3 +343,15 @@
 .ud2-topic-redesign .ud2-uniform-plant{background:#f7fbfd;border:2px solid #a7cadd;padding:6px}
 .ud2-topic-redesign .ud2-uniform-plant figcaption{background:#f0f8fd;color:#385d73;font-weight:650}
 @media(max-width:650px){.ud2-topic-redesign .ud2-geology-figure,.ud2-topic-redesign .ud2-ore-explainer{padding:8px;overflow-x:auto}.ud2-topic-redesign .ud2-geology-figure svg,.ud2-topic-redesign .ud2-ore-explainer svg{min-width:650px}}
+
+/* Fotografies reals per comparar mena i roca acompanyant. */
+.ud2-topic-redesign .ud2-ore-photos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:15px 0}
+.ud2-topic-redesign .ud2-ore-photos figure{margin:0;border:1px solid #d5e1e9;border-radius:14px;overflow:hidden;background:#f5f9fb}
+.ud2-topic-redesign .ud2-ore-photos img{display:block;width:100%;height:270px;object-fit:cover}
+.ud2-topic-redesign .ud2-ore-photos figcaption{padding:13px 15px;color:#4c5363;font-size:13px;line-height:1.65}
+.ud2-topic-redesign .ud2-ore-photos figcaption a{color:#326b91;text-underline-offset:2px}
+.ud2-topic-redesign .ud2-plant-photo img{height:320px;aspect-ratio:16/8;object-fit:cover}
+.ud2-topic-redesign .ud2-plant-full-scheme img{display:block;width:100%;height:auto;object-fit:contain;background:#fff}
+.ud2-topic-redesign .ud2-plant-full-scheme{border:2px solid #d5dfec;background:#fff;padding:10px}
+.ud2-topic-redesign .ud2-plant-full-scheme figcaption{color:#536778;background:#f4f8fc}
+@media(max-width:720px){.ud2-topic-redesign .ud2-ore-photos{grid-template-columns:1fr}.ud2-topic-redesign .ud2-ore-photos img{height:245px}.ud2-topic-redesign .ud2-plant-photo img{height:230px}}
