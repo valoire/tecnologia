@@ -57,7 +57,7 @@ function diagram(kind){
 }
 const fullSchemes={
  hydro:{file:'Hydroelectric_dam-es.svg',name:'Secció de la presa, canonada, turbina, generador i línies elèctriques.',author:'Wikimedia Commons · Hydroelectric dam-es.svg',license:'CC BY 3.0'},
- thermal:{file:'Gas_Turbine_Combined_Cycle_Generation_01.svg',name:'Central de cicle combinat: compressor, combustió, turbina de gas, caldera de recuperació, turbina de vapor i alternador.',author:'Σ64 · Wikimedia Commons',license:'CC BY-SA'},
+ thermal:{file:'imatges/central-termica-exemple.svg',local:true,name:'Central tèrmica convencional: generador de vapor, turbina, alternador, condensador i circuits d’aigua.',author:'Esquema aportat per la professora',license:'Material de classe'},
  nuclear:{file:'PWR_Nuclear_Power_Plant_-_es.svg',name:'Central nuclear: reactor, generador de vapor, turbina, alternador, condensador i refrigeració.',author:'Luquichurri · Wikimedia Commons',license:'CC BY-SA 4.0'}
 };
 function detailedScheme(kind){
@@ -65,11 +65,11 @@ function detailedScheme(kind){
  const figure=document.createElement('figure');
  figure.className='ud2-plant-machine-diagram ud2-plant-full-scheme';
  const link=document.createElement('a');
- const page='https://commons.wikimedia.org/wiki/File:'+d.file;
+ const page=d.local?d.file:'https://commons.wikimedia.org/wiki/File:'+d.file;
  link.href=page;link.target='_blank';link.rel='noopener noreferrer';
  link.setAttribute('aria-label','Obrir esquema tècnic ampliat: '+d.name);
  const img=document.createElement('img');
- img.src='https://commons.wikimedia.org/wiki/Special:FilePath/'+d.file+'?width=1280';
+ img.src=d.local?d.file:'https://commons.wikimedia.org/wiki/Special:FilePath/'+d.file+'?width=1280';
  img.alt=d.name;img.loading='lazy';img.decoding='async';
  link.append(img);figure.append(link);
  const caption=document.createElement('figcaption');
