@@ -1,0 +1,27 @@
+
+.dossier-page{max-width:1060px;padding-bottom:40px}
+.dossier-message,.dossier-section,.dossier-check{background:#fff;border:2px solid #ecd1e5;border-radius:20px;padding:26px 30px;margin:24px 0}
+.dossier-message{background:linear-gradient(120deg,#fff2db,#f8eafd);border-color:#e5b5d9}
+.dossier-eyebrow{color:#ad631a;font-weight:900;letter-spacing:.1em;font-size:13px}
+.dossier-page h2{font-size:clamp(22px,3vw,29px);color:#78368c;line-height:1.25;margin:4px 0 18px}
+.dossier-message p{font-size:17px;line-height:1.7;color:#54435a}
+.dossier-requirements{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.dossier-requirements li{display:flex;gap:16px;align-items:flex-start;padding:15px;background:#faf5fb;border-radius:13px}
+.dossier-requirements li>span{display:grid;place-items:center;background:#e8c7ee;color:#75308a;border-radius:10px;min-width:45px;height:45px;font-weight:950}
+.dossier-requirements strong{font-size:17px;color:#652d78}
+.dossier-requirements p{margin:3px 0 0;color:#574b5d}
+.dossier-deductions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.dossier-deductions article{border:2px solid #f0c2b7;border-radius:16px;padding:20px;background:#fff9f5}
+.dossier-deductions article>strong{display:block;color:#b93e26;font-size:25px;font-weight:950}
+.dossier-deductions h3{margin:7px 0;color:#703679;font-size:18px}
+.dossier-deductions p{margin:0;color:#5b4e5b}
+.dossier-note{font-size:14px;color:#6d5b6a}
+.dossier-check{background:#eef8f1;border-color:#b6ddc2}
+.dossier-check ul{list-style:none;padding:0;margin:0;display:grid;gap:12px;color:#305d42;font-weight:650}
+.dossier-course-card{display:flex;align-items:center;gap:17px;text-decoration:none;background:linear-gradient(120deg,#fff1d9,#f5e6fa);border:2px solid #e4b3d8;border-radius:16px;padding:22px 24px;margin-top:20px;color:#642a78;box-shadow:0 7px 18px #8a559020}
+.dossier-course-card:hover{transform:translateY(-2px);box-shadow:0 12px 25px #8a559033}
+.dossier-course-icon{font-size:34px}
+.dossier-course-card strong{display:block;font-size:21px}
+.dossier-course-card small{display:block;color:#6b5670;font-size:14px}
+.dossier-course-arrow{margin-left:auto;font-size:25px}
+@media(max-width:680px){.dossier-message,.dossier-section,.dossier-check{padding:19px}.dossier-deductions{grid-template-columns:1fr}.dossier-course-card{padding:17px}.dossier-course-card strong{font-size:18px}}
