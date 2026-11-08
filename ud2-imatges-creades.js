@@ -193,6 +193,7 @@ function start(){
  panels.slice(1,7).forEach((panel,j)=>{
   const fig=panel.querySelector('.ud2-technical-figure');
   if(!fig)return;
+  if(j+1===2){fig.remove();return;} // Mineria: el tall del jaciment i les fotografies reals substitueixen la infografia de cinc caselles.
   const result=make(j+1);
   fig.replaceChildren(result.svg);
   const caption=document.createElement('figcaption');
