@@ -57,7 +57,49 @@ function miningStory(){
    <article class="ud2-resource-card bio"><span class="ud2-resource-icon">🌳</span><h4>Vegetals i animals</h4><p><strong>D'on?</strong> Boscos, camps i ramaderia. <strong>Exemples:</strong> fusta → mobles; cotó i llana → roba; suro → aïllament; làtex → cautxú.</p><div class="ud2-resource-use"><b>Renovables</b> · Només si es regeneren i se'n fa una gestió responsable.</div></article>
    <article class="ud2-resource-card gas"><span class="ud2-resource-icon">💧</span><h4>Aigua i altres recursos</h4><p><strong>D'on?</strong> Rius, aqüífers i cicle de l'aigua. S'utilitza per al consum, el reg, la indústria i per moure turbines hidroelèctriques.</p><div class="ud2-resource-use"><b>Renovable pel cicle natural</b> · Pot escassejar o contaminar-se.</div></article>
   </div>
-  <p class="ud2-resource-note"><strong>Recorda:</strong> renovable no vol dir inesgotable, i reciclable no vol dir renovable. Per exemple, el coure és no renovable però reciclable; la fusta es pot renovar si el bosc es recupera.</p>
+  <figure class="ud2-geology-figure">
+   <svg viewBox="0 0 980 480" role="img" aria-label="Tall de les capes de la Terra i on hi ha els jaciments: escorça, mantell, nucli extern i nucli intern">
+    <defs><linearGradient id="geoSky" x2="0" y2="1"><stop stop-color="#e1f3ff"/><stop offset="1" stop-color="#fff9e8"/></linearGradient></defs>
+    <rect x="0" y="0" width="980" height="480" rx="20" fill="url(#geoSky)"/>
+    <text x="37" y="45" font-size="27" font-weight="900" fill="#633579">LES CAPES DE LA TERRA</text>
+    <g transform="translate(255 270)">
+     <circle r="190" fill="#d9a66e" stroke="#9a6b47" stroke-width="5"/>
+     <circle r="156" fill="#ee9652"/><circle r="90" fill="#f4c354"/><circle r="45" fill="#fff0ae"/>
+     <path d="M0 0 L0 -190 A190 190 0 0 1 190 0 Z" fill="#f5fafc" opacity=".15"/>
+     <path d="M-189 0 A190 190 0 0 0 189 0" fill="none" stroke="#8d5e3c" stroke-width="3"/>
+     <path d="M-188 -25 Q-90 -40 -5 -16 T190 -20" fill="none" stroke="#7d6d55" stroke-width="6"/>
+     <path d="M-180 35 Q-80 10 12 35 T179 35" fill="none" stroke="#a57552" stroke-width="5"/>
+     <circle cx="-130" cy="-120" r="12" fill="#3c97bb"/><circle cx="-100" cy="-102" r="7" fill="#3c97bb"/>
+     <circle cx="-155" cy="-48" r="9" fill="#57596b"/><circle cx="-120" cy="-58" r="9" fill="#57596b"/>
+    </g>
+    <g font-family="Arial,sans-serif" fill="#44384f" font-size="19">
+     <path d="M405 140 H590" stroke="#a16d47" stroke-width="3"/><text x="605" y="146" font-weight="800">ESCORÇA</text><text x="605" y="171" font-size="16">Capa externa i prima: roques, minerals</text><text x="605" y="193" font-size="16">i jaciments que podem explotar.</text>
+     <path d="M381 230 H590" stroke="#db8a4c" stroke-width="3"/><text x="605" y="236" font-weight="800">MANTELL</text><text x="605" y="260" font-size="16">Roques molt calentes que es deformen</text><text x="605" y="282" font-size="16">lentament en profunditat.</text>
+     <path d="M334 327 H590" stroke="#dfb44c" stroke-width="3"/><text x="605" y="333" font-weight="800">NUCLI EXTERN</text><text x="605" y="357" font-size="16">Principalment ferro i níquel líquids.</text>
+     <path d="M285 393 H590" stroke="#e5cb79" stroke-width="3"/><text x="605" y="400" font-weight="800">NUCLI INTERN</text><text x="605" y="424" font-size="16">Principalment ferro i níquel sòlids.</text>
+    </g>
+   </svg>
+   <figcaption><strong>On extraiem les matèries primeres?</strong> Els jaciments de minerals, petroli i gas que aprofitem es troben a l'<strong>escorça terrestre</strong>, no al nucli ni al mantell. Les capes del dibuix són esquemàtiques i no estan a escala.</figcaption>
+  </figure>
+  <div class="ud2-ore-explainer">
+   <h3>⛏️ Què són la mena i la ganga?</h3>
+   <p>Quan extraiem una roca d'una mina, sovint hi ha una barreja de minerals. La <strong>mena</strong> és la part de la qual ens interessa obtenir una substància útil (per exemple, coure). La <strong>ganga</strong> és el material que l'acompanya i que no s'aprofita en aquell procés.</p>
+   <svg viewBox="0 0 920 295" role="img" aria-label="Roca extreta de la mina amb cristalls blaus de mena i matriu marró de ganga, separades durant el tractament">
+    <rect width="920" height="295" rx="18" fill="#fffaf1"/>
+    <path d="M65 200 L90 83 L220 47 L328 105 L348 225 L248 260 L115 244 Z" fill="#bda18b" stroke="#826852" stroke-width="5"/>
+    <path d="M105 112 l34 -35 45 21 -12 54 -44 20 Z M218 151 l38 -33 43 29 -16 46 -45 16 Z M160 204 l29 -31 36 23 -14 36 -38 6 Z" fill="#3b9bb8" stroke="#226f96" stroke-width="4"/>
+    <circle cx="130" cy="187" r="7" fill="#3b9bb8"/><circle cx="288" cy="209" r="8" fill="#3b9bb8"/>
+    <path d="M348 160 H468" stroke="#a77747" stroke-width="6" stroke-linecap="round"/><path d="M450 144 L475 160 L450 176" fill="none" stroke="#a77747" stroke-width="6"/>
+    <rect x="510" y="58" width="170" height="164" rx="18" fill="#eaf8fc" stroke="#7dbacf" stroke-width="4"/>
+    <path d="M541 158 L569 100 L605 140 L637 87 L655 172 Z" fill="#3b9bb8" stroke="#226f96" stroke-width="4"/>
+    <rect x="707" y="58" width="170" height="164" rx="18" fill="#f1ebe4" stroke="#c7b5a0" stroke-width="4"/>
+    <path d="M728 178 L745 102 L786 130 L811 89 L850 178 Z" fill="#baa18b" stroke="#8a6e57" stroke-width="4"/>
+    <g font-family="Arial,sans-serif" font-size="20" font-weight="900" text-anchor="middle" fill="#553e5b"><text x="210" y="286">ROCA EXTRETA</text><text x="595" y="250">MENA</text><text x="795" y="250">GANGA</text></g>
+    <text x="595" y="276" font-size="16" text-anchor="middle" fill="#43758c">Mineral d'interès</text><text x="795" y="276" font-size="16" text-anchor="middle" fill="#806b5c">Material a separar</text>
+   </svg>
+   <p class="ud2-ore-example"><strong>Exemple:</strong> en una mina de coure, se separen els minerals que contenen coure de la resta de roca. La mena no és coure pur: encara s'ha de tractar per obtenir el metall.</p>
+  </div>
+    <p class="ud2-resource-note"><strong>Recorda:</strong> renovable no vol dir inesgotable, i reciclable no vol dir renovable. Per exemple, el coure és no renovable però reciclable; la fusta es pot renovar si el bosc es recupera.</p>
  </div>`;
  return section;
 }
