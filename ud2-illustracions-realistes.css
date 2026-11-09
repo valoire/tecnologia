@@ -23,3 +23,12 @@
 .ud2-real-lightbox-scroll{overflow:auto;max-height:calc(96dvh - 65px);background:#f6f7fb;text-align:center}
 .ud2-real-lightbox-scroll img{display:block;width:100%;height:auto;min-width:700px;max-width:none}
 @media(max-width:700px){.ud2-topic-redesign .ud2-realistic-figure{padding:9px!important;overflow:hidden!important}.ud2-topic-redesign .ud2-realistic-title{margin:6px 6px 10px;font-size:19px}.ud2-topic-redesign .ud2-realistic-legend,.ud2-topic-redesign .ud2-realistic-parts{grid-template-columns:1fr}.ud2-topic-redesign .ud2-realistic-caption{font-size:13px}.ud2-real-lightbox-panel{max-height:94dvh}.ud2-real-lightbox-bar{padding:10px}.ud2-real-lightbox-scroll{max-height:calc(94dvh - 58px)}}
+
+/* Senyals numerats exactament damunt de cada peça del dibuix. */
+.ud2-topic-redesign .ud2-realistic-art,.ud2-real-large-stage{position:relative}
+.ud2-real-pin{position:absolute;z-index:2;display:grid;place-items:center;left:0;top:0;transform:translate(-50%,-50%);width:clamp(21px,3vw,32px);height:clamp(21px,3vw,32px);border:2.5px solid #fff;border-radius:100%;background:#63317f;color:#fff;font-size:clamp(12px,1.6vw,16px);font-weight:950;line-height:1;box-shadow:0 2px 7px #0009,0 0 0 2px #63317f85;pointer-events:none}
+.ud2-topic-redesign .ud2-realistic-power .ud2-real-pin{background:#175d86;box-shadow:0 2px 7px #0009,0 0 0 2px #175d8685}
+.ud2-real-large-stage{display:inline-block;width:1100px;max-width:none;vertical-align:top}
+.ud2-real-lightbox-scroll .ud2-real-large-stage img{display:block;width:100%;min-width:0;height:auto}
+.ud2-real-lightbox-scroll .ud2-real-pin{width:33px;height:33px;font-size:16px}
+@media(max-width:700px){.ud2-real-pin{width:22px;height:22px;font-size:12px;border-width:2px}.ud2-real-large-stage{width:950px}}
