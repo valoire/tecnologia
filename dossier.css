@@ -10,7 +10,7 @@
 .dossier-requirements li>span{display:grid;place-items:center;background:#e8c7ee;color:#75308a;border-radius:10px;min-width:45px;height:45px;font-weight:950}
 .dossier-requirements strong{font-size:17px;color:#652d78}
 .dossier-requirements p{margin:3px 0 0;color:#574b5d}
-.dossier-deductions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.dossier-deductions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
 .dossier-deductions article{border:2px solid #f0c2b7;border-radius:16px;padding:20px;background:#fff9f5}
 .dossier-deductions article>strong{display:block;color:#b93e26;font-size:25px;font-weight:950}
 .dossier-deductions h3{margin:7px 0;color:#703679;font-size:18px}
