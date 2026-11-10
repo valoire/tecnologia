@@ -10,18 +10,27 @@
 .dossier-requirements li>span{display:grid;place-items:center;background:#e8c7ee;color:#75308a;border-radius:10px;min-width:45px;height:45px;font-weight:950}
 .dossier-requirements strong{font-size:17px;color:#652d78}
 .dossier-requirements p{margin:3px 0 0;color:#574b5d}
-.dossier-deductions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+.dossier-deductions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
 .dossier-deductions article{border:2px solid #f0c2b7;border-radius:16px;padding:20px;background:#fff9f5}
 .dossier-deductions article>strong{display:block;color:#b93e26;font-size:25px;font-weight:950}
 .dossier-deductions h3{margin:7px 0;color:#703679;font-size:18px}
 .dossier-deductions p{margin:0;color:#5b4e5b}
 .dossier-note{font-size:14px;color:#6d5b6a}
 .dossier-check{background:#eef8f1;border-color:#b6ddc2}
-.dossier-check ul{list-style:none;padding:0;margin:0;display:grid;gap:12px;color:#305d42;font-weight:650}
+.dossier-check-intro{margin:0 0 16px;color:#486450}
+.dossier-check ul{list-style:none;padding:0;margin:0;display:grid;gap:10px;color:#305d42;font-weight:650}
+.dossier-check li{margin:0}
+.dossier-check label{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:#fff;border:1px solid #c7e4d1;border-radius:12px;cursor:pointer;line-height:1.5;transition:background .15s,border-color .15s}
+.dossier-check label:hover{background:#f5fff8;border-color:#7ebc93}
+.dossier-check input[type=checkbox]{appearance:auto;flex:0 0 auto;width:22px;height:22px;margin:1px 0 0;accent-color:#2b8652;cursor:pointer}
+.dossier-check label:has(input:checked){background:#def3e5;border-color:#83bd97}
+.dossier-check label:has(input:checked) span{color:#286046}
+.dossier-check em{font-style:normal;font-weight:650;color:#a13e2c}
+.dossier-check label:has(input:checked) em{color:#735e54}
 .dossier-course-card{display:flex;align-items:center;gap:17px;text-decoration:none;background:linear-gradient(120deg,#fff1d9,#f5e6fa);border:2px solid #e4b3d8;border-radius:16px;padding:22px 24px;margin-top:20px;color:#642a78;box-shadow:0 7px 18px #8a559020}
 .dossier-course-card:hover{transform:translateY(-2px);box-shadow:0 12px 25px #8a559033}
 .dossier-course-icon{font-size:34px}
 .dossier-course-card strong{display:block;font-size:21px}
 .dossier-course-card small{display:block;color:#6b5670;font-size:14px}
 .dossier-course-arrow{margin-left:auto;font-size:25px}
-@media(max-width:680px){.dossier-message,.dossier-section,.dossier-check{padding:19px}.dossier-deductions{grid-template-columns:1fr}.dossier-course-card{padding:17px}.dossier-course-card strong{font-size:18px}}
+@media(max-width:680px){.dossier-message,.dossier-section,.dossier-check{padding:19px}.dossier-deductions{grid-template-columns:1fr}.dossier-check label{padding:12px}.dossier-course-card{padding:17px}.dossier-course-card strong{font-size:18px}}
