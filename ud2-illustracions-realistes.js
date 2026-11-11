@@ -90,9 +90,9 @@ function install(){
  'MENA · minerals dels quals volem obtenir el metall útil.',
  'GANGA · minerals sense interès en aquella extracció que acompanyen la mena.'
  ],'La mena i la ganga acostumen a estar barrejades dins de la roca mineralitzada; no són capes separades. La mina arriba fins al filó.','Secció realista de capes de roca, una mina subterrània i un filó de minerals de coure travessant l’escorça',false,[[72,63,'Filó mineral'],[60,79,'Mena'],[84,80,'Ganga']]);
- plant('thermal',imgs.thermal,'Central tèrmica de cicle combinat · vista interior',[
- 'Entrada de gas natural','Turbina de gas','Caldera de recuperació de calor','Turbina de vapor','Alternador','Condensador i refrigeració'
- ],'Vista tècnica realista de turbina de gas, caldera de recuperació, turbina de vapor, alternador i refrigeració',[[4,68,'Entrada de gas natural'],[25,61,'Turbina de gas'],[43,38,'Caldera de recuperació'],[62,57,'Turbina de vapor'],[76,60,'Alternador'],[70,82,'Condensador']]);
+ plant('thermal',imgs.thermal,'Central tèrmica convencional de carbó · vista interior',[
+ 'Carbó: combustible que entra al forn','Caldera: el carbó escalfa l’aigua','Canonada: porta el vapor a pressió','Turbina de vapor: gira gràcies al vapor','Alternador: transforma el gir en electricitat','Condensador: el vapor torna a ser aigua','Refrigeració: ajuda a refredar el condensador'
+ ],'Vista interior realista d’una central tèrmica convencional de carbó amb caldera, una turbina de vapor, alternador, condensador i circuit d’aigua',[[11,62,'Carbó'],[26,45,'Caldera'],[46,24,'Canonada de vapor'],[51,52,'Turbina de vapor'],[69,51,'Alternador'],[54,74,'Condensador'],[89,73,'Refrigeració']]);
  plant('nuclear',imgs.nuclear,'Central nuclear · vista interior',[
  'Reactor: fissió i calor al circuit primari','Generador de vapor: circuit secundari','Turbina de vapor','Alternador: genera electricitat','Condensador','Torre de refrigeració'
  ],'Vista tècnica realista de reactor nuclear, generador de vapor, turbina, alternador, condensador i torre de refrigeració',[[19,57,'Reactor'],[33,53,'Generador de vapor'],[51,49,'Turbina'],[64,49,'Alternador'],[47,76,'Condensador'],[76,22,'Torre de refrigeració']]);

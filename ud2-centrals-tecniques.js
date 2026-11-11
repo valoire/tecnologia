@@ -8,9 +8,9 @@ const configs={
   note:'L’aigua baixa per la canonada, fa girar la turbina i torna al riu. No hi ha caldera.'
  },
  thermal:{
-  label:'Central tèrmica de cicle combinat',
-  parts:[['COMBUSTIÓ','Gas natural i aire','flame'],['TURBINA DE GAS','Gasos a alta temperatura','turbine'],['CALDERA DE RECUPERACIÓ','Aprofita la calor residual','boiler'],['TURBINA DE VAPOR','Vapor a pressió','turbine'],['ALTERNADOR','Moviment → electricitat','generator']],
-  note:'La caldera de recuperació produeix vapor sense cremar un segon combustible: aprofita els gasos d’escapament. La turbina de gas i la de vapor mouen generadors.'
+  label:'Central tèrmica convencional de carbó',
+  parts:[['CARBÓ','Combustible fòssil','flame'],['CALDERA','Escalfa aigua i fa vapor','boiler'],['TURBINA DE VAPOR','El vapor fa girar l’eix','turbine'],['ALTERNADOR','Genera electricitat','generator'],['CONDENSADOR','Recupera l’aigua','condenser']],
+  note:'Es crema carbó a la caldera. El vapor d’aigua fa girar una única turbina, que mou l’alternador. El condensador torna el vapor a aigua i aquesta retorna a la caldera.'
  },
  nuclear:{
   label:'Central nuclear de reactor d’aigua a pressió',
@@ -57,7 +57,7 @@ function diagram(kind){
 }
 const fullSchemes={
  hydro:{file:'Hydroelectric_dam-es.svg',name:'Secció de la presa, canonada, turbina, generador i línies elèctriques.',author:'Wikimedia Commons · Hydroelectric dam-es.svg',license:'CC BY 3.0'},
- thermal:{file:'imatges/central-termica-exemple.svg',local:true,name:'Central tèrmica convencional: generador de vapor, turbina, alternador, condensador i circuits d’aigua.',author:'Esquema aportat per la professora',license:'Material de classe'},
+ thermal:{file:'imatges/central-termica-convencional-20261111.webp',local:true,name:'Central tèrmica convencional de carbó: caldera, una turbina de vapor, alternador, condensador i circuit d’aigua.',author:'Il·lustració educativa original',license:'Material de classe'},
  nuclear:{file:'PWR_Nuclear_Power_Plant_-_es.svg',name:'Central nuclear: reactor, generador de vapor, turbina, alternador, condensador i refrigeració.',author:'Luquichurri · Wikimedia Commons',license:'CC BY-SA 4.0'}
 };
 function detailedScheme(kind){

@@ -136,16 +136,16 @@ function miningStory(){
 }
 function miningEnergyChain(){
  const section=N('section','ud2-energy-chain');
- section.setAttribute('aria-label','Com es transforma el gas natural en electricitat i comparació amb altres fonts');
+ section.setAttribute('aria-label','Com es transforma el carbó en electricitat i comparació amb altres fonts');
  section.innerHTML=`<span class="ud2-resource-kicker">⚡ DE LA FONT A L’ELECTRICITAT</span>
 <h3>De les fonts d'energia a l'electricitat</h3>
 <p class="ud2-energy-lead">El <strong>sol, el vent, l'aigua, la biomassa i la calor de la Terra</strong> són fonts renovables. El <strong>petroli, el gas natural, el carbó i l'urani</strong> són no renovables. En una central, una font d'energia es transforma en electricitat.</p>
-<p>Moltes centrals comparteixen dues peces: una <strong>turbina</strong> que gira i un <strong>alternador</strong> que transforma el gir en electricitat. El que canvia és com es mou la turbina: amb aigua, amb vapor o amb gasos calents. La <strong>caldera</strong> escalfa aigua per produir vapor; el <strong>condensador</strong> el refreda perquè torni a ser aigua.</p>
+<p>Moltes centrals comparteixen dues peces: una <strong>turbina</strong> que gira i un <strong>alternador</strong> que transforma el gir en electricitat. El que canvia és com es mou la turbina: amb aigua o amb vapor. La <strong>caldera</strong> escalfa aigua per produir vapor; el <strong>condensador</strong> el refreda perquè torni a ser aigua.</p>
 <p>La central <strong>hidroelèctrica</strong> utilitza l'aigua i no necessita caldera. La <strong>tèrmica</strong> utilitza calor de la combustió; la <strong>nuclear</strong>, calor de la fissió. Una central <strong>solar fotovoltaica</strong> produeix electricitat directament de la llum, sense turbina.</p>
 <section class="ud2-power-plants" aria-label="Esquemes tècnics de centrals elèctriques">
  <h3>Com funciona una central elèctrica?</h3>
-<p>En moltes centrals hi ha una <strong>turbina</strong> que gira i mou l'<strong>alternador</strong>, l'aparell que genera electricitat. El que canvia és <strong>d'on surt el moviment</strong>: de l'aigua, dels gasos calents o del vapor.</p>
-<p><strong>La caldera o generador de vapor</strong> escalfa aigua per produir vapor que mou una turbina. A les centrals tèrmiques convencionals es fa amb combustibles; a les nuclears la calor surt del reactor. En una central de cicle combinat, la calor recuperada dels gasos genera vapor per a una segona turbina. <strong>No totes les centrals necessiten caldera:</strong> la hidroelèctrica fa girar la turbina amb aigua i la solar fotovoltaica genera electricitat sense turbina.</p>
+<p>En moltes centrals hi ha una <strong>turbina</strong> que gira i mou l'<strong>alternador</strong>, l'aparell que genera electricitat. El que canvia és <strong>d'on surt el moviment</strong>: de l'aigua o del vapor.</p>
+<p><strong>A la central tèrmica convencional</strong>, es crema carbó en una <strong>caldera</strong> que escalfa l’aigua fins que es transforma en vapor. Aquest vapor fa girar <strong>una sola turbina</strong>, connectada a l’<strong>alternador</strong>. Després el <strong>condensador</strong> refreda el vapor perquè torni a ser aigua i es pugui reutilitzar. En una central nuclear, el reactor proporciona la calor en lloc de la combustió. <strong>No totes les centrals necessiten caldera:</strong> la hidroelèctrica utilitza l’aigua en moviment i la solar fotovoltaica genera electricitat directament de la llum.</p>
 <h3>Les centrals per dins · fotografia i esquema tècnic</h3>
  <p>Fixa’t en <strong>què fa girar la turbina</strong>. A les tres centrals, el generador (alternador) transforma el moviment de rotació en electricitat.</p>
  <div class="ud2-plant-card hydro">
@@ -161,16 +161,16 @@ function miningEnergyChain(){
   <p class="ud2-plant-transform"><strong>Transformació:</strong> potencial → cinètica → mecànica → elèctrica. <em>L’aigua continua el seu curs després de la turbina.</em></p>
  </div>
  <div class="ud2-plant-card thermal">
-  <div class="ud2-plant-title"><span>🔥</span><div><h4>2. Central tèrmica de gas natural</h4><p><b>Recurs:</b> combustible fòssil extret del subsòl · <b>Energia inicial:</b> química</p></div></div>
-  <figure class="ud2-plant-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Combined_Cycle_Gas_Fired_Power_Plant.jpg?width=960" alt="Fotografia d'una central tèrmica de cicle combinat alimentada amb gas natural" loading="lazy" decoding="async"><figcaption>Central tèrmica de cicle combinat alimentada amb gas natural. <a href="https://commons.wikimedia.org/wiki/File:Combined_Cycle_Gas_Fired_Power_Plant.jpg" target="_blank" rel="noopener noreferrer">Foto: Peoplepoweredbyenergy · CC BY-SA 4.0</a></figcaption></figure>
-  <div class="ud2-plant-flow" role="img" aria-label="Gas natural, cambra de combustió, gasos calents, turbina, alternador i xarxa">
-   <div class="ud2-plant-node"><span>🛢️</span><b>Gas natural</b><small>Combustible</small></div><i aria-hidden="true">→</i>
-   <div class="ud2-plant-node"><span>🔥</span><b>Combustió</b><small>Gasos calents</small></div><i aria-hidden="true">→</i>
-   <div class="ud2-plant-node"><span>⚙️</span><b>Turbina de gas</b><small>Gira per l’expansió</small></div><i aria-hidden="true">→</i>
-   <div class="ud2-plant-node"><span>🔄</span><b>Alternador</b><small>Inducció elèctrica</small></div><i aria-hidden="true">→</i>
-   <div class="ud2-plant-node"><span>⚡</span><b>Xarxa</b><small>Electricitat</small></div>
+  <div class="ud2-plant-title"><span>🔥</span><div><h4>2. Central tèrmica convencional de carbó</h4><p><b>Recurs:</b> carbó, un combustible fòssil no renovable · <b>Energia inicial:</b> química</p></div></div>
+  <figure class="ud2-plant-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Central_termica_de_cercs.jpg?width=960" alt="Fotografia de l'antiga central tèrmica convencional de carbó de Cercs, al Berguedà" loading="lazy" decoding="async"><figcaption>Antiga central tèrmica de carbó de Cercs (Berguedà). <a href="https://commons.wikimedia.org/wiki/File:Central_termica_de_cercs.jpg" target="_blank" rel="noopener noreferrer">Foto: Jordi Escarré · CC BY-SA 4.0</a></figcaption></figure>
+  <div class="ud2-plant-flow" role="img" aria-label="Carbó, caldera, vapor d’aigua, turbina de vapor, alternador i xarxa elèctrica">
+   <div class="ud2-plant-node"><span>🪨</span><b>Carbó</b><small>Combustible</small></div><i aria-hidden="true">→</i>
+   <div class="ud2-plant-node"><span>🔥</span><b>Caldera</b><small>Aigua → vapor</small></div><i aria-hidden="true">→</i>
+   <div class="ud2-plant-node"><span>♨️</span><b>Vapor</b><small>A alta pressió</small></div><i aria-hidden="true">→</i>
+   <div class="ud2-plant-node"><span>⚙️</span><b>Turbina</b><small>Gira pel vapor</small></div><i aria-hidden="true">→</i>
+   <div class="ud2-plant-node"><span>⚡</span><b>Alternador</b><small>Genera electricitat</small></div>
   </div>
-  <p class="ud2-plant-transform"><strong>Transformació:</strong> química → tèrmica → mecànica → elèctrica. <em>En cicle combinat, la calor residual produeix vapor per moure una segona turbina.</em></p>
+  <p class="ud2-plant-transform"><strong>Transformació:</strong> química → tèrmica → mecànica → elèctrica. <em>El vapor es refreda al condensador, es converteix en aigua i torna a la caldera. Només hi ha una turbina de vapor.</em></p>
  </div>
  <div class="ud2-plant-card nuclear">
   <div class="ud2-plant-title"><span>☢️</span><div><h4>3. Central nuclear</h4><p><b>Recurs:</b> urani obtingut de minerals · <b>Energia inicial:</b> nuclear</p></div></div>
