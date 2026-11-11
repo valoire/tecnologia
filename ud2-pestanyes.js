@@ -22,10 +22,10 @@ const TEMES=[
    'Una mina aporta materials per fabricar bateries, però altera el paisatge. Quines condicions exigiries per reduir-ne els impactes?'
   ]},
  {title:'Energia, transformacions i eficiència',short:'Energia i rendiment',icon:'⚡',
-  subtitle:'Energia útil i dissipada, potència, fonts renovables i càlculs.',
+  subtitle:'Comencem de zero: energia, potència, multiplicacions, trobar la x i rendiment.',
   questions:[
-   'En un llum de lectura LED, quina energia considerem útil i quina es dissipa? Canviaria si parléssim d’una estufa?',
-   'Un LED de 3 W funciona durant 5 hores. Quina energia consumeix en Wh i en kWh? Què hauríem de saber per calcular-ne el cost?'
+   'Quina diferència hi ha entre la potència (W) d’un llum i l’energia que consumeix (Wh)?',
+   'Un llum de 4 W funciona durant 3 hores. Escriu les dades, la fórmula, substitueix els nombres i emmarca el resultat amb les unitats.'
   ]},
  {title:'L’aigua: disponibilitat, qualitat i tractament',short:'Recursos hídrics',icon:'💧',
   subtitle:'Escassetat, potabilització, depuració i dessalinització.',
