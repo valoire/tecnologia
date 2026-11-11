@@ -1,67 +1,28 @@
-/* UD2 · Teoria 4: recorregut gradual per a alumnat que comença a treballar les fórmules. */
-.ud2-topic-redesign .ud2-solid-article.ud2-energy-steps{
-  max-width:1040px; margin:0 auto 28px; padding:0; background:transparent;
-  color:#463b4c; line-height:1.68; font-size:17px;
+/* UD2 · Mateixa presentació que la resta de la teoria. */
+.ud2-topic-redesign .ud2-energy-basic .ud2-energy-final{
+  display:table;
+  max-width:100%;
+  margin:15px auto 19px!important;
+  padding:9px 22px;
+  border:3px solid #9e589f;
+  border-radius:9px;
+  background:#fff;
+  color:#6e337c!important;
+  font-size:clamp(19px,2.5vw,23px)!important;
+  font-weight:900;
+  text-align:center;
 }
-.ud2-topic-redesign .ud2-energy-steps *, .ud2-topic-redesign .ud2-energy-steps *::before,
-.ud2-topic-redesign .ud2-energy-steps *::after{box-sizing:border-box}
-.ud2-topic-redesign .ud2-energy-steps p{margin:11px 0 15px;line-height:1.7;max-width:82ch}
-.ud2-topic-redesign .ud2-energy-steps strong{color:#713680}
-.ud2-topic-redesign .uds-energy-lead{
-  border:2px solid #ebcce8; border-radius:22px; padding:23px 26px;
-  background:linear-gradient(120deg,#fff4df,#faf0ff); margin:0 0 24px;
+.ud2-topic-redesign .ud2-energy-basic .ud2-energy-final strong{
+  color:inherit;
 }
-.ud2-topic-redesign .uds-energy-eyebrow{color:#aa5c37;font-size:13px;font-weight:900;letter-spacing:.06em}
-.ud2-topic-redesign .uds-energy-lead h3{color:#7d278e;font-size:clamp(23px,3.2vw,31px);line-height:1.25;margin:8px 0}
-.ud2-topic-redesign .uds-energy-target{margin-top:17px;background:#fff;padding:14px 17px;border-radius:13px;border-left:5px solid #ee962d;line-height:1.6}
-.ud2-topic-redesign .uds-energy-step{background:#fff;border:2px solid #eed9e9;border-radius:22px;padding:23px 25px;margin:21px 0;min-width:0;box-shadow:0 4px 16px #6b35720b}
-.ud2-topic-redesign .uds-energy-heading{display:flex;align-items:flex-start;gap:15px;margin-bottom:11px}
-.ud2-topic-redesign .uds-energy-heading>span{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;min-width:76px;margin-top:1px;border-radius:11px;background:#fff0d8;color:#ac5b19;padding:8px 10px;font-size:12px;line-height:1.35;letter-spacing:.035em;font-weight:900}
-.ud2-topic-redesign .uds-energy-heading h3{font-size:clamp(21px,2.8vw,27px);line-height:1.28;color:#812b90;margin:3px 0 0;letter-spacing:-.015em}
-.ud2-topic-redesign .uds-energy-examples{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:18px 0}
-.ud2-topic-redesign .uds-energy-examples>div{border:1px solid #e6d6e6;border-radius:15px;background:#fff9fc;padding:14px;min-width:0}
-.ud2-topic-redesign .uds-energy-examples>div>span{display:block;font-size:26px;line-height:1.2;margin-bottom:5px}
-.ud2-topic-redesign .uds-energy-examples strong{display:block;font-size:16px}
-.ud2-topic-redesign .uds-energy-examples p{font-size:15px;margin:5px 0 0}
-.ud2-topic-redesign .uds-energy-remind{background:#f5f3fa;padding:13px 16px;border-radius:13px;margin:17px 0 0!important;border-left:4px solid #b393c6;color:#51445d}
-.ud2-topic-redesign .uds-energy-compare{display:grid;grid-template-columns:minmax(0,1fr) 28px minmax(0,1fr) 28px minmax(0,1fr);align-items:center;gap:9px;margin:18px 0}
-.ud2-topic-redesign .uds-energy-compare>div:not(.uds-energy-compare-mark){display:flex;flex-direction:column;justify-content:center;text-align:center;min-width:0;min-height:145px;background:#f3f8fc;border:2px solid #c9e0ee;border-radius:17px;padding:12px}
-.ud2-topic-redesign .uds-energy-compare>div:last-child{background:#e8f7ef;border-color:#a4d8b6}
-.ud2-topic-redesign .uds-energy-compare b{font-size:clamp(23px,3vw,31px);color:#236783;line-height:1.3}
-.ud2-topic-redesign .uds-energy-compare span{font-weight:800;color:#42364d;font-size:15px}
-.ud2-topic-redesign .uds-energy-compare small{font-size:13px;line-height:1.45;margin-top:6px}
-.ud2-topic-redesign .uds-energy-compare-mark{text-align:center;color:#9c588e;font-weight:900;font-size:26px}
-.ud2-topic-redesign .uds-energy-formula{max-width:360px;margin:16px auto;background:#f0e7fb;border:2px solid #c8a8df;border-radius:18px;text-align:center;color:#712d86;font-size:clamp(33px,5vw,43px);font-weight:900;letter-spacing:.03em;padding:15px}
-.ud2-topic-redesign .uds-energy-worked{border:1px solid #cce0ed;background:#f6fbff;border-radius:17px;padding:18px 20px;margin:18px 0}
-.ud2-topic-redesign .uds-energy-worked h4{font-size:clamp(17px,2.3vw,20px);line-height:1.4;color:#27637f;margin:0 0 13px}
-.ud2-topic-redesign .uds-energy-worked ol{padding-left:26px;margin:11px 0}
-.ud2-topic-redesign .uds-energy-worked li{padding-left:5px;margin:7px 0;line-height:1.65}
-.ud2-topic-redesign .uds-energy-worked .uds-energy-result{display:table;max-width:100%;border:3px solid #b466ba;background:#fff;border-radius:9px;color:#733180;font-weight:900;font-size:clamp(23px,3vw,30px);margin:15px auto 10px;padding:10px 24px;text-align:center}
-.ud2-topic-redesign .uds-energy-chalk{display:block;background:#fff;border:1px solid #cfe0ec;color:#523666;text-align:center;padding:14px 10px;border-radius:13px;font-size:clamp(20px,2.8vw,26px);font-weight:800;line-height:1.7;overflow-wrap:anywhere}
-.ud2-topic-redesign .uds-energy-chalk>span{color:#a66f9a;margin:0 8px}
-.ud2-topic-redesign .uds-energy-meter{display:flex;overflow:hidden;width:100%;max-width:700px;min-height:75px;border:2px solid #b7d7c4;border-radius:16px;margin:18px 0 15px}
-.ud2-topic-redesign .uds-energy-meter>div{display:flex;align-items:center;justify-content:center;text-align:center;padding:12px 6px;font-size:15px;font-weight:900;line-height:1.3}
-.ud2-topic-redesign .uds-energy-meter-use{width:80%;background:#c1e5d0;color:#185c3d}
-.ud2-topic-redesign .uds-energy-meter-loss{width:20%;background:#ffe1c8;color:#833c20}
-.ud2-topic-redesign .uds-energy-practice{background:#fffaf1;border-color:#eed0a9}
-.ud2-topic-redesign .uds-energy-practice-items{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;margin:19px 0}
-.ud2-topic-redesign .uds-energy-practice-items>div{border:1px solid #e6d2b8;border-radius:13px;padding:15px;background:#fff;min-width:0}
-.ud2-topic-redesign .uds-energy-practice-items strong{display:block;font-size:16px}
-.ud2-topic-redesign .uds-energy-practice-items p{font-size:15px}
-.ud2-topic-redesign .uds-energy-practice-items small{display:block;border-top:1px dashed #dbc8a8;margin-top:13px;padding-top:12px;color:#4c5660;font-size:14px}
-@media(max-width:720px){
- .ud2-topic-redesign .ud2-solid-article.ud2-energy-steps{font-size:16px}
- .ud2-topic-redesign .uds-energy-lead,.ud2-topic-redesign .uds-energy-step{padding:17px 15px;border-radius:17px}
- .ud2-topic-redesign .uds-energy-heading{gap:10px}
- .ud2-topic-redesign .uds-energy-heading>span{min-width:68px}
- .ud2-topic-redesign .uds-energy-examples,.ud2-topic-redesign .uds-energy-practice-items{grid-template-columns:1fr}
- .ud2-topic-redesign .uds-energy-examples>div{padding:11px 13px}
- .ud2-topic-redesign .uds-energy-compare{grid-template-columns:1fr;gap:5px}
- .ud2-topic-redesign .uds-energy-compare>div:not(.uds-energy-compare-mark){min-height:0;padding:12px}
- .ud2-topic-redesign .uds-energy-compare-mark{line-height:1}
- .ud2-topic-redesign .uds-energy-worked{padding:14px}
- .ud2-topic-redesign .uds-energy-meter>div{font-size:13px;padding:10px 2px}
+.ud2-topic-redesign .ud2-energy-basic .ud2-solid-chapter{
+  margin:26px 0 23px;
 }
-@media print{
- .ud2-topic-redesign .uds-energy-step{break-inside:avoid;box-shadow:none}
+.ud2-topic-redesign .ud2-energy-basic .ud2-solid-section h4{
+  margin-top:18px;
+}
+@media(max-width:650px){
+  .ud2-topic-redesign .ud2-energy-basic .ud2-energy-final{
+    padding:8px 13px;
+  }
 }
