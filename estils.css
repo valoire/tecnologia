@@ -254,3 +254,23 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
  .hero::after{opacity:.25}
 }
 @media(prefers-reduced-motion:reduce){.spark-item:hover{transform:none}.spark-accordion>summary::after{transition:none}}
+
+/* Accés destacat al dossier, visible a tots els cursos */
+nav a.nav-dossier-link{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:9px 14px;margin-left:6px;white-space:nowrap;
+  border-radius:12px;border:1px solid #df559d;
+  background:linear-gradient(110deg,#ed5b9f,#a945c1);color:#fff!important;
+  font-weight:900;letter-spacing:.005em;
+  box-shadow:0 4px 11px #b3429b33;
+  transition:transform .18s ease,box-shadow .18s ease,filter .18s ease;
+}
+nav a.nav-dossier-link:hover,nav a.nav-dossier-link[aria-current=page]{
+  background:linear-gradient(110deg,#e64693,#9232b3);
+  color:#fff!important;transform:translateY(-1px);filter:saturate(1.06);
+  box-shadow:0 6px 15px #b3429b55;
+}
+@media(max-width:760px){
+  nav a.nav-dossier-link{margin:5px 0 0;padding:8px 12px;font-size:13px}
+}
+@media(prefers-reduced-motion:reduce){nav a.nav-dossier-link{transition:none}}
