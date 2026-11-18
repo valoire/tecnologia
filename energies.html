@@ -945,35 +945,80 @@
       </div>
 
 
-      <div id="solar-guia-pau" class="key-idea" style="margin:24px 0;border:2px solid #b9dcec;border-radius:18px;padding:20px;background:#f4faff">
-        <h3>☀️ Plaques solars · Teoria per resoldre els exercicis PAU 21 i 22</h3>
-        <p>Les <strong>plaques fotovoltaiques</strong> produeixen electricitat; els <strong>captadors solars tèrmics</strong> escalfen aigua. Aquests són els conceptes i les fórmules que necessites per resoldre els dos exercicis del dossier, sense afegir més exercicis.</p>
+
+      <section id="solar-guia-pau" class="key-idea" aria-labelledby="solar-teoria-title" style="margin:28px 0;padding:clamp(16px,3vw,28px);border:2px solid #b4d7ea;border-radius:22px;background:linear-gradient(135deg,#f0f9ff,#ffffff 58%,#fff9ed)">
+        <span class="section-kicker">TEORIA GUIADA · EXERCICIS PAU 21 I 22</span>
+        <h3 id="solar-teoria-title" style="font-size:clamp(1.45rem,3vw,2rem);color:#205f87;margin:9px 0 12px">☀️ Energia solar · De la teoria als exercicis</h3>
+        <p>L'energia solar arriba del Sol en forma de radiació. La podem aprofitar de dues maneres: <strong>fotovoltaica</strong>, que produeix electricitat, i <strong>solar tèrmica</strong>, que produeix calor per escalfar un fluid. Aquesta teoria prepara els exercicis <a href="#exercici-dossier-21">21</a> i <a href="#exercici-dossier-22">22</a> del dossier.</p>
         <div class="info-grid">
-          <div class="info-box">
-            <h4>⚡ Exercici 21 · Plaques fotovoltaiques</h4>
-            <p><strong>Consum:</strong> si la potència mitjana és una fracció de la potència instal·lada, primer calcula P<sub>mitjana</sub> = P<sub>instal·lada</sub> · factor d'ús. Després aplica E = P · t, amb P en kW i t en hores, per obtenir kWh.</p>
-            <p><strong>Potència objectiu:</strong> si l'enunciat demana cobrir el 15 % de la potència mitjana, calcula P<sub>FV</sub> = 0,15 · P<sub>mitjana</sub>. No confonguis aquest càlcul amb un dimensionament anual d'energia.</p>
-            <span class="formula">η = P<sub>placa</sub> / (I · A)</span>
-            <p><strong>Rendiment de la placa:</strong> divideix la potència elèctrica produïda (W) entre la potència solar incident, I · A (W). Multiplica per 100 per expressar-lo en %.</p>
-            <span class="formula">N = P<sub>FV necessària</sub> / P<sub>placa</sub></span>
-            <p><strong>Nombre de plaques:</strong> expressa totes dues potències en W i arrodoneix N cap amunt. Per exemple, 7,2 plaques significa que calen 8.</p>
-            <p><strong>Emissions evitades:</strong> multiplica l'energia substituïda (kWh/any) pel factor d'emissió, després converteix de g a kg (÷ 1.000). Per al 15 % exacte de l'exercici, utilitza el 15 % de l'energia anual.</p>
-          </div>
-          <div class="info-box">
-            <h4>🌡️ Exercici 22 · Captadors solars tèrmics</h4>
-            <p><strong>1. Compara els captadors:</strong> calcula la diferència de temperatures ΔT = T − T<sub>a</sub> i substitueix-la al model de rendiment de cada captador. Compara els resultats en %.</p>
-            <span class="formula">η = η<sub>0</sub> − k · (T − T<sub>a</sub>) / I</span>
-            <p>η<sub>0</sub> és el rendiment de referència (decimal); k és el coeficient de pèrdues [W/(m²·K)]; T i T<sub>a</sub> són temperatures (°C) i I és la irradiància (W/m²). Per a una diferència de temperatures, 1 °C de variació equival a 1 K.</p>
-            <p><strong>2. Calcula la calor que necessita l'aigua:</strong> Q = m · c · ΔT. Amb ρ = 1 kg/L, el nombre de litres coincideix numèricament amb els kg. Converteix el resultat de J o kJ a kWh.</p>
-            <span class="formula">Q = m · c · ΔT</span>
-            <p><strong>3. Troba l'energia aportada per cada captador:</strong> P<sub>útil</sub> = I · A · η; E<sub>captador</sub> = P<sub>útil</sub> · t. Fes servir W i h per obtenir Wh; divideix entre 1.000 per passar a kWh.</p>
-            <p><strong>4. Nombre de captadors:</strong> N = Q<sub>necessària</sub> / E<sub>captador</sub>, amb les dues energies en kWh. Arrodoneix cap amunt.</p>
-            <p><strong>5. Si baixa la irradiància:</strong> torna a calcular η amb la nova I, després l'energia útil total dels captadors escollits. L'energia auxiliar és la diferència que falta: <strong>E<sub>auxiliar</sub> = màx(0, Q<sub>necessària</sub> − E<sub>solar</sub>)</strong>. En l'exercici s'indica suport elèctric ideal.</p>
-          </div>
+          <div class="info-box"><h4>⚡ Plaques fotovoltaiques</h4><p>La radiació solar incideix sobre les cèl·lules fotovoltaiques, que transformen una part de l'energia rebuda en <strong>electricitat</strong>.</p><p><strong>Objectiu de l'exercici 21:</strong> consum elèctric, rendiment de les plaques, quantitat necessària i emissions evitades.</p></div>
+          <div class="info-box"><h4>🌡️ Captadors solars tèrmics</h4><p>La radiació solar s'aprofita per escalfar un fluid, habitualment aigua. El captador pot perdre calor cap a l'ambient.</p><p><strong>Objectiu de l'exercici 22:</strong> comparar rendiments, calcular l'energia necessària per escalfar aigua i determinar els captadors i el suport auxiliar.</p></div>
         </div>
-        <p class="mini-note"><strong>Per als dos exercicis:</strong> dades → fórmula → substitució → unitats → resultat. Recorda que <strong>potència (kW)</strong> i <strong>energia (kWh)</strong> no són el mateix, que els percentatges passen a decimals abans de multiplicar i que 1 kWh = 3,6 MJ.</p>
-        <p><a href="#exercici-dossier-21">Anar a l'exercici 21 · Fotovoltaica</a> · <a href="#exercici-dossier-22">Anar a l'exercici 22 · Solar tèrmica</a></p>
-      </div>
+        <h4 style="color:#205f87;font-size:1.19rem;margin:24px 0 10px">1 · Irradiància, potència i energia</h4>
+        <p>Abans de resoldre cap problema, cal distingir tres magnituds. <strong>La irradiància</strong> és la potència solar que arriba a cada metre quadrat; <strong>la potència</strong> és el ritme de transformació energètica; <strong>l'energia</strong> és la quantitat acumulada durant un temps.</p>
+        <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;background:#fff;border-radius:12px"><thead><tr><th style="padding:10px;border:1px solid #d4e5ed">Magnitud</th><th style="padding:10px;border:1px solid #d4e5ed">Què representa?</th><th style="padding:10px;border:1px solid #d4e5ed">Unitats</th></tr></thead><tbody><tr><td style="padding:10px;border:1px solid #d4e5ed">Irradiància I</td><td style="padding:10px;border:1px solid #d4e5ed">Potència solar incident per unitat de superfície</td><td style="padding:10px;border:1px solid #d4e5ed">W/m²</td></tr><tr><td style="padding:10px;border:1px solid #d4e5ed">Potència P</td><td style="padding:10px;border:1px solid #d4e5ed">Energia transformada per unitat de temps</td><td style="padding:10px;border:1px solid #d4e5ed">W o kW</td></tr><tr><td style="padding:10px;border:1px solid #d4e5ed">Energia E</td><td style="padding:10px;border:1px solid #d4e5ed">Quantitat produïda o consumida</td><td style="padding:10px;border:1px solid #d4e5ed">Wh o kWh</td></tr></tbody></table></div>
+        <div class="worked"><h4>Com interpretem 1.000 W/m²?</h4><p>Si una placa de 2 m² rep una irradiància de 1.000 W/m², sobre la seva superfície incideixen <strong>1.000 · 2 = 2.000 W de potència solar</strong>. Això no vol dir que produeixi 2.000 W d'electricitat: només en transforma una part.</p></div>
+
+        <h4 style="color:#205f87;font-size:1.19rem;margin:24px 0 10px">2 · Rendiment d'una placa fotovoltaica</h4>
+        <p>El <strong>rendiment</strong> indica la proporció de potència solar incident que la placa transforma en potència elèctrica. La potència solar que arriba a la placa és <strong>I · A</strong>.</p>
+        <div class="formula" style="text-align:center;font-size:clamp(1.2rem,2.5vw,1.65rem)">η = P<sub>elèctrica</sub> / (I · A)</div>
+        <div class="legend"><b>η:</b> rendiment en decimal (20 % = 0,20)<br><b>P<sub>elèctrica</sub>:</b> potència elèctrica (W)<br><b>I:</b> irradiància (W/m²)<br><b>A:</b> superfície de la placa (m²)<br><b>Per obtenir el percentatge:</b> η (%) = η · 100</div>
+        <div class="worked"><h4>Aplicació a l'exercici 21 · Apartat c</h4><p>Cada placa té una superfície d'1,45 m², rep una irradiància de 1.000 W/m² i proporciona 194 W. Per calcular el rendiment, dividim la potència elèctrica entre <strong>1.000 · 1,45</strong> i convertim la fracció en percentatge. La idea és comparar <strong>potència útil / potència incident</strong>.</p></div>
+
+        <h4 style="color:#205f87;font-size:1.19rem;margin:24px 0 10px">3 · De la potència a l'energia</h4>
+        <p>La potència (kW) no és el mateix que l'energia (kWh). Per saber quanta energia es consumeix o es produeix cal conèixer el temps.</p>
+        <div class="formula" style="text-align:center;font-size:1.55rem">E = P · t</div>
+        <div class="legend"><b>E:</b> energia (kWh) · <b>P:</b> potència (kW) · <b>t:</b> temps (h)</div>
+        <div class="worked"><h4>Exemple conceptual</h4><p>Un aparell de <strong>2 kW</strong> que funciona <strong>3 h</strong> consumeix E = 2 · 3 = <strong>6 kWh</strong>.</p><p><strong>Exercici 21 · Apartat a:</strong> calcula primer la potència mitjana a partir del 75 % de la potència instal·lada, després les hores anuals i finalment E = P · t. Les <strong>12 h/dia</strong> de l'enunciat són hores de consum de l'edifici, no hores de producció solar.</p></div>
+
+        <h4 style="color:#205f87;font-size:1.19rem;margin:24px 0 10px">4 · Objectiu de cobertura, nombre de plaques i emissions</h4>
+        <p>A l'exercici 21 es demana dimensionar la instal·lació perquè cobreixi el <strong>15 % de la potència mitjana</strong>. Per això, primer multipliquem la potència mitjana per 0,15. És una simplificació específica de l'enunciat.</p>
+        <div class="formula">P<sub>FV necessària</sub> = 0,15 · P<sub>mitjana</sub></div>
+        <div class="formula">N = P<sub>FV necessària</sub> / P<sub>placa</sub></div>
+        <p>Les dues potències han d'estar en les mateixes unitats. Si el càlcul dona, per exemple, <strong>6,3 plaques</strong>, en necessitem <strong>7</strong>: el nombre de plaques s'arrodoneix cap amunt.</p>
+        <p>Per calcular les <strong>emissions de CO₂ evitades</strong> quan es substitueix electricitat de la xarxa:</p>
+        <div class="formula">m<sub>CO₂</sub> = E<sub>substituïda</sub> · f<sub>CO₂</sub></div>
+        <p>Multipliquem l'energia substituïda en kWh pel factor d'emissió en g CO₂/kWh. Per expressar el resultat en kg CO₂, dividim entre 1.000. L'apartat e demana el <strong>15 % exacte de l'energia anual</strong>; no s'ha de confondre amb la potència nominal de les plaques instal·lades.</p>
+
+        <h4 style="color:#205f87;font-size:1.19rem;margin:24px 0 10px">5 · Rendiment d'un captador solar tèrmic</h4>
+        <p>Un captador solar tèrmic transforma la radiació en calor útil, però també perd calor cap a l'ambient. Com més alta sigui la temperatura de treball respecte de l'ambient, més importants poden ser aquestes pèrdues.</p>
+        <div class="formula" style="text-align:center;font-size:clamp(1.14rem,2.4vw,1.5rem)">η = η<sub>0</sub> − k · (T − T<sub>a</sub>) / I</div>
+        <div class="legend"><b>η<sub>0</sub>:</b> rendiment òptic o de referència (decimal)<br><b>k:</b> coeficient de pèrdues [W/(m²·K)]<br><b>T:</b> temperatura de treball (°C)<br><b>T<sub>a</sub>:</b> temperatura ambient (°C)<br><b>I:</b> irradiància (W/m²)</div>
+        <p><strong>Interpretació:</strong> rendiment real = rendiment de referència − reducció per pèrdues. En aquesta diferència de temperatures, una variació d'1 °C equival a una variació d'1 K.</p>
+        <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;background:#fff"><thead><tr><th style="padding:10px;border:1px solid #d4e5ed">Model (exercici 22)</th><th style="padding:10px;border:1px solid #d4e5ed">η₀</th><th style="padding:10px;border:1px solid #d4e5ed">k [W/(m²·K)]</th></tr></thead><tbody><tr><td style="padding:10px;border:1px solid #d4e5ed">A</td><td style="padding:10px;border:1px solid #d4e5ed">0,80</td><td style="padding:10px;border:1px solid #d4e5ed">8,9</td></tr><tr><td style="padding:10px;border:1px solid #d4e5ed">B</td><td style="padding:10px;border:1px solid #d4e5ed">0,66</td><td style="padding:10px;border:1px solid #d4e5ed">3,2</td></tr></tbody></table></div>
+        <div class="worked"><h4>Quin model és millor?</h4><p>El model A té un rendiment òptic superior, però també un coeficient de pèrdues més gran. <strong>No podem escollir només mirant η₀.</strong> Cal substituir T = 50 °C, T<sub>a</sub> = 18 °C i I = 800 W/m² a la fórmula de cada model i comparar els rendiments obtinguts.</p></div>
+
+        <h4 style="color:#205f87;font-size:1.19rem;margin:24px 0 10px">6 · Energia necessària per escalfar aigua</h4>
+        <p>Una vegada triat el captador, cal trobar l'energia tèrmica que necessita l'aigua per augmentar la temperatura.</p>
+        <div class="formula" style="text-align:center;font-size:1.55rem">Q = m · c · ΔT</div>
+        <div class="legend"><b>Q:</b> calor (J o kJ)<br><b>m:</b> massa d'aigua (g si c s'expressa en J/(g·°C))<br><b>c:</b> calor específica de l'aigua<br><b>ΔT:</b> augment de temperatura (°C o K)</div>
+        <p>Al dossier, <strong>c = 4,18 J/(g·°C)</strong>, per tant, cal posar la massa en <strong>grams</strong>. Amb ρ = 1 kg/L, 1 L d'aigua equival a 1 kg = 1.000 g.</p>
+        <div class="formula">1 kWh = 3.600.000 J = 3.600 kJ</div>
+        <p>Aquesta conversió permet comparar la calor que necessita l'aigua amb l'energia produïda pels captadors.</p>
+
+        <h4 style="color:#205f87;font-size:1.19rem;margin:24px 0 10px">7 · Nombre de captadors necessaris</h4>
+        <p>Primer calculem quina energia tèrmica útil pot proporcionar <strong>un captador</strong> durant el temps indicat.</p>
+        <div class="formula">P<sub>útil</sub> = I · A · η</div>
+        <div class="formula">E<sub>captador</sub> = P<sub>útil</sub> · t</div>
+        <p>Si P està en W i t en h, obtenim Wh. Dividim entre 1.000 per obtenir kWh.</p>
+        <div class="formula">N = E<sub>necessària</sub> / E<sub>captador</sub></div>
+        <p>Per calcular N, totes dues energies han d'estar en les mateixes unitats i el nombre de captadors s'arrodoneix <strong>cap amunt</strong>.</p>
+
+        <h4 style="color:#205f87;font-size:1.19rem;margin:24px 0 10px">8 · Què passa si baixa la irradiància?</h4>
+        <p>A l'últim apartat de l'exercici 22, la irradiància baixa de 800 a 400 W/m². <strong>No n'hi ha prou amb dividir la producció anterior per dos</strong>, perquè el model de l'enunciat indica que també varia el rendiment.</p>
+        <p><strong>Ordre de resolució:</strong> recalcula el rendiment amb la nova irradiància; troba l'energia produïda pels captadors instal·lats; compara-la amb l'energia que necessita l'aigua.</p>
+        <div class="formula">E<sub>auxiliar</sub> = E<sub>necessària</sub> − E<sub>solar</sub></div>
+        <p>Si l'energia solar no arriba a cobrir la demanda, l'escalfador auxiliar ideal proporciona la diferència; si la cobreix, el suport necessari és zero.</p>
+
+        <h4 style="color:#205f87;font-size:1.2rem;margin:24px 0 10px">📌 Resum de fórmules per als dos exercicis</h4>
+        <div class="info-grid">
+          <div class="info-box"><h4>Exercici 21 · Fotovoltaica</h4><p><strong>E = P · t</strong><br><strong>η = P/(I · A)</strong><br><strong>N = P<sub>necessària</sub>/P<sub>placa</sub></strong><br><strong>m<sub>CO₂</sub> = E · f<sub>CO₂</sub></strong></p></div>
+          <div class="info-box"><h4>Exercici 22 · Solar tèrmica</h4><p><strong>η = η<sub>0</sub> − k(T − T<sub>a</sub>)/I</strong><br><strong>Q = m · c · ΔT</strong><br><strong>E = I · A · η · t</strong><br><strong>N = E<sub>necessària</sub>/E<sub>captador</sub></strong></p></div>
+        </div>
+        <p class="mini-note"><strong>Abans de resoldre:</strong> identifica les dades, tria la fórmula, converteix les unitats, substitueix els valors i emmarca el resultat amb les unitats. Les respostes del dossier estan ocultes fins que les vulguis consultar.</p>
+        <p><a href="#exercici-dossier-21">Anar a l'exercici PAU 21 · Fotovoltaica</a> · <a href="#exercici-dossier-22">Anar a l'exercici PAU 22 · Solar tèrmica</a></p>
+      </section>
+
       <div class="worked"><h3>🧮 Exemple: una central hidràulica</h3><p>Amb ρ = 1.000 kg/m³, g = 9,81 m/s², q<sub>v</sub> = 2 m³/s i h = 10 m:</p><p>P<sub>hidràulica</sub> = 1.000 · 9,81 · 2 · 10 = <strong>196.200 W</strong>. Amb η = 0,85, P<sub>elèctrica</sub> = <strong>166.770 W ≈ 166,8 kW</strong>.</p></div>
       <div class="key-idea">
         <h3>⚙️ I si la màquina multiplica la velocitat? (PAU 24)</h3>
