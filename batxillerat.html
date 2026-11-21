@@ -201,16 +201,16 @@
       if(oberta)reunio.scrollIntoView({behavior:'smooth',block:'start'});
     });
     const unitats=[
+      ['Equilibri de màquines','teoria-2n.html#maquines'],
       ['Energies','energies.html'],
-      ['Motors tèrmics i cilindrada','teoria-2n.html#motors-termics'],
       ['Materials i assaigs','teoria-2n.html#materials'],
-      ['Metrologia i normalització','teoria-2n.html#metrologia'],
-      ['Sistemes pneumàtics i oleohidràulics','teoria-2n.html#fluids'],
-      ['Motors reductors','teoria-2n.html#reductors'],
-      ['Principis de les màquines','teoria-2n.html#maquines'],
-      ['Màquines i sistemes elèctrics i electrotècnics','teoria-2n.html#electrics'],
-      ['Control lògic i funcions lògiques','teoria-2n.html#logica'],
-      ['Organització industrial','teoria-2n.html#organitzacio']
+      ['Màquines tèrmiques i termodinàmica','teoria-2n.html#motors-termics'],
+      ['Mecanismes i transmissió de moviment','teoria-2n.html#reductors'],
+      ['Pneumàtica i hidràulica','teoria-2n.html#fluids'],
+      ['Electrotècnia i màquines elèctriques','teoria-2n.html#electrics'],
+      ['Electrònica digital i control lògic','teoria-2n.html#logica'],
+      ['Metrologia, qualitat i fabricació','teoria-2n.html#metrologia'],
+      ['Preparació de les PAU','batxillerat.html#pau']
     ];
     function ompleUnitats(id,primer){
       const container=document.getElementById(id);
@@ -224,7 +224,7 @@
         ['Màquines i sistemes elèctrics i electrotècnics',null,'En preparació per a 1r'],
         ['Control lògic i funcions lògiques',null,'En preparació per a 1r']
       ];
-      const entries=primer?unitatsPrimer:unitats.map(([nom,enllac],i)=>[nom,enllac,i===0?'30 exercicis PAU · Disponible':'Teoria de 2n · Disponible']);
+      const entries=primer?unitatsPrimer:unitats.map(([nom,enllac],i)=>[nom,enllac,i===0?'Ja treballada · Disponible':i===1?'30 exercicis PAU · Ja treballada':'Teoria de 2n · Disponible']);
       entries.forEach(([nom,enllac,estat],i)=>{
         const card=document.createElement(enllac?'a':'div');
         card.className='unit-card '+(enllac?'unit-card--active':'unit-card--pending');
