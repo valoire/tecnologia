@@ -93,12 +93,12 @@
     <a class="dossier-course-card" href="dossier.html"><span class="dossier-course-icon">📒</span><span><strong>Lliurament del dossier · 1r i 2n de Batxillerat</strong><small>Obligatori: portada, índex, activitats, apunts de classe i presentació.</small></span><span class="dossier-course-arrow">→</span></a>
     <div class="tabs" role="tablist" aria-label="Apartats de Batxillerat"><button class="tab" role="tab" id="tab-primer" aria-controls="panel-primer" aria-selected="true" type="button">1r de Batxillerat</button><button class="tab" role="tab" id="tab-segon" aria-controls="panel-segon" aria-selected="false" type="button">2n de Batxillerat</button><button class="tab" role="tab" id="tab-pau" aria-controls="panel-pau" aria-selected="false" type="button">PAU</button></div>
     <section role="tabpanel" id="panel-primer" aria-labelledby="tab-primer">
-      <div class="section-heading"><div><h2>1r de Batxillerat · Teoria i exercicis</h2><p>Comencem per <strong>Energia i transformacions</strong>, seguint els exercicis del dossier de classe.</p></div></div>
-      <div class="unit-intro"><h3>Les unitats de 1r</h3><p>Les mateixes unitats que a 2n, adaptades al nivell de primer. Entra a les que ja tenim preparades.</p></div>
+      <div class="section-heading"><div><h2>1r de Batxillerat · Teoria i exercicis</h2><p>Seguim l'ordre treballat a classe: <strong>UD1 Organització industrial, UD2 Energies i UD3 Motors i sistemes mecànics</strong>.</p></div></div>
+      <div class="unit-intro"><h3>Les unitats de 1r</h3><p>Unitats ordenades segons la programació de primer. Organització industrial ja s'ha treballat a classe.</p></div>
       <div class="unit-grid" id="unitats-primer" aria-label="Unitats de primer de Batxillerat"></div>
       <details class="module-details">
         <summary>Veure els 8 apartats d'Energia i transformacions</summary>
-      <div class="course-modules" aria-label="Índex del primer tema">
+      <div class="course-modules" aria-label="Índex de la UD2: Energia">
         <a href="energies-1r.html#treball"><small>EXERCICIS 1–2</small><strong>Treball i energia mecànica</strong></a>
         <a href="energies-1r.html#potencia"><small>EXERCICI 3</small><strong>Potència i consum energètic</strong></a>
         <a href="energies-1r.html#termica"><small>EXERCICIS 4–7</small><strong>Calor i energia tèrmica</strong></a>
@@ -212,8 +212,18 @@
     ];
     function ompleUnitats(id,primer){
       const container=document.getElementById(id);
-      unitats.forEach(([nom,segonLink],i)=>{
-        const enllac=primer?(i===0?'energies-1r.html':i===1?'motors-1r.html':null):segonLink;
+      const unitatsPrimer=[
+        ['Organització industrial',null,'Ja treballada a classe'],
+        ['Energies','energies-1r.html','23 exercicis del dossier · Disponible'],
+        ['Motors i sistemes mecànics','motors-1r.html','Motors i cilindrada disponibles · Reductors i màquines en ampliació'],
+        ['Materials i assaigs',null,'En preparació per a 1r'],
+        ['Metrologia i normalització',null,'En preparació per a 1r'],
+        ['Sistemes pneumàtics i oleohidràulics',null,'En preparació per a 1r'],
+        ['Màquines i sistemes elèctrics i electrotècnics',null,'En preparació per a 1r'],
+        ['Control lògic i funcions lògiques',null,'En preparació per a 1r']
+      ];
+      const entries=primer?unitatsPrimer:unitats.map(([nom,enllac],i)=>[nom,enllac,i===0?'30 exercicis PAU · Disponible':'Teoria de 2n · Disponible']);
+      entries.forEach(([nom,enllac,estat],i)=>{
         const card=document.createElement(enllac?'a':'div');
         card.className='unit-card '+(enllac?'unit-card--active':'unit-card--pending');
         if(enllac)card.href=enllac;
@@ -226,7 +236,7 @@
         title.textContent=nom;
         const status=document.createElement('span');
         status.className='unit-card__status';
-        status.textContent=primer?(i===0?'23 exercicis del dossier · Disponible':i===1?'16 exercicis amb resultat · Disponible':'En preparació per a 1r'):(i===0?'30 exercicis PAU · Disponible':'Teoria de 2n · Disponible');
+        status.textContent=estat;
         content.append(title,status);
         card.append(numero,content);
         if(enllac){
