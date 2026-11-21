@@ -114,7 +114,7 @@
     </section>
     <section role="tabpanel" id="panel-segon" aria-labelledby="tab-segon" hidden>
       <div class="section-heading"><div><h2>2n de Batxillerat · Teoria i exercicis</h2><p>Els continguts de Tecnologia i Enginyeria II, explicats per apartats.</p></div></div>
-      <div class="unit-intro"><h3>Les unitats de 2n</h3><p>El mateix índex que a 1r, amb els continguts i exercicis de segon i la preparació PAU.</p></div>
+      <div class="unit-intro"><h3>Les unitats de 2n</h3><p>Sis unitats agrupades per preparar les PAU. UD1 Equilibri de màquines i UD2 Energies ja treballades; UD3 Màquines tèrmiques i motors disponible.</p></div>
       <div class="unit-grid" id="unitats-segon" aria-label="Unitats de segon de Batxillerat"></div>
       <p><a class="sig-pau-link" href="programacio-batxillerat.html#segon">📘 Veure la programació de 2n i els exercicis proposats →</a></p>
       <p class="subtle">Energies té una pàgina completa amb 30 exercicis PAU. Les altres unitats enllacen als apartats de teoria de segon.</p>
@@ -203,14 +203,10 @@
     const unitats=[
       ['Equilibri de màquines','teoria-2n.html#maquines'],
       ['Energies','energies.html'],
-      ['Materials i assaigs','teoria-2n.html#materials'],
-      ['Màquines tèrmiques i termodinàmica','teoria-2n.html#motors-termics'],
-      ['Mecanismes i transmissió de moviment','teoria-2n.html#reductors'],
-      ['Pneumàtica i hidràulica','teoria-2n.html#fluids'],
-      ['Electrotècnia i màquines elèctriques','teoria-2n.html#electrics'],
-      ['Electrònica digital i control lògic','teoria-2n.html#logica'],
-      ['Metrologia, qualitat i fabricació','teoria-2n.html#metrologia'],
-      ['Preparació de les PAU','batxillerat.html#pau']
+      ['Màquines tèrmiques i motors','maquines-termiques-2n.html'],
+      ['Materials, assaigs i fabricació','teoria-2n.html#materials'],
+      ['Mecanismes, pneumàtica i hidràulica','teoria-2n.html#fluids'],
+      ['Electrotècnia, automatització i control','teoria-2n.html#electrics']
     ];
     function ompleUnitats(id,primer){
       const container=document.getElementById(id);
@@ -224,7 +220,7 @@
         ['Màquines i sistemes elèctrics i electrotècnics',null,'En preparació per a 1r'],
         ['Control lògic i funcions lògiques',null,'En preparació per a 1r']
       ];
-      const entries=primer?unitatsPrimer:unitats.map(([nom,enllac],i)=>[nom,enllac,i===0?'Ja treballada · Disponible':i===1?'30 exercicis PAU · Ja treballada':'Teoria de 2n · Disponible']);
+      const entries=primer?unitatsPrimer:unitats.map(([nom,enllac],i)=>[nom,enllac,i===0?'Ja treballada':i===1?'Ja treballada · 30 exercicis PAU':i===2?'UD3 · 20 exercicis i fórmules · Disponible':'Teoria per completar · Disponible']);
       entries.forEach(([nom,enllac,estat],i)=>{
         const card=document.createElement(enllac?'a':'div');
         card.className='unit-card '+(enllac?'unit-card--active':'unit-card--pending');
