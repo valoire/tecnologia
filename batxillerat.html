@@ -213,7 +213,7 @@
     function ompleUnitats(id,primer){
       const container=document.getElementById(id);
       unitats.forEach(([nom,segonLink],i)=>{
-        const enllac=primer?(i===0?'energies-1r.html':null):segonLink;
+        const enllac=primer?(i===0?'energies-1r.html':i===1?'motors-1r.html':null):segonLink;
         const card=document.createElement(enllac?'a':'div');
         card.className='unit-card '+(enllac?'unit-card--active':'unit-card--pending');
         if(enllac)card.href=enllac;
@@ -226,7 +226,7 @@
         title.textContent=nom;
         const status=document.createElement('span');
         status.className='unit-card__status';
-        status.textContent=primer?(i===0?'23 exercicis del dossier · Disponible':'En preparació per a 1r'):(i===0?'30 exercicis PAU · Disponible':'Teoria de 2n · Disponible');
+        status.textContent=primer?(i===0?'23 exercicis del dossier · Disponible':i===1?'16 exercicis amb resultat · Disponible':'En preparació per a 1r'):(i===0?'30 exercicis PAU · Disponible':'Teoria de 2n · Disponible');
         content.append(title,status);
         card.append(numero,content);
         if(enllac){
