@@ -220,7 +220,7 @@
         ['Màquines i sistemes elèctrics i electrotècnics',null,'En preparació per a 1r'],
         ['Control lògic i funcions lògiques',null,'En preparació per a 1r']
       ];
-      const entries=primer?unitatsPrimer:unitats.map(([nom,enllac],i)=>[nom,enllac,i===0?'Ja treballada':i===1?'Ja treballada · 30 exercicis PAU':i===2?'UD3 · 20 exercicis + 8 problemes PAU · Disponible':'Teoria per completar · Disponible']);
+      const entries=primer?unitatsPrimer:unitats.map(([nom,enllac],i)=>[nom,enllac,i===0?'Ja treballada':i===1?'Ja treballada · 30 exercicis PAU':i===2?'UD3 · 20 exercicis + 12 extres i PAU oficials · Disponible':'Teoria per completar · Disponible']);
       entries.forEach(([nom,enllac,estat],i)=>{
         const card=document.createElement(enllac?'a':'div');
         card.className='unit-card '+(enllac?'unit-card--active':'unit-card--pending');
