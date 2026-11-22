@@ -213,14 +213,14 @@
       const unitatsPrimer=[
         ['Organització industrial',null,'Ja treballada a classe'],
         ['Energies','energies-1r.html','23 exercicis del dossier · Disponible'],
-        ['Motors i sistemes mecànics','motors-1r.html','Motors i cilindrada disponibles · Reductors i màquines en ampliació'],
+        ['Motors i sistemes mecànics','motors-1r.html','UD3 completa · 26 exercicis progressius'],
         ['Materials i assaigs',null,'En preparació per a 1r'],
         ['Metrologia i normalització',null,'En preparació per a 1r'],
         ['Sistemes pneumàtics i oleohidràulics',null,'En preparació per a 1r'],
         ['Màquines i sistemes elèctrics i electrotècnics',null,'En preparació per a 1r'],
         ['Control lògic i funcions lògiques',null,'En preparació per a 1r']
       ];
-      const entries=primer?unitatsPrimer:unitats.map(([nom,enllac],i)=>[nom,enllac,i===0?'Ja treballada':i===1?'Ja treballada · 30 exercicis PAU':i===2?'UD3 · 20 exercicis i fórmules · Disponible':'Teoria per completar · Disponible']);
+      const entries=primer?unitatsPrimer:unitats.map(([nom,enllac],i)=>[nom,enllac,i===0?'Ja treballada':i===1?'Ja treballada · 30 exercicis PAU':i===2?'UD3 · 20 exercicis + 8 problemes PAU · Disponible':'Teoria per completar · Disponible']);
       entries.forEach(([nom,enllac,estat],i)=>{
         const card=document.createElement(enllac?'a':'div');
         card.className='unit-card '+(enllac?'unit-card--active':'unit-card--pending');
