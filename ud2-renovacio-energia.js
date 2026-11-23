@@ -1,0 +1,49 @@
+/* Renovació visual de les matèries primeres i l'energia · 4t ESO */
+(function(){
+'use strict';
+function install(){
+ if(new URLSearchParams(location.search).get('ud')!=='2')return;
+ const materials=document.querySelector('#ud2-main-panel-2 .ud2-resource-story');
+ if(materials&&!materials.querySelector('.iv-transformacions')){
+  const section=document.createElement('section');
+  section.className='iv-transformacions';
+  const chains=[
+   ['⛏️','Mineral de ferro','⚙️','Acer','🗡️','Espasa','mineral'],
+   ['🪨','Bauxita','🔩','Alumini','🥫','Llauna','mineral'],
+   ['🏖️','Sorra silícia','🧪','Vidre','🥛','Got','mineral'],
+   ['🌱','Cotó','🧵','Fil i tela','👕','Samarreta','vegetal'],
+   ['🌲','Fusta','🪵','Taulons','🪑','Taula','vegetal'],
+   ['🐑','Llana','🧶','Fil de llana','🧥','Jersei','animal'],
+   ['🐄','Pell animal','🧳','Cuir adobat','👞','Sabata','animal']
+  ];
+  section.innerHTML='<h3>De la matèria primera al producte final</h3><p>La indústria no fabrica els objectes directament de la natura: primer obté una <strong>matèria primera</strong>, després la transforma en un <strong>material</strong> i finalment fabrica el <strong>producte</strong>. Prem les fletxes per descobrir cada etapa.</p><div class="iv-chains">'+chains.map((c,i)=>'<article class="iv-chain"><span class="iv-type">'+c[6]+'</span><div class="iv-chain-line"><div class="iv-step"><span class="iv-pict">'+c[0]+'</span><strong>'+c[1]+'</strong><small>Matèria primera</small></div><span class="iv-arrow">→</span><div class="iv-step"><span class="iv-pict">'+c[2]+'</span><strong>'+c[3]+'</strong><small>Material elaborat</small></div><span class="iv-arrow">→</span><div class="iv-step"><span class="iv-pict">'+c[4]+'</span><strong>'+c[5]+'</strong><small>Producte final</small></div></div></article>').join('')+'</div><div class="iv-activity"><h4>Exercici 1 · Completa la transformació</h4><p>Quin material obtenim de la bauxita? I de la sorra silícia?</p><details><summary>Comprova la resposta</summary><p>Bauxita → alumini; sorra silícia → vidre.</p></details></div>';
+  const anchor=materials.querySelector('.ud2-geology-figure');
+  if(anchor)anchor.before(section);else materials.append(section);
+ }
+ const panel=document.getElementById('ud2-main-panel-3');
+ const article=panel?.querySelector('.ud2-solid-article.ud2-energy-basic');
+ if(!article||article.classList.contains('iv-energy-new'))return;
+ article.classList.add('iv-energy-new');
+ const chapters=article.querySelectorAll(':scope > .ud2-solid-chapter');
+ const explain=document.createElement('section');
+ explain.className='ud2-solid-chapter iv-formula-chapter';
+ explain.innerHTML='<h3>2. D\u2019on surt la fórmula de l\u2019energia?</h3><div class="ud2-solid-section"><p>La <strong>potència</strong> és l\u2019energia transformada per unitat de temps. Comencem per aquesta definició, no per una fórmula memoritzada.</p><div class="iv-math"><p>Definició de potència</p><div class="iv-eq">P = E / t</div><span class="iv-down">↓</span><p>Multipliquem els dos costats pel temps</p><div class="iv-eq">P × t = E</div><span class="iv-down">↓</span><div class="iv-used"><strong>FÓRMULA QUE UTILITZAREM</strong><div class="iv-eq">E = P × t</div></div></div><p><strong>Unitats:</strong> P en watts (W) i t en hores (h) donen E en watt-hora (Wh). Si t és en segons (s), obtenim joules (J).</p><h4>Exemple resolt · Bombeta de 5 W encesa 3 hores</h4><div class="iv-math"><p>Dades: P = 5 W; t = 3 h</p><div class="iv-eq">E = P × t</div><span class="iv-down">↓</span><div class="iv-eq">E = 5 W × 3 h</div><span class="iv-down">↓</span><div class="iv-answer">E = 15 Wh</div></div><div class="iv-activity"><h4>Exercici 2 · Ara tu</h4><p>Un ventilador de 40 W funciona 2 hores. Quanta energia consumeix en Wh?</p><details><summary>Veure la resolució</summary><div class="iv-math"><div class="iv-eq">E = P × t</div><div class="iv-eq">E = 40 W × 2 h</div><div class="iv-answer">E = 80 Wh</div></div></details></div></div>';
+ if(chapters[1])chapters[1].replaceWith(explain);
+ const renew=document.createElement('section');
+ renew.className='ud2-solid-chapter iv-renewables';
+ renew.innerHTML='<h3>Fonts d\u2019energia: renovables i no renovables</h3><div class="ud2-solid-section"><p>Una <strong>font d\u2019energia</strong> és un recurs o fenomen del qual podem obtenir energia. No és el mateix que una matèria primera industrial ni que una central elèctrica.</p><div class="iv-energy-sources"><article><h4>🌞 Renovables</h4><p>Es regeneren de forma natural a escala humana, encara que aprofitar-les té impactes i límits.</p><p>☀️ Solar · 💨 Eòlica · 💧 Hidràulica · 🌋 Geotèrmica · 🌿 Biomassa · 🌊 Marina</p></article><article><h4>🛢️ No renovables</h4><p>Depenen de reserves limitades o de combustibles que no es regeneren a escala humana.</p><p>🪨 Carbó · 🛢️ Petroli · 🔥 Gas natural · ⚛️ Urani (energia nuclear)</p></article></div><div class="iv-activity"><h4>Exercici 3 · Classifica</h4><p>Classifica: vent, carbó, urani, sol, gas natural i aigua d\u2019un embassament.</p><details><summary>Veure la solució</summary><p><strong>Renovables:</strong> vent, sol i energia hidràulica. <strong>No renovables:</strong> carbó, urani i gas natural.</p></details></div><p><strong>Important:</strong> una central transforma l\u2019energia d\u2019una font en electricitat. Els esquemes de les centrals es mantenen al seu apartat original.</p></div>';
+ explain.after(renew);
+ const rend=article.querySelector('#ud2-rendiment-basic .ud2-solid-section');
+ if(rend){
+  const p=rend.querySelector('p');
+  if(p)p.insertAdjacentHTML('afterend','<div class="iv-math"><p>Conservació de l\u2019energia</p><div class="iv-eq">E aportada = E útil + E dissipada</div><span class="iv-down">↓</span><p>Quina part de l\u2019energia aportada aprofitem?</p><div class="iv-eq">η = E útil / E aportada</div><span class="iv-down">↓</span><div class="iv-used"><strong>FÓRMULA QUE UTILITZAREM</strong><div class="iv-eq">η (%) = (E útil / E aportada) × 100</div></div></div>');
+  rend.insertAdjacentHTML('beforeend','<div class="iv-activity"><h4>Exercici 4 · Rendiment</h4><p>Un motor rep 200 J i n\u2019aprofita 150 J. Quin és el rendiment?</p><details><summary>Veure la resolució</summary><div class="iv-math"><div class="iv-eq">η = (150 / 200) × 100</div><div class="iv-answer">η = 75 %</div></div></details></div>');
+ }
+}
+const style=document.createElement('style');style.textContent=`
+.iv-transformacions{margin:25px 0;padding:20px;border:2px solid #ead8f2;border-radius:22px;background:#fffafd}.iv-transformacions h3,.iv-renewables h3{color:#853a9d}.iv-chains{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:13px}.iv-chain{border:1px solid #e1d0ea;border-radius:15px;padding:12px;background:#fff;transition:transform .2s,box-shadow .2s}.iv-chain:hover{transform:translateY(-3px);box-shadow:0 8px 20px #5d376222}.iv-type{text-transform:uppercase;letter-spacing:.1em;color:#794899;font-size:.72rem;font-weight:800}.iv-chain-line{display:flex;align-items:center;justify-content:space-between;gap:5px}.iv-step{display:flex;flex:1;align-items:center;flex-direction:column;text-align:center;gap:5px;min-width:0}.iv-step strong{font-size:.87rem}.iv-step small{font-size:.72rem;color:#615967}.iv-pict{font-size:2.1rem;line-height:1.5}.iv-arrow{font-size:1.3rem;color:#a04caf;font-weight:900}.iv-math{max-width:720px;margin:20px auto;padding:22px 15px;border-radius:18px;background:#faf7fd;text-align:center}.iv-math p{margin:6px auto 12px}.iv-eq{font-size:clamp(1.25rem,3vw,1.9rem);font-weight:750;margin:12px auto;line-height:1.5}.iv-down{display:block;color:#9054a2;font-size:1.7rem}.iv-used{padding:18px;border:3px solid #23876e;border-radius:15px;background:#eaf8f1;color:#146249}.iv-used strong{font-size:.83rem;letter-spacing:.04em}.iv-answer{display:inline-block;border:3px solid #884a9a;border-radius:14px;padding:12px 22px;color:#76358e;background:white;font-size:1.7rem;font-weight:900}.iv-activity{margin:20px 0;padding:18px;border-left:5px solid #dc8935;border-radius:12px;background:#fff7e9}.iv-activity h4{color:#b65e23;margin-top:0}.iv-activity details{margin-top:12px}.iv-activity summary{cursor:pointer;font-weight:750}.iv-energy-sources{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.iv-energy-sources article{background:#f0f9f1;padding:18px;border-radius:16px}.iv-energy-sources article+article{background:#fff2ed}@media(max-width:650px){.iv-energy-sources{grid-template-columns:1fr}.iv-transformacions{padding:12px}.iv-pict{font-size:1.6rem}}@media(prefers-reduced-motion:reduce){.iv-chain{transition:none}}
+`;document.head.append(style);
+const prev=window.preparaUnitatVisual;
+if(typeof prev==='function')window.preparaUnitatVisual=function(){prev();install();};
+else document.addEventListener('DOMContentLoaded',install);
+})();
