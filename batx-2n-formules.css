@@ -1,0 +1,29 @@
+/* Disseny de fórmules verticals · Tecnologia i Enginyeria II */
+:root{--b2-ink:#183750;--b2-accent:#186b91;--b2-line:#d4e2ed;--b2-use:#18775f}
+.formula-grid,.formulas{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:24px!important;max-width:1000px;margin-inline:auto}
+.formula-card,.derive{position:relative;min-width:0;border:1.5px solid var(--b2-line)!important;border-radius:20px!important;background:#fff!important;padding:clamp(19px,3vw,30px)!important;box-shadow:0 9px 26px #244b7010}
+.formula-card h3,.derive h3{font-size:clamp(1.15rem,2.6vw,1.45rem)!important;color:var(--b2-ink)!important}
+.formula-card>p,.derive>p{line-height:1.85!important;max-width:78ch}
+.formula-card .formula,.derive .mathline{display:block!important;max-width:780px;margin:18px auto!important;text-align:center!important;border:1px solid #c8d9e8!important;border-radius:14px!important;border-left:0!important;background:#f2f7fb!important;padding:20px 16px!important;color:#214b73!important;font-size:clamp(1.25rem,3.2vw,1.9rem)!important;line-height:1.9!important}
+.formula-card .formula{background:#eaf7f1!important;border:2px solid #7bbba4!important;color:#0b624c!important}
+.formula-card .formula::before{content:"FÓRMULA QUE UTILITZAREM";display:block;color:#196f58;font-size:.68rem;letter-spacing:.12em;font-weight:900;margin-bottom:6px}
+.derive .final-formula{max-width:780px;margin:20px auto!important;background:#eaf7f1!important;border:2px solid #82c4a8!important;border-left:7px solid #18775f!important;padding:20px!important;border-radius:15px!important;color:#0f604c!important}
+.derive .final-formula>span{font-weight:900;letter-spacing:.08em;font-size:.77rem!important;color:#18775f}
+.derive .final-formula>div{font-size:clamp(1.3rem,3.2vw,1.9rem);font-weight:800;line-height:1.9}
+.b2n-formula-row{display:block;text-align:center;margin:8px auto;padding:8px 3px;line-height:1.7}
+.b2n-formula-row+.b2n-formula-row{border-top:1px dashed #b6d5c9}
+.b2n-explication{max-width:780px;margin:16px auto;padding:15px 20px;background:#f8fbff;border-left:4px solid #357ba6;border-radius:10px;color:#37566e;line-height:1.75}
+.b2n-explication strong{color:#195a80}
+.b2n-math-stage{display:block;text-align:center;max-width:780px;margin:8px auto;padding:12px 15px;background:#f3f8fc;border-radius:12px}
+.b2n-math-stage+.b2n-math-stage{margin-top:9px}
+.b2n-step-arrow{text-align:center;font-size:1.5rem;color:#527c9d}
+.b2n-visual{max-width:780px;margin:20px auto 24px;padding:15px;background:linear-gradient(120deg,#f0f8fc,#fff);border:1px solid var(--b2-line);border-radius:17px}
+.b2n-visual svg{display:block;width:100%;height:auto;max-height:230px}
+.b2n-visual figcaption{text-align:center;font-size:.88rem;line-height:1.6;color:#49677d;margin-top:9px}
+.b2n-visual svg text{font-family:Arial,sans-serif;fill:#1b4866;font-weight:700}
+.b2n-summary{display:flex;flex-wrap:wrap;gap:10px;padding:12px 16px;background:#e9f3fb;border-radius:12px;max-width:980px;margin:10px auto 22px;font-weight:700;color:#1b5d86}
+.b2n-summary span{padding:5px 10px;background:white;border-radius:8px}
+.legend{grid-template-columns:repeat(auto-fit,minmax(195px,1fr))!important;gap:10px!important;margin-top:16px!important}
+.topic .derive{margin:24px 0!important}
+@media(max-width:650px){.formula-card,.derive{padding:16px!important}.b2n-summary{display:block}.b2n-summary span{display:block;margin:5px 0}}
+@media print{.formula-card,.derive,.b2n-visual{break-inside:avoid;box-shadow:none!important}}
