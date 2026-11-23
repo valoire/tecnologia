@@ -55,13 +55,14 @@ function enhanceFormulaCards(){
   const explanation=card.querySelector(':scope > p');
   const form=card.querySelector('.formula');
   if(!form)return;
-  const visual=diagram(pick(name));
-  if(explanation)explanation.after(visual);else card.querySelector('h3')?.after(visual);
-  const note=node('div','b2n-explication','<strong>Per què utilitzem aquesta expressió?</strong> '+(explanation?.textContent.trim()||'Relacionem les magnituds físiques que intervenen en el procés.')+' Identifica les dades del problema i comprova que totes les unitats siguin coherents.');
+  const visualKinds={'Treball mecànic':'movement','Energia potencial gravitatòria':'height','Energia consumida':'energy','Balanç energètic':'heat'};
+  const kind=visualKinds[name];
+  if(kind){const visual=diagram(kind);if(explanation)explanation.after(visual);else card.querySelector('h3')?.after(visual);}
+  const note=node('div','b2n-explication','<strong>Interpretació física</strong><p>'+(explanation?.textContent.trim()||'Relacionem les magnituds físiques que intervenen en el procés.')+'</p>');
   form.before(note);
   insertSteps(card,name,form);
   const body=form.innerHTML;
-  if(body.includes(';'))form.innerHTML=body.split(/\s*;\s*/).map(p=>'<span class="b2n-formula-row">'+p+'</span>').join('');
+  if(body.includes(';'))form.innerHTML=body.split(/\\s*;\\s*/).map(p=>'<span class="b2n-formula-row">'+p+'</span>').join('');
  });
  const first=document.querySelector('.formula-grid');
  if(first&&!document.querySelector('.b2n-summary')){
@@ -69,15 +70,45 @@ function enhanceFormulaCards(){
   first.before(summary);
  }
 }
+
+// Apartat de màquines tèrmiques: deduccions fonamentals amb una operació per línia.
+const DEDUCCIONS={
+ 'Balanç d’energia':[
+ ['Conservació de l’energia durant un cicle','Q<sub>c</sub> − Q<sub>f</sub> − W = 0'],
+ ['Aïllem el treball obtingut','W = Q<sub>c</sub> − Q<sub>f</sub>'],
+ ['O bé aïllem la calor d’entrada','Q<sub>c</sub> = W + Q<sub>f</sub>']
+ ],
+ 'Rendiment tèrmic':[
+ ['Definició de rendiment','η = Energia útil / Energia aportada'],
+ ['En un motor, el treball és l’energia útil','η = W / Q<sub>c</sub>'],
+ ['Substituïm W = Qc − Qf','η = (Q<sub>c</sub> − Q<sub>f</sub>) / Q<sub>c</sub>'],
+ ['Separem els dos termes','η = 1 − Q<sub>f</sub> / Q<sub>c</sub>']
+ ],
+ 'Potència mecànica':[
+ ['La potència és treball per unitat de temps','P = W / t'],
+ ['Si cada cicle produeix Wc i tenim f cicles per segon','W / t = W<sub>c</sub> · f'],
+ ['Resultat','P = W<sub>c</sub> · f']
+ ],
+ 'Rendiment màxim de Carnot':[
+ ['La temperatura s’expressa sempre en kelvin','T (K) = T (°C) + 273,15'],
+ ['Rendiment ideal, entre dos focus','η<sub>max</sub> = 1 − T<sub>f</sub> / T<sub>c</sub>']
+ ]
+};
+function addThermalDeductions(card,heading){
+ const rows=DEDUCCIONS[heading];
+ if(!rows)return;
+ const box=node('div','b2n-derivation');
+ box.innerHTML='<h4>Deducció ordenada</h4>'+rows.map((step,i)=>'<div class="b2n-deduction-step"><span class="b2n-step-no">'+String(i+1).padStart(2,'0')+'</span><div><p>'+step[0]+'</p><div class="b2n-equation">'+step[1]+'</div></div></div>').join('');
+ const final=card.querySelector('.final-formula');
+ if(final)final.before(box);
+}
 function enhanceThermals(){
  document.querySelectorAll('.derive').forEach((card,i)=>{
   if(card.dataset.b2n)return;card.dataset.b2n='1';
   const heading=card.querySelector('h3')?.textContent||'';
   const math=card.querySelector('.mathline');
   const final=card.querySelector('.final-formula');
-  if(i===0||/cilindrada|carnot|rendiment|frigor/.test(heading.toLowerCase())){
-   const fig=diagram(pick(heading));card.querySelector('h3')?.after(fig);
-  }
+  if(i===0){const fig=diagram('heat');card.querySelector('h3')?.after(fig);}
   if(math&&!math.querySelector('.b2n-math-stage')){
     const raw=math.innerHTML.trim();
     math.innerHTML='<div class="b2n-math-stage">'+raw+'</div>';
@@ -90,6 +121,7 @@ function enhanceThermals(){
     derivation.classList.add('b2n-explication');
     derivation.innerHTML=orig.replace(/(Així |Com que |Per tant, |Finalment, )/g,'<strong>$1</strong>');
   }
+  addThermalDeductions(card,heading);
   separateFinal(final);
  });
 }
