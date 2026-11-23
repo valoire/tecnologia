@@ -51,36 +51,6 @@ function miningStory(){
   <p>Abans de fabricar un objecte cal obtenir els recursos de la natura. Alguns provenen del <strong>subsòl</strong>; d'altres, dels <strong>boscos, conreus i animals</strong>.</p>
  </div>
  <div class="ud2-resource-atlas">
-  <div class="ud2-resource-cards">
-   <article class="ud2-resource-card mineral"><span class="ud2-resource-icon">⛏️</span><h4>Minerals i roques</h4><p><strong>D'on?</strong> Mines, pedreres i graveres. <strong>Exemples:</strong> coure → cables; bauxita → alumini; sorra → vidre; argila → maons.</p><div class="ud2-resource-use"><b>No renovables</b> · Els metalls i el vidre es poden reciclar.</div></article>
-   <article class="ud2-resource-card oil"><span class="ud2-resource-icon">🛢️</span><h4>Combustibles fòssils i urani</h4><p><strong>D'on?</strong> Jaciments del subsòl. <strong>Exemples:</strong> petroli → combustibles i plàstics; gas natural → calefacció i electricitat; carbó → calor; urani → energia nuclear.</p><div class="ud2-resource-use"><b>No renovables</b> · Les reserves són limitades.</div></article>
-   <article class="ud2-resource-card bio"><span class="ud2-resource-icon">🌳</span><h4>Vegetals i animals</h4><p><strong>D'on?</strong> Boscos, camps i ramaderia. <strong>Exemples:</strong> fusta → mobles; cotó i llana → roba; suro → aïllament; làtex → cautxú.</p><div class="ud2-resource-use"><b>Renovables</b> · Només si es regeneren i se'n fa una gestió responsable.</div></article>
-   <article class="ud2-resource-card gas"><span class="ud2-resource-icon">💧</span><h4>Aigua i altres recursos</h4><p><strong>D'on?</strong> Rius, aqüífers i cicle de l'aigua. S'utilitza per al consum, el reg, la indústria i per moure turbines hidroelèctriques.</p><div class="ud2-resource-use"><b>Renovable pel cicle natural</b> · Pot escassejar o contaminar-se.</div></article>
-  </div>
-  <figure class="ud2-geology-figure">
-   <svg viewBox="0 0 980 480" role="img" aria-label="Tall de les capes de la Terra i on hi ha els jaciments: escorça, mantell, nucli extern i nucli intern">
-    <defs><linearGradient id="geoSky" x2="0" y2="1"><stop stop-color="#e1f3ff"/><stop offset="1" stop-color="#fff9e8"/></linearGradient></defs>
-    <rect x="0" y="0" width="980" height="480" rx="20" fill="url(#geoSky)"/>
-    <text x="37" y="45" font-size="27" font-weight="900" fill="#633579">LES CAPES DE LA TERRA</text>
-    <g transform="translate(255 270)">
-     <circle r="190" fill="#d9a66e" stroke="#9a6b47" stroke-width="5"/>
-     <circle r="156" fill="#ee9652"/><circle r="90" fill="#f4c354"/><circle r="45" fill="#fff0ae"/>
-     <path d="M0 0 L0 -190 A190 190 0 0 1 190 0 Z" fill="#f5fafc" opacity=".15"/>
-     <path d="M-189 0 A190 190 0 0 0 189 0" fill="none" stroke="#8d5e3c" stroke-width="3"/>
-     <path d="M-188 -25 Q-90 -40 -5 -16 T190 -20" fill="none" stroke="#7d6d55" stroke-width="6"/>
-     <path d="M-180 35 Q-80 10 12 35 T179 35" fill="none" stroke="#a57552" stroke-width="5"/>
-     <circle cx="-130" cy="-120" r="12" fill="#3c97bb"/><circle cx="-100" cy="-102" r="7" fill="#3c97bb"/>
-     <circle cx="-155" cy="-48" r="9" fill="#57596b"/><circle cx="-120" cy="-58" r="9" fill="#57596b"/>
-    </g>
-    <g font-family="Arial,sans-serif" fill="#44384f" font-size="19">
-     <path d="M405 140 H590" stroke="#a16d47" stroke-width="3"/><text x="605" y="146" font-weight="800">ESCORÇA</text><text x="605" y="171" font-size="16">Capa externa i prima: roques, minerals</text><text x="605" y="193" font-size="16">i jaciments que podem explotar.</text>
-     <path d="M381 230 H590" stroke="#db8a4c" stroke-width="3"/><text x="605" y="236" font-weight="800">MANTELL</text><text x="605" y="260" font-size="16">Roques molt calentes que es deformen</text><text x="605" y="282" font-size="16">lentament en profunditat.</text>
-     <path d="M334 327 H590" stroke="#dfb44c" stroke-width="3"/><text x="605" y="333" font-weight="800">NUCLI EXTERN</text><text x="605" y="357" font-size="16">Principalment ferro i níquel líquids.</text>
-     <path d="M285 393 H590" stroke="#e5cb79" stroke-width="3"/><text x="605" y="400" font-weight="800">NUCLI INTERN</text><text x="605" y="424" font-size="16">Principalment ferro i níquel sòlids.</text>
-    </g>
-   </svg>
-   <figcaption><strong>On extraiem les matèries primeres?</strong> Els jaciments de minerals, petroli i gas que aprofitem es troben a l'<strong>escorça terrestre</strong>, no al nucli ni al mantell. Les capes del dibuix són esquemàtiques i no estan a escala.</figcaption>
-  </figure>
   <figure class="ud2-crust-figure">
    <svg viewBox="0 0 1080 510" role="img" aria-label="Tall geològic de l'escorça terrestre: capes de roca, filó mineral, mina, mena i ganga">
     <rect x="0" y="0" width="1080" height="510" rx="20" fill="#eef7fd"/>
@@ -132,9 +102,6 @@ function miningStory(){
   </div>
     <p class="ud2-resource-note"><strong>Recorda:</strong> renovable no vol dir inesgotable, i reciclable no vol dir renovable. Per exemple, el coure és no renovable però reciclable; la fusta es pot renovar si el bosc es recupera.</p>
  </div>`;
- // Eliminem les targetes antigues i la il·lustració de les capes terrestres.
- section.querySelector('.ud2-resource-cards')?.remove();
- section.querySelector('.ud2-geology-figure')?.remove();
  return section;
 }
 function miningEnergyChain(){
