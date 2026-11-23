@@ -132,6 +132,9 @@ function miningStory(){
   </div>
     <p class="ud2-resource-note"><strong>Recorda:</strong> renovable no vol dir inesgotable, i reciclable no vol dir renovable. Per exemple, el coure és no renovable però reciclable; la fusta es pot renovar si el bosc es recupera.</p>
  </div>`;
+ // Eliminem les targetes antigues i la il·lustració de les capes terrestres.
+ section.querySelector('.ud2-resource-cards')?.remove();
+ section.querySelector('.ud2-geology-figure')?.remove();
  return section;
 }
 function miningEnergyChain(){
