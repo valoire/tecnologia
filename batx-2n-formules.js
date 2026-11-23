@@ -31,6 +31,22 @@ function separateFinal(el){
  const pieces=text.split(/\s*;\s*/).filter(Boolean);
  if(pieces.length>1){inner.replaceChildren(...pieces.map(piece=>node('div','b2n-formula-row',piece)))}
 }
+function stepsFor(title){
+ const t=title.toLowerCase();
+ if(t.includes('treball mecànic'))return [['Força paral·lela al moviment','W = F · d'],['Si la força forma un angle α','F paral·lela = F · cos α'],['Substituïm la component','W = F · d · cos α']];
+ if(t.includes('energia cinètica')&&!t.includes('canvi'))return [['Partim del treball d’una força','W = F · d'],['Amb F = m · a i v² = 2 · a · d, si parteix del repòs','W = m · (v² / 2)'],['El treball es transforma en energia cinètica','Ec = ½ · m · v²']];
+ if(t.includes('potencial gravitatòria'))return [['Força necessària per elevar a velocitat constant','F = m · g'],['Treball necessari per elevar una altura h','W = F · h'],['Energia potencial acumulada','Ep = m · g · h']];
+ if(t==='potència')return [['Definició de potència','P = E / t'],['Si l’energia es transfereix com a treball','P = W / t']];
+ if(t.includes('energia consumida'))return [['La potència és energia per unitat de temps','P = E / t'],['Multipliquem els dos membres per t','P · t = E'],['Aïllem l’energia','E = P · t']];
+ if(t.includes('potència d’elevació'))return [['Energia potencial que guanya la massa','Ep = m · g · h'],['Potència = energia / temps','P = Ep / t'],['Substituïm Ep','P = m · g · h / t']];
+ return null;
+}
+function insertSteps(card,heading,anchor){
+ const rows=stepsFor(heading);if(!rows||!anchor)return;
+ const wrap=node('div','b2n-explication');
+ wrap.innerHTML='<strong>Deducció pas a pas</strong>'+rows.map((entry,i)=>'<div class="b2n-math-stage"><small>Pas '+(i+1)+' · '+entry[0]+'</small><div class="b2n-formula-row">'+entry[1]+'</div></div>').join('<div class="b2n-step-arrow" aria-hidden="true">↓</div>');
+ anchor.before(wrap);
+}
 function enhanceFormulaCards(){
  const cards=[...document.querySelectorAll('.formula-grid .formula-card')];
  cards.forEach((card,i)=>{
@@ -43,6 +59,7 @@ function enhanceFormulaCards(){
   if(explanation)explanation.after(visual);else card.querySelector('h3')?.after(visual);
   const note=node('div','b2n-explication','<strong>Per què utilitzem aquesta expressió?</strong> '+(explanation?.textContent.trim()||'Relacionem les magnituds físiques que intervenen en el procés.')+' Identifica les dades del problema i comprova que totes les unitats siguin coherents.');
   form.before(note);
+  insertSteps(card,name,form);
   const body=form.innerHTML;
   if(body.includes(';'))form.innerHTML=body.split(/\s*;\s*/).map(p=>'<span class="b2n-formula-row">'+p+'</span>').join('');
  });
