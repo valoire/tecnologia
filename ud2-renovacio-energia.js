@@ -21,6 +21,32 @@ function install(){
   const anchor=materials.querySelector('.ud2-geology-figure');
   if(anchor)anchor.before(section);else materials.append(section);
  }
+ // El bloc de matèries primeres només ha de tenir els tres continguts demanats.
+ const resourcePanel=document.getElementById('ud2-main-panel-2');
+ const resourceArticle=resourcePanel?.querySelector('.ud2-solid-article');
+ if(resourceArticle&&!resourceArticle.classList.contains('iv-three-topics')){
+  const transformations=resourceArticle.querySelector('.iv-transformacions');
+  const plants=resourceArticle.querySelector('.ud2-power-plants');
+  if(transformations&&plants){
+   const clean=document.createElement('article');
+   clean.className='ud2-solid-article iv-three-topics';
+   const heading=document.createElement('div');
+   heading.className='ud2-solid-intro';
+   heading.innerHTML='<h3>Matèries primeres, fonts d’energia i centrals elèctriques</h3><p>Tres conceptes diferents: què utilitza la indústria per fabricar objectes, d’on obtenim energia i com produïm electricitat.</p>';
+   clean.append(heading,transformations);
+   const sources=document.createElement('section');
+   sources.className='ud2-solid-chapter iv-renewables';
+   sources.innerHTML='<h3>2. Energies renovables i no renovables</h3><div class="ud2-solid-section"><p>Les <strong>fonts renovables</strong> es reposen gràcies als processos naturals a escala humana. Les <strong>no renovables</strong> provenen de reserves limitades.</p><div class="iv-energy-sources"><article><h4>☀️ Renovables</h4><p>Solar, eòlica, hidràulica, geotèrmica, biomassa i marina.</p><p>Poden tenir impactes ambientals i depenen de les condicions de cada lloc.</p></article><article><h4>🪨 No renovables</h4><p>Carbó, petroli, gas natural i urani.</p><p>Les reserves són limitades i la seva extracció i utilització comporten impactes ambientals.</p></article></div><div class="iv-activity"><h4>Exercici 2 · Classifica les fonts</h4><p>El vent, el carbó, el sol, el gas natural, l’urani i l’aigua d’un embassament.</p><details><summary>Veure la solució</summary><p><strong>Renovables:</strong> vent, sol, hidràulica. <strong>No renovables:</strong> carbó, gas natural i urani.</p></details></div></div>';
+   clean.append(sources);
+   const power=document.createElement('section');
+   power.className='ud2-solid-chapter';
+   const title=document.createElement('h3');title.textContent='3. Centrals elèctriques';power.append(title,plants);
+   clean.append(power);
+   resourceArticle.replaceWith(clean);
+   const head=resourcePanel.querySelector('.ud2-main-topic-head');
+   if(head){const h=head.querySelector('h2');if(h)h.textContent='Matèries primeres, energies i centrals';const p=head.querySelector('p');if(p)p.textContent='Matèries primeres per a la indústria, fonts renovables i no renovables, i centrals elèctriques.';}
+  }
+ }
  const panel=document.getElementById('ud2-main-panel-3');
  const article=panel?.querySelector('.ud2-solid-article.ud2-energy-basic');
  if(!article||article.classList.contains('iv-energy-new'))return;
