@@ -36,7 +36,33 @@ function install(){
    clean.append(heading,transformations);
    const sources=document.createElement('section');
    sources.className='ud2-solid-chapter iv-renewables';
-   sources.innerHTML='<h3>2. Energies renovables i no renovables</h3><div class="ud2-solid-section"><p>Les <strong>fonts renovables</strong> es reposen gràcies als processos naturals a escala humana. Les <strong>no renovables</strong> provenen de reserves limitades.</p><div class="iv-energy-sources"><article><h4>☀️ Renovables</h4><p>Solar, eòlica, hidràulica, geotèrmica, biomassa i marina.</p><p>Poden tenir impactes ambientals i depenen de les condicions de cada lloc.</p></article><article><h4>🪨 No renovables</h4><p>Carbó, petroli, gas natural i urani.</p><p>Les reserves són limitades i la seva extracció i utilització comporten impactes ambientals.</p></article></div></div>';
+   sources.innerHTML=`
+     <h3>2. Energies renovables i no renovables</h3>
+     <div class="ud2-solid-section">
+       <p><strong>Com sabem si una font d’energia és renovable?</strong> No ens fixem només en si contamina, sinó en <strong>si la natura la pot reposar en un temps curt a escala humana</strong>. Una font és <strong>renovable</strong> quan prové de fluxos naturals que es regeneren contínuament o en terminis compatibles amb el nostre ús. És <strong>no renovable</strong> quan depèn de reserves finites que es consumeixen molt més ràpidament del que es formen.</p>
+       <div class="iv-energy-sources">
+         <article>
+           <h4>🌱 Fonts renovables · Per què?</h4>
+           <p><strong>☀️ Solar:</strong> la radiació del Sol arriba constantment a la Terra; no esgota una reserva de combustible quan la captem.</p>
+           <p><strong>🌬️ Eòlica:</strong> el vent es genera contínuament pels moviments de l’aire i les diferències de temperatura.</p>
+           <p><strong>💧 Hidràulica:</strong> el cicle de l’aigua, impulsat pel Sol, renova l’aigua dels rius i embassaments, tot i que el cabal pot variar.</p>
+           <p><strong>🌍 Geotèrmica:</strong> aprofita la calor interna de la Terra; cal gestionar-ne l’extracció perquè el jaciment no es refredi massa.</p>
+           <p><strong>🌿 Biomassa:</strong> prové de matèria orgànica que pot tornar a créixer. Només és renovable si es regenera al ritme que es consumeix.</p>
+           <p><strong>🌊 Marina:</strong> aprofita les marees i les onades, que es produeixen de manera natural i recurrent.</p>
+         </article>
+         <article>
+           <h4>🪨 Fonts no renovables · Per què?</h4>
+           <p><strong>⚫ Carbó:</strong> és un combustible fòssil format durant milions d’anys a partir de restes vegetals. En cremar-lo consumim una reserva que no es recupera a escala humana.</p>
+           <p><strong>🛢️ Petroli:</strong> es va formar al llarg de milions d’anys a partir de matèria orgànica. Les reserves són limitades i es van esgotant.</p>
+           <p><strong>🔥 Gas natural:</strong> també és un combustible fòssil acumulat al subsol durant milions d’anys. Quan el fem servir, en gastem una reserva finita.</p>
+           <p><strong>☢️ Urani:</strong> és un mineral extret de jaciments limitats. A les centrals nuclears es consumeix com a combustible i no es regenera en el temps de vida humà.</p>
+         </article>
+       </div>
+       <div style="padding:16px 18px;border-radius:14px;background:#eef7ff;border:1px solid #bcd9ec;margin-top:17px;line-height:1.6">
+         <strong>💡 La idea més important:</strong> renovable no vol dir que no contamini ni que no tingui impacte ambiental. Per exemple, una presa hidroelèctrica altera un riu i fabricar plaques solars requereix materials. En canvi, una font no renovable pot emetre poc CO₂ durant el funcionament, com la nuclear, però continuar sent no renovable perquè utilitza urani finit.
+       </div>
+       <p><strong>Pregunta per recordar:</strong> el Sol i el carbó poden proporcionar energia. Per què un és renovable i l’altre no? <em>Perquè la radiació solar es rep contínuament, mentre que el carbó tarda milions d’anys a formar-se i les reserves s’esgoten quan el consumim.</em></p>
+     </div>`
    clean.append(sources);
    const power=document.createElement('section');
    power.className='ud2-solid-chapter';
