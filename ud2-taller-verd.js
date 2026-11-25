@@ -5,7 +5,7 @@
 'use strict';
 const S=[
  {icon:'💻',short:'Tinkercad',title:'Comencem amb Tinkercad',
-  lead:'Entrarem a Pixabay, seleccionarem la pestanya «Vectorials» i descarregarem dibuixos de Nadal molt senzills en format .svg per començar el disseny a Tinkercad.',
+  lead:'Dissenyarem les parets del fanalet. Entrarem a Pixabay, seleccionarem la pestanya «Vectorials» i descarregarem dibuixos de Nadal molt senzills en format .svg per començar el disseny a Tinkercad.',
   theory:'Treballarem amb imatges de Nadal descarregades de Pixabay i les adaptarem al fanalet. Una imatge JPG/PNG serveix de referència; per incorporar-ne el contorn a Tinkercad necessitem un SVG adequat o dibuixar les formes sobre el pla de treball, amb mides reals.',
   goal:'Disseny nou creat, dues imatges de Pixabay descarregades i primeres mides comprovades.',
   tasks:[
@@ -35,7 +35,7 @@ const S=[
    ['📤','ENVIA','Lliura el disseny, l’SVG i la captura segons les instruccions de la professora.']
   ],links:[['Obrir Tinkercad','https://www.tinkercad.com/'],['Obrir Classroom','https://classroom.google.com/']]},
  {icon:'🧩',short:'micro:bit I',title:'Programació de micro:bit · Part 1',
-  lead:'Utilitzarem la IA autoritzada del centre (Gemini, si està habilitada) per proposar el codi de la micro:bit i el provarem a MakeCode.',
+  lead:'Utilitzarem la IA autoritzada del centre per crear un programa senzill de LEDs amb micro:bit i micro:shield. Cada línia del codi ha de tenir un comentari explicatiu en català. Consulteu la guia del projecte.',
   theory:'MakeCode permet programar la micro:bit amb blocs, esdeveniments, condicions i repeticions. Abans de crear cap bloc cal entendre què ens demana exactament la professora.',
   goal:'Projecte creat i primera versió del programa seguint les consignes explicades a classe.',
   tasks:[
@@ -86,6 +86,7 @@ function makeSession(item,i){
  A(headText,'span','ud2-green-eyebrow','TALLER · SESSIÓ '+(i+1)+' DE 7');
  A(headText,'h3','',item.title);
  A(headText,'p','',item.lead);header.append(headText);pane.append(header);
+ const guide=A(pane,'a','ud2-green-link','📘 Guia del projecte · Fanalet de Nadal'); guide.href='projecte-fanalet-nadal.html';
  if(item.links.length){
   A(pane,'p','ud2-green-open-label','🌐 PÀGINES QUE HAS D’OBRIR');
   const links=E('div','ud2-green-links');
