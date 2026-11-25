@@ -149,7 +149,7 @@ function setupWorkshop(){
  wrapper.append(chooser,index);
  // Igual que a teoria: primer l'índex de targetes i, just a sota, la capçalera del taller.
  if(header)wrapper.append(header);
- wrapper.append(panes);project.append(wrapper);
+ const deliveries=E('section','ud2-green-session'); deliveries.id='fanalet-lliuraments'; A(deliveries,'h3','','Projectes · Fanalet de Nadal'); A(deliveries,'p','','Dues activitats independents amb instruccions i lliuraments diferenciats.'); const links=E('div','ud2-green-links'); [['1. Les parets del fanalet','parets'],['2. Programació de la micro:bit','programacio']].forEach(([label,anchor])=>{const a=A(links,'a','ud2-green-link',label);a.href='projecte-fanalet-nadal.html#'+anchor;});deliveries.append(links); const embedded=E('iframe');embedded.src='projecte-fanalet-nadal.html';embedded.title='Instruccions dels dos projectes del fanalet';embedded.style.cssText='width:100%;height:1200px;border:0;border-radius:12px;';deliveries.append(embedded);wrapper.append(deliveries,panes);project.append(wrapper);
  const intro=document.querySelector('.ud2-tab-intro');
  if(intro){
   const p=intro.querySelector('p');
