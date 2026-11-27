@@ -424,15 +424,15 @@
  .ud2-topic-redesign .ud2-green-index-words strong{font-size:13px}
 }
 
-/* Capçalera verda situada sota les set targetes, com la capçalera rosa de teoria. */
-.ud2-topic-redesign .ud2-green-inner > .ud2-main-topic-head.ud2-green-head{
+/* Capçalera del projecte abans dels accessos. */
+.ud2-topic-redesign .fanalet-overview > .ud2-main-topic-head.ud2-green-head{
  padding:21px 24px;
  border-left:6px solid #278153!important;
  border-radius:17px;
  margin:0 0 27px;
  background:linear-gradient(115deg,#e2f9ea,#d4f1e1 58%,#eafff1)!important;
 }
-.ud2-topic-redesign .ud2-green-inner > .ud2-main-topic-head.ud2-green-head h2{
+.ud2-topic-redesign .fanalet-overview > .ud2-main-topic-head.ud2-green-head h2{
  font-size:clamp(26px,3.5vw,35px);
  line-height:1.35;
 }
@@ -444,3 +444,18 @@
  padding:0;
  background:transparent;
 }
+
+/* Accessos a les dues fases del projecte del fanalet. */
+.fanalet-overview[hidden],.fanalet-project-view[hidden]{display:none!important}
+.fanalet-project-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:18px 0 24px}
+.fanalet-native .fanalet-project-card{display:flex;flex-direction:column;width:100%;overflow:hidden;padding:0;border:1px solid #a8cbbb;border-radius:16px;background:#fff;color:#18372d;text-align:left;cursor:pointer;font:inherit}
+.fanalet-project-card:hover{border-color:#278153;box-shadow:0 5px 16px #20553e20}
+.fanalet-project-card:focus-visible,.fanalet-project-back:focus-visible{outline:3px solid #22724b;outline-offset:3px}
+.fanalet-project-card img{display:block;width:100%;height:clamp(150px,24vw,240px);object-fit:contain;background:#eff7f2}
+.fanalet-project-card-copy{display:flex;flex:1;flex-direction:column;gap:8px;padding:16px 18px}
+.fanalet-project-card-copy strong{font-size:1.2rem;color:#14553e}
+.fanalet-project-card-submission{font-size:.95rem;color:#385e4f}
+.fanalet-project-card-action{margin-top:auto;padding-top:5px;color:#126348;font-weight:750;text-decoration:underline;text-underline-offset:3px}
+.fanalet-project-back{cursor:pointer}
+.fanalet-project-view h2:focus{outline:none}
+@media(max-width:650px){.fanalet-project-cards{grid-template-columns:1fr}}
